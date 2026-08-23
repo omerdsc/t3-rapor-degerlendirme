@@ -3,171 +3,200 @@
 T3 Vakfı Bursiyer Yapay Zekâ Creathonu · **Problem 4**
 TEKNOFEST Yarışmalar Koordinatörlüğü için hakem karar destek sistemi.
 
-> Yapay zekâ nihai karar verici değildir. Sistem, hakeme kontrol, analiz ve
-> ön değerlendirme sunan bir **destek katmanı** olarak çalışır.
+> **Yapay zekâ nihai karar verici değildir.** Sistem hakeme kontrol, analiz
+> ve ön değerlendirme sunar; puanı hakem verir. Bu bir slogan değil, kodda
+> uygulanan bir kısıt — hakem puanı girilmeden rapor tamamlanamaz.
 
 ---
 
-## Çalıştırma
+## Ne yapıyor
+
+TEKNOFEST'e her yıl on binlerce proje raporu geliyor. Her yarışmanın kendi
+şablonu, kendi şartnamesi, kendi puanlama ölçütleri var. Hakem bir raporu
+açtığında önce mekanik soruların cevabını arıyor: şablona uymuş mu, bölümler
+tam mı, kaynakça gerçek mi, başka bir rapordan kopya mı?
+
+4. Göz bu soruları hakem açmadan yanıtlıyor ve **kanıtıyla** sunuyor.
+
+```
+rapor yüklenir
+  ├─ otomatik kontroller  ($0, saniyeler)     → dil, şablon, başlık,
+  │                                              kaynakça, kaynak doğrulama,
+  │                                              içerik uygunluğu, kopya
+  ├─ yapay zekâ ön değerlendirmesi ($0,18)    → ölçüt bazında puan önerisi,
+  │  (isteğe bağlı, hakem başlatır)              alıntı ve gerekçeyle
+  └─ hakem puanlar ve imzalar                 → nihai karar
+       └─ yarışmacı sonucu görür
+```
+
+---
+
+## Kurulum
 
 ```bash
 npm install
-npm run dev              # http://localhost:3000
+cp .env.ornek .env.local        # ANTHROPIC_API_KEY girin (yalnızca AI adımı için)
+npm run dev                     # http://localhost:3000
 ```
 
-Test setleri ve komut satırı analizi:
+Yarışma listesini teknofest.org'dan çekmek için:
 
 ```bash
-# Yapısal kontroller (MVP 1-2-3)
-npx tsx scripts/ornek-rapor-uret.ts    # 7 sentetik rapor
-npx tsx scripts/analiz-et.ts           # hepsini analiz eder
-npx tsx scripts/analiz-et.ts yol.pdf   # tek dosya
-
-# Benzerlik (MVP 5)
-npx tsx scripts/korpus-uret.ts         # 5 raporluk benzerlik korpusu
-npx tsx scripts/korpus-tara.ts         # çiftler arası tarama
+npm run katalog                 # 60 yarışma, 260 belge — ücretsiz
 ```
+
+Sonra arayüzden **Yarışmalar → Kur** deyin. Şablon ve şartname indirilir,
+değerlendirme ölçütleri çıkarılır.
 
 ---
 
-## Durum
+## Ölçülmüş durum
 
-| MVP maddesi | Durum | Nerede |
-|---|---|---|
-| 1-2 · Dil ve şablon uygunluğu | ✅ | `src/lib/analiz/dil.ts`, `sablon.ts` |
-| 3 · Başlık ve içerik kontrolü | ✅ | `src/lib/analiz/sablon.ts`, `kaynakca.ts` |
-| 4 · Kategori uygunluğu | ✅ | `src/lib/analiz/kategori.ts` |
-| 5 · Benzerlik analizi | ✅ | `src/lib/analiz/benzerlik.ts`, `phash.ts` |
-| 6 · AI kriter değerlendirmesi | ⏳ | — |
+| | |
+|---|---|
+| Katalogdaki yarışma | **60** |
+| Kurulu yarışma / kategori | **43 / 80** |
+| Şartnamesi bağlı kategori | **70** |
+| Şartnameden çıkarılan terim profili | **70** |
+| Şablondan rubrik çıkarılan kategori | **74 / 81** |
+| Rapor başına yapay zekâ maliyeti | **$0,18** |
+| Otomatik kontrollerin maliyeti | **$0** |
 
-**MVP 1-2-3-4-5'in tamamı hiçbir dil modeli çağırmaz.** PDF ayrıştırma, Türkçe
-metin onarımı, şablon eşleştirme, kaynakça analizi, TF-IDF kategori
-sınıflandırma, MinHash metin benzerliği ve pHash görsel benzerliğin hepsi saf
-koddur; işletme maliyeti sıfırdır. Model yalnızca kriter değerlendirmesinde
-(MVP 6) devreye girecek — tek ücretli kalem orası.
+Kanıt için: `npx tsx scripts/kanit-topla.ts` — bu tablonun kaynağı odur,
+elle yazılmaz.
 
-Ortalama süre: **~100 ms/rapor** (yapısal), **~130 ms/rapor** (parmak izi dâhil).
+Zorunlulukların madde madde karşılığı:
+**[docs/gereksinim-karsiligi.md](docs/gereksinim-karsiligi.md)**
 
 ---
 
 ## Mimari kararlar
 
-**Şablon koda gömülü değildir.** `Sablon` bir veri tipidir; motor hiçbir yerde
-"Proje Özeti" veya "Kaynakça" diye bir başlık bilmez. Farklı yarışma = farklı
-`Sablon` nesnesi, kod değişikliği yok. Kaynakça beklentisi bile şablona
-bağlıdır — bazı yarışmalar kaynakça istemez.
+### Ücretli ile ücretsiz katman kesin ayrı
+Dil tespiti, şablon eşleştirme, başlık kontrolü, kaynakça analizi, kaynak
+doğrulama, içerik uygunluğu ve kopya taraması **saf kod**. Dil modeli
+yalnızca ölçüt bazlı ön değerlendirmede ve şartname özetinde çalışıyor.
 
-**Deterministik katman "var mı" sorusunu yanıtlar, "yeterli mi" sorusunu
-değil.** Bölümün doldurulup doldurulmadığı yapısal olarak ölçülür; içeriğin
-derinliği rubrik bazlı AI değerlendirmesinin işidir. Uydurma eşiklerle rapor
-işaretlemek hakemi yanlış yönlendirir — bu yüzden şartnameden gelmeyen sayfa
-ve kelime sınırları tanımsız bırakılmıştır.
+Bu ayrım tasarımı belirledi: 60 yarışmalık katalog aktarımı da, 80 kategorinin
+kurulumu da, kopya taraması da $0 olduğu için sınırsız çalıştırılabiliyor.
 
-**Türkçe metin onarımı zorunludur.** Gerçek raporlarda font encoding yüzünden
-`ş → s¸`, `ı → ` gibi bozulmalar yaygındır. Başlık eşleştirmesi bu yüzden
-aksan duyarsız ve fuzzy çalışır. bkz. `docs/gercek-dunya-sorunlari.md`
+### Maliyet iki katmanla korunuyor
+Disk önbelleği aynı raporu ikinci kez ücretlendirmiyor; bütçe tavanı aşılırsa
+istek atılmıyor. Şartname özeti kategori başına bir kez üretilip kalıcı
+saklanıyor — aynı şartnameyi paylaşan kategorilere ücretsiz kopyalanıyor.
 
-**Sayfa başlığı/altlığı ayıklanır.** Her sayfada tekrar eden
-`TEKNOFEST 2026 | Takım Adı | Sayfa 4` satırı metinde bırakılırsa bütün
-raporlar birbirine benzer çıkar ve benzerlik analizi (MVP 5) değersizleşir.
+### Türkçe metin onarımı zorunlu
+Gerçek PDF'lerde font kodlaması yüzünden "ş→þ", "İ→Ý" gibi bozulmalar
+oluyor. Onarılmazsa hiçbir başlık eşleşmiyor ve bütün raporlar birbirine
+benzer çıkıyor. `normalize.ts` mojibake, ayrık aksan ve ligatürleri
+düzeltiyor; karşılaştırmalar i/ı ayrımını kaldıran `anahtar()` üzerinden
+yapılıyor.
+
+> JS regex Türkçe'de sessizce başarısız oluyor: `/kategori/i` deseni
+> "KATEGORİSİ" ile eşleşmez, `\bYarışması\b` hiç eşleşmez. Bu tuzağa dört
+> kez düşüldü; ayrıntısı `docs/gercek-dunya-sorunlari.md` §F7.
+
+### Kimlik maskeleme ve kör puanlama
+Hakem ekranında takım adı rumuzla görünüyor (`Takım 8EM8 · R-WKT4`). İki
+gerekçe: kişisel veri ekranda tutulmuyor ve hakem "geçen yıl finale kalan
+ekip" bilgisinden etkilenmiyor. Arama gerçek veriyle **sunucuda** çalışıyor;
+gerçek adlar istemciye hiç inmiyor.
+
+### Çıkarım taslaktır, insan onaylar
+Şablondan çıkarılan her ölçüt "onaylanmadı" olarak işaretli. Yönetici
+gözden geçirip onaylıyor, düzeltiyor ya da kendi ölçütünü ekliyor. Şablon
+güncellemesi onayı sıfırlıyor — yeni ölçütler görülmedi çünkü.
+
+---
+
+## Öne çıkan çözümler
+
+**Kopya tespitinde Jaccard yetmiyor.** İki bölümü kopyalanmış bir raporda
+Jaccard %16 çıkıyor ve eşiğin altında kalıyor; kapsama oranı (`kesişim /
+küçük belge`) %31 veriyor ve yakalıyor. Test korpusundaki kısmi kopya bu
+farkla tespit edildi.
+
+**Sabit benzerlik eşiği çalışmıyor.** Aynı kategorideki raporlar zaten ortak
+terminoloji taşıyor. Her kategorinin kendi taban benzerliği ölçülüp eşik
+buna göre belirleniyor.
+
+**Aynı takımın devam projesi intihal değil.** Takım kimliği eşleşen çiftler
+ayrı ve nötr işaretleniyor.
+
+**Şekiller okunuyor.** Akış şemasını görsel olarak çizen rapor
+cezalandırılmıyor; şekiller ayıklanıp modele ayrıca veriliyor. Örnek raporda
+"Akış Şeması" ölçütü 2/5'ten 5/5'e çıktı.
+
+**Uydurma kaynak tespiti.** Kaynak başlıkları Crossref ve OpenAlex'te
+aranıyor. Yerel yayınların bulunamaması sahtelik sayılmıyor — güveni
+düşürülüp not ediliyor.
+
+**Puan ağırlığı olmayan şablonlar.** 81 kategorinin 37'sinde şablon ağırlık
+vermiyor. Eşit ağırlıklı taslak üretilip **uyarıyla** bildiriliyor; uydurma
+ağırlıkla eşit ağırlık arasındaki fark, eşit ağırlığın yanlış olduğunu
+kendisinin söylemesi.
 
 ---
 
 ## Yapı
 
 ```
-src/lib/analiz/
-  tipler.ts       ortak tipler, Sablon tanımı
-  normalize.ts    Türkçe onarım, ligatür, fuzzy eşleştirme
-  pdf.ts          koordinatlı metin + görsel çıkarma (tek geçiş)
-  yapi.ts         satır kurma, header/footer ayıklama, başlık tespiti
-  dil.ts          dil tespiti (MVP 1)
-  sablon.ts       şablon + başlık kontrolü (MVP 1-2-3)
-  kaynakca.ts     kaynakça derin analizi
-  kategori.ts     TF-IDF kategori uyumu (MVP 4)
-  benzerlik.ts    MinHash + kapsama + cümle eşleştirme (MVP 5)
-  phash.ts        algısal hash — görsel kopya tespiti
-  sablonlar.ts    TEKNOFEST şablon tanımları
-  kategoriler.ts  yarışma kategorileri
-  index.ts        boru hattı
+src/lib/analiz/     ücretsiz katman
+  normalize.ts        Türkçe metin onarımı — her şeyin temeli
+  pdf.ts, belge-docx.ts  PDF ve Word ayrıştırma
+  yapi.ts             satır birleştirme, başlık tespiti
+  dil.ts              dil tespiti
+  sablon.ts           şablon ve bölüm uygunluğu
+  sablon-cikar.ts     şablondan ölçüt çıkarımı
+  kaynakca.ts         kaynakça derinliği
+  kaynak-dogrula.ts   Crossref + OpenAlex doğrulaması
+  kategori.ts         içerik uygunluğu (TF-IDF)
+  terim-cikar.ts      şartnameden terim profili
+  benzerlik.ts        MinHash + kapsama + cümle eşleştirme
+  phash.ts            algısal görsel karşılaştırma
+  kimlik.ts           rapor kapağından künye okuma
+  sartname.ts         şartname çözümleme
+  takvim.ts           aşama–tarih eşlemesi
 
-src/app/api/analiz/route.ts    POST: PDF → analiz sonucu
-src/components/analiz-paneli.tsx
+src/lib/ai/         ücretli katman
+  istemci.ts          önbellek + bütçe tavanı
+  degerlendirme.ts    ölçüt bazlı ön değerlendirme
+  sartname-ozeti.ts   şartname özeti (kategori başına bir kez)
 
-scripts/rapor-yazici.ts        ortak PDF üretim altyapısı (PNG kodlayıcı dâhil)
-scripts/ornek-rapor-uret.ts    yapısal fixture'lar
-scripts/analiz-et.ts           CLI tek rapor analizi
-scripts/korpus-uret.ts         benzerlik korpusu
-scripts/korpus-tara.ts         CLI korpus taraması
-docs/gercek-dunya-sorunlari.md dayanıklılık gereksinimleri
-design/                        arayüz tasarımı (6 ekran)
+src/lib/katalog/    teknofest.org kataloğu
+src/lib/depo/       dosya tabanlı veri katmanı, maskeleme, arama, dışa aktarma
+src/app/            Panel · Raporlar · Kopya Kontrolü · Yarışmalar · Yarışmacı portalı
 ```
 
 ---
 
-## Benzerlik analizi
+## Doğrulama
 
-İki bağımsız kanal çalışır:
+```bash
+npx tsx scripts/kanit-topla.ts          # ölçülmüş durum tablosu
+npx tsx scripts/ornek-rapor-uret.ts     # 7 sentetik fikstür (her biri bir kusur)
+npx tsx scripts/analiz-et.ts            # hepsini analiz et
+npx tsx scripts/korpus-uret.ts          # 5 raporluk benzerlik korpusu
+npx tsx scripts/korpus-tara.ts          # kopya taraması
+npx tsx scripts/kimlik-test.ts          # kapak künyesi çıkarımı
+npm run katalog:dogrula                 # 81 şablonu indirip çözümle
+```
 
-| Kanal | Yöntem | Ne yakalar |
-|---|---|---|
-| Metin | Cümle shingle + MinHash + **kapsama oranı** | Kopyalanmış paragraf |
-| Görsel | pHash (32×32 DCT → 64 bit) | Aynı şekil, farklı metin |
-
-**Kapsama oranı, Jaccard yerine kullanılır.** Bir rapor diğerinin yalnızca iki
-bölümünü kopyaladığında Jaccard seyrelir ve kopya kaçar. Kapsama "küçük
-belgenin ne kadarı öbüründe var" sorusunu sorar. Test korpusunda K01↔K04
-çiftinde Jaccard %16 (eşiğin altında), kapsama %30 → yakalandı.
-
-**Karşılaştırma öncesi çıkarılanlar:** şablon yönerge metni, zorunlu başlıklar,
-sayfa başlığı/altlığı, kaynakça. Çıkarılmazsa bütün raporlar birbirine benzer
-çıkar ve modül değersizleşir.
-
-**Kategori tabanı.** Sabit eşik kullanılmaz; her kategorinin doğal benzerlik
-tabanı (ortanca) hesaplanır, eşik `taban + 3×MAD` olur. Aynı alandaki
-raporların ortak terminolojisi böylece gürültü üretmez.
-
-**Aynı takım = devam projesi.** Takım kimliği eşleşen çiftler intihal değil,
-`BENZERLIK_DEVAM_PROJESI` olarak etiketlenir.
-
-### Korpus test sonuçları
-
-| Çift | Beklenen | Sonuç |
-|---|---|---|
-| K01 ↔ K03 | Görsel kopya (aynı şekil, farklı metin) | ✅ görsel %100, kapsama %0 |
-| K01 ↔ K04 | Metin kopyası (2 bölüm birebir) | ✅ kapsama %30, 8 cümle |
-| K01 ↔ K05 | Devam projesi (aynı takım) | ✅ intihal olarak işaretlenmedi |
-| K02 | Hiçbir eşleşme | ✅ temiz |
+Test korpusundaki üç kurgu vaka — görsel kopya, kısmi metin kopyası, aynı
+takımın devam projesi — üçü de doğru sınıflandırıldı.
 
 ---
 
-## Kaynakça kontrolü
+## Bilinen sınırlar
 
-Hakemlerin ilk baktığı yerlerden biri. "Başlık var" demek yetmez; üç şey ayrı
-ayrı ölçülür:
+Sistem bunları kullanıcıya da söylüyor; gizlenmiyor.
 
-| Kod | Ne yakalar |
-|---|---|
-| `KAYNAKCA_YOK` | Bölüm hiç yok |
-| `KAYNAKCA_BOS` | Başlık var, ayrıştırılabilir künye yok |
-| `KAYNAKCA_AZ` | Şablonun beklediği asgari kaynak sayısının altında |
-| `ATIF_YOK` | Liste dolu ama metinde tek atıf yok — sonradan eklenmiş kaynakça |
-| `ATIF_KARSILIKSIZ` | Metinde `[7]` var, listede 5 kaynak |
-| `KAYNAK_ATIFSIZ` | Listede var, metinde hiç kullanılmamış |
-| `KAYNAK_NITELIKSIZ` | Yıl/künye yok, çıplak bağlantı |
-
----
-
-## Test korpusu
-
-`test-verisi/raporlar/` altındaki 7 sentetik rapor aynı zamanda regresyon
-test setidir. Her biri belirli bir bozulmayı taşır; `01-temiz.pdf` **sıfır
-bulgu** vermelidir (yanlış pozitif kontrolü).
-
-## Eksik girdiler
-
-- **Resmî TEKNOFEST rapor şablonu** — `sablonlar.ts` içindeki `yonergeMetni`
-  alanları şablonun birebir kendi cümleleriyle doldurulmalı. "Doldurulmamış
-  bölüm" tespitinin isabeti buna bağlı.
-- **Şartname** — sayfa sınırı, dil beklentisi, zorunlu bölümler.
-- **Değerlendirme kriterleri ve rubrik** — MVP 6 için.
+- **Canlıya alınmadı.** Depo dosya sistemine yazıyor; sunucusuz ortamda
+  kalıcı değil. Veritabanı katmanı gerekiyor.
+- **Yetkilendirme yok.** Roller ekranla ayrılmış, hesapla değil. Hakem adı
+  beyan usulü alınıyor.
+- **46 kategoride ağırlıklar eşit dağıtılmış taslak.** Gerçek ağırlıklar
+  şartnamede olabilir; uyarı veriliyor.
+- **3 şablon PDF** olduğu için çözümlenemiyor; elle yükleme gerekiyor.
+- **Kapaktan künye okuma her raporda tutmuyor** — alanlar tabloya ya da
+  görsele gömülü olabilir. Okunamadığında kusur sayılmıyor.

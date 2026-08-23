@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import DisaAktarDugmesi from '@/components/disa-aktar-dugmesi';
 import KategoriKarti from '@/components/kategori-karti';
 import SablonYukleyici from '@/components/sablon-yukleyici';
 import SartnameYukleyici from '@/components/sartname-yukleyici';
@@ -60,12 +61,15 @@ export default async function YarismaSayfasi({ params }: PageProps<'/yarismalar/
           {hazir ? 'RAPOR KABUL EDEBİLİR' : 'HAZIRLIK SÜRÜYOR'}
         </span>
         {raporlar.length > 0 && (
-          <Link
-            href={`/raporlar?yarisma=${yarisma.id}`}
-            className="shrink-0 rounded-lg bg-kirmizi px-3.5 py-2 text-[12px] font-bold text-white transition-colors hover:bg-kirmizi-koyu"
-          >
-            Raporlar →
-          </Link>
+          <>
+            <DisaAktarDugmesi yarismaId={yarisma.id} raporSayisi={raporlar.length} />
+            <Link
+              href={`/raporlar?yarisma=${yarisma.id}`}
+              className="shrink-0 rounded-lg bg-kirmizi px-3.5 py-2 text-[12px] font-bold text-white transition-colors hover:bg-kirmizi-koyu"
+            >
+              Raporlar →
+            </Link>
+          </>
         )}
       </header>
 

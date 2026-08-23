@@ -11,6 +11,7 @@ import { onar } from '@/lib/analiz/normalize';
 import { bicimTespitEt } from '@/lib/analiz/belge-docx';
 import { parmakiziCikar } from '@/lib/analiz/benzerlik';
 import { kimlikCikar, kimlikKarsilastir } from '@/lib/analiz/kimlik';
+import { kategoriKumesi } from '@/lib/analiz/terim-depo';
 import { parmakiziSakla } from '@/lib/analiz/parmakizi-depo';
 import { benzerlikTazele } from '@/lib/analiz/benzerlik-tazele';
 import {
@@ -102,10 +103,25 @@ export async function POST(request: Request) {
    * değişkeninden okunuyor — kullanıcının kişisel e-postası koda
    * gömülmüyor ve varsayılan olarak dışarıya çıkmıyor.
    */
+  /*
+   * İÇERİK UYGUNLUĞU: KARŞILAŞTIRMA KÜMESİ GERÇEK ŞARTNAMELERDEN.
+   *
+   * Önce elle yazılmış alan listeleri kullanılıyordu (tarım, yazılım…) ve
+   * bunları biz uydurmuştuk. Artık her yarışmanın kendi şartnamesinden
+   * çıkarılmış terim profilleri kullanılıyor; soru da değişti:
+   * "bu rapor hangi teknik alana ait?" değil, "bu rapor HANGİ YARIŞMANIN
+   * istediği şeyden bahsediyor?".
+   *
+   * Profil dosyası yoksa eski listeye düşülüyor — kontrol tamamen
+   * kaybolmasın; ama profiller varsa gerçek veri kazanır.
+   */
+  const profiller = kategoriKumesi();
   const sonuc = await raporuAnalizEt(veri, {
     sablon: kategori.sablon,
-    kategoriler: yarisma.icerikKategorileri,
-    beyanEdilenKategori: alan('icerikKategori'),
+    kategoriler: profiller.length >= 3 ? profiller : yarisma.icerikKategorileri,
+    // Beyan, raporun yüklendiği KATEGORİDİR: yarışmacının ayrıca alan
+    // seçmesine gerek yok, zaten bir kategoriye başvurdu.
+    beyanEdilenKategori: profiller.length >= 3 ? kategoriId : alan('icerikKategori'),
     kaynakDogrula: process.env.KAYNAK_DOGRULA !== 'kapali',
     dogrulamaIletisim: process.env.DOGRULAMA_ILETISIM,
   });

@@ -204,6 +204,19 @@ export interface Rapor {
   hakemToplam?: number;
   hakemNotu?: string;
   tamamlandi?: string;
+  /**
+   * Değerlendirmeyi tamamlayan hakem.
+   *
+   * NEDEN KAYITLI OLMAK ZORUNDA
+   * Bu bir karar destek sistemi ve ürettiği puan itiraza konu olabiliyor.
+   * "Bu puanı kim verdi?" sorusunun cevabı yoksa itiraz süreci
+   * yürütülemez ve sistem hesap verebilir olmaz. Yapay zekânın önerisi
+   * kayıtlı ama insanın kararı kayıtsız kalırsa, sorumluluk belirsizleşir.
+   *
+   * Kimlik doğrulama henüz yok; alan hakemin kendi beyanı. Kurum kimlik
+   * sistemine bağlandığında buraya oturum sahibi yazılacak.
+   */
+  hakemAdi?: string;
 
   /** Hakem–koordinasyon yazışması. Yarışmacıya gösterilmez. */
   mesajlar?: Mesaj[];

@@ -104,8 +104,12 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
                     </span>
                   </span>
                   <span className="text-[11.5px] font-medium text-metin-2">
-                    {rapor.tamamlandi && new Date(rapor.tamamlandi).toLocaleDateString('tr')} ·
-                    Uzman hakem tarafından değerlendirildi
+                    {rapor.tamamlandi && new Date(rapor.tamamlandi).toLocaleDateString('tr')} ·{' '}
+                    {/* Değerlendiren hakem yarışmacıya da bildiriliyor:
+                        itiraz hakkı, kararın sahibinin bilinmesini gerektirir. */}
+                    {rapor.hakemAdi
+                      ? `${rapor.hakemAdi} tarafından değerlendirildi`
+                      : 'Uzman hakem tarafından değerlendirildi'}
                   </span>
                 </div>
               </div>

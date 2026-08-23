@@ -17,7 +17,12 @@ export async function POST(request: Request, ctx: RouteContext<'/api/rapor/[id]/
   const kategori = kategoriGetir(rapor.yarismaId, rapor.kategoriId);
   if (!kategori) return Response.json({ hata: 'Kategori bulunamadı.' }, { status: 404 });
 
-  let gövde: { puanlar?: HakemPuani[]; not?: string; tamamla?: boolean };
+  let gövde: {
+    puanlar?: HakemPuani[];
+    not?: string;
+    tamamla?: boolean;
+    hakemAdi?: string;
+  };
   try {
     gövde = await request.json();
   } catch {
@@ -40,6 +45,21 @@ export async function POST(request: Request, ctx: RouteContext<'/api/rapor/[id]/
   }
 
   const tamamla = gövde.tamamla === true;
+  const hakemAdi = gövde.hakemAdi?.trim().slice(0, 80) || undefined;
+
+  /*
+   * TAMAMLAMA HAKEM ADI OLMADAN YAPILAMAZ.
+   *
+   * Puanı kimin verdiği kayıtlı değilse itiraz süreci yürütülemez. Taslak
+   * kaydetmek serbest — çalışma yarım kalabilir; ama "tamamlandı" demek
+   * sorumluluk üstlenmektir ve imzasız olamaz.
+   */
+  if (tamamla && !hakemAdi) {
+    return Response.json(
+      { hata: 'Değerlendirmeyi tamamlamak için hakem adı gerekli.' },
+      { status: 422 },
+    );
+  }
 
   if (tamamla) {
     const eksik = kategori.rubrik.kriterler.filter(
@@ -62,7 +82,9 @@ export async function POST(request: Request, ctx: RouteContext<'/api/rapor/[id]/
     await mesajEkle(id, {
       yazar: 'Sistem',
       rol: 'sistem',
-      metin: `Nihai değerlendirme tamamlandı. Toplam ${temiz.reduce((t, p) => t + p.puan, 0)}/${kategori.rubrik.toplamPuan} puan.`,
+      metin:
+        `Nihai değerlendirme tamamlandı — ${hakemAdi}. ` +
+        `Toplam ${temiz.reduce((t, p) => t + p.puan, 0)}/${kategori.rubrik.toplamPuan} puan.`,
       otomatikMi: true,
     });
   }
@@ -73,6 +95,8 @@ export async function POST(request: Request, ctx: RouteContext<'/api/rapor/[id]/
     hakemNotu: gövde.not?.slice(0, 4000),
     durum: tamamla ? 'tamamlandi' : rapor.durum,
     tamamlandi: tamamla ? new Date().toISOString() : rapor.tamamlandi,
+    // Taslak kaydında da tutuluyor: yarım kalan işin sahibi belli olsun.
+    hakemAdi: hakemAdi ?? rapor.hakemAdi,
   });
 
   return Response.json({ rapor: guncel });

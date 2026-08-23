@@ -34,10 +34,29 @@ export interface KategoriSkoru {
   eslesenTerimler: string[];
 }
 
-/** Bu oranın altında kalan en iyi eşleşme "belirsiz" sayılır. */
-const BELIRSIZLIK_ESIGI = 0.3;
-/** Beyan edilen kategori, en iyi kategoriden bu kadar geride kalırsa uyarılır. */
-const SAPMA_ESIGI = 0.15;
+/*
+ * KARARLAR ORANA DEĞİL ÜSTÜNLÜĞE BAKIYOR.
+ *
+ * İlk sürüm normalize edilmiş orana bakıyordu: "en iyi eşleşme %30'un
+ * altındaysa belirsiz". Bu ölçeğe bağımlı ve karşılaştırma kümesi
+ * büyüdüğünde bozuluyor — 4 kategoriyle çalışırken doğruydu, gerçek
+ * şartnamelerden 70 profil çıkarılınca hiçbir eşleşme %30'a ulaşamaz
+ * oldu (pay 70'e bölünüyor) ve HER rapor "belirsiz" damgası yedi.
+ *
+ * Doğru ölçüt ORAN DEĞİL ÜSTÜNLÜK: en iyi eşleşme, ikinciden belirgin
+ * biçimde önde mi? Bu ölçütün kategori sayısıyla ilgisi yok; 4 kategoride
+ * de 70 kategoride de aynı anlama gelir.
+ */
+
+/** En iyi eşleşme ikinciden bu kat kadar önde değilse karar verilmez. */
+const USTUNLUK_KATI = 1.4;
+/** Hiçbir terim eşleşmediyse karşılaştırma anlamsızdır. */
+const ASGARI_ESLESEN_TERIM = 3;
+/**
+ * Beyan edilen kategori, en iyiden bu kat kadar geride kalırsa uyarılır.
+ * Üstünlük eşiğinden yüksek: yanlış kategori suçlaması güçlü kanıt ister.
+ */
+const SAPMA_KATI = 2;
 
 /** Terimi belgede kaç kez geçtiğini sayar. Çok kelimeli ifadeleri de bulur. */
 function terimSikligi(belgeAnahtari: string, terim: string): number {
@@ -119,16 +138,25 @@ export function kategoriKontrolu(
 
   const skorlar = kategoriPuanla(belge, kategoriler);
   const enIyi = skorlar[0];
+  const ikinci = skorlar[1];
   const bulgular: Bulgu[] = [];
 
-  if (enIyi.oran < BELIRSIZLIK_ESIGI) {
+  // İkinci yoksa karşılaştıracak bir şey de yok; üstünlük sonsuz sayılır.
+  const ustunluk = ikinci?.puan ? enIyi.puan / ikinci.puan : Infinity;
+  const belirsiz =
+    enIyi.eslesenTerimler.length < ASGARI_ESLESEN_TERIM || ustunluk < USTUNLUK_KATI;
+
+  if (belirsiz) {
     bulgular.push({
       kod: 'KATEGORI_BELIRSIZ',
       seviye: 'bilgi',
-      baslik: 'Kategori güvenle belirlenemedi',
+      baslik: 'İçerik hangi yarışmaya ait, güvenle söylenemedi',
       aciklama:
-        `En yakın kategori "${enIyi.kategori.ad}" (%${Math.round(enIyi.oran * 100)}). ` +
-        'Rapor birden çok alana yayılıyor olabilir; kategori uygunluğunu hakem değerlendirmeli.',
+        `En yakın eşleşme "${enIyi.kategori.ad}"` +
+        (ikinci ? `, ikinci "${ikinci.kategori.ad}"` : '') +
+        ` — aradaki fark karar vermeye yetmiyor (${ustunluk === Infinity ? '—' : `${ustunluk.toFixed(1)}×`}). ` +
+        'Rapor birden çok alana yayılıyor ya da genel bir dil kullanıyor olabilir; ' +
+        'bu tek başına bir kusur değildir.',
     });
   }
 
@@ -136,16 +164,18 @@ export function kategoriKontrolu(
     ? skorlar.find((s) => s.kategori.kod === beyanEdilenKod)
     : undefined;
 
-  if (beyan && beyan.kategori.kod !== enIyi.kategori.kod) {
-    const fark = enIyi.oran - beyan.oran;
-    if (fark >= SAPMA_ESIGI) {
+  if (beyan && beyan.kategori.kod !== enIyi.kategori.kod && !belirsiz) {
+    // Kat cinsinden: beyan edilen kategori sıfır puan aldıysa fark sonsuz.
+    const kat = beyan.puan ? enIyi.puan / beyan.puan : Infinity;
+    if (kat >= SAPMA_KATI) {
       bulgular.push({
         kod: 'KATEGORI_UYUMSUZ',
         seviye: 'uyari',
         baslik: `İçerik "${enIyi.kategori.ad}" kategorisine daha yakın`,
         aciklama:
-          `Başvuru "${beyan.kategori.ad}" kategorisine yapılmış (%${Math.round(beyan.oran * 100)}), ` +
-          `ancak içerik "${enIyi.kategori.ad}" ile %${Math.round(enIyi.oran * 100)} örtüşüyor. ` +
+          `Rapor "${beyan.kategori.ad}" kategorisine yüklenmiş ama içeriği ` +
+          `"${enIyi.kategori.ad}" şartnamesine ${kat === Infinity ? 'çok' : `${kat.toFixed(1)}×`} ` +
+          'daha yakın. Yanlış kategoriye başvuru olabilir; hakem doğrulamalı. ' +
           `Belirleyici terimler: ${enIyi.eslesenTerimler.slice(0, 5).join(', ')}.`,
       });
     }

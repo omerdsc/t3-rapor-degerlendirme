@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "katalog": "tsx scripts/katalog-cek.ts",
-    "katalog:dogrula": "tsx scripts/katalog-dogrula.ts"
+    "katalog:dogrula": "tsx scripts/katalog-dogrula.ts",
+    "kanit": "tsx scripts/kanit-topla.ts",
+    "terim": "tsx scripts/terim-uret.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.120.0",

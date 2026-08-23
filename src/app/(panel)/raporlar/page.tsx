@@ -2,6 +2,7 @@ import Link from 'next/link';
 import RaporYukleyici from '@/components/rapor-yukleyici';
 import SecimKutusu from '@/components/secim-kutusu';
 import { DurumRozeti, KontrolNoktasi } from '@/components/rozet';
+import DisaAktarDugmesi from '@/components/disa-aktar-dugmesi';
 import RaporArama from '@/components/rapor-arama';
 import { raporlariAra } from '@/lib/depo/arama';
 import { raporlariListele, yarismalariListele } from '@/lib/depo/depo';
@@ -157,6 +158,18 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/rapo
           </div>
         )}
       </div>
+
+      {/* Sonuçları dışa aktarma: koordinasyonun sıralama listesi, üst birim
+          raporu ve itiraz dosyası buradan çıkıyor. */}
+      {yarisma && tumRaporlar.length > 0 && (
+        <div className="mb-3">
+          <DisaAktarDugmesi
+            yarismaId={yarisma.id}
+            kategoriId={kategori?.id}
+            raporSayisi={tumRaporlar.length}
+          />
+        </div>
+      )}
 
       {aramaTerimi && (
         <p className="mb-3 flex flex-wrap items-center gap-2 rounded-lg bg-mavi-zemin px-3.5 py-2.5 text-[11.5px] font-semibold text-mavi-koyu">

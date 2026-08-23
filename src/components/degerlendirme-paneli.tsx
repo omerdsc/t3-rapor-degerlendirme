@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { Rubrik } from '@/lib/analiz/sablon-cikar';
 import type { Rapor } from '@/lib/depo/tipler';
 import type { Guven } from '@/lib/ai/degerlendirme';
@@ -57,11 +57,30 @@ export default function DegerlendirmePaneli({
   });
 
   const [genelNot, setGenelNot] = useState(rapor.hakemNotu ?? '');
+  /*
+   * Hakem adı tarayıcıda hatırlanıyor.
+   *
+   * Kimlik doğrulama henüz yok; hakemin her raporda adını yeniden yazması
+   * hem yorucu hem hataya açık (biri "Ahmet Y.", öteki "ahmet yılmaz"
+   * yazarsa kayıtlar ayrışır). Oturum açma geldiğinde bu alan kalkacak ve
+   * yerine oturum sahibi yazılacak.
+   */
+  const [hakemAdi, setHakemAdi] = useState('');
   const [calisiyor, setCalisiyor] = useState<'ai' | 'kaydet' | 'tamamla' | null>(null);
   const [mesaj, setMesaj] = useState<{ tur: 'hata' | 'bilgi'; metin: string } | null>(null);
 
   const ai = rapor.aiDegerlendirme;
   const tamamlandi = rapor.durum === 'tamamlandi';
+
+  // Daha önce girilen ad hatırlanıyor; her raporda yeniden yazılmasın.
+  useEffect(() => {
+    try {
+      const kayitli = localStorage.getItem('hakemAdi');
+      if (kayitli) setHakemAdi(kayitli);
+    } catch {
+      // Gizli sekmede localStorage erişimi hata verebilir; ad boş kalır.
+    }
+  }, []);
 
   const hakemToplam = useMemo(
     () => Object.values(puanlar).reduce((t, v) => t + (Number(v) || 0), 0),
@@ -104,6 +123,7 @@ export default function DegerlendirmePaneli({
         })),
       not: genelNot,
       tamamla,
+      hakemAdi,
     };
 
     try {
@@ -373,9 +393,31 @@ export default function DegerlendirmePaneli({
             >
               {calisiyor === 'kaydet' ? 'Kaydediliyor…' : 'Taslak kaydet'}
             </button>
+            {/* Tamamlama imza gerektiriyor: puanı kimin verdiği kayıtlı
+                olmadan itiraz süreci yürütülemez. */}
+            {!tamamlandi && (
+              <input
+                value={hakemAdi}
+                onChange={(e) => {
+                  setHakemAdi(e.target.value);
+                  try {
+                    localStorage.setItem('hakemAdi', e.target.value);
+                  } catch {
+                    // Yazılamazsa yalnızca hatırlama kaybolur, işlem sürer.
+                  }
+                }}
+                placeholder="Hakem adınız (tamamlamak için gerekli)"
+                className="min-w-[220px] flex-1 rounded-lg border border-cizgi bg-white px-3 py-2.5 text-[12.5px] font-medium outline-none focus:border-metin-3"
+              />
+            )}
             <button
               type="button"
-              disabled={calisiyor !== null || tamamlandi || doldurulan < rubrik.kriterler.length}
+              disabled={
+                calisiyor !== null ||
+                tamamlandi ||
+                doldurulan < rubrik.kriterler.length ||
+                hakemAdi.trim().length < 3
+              }
               onClick={() => kaydet(true)}
               className="cursor-pointer rounded-lg bg-kirmizi px-5 py-2.5 text-[12.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
             >
