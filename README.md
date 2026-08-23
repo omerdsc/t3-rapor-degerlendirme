@@ -173,6 +173,7 @@ src/app/            Panel · Raporlar · Kopya Kontrolü · Yarışmalar · Yar�
 ## Doğrulama
 
 ```bash
+npm test                                # 49 birim testi, ~0,5 sn
 npx tsx scripts/kanit-topla.ts          # ölçülmüş durum tablosu
 npx tsx scripts/ornek-rapor-uret.ts     # 7 sentetik fikstür (her biri bir kusur)
 npx tsx scripts/analiz-et.ts            # hepsini analiz et
@@ -184,6 +185,20 @@ npm run katalog:dogrula                 # 81 şablonu indirip çözümle
 
 Test korpusundaki üç kurgu vaka — görsel kopya, kısmi metin kopyası, aynı
 takımın devam projesi — üçü de doğru sınıflandırıldı.
+
+Birim testleri yazılırken **iki gerçek hata** ortaya çıktı ve düzeltildi:
+
+1. **Bölümleri ayrıştırılamayan rapor kopya taramasından sessizce
+   düşüyordu.** `ozgunMetin()` yalnızca tanınan bölümler üzerinden
+   çalışıyordu; başlıkları okunamayan raporda parmak izi boş kalıyor, ama
+   "parmak izi var" sayıldığı için uyarı da verilmiyordu. Şablona uymayan
+   rapor tam da kontrole en çok ihtiyaç duyulan rapor olabilir. Artık tam
+   metne düşülüyor.
+
+2. **cp1254 metin onarımı hiç çalışmıyordu.** Koruma koşulu ç/ö/ü'yü
+   "belge düzgün okunmuş" kanıtı sayıyordu; oysa bu harfler iki kod
+   sayfasında aynı bayta düşüyor ve bozulmadan geçiyor. "Ýçindekiler" hem
+   bozuk Ý hem sağlam ç taşıdığı için onarım devreye girmiyordu.
 
 ---
 

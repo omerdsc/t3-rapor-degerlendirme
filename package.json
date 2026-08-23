@@ -10,7 +10,8 @@
     "katalog": "tsx scripts/katalog-cek.ts",
     "katalog:dogrula": "tsx scripts/katalog-dogrula.ts",
     "kanit": "tsx scripts/kanit-topla.ts",
-    "terim": "tsx scripts/terim-uret.ts"
+    "terim": "tsx scripts/terim-uret.ts",
+    "test": "tsx --test \"src/**/*.test.ts\""
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.120.0",

@@ -110,12 +110,41 @@ function kumeJaccard(a: Set<number>, b: Set<number>): number {
 // ------------------------------------------------------------ metin hazırlığı
 
 /** Türkçe cümle bölme. Ondalık sayı ve "Şekil 3.1" gibi kalıpları bölmez. */
+/**
+ * Cümle sonu sanılan kısaltmalar.
+ *
+ * "Dr. Ahmet Yılmaz bir çalışma yaptı." metni "Dr." ile "Ahmet…" diye
+ * ikiye bölünüyordu; "Dr." parçası kısalık süzgecine takılıp düşüyor ve
+ * cümlenin başı kayboluyordu. Kaynakçalarda ve yazar adlarında sık.
+ *
+ * Karşılaştırmaya etkisi sınırlı (iki belge de aynı biçimde bölünür) ama
+ * hakeme gösterilen eşleşen cümle yarım görünüyordu.
+ */
+const KISALTMALAR = [
+  'dr', 'doç', 'prof', 'öğr', 'gör', 'arş', 'yrd', 'av', 'sn',
+  'vb', 'vs', 'bkz', 'şek', 'tab', 'no', 'nu', 'sf', 'çev', 'ed',
+];
+
 export function cumlelereBol(metin: string): string[] {
-  return metin
-    .replace(/\n+/g, ' ')
-    .split(/(?<=[.!?])\s+(?=[A-ZÇĞİÖŞÜ])/)
-    .map((c) => c.trim())
-    .filter((c) => c.length > 20);
+  const duz = metin.replace(/\n+/g, ' ');
+  const parcalar: string[] = [];
+  let son = 0;
+
+  // Bölme noktaları elle geziliyor: kısaltma denetimi lookbehind ile
+  // yapılamıyor (değişken uzunluklu geriye bakış gerekirdi).
+  for (const m of duz.matchAll(/([.!?])\s+(?=[A-ZÇĞİÖŞÜ])/g)) {
+    const nokta = m.index ?? 0;
+    // Noktadan önceki sözcük bir kısaltma mı?
+    const onceki = duz.slice(Math.max(0, nokta - 12), nokta);
+    const sozcuk = /([\p{L}]+)$/u.exec(onceki)?.[1] ?? '';
+    if (KISALTMALAR.includes(sozcuk.toLocaleLowerCase('tr'))) continue;
+
+    parcalar.push(duz.slice(son, nokta + 1));
+    son = nokta + m[0].length;
+  }
+  parcalar.push(duz.slice(son));
+
+  return parcalar.map((c) => c.trim()).filter((c) => c.length > 20);
 }
 
 function shinglele(cumle: string): Set<number> {
@@ -151,6 +180,35 @@ export function ozgunMetin(belge: Belge, sablon?: Sablon): string {
       parcalar.push(s);
     }
   }
+
+  /*
+   * BÖLÜM YAPISI ÇIKMADIYSA TAM METNE DÜŞÜLÜYOR.
+   *
+   * Bu bir konfor değil, ZORUNLULUK. Fonksiyon yalnızca `belge.bolumler`
+   * üzerinden çalışıyordu; başlıkları tanınamayan bir raporda bolumler boş
+   * kalıyor ve parmak izi BOŞ çıkıyordu. Sonuç: o rapor kopya taramasında
+   * hiçbir şeyle eşleşmiyor, ama "parmak izi var" sayıldığı için uyarı da
+   * verilmiyordu — sessiz bir kör nokta. Testle yakalandı.
+   *
+   * Şablona uymayan rapor, kopya kontrolüne en çok ihtiyaç duyulan rapor
+   * olabilir; tam orada kör kalmak kabul edilemez. Aynı ilke yapay zekâ
+   * değerlendirmesinde de uygulanıyor (ai/degerlendirme.ts · raporMetni).
+   *
+   * Bölüm yapısı çalışıyorsa ona dokunulmuyor: onun temizliği (kaynakça ve
+   * şablon yönergesi elemesi) daha iyi sonuç veriyor.
+   */
+  if (parcalar.length < 3) {
+    const yedek: string[] = [];
+    for (const satir of belge.satirlar) {
+      if (satir.yinelenen) continue;
+      const s = satir.metin.trim();
+      if (s.length < 12) continue;
+      if (yonergeler.some((y) => metinBenzerligi(s, y) >= 0.8)) continue;
+      yedek.push(s);
+    }
+    if (yedek.length > parcalar.length) return yedek.join('\n');
+  }
+
   return parcalar.join('\n');
 }
 

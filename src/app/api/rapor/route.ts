@@ -135,10 +135,30 @@ export async function POST(request: Request) {
    */
   // Ad `kimlik` DEĞİL: depodaki kimlik() üreticisiyle çakışıyor.
   const kapakKimligi = sonuc.belge ? kimlikCikar(sonuc.belge) : undefined;
-  const basvuruNo = alan('basvuruNo') || `TF-${id.slice(0, 8).toUpperCase()}`;
-  const takim = alan('takim') || 'Belirtilmemiş';
-  const takimId = alan('takimId') || id.slice(0, 8);
-  const proje = alan('proje') || dosya.name.replace(/\.(pdf|docx)$/i, '');
+
+  /*
+   * KİMLİK ÜÇ KAYNAKTAN, BU SIRAYLA: form → rapor kapağı → yer tutucu.
+   *
+   * Toplu yükleme için kritik. Koordinasyon 100 raporu sürükleyip
+   * bıraktığında form alanı doldurmuyor; eskiden hepsi "Belirtilmemiş"
+   * takımıyla kaydediliyordu ve raporlar birbirinden ayırt edilemiyordu.
+   * Artık kapaktaki künye okunup kullanılıyor — şablonun kapağını bozmamış
+   * raporlarda elle veri girişi hiç gerekmiyor.
+   *
+   * Form değeri KAPAĞI EZER: koordinasyon bilerek bir değer girdiyse,
+   * belgedeki yazım hatası onu geçersiz kılmamalı.
+   */
+  const formBasvuru = alan('basvuruNo');
+  const formTakim = alan('takim');
+  const formTakimId = alan('takimId');
+  const formProje = alan('proje');
+
+  const basvuruNo =
+    formBasvuru || kapakKimligi?.basvuruId || `TF-${id.slice(0, 8).toUpperCase()}`;
+  const takim = formTakim || kapakKimligi?.takimAdi || 'Belirtilmemiş';
+  const takimId = formTakimId || kapakKimligi?.takimId || id.slice(0, 8);
+  const proje =
+    formProje || kapakKimligi?.projeAdi || dosya.name.replace(/\.(pdf|docx)$/i, '');
 
   const rapor: Rapor = {
     id,
@@ -150,8 +170,18 @@ export async function POST(request: Request) {
     takimId,
     proje,
     raporKimligi: kapakKimligi,
+    /*
+     * Uyuşmazlık YALNIZCA formda girilen değerlere karşı ölçülüyor.
+     * Değer zaten kapaktan alındıysa karşılaştırma kendi kendisiyle olur
+     * ve her zaman "uyumlu" çıkar — anlamsız bir onay üretirdi.
+     */
     kimlikUyusmazligi: kapakKimligi
-      ? kimlikKarsilastir(kapakKimligi, { takim, takimId, basvuruNo, proje })
+      ? kimlikKarsilastir(kapakKimligi, {
+          takim: formTakim,
+          takimId: formTakimId,
+          basvuruNo: formBasvuru,
+          proje: formProje,
+        })
       : undefined,
     icerikKategoriKodu: alan('icerikKategori'),
     yuklendi: new Date().toISOString(),

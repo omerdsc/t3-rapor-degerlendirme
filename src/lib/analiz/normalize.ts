@@ -16,6 +16,41 @@ const MOJIBAKE: Array<[RegExp, string]> = [
   [/Ã¶/g, 'ö'], [/Ã–/g, 'Ö'], [/Ã¼/g, 'ü'], [/Ãœ/g, 'Ü'],
 ];
 
+/**
+ * Türkçe (cp1254) metnin Batı Avrupa (cp1252) olarak okunmasından doğan
+ * bozulmalar. İki kod sayfası altı baytta ayrışıyor:
+ *
+ *     0xDD  İ ↔ Ý      0xFD  ı ↔ ý
+ *     0xDE  Ş ↔ Þ      0xFE  ş ↔ þ
+ *     0xD0  Ğ ↔ Ð      0xF0  ğ ↔ ð
+ *
+ * Eski PDF üreticilerinde görülüyor. MOJIBAKE listesinden ayrı tutuluyor
+ * çünkü KOŞULLU uygulanıyor: þ, ð, ý İzlandaca'da gerçek harfler. Bir
+ * künyede "Þórsson" geçiyorsa onu "Şórsson" yapmak yeni bir bozulma olur.
+ *
+ * Koşul: belgede DÜZGÜN Türkçe karakter hiç yoksa ama bu karakterler
+ * varsa, metin yanlış kod sayfasıyla okunmuş demektir. Türkçe bir raporda
+ * tek bir ş/ğ/ı bile yoksa ve bolca þ/ð/ý varsa, başka açıklaması yok.
+ */
+const CP1254: Array<[RegExp, string]> = [
+  [/Ý/g, 'İ'], [/ý/g, 'ı'], [/Þ/g, 'Ş'],
+  [/þ/g, 'ş'], [/Ð/g, 'Ğ'], [/ð/g, 'ğ'],
+];
+
+/*
+ * Koşulda YALNIZCA kod sayfaları arasında FARKLI olan harfler var.
+ *
+ * ç, ö, ü ve büyükleri cp1254 ile cp1252'de AYNI bayta düşüyor; yanlış
+ * çözümlemede bozulmadan geçiyorlar. Onları "belge düzgün okunmuş"
+ * kanıtı saymak hatalıydı: "Ýçindekiler" hem bozuk Ý hem sağlam ç
+ * taşıyor ve ilk sürüm bu yüzden onarımı hiç çalıştırmıyordu.
+ *
+ * Bozulmaya uğrayan harfler ş, ğ, ı, İ, Ş, Ğ. Bunlardan biri düzgün
+ * görünüyorsa belge doğru kod sayfasıyla okunmuş demektir.
+ */
+const DUZGUN_TURKCE = /[şğıİŞĞ]/;
+const CP1254_IZI = /[ÝýÞþÐð]/;
+
 /** Ligatürler ve tipografik karakterler. */
 const LIGATUR: Array<[RegExp, string]> = [
   [/ﬀ/g, 'ff'], [/ﬁ/g, 'fi'], [/ﬂ/g, 'fl'],
@@ -43,6 +78,16 @@ const AYRIK_AKSAN: Array<[RegExp, string]> = [
 export function onar(ham: string): string {
   let s = ham;
   for (const [d, y] of MOJIBAKE) s = s.replace(d, y);
+
+  /*
+   * cp1254 onarımı KOŞULLU: yalnızca metinde hiç düzgün Türkçe karakter
+   * yokken uygulanıyor. Düzgün karakter varsa belge doğru okunmuş
+   * demektir ve þ/ð/ý gerçek harflerdir (İzlandaca künye olabilir).
+   */
+  if (CP1254_IZI.test(s) && !DUZGUN_TURKCE.test(s)) {
+    for (const [d, y] of CP1254) s = s.replace(d, y);
+  }
+
   for (const [d, y] of LIGATUR) s = s.replace(d, y);
   s = s.normalize('NFC');
   for (const [d, y] of AYRIK_AKSAN) s = s.replace(d, y);
