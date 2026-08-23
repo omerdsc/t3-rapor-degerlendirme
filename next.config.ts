@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // pdf.js kendi worker/eval kurgusuyla geliyor; bundle'a girerse bozuluyor.
+  // Sunucu tarafında Node tarafından doğrudan yüklensin.
+  serverExternalPackages: ["unpdf"],
 };
 
 export default nextConfig;

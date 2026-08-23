@@ -1,0 +1,52 @@
+[
+  {
+    "dosya": "K01-ot-robotu.pdf",
+    "takim": "Takım Anadolu",
+    "takimId": "anadolu",
+    "proje": "Otonom Yabancı Ot Temizleme Robotu",
+    "kategori": "tarim",
+    "yil": 2026,
+    "gorsel": "A",
+    "aciklama": "Referans rapor"
+  },
+  {
+    "dosya": "K02-sera-iklim.pdf",
+    "takim": "Takım Harran",
+    "takimId": "harran",
+    "proje": "Sera İklim Denetim Sistemi",
+    "kategori": "tarim",
+    "yil": 2026,
+    "gorsel": "B",
+    "aciklama": "Bağımsız rapor — hiçbir eşleşme beklenmiyor (yanlış pozitif kontrolü)"
+  },
+  {
+    "dosya": "K03-ilaclama-dronu.pdf",
+    "takim": "Takım Zap",
+    "takimId": "zap",
+    "proje": "Bağ ve Bahçe İlaçlama Dronu",
+    "kategori": "tarim",
+    "yil": 2026,
+    "gorsel": "A",
+    "aciklama": "K01 ile AYNI ŞEKİL, tamamen farklı metin → BENZERLIK_GORSEL"
+  },
+  {
+    "dosya": "K04-nem-agi.pdf",
+    "takim": "Takım Botan",
+    "takimId": "botan",
+    "proje": "Toprak Nem Sensör Ağı",
+    "kategori": "tarim",
+    "yil": 2026,
+    "gorsel": "C",
+    "aciklama": "K01'in Çözüm + Yöntem bölümleri birebir → BENZERLIK_METIN"
+  },
+  {
+    "dosya": "K05-ot-robotu-faz2.pdf",
+    "takim": "Takım Anadolu",
+    "takimId": "anadolu",
+    "proje": "Otonom Yabancı Ot Temizleme Robotu — Faz 2",
+    "kategori": "tarim",
+    "yil": 2026,
+    "gorsel": "D",
+    "aciklama": "K01 ile aynı takım → BENZERLIK_DEVAM_PROJESI (intihal değil)"
+  }
+]

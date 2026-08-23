@@ -1,0 +1,62 @@
+{
+  "artboards": [
+    { "file": "Yarisma-Kurulumu.dc.html", "title": "Akış 01 · Yarışma Yöneticisi", "x": 0, "y": 0, "w": 1440, "h": 980 },
+    { "file": "Rapor-Listesi.dc.html", "title": "Akış 02a · Hakem — Rapor Listesi", "x": 1560, "y": 0, "w": 1440, "h": 920 },
+    { "file": "Main.dc.html", "title": "Akış 02b · Hakem — Değerlendirme Ekranı", "x": 3120, "y": 0, "w": 1440, "h": 1100 },
+    { "file": "Benzerlik-Detayi.dc.html", "title": "Benzerlik Karşılaştırması", "x": 0, "y": 1320, "w": 1440, "h": 900 },
+    { "file": "Yarismaci-Geri-Bildirim.dc.html", "title": "Akış 03 · Yarışmacı Geri Bildirimi", "x": 1560, "y": 1320, "w": 1440, "h": 1000 },
+    { "file": "Yonetim-Panosu.dc.html", "title": "Değerlendirme Yöneticisi Panosu", "x": 3120, "y": 1320, "w": 1440, "h": 980 }
+  ],
+  "annotations": [
+    {
+      "id": "baslik",
+      "x": 0,
+      "y": -390,
+      "w": 900,
+      "text": "4. GÖZ — TEKNOFEST Yapay Zekâ Destekli Değerlendirme Sistemi\nT3 Vakfı Bursiyer YZ Creathonu · Problem 4\n\nTasarım dili T3 KYS / BGYS panellerinden alındı: koyu lacivert sidebar, kırmızı birincil renk, beyaz kartlar, renkli durum çipleri.\nHer ekran brifteki bir akışa veya zorunlu MVP maddesine karşılık gelir."
+    },
+    {
+      "id": "not-kurulum",
+      "x": 0,
+      "y": -160,
+      "w": 420,
+      "text": "AKIŞ 01 — Yarışma Yöneticisi\nMVP 1-2 şablon tanımı · MVP 4 kategori tanımı · rubrik ve rapor aktarımı.\nŞablonun yönerge metni ayrıca saklanıyor — \"doldurulmamış bölüm\" tespiti buna dayanıyor."
+    },
+    {
+      "id": "not-liste",
+      "x": 1560,
+      "y": -160,
+      "w": 420,
+      "text": "AKIŞ 02a — Hakem, rapor listesi\nAltı zorunlu kontrol her satırda rozet olarak: dil · şablon · başlık · kategori · benzerlik · 4. Göz.\nHakem hangi rapora öncelik vereceğini listeden görüyor."
+    },
+    {
+      "id": "not-ana",
+      "x": 3120,
+      "y": -160,
+      "w": 440,
+      "text": "AKIŞ 02b — ANA EKRAN\nMVP 6: kriter değerlendirmesi. Her puan sayfa numarasıyla kanıta bağlı, her kriterin güven seviyesi var.\nDüşük güvende sistem puan önermek yerine \"hakem incelesin\" diyor. Nihai puanı hakem giriyor."
+    },
+    {
+      "id": "not-benzerlik",
+      "x": 0,
+      "y": 1170,
+      "w": 420,
+      "text": "MVP 5 — Benzerlik analizi\nMetin farklı yazılıp aynı şekil kullanıldığında pHash yakalıyor.\nKarşılaştırma öncesi şablon metni, başlıklar, header/footer ve kaynakça çıkarılıyor — yoksa tüm raporlar benzer çıkardı."
+    },
+    {
+      "id": "not-yarismaci",
+      "x": 1560,
+      "y": 1170,
+      "w": 420,
+      "text": "AKIŞ 03 — Yarışmacı\nGüçlü yönler, gelişime açık alanlar ve öncelik sırasına konmuş öneriler.\nYarışmacı AI puanını değil, hakemin nihai kararını görüyor."
+    },
+    {
+      "id": "not-yonetim",
+      "x": 3120,
+      "y": 1170,
+      "w": 440,
+      "text": "Değerlendirme Yöneticisi\nAnaliz kuyruğu, tamamlanma oranı, kalibrasyon (AI–hakem sapması) ve rapor başına işletme maliyeti."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}

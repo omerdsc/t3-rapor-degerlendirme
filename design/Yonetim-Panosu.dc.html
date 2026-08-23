@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#F5F6F8;color:#1A2332;-webkit-font-smoothing:antialiased}
+    a{color:#D42027;text-decoration:none}
+    a:hover{color:#A5171D}
+  </style>
+</helmet>
+
+<div style="display:flex;width:1440px;height:980px;background:#F5F6F8">
+
+  <!-- SIDEBAR -->
+  <div style="width:248px;flex-shrink:0;background:#16202E;display:flex;flex-direction:column">
+    <div style="padding:22px 20px 18px;display:flex;align-items:center;gap:11px;border-bottom:1px solid #253346">
+      <div style="width:34px;height:34px;border-radius:8px;background:#D42027;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <div>
+        <div style="color:#fff;font-size:15px;font-weight:800;letter-spacing:-0.2px;line-height:1.1">4. GÖZ</div>
+        <div style="color:#7C8CA1;font-size:8.5px;font-weight:600;letter-spacing:0.5px;margin-top:2px">DEĞERLENDİRME SİSTEMİ</div>
+      </div>
+    </div>
+
+    <div style="padding:14px 12px;display:flex;flex-direction:column;gap:2px;flex-grow:1">
+      <div style="color:#5B6C82;font-size:9.5px;font-weight:700;letter-spacing:0.8px;padding:8px 10px 6px">DEĞERLENDİRME</div>
+
+      <div style="display:flex;align-items:center;gap:11px;padding:10px;border-radius:8px;background:#D42027;color:#fff;font-size:13px;font-weight:600">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        Ana Sayfa
+      </div>
+
+      <div style="display:flex;align-items:center;gap:11px;padding:10px;border-radius:8px;color:#9AA9BC;font-size:13px;font-weight:500">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
+        Raporlar
+        <span style="margin-left:auto;background:#243347;color:#9AA9BC;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:20px">248</span>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:11px;padding:10px;border-radius:8px;color:#9AA9BC;font-size:13px;font-weight:500">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+        Değerlendirmelerim
+      </div>
+
+      <div style="display:flex;align-items:center;gap:11px;padding:10px;border-radius:8px;color:#9AA9BC;font-size:13px;font-weight:500">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M4 16V5a1 1 0 0 1 1-1h11"/></svg>
+        Benzerlik Analizi
+        <span style="margin-left:auto;background:#3A2A2C;color:#F08A8F;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:20px">14</span>
+      </div>
+
+      <div style="color:#5B6C82;font-size:9.5px;font-weight:700;letter-spacing:0.8px;padding:16px 10px 6px">YÖNETİM</div>
+
+      <div style="display:flex;align-items:center;gap:11px;padding:10px;border-radius:8px;color:#9AA9BC;font-size:13px;font-weight:500">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m7 15 4-4 4 4 5-5"/></svg>
+        Kalibrasyon
+      </div>
+
+      <div style="display:flex;align-items:center;gap:11px;padding:10px;border-radius:8px;color:#9AA9BC;font-size:13px;font-weight:500">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12.2 2h-.4a2 2 0 0 0-2 2v.2a2 2 0 0 1-1 1.7l-.4.2a2 2 0 0 1-2 0l-.2-.1a2 2 0 0 0-2.7.7l-.2.4a2 2 0 0 0 .7 2.7l.2.1a2 2 0 0 1 1 1.7v.5a2 2 0 0 1-1 1.7l-.2.1a2 2 0 0 0-.7 2.7l.2.4a2 2 0 0 0 2.7.7l.2-.1a2 2 0 0 1 2 0l.4.2a2 2 0 0 1 1 1.7v.2a2 2 0 0 0 2 2h.4a2 2 0 0 0 2-2v-.2a2 2 0 0 1 1-1.7l.4-.2a2 2 0 0 1 2 0l.2.1a2 2 0 0 0 2.7-.7l.2-.4a2 2 0 0 0-.7-2.7l-.2-.1a2 2 0 0 1-1-1.7v-.5a2 2 0 0 1 1-1.7l.2-.1a2 2 0 0 0 .7-2.7l-.2-.4a2 2 0 0 0-2.7-.7l-.2.1a2 2 0 0 1-2 0l-.4-.2a2 2 0 0 1-1-1.7V4a2 2 0 0 0-2-2Z"/><circle cx="12" cy="12" r="3"/></svg>
+        Yarışma Yönetimi
+      </div>
+    </div>
+
+    <div style="padding:14px;border-top:1px solid #253346;display:flex;align-items:center;gap:11px">
+      <div style="width:34px;height:34px;border-radius:50%;background:#D42027;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0">Ö</div>
+      <div style="flex-grow:1;min-width:0">
+        <div style="color:#fff;font-size:12.5px;font-weight:600">Ömer Daşçı</div>
+        <div style="color:#7C8CA1;font-size:10.5px;font-weight:500">Değerlendirme Yöneticisi</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B6C82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/></svg>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div style="flex-grow:1;padding:24px 28px;display:flex;flex-direction:column;gap:18px;min-width:0;overflow:hidden">
+
+    <!-- Kırmızı banner -->
+    <div style="background:linear-gradient(100deg,#C41B22 0%,#D42027 55%,#E23A41 100%);border-radius:14px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <div style="color:#fff;font-size:23px;font-weight:800;letter-spacing:-0.4px">Merhaba, ÖMER</div>
+        <div style="color:rgba(255,255,255,.82);font-size:13px;font-weight:500;margin-top:4px">23 Ağustos 2026 · TEKNOFEST 2026 değerlendirme dönemi</div>
+      </div>
+      <div style="display:flex;gap:26px;align-items:center">
+        <div style="text-align:right">
+          <div style="color:rgba(255,255,255,.7);font-size:10.5px;font-weight:700;letter-spacing:0.5px">TOPLAM BAŞVURU</div>
+          <div style="color:#fff;font-size:26px;font-weight:800;line-height:1.1">248</div>
+        </div>
+        <div style="width:1px;height:44px;background:rgba(255,255,255,.25)"></div>
+        <div style="text-align:right">
+          <div style="color:rgba(255,255,255,.7);font-size:10.5px;font-weight:700;letter-spacing:0.5px">TAMAMLANMA</div>
+          <div style="color:#fff;font-size:26px;font-weight:800;line-height:1.1">%74</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat tiles -->
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px">
+
+      <div style="background:#fff;border:1px solid #E6E8EC;border-radius:12px;padding:17px 18px;display:flex;align-items:center;gap:14px">
+        <div style="width:42px;height:42px;border-radius:11px;background:#FDF3E2;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D98A15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div>
+          <div style="font-size:26px;font-weight:800;line-height:1.05">42</div>
+          <div style="display:inline-block;background:#FDF3E2;color:#A9690B;font-size:9.5px;font-weight:700;padding:2.5px 7px;border-radius:4px;letter-spacing:0.4px;margin-top:4px">BEKLEYEN</div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #E6E8EC;border-radius:12px;padding:17px 18px;display:flex;align-items:center;gap:14px">
+        <div style="width:42px;height:42px;border-radius:11px;background:#E8F0F9;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.2-8.6"/></svg>
+        </div>
+        <div>
+          <div style="font-size:26px;font-weight:800;line-height:1.05">23</div>
+          <div style="display:inline-block;background:#E8F0F9;color:#1E4E7E;font-size:9.5px;font-weight:700;padding:2.5px 7px;border-radius:4px;letter-spacing:0.4px;margin-top:4px">ANALİZ EDİLİYOR</div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #E6E8EC;border-radius:12px;padding:17px 18px;display:flex;align-items:center;gap:14px">
+        <div style="width:42px;height:42px;border-radius:11px;background:#E6F6EF;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.8 10A10 10 0 1 1 17 3.3"/><path d="m9 11 3 3L22 4"/></svg>
+        </div>
+        <div>
+          <div style="font-size:26px;font-weight:800;line-height:1.05">183</div>
+          <div style="display:inline-block;background:#E6F6EF;color:#137A50;font-size:9.5px;font-weight:700;padding:2.5px 7px;border-radius:4px;letter-spacing:0.4px;margin-top:4px">TAMAMLANAN</div>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #E6E8EC;border-radius:12px;padding:17px 18px;display:flex;align-items:center;gap:14px">
+        <div style="width:42px;height:42px;border-radius:11px;background:#FDECEC;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D42027" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V4s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg>
+        </div>
+        <div>
+          <div style="font-size:26px;font-weight:800;line-height:1.05">14</div>
+          <div style="display:inline-block;background:#FDECEC;color:#B01B21;font-size:9.5px;font-weight:700;padding:2.5px 7px;border-radius:4px;letter-spacing:0.4px;margin-top:4px">BENZERLİK BAYRAĞI</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alt bölüm -->
+    <div style="display:grid;grid-template-columns:1.35fr 1fr;gap:18px;flex-grow:1;min-height:0">
+
+      <!-- Sol: Analiz kuyruğu -->
+      <div style="background:#fff;border:1px solid #E6E8EC;border-radius:12px;display:flex;flex-direction:column;overflow:hidden">
+        <div style="padding:16px 20px;border-bottom:1px solid #EEF0F3;display:flex;align-items:center;gap:10px">
+          <div style="width:3px;height:17px;background:#D42027;border-radius:2px"></div>
+          <span style="font-size:14.5px;font-weight:700">Analiz Kuyruğu</span>
+          <span style="background:#FDECEC;color:#D42027;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:20px">23</span>
+          <span style="margin-left:auto;color:#64748B;font-size:11.5px;font-weight:600">Ortalama 51 sn/rapor</span>
+        </div>
+
+        <div style="padding:6px 20px 16px;display:flex;flex-direction:column">
+
+          <div style="padding:13px 0;border-bottom:1px solid #F4F6F8">
+            <div style="display:flex;align-items:center;gap:11px;margin-bottom:8px">
+              <span style="font-size:12.5px;font-weight:700">TF-2026-04903</span>
+              <span style="color:#64748B;font-size:12px;font-weight:500;flex-grow:1">Sera İklim Kontrol Sistemi · Takım Harran</span>
+              <span style="color:#2563A8;font-size:11.5px;font-weight:700">Kriter analizi</span>
+            </div>
+            <div style="display:flex;gap:5px;align-items:center">
+              <div style="height:5px;flex-grow:1;background:#1E9E6A;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#1E9E6A;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#1E9E6A;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#1E9E6A;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#1E9E6A;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#BFD6EC;border-radius:3px"></div>
+              <span style="font-size:11px;color:#64748B;font-weight:700;width:38px;text-align:right">5/6</span>
+            </div>
+          </div>
+
+          <div style="padding:13px 0;border-bottom:1px solid #F4F6F8">
+            <div style="display:flex;align-items:center;gap:11px;margin-bottom:8px">
+              <span style="font-size:12.5px;font-weight:700">TF-2026-04912</span>
+              <span style="color:#64748B;font-size:12px;font-weight:500;flex-grow:1">İHA Tabanlı Tarla Haritalama · Takım Fırat</span>
+              <span style="color:#2563A8;font-size:11.5px;font-weight:700">Benzerlik</span>
+            </div>
+            <div style="display:flex;gap:5px;align-items:center">
+              <div style="height:5px;flex-grow:1;background:#1E9E6A;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#1E9E6A;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#1E9E6A;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#BFD6EC;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#EDF0F3;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#EDF0F3;border-radius:3px"></div>
+              <span style="font-size:11px;color:#64748B;font-weight:700;width:38px;text-align:right">3/6</span>
+            </div>
+          </div>
+
+          <div style="padding:13px 0;border-bottom:1px solid #F4F6F8">
+            <div style="display:flex;align-items:center;gap:11px;margin-bottom:8px">
+              <span style="font-size:12.5px;font-weight:700">TF-2026-04918</span>
+              <span style="color:#64748B;font-size:12px;font-weight:500;flex-grow:1">Damla Sulama Optimizasyonu · Takım Ceylanpınar</span>
+              <span style="color:#D98A15;font-size:11.5px;font-weight:700">Şekil çıkarma</span>
+            </div>
+            <div style="display:flex;gap:5px;align-items:center">
+              <div style="height:5px;flex-grow:1;background:#1E9E6A;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#1E9E6A;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#BFD6EC;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#EDF0F3;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#EDF0F3;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#EDF0F3;border-radius:3px"></div>
+              <span style="font-size:11px;color:#64748B;font-weight:700;width:38px;text-align:right">2/6</span>
+            </div>
+          </div>
+
+          <div style="padding:13px 0">
+            <div style="display:flex;align-items:center;gap:11px;margin-bottom:8px">
+              <span style="font-size:12.5px;font-weight:700">TF-2026-04920</span>
+              <span style="color:#64748B;font-size:12px;font-weight:500;flex-grow:1">Toprak Nem Sensör Ağı · Takım Dicle</span>
+              <span style="background:#FDECEC;color:#B01B21;font-size:10px;font-weight:700;padding:2.5px 7px;border-radius:4px">TARANMIŞ PDF</span>
+            </div>
+            <div style="display:flex;gap:5px;align-items:center">
+              <div style="height:5px;flex-grow:1;background:#1E9E6A;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#E8B923;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#EDF0F3;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#EDF0F3;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#EDF0F3;border-radius:3px"></div>
+              <div style="height:5px;flex-grow:1;background:#EDF0F3;border-radius:3px"></div>
+              <span style="font-size:11px;color:#64748B;font-weight:700;width:38px;text-align:right">1/6</span>
+            </div>
+          </div>
+
+          <div style="padding-top:13px;border-top:1px solid #EEF0F3">
+            <span style="color:#D42027;font-size:12.5px;font-weight:700">Tüm kuyruğu gör →</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sağ sütun -->
+      <div style="display:flex;flex-direction:column;gap:18px;min-height:0">
+
+        <!-- Kalibrasyon -->
+        <div style="background:#fff;border:1px solid #E6E8EC;border-radius:12px;padding:17px 20px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+            <div style="width:3px;height:17px;background:#D42027;border-radius:2px"></div>
+            <span style="font-size:14.5px;font-weight:700">Kalibrasyon</span>
+            <span style="margin-left:auto;color:#64748B;font-size:11px;font-weight:600">Son 183 değerlendirme</span>
+          </div>
+
+          <div style="display:flex;align-items:flex-end;gap:18px;margin-bottom:14px">
+            <div>
+              <div style="font-size:29px;font-weight:800;line-height:1;color:#137A50">±4,1</div>
+              <div style="font-size:10.5px;color:#64748B;font-weight:600;margin-top:5px">AI–hakem ortalama sapma</div>
+            </div>
+            <div style="flex-grow:1">
+              <div style="display:flex;align-items:flex-end;gap:4px;height:52px">
+                <div style="flex-grow:1;height:22%;background:#E3E8EE;border-radius:2px 2px 0 0"></div>
+                <div style="flex-grow:1;height:38%;background:#E3E8EE;border-radius:2px 2px 0 0"></div>
+                <div style="flex-grow:1;height:62%;background:#A7DBC2;border-radius:2px 2px 0 0"></div>
+                <div style="flex-grow:1;height:100%;background:#1E9E6A;border-radius:2px 2px 0 0"></div>
+                <div style="flex-grow:1;height:74%;background:#A7DBC2;border-radius:2px 2px 0 0"></div>
+                <div style="flex-grow:1;height:41%;background:#E3E8EE;border-radius:2px 2px 0 0"></div>
+                <div style="flex-grow:1;height:19%;background:#E3E8EE;border-radius:2px 2px 0 0"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:9px;color:#94A3B8;font-weight:600;margin-top:5px">
+                <span>−15</span><span>0</span><span>+15</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:9px">
+            <div style="flex-grow:1;background:#F8F9FB;border-radius:8px;padding:9px 11px">
+              <div style="font-size:15px;font-weight:800">%86</div>
+              <div style="font-size:10px;color:#64748B;font-weight:600;margin-top:1px">±5 puan içinde</div>
+            </div>
+            <div style="flex-grow:1;background:#FEFBF2;border-radius:8px;padding:9px 11px">
+              <div style="font-size:15px;font-weight:800;color:#A9690B">7</div>
+              <div style="font-size:10px;color:#8A5609;font-weight:600;margin-top:1px">İkinci incelemede</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- İşletme maliyeti -->
+        <div style="background:#16202E;border-radius:12px;padding:17px 20px;flex-grow:1">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:15px">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F08A8F" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <span style="color:#fff;font-size:14px;font-weight:700">İşletme Maliyeti</span>
+          </div>
+
+          <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px">
+            <span style="color:#fff;font-size:27px;font-weight:800;line-height:1">$0,31</span>
+            <span style="color:#7C8CA1;font-size:12px;font-weight:600">/ rapor</span>
+          </div>
+          <div style="color:#8FA0B5;font-size:11px;font-weight:500;margin-bottom:16px">183 rapor analiz edildi · toplam $56,73</div>
+
+          <div style="display:flex;flex-direction:column;gap:9px">
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+                <span style="color:#9AA9BC;font-size:11px;font-weight:600">Kriter değerlendirmesi</span>
+                <span style="color:#fff;font-size:11px;font-weight:700">$0,24</span>
+              </div>
+              <div style="height:4px;background:#243347;border-radius:2px"><div style="width:77%;height:100%;background:#D42027;border-radius:2px"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+                <span style="color:#9AA9BC;font-size:11px;font-weight:600">Görsel analiz</span>
+                <span style="color:#fff;font-size:11px;font-weight:700">$0,06</span>
+              </div>
+              <div style="height:4px;background:#243347;border-radius:2px"><div style="width:19%;height:100%;background:#E8B923;border-radius:2px"></div></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px">
+                <span style="color:#9AA9BC;font-size:11px;font-weight:600">Kategori sınıflandırma</span>
+                <span style="color:#fff;font-size:11px;font-weight:700">$0,01</span>
+              </div>
+              <div style="height:4px;background:#243347;border-radius:2px"><div style="width:4%;height:100%;background:#4A9E7F;border-radius:2px"></div></div>
+            </div>
+          </div>
+
+          <div style="margin-top:16px;padding-top:13px;border-top:1px solid #253346;display:flex;align-items:center;gap:8px">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4A9E7F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>
+            <span style="color:#8FA0B5;font-size:10.5px;font-weight:600">Şablon ve başlık kontrolleri model kullanmıyor — $0</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

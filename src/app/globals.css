@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/*
+ * Tasarım dili T3 Vakfı KYS / BGYS panellerinden alındı:
+ * koyu lacivert sidebar, kırmızı birincil renk, beyaz kartlar,
+ * renkli durum çipleri.
+ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-lacivert: #16202e;
+  --color-lacivert-2: #1f2c3d;
+  --color-lacivert-3: #253346;
+
+  --color-kirmizi: #d42027;
+  --color-kirmizi-koyu: #a5171d;
+  --color-kirmizi-zemin: #fdecec;
+
+  --color-zemin: #f5f6f8;
+  --color-cizgi: #e6e8ec;
+  --color-metin: #1a2332;
+  --color-metin-2: #64748b;
+  --color-metin-3: #94a3b8;
+
+  --color-yesil: #1e9e6a;
+  --color-yesil-koyu: #137a50;
+  --color-yesil-zemin: #e6f6ef;
+
+  --color-amber: #d98a15;
+  --color-amber-koyu: #a9690b;
+  --color-amber-zemin: #fdf3e2;
+
+  --color-mavi: #2563a8;
+  --color-mavi-koyu: #1e4e7e;
+  --color-mavi-zemin: #e8f0f9;
+
+  /* Katılımcı seviyesi çipleri (İlkokul → Mezun). Kategori mavi, durum
+     yeşil/amber olduğu için seviye ayrı bir aileye ihtiyaç duyuyor. */
+  --color-mor: #6d4aa8;
+  --color-mor-koyu: #543880;
+  --color-mor-zemin: #f0ebf9;
+
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-zemin);
+  color: var(--color-metin);
+  -webkit-font-smoothing: antialiased;
 }

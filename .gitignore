@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.onbellek/
+
+# Çalışma zamanı verisi: yüklenen raporlar, hakem puanları, aktarılmış
+# yarışmalar. Kaynak değil, durum — ve yüklenen raporlar gerçek yarışmacı
+# belgesi olabilir; depoya girmemeli.
+veri/
+# Katalog istisna: teknofest.org taramasının sonucu. Sürümlenmesi işe yarar,
+# yoksa her dağıtımda 60 sayfa yeniden çekilmek zorunda kalır.
+!veri/katalog.json
+.dev.log

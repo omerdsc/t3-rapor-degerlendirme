@@ -1,0 +1,72 @@
+[
+  {
+    "dosya": "01-temiz.pdf",
+    "takim": "Takım Anadolu",
+    "takimId": "anadolu",
+    "proje": "Otonom Yabancı Ot Temizleme Robotu",
+    "kategori": "tarim",
+    "yil": 2026,
+    "gorsel": "A",
+    "aciklama": "Tüm kontroller temiz geçmeli — yanlış pozitif kontrolü"
+  },
+  {
+    "dosya": "02-kaynakca-bos.pdf",
+    "takim": "Takım Harran",
+    "takimId": "harran",
+    "proje": "Sera İklim Kontrol Sistemi",
+    "kategori": "tarim",
+    "yil": 2026,
+    "gorsel": "B",
+    "aciklama": "A1 + kaynakça: başlık var, içerik yok → KAYNAKCA_BOS"
+  },
+  {
+    "dosya": "03-kaynakca-atifsiz.pdf",
+    "takim": "Takım Dicle",
+    "takimId": "dicle",
+    "proje": "Toprak Nem Sensör Ağı",
+    "kategori": "tarim",
+    "yil": 2026,
+    "gorsel": "B",
+    "aciklama": "Kaynakça dolu ama metinde tek atıf yok → ATIF_YOK + KAYNAK_ATIFSIZ"
+  },
+  {
+    "dosya": "04-atif-karsiliksiz.pdf",
+    "takim": "Takım Fırat",
+    "takimId": "firat",
+    "proje": "Hasat Sonrası Sınıflandırma Bandı",
+    "kategori": "tarim",
+    "yil": 2026,
+    "gorsel": "B",
+    "aciklama": "Metinde [7] ve [8] var, listede 5 kaynak → ATIF_KARSILIKSIZ"
+  },
+  {
+    "dosya": "05-bolum-doldurulmamis.pdf",
+    "takim": "Takım Ceylanpınar",
+    "takimId": "ceylanpinar",
+    "proje": "Damla Sulama Optimizasyonu",
+    "kategori": "su",
+    "yil": 2026,
+    "gorsel": "B",
+    "aciklama": "A1: \"Yenilikçi Yönü\" bölümünde şablon yönergesi duruyor → BOLUM_DOLDURULMAMIS"
+  },
+  {
+    "dosya": "06-eski-sablon.pdf",
+    "takim": "Takım Munzur",
+    "takimId": "munzur",
+    "proje": "Arıcılıkta Kovan İzleme Sistemi",
+    "kategori": "tarim",
+    "yil": 2025,
+    "gorsel": "B",
+    "aciklama": "A4: 2025 şablonu — Riskler bölümü yok → SABLON_ESKI + BASLIK_EKSIK"
+  },
+  {
+    "dosya": "07-taranmis.pdf",
+    "takim": "Takım Mezopotamya",
+    "takimId": "mezopotamya",
+    "proje": "Güneş Enerjili Sulama Pompası",
+    "kategori": "enerji",
+    "yil": 2026,
+    "gorsel": null,
+    "aciklama": "B4: metin katmanı yok → PDF_TARANMIS"
+  }
+]

@@ -1,0 +1,323 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#F5F6F8;color:#1A2332;-webkit-font-smoothing:antialiased}
+    a{color:#D42027;text-decoration:none}
+    a:hover{color:#A5171D}
+    .th{font-size:10px;font-weight:700;color:#94A3B8;letter-spacing:0.5px;text-align:left;padding:0 0 10px}
+    .td{padding:13px 0;border-top:1px solid #F1F3F5;vertical-align:middle}
+    .dot{width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  </style>
+</helmet>
+
+<div style="display:flex;width:1440px;height:920px;background:#F5F6F8">
+
+  <!-- SIDEBAR -->
+  <div style="width:248px;flex-shrink:0;background:#16202E;display:flex;flex-direction:column">
+    <div style="padding:22px 20px 18px;display:flex;align-items:center;gap:11px;border-bottom:1px solid #253346">
+      <div style="width:34px;height:34px;border-radius:8px;background:#D42027;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <div>
+        <div style="color:#fff;font-size:15px;font-weight:800;letter-spacing:-0.2px;line-height:1.1">4. GÖZ</div>
+        <div style="color:#7C8CA1;font-size:8.5px;font-weight:600;letter-spacing:0.5px;margin-top:2px">DEĞERLENDİRME SİSTEMİ</div>
+      </div>
+    </div>
+    <div style="padding:14px 12px;display:flex;flex-direction:column;gap:2px;flex-grow:1">
+      <div style="color:#5B6C82;font-size:9.5px;font-weight:700;letter-spacing:0.8px;padding:8px 10px 6px">DEĞERLENDİRME</div>
+      <div style="display:flex;align-items:center;gap:11px;padding:10px;border-radius:8px;color:#9AA9BC;font-size:13px;font-weight:500">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        Ana Sayfa
+      </div>
+      <div style="display:flex;align-items:center;gap:11px;padding:10px;border-radius:8px;background:#D42027;color:#fff;font-size:13px;font-weight:600">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
+        Raporlar
+        <span style="margin-left:auto;background:rgba(255,255,255,.22);color:#fff;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:20px">12</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:11px;padding:10px;border-radius:8px;color:#9AA9BC;font-size:13px;font-weight:500">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+        Değerlendirmelerim
+      </div>
+      <div style="display:flex;align-items:center;gap:11px;padding:10px;border-radius:8px;color:#9AA9BC;font-size:13px;font-weight:500">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M4 16V5a1 1 0 0 1 1-1h11"/></svg>
+        Benzerlik Analizi
+        <span style="margin-left:auto;background:#3A2A2C;color:#F08A8F;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:20px">3</span>
+      </div>
+      <div style="color:#5B6C82;font-size:9.5px;font-weight:700;letter-spacing:0.8px;padding:16px 10px 6px">YÖNETİM</div>
+      <div style="display:flex;align-items:center;gap:11px;padding:10px;border-radius:8px;color:#9AA9BC;font-size:13px;font-weight:500">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m7 15 4-4 4 4 5-5"/></svg>
+        Kalibrasyon
+      </div>
+      <div style="display:flex;align-items:center;gap:11px;padding:10px;border-radius:8px;color:#9AA9BC;font-size:13px;font-weight:500">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12.2 2h-.4a2 2 0 0 0-2 2v.2a2 2 0 0 1-1 1.7l-.4.2a2 2 0 0 1-2 0l-.2-.1a2 2 0 0 0-2.7.7l-.2.4a2 2 0 0 0 .7 2.7l.2.1a2 2 0 0 1 1 1.7v.5a2 2 0 0 1-1 1.7l-.2.1a2 2 0 0 0-.7 2.7l.2.4a2 2 0 0 0 2.7.7l.2-.1a2 2 0 0 1 2 0l.4.2a2 2 0 0 1 1 1.7v.2a2 2 0 0 0 2 2h.4a2 2 0 0 0 2-2v-.2a2 2 0 0 1 1-1.7l.4-.2a2 2 0 0 1 2 0l.2.1a2 2 0 0 0 2.7-.7l.2-.4a2 2 0 0 0-.7-2.7l-.2-.1a2 2 0 0 1-1-1.7v-.5a2 2 0 0 1 1-1.7l.2-.1a2 2 0 0 0 .7-2.7l-.2-.4a2 2 0 0 0-2.7-.7l-.2.1a2 2 0 0 1-2 0l-.4-.2a2 2 0 0 1-1-1.7V4a2 2 0 0 0-2-2Z"/><circle cx="12" cy="12" r="3"/></svg>
+        Yarışma Yönetimi
+      </div>
+    </div>
+    <div style="padding:14px;border-top:1px solid #253346;display:flex;align-items:center;gap:11px">
+      <div style="width:34px;height:34px;border-radius:50%;background:#D42027;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0">Ö</div>
+      <div style="flex-grow:1;min-width:0">
+        <div style="color:#fff;font-size:12.5px;font-weight:600">Ömer Daşçı</div>
+        <div style="color:#7C8CA1;font-size:10.5px;font-weight:500">Hakem · Tarım Tek.</div>
+      </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5B6C82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/></svg>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div style="flex-grow:1;padding:24px 28px;display:flex;flex-direction:column;gap:16px;min-width:0;overflow:hidden">
+
+    <div style="display:flex;align-items:flex-end;justify-content:space-between">
+      <div>
+        <h1 style="margin:0;font-size:22px;font-weight:800;letter-spacing:-0.4px">Bana Atanan Raporlar</h1>
+        <div style="color:#64748B;font-size:12.5px;font-weight:500;margin-top:5px">TEKNOFEST 2026 · Tarım Teknolojileri · 12 rapor değerlendirme bekliyor</div>
+      </div>
+      <div style="display:flex;gap:9px">
+        <button style="border:1px solid #D9DDE3;background:#fff;color:#1A2332;font-family:inherit;font-size:12.5px;font-weight:600;padding:9px 15px;border-radius:8px;display:flex;align-items:center;gap:7px;cursor:pointer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+          Dışa aktar
+        </button>
+        <button style="border:none;background:#D42027;color:#fff;font-family:inherit;font-size:12.5px;font-weight:700;padding:9px 17px;border-radius:8px;cursor:pointer">Sıradakini değerlendir</button>
+      </div>
+    </div>
+
+    <!-- Filtre çubuğu -->
+    <div style="background:#fff;border:1px solid #E6E8EC;border-radius:11px;padding:12px 15px;display:flex;align-items:center;gap:9px">
+      <div style="display:flex;align-items:center;gap:8px;border:1px solid #E2E6EB;border-radius:8px;padding:8px 12px;flex-grow:1;background:#FAFBFC">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <span style="color:#A3AEBB;font-size:12.5px;font-weight:500">Başvuru no, proje adı veya takım ara…</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:7px;border:1px solid #E2E6EB;border-radius:8px;padding:8px 12px;font-size:12.5px;font-weight:600">
+        Durum: Tümü
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+      <div style="display:flex;align-items:center;gap:7px;border:1.5px solid #D42027;background:#FDECEC;color:#B01B21;border-radius:8px;padding:8px 12px;font-size:12.5px;font-weight:700">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 8v5"/><path d="M12 16.5v.5"/></svg>
+        Bayraklı (3)
+      </div>
+      <div style="display:flex;align-items:center;gap:7px;border:1px solid #E2E6EB;border-radius:8px;padding:8px 12px;font-size:12.5px;font-weight:600">
+        Sırala: Öncelik
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </div>
+    </div>
+
+    <!-- Tablo -->
+    <div style="background:#fff;border:1px solid #E6E8EC;border-radius:12px;padding:16px 20px 8px;flex-grow:1;overflow:hidden">
+      <table style="width:100%;border-collapse:collapse">
+        <thead>
+          <tr>
+            <th class="th" style="width:118px">BAŞVURU</th>
+            <th class="th">PROJE / TAKIM</th>
+            <th class="th" style="width:186px">ÖN KONTROLLER</th>
+            <th class="th" style="width:108px">BENZERLİK</th>
+            <th class="th" style="width:96px">4. GÖZ</th>
+            <th class="th" style="width:132px">DURUM</th>
+            <th class="th" style="width:30px"></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- Satır 1 — bayraklı -->
+          <tr>
+            <td class="td" style="border-left:3px solid #D42027;padding-left:11px">
+              <div style="font-size:12.5px;font-weight:700">TF-2026-04871</div>
+              <div style="font-size:10.5px;color:#94A3B8;font-weight:500;margin-top:2px">18.08.2026</div>
+            </td>
+            <td class="td">
+              <div style="font-size:12.5px;font-weight:600">Otonom Sıra Arası Yabancı Ot Temizleme Robotu</div>
+              <div style="font-size:11px;color:#64748B;font-weight:500;margin-top:2px">Takım Anadolu · Şanlıurfa</div>
+            </td>
+            <td class="td">
+              <div style="display:flex;gap:5px">
+                <div class="dot" style="background:#E6F6EF" title="Dil"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#FDF3E2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D98A15" stroke-width="3" stroke-linecap="round"><path d="M12 7v6"/><path d="M12 16.5v.5"/></svg></div>
+                <div class="dot" style="background:#FDF3E2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D98A15" stroke-width="3" stroke-linecap="round"><path d="M12 7v6"/><path d="M12 16.5v.5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#FDECEC"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D42027" stroke-width="3" stroke-linecap="round"><path d="M12 7v6"/><path d="M12 16.5v.5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+              </div>
+              <div style="font-size:10px;color:#D98A15;font-weight:600;margin-top:5px">Şablon 2025 · 1 bölüm boş</div>
+            </td>
+            <td class="td">
+              <div style="display:inline-flex;align-items:center;gap:5px;background:#FDECEC;color:#B01B21;font-size:11px;font-weight:700;padding:4px 8px;border-radius:5px">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M4 16V5a1 1 0 0 1 1-1h11"/></svg>
+                %97 görsel
+              </div>
+            </td>
+            <td class="td"><span style="font-size:16px;font-weight:800">68</span><span style="font-size:11px;color:#94A3B8;font-weight:600">/100</span></td>
+            <td class="td"><span style="background:#FDF3E2;color:#A9690B;font-size:10px;font-weight:700;padding:4px 9px;border-radius:5px;letter-spacing:0.2px">DEĞ. BEKLİYOR</span></td>
+            <td class="td"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></td>
+          </tr>
+
+          <!-- Satır 2 -->
+          <tr>
+            <td class="td" style="padding-left:14px">
+              <div style="font-size:12.5px;font-weight:700">TF-2026-04903</div>
+              <div style="font-size:10.5px;color:#94A3B8;font-weight:500;margin-top:2px">19.08.2026</div>
+            </td>
+            <td class="td">
+              <div style="font-size:12.5px;font-weight:600">Sera İklim Kontrol Sistemi</div>
+              <div style="font-size:11px;color:#64748B;font-weight:500;margin-top:2px">Takım Harran · Şanlıurfa</div>
+            </td>
+            <td class="td">
+              <div style="display:flex;gap:5px">
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#EDF0F3"><div style="width:5px;height:5px;border-radius:50%;background:#BFC8D4"></div></div>
+              </div>
+              <div style="font-size:10px;color:#137A50;font-weight:600;margin-top:5px">Tüm kontroller temiz</div>
+            </td>
+            <td class="td"><span style="color:#94A3B8;font-size:11.5px;font-weight:600">Temiz</span></td>
+            <td class="td"><span style="color:#94A3B8;font-size:11.5px;font-weight:600">Analizde…</span></td>
+            <td class="td"><span style="background:#E8F0F9;color:#1E4E7E;font-size:10px;font-weight:700;padding:4px 9px;border-radius:5px;letter-spacing:0.2px">ANALİZ EDİLİYOR</span></td>
+            <td class="td"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></td>
+          </tr>
+
+          <!-- Satır 3 — taranmış -->
+          <tr>
+            <td class="td" style="border-left:3px solid #E8B923;padding-left:11px">
+              <div style="font-size:12.5px;font-weight:700">TF-2026-04920</div>
+              <div style="font-size:10.5px;color:#94A3B8;font-weight:500;margin-top:2px">19.08.2026</div>
+            </td>
+            <td class="td">
+              <div style="font-size:12.5px;font-weight:600">Toprak Nem Sensör Ağı</div>
+              <div style="font-size:11px;color:#64748B;font-weight:500;margin-top:2px">Takım Dicle · Diyarbakır</div>
+            </td>
+            <td class="td">
+              <div style="display:flex;gap:5px">
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#FDECEC"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D42027" stroke-width="3" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></div>
+                <div class="dot" style="background:#FDF3E2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D98A15" stroke-width="3" stroke-linecap="round"><path d="M12 7v6"/><path d="M12 16.5v.5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#EDF0F3"><div style="width:5px;height:5px;border-radius:50%;background:#BFC8D4"></div></div>
+                <div class="dot" style="background:#EDF0F3"><div style="width:5px;height:5px;border-radius:50%;background:#BFC8D4"></div></div>
+              </div>
+              <div style="font-size:10px;color:#B01B21;font-weight:600;margin-top:5px">Taranmış PDF · görsel yola alındı</div>
+            </td>
+            <td class="td"><span style="color:#94A3B8;font-size:11.5px;font-weight:600">Beklemede</span></td>
+            <td class="td"><span style="color:#94A3B8;font-size:11.5px;font-weight:600">—</span></td>
+            <td class="td"><span style="background:#FDECEC;color:#B01B21;font-size:10px;font-weight:700;padding:4px 9px;border-radius:5px;letter-spacing:0.2px">MANUEL İNCELEME</span></td>
+            <td class="td"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></td>
+          </tr>
+
+          <!-- Satır 4 -->
+          <tr>
+            <td class="td" style="padding-left:14px">
+              <div style="font-size:12.5px;font-weight:700">TF-2026-04844</div>
+              <div style="font-size:10.5px;color:#94A3B8;font-weight:500;margin-top:2px">17.08.2026</div>
+            </td>
+            <td class="td">
+              <div style="font-size:12.5px;font-weight:600">Damla Sulama Optimizasyon Yazılımı</div>
+              <div style="font-size:11px;color:#64748B;font-weight:500;margin-top:2px">Takım Ceylanpınar · Şanlıurfa</div>
+            </td>
+            <td class="td">
+              <div style="display:flex;gap:5px">
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#FDF3E2"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#D98A15" stroke-width="3" stroke-linecap="round"><path d="M12 7v6"/><path d="M12 16.5v.5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+              </div>
+              <div style="font-size:10px;color:#D98A15;font-weight:600;margin-top:5px">Kategori: Yazılım'a daha uygun</div>
+            </td>
+            <td class="td"><span style="color:#94A3B8;font-size:11.5px;font-weight:600">Temiz</span></td>
+            <td class="td"><span style="font-size:16px;font-weight:800">81</span><span style="font-size:11px;color:#94A3B8;font-weight:600">/100</span></td>
+            <td class="td"><span style="background:#FDF3E2;color:#A9690B;font-size:10px;font-weight:700;padding:4px 9px;border-radius:5px;letter-spacing:0.2px">DEĞ. BEKLİYOR</span></td>
+            <td class="td"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></td>
+          </tr>
+
+          <!-- Satır 5 — tamamlandı -->
+          <tr>
+            <td class="td" style="padding-left:14px">
+              <div style="font-size:12.5px;font-weight:700">TF-2026-04812</div>
+              <div style="font-size:10.5px;color:#94A3B8;font-weight:500;margin-top:2px">16.08.2026</div>
+            </td>
+            <td class="td">
+              <div style="font-size:12.5px;font-weight:600">Hasat Sonrası Ürün Sınıflandırma Bandı</div>
+              <div style="font-size:11px;color:#64748B;font-weight:500;margin-top:2px">Takım Fırat · Elazığ</div>
+            </td>
+            <td class="td">
+              <div style="display:flex;gap:5px">
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+              </div>
+              <div style="font-size:10px;color:#137A50;font-weight:600;margin-top:5px">Tüm kontroller temiz</div>
+            </td>
+            <td class="td"><span style="color:#94A3B8;font-size:11.5px;font-weight:600">Temiz</span></td>
+            <td class="td">
+              <div style="font-size:16px;font-weight:800">79<span style="font-size:11px;color:#94A3B8;font-weight:600">/100</span></div>
+              <div style="font-size:10px;color:#137A50;font-weight:700;margin-top:1px">Hakem: 76</div>
+            </td>
+            <td class="td"><span style="background:#E6F6EF;color:#137A50;font-size:10px;font-weight:700;padding:4px 9px;border-radius:5px;letter-spacing:0.2px">TAMAMLANDI</span></td>
+            <td class="td"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></td>
+          </tr>
+
+          <!-- Satır 6 -->
+          <tr>
+            <td class="td" style="padding-left:14px">
+              <div style="font-size:12.5px;font-weight:700">TF-2026-04790</div>
+              <div style="font-size:10.5px;color:#94A3B8;font-weight:500;margin-top:2px">15.08.2026</div>
+            </td>
+            <td class="td">
+              <div style="font-size:12.5px;font-weight:600">Arıcılıkta Kovan İzleme Sistemi</div>
+              <div style="font-size:11px;color:#64748B;font-weight:500;margin-top:2px">Takım Munzur · Tunceli</div>
+            </td>
+            <td class="td">
+              <div style="display:flex;gap:5px">
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+                <div class="dot" style="background:#E6F6EF"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1E9E6A" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg></div>
+              </div>
+              <div style="font-size:10px;color:#137A50;font-weight:600;margin-top:5px">Tüm kontroller temiz</div>
+            </td>
+            <td class="td"><span style="color:#94A3B8;font-size:11.5px;font-weight:600">Temiz</span></td>
+            <td class="td">
+              <div style="font-size:16px;font-weight:800">88<span style="font-size:11px;color:#94A3B8;font-weight:600">/100</span></div>
+              <div style="font-size:10px;color:#137A50;font-weight:700;margin-top:1px">Hakem: 90</div>
+            </td>
+            <td class="td"><span style="background:#E6F6EF;color:#137A50;font-size:10px;font-weight:700;padding:4px 9px;border-radius:5px;letter-spacing:0.2px">TAMAMLANDI</span></td>
+            <td class="td"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0 8px;border-top:1px solid #F1F3F5;margin-top:6px">
+        <span style="color:#64748B;font-size:11.5px;font-weight:500">12 rapordan 6 tanesi gösteriliyor</span>
+        <div style="display:flex;gap:5px">
+          <div style="width:29px;height:29px;border:1px solid #E2E6EB;border-radius:7px;display:flex;align-items:center;justify-content:center;color:#CBD5E1">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </div>
+          <div style="width:29px;height:29px;background:#D42027;color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700">1</div>
+          <div style="width:29px;height:29px;border:1px solid #E2E6EB;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#64748B">2</div>
+          <div style="width:29px;height:29px;border:1px solid #E2E6EB;border-radius:7px;display:flex;align-items:center;justify-content:center;color:#64748B">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
