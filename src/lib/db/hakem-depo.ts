@@ -15,10 +15,13 @@
 import { randomUUID } from 'node:crypto';
 import { baglanti, bool, jsonOku, sayi } from './baglanti';
 import type {
-  Atama, DegerlendirmeDurumu, Hakem, HakemDegerlendirmesi, HakemIsi, NihaiOzet,
+  Atama, DegerlendirmeDurumu, GeriBildirim, Hakem, HakemDegerlendirmesi,
+  HakemIsi, NihaiOzet,
 } from './tipler';
 import { kodNormal, kodUret } from './kod';
-import { kriterOrtalamalari, toplamOrtalamasi } from './nihai-hesap';
+import {
+  birlesikGeriBildirim, kriterOrtalamalari, toplamOrtalamasi,
+} from './nihai-hesap';
 import { raporRumuzu, takimRumuzu } from '../depo/maskele';
 
 type Satir = Record<string, unknown>;
@@ -55,6 +58,11 @@ function degCoz(s: Satir): HakemDegerlendirmesi {
     puanlar: jsonOku(s.puanlar, []),
     toplam: (s.toplam as number) ?? undefined,
     aciklama: (s.aciklama as string) ?? undefined,
+    geriBildirim: s.geri_bildirim
+      ? jsonOku<GeriBildirim>(s.geri_bildirim, {
+          gucluYonler: [], gelisimAlanlari: [], oneriler: [],
+        })
+      : undefined,
     durum: s.durum as DegerlendirmeDurumu,
     guncellendi: s.guncellendi as string,
     tamamlandi: (s.tamamlandi as string) ?? undefined,
@@ -308,6 +316,8 @@ export function degerlendirmeKaydet(girdi: {
   hakemId: string;
   puanlar: HakemDegerlendirmesi['puanlar'];
   aciklama?: string;
+  /** Hakemin onayladığı, yarışmacıya gidecek geri bildirim. */
+  geriBildirim?: GeriBildirim;
   tamamla: boolean;
 }): { sonuc?: HakemDegerlendirmesi; hata?: string } {
   const db = baglanti();
@@ -329,15 +339,17 @@ export function degerlendirmeKaydet(girdi: {
 
   db.prepare(
     `INSERT INTO degerlendirme (id, rapor_id, hakem_id, puanlar, toplam,
-       aciklama, durum, guncellendi, tamamlandi)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+       aciklama, geri_bildirim, durum, guncellendi, tamamlandi)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
      ON CONFLICT(rapor_id, hakem_id) DO UPDATE SET
        puanlar = excluded.puanlar, toplam = excluded.toplam,
-       aciklama = excluded.aciklama, durum = excluded.durum,
+       aciklama = excluded.aciklama, geri_bildirim = excluded.geri_bildirim,
+       durum = excluded.durum,
        guncellendi = excluded.guncellendi, tamamlandi = excluded.tamamlandi`,
   ).run(
     mevcut?.id ?? randomUUID(), girdi.raporId, girdi.hakemId,
     JSON.stringify(girdi.puanlar), toplam, girdi.aciklama ?? null,
+    girdi.geriBildirim ? JSON.stringify(girdi.geriBildirim) : null,
     girdi.tamamla ? 'tamamlandi' : 'taslak', simdi,
     girdi.tamamla ? simdi : null,
   );
@@ -414,6 +426,16 @@ export function nihaiOzet(raporId: string): NihaiOzet {
  */
 export function nihaiKriterPuanlari(raporId: string) {
   return kriterOrtalamalari(raporunDegerlendirmeleri(raporId));
+}
+
+/**
+ * Yarışmacıya gidecek onaylı geri bildirim.
+ *
+ * Kaynak MODEL ÇIKTISI DEĞİL, hakemlerin onayladığı metinler. Hesap
+ * `nihai-hesap.ts` içinde ve test kapsamında.
+ */
+export function nihaiGeriBildirim(raporId: string) {
+  return birlesikGeriBildirim(raporunDegerlendirmeleri(raporId));
 }
 
 /** Genel değerlendirme metinleri — hakemlerin `aciklama` alanları. */

@@ -167,6 +167,13 @@ CREATE TABLE IF NOT EXISTS degerlendirme (
   toplam      REAL,
   aciklama    TEXT,
   durum       TEXT NOT NULL DEFAULT 'taslak',
+  -- HAKEMİN ONAYLADIĞI GERİ BİLDİRİM (JSON).
+  -- Yarışmacıya giden güçlü yönler / gelişim alanları / öneriler burada.
+  -- Model bunları ÜRETİYOR ama yarışmacıya giden sürüm hakemin gözden
+  -- geçirip onayladığı sürüm: PRD "hakeme sunulur; sonuçlardan ...
+  -- üretilir" diyor, yani hakem arada. Boşsa yarışmacı geri bildirim
+  -- görmüyor — onaysız model metni yayımlanmıyor.
+  geri_bildirim TEXT,
   guncellendi TEXT NOT NULL,
   tamamlandi  TEXT,
   UNIQUE (rapor_id, hakem_id)
@@ -230,7 +237,7 @@ export function baglanti(): DatabaseSync {
 }
 
 /** Şemanın ulaştığı en son sürüm. Alan eklendikçe artıyor. */
-const SON_SURUM = 2;
+const SON_SURUM = 3;
 
 /**
  * Şema sürüm yükseltmeleri.
@@ -273,6 +280,23 @@ function semayiYukselt(yeni: DatabaseSync): void {
     // Arşiv kaydı koddan tanınıyor: geçişte sabit bu kodla yazılıyor.
     yeni.exec("UPDATE hakem SET sistem = 1, aktif = 0 WHERE kod = 'arsiv'");
     surum = 2;
+    yeni.prepare('UPDATE sema_surumu SET surum = ?').run(surum);
+  }
+
+  if (surum < 3) {
+    /*
+     * `degerlendirme.geri_bildirim` alanı. Yarışmacıya giden metinler
+     * eskiden doğrudan model çıktısından okunuyordu — hakem onayı yoktu ve
+     * PRD'nin madde 06 sırası ("hakeme sunulur; sonuçlardan ... üretilir")
+     * hakemin arada olmasını istiyor.
+     */
+    const sutunlar = yeni.prepare('PRAGMA table_info(degerlendirme)').all() as Array<{
+      name: string;
+    }>;
+    if (!sutunlar.some((c) => c.name === 'geri_bildirim')) {
+      yeni.exec('ALTER TABLE degerlendirme ADD COLUMN geri_bildirim TEXT');
+    }
+    surum = 3;
     yeni.prepare('UPDATE sema_surumu SET surum = ?').run(surum);
   }
 }

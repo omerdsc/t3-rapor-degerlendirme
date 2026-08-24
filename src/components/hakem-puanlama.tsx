@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 import type { RubrikKriteri } from '@/lib/analiz/sablon-cikar';
 import type { Guven } from '@/lib/ai/degerlendirme';
+import DuzenlenebilirListe from './duzenlenebilir-liste';
 
 /**
  * Hakemin puanlama formu.
@@ -22,6 +23,13 @@ import type { Guven } from '@/lib/ai/degerlendirme';
  * Bilinçli. Tamamlanmış bir değerlendirme bir karardır; sessizce
  * değiştirilebilirse denetim izi anlamsız kalır. Düzeltme gerekiyorsa
  * koordinasyon devreye giriyor.
+ *
+ * ── YARIŞMACIYA GİDEN METNİ HAKEM ONAYLIYOR ─────────────────────────────
+ * Güçlü yönler, gelişime açık alanlar ve öneriler yapay zekâ önerisiyle
+ * DOLU gelir; hakem düzeltir, siler, ekler ve tamamlayınca onaylamış olur.
+ * Eskiden bu metinler doğrudan model çıktısından yarışmacı ekranına
+ * basılıyordu — kimse okumadan. Puanı hakemden alıp metni modelden almak
+ * tutarsızdı: yarışmacı için geri bildirim de bir karardır.
  */
 
 interface AiKriter {
@@ -48,6 +56,9 @@ export default function HakemPuanlama({
   aiKriterler,
   baslangicPuanlar,
   baslangicAciklama,
+  baslangicGeriBildirim,
+  aiGucluYonler,
+  aiGelisimAlanlari,
   tamamlandi,
 }: {
   kod: string;
@@ -57,12 +68,43 @@ export default function HakemPuanlama({
   aiKriterler: AiKriter[];
   baslangicPuanlar: Record<string, string>;
   baslangicAciklama: string;
+  /** Kayıtlı taslak geri bildirim; yoksa yapay zekâ önerisi kullanılır. */
+  baslangicGeriBildirim?: {
+    gucluYonler: string[];
+    gelisimAlanlari: string[];
+    oneriler: Array<{ kriterKodu: string; metin: string }>;
+  };
+  aiGucluYonler: string[];
+  aiGelisimAlanlari: string[];
   tamamlandi: boolean;
 }) {
   const yonlendir = useRouter();
   const [puanlar, setPuanlar] = useState<Record<string, string>>(baslangicPuanlar);
   const [notlar, setNotlar] = useState<Record<string, string>>({});
   const [aciklama, setAciklama] = useState(baslangicAciklama);
+
+  /*
+   * Geri bildirim: kayıtlı taslak varsa o, yoksa yapay zekâ önerisi.
+   * Hakem hiç dokunmasa bile modelin önerisi tamamlamayla ONAYLANMIŞ
+   * olur — bilinçli: hakem okuyup uygun bulduğu için bırakmıştır.
+   * Silmek de bir karar; boş bırakılan bölüm yarışmacıya gösterilmiyor.
+   */
+  const [guclu, setGuclu] = useState<string[]>(
+    baslangicGeriBildirim?.gucluYonler ?? aiGucluYonler,
+  );
+  const [gelisim, setGelisim] = useState<string[]>(
+    baslangicGeriBildirim?.gelisimAlanlari ?? aiGelisimAlanlari,
+  );
+  const [oneriler, setOneriler] = useState<Record<string, string>>(() => {
+    if (baslangicGeriBildirim) {
+      return Object.fromEntries(
+        baslangicGeriBildirim.oneriler.map((o) => [o.kriterKodu, o.metin]),
+      );
+    }
+    return Object.fromEntries(
+      aiKriterler.filter((k) => k.oneri).map((k) => [k.kod, k.oneri!]),
+    );
+  });
   const [calisiyor, setCalisiyor] = useState<'taslak' | 'tamamla' | null>(null);
   const [mesaj, setMesaj] = useState<{ tur: 'hata' | 'bilgi'; metin: string } | null>(null);
 
@@ -94,6 +136,13 @@ export default function HakemPuanlama({
           raporId,
           tamamla,
           aciklama,
+          geriBildirim: {
+            gucluYonler: guclu.map((g) => g.trim()).filter(Boolean),
+            gelisimAlanlari: gelisim.map((g) => g.trim()).filter(Boolean),
+            oneriler: Object.entries(oneriler)
+              .filter(([, m]) => m.trim())
+              .map(([kriterKodu, metin]) => ({ kriterKodu, metin: metin.trim() })),
+          },
           puanlar: olcutler
             .filter((k) => puanlar[k.kod] !== undefined && puanlar[k.kod] !== '')
             .map((k) => ({
@@ -248,6 +297,109 @@ export default function HakemPuanlama({
             </div>
           );
         })}
+      </div>
+
+      {/*
+        YARIŞMACIYA GİDECEK GERİ BİLDİRİM.
+        Üç bölüm de yapay zekâ önerisiyle dolu geliyor; hakem düzeltip
+        tamamladığında onaylamış olur. Puanlamadan SONRA duruyor: hakem
+        önce raporu değerlendirir, sonra ne söyleyeceğine karar verir.
+      */}
+      <div className="border-t border-cizgi bg-zemin/40 px-4 py-3.5">
+        <div className="mb-3 flex flex-wrap items-center gap-2.5">
+          <h3 className="text-[13px] font-bold">Yarışmacıya gidecek geri bildirim</h3>
+          <span className="rounded bg-mavi-zemin px-2 py-0.5 text-[9px] font-bold tracking-wide text-mavi-koyu">
+            SİZİN ONAYINIZLA YAYIMLANIR
+          </span>
+        </div>
+        <p className="mb-3 text-[11px] leading-relaxed font-medium text-metin-2">
+          Aşağıdaki metinler yapay zekâ tarafından önerildi. Düzeltin, silin
+          ya da ekleyin — <strong className="font-bold text-metin">
+          değerlendirmeyi tamamladığınızda bu hâliyle yarışmacıya gider</strong>.
+          Onaylamadığınız hiçbir cümle yayımlanmaz.
+        </p>
+
+        <div className="flex flex-col gap-4">
+          <div>
+            <div className="mb-1.5 flex items-center gap-2">
+              <span className="size-2 rounded-full bg-yesil" />
+              <span className="text-[11.5px] font-bold">Güçlü yönler</span>
+              <span className="text-[10.5px] font-medium text-metin-3">
+                {guclu.filter((g) => g.trim()).length} madde
+              </span>
+            </div>
+            <DuzenlenebilirListe
+              satirlar={guclu}
+              degistir={setGuclu}
+              kilit={tamamlandi}
+              yerTutucu="Projenin güçlü bulduğunuz bir yönü"
+              modelOnerisi={aiGucluYonler}
+            />
+          </div>
+
+          <div>
+            <div className="mb-1.5 flex items-center gap-2">
+              <span className="size-2 rounded-full bg-amber" />
+              <span className="text-[11.5px] font-bold">Gelişime açık alanlar</span>
+              <span className="text-[10.5px] font-medium text-metin-3">
+                {gelisim.filter((g) => g.trim()).length} madde
+              </span>
+            </div>
+            <DuzenlenebilirListe
+              satirlar={gelisim}
+              degistir={setGelisim}
+              kilit={tamamlandi}
+              yerTutucu="Geliştirilmesi gereken bir alan"
+              modelOnerisi={aiGelisimAlanlari}
+            />
+          </div>
+
+          <div>
+            <div className="mb-1.5 flex items-center gap-2">
+              <span className="size-2 rounded-full bg-mavi" />
+              <span className="text-[11.5px] font-bold">Ölçüt bazında öneriler</span>
+              <span className="text-[10.5px] font-medium text-metin-3">
+                {Object.values(oneriler).filter((m) => m.trim()).length}/
+                {olcutler.length} ölçüt
+              </span>
+            </div>
+            <div className="flex flex-col gap-1.5">
+              {olcutler.map((k) => {
+                const kayip = Math.max(
+                  0,
+                  k.puan - (Number(puanlar[k.kod]) || 0),
+                );
+                return (
+                  <div key={k.kod} className="flex items-start gap-2">
+                    <span className="mt-1.5 w-[132px] shrink-0 truncate text-[10.5px] font-bold text-metin-2">
+                      {k.ad}
+                    </span>
+                    {/* Kaç puan kaybedildiği burada gösteriliyor: hakem
+                        önceliği görsün, en çok kaybedilen ölçüte öneri
+                        yazmak en değerli. */}
+                    <span
+                      className={`mt-1.5 w-[52px] shrink-0 text-[10px] font-bold ${
+                        kayip > 0 ? 'text-amber-koyu' : 'text-metin-3'
+                      }`}
+                    >
+                      {kayip > 0 ? `−${Math.round(kayip * 10) / 10} puan` : 'tam'}
+                    </span>
+                    <textarea
+                      value={oneriler[k.kod] ?? ''}
+                      disabled={tamamlandi}
+                      rows={2}
+                      onChange={(e) =>
+                        setOneriler((o) => ({ ...o, [k.kod]: e.target.value }))
+                      }
+                      placeholder="Bu ölçütte nasıl gelişebilir?"
+                      className="min-w-0 flex-1 resize-y rounded-lg border border-cizgi bg-white px-2.5 py-1.5 text-[11px] leading-relaxed font-medium outline-none focus:border-metin-3 disabled:bg-zemin"
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="border-t border-cizgi px-4 py-3">

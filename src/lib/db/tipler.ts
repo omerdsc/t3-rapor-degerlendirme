@@ -63,6 +63,31 @@ export interface Atama {
 
 export type DegerlendirmeDurumu = 'taslak' | 'tamamlandi';
 
+/**
+ * Hakemin onayladığı geri bildirim — YARIŞMACIYA GİDEN METİN.
+ *
+ * ── NİYE HAKEM ONAYINDAN GEÇİYOR ────────────────────────────────────────
+ * Bu üç metni yapay zekâ üretiyor. Eskiden doğrudan model çıktısından
+ * yarışmacı ekranına basılıyordu: kimse okumadan, kimse onaylamadan.
+ * Puanı hakemden alıp METNİ modelden almak tutarsızdı — yarışmacı için
+ * geri bildirim de bir karardır ve sahibi olmalı.
+ *
+ * PRD'nin madde 06 sırası da bunu istiyor: "hakeme AI 4. göz sunulur;
+ * SONUÇLARDAN güçlü/zayıf yönler ve gelişim önerileri üretilir." Hakem
+ * arada.
+ *
+ * Boş bırakılabilir. O zaman yarışmacı geri bildirim görmez — eksik
+ * geri bildirim, onaysız geri bildirimden iyidir.
+ */
+export interface GeriBildirim {
+  /** Projenin güçlü yönleri. */
+  gucluYonler: string[];
+  /** Geliştirilmesi gereken / gelişime açık alanlar. */
+  gelisimAlanlari: string[];
+  /** Ölçüt bazında somut öneri. */
+  oneriler: Array<{ kriterKodu: string; metin: string }>;
+}
+
 export interface HakemDegerlendirmesi {
   id: string;
   raporId: string;
@@ -71,6 +96,8 @@ export interface HakemDegerlendirmesi {
   /** Ölçüt puanlarının toplamı; tamamlanmadan önce kısmi olabilir. */
   toplam?: number;
   aciklama?: string;
+  /** Hakemin onayladığı, yarışmacıya gidecek geri bildirim. */
+  geriBildirim?: GeriBildirim;
   durum: DegerlendirmeDurumu;
   guncellendi: string;
   tamamlandi?: string;

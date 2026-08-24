@@ -211,6 +211,57 @@ export default function AiOnDegerlendirme({
         </div>
       )}
 
+      {/*
+        GÜÇLÜ / GELİŞİME AÇIK YÖNLER.
+        Bu iki alan model tarafından üretiliyordu ama HİÇ EKRANA
+        BASILMIYORDU: bileşene prop olarak geliyor, JSX'te kullanılmıyordu.
+        PRD madde 06 bunları açıkça istiyor ("sonuçlardan güçlü/zayıf
+        yönler ... üretilir") ve "hakeme sunulur" diyor — o yüzden hakem
+        panelinde de var, orada düzenlenip onaylanıyor.
+      */}
+      {(!!ai.genelGucluYonler.length || !!ai.genelGelisimAlanlari.length) && (
+        <div className="grid gap-x-5 gap-y-3 border-b border-cizgi px-4 py-3 sm:grid-cols-2">
+          {!!ai.genelGucluYonler.length && (
+            <div>
+              <div className="mb-1.5 flex items-center gap-2">
+                <span className="size-2 rounded-full bg-yesil" />
+                <span className="text-[10px] font-bold tracking-wide text-metin-2">
+                  GÜÇLÜ YÖNLER
+                </span>
+              </div>
+              <ul className="flex flex-col gap-1">
+                {ai.genelGucluYonler.map((g, i) => (
+                  <li key={i} className="text-[11px] leading-relaxed font-medium text-metin">
+                    · {g}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {!!ai.genelGelisimAlanlari.length && (
+            <div>
+              <div className="mb-1.5 flex items-center gap-2">
+                <span className="size-2 rounded-full bg-amber" />
+                <span className="text-[10px] font-bold tracking-wide text-metin-2">
+                  GELİŞİME AÇIK ALANLAR
+                </span>
+              </div>
+              <ul className="flex flex-col gap-1">
+                {ai.genelGelisimAlanlari.map((g, i) => (
+                  <li key={i} className="text-[11px] leading-relaxed font-medium text-metin">
+                    · {g}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          <p className="text-[10px] leading-relaxed font-medium text-metin-3 sm:col-span-2">
+            Bu metinler hakem panelinde düzenlenebilir hâlde duruyor. Hakem
+            onaylamadan yarışmacıya gitmiyor.
+          </p>
+        </div>
+      )}
+
       <button
         type="button"
         onClick={() => setAcik((a) => !a)}

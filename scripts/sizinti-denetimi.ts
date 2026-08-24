@@ -12,9 +12,23 @@
  * adları, gerçek erişim kodları, gerçek takım adları. Sabit dizeler
  * yazılsa veri değiştiğinde denetim sessizce boşa düşerdi.
  *
- * Kullanım: sunucu çalışırken `npx tsx scripts/sizinti-denetimi.ts`
+ * ── ALAN ADI DEĞİL, DEĞER ARANMALI ──────────────────────────────────────
+ * Denetimin ilk hâli `aiPuan`, `aiDegerlendirme` gibi ALAN ADLARINI
+ * arıyordu ve temiz rapor veriyordu. Ama bunlar sunucu bileşeninde
+ * hesaplandığı için sayfa kaynağına adları düşmüyor — yalnızca DEĞERLERİ
+ * düşüyor. Sonuç: "+8 puana kadar" gibi yapay zekâ puanından hesaplanmış
+ * sayılar ve ONAYLANMAMIŞ model metinleri yarışmacı ekranında duruyordu ve
+ * denetim bunu göremiyordu.
+ *
+ * Artık modelin ürettiği METİNLER doğrudan aranıyor ve hakemin
+ * onayladıklarıyla karşılaştırılıyor: sayfada duran ama onaylı listede
+ * OLMAYAN bir model cümlesi sızıntıdır.
+ *
+ * Kullanım: sunucu çalışırken `npm run denetim`
  */
 import { baglanti } from '@/lib/db/baglanti';
+import { nihaiGeriBildirim } from '@/lib/db/hakem-depo';
+import { jsonOku } from '@/lib/db/baglanti';
 
 const KOK = process.env.DENETIM_KOK ?? 'http://localhost:3000';
 
@@ -79,6 +93,60 @@ async function main() {
     const bulunan = aramalar
       .map((a) => ({ ad: a.ad, iz: a.bul(metin) }))
       .filter((x) => x.iz);
+
+    /*
+     * ONAYLANMAMIŞ MODEL METNİ DENETİMİ.
+     *
+     * Raporun yapay zekâ değerlendirmesindeki her metin parçası için:
+     * sayfada duruyorsa, hakemin onayladığı listede de duruyor mu?
+     * Durmuyorsa hakem onayından geçmemiş model çıktısı yayımlanmış.
+     */
+    const ai = jsonOku<{
+      genelGucluYonler?: string[];
+      genelGelisimAlanlari?: string[];
+      kriterler?: Array<{ oneri?: string; gerekce?: string }>;
+    } | null>(
+      (
+        baglanti()
+          .prepare('SELECT ai_degerlendirme FROM rapor WHERE basvuru_no = ?')
+          .get(r.basvuru_no) as { ai_degerlendirme: string } | undefined
+      )?.ai_degerlendirme,
+      null,
+    );
+
+    if (ai) {
+      const onayli = nihaiGeriBildirim(
+        (
+          baglanti()
+            .prepare('SELECT id FROM rapor WHERE basvuru_no = ? LIMIT 1')
+            .get(r.basvuru_no) as { id: string }
+        ).id,
+      );
+      const onayliMetinler = new Set(
+        [
+          ...onayli.gucluYonler,
+          ...onayli.gelisimAlanlari,
+          ...[...onayli.oneriler.values()].flat(),
+        ].map((m) => m.trim()),
+      );
+
+      const modelMetinleri = [
+        ...(ai.genelGucluYonler ?? []),
+        ...(ai.genelGelisimAlanlari ?? []),
+        ...(ai.kriterler ?? []).flatMap((k) => [k.oneri, k.gerekce]),
+      ]
+        .filter((m): m is string => typeof m === 'string' && m.trim().length >= 25);
+
+      for (const m of modelMetinleri) {
+        const kirpik = m.trim();
+        if (!metin.includes(kirpik)) continue;
+        if (onayliMetinler.has(kirpik)) continue;
+        bulunan.push({
+          ad: 'ONAYLANMAMIŞ model metni',
+          iz: `${kirpik.slice(0, 60)}…`,
+        });
+      }
+    }
 
     if (!bulunan.length) {
       console.log(`  ✓ ${r.basvuru_no}`);

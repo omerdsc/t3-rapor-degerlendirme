@@ -466,13 +466,38 @@ export function raporGuncelle(
   return raporKaydet({ ...r, ...degisiklik });
 }
 
-export function raporBasvuruNoIle(basvuruNo: string): Rapor | null {
+/**
+ * Başvuru numarasına ait BÜTÜN raporlar.
+ *
+ * ── NİYE ÇOĞUL ──────────────────────────────────────────────────────────
+ * Eskiden tek rapor dönüyordu (`.find()` ile ilk eşleşme). Bir başvuru
+ * numarasına iki rapor bağlıysa yarışmacı HANGİSİNİ göreceği tablo
+ * sırasına kalmıştı — rastgele. Bir takım birden çok yarışmaya
+ * katıldığında da yalnızca birini görüyordu.
+ *
+ * Şimdi hepsi dönüyor ve yarışmacı aralarında seçim yapıyor. Sıra
+ * belirlenmiş (yükleme tarihi): aynı girdi her zaman aynı sırayı veriyor.
+ *
+ * Not: başvuru numarası bu portalın TEK kimlik kanıtı. Numarayı bilen o
+ * başvurunun sahibi sayılıyor; dolayısıyla aynı numaraya bağlı raporların
+ * tamamını görmesi doğru. Numaranın tekilliği veri girişinin sorumluluğu
+ * ve `npm run db:kontrol` yinelenenleri bildiriyor.
+ */
+export function raporlariBasvuruNoIle(basvuruNo: string): Rapor[] {
   const hedef = anahtar(basvuruNo);
   // Karşılaştırma anahtar() üzerinden: yarışmacı numarayı boşluklu ya da
   // farklı büyük/küçük harfle girebiliyor. SQL LIKE bunu yapamaz.
-  const satirlar = baglanti().prepare('SELECT * FROM rapor').all() as Satir[];
-  const s = satirlar.find((x) => anahtar(x.basvuru_no as string) === hedef);
-  return s ? raporCoz(s, mesajlariGetir(s.id as string), undefined) : null;
+  const satirlar = baglanti()
+    .prepare('SELECT * FROM rapor ORDER BY yuklendi, id')
+    .all() as Satir[];
+  return satirlar
+    .filter((x) => anahtar(x.basvuru_no as string) === hedef)
+    .map((s) => raporCoz(s, mesajlariGetir(s.id as string), undefined));
+}
+
+/** Tek rapor gerektiren yerler için — ilk eşleşme. */
+export function raporBasvuruNoIle(basvuruNo: string): Rapor | null {
+  return raporlariBasvuruNoIle(basvuruNo)[0] ?? null;
 }
 
 export function mesajEkle(

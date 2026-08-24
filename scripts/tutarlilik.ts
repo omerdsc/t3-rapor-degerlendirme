@@ -52,6 +52,15 @@ const kontroller: Array<[string, number]> = [
     sor(`SELECT COUNT(*) n FROM rapor r WHERE r.durum <> 'tamamlandi'
          AND EXISTS (SELECT 1 FROM degerlendirme d
            WHERE d.rapor_id = r.id AND d.durum = 'tamamlandi')`)],
+  /*
+   * Başvuru numarası yarışmacı portalının TEK kimlik kanıtı. Yinelenen
+   * numara, iki farklı takımın birbirinin sonucunu görmesi anlamına
+   * gelebilir — veri girişi hatası olarak bildirilmeli.
+   */
+  ['Yinelenen başvuru numarası',
+    sor(`SELECT COUNT(*) n FROM (
+           SELECT basvuru_no FROM rapor
+           GROUP BY UPPER(TRIM(basvuru_no)) HAVING COUNT(*) > 1)`)],
   ['Aynı hakemin aynı rapora ikinci ataması',
     sor(`SELECT COUNT(*) n FROM (
            SELECT rapor_id, hakem_id, COUNT(*) c FROM atama

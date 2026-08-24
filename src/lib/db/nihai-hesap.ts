@@ -19,6 +19,11 @@ export interface DegerlendirmeGirdisi {
   toplam?: number;
   aciklama?: string;
   puanlar: Array<{ kriterKodu: string; puan: number; not?: string }>;
+  geriBildirim?: {
+    gucluYonler: string[];
+    gelisimAlanlari: string[];
+    oneriler: Array<{ kriterKodu: string; metin: string }>;
+  };
 }
 
 /**
@@ -84,4 +89,64 @@ export function kriterOrtalamalari(
     });
   }
   return sonuc;
+}
+
+
+/**
+ * Yarışmacıya gidecek birleşik geri bildirim.
+ *
+ * ── YALNIZCA TAMAMLANMIŞ VE ONAYLANMIŞ ──────────────────────────────────
+ * Kaynak, hakemlerin ONAYLADIĞI metinler — model çıktısı değil. Taslak
+ * değerlendirmenin geri bildirimi de alınmıyor: hakem henüz bitirmediyse
+ * o metin üzerinde çalışıyor olabilir.
+ *
+ * ── ÇOK HAKEMLİ DURUMDA BİRLEŞTİRME ─────────────────────────────────────
+ * İki hakem aynı şeyi farklı kelimelerle yazabilir. Birebir aynı olanlar
+ * teklenip sıra korunuyor; benzer ama farklı yazılmış olanlar ayrı
+ * kalıyor — birini seçip atmak, hangi hakemin cümlesinin atıldığına
+ * sistemin karar vermesi olurdu.
+ *
+ * Hakem ADI taşınmıyor: yarışmacı kaç hakem baktığını görüyor, hangi
+ * cümlenin kime ait olduğunu görmüyor. İtiraz kurul üzerinden yürür.
+ */
+export function birlesikGeriBildirim(
+  degerlendirmeler: DegerlendirmeGirdisi[],
+): { gucluYonler: string[]; gelisimAlanlari: string[]; oneriler: Map<string, string[]> } {
+  const guclu: string[] = [];
+  const gelisim: string[] = [];
+  const oneriler = new Map<string, string[]>();
+
+  /** Aynı cümleyi iki kez göstermemek için; boşluk ve büyük harf farkı sayılmıyor. */
+  const anahtar = (m: string) => m.trim().replace(/\s+/g, ' ').toLocaleLowerCase('tr');
+  const gorulenGuclu = new Set<string>();
+  const gorulenGelisim = new Set<string>();
+
+  for (const d of degerlendirmeler) {
+    if (d.durum !== 'tamamlandi' || !d.geriBildirim) continue;
+
+    for (const g of d.geriBildirim.gucluYonler) {
+      const m = g.trim();
+      if (!m || gorulenGuclu.has(anahtar(m))) continue;
+      gorulenGuclu.add(anahtar(m));
+      guclu.push(m);
+    }
+
+    for (const g of d.geriBildirim.gelisimAlanlari) {
+      const m = g.trim();
+      if (!m || gorulenGelisim.has(anahtar(m))) continue;
+      gorulenGelisim.add(anahtar(m));
+      gelisim.push(m);
+    }
+
+    for (const o of d.geriBildirim.oneriler) {
+      const m = o.metin.trim();
+      if (!m) continue;
+      const mevcut = oneriler.get(o.kriterKodu) ?? [];
+      if (mevcut.some((x) => anahtar(x) === anahtar(m))) continue;
+      mevcut.push(m);
+      oneriler.set(o.kriterKodu, mevcut);
+    }
+  }
+
+  return { gucluYonler: guclu, gelisimAlanlari: gelisim, oneriler };
 }

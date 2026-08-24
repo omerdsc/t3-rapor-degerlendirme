@@ -1,7 +1,9 @@
 import Link from 'next/link';
-import { kategoriGetir, raporBasvuruNoIle, yarismaGetir } from '@/lib/depo/depo';
 import {
-  nihaiAciklamalar, nihaiKriterPuanlari, nihaiOzet,
+  kategoriGetir, raporlariBasvuruNoIle, yarismaGetir,
+} from '@/lib/depo/depo';
+import {
+  nihaiAciklamalar, nihaiGeriBildirim, nihaiKriterPuanlari, nihaiOzet,
 } from '@/lib/db/hakem-depo';
 
 export const dynamic = 'force-dynamic';
@@ -16,7 +18,25 @@ export const dynamic = 'force-dynamic';
 export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>) {
   const p = await searchParams;
   const basvuruNo = (p.basvuru as string | undefined)?.trim();
-  const rapor = basvuruNo ? raporBasvuruNoIle(basvuruNo) : null;
+
+  /*
+   * BİR BAŞVURU NUMARASINA BİRDEN ÇOK RAPOR BAĞLI OLABİLİR.
+   *
+   * Eskiden ilk eşleşme gösteriliyordu ve yarışmacı hangisini göreceği
+   * tablo sırasına kalıyordu — rastgele. Bir takım iki yarışmaya
+   * katıldığında da yalnızca birini görebiliyordu. Şimdi hepsi listeleniyor
+   * ve `?rapor=` ile seçiliyor.
+   */
+  const raporlar = basvuruNo ? raporlariBasvuruNoIle(basvuruNo) : [];
+  const seciliId = p.rapor as string | undefined;
+  const rapor =
+    raporlar.find((r) => r.id === seciliId) ??
+    // Varsayılan: tamamlanmış ilk rapor. Yarışmacının aradığı şey sonuç;
+    // henüz değerlendirilmemiş bir raporu öne koymak "sonuç yok" ekranı
+    // gösterip elindeki sonucu saklamak olurdu.
+    raporlar.find((r) => r.durum === 'tamamlandi') ??
+    raporlar[0] ??
+    null;
   const yarisma = rapor ? yarismaGetir(rapor.yarismaId) : null;
   const kategori = rapor ? kategoriGetir(rapor.yarismaId, rapor.kategoriId) : null;
 
@@ -31,6 +51,19 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
   const ozet = rapor ? nihaiOzet(rapor.id) : null;
   const kriterPuanlari = rapor ? nihaiKriterPuanlari(rapor.id) : null;
   const aciklamalar = rapor ? nihaiAciklamalar(rapor.id) : [];
+
+  /*
+   * GERİ BİLDİRİM HAKEM ONAYINDAN GELİYOR, MODELDEN DEĞİL.
+   *
+   * Eskiden bu ekran `rapor.aiDegerlendirme.genelGucluYonler` ve
+   * `kriterler[].oneri` alanlarını doğrudan basıyordu: ham model çıktısı,
+   * kimse okumadan yarışmacıya. Puanı hakemden alıp metni modelden almak
+   * tutarsızdı. Artık hakem panelde bu metinleri düzeltip onaylıyor;
+   * onaylanmamış hiçbir cümle buraya gelmiyor.
+   */
+  const geriBildirim = rapor
+    ? nihaiGeriBildirim(rapor.id)
+    : { gucluYonler: [], gelisimAlanlari: [], oneriler: new Map<string, string[]>() };
 
   return (
     <div className="min-h-screen">
@@ -81,6 +114,41 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
             Sonucumu göster
           </button>
         </form>
+
+        {/*
+          Birden çok rapor varsa seçici. Tek raporda gösterilmiyor:
+          seçeneği olmayan bir seçici gürültüdür.
+        */}
+        {raporlar.length > 1 && rapor && (
+          <div className="mb-5 rounded-xl border border-cizgi bg-white px-4 py-3">
+            <p className="mb-2 text-[11px] font-bold tracking-wide text-metin-2">
+              BU BAŞVURU NUMARASINA {raporlar.length} RAPOR BAĞLI
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {raporlar.map((r) => {
+                const y = yarismaGetir(r.yarismaId);
+                const secili = r.id === rapor.id;
+                return (
+                  <Link
+                    key={r.id}
+                    href={`/sonuc?basvuru=${encodeURIComponent(basvuruNo!)}&rapor=${r.id}`}
+                    className={`rounded-lg border px-3 py-2 text-[11.5px] font-semibold transition-colors ${
+                      secili
+                        ? 'border-kirmizi bg-kirmizi-zemin text-kirmizi-koyu'
+                        : 'border-cizgi hover:bg-zemin'
+                    }`}
+                  >
+                    {r.proje}
+                    <span className="ml-1.5 font-medium text-metin-2">
+                      · {y?.ad ?? '—'}
+                      {r.durum === 'tamamlandi' ? '' : ' · değerlendirilmedi'}
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         {basvuruNo && !rapor && (
           <p className="rounded-xl border border-cizgi bg-white px-5 py-8 text-center text-[12.5px] font-medium text-metin-2">
@@ -236,7 +304,7 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
               </section>
 
               <div className="flex flex-col gap-4">
-                {!!rapor.aiDegerlendirme?.genelGucluYonler.length && (
+                {!!geriBildirim.gucluYonler.length && (
                   <section className="rounded-xl border border-cizgi bg-white px-5 py-4">
                     <div className="mb-3 flex items-center gap-2.5">
                       <span className="flex size-[26px] items-center justify-center rounded-[7px] bg-yesil-zemin">
@@ -247,7 +315,7 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
                       <h2 className="text-[14px] font-bold">Güçlü Yönleriniz</h2>
                     </div>
                     <ul className="flex flex-col gap-2.5">
-                      {rapor.aiDegerlendirme.genelGucluYonler.map((g, i) => (
+                      {geriBildirim.gucluYonler.map((g, i) => (
                         <li key={i} className="flex gap-2.5">
                           <span className="w-[5px] shrink-0 rounded-sm bg-yesil" />
                           <span className="text-[11.5px] leading-relaxed font-medium text-metin">
@@ -259,44 +327,114 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
                   </section>
                 )}
 
-                {!!rapor.aiDegerlendirme?.kriterler.some((k) => k.oneri) && (
+                {/*
+                  GELİŞİME AÇIK ALANLAR — PRD'de üç ayrı yerde isteniyor
+                  (rol tanımı, MVP madde 06, AKIŞ 03) ve eskiden hiçbir
+                  ekranda yoktu: model üretiyordu, hiç basılmıyordu.
+                */}
+                {!!geriBildirim.gelisimAlanlari.length && (
                   <section className="rounded-xl border border-cizgi bg-white px-5 py-4">
                     <div className="mb-3 flex items-center gap-2.5">
                       <span className="flex size-[26px] items-center justify-center rounded-[7px] bg-amber-zemin">
                         <svg viewBox="0 0 24 24" className="size-[15px] stroke-amber" fill="none" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M12 3v3M12 18v3M3 12h3M18 12h3" />
+                          <circle cx="12" cy="12" r="4" />
+                        </svg>
+                      </span>
+                      <h2 className="text-[14px] font-bold">Gelişime Açık Alanlar</h2>
+                    </div>
+                    <ul className="flex flex-col gap-2.5">
+                      {geriBildirim.gelisimAlanlari.map((g, i) => (
+                        <li key={i} className="flex gap-2.5">
+                          <span className="w-[5px] shrink-0 rounded-sm bg-amber" />
+                          <span className="text-[11.5px] leading-relaxed font-medium text-metin">
+                            {g}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                )}
+
+                {geriBildirim.oneriler.size > 0 && (
+                  <section className="rounded-xl border border-cizgi bg-white px-5 py-4">
+                    <div className="mb-3 flex items-center gap-2.5">
+                      <span className="flex size-[26px] items-center justify-center rounded-[7px] bg-mavi-zemin">
+                        <svg viewBox="0 0 24 24" className="size-[15px] stroke-mavi" fill="none" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
                           <path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
                         </svg>
                       </span>
                       <h2 className="text-[14px] font-bold">Gelecek Yıl İçin Öneriler</h2>
                     </div>
 
+                    {/*
+                      "+N puana kadar" HAKEMİN PUANINDAN hesaplanıyor.
+                      Eskiden yapay zekânın önerdiği puandan hesaplanıyordu
+                      ve 9 ölçütün 7'sinde yanlış sayı gösteriyordu — hemen
+                      yukarıdaki kriter tablosuyla çelişiyordu.
+                    */}
                     <ol className="flex flex-col gap-2.5">
-                      {rapor.aiDegerlendirme.kriterler
-                        .filter((k) => k.oneri)
-                        // En çok puan kaybedilen kriterden başla.
-                        .sort((a, b) => b.azamiPuan - b.aiPuan - (a.azamiPuan - a.aiPuan))
-                        .slice(0, 4)
-                        .map((k, i) => (
-                          <li key={k.kod} className="rounded-lg border border-cizgi px-3.5 py-2.5">
+                      {kategori.rubrik.kriterler
+                        .filter((k) => geriBildirim.oneriler.has(k.kod))
+                        .map((k) => ({
+                          olcut: k,
+                          kayip: Math.round(
+                            (k.puan - (kriterPuanlari?.get(k.kod)?.puan ?? 0)) * 10,
+                          ) / 10,
+                          metinler: geriBildirim.oneriler.get(k.kod)!,
+                        }))
+                        // En çok puan kaybedilen ölçütten başla: yarışmacı
+                        // en değerli iyileştirmeyi ilk okusun.
+                        .sort((a, b) => b.kayip - a.kayip)
+                        .map((x, i) => (
+                          <li
+                            key={x.olcut.kod}
+                            className="rounded-lg border border-cizgi px-3.5 py-2.5"
+                          >
                             <div className="mb-1 flex items-center gap-2.5">
                               <span className="flex size-[19px] shrink-0 items-center justify-center rounded-full bg-lacivert text-[10.5px] font-extrabold text-white">
                                 {i + 1}
                               </span>
                               <span className="min-w-0 flex-1 truncate text-[12px] font-bold">
-                                {k.ad}
+                                {x.olcut.ad}
                               </span>
-                              <span className="shrink-0 text-[10.5px] font-bold text-yesil-koyu">
-                                +{k.azamiPuan - k.aiPuan} puana kadar
-                              </span>
+                              {x.kayip > 0 && (
+                                <span className="shrink-0 text-[10.5px] font-bold text-yesil-koyu">
+                                  +{x.kayip} puana kadar
+                                </span>
+                              )}
                             </div>
-                            <p className="pl-[29px] text-[11px] leading-relaxed font-medium text-metin-2">
-                              {k.oneri}
-                            </p>
+                            {x.metinler.map((m, n) => (
+                              <p
+                                key={n}
+                                className="pl-[29px] text-[11px] leading-relaxed font-medium text-metin-2 not-first:mt-1.5"
+                              >
+                                {m}
+                              </p>
+                            ))}
                           </li>
                         ))}
                     </ol>
                   </section>
                 )}
+
+                {/*
+                  Hiç onaylı geri bildirim yoksa sessiz kalmıyoruz:
+                  yarışmacı "sistem bozuk mu" diye düşünmesin.
+                */}
+                {!geriBildirim.gucluYonler.length &&
+                  !geriBildirim.gelisimAlanlari.length &&
+                  geriBildirim.oneriler.size === 0 && (
+                    <section className="rounded-xl border border-dashed border-metin-3/40 bg-white px-5 py-6 text-center">
+                      <p className="text-[12px] leading-relaxed font-medium text-metin-2">
+                        Bu değerlendirme için ayrıca yazılı geri bildirim
+                        girilmemiş. Puan kırılımınız yukarıda; sorularınız
+                        için Yarışmalar Koordinatörlüğü ile iletişime
+                        geçebilirsiniz.
+                      </p>
+                    </section>
+                  )}
+
               </div>
             </div>
           </>

@@ -173,6 +173,11 @@ export default async function HakemRaporSayfasi({
             }))}
             baslangicPuanlar={baslangicPuanlar}
             baslangicAciklama={mevcut?.aciklama ?? ''}
+            // Kayıtlı taslak varsa o gösterilir; yoksa yapay zekâ önerisi
+            // dolu gelir ve hakem onaylayarak yayımlar.
+            baslangicGeriBildirim={mevcut?.geriBildirim}
+            aiGucluYonler={rapor.aiDegerlendirme?.genelGucluYonler ?? []}
+            aiGelisimAlanlari={rapor.aiDegerlendirme?.genelGelisimAlanlari ?? []}
             tamamlandi={tamamlandi}
           />
         </div>

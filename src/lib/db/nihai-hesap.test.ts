@@ -101,3 +101,96 @@ test('taslak notları yarışmacıya gitmiyor', () => {
   assert.deepEqual(m.get('ICERIK')?.notlar, ['Onaylanmış not.']);
   assert.equal(m.get('ICERIK')?.puan, 30);
 });
+
+// ─────────────────────────── birleşik geri bildirim ───────────────────────
+
+import { birlesikGeriBildirim } from './nihai-hesap';
+
+const gb = (
+  hakemId: string,
+  durum: DegerlendirmeGirdisi['durum'],
+  guclu: string[],
+  gelisim: string[],
+  oneriler: Array<[string, string]> = [],
+): DegerlendirmeGirdisi => ({
+  hakemId,
+  durum,
+  toplam: 50,
+  puanlar: [],
+  geriBildirim: {
+    gucluYonler: guclu,
+    gelisimAlanlari: gelisim,
+    oneriler: oneriler.map(([kriterKodu, metin]) => ({ kriterKodu, metin })),
+  },
+});
+
+test('onaylanmamış geri bildirim yarışmacıya gitmiyor', () => {
+  // geriBildirim alanı hiç yoksa hiçbir şey yayımlanmamalı.
+  const b = birlesikGeriBildirim([
+    { hakemId: 'h1', durum: 'tamamlandi', toplam: 50, puanlar: [] },
+  ]);
+  assert.deepEqual(b.gucluYonler, []);
+  assert.deepEqual(b.gelisimAlanlari, []);
+  assert.equal(b.oneriler.size, 0);
+});
+
+test('TASLAK değerlendirmenin geri bildirimi yayımlanmıyor', () => {
+  const b = birlesikGeriBildirim([
+    gb('h1', 'taslak', ['Yarım kalmış övgü.'], ['Yarım kalmış eleştiri.']),
+  ]);
+  assert.deepEqual(b.gucluYonler, []);
+  assert.deepEqual(b.gelisimAlanlari, []);
+});
+
+test('tamamlanmış değerlendirmenin geri bildirimi yayımlanıyor', () => {
+  const b = birlesikGeriBildirim([
+    gb('h1', 'tamamlandi', ['Yöntem net.'], ['Maliyet analizi yok.'], [['ICERIK', 'Tabloyu ekleyin.']]),
+  ]);
+  assert.deepEqual(b.gucluYonler, ['Yöntem net.']);
+  assert.deepEqual(b.gelisimAlanlari, ['Maliyet analizi yok.']);
+  assert.deepEqual(b.oneriler.get('ICERIK'), ['Tabloyu ekleyin.']);
+});
+
+test('iki hakemin aynı cümlesi tekrar gösterilmiyor', () => {
+  const b = birlesikGeriBildirim([
+    gb('h1', 'tamamlandi', ['Yöntem net.'], []),
+    gb('h2', 'tamamlandi', ['  yöntem   NET.  '], []),
+  ]);
+  assert.equal(b.gucluYonler.length, 1, 'boşluk ve büyük harf farkı tekrar sayılmamalı');
+});
+
+test('iki hakemin FARKLI cümleleri ikisi de kalıyor', () => {
+  // Birini seçip atmak, hangi hakemin cümlesinin atıldığına sistemin
+  // karar vermesi olurdu.
+  const b = birlesikGeriBildirim([
+    gb('h1', 'tamamlandi', ['Yöntem net.'], []),
+    gb('h2', 'tamamlandi', ['Literatür taraması güçlü.'], []),
+  ]);
+  assert.equal(b.gucluYonler.length, 2);
+});
+
+test('boş ve boşluklu cümleler atılıyor', () => {
+  const b = birlesikGeriBildirim([
+    gb('h1', 'tamamlandi', ['', '   ', 'Gerçek övgü.'], ['\n'], [['A', '  ']]),
+  ]);
+  assert.deepEqual(b.gucluYonler, ['Gerçek övgü.']);
+  assert.deepEqual(b.gelisimAlanlari, []);
+  assert.equal(b.oneriler.size, 0, 'boş öneri kriter anahtarı bile oluşturmamalı');
+});
+
+test('aynı ölçüte iki hakem öneri yazarsa ikisi de kalıyor', () => {
+  const b = birlesikGeriBildirim([
+    gb('h1', 'tamamlandi', [], [], [['ICERIK', 'Tablo ekleyin.']]),
+    gb('h2', 'tamamlandi', [], [], [['ICERIK', 'Kaynak gösterin.']]),
+  ]);
+  assert.deepEqual(b.oneriler.get('ICERIK'), ['Tablo ekleyin.', 'Kaynak gösterin.']);
+});
+
+test('Türkçe büyük/küçük harf tekleme doğru çalışıyor', () => {
+  // "İYİ" ve "iyi" aynı cümle; Türkçe küçültme İ→i yapmalı.
+  const b = birlesikGeriBildirim([
+    gb('h1', 'tamamlandi', ['İYİ KURGULANMIŞ.'], []),
+    gb('h2', 'tamamlandi', ['iyi kurgulanmış.'], []),
+  ]);
+  assert.equal(b.gucluYonler.length, 1);
+});

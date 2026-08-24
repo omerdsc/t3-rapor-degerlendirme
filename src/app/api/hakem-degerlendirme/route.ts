@@ -27,6 +27,11 @@ export async function POST(istek: Request) {
     raporId?: string;
     puanlar?: Array<{ kriterKodu: string; puan: number; not?: string }>;
     aciklama?: string;
+    geriBildirim?: {
+      gucluYonler?: unknown;
+      gelisimAlanlari?: unknown;
+      oneriler?: unknown;
+    };
     tamamla?: boolean;
   };
   try {
@@ -87,6 +92,38 @@ export async function POST(istek: Request) {
       not: p.not?.slice(0, 2000),
     }));
 
+  /*
+   * GERİ BİLDİRİM DE SUNUCUDA TEMİZLENİYOR.
+   *
+   * Bu metinler yarışmacı ekranına basılacak; istemciden geldiği gibi
+   * kabul edilemez. Dize olmayanlar atılıyor, uzunluk sınırlanıyor,
+   * madde sayısı sınırlanıyor (bir hakem 500 maddelik liste
+   * göndermesin), tanınmayan ölçüt kodları düşüyor.
+   */
+  const metinListesi = (ham: unknown, azamiMadde: number): string[] =>
+    (Array.isArray(ham) ? ham : [])
+      .filter((x): x is string => typeof x === 'string')
+      .map((x) => x.trim().slice(0, 1000))
+      .filter(Boolean)
+      .slice(0, azamiMadde);
+
+  const oneriListesi = (ham: unknown) =>
+    (Array.isArray(ham) ? ham : [])
+      .filter(
+        (x): x is { kriterKodu: string; metin: string } =>
+          !!x && typeof x.kriterKodu === 'string' && typeof x.metin === 'string',
+      )
+      .filter((x) => olcutler.has(x.kriterKodu))
+      .map((x) => ({ kriterKodu: x.kriterKodu, metin: x.metin.trim().slice(0, 1000) }))
+      .filter((x) => x.metin)
+      .slice(0, olcutler.size);
+
+  const geriBildirim = {
+    gucluYonler: metinListesi(g.geriBildirim?.gucluYonler, 12),
+    gelisimAlanlari: metinListesi(g.geriBildirim?.gelisimAlanlari, 12),
+    oneriler: oneriListesi(g.geriBildirim?.oneriler),
+  };
+
   const tamamla = g.tamamla === true;
 
   // Tamamlamak için BÜTÜN ölçütler puanlanmış olmalı.
@@ -110,6 +147,7 @@ export async function POST(istek: Request) {
     hakemId: hakem.id,
     puanlar: temiz,
     aciklama: g.aciklama?.slice(0, 4000),
+    geriBildirim,
     tamamla,
   });
   if (hata || !sonuc) return Response.json({ hata }, { status: 422 });
