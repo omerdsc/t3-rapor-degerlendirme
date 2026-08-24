@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import HakemGirisi from '@/components/hakem-girisi';
 import { hakemYukleri } from '@/lib/db/hakem-depo';
 import { panoOzeti, yarismalariListele } from '@/lib/depo/depo';
 
@@ -60,7 +61,9 @@ export default function GirisSayfasi() {
         `${aktifHakem} hakemin kendi paneli`,
         bekleyenIs ? `${bekleyenIs} değerlendirme bekliyor` : 'bekleyen iş yok',
       ],
-      not: 'Bağlantı koordinasyon tarafından iletilir — /hakem/<erişim kodu>',
+      /* Kod kutusu bu kartın içinde: hakemin girmek için adres çubuğuna
+         yol yazması gerekmesin. */
+      kodGirisi: true,
     },
     {
       yol: '/sonuc',
@@ -133,11 +136,7 @@ export default function GirisSayfasi() {
                     </span>
                   ))}
                 </div>
-                {k.not && (
-                  <p className="mt-2 rounded-md bg-zemin px-2.5 py-1.5 text-[10.5px] font-medium text-metin-2">
-                    {k.not}
-                  </p>
-                )}
+                {'kodGirisi' in k && k.kodGirisi && <HakemGirisi />}
               </>
             );
 

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import DegerlendirmePaneli from '@/components/degerlendirme-paneli';
+import AiOnDegerlendirme from '@/components/ai-on-degerlendirme';
 import { DurumRozeti, SeviyeRozeti } from '@/components/rozet';
 import Yazisma from '@/components/yazisma';
 import { kategoriGetir, raporGetir, yarismaGetir } from '@/lib/depo/depo';
@@ -86,6 +86,56 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
               {rapor.istatistik.kelimeSayisi.toLocaleString('tr')} kelime ·{' '}
               {rapor.istatistik.gorselSayisi} görsel · {yarisma.ad} · {kategori.ad}
             </p>
+          </div>
+
+          {/*
+            NİHAİ PUAN BAŞLIKTA.
+            "Şu an ne puan görüyorum" sorusunun cevabı sayfanın en tepesinde
+            olmalı. Aşağıda hakem kırılımı ve yapay zekâ önerisi de var ama
+            GEÇERLİ OLAN bu: tamamlanmış hakem değerlendirmelerinin
+            ortalaması. Henüz tamamlanmamışsa puan yazmıyor — boş bir sayı
+            göstermek "değerlendirildi" izlenimi verir.
+          */}
+          <div
+            className={`shrink-0 rounded-xl border px-4 py-2.5 text-right ${
+              ozet.puan === undefined
+                ? 'border-cizgi bg-white'
+                : 'border-mavi/25 bg-mavi-zemin'
+            }`}
+          >
+            <div className="text-[9.5px] font-bold tracking-wide text-metin-2">
+              NİHAİ PUAN
+            </div>
+            {ozet.puan === undefined ? (
+              <>
+                <div className="text-[15px] leading-tight font-extrabold text-metin-3">
+                  —
+                </div>
+                <div className="mt-0.5 text-[10px] font-semibold text-metin-2">
+                  {atananlar.length
+                    ? `${atananlar.length} hakem değerlendiriyor`
+                    : 'hakem atanmadı'}
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="text-[24px] leading-none font-extrabold text-mavi-koyu">
+                  {ozet.puan.toFixed(1)}
+                  <span className="text-[13px] font-bold">
+                    /{kategori.rubrik.toplamPuan}
+                  </span>
+                </div>
+                <div className="mt-1 text-[10px] font-semibold text-metin-2">
+                  {ozet.tamamlanan}/{atananlar.length} hakem ortalaması
+                  {ozet.sapma !== undefined && ozet.sapma >= 10 && (
+                    <span className="text-amber-koyu">
+                      {' '}
+                      · {ozet.sapma.toFixed(0)} puan fark
+                    </span>
+                  )}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </header>
@@ -178,19 +228,70 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
         </details>
       )}
 
-      {/* Kaydın tamamı DEĞİL, panelin kullandığı alanlar gönderiliyor:
-          istemciye inen her alan sayfa kaynağında okunabilir. */}
-      <DegerlendirmePaneli
-        rapor={{
-          id: rapor.id,
-          durum: rapor.durum,
-          dosyaYolu: rapor.dosyaYolu,
-          hakemPuanlari: rapor.hakemPuanlari,
-          hakemNotu: rapor.hakemNotu,
-          aiDegerlendirme: rapor.aiDegerlendirme,
-        }}
-        rubrik={kategori.rubrik}
+      {/*
+        KOORDİNASYON PUAN GİRMİYOR.
+        Eskiden burada bir puanlama formu vardı ("Taslak kaydet", "Nihai
+        değerlendirmeyi tamamla"). Hakem paneli eklendikten sonra bu tutarsız
+        hale geldi: aynı ekranda iki ayrı puan kaynağı görünüyor ve hangisinin
+        geçerli olduğu belirsiz kalıyordu. Puanı hakem verir; koordinasyon
+        ön değerlendirmeyi başlatır ve sonucu izler.
+      */}
+      <AiOnDegerlendirme
+        raporId={rapor.id}
+        olcutler={kategori.rubrik.kriterler}
+        hakemAtandi={atananlar.length > 0}
+        ai={
+          rapor.aiDegerlendirme
+            ? {
+                aiToplam: rapor.aiDegerlendirme.aiToplam,
+                azamiToplam: rapor.aiDegerlendirme.azamiToplam,
+                incelemeGereken: rapor.aiDegerlendirme.incelemeGereken,
+                maliyet: rapor.aiDegerlendirme.kullanim.maliyet,
+                sureMs: rapor.aiDegerlendirme.sureMs,
+                genelGucluYonler: rapor.aiDegerlendirme.genelGucluYonler,
+                genelGelisimAlanlari: rapor.aiDegerlendirme.genelGelisimAlanlari,
+                sartnameIhlalleri: rapor.aiDegerlendirme.sartnameIhlalleri ?? [],
+                kriterler: rapor.aiDegerlendirme.kriterler.map((k) => ({
+                  kod: k.kod,
+                  ad: k.ad,
+                  aiPuan: k.aiPuan,
+                  azamiPuan: k.azamiPuan,
+                  guven: k.guven,
+                  gerekce: k.gerekce,
+                  kanitlar: k.kanitlar,
+                  oneri: k.oneri,
+                  hakemIncelemesiGerekli: k.hakemIncelemesiGerekli,
+                })),
+              }
+            : undefined
+        }
       />
+
+      {/* Rapor belgesi — koordinasyon da görebilmeli. */}
+      <section className="mb-4 overflow-hidden rounded-xl border border-cizgi bg-white">
+        <div className="flex items-center gap-2.5 border-b border-cizgi px-4 py-2.5">
+          <h2 className="text-[12.5px] font-bold">Rapor belgesi</h2>
+          <a
+            href={`/api/rapor/${rapor.id}/dosya`}
+            target="_blank"
+            rel="noreferrer"
+            className="ml-auto text-[11.5px] font-bold text-kirmizi hover:text-kirmizi-koyu"
+          >
+            Yeni sekmede aç →
+          </a>
+        </div>
+        {rapor.dosyaYolu ? (
+          <iframe
+            src={`/api/rapor/${rapor.id}/dosya#view=FitH`}
+            title="Rapor"
+            className="h-[560px] w-full"
+          />
+        ) : (
+          <p className="px-4 py-12 text-center text-[12px] font-medium text-metin-2">
+            Bu rapor Word olarak yüklendiği için gömülü görüntüleme yok.
+          </p>
+        )}
+      </section>
 
       <Yazisma raporId={rapor.id} baslangic={rapor.mesajlar ?? []} />
     </>

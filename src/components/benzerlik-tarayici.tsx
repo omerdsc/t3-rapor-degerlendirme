@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 /**
  * MVP 5 ekranı — kopya/benzerlik taraması.
@@ -72,31 +72,64 @@ export default function BenzerlikTarayici({
   yarismaId: string;
   kategoriId?: string;
 }) {
-  const [veri, setVeri] = useState<Yanit | null>(null);
-  const [yukleniyor, setYukleniyor] = useState(true);
-  const [hata, setHata] = useState<string | null>(null);
+  /*
+   * ── DURUM NEDEN TEK PARÇA ───────────────────────────────────────────────
+   * Önce üç ayrı durum vardı: `veri`, `yukleniyor`, `hata`. Etki her
+   * çalıştığında `setYukleniyor(true)` çağırıyordu ve bu iki soruna yol
+   * açıyordu:
+   *
+   * 1. Bayat yanıt. Kullanıcı kategoriyi hızlı değiştirdiğinde önceki
+   *    isteğin geç dönen yanıtı yenisini ezebiliyordu — ekranda yanlış
+   *    kategorinin benzerlik sonuçları kalıyordu.
+   * 2. Etki gövdesinde eşzamanlı setState — basamaklı render.
+   *
+   * Çözüm: sonucu, AİT OLDUĞU İSTEĞİN KİMLİĞİYLE birlikte tutmak.
+   * "Yükleniyor" artık ayrı bir durum değil, TÜRETİLEN bir değer: elimizdeki
+   * sonucun kimliği istediğimizle uyuşmuyorsa yükleniyoruz. Bayat yanıt
+   * kendiliğinden imkânsız — kimliği uyuşmayan yanıt hiç yazılmıyor.
+   */
   const [acik, setAcik] = useState<string | null>(null);
+  const kimlik = `${yarismaId}|${kategoriId ?? ''}`;
+  const [sonuc, setSonuc] = useState<{
+    kimlik: string;
+    veri?: Yanit;
+    hata?: string;
+  } | null>(null);
+  /** Elle yeniden taramada sayaç artıyor; kimlik değişince etki tekrar koşuyor. */
+  const [tazeleme, setTazeleme] = useState(0);
 
-  const tara = useCallback(async () => {
-    setYukleniyor(true);
-    setHata(null);
-    try {
-      const q = new URLSearchParams({ yarisma: yarismaId });
-      if (kategoriId) q.set('kategori', kategoriId);
-      const yanit = await fetch(`/api/benzerlik?${q}`);
-      const d: Yanit = await yanit.json();
-      if (!yanit.ok) setHata(d.hata ?? 'Tarama başarısız.');
-      else setVeri(d);
-    } catch (e) {
-      setHata(e instanceof Error ? e.message : 'Ağ hatası.');
-    } finally {
-      setYukleniyor(false);
-    }
-  }, [yarismaId, kategoriId]);
+  const yukleniyor = sonuc?.kimlik !== `${kimlik}|${tazeleme}`;
+  const veri = sonuc?.veri ?? null;
+  const hata = sonuc?.hata ?? null;
 
   useEffect(() => {
-    void tara();
-  }, [tara]);
+    const bu = `${kimlik}|${tazeleme}`;
+    let iptal = false;
+    (async () => {
+      try {
+        const q = new URLSearchParams({ yarisma: yarismaId });
+        if (kategoriId) q.set('kategori', kategoriId);
+        const yanit = await fetch(`/api/benzerlik?${q}`);
+        const d: Yanit = await yanit.json();
+        if (iptal) return;
+        setSonuc(
+          yanit.ok
+            ? { kimlik: bu, veri: d }
+            : { kimlik: bu, hata: d.hata ?? 'Tarama başarısız.' },
+        );
+      } catch (e) {
+        if (!iptal) {
+          setSonuc({
+            kimlik: bu,
+            hata: e instanceof Error ? e.message : 'Ağ hatası.',
+          });
+        }
+      }
+    })();
+    return () => {
+      iptal = true;
+    };
+  }, [yarismaId, kategoriId, kimlik, tazeleme]);
 
   if (yukleniyor) {
     return (
@@ -141,7 +174,7 @@ export default function BenzerlikTarayici({
         )}
         <button
           type="button"
-          onClick={() => void tara()}
+          onClick={() => setTazeleme((t) => t + 1)}
           className="cursor-pointer rounded-lg border border-cizgi px-3 py-1.5 text-[12px] font-bold transition-colors hover:bg-zemin"
         >
           Yeniden tara

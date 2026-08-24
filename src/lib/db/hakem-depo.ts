@@ -17,6 +17,7 @@ import { baglanti, bool, jsonOku, sayi } from './baglanti';
 import type {
   Atama, DegerlendirmeDurumu, Hakem, HakemDegerlendirmesi, HakemIsi, NihaiOzet,
 } from './tipler';
+import { kriterOrtalamalari, toplamOrtalamasi } from './nihai-hesap';
 import { raporRumuzu, takimRumuzu } from '../depo/maskele';
 
 type Satir = Record<string, unknown>;
@@ -317,7 +318,34 @@ export function degerlendirmeKaydet(girdi: {
     girdi.tamamla ? simdi : null,
   );
 
+  nihaiPuaniYaz(girdi.raporId);
+
   return { sonuc: degerlendirmeGetir(girdi.raporId, girdi.hakemId)! };
+}
+
+/**
+ * Raporun `nihai_puan` kolonunu hakem değerlendirmelerinden yeniden yazar.
+ *
+ * ── NEDEN KOLON VAR, NEDEN TEK YAZICI ───────────────────────────────────
+ * Nihai puan türetilmiş bir değer: tamamlanmış değerlendirmelerin
+ * ortalaması. Her yerde `nihaiOzet()` ile hesaplanabilir ama rapor
+ * LİSTELERİ bunu yapamaz — 200 rapor için 200 ek sorgu demek olurdu.
+ * O yüzden kolonda önbelleklenmiş halde duruyor.
+ *
+ * Önbellek bir kez tutarsızlığa düştü: eski koordinasyon puanlama formu
+ * kolona doğrudan yazıyordu, hakem puanı kaydedildiğinde ise kolon hiç
+ * güncellenmiyordu. Sonuç: bir rapor listede 75,5 puan, detay sayfasında
+ * 71,8 puan gösteriyordu — aynı rapor, iki farklı sayı.
+ *
+ * Kural artık tek: `nihai_puan` kolonuna YALNIZCA bu fonksiyon yazar ve
+ * değerlendirme durumunu değiştiren her işlemin sonunda çağrılır. Kolon
+ * ile hesap ayrışamaz.
+ */
+export function nihaiPuaniYaz(raporId: string): void {
+  const ozet = nihaiOzet(raporId);
+  baglanti()
+    .prepare('UPDATE rapor SET nihai_puan = ? WHERE id = ?')
+    .run(ozet.puan ?? null, raporId);
 }
 
 /**
@@ -330,31 +358,96 @@ export function degerlendirmeKaydet(girdi: {
 export function nihaiOzet(raporId: string): NihaiOzet {
   const hepsi = raporunDegerlendirmeleri(raporId);
   const atanan = raporunHakemleri(raporId);
-  const bitmis = hepsi.filter((d) => d.durum === 'tamamlandi' && d.toplam !== undefined);
 
-  const toplamlar = bitmis.map((d) => ({
-    hakemId: d.hakemId,
-    hakemAdi: atanan.find((h) => h.id === d.hakemId)?.ad ?? '—',
-    toplam: d.toplam!,
-  }));
+  // Hesap `nihai-hesap.ts` içinde ve test kapsamında; burası yalnızca
+  // veriyi çekip hakem adlarını ekliyor.
+  const { puan, sapma, tamamlanan } = toplamOrtalamasi(hepsi);
 
-  if (!toplamlar.length) {
-    return { tamamlanan: 0, atanan: atanan.length, toplamlar: [] };
+  const toplamlar = hepsi
+    .filter((d) => d.durum === 'tamamlandi' && d.toplam !== undefined)
+    .map((d) => ({
+      hakemId: d.hakemId,
+      hakemAdi: atanan.find((h) => h.id === d.hakemId)?.ad ?? '—',
+      toplam: d.toplam!,
+    }));
+
+  return { tamamlanan, atanan: atanan.length, puan, sapma, toplamlar };
+}
+
+/**
+ * Kriter bazında nihai puan — TAMAMLANMIŞ değerlendirmelerin ortalaması.
+ *
+ * ── NEDEN GEREKLİ ───────────────────────────────────────────────────────
+ * `nihaiOzet()` yalnızca TOPLAM puanı veriyor. Ama yarışmacı portalı ve
+ * hakem karşılaştırma tablosu kriter kırılımı istiyor: "İÇERİK'ten kaç
+ * aldım". Eski modelde bu `rapor.hakemPuanlari` alanında duruyordu; çok
+ * hakemli modele geçişte o alan boş kaldı ve yarışmacı ekranı her kriteri
+ * 0 göstermeye başladı. Kırılım da toplam gibi TÜRETİLMELİ.
+ *
+ * Notlar birleştirilirken hakem adı YAZILMIYOR: yarışmacıya hangi hakemin
+ * ne dediğini göstermek, hakemler arası tartışmayı yarışmacının önüne
+ * koymak olur. Kararın sahibi kurul; metinler birlikte sunuluyor.
+ */
+export function nihaiKriterPuanlari(raporId: string) {
+  return kriterOrtalamalari(raporunDegerlendirmeleri(raporId));
+}
+
+/** Genel değerlendirme metinleri — hakemlerin `aciklama` alanları. */
+export function nihaiAciklamalar(raporId: string): string[] {
+  return raporunDegerlendirmeleri(raporId)
+    .filter((d) => d.durum === 'tamamlandi' && d.aciklama?.trim())
+    .map((d) => d.aciklama!.trim());
+}
+
+/**
+ * Çok rapor için hakem durumu — TEK sorguda.
+ *
+ * ── NEDEN TOPLU ─────────────────────────────────────────────────────────
+ * Rapor listesi her satır için "kaç hakem atandı, kaçı bitirdi" bilmek
+ * zorunda; yoksa koordinasyon listeye bakıp bir raporun atanmış mı,
+ * çalışılıyor mu, atanmamış mı olduğunu ayırt edemez — kolonda yalnızca
+ * "—" görür. Satır satır sorgulamak 200 raporda 400 sorgu demek. Bu
+ * yüzden tek `GROUP BY` ile geliyor.
+ *
+ * Rapor kimliği listesi SQL'e parametre olarak veriliyor (yer tutucuyla),
+ * dize birleştirmeyle değil: kimlikler UUID olsa da enjeksiyon yüzeyi
+ * açmanın gerekçesi yok.
+ */
+export interface RaporHakemDurumu {
+  atanan: number;
+  tamamlanan: number;
+  taslak: number;
+}
+
+export function raporlarinHakemDurumu(
+  raporIdler: string[],
+): Map<string, RaporHakemDurumu> {
+  const sonuc = new Map<string, RaporHakemDurumu>();
+  if (!raporIdler.length) return sonuc;
+
+  const yer = raporIdler.map(() => '?').join(',');
+  const satirlar = baglanti()
+    .prepare(
+      `SELECT a.rapor_id,
+              COUNT(*) AS atanan,
+              SUM(CASE WHEN d.durum = 'tamamlandi' THEN 1 ELSE 0 END) AS tamamlanan,
+              SUM(CASE WHEN d.durum = 'taslak'     THEN 1 ELSE 0 END) AS taslak
+         FROM atama a
+         LEFT JOIN degerlendirme d
+                ON d.rapor_id = a.rapor_id AND d.hakem_id = a.hakem_id
+        WHERE a.rapor_id IN (${yer})
+        GROUP BY a.rapor_id`,
+    )
+    .all(...raporIdler) as Array<Record<string, number | string>>;
+
+  for (const s of satirlar) {
+    sonuc.set(s.rapor_id as string, {
+      atanan: Number(s.atanan) || 0,
+      tamamlanan: Number(s.tamamlanan) || 0,
+      taslak: Number(s.taslak) || 0,
+    });
   }
-
-  const puanlar = toplamlar.map((t) => t.toplam);
-  const ortalama = puanlar.reduce((a, b) => a + b, 0) / puanlar.length;
-
-  return {
-    tamamlanan: bitmis.length,
-    atanan: atanan.length,
-    puan: Math.round(ortalama * 10) / 10,
-    sapma:
-      puanlar.length > 1
-        ? Math.round((Math.max(...puanlar) - Math.min(...puanlar)) * 10) / 10
-        : 0,
-    toplamlar,
-  };
+  return sonuc;
 }
 
 /** Hakemin panelinde gördüğü iş listesi. */

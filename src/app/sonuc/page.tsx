@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import { kategoriGetir, raporBasvuruNoIle, yarismaGetir } from '@/lib/depo/depo';
+import {
+  nihaiAciklamalar, nihaiKriterPuanlari, nihaiOzet,
+} from '@/lib/db/hakem-depo';
 
 export const dynamic = 'force-dynamic';
 
@@ -16,6 +19,18 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
   const rapor = basvuruNo ? raporBasvuruNoIle(basvuruNo) : null;
   const yarisma = rapor ? yarismaGetir(rapor.yarismaId) : null;
   const kategori = rapor ? kategoriGetir(rapor.yarismaId, rapor.kategoriId) : null;
+
+  /*
+   * PUANLAR HAKEM KAYITLARINDAN TÜRETİLİYOR.
+   *
+   * Eskiden bu ekran `rapor.hakemPuanlari` alanını okuyordu — tek hakemli
+   * modelin kalıntısı. Çok hakemli modele geçince o alan boş kaldı ve
+   * yarışmacı, toplamı doğru ama her kriteri 0 gösteren bir sonuç
+   * görüyordu. Artık kırılım da toplam da hakem kayıtlarından geliyor.
+   */
+  const ozet = rapor ? nihaiOzet(rapor.id) : null;
+  const kriterPuanlari = rapor ? nihaiKriterPuanlari(rapor.id) : null;
+  const aciklamalar = rapor ? nihaiAciklamalar(rapor.id) : [];
 
   return (
     <div className="min-h-screen">
@@ -112,10 +127,15 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
                   </span>
                   <span className="text-[11.5px] font-medium text-metin-2">
                     {rapor.tamamlandi && new Date(rapor.tamamlandi).toLocaleDateString('tr')} ·{' '}
-                    {/* Değerlendiren hakem yarışmacıya da bildiriliyor:
-                        itiraz hakkı, kararın sahibinin bilinmesini gerektirir. */}
-                    {rapor.hakemAdi
-                      ? `${rapor.hakemAdi} tarafından değerlendirildi`
+                    {/*
+                      KAÇ HAKEM DEĞERLENDİRDİ — ama HANGİ hakemler DEĞİL.
+                      Yarışmacının bilmesi gereken, kararın kaç bağımsız
+                      değerlendirmeye dayandığı; hakem kimliği itiraz
+                      sürecinde kurul üzerinden açılır, sonuç ekranında
+                      yayımlanmaz.
+                    */}
+                    {(ozet?.tamamlanan ?? 0) > 1
+                      ? `${ozet!.tamamlanan} bağımsız hakem değerlendirdi — puanınız ortalamadır`
                       : 'Uzman hakem tarafından değerlendirildi'}
                   </span>
                 </div>
@@ -124,7 +144,7 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
               <div className="shrink-0 text-center">
                 <div className="text-[10px] font-bold tracking-wide text-metin-3">TOPLAM PUAN</div>
                 <div className="mt-0.5 text-[44px] leading-none font-extrabold">
-                  {rapor.hakemToplam}
+                  {ozet?.puan?.toFixed(1) ?? rapor.hakemToplam}
                   <span className="text-[19px] font-semibold text-metin-3">
                     /{kategori.rubrik.toplamPuan}
                   </span>
@@ -141,7 +161,7 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
 
                 <div className="flex flex-col gap-4">
                   {kategori.rubrik.kriterler.map((k) => {
-                    const puan = rapor.hakemPuanlari?.find((x) => x.kriterKodu === k.kod);
+                    const puan = kriterPuanlari?.get(k.kod);
                     const ai = rapor.aiDegerlendirme?.kriterler.find((x) => x.kod === k.kod);
                     const oran = k.puan ? ((puan?.puan ?? 0) / k.puan) * 100 : 0;
                     const renk = oran >= 70 ? 'bg-yesil' : oran >= 40 ? 'bg-amber' : 'bg-kirmizi';
@@ -173,19 +193,32 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
                             çelişki okutur — aldığı puanı savunmayan bir metin.
                             Bu durumda hiçbir şey göstermemek daha dürüst.
                           */}
-                          {puan?.not
-                            || (ai && puan && ai.aiPuan === puan.puan ? ai.gerekce : null)
-                            || 'Bu kriter için ayrıca açıklama girilmemiş.'}
+                          {puan?.notlar.length
+                            ? puan.notlar.join(' — ')
+                            : (ai && puan && ai.aiPuan === puan.puan
+                                ? ai.gerekce
+                                : 'Bu kriter için ayrıca açıklama girilmemiş.')}
                         </p>
                       </div>
                     );
                   })}
                 </div>
 
-                {rapor.hakemNotu && (
+                {!!aciklamalar.length && (
                   <div className="mt-5 rounded-lg bg-zemin/70 px-3.5 py-3">
-                    <p className="mb-1 text-[11px] font-bold text-metin-2">Hakem notu</p>
-                    <p className="text-[11.5px] leading-relaxed">{rapor.hakemNotu}</p>
+                    <p className="mb-1 text-[11px] font-bold text-metin-2">
+                      {aciklamalar.length > 1
+                        ? 'Hakem kurulunun genel değerlendirmesi'
+                        : 'Hakem notu'}
+                    </p>
+                    {aciklamalar.map((a, i) => (
+                      <p
+                        key={i}
+                        className="text-[11.5px] leading-relaxed not-first:mt-2"
+                      >
+                        {a}
+                      </p>
+                    ))}
                   </div>
                 )}
 

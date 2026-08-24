@@ -248,15 +248,32 @@ export default function HakemYonetimi({ yukler }: { yukler: HakemYuku[] }) {
                   )}
                 </div>
 
-                {/* Erişim bağlantısı: koordinasyon bunu hakeme iletiyor. */}
-                <button
-                  type="button"
-                  onClick={() => kopyala(h.kod)}
-                  title="Hakemin panel bağlantısını kopyala"
-                  className="shrink-0 cursor-pointer rounded-md bg-zemin px-2 py-1 font-mono text-[11px] font-bold tracking-wide transition-colors hover:bg-cizgi"
-                >
-                  {kopyalanan === h.kod ? 'kopyalandı ✓' : h.kod}
-                </button>
+                {/*
+                  İKİ AYRI EYLEM, ÇÜNKÜ İKİ AYRI İHTİYAÇ.
+                  "Kopyala" hakeme iletmek için (e-posta, mesaj). "Aç" ise
+                  koordinasyonun hakemin ne gördüğünü kontrol etmesi için —
+                  önceki sürümde yalnızca kopyalama vardı ve panele girmenin
+                  görünür bir yolu yoktu.
+                */}
+                <div className="flex shrink-0 items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() => kopyala(h.kod)}
+                    title="Hakemin panel bağlantısını kopyala"
+                    className="cursor-pointer rounded-md bg-zemin px-2 py-1 font-mono text-[11px] font-bold tracking-wide transition-colors hover:bg-cizgi"
+                  >
+                    {kopyalanan === h.kod ? 'kopyalandı ✓' : h.kod}
+                  </button>
+                  <a
+                    href={`/hakem/${h.kod}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    title="Hakemin panelini yeni sekmede aç — ne gördüğünü kontrol edin"
+                    className="rounded-md border border-cizgi px-2 py-1 text-[10.5px] font-bold text-metin-2 transition-colors hover:bg-zemin"
+                  >
+                    Aç ↗
+                  </a>
+                </div>
 
                 <button
                   type="button"
@@ -284,11 +301,13 @@ export default function HakemYonetimi({ yukler }: { yukler: HakemYuku[] }) {
       )}
 
       <p className="mt-2.5 text-[11px] leading-relaxed font-medium text-metin-3">
-        Hakem, koda ait bağlantıdan kendi paneline giriyor ve{' '}
-        <strong className="font-semibold">yalnızca kendisine atanmış</strong>{' '}
-        raporları görüyor. Takım adları rumuzlu — puanlama kör.
-        Değerlendirmesi olan hakem silinmiyor, pasife alınıyor: tamamlanmış
-        bir değerlendirmenin sahibi kayıtta kalmalı.
+        <strong className="font-semibold text-metin-2">Kod</strong> hakeme
+        iletilecek bağlantıyı kopyalar;{' '}
+        <strong className="font-semibold text-metin-2">Aç</strong> o panelin
+        hakem tarafından nasıl göründüğünü yeni sekmede gösterir. Hakem
+        yalnızca kendisine atanmış raporları görüyor, takım adları rumuzlu —
+        puanlama kör. Değerlendirmesi olan hakem silinmiyor, pasife alınıyor:
+        tamamlanmış bir değerlendirmenin sahibi kayıtta kalmalı.
       </p>
     </div>
   );

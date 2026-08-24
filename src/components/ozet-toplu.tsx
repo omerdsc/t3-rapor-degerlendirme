@@ -55,9 +55,30 @@ export default function OzetToplu() {
     }
   }, []);
 
+  /*
+   * İlk yükleme etki içinde, ama iptal bayrağıyla.
+   *
+   * `void yukle()` yazmak yeterliydi ve çalışıyordu; ancak bileşen yanıt
+   * dönmeden sökülürse sökülmüş bileşene setState çağrılıyordu. Bayrak
+   * bunu keser. React'in `set-state-in-effect` kuralı da bu haliyle
+   * memnun — kural, etkinin dışarıdan gelen veriyi beklediğini
+   * görebiliyor.
+   */
   useEffect(() => {
-    void yukle();
-  }, [yukle]);
+    let iptal = false;
+    (async () => {
+      try {
+        const y = await fetch('/api/ozet-toplu');
+        const d = await y.json();
+        if (!iptal) setDurum(d);
+      } catch {
+        if (!iptal) setDurum(null);
+      }
+    })();
+    return () => {
+      iptal = true;
+    };
+  }, []);
 
   async function basla() {
     if (!durum) return;

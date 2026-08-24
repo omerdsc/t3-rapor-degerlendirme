@@ -10,11 +10,14 @@
  * Bir kategoride 100 rapor ve 5 hakem olduğunda tek tek atamak 100 tıklama
  * demek. Koordinasyon bunu yapmaz; sonuç, atama özelliğinin hiç
  * kullanılmaması olur. Bu yüzden "seçili raporları şu hakemlere dağıt"
- * desteği var ve dağıtım DENGELİ: her hakeme yakın sayıda rapor düşüyor.
+ * desteği var ve dağıtım DENGELİ: hakemlerin ELİNDEKİ yük de sayılıyor,
+ * en az yüklü hakem önce iş alıyor. Dağıtım hesabı `dagitim.ts` içinde ve
+ * test kapsamında; arayüzdeki önizleme aynı fonksiyonu çağırıyor.
  */
 
+import { dagit } from '@/lib/db/dagitim';
 import {
-  atamaKaldir, atamaYap, hakemGetir, raporunHakemleri,
+  atamaKaldir, atamaYap, hakemGetir, hakemYukleri, raporunHakemleri,
 } from '@/lib/db/hakem-depo';
 import { raporGetir, raporlariListele } from '@/lib/depo/depo';
 
@@ -65,43 +68,51 @@ export async function POST(istek: Request) {
     Math.min(hakemIdler.length, g.raporBasinaHakem ?? 1),
   );
 
-  const yapilan: Array<{ raporId: string; hakemId: string }> = [];
-  const atlanan: string[] = [];
-
   /*
-   * DENGELİ DAĞITIM.
+   * DAĞITIM `dagitim.ts` İÇİNDE.
    *
-   * Raporlar hakemlere dönüşümlü (round-robin) dağıtılıyor ve başlangıç
-   * noktası her rapor için kayıyor. Rastgele dağıtım bazı hakemlere iki kat
-   * yük bindirebiliyor; sabit sıra ise ilk hakemi hep birinci yapıyor.
+   * Hesap burada değil, çünkü arayüz de aynı hesabı yapmak zorunda:
+   * kullanıcı "ata" düğmesine basmadan önce kaç atama olacağını ve hangi
+   * hakeme kaç rapor düşeceğini görüyor. İki ayrı kopya yazılsa önizleme
+   * sunucudan sapardı — bu projede nihai puan hesabı tam böyle ayrışmış
+   * ve iki ekran farklı puan göstermeye başlamıştı.
    */
-  let imlec = 0;
+  const yukler = new Map(hakemYukleri().map((y) => [y.hakem.id, y.atanan]));
+
+  const hedefler: Array<{ raporId: string; mevcut: string[]; basvuruNo: string }> = [];
+  const bulunmayan: string[] = [];
   for (const raporId of raporIdler) {
     const rapor = raporGetir(raporId);
     if (!rapor) {
-      atlanan.push(`${raporId}: rapor bulunamadı`);
+      bulunmayan.push(`${raporId}: rapor bulunamadı`);
       continue;
     }
-
-    const mevcut = new Set(raporunHakemleri(raporId).map((h) => h.id));
-
-    let atanmis = 0;
-    for (let i = 0; i < hakemIdler.length && atanmis < basinaHakem; i++) {
-      const hakemId = hakemIdler[(imlec + i) % hakemIdler.length];
-      // Zaten atanmışsa yeniden atamaya çalışmıyoruz.
-      if (mevcut.has(hakemId)) continue;
-      atamaYap(raporId, hakemId, g.atayan, g.sonTarih);
-      yapilan.push({ raporId, hakemId });
-      atanmis++;
-    }
-
-    if (!atanmis && mevcut.size) {
-      atlanan.push(`${rapor.basvuruNo}: seçilen hakemler zaten atanmış`);
-    }
-    imlec += basinaHakem;
+    hedefler.push({
+      raporId,
+      basvuruNo: rapor.basvuruNo,
+      mevcut: raporunHakemleri(raporId).map((h) => h.id),
+    });
   }
 
-  return Response.json({ yapilan: yapilan.length, atlanan }, { status: 201 });
+  const sonuc = dagit(
+    hedefler,
+    hakemIdler.map((id) => ({ id, yuk: yukler.get(id) ?? 0 })),
+    basinaHakem,
+  );
+
+  for (const c of sonuc.ciftler) {
+    atamaYap(c.raporId, c.hakemId, g.atayan, g.sonTarih);
+  }
+
+  const atlanan = [
+    ...bulunmayan,
+    ...sonuc.atlanan.map((id) => {
+      const h = hedefler.find((x) => x.raporId === id);
+      return `${h?.basvuruNo ?? id}: seçilen hakemler zaten atanmış`;
+    }),
+  ];
+
+  return Response.json({ yapilan: sonuc.ciftler.length, atlanan }, { status: 201 });
 }
 
 export async function DELETE(istek: Request) {

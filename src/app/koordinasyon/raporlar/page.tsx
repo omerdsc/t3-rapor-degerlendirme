@@ -4,6 +4,7 @@ import SecimKutusu from '@/components/secim-kutusu';
 import { DurumRozeti, KontrolNoktasi } from '@/components/rozet';
 import DisaAktarDugmesi from '@/components/disa-aktar-dugmesi';
 import RaporArama from '@/components/rapor-arama';
+import { raporlarinHakemDurumu } from '@/lib/db/hakem-depo';
 import { raporlariAra } from '@/lib/depo/arama';
 import { raporlariListele, yarismalariListele } from '@/lib/depo/depo';
 import { raporuMaskele } from '@/lib/depo/maskele';
@@ -11,7 +12,7 @@ import type { Rapor } from '@/lib/depo/tipler';
 
 export const dynamic = 'force-dynamic';
 
-const SUTUNLAR = ['BAŞVURU', 'PROJE / TAKIM', 'ÖN KONTROLLER', '4. GÖZ', 'HAKEM PUANI', 'DURUM', ''];
+const SUTUNLAR = ['BAŞVURU', 'PROJE / TAKIM', 'ÖN KONTROLLER', '4. GÖZ', 'HAKEM DURUMU', 'DURUM', ''];
 
 /** Hakemin işi bitti mi bitmedi mi — listenin ayrıldığı temel eksen. */
 type Suzgec = 'bekleyen' | 'tamamlanan' | 'manuel' | 'tumu';
@@ -65,6 +66,16 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
    */
   const aranmis = aramaTerimi ? raporlariAra(tumRaporlar, aramaTerimi) : tumRaporlar;
   const raporlar = aramaTerimi ? aranmis : suzgecleyi(tumRaporlar, suzgec);
+
+  /*
+   * Hakem durumu TEK sorguda, satır satır değil.
+   *
+   * Bu kolon eskiden yalnızca `r.hakemToplam` gösteriyordu; hakem atanmış
+   * ve çalışıyor olan bir rapor da "—" görünüyordu. Koordinasyonun listeye
+   * bakıp cevaplaması gereken soru şu: bu rapor atandı mı, atandıysa
+   * kaçı bitirdi. Puan zaten tamamlanınca yazılıyor.
+   */
+  const hakemDurumu = raporlarinHakemDurumu(raporlar.map((r) => r.id));
 
   const sayilar: Record<Suzgec, number> = {
     bekleyen: suzgecleyi(aranmis, 'bekleyen').length,
@@ -304,29 +315,69 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
                     )}
                   </td>
 
-                  {/* Hakem sütunu: değerlendirildi mi, kısmen mi, hiç mi */}
+                  {/*
+                    HAKEM SÜTUNU — dört ayrı durum, dördü de ayırt edilebilir:
+                    (1) bitti + puan, (2) çalışılıyor, (3) atandı ama
+                    başlanmadı, (4) hiç atanmadı. Dördüncüsü eyleme çağırıyor:
+                    atanmamış rapor koordinasyonun işidir.
+                  */}
                   <td className="px-4 py-3">
-                    {degerlendirildi ? (
-                      <div className="flex items-center gap-1.5">
-                        <svg viewBox="0 0 24 24" className="size-4 shrink-0 stroke-yesil" fill="none" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round">
-                          <path d="m20 6-11 11-5-5" />
-                        </svg>
-                        <span className="text-[15px] font-extrabold text-yesil-koyu">{r.hakemToplam}</span>
-                      </div>
-                    ) : r.hakemPuanlari?.length ? (
-                      <div>
-                        <span className="text-[13px] font-extrabold text-amber-koyu">{r.hakemToplam}</span>
-                        <div className="text-[10px] font-bold text-amber-koyu">taslak</div>
-                      </div>
-                    ) : (
-                      <span className="text-[11px] font-semibold text-metin-3">—</span>
-                    )}
+                    {(() => {
+                      const h = hakemDurumu.get(r.id);
+                      if (!h?.atanan) {
+                        return (
+                          <Link
+                            href={`/koordinasyon/hakemler?yarisma=${yarisma!.id}`}
+                            className="text-[11px] font-bold text-kirmizi hover:text-kirmizi-koyu"
+                          >
+                            Hakem ata →
+                          </Link>
+                        );
+                      }
+                      if (h.tamamlanan === h.atanan && r.hakemToplam !== undefined) {
+                        return (
+                          <div>
+                            <div className="flex items-center gap-1.5">
+                              <svg viewBox="0 0 24 24" className="size-4 shrink-0 stroke-yesil" fill="none" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round">
+                                <path d="m20 6-11 11-5-5" />
+                              </svg>
+                              <span className="text-[15px] font-extrabold text-yesil-koyu">
+                                {r.hakemToplam}
+                              </span>
+                            </div>
+                            <div className="text-[10px] font-semibold text-metin-2">
+                              {h.atanan > 1 ? `${h.atanan} hakem ortalaması` : '1 hakem'}
+                            </div>
+                          </div>
+                        );
+                      }
+                      return (
+                        <div>
+                          <span className="text-[12px] font-bold text-amber-koyu">
+                            {h.tamamlanan}/{h.atanan} bitti
+                          </span>
+                          <div className="text-[10px] font-semibold text-metin-2">
+                            {h.taslak
+                              ? `${h.taslak} taslak sürüyor`
+                              : 'hakem başlamadı'}
+                          </div>
+                        </div>
+                      );
+                    })()}
                   </td>
 
                   <td className="px-4 py-3">
                     <DurumRozeti durum={r.durum} />
                   </td>
 
+                  {/*
+                    DÜĞME "DEĞERLENDİR" DEMİYOR.
+                    Koordinasyon puan girmiyor — puanı hakem veriyor. Eski
+                    etiket kullanıcıyı puanlama beklediği bir ekrana
+                    gönderiyordu ve orada puanlama olmadığı için tutarsız
+                    duruyordu. Yaptığı iş inceleme: kontroller, ön
+                    değerlendirme, hakem sonuçları, yazışma.
+                  */}
                   <td className="px-4 py-3">
                     <Link
                       href={`/koordinasyon/rapor/${r.id}`}
@@ -336,7 +387,7 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
                           : 'bg-kirmizi text-white hover:bg-kirmizi-koyu'
                       }`}
                     >
-                      {degerlendirildi ? 'Görüntüle' : 'Değerlendir'}
+                      İncele
                     </Link>
                   </td>
                 </tr>
