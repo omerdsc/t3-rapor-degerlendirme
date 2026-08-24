@@ -1,6 +1,6 @@
 import BenzerlikTarayici from '@/components/benzerlik-tarayici';
 import SecimKutusu from '@/components/secim-kutusu';
-import { raporlariListele, yarismalariListele } from '@/lib/depo/depo';
+import { raporSayilari, yarismalariListele } from '@/lib/depo/depo';
 
 export const dynamic = 'force-dynamic';
 
@@ -19,11 +19,18 @@ export default async function BenzerlikSayfasi({
   const yarismaId = typeof p.yarisma === 'string' ? p.yarisma : undefined;
   const kategoriId = typeof p.kategori === 'string' ? p.kategori : undefined;
 
-  // Yalnızca raporu olan yarışmalar listeleniyor: 43 yarışmanın 41'i boş ve
-  // hepsini göstermek seçimi zorlaştırır.
+  /*
+   * Yalnızca raporu olan yarışmalar listeleniyor: 43 yarışmanın 41'i boş ve
+   * hepsini göstermek seçimi zorlaştırır.
+   *
+   * Sayılar TEK sorgudan (`raporSayilari`). Eskiden her yarışma için
+   * `raporlariListele` çağrılıyordu — 43 tam tablo taraması, hepsi
+   * yalnızca "boş mu değil mi" sorusunu yanıtlamak için.
+   */
+  const sayac = raporSayilari();
   const yarismalar = yarismalariListele()
-    .map((y) => ({ y, raporlar: raporlariListele(y.id) }))
-    .filter((x) => x.raporlar.length > 0);
+    .map((y) => ({ y, adet: sayac.yarismaya.get(y.id) ?? 0 }))
+    .filter((x) => x.adet > 0);
 
   const secilen = yarismalar.find((x) => x.y.id === yarismaId);
 
@@ -68,10 +75,10 @@ export default async function BenzerlikSayfasi({
               etiket="Yarışma"
               secili={secilen?.y.id}
               bosEtiket="Yarışma seçin…"
-              secenekler={yarismalar.map(({ y, raporlar }) => ({
+              secenekler={yarismalar.map(({ y, adet }) => ({
                 deger: y.id,
                 etiket: y.ad,
-                ek: `${raporlar.length} rapor`,
+                ek: `${adet} rapor`,
                 adres: `/koordinasyon/benzerlik?yarisma=${y.id}`,
               }))}
             />
@@ -84,15 +91,15 @@ export default async function BenzerlikSayfasi({
                   {
                     deger: 'tumu',
                     etiket: 'Tüm kategoriler',
-                    ek: `${secilen.raporlar.length} rapor`,
+                    ek: `${secilen.adet} rapor`,
                     adres: `/koordinasyon/benzerlik?yarisma=${secilen.y.id}`,
                   },
                   ...secilen.y.kategoriler
-                    .filter((k) => raporlariListele(secilen.y.id, k.id).length > 0)
+                    .filter((k) => (sayac.kategoriye.get(k.id) ?? 0) > 0)
                     .map((k) => ({
                       deger: k.id,
                       etiket: k.ad,
-                      ek: `${raporlariListele(secilen.y.id, k.id).length} rapor`,
+                      ek: `${sayac.kategoriye.get(k.id) ?? 0} rapor`,
                       adres: `/koordinasyon/benzerlik?yarisma=${secilen.y.id}&kategori=${k.id}`,
                     })),
                 ]}

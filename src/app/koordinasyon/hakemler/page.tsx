@@ -2,8 +2,10 @@ import AtamaPaneli, { type AtamaSatiri, type HakemSecenegi } from '@/components/
 import HakemOnizleme from '@/components/hakem-onizleme';
 import HakemYonetimi from '@/components/hakem-yonetimi';
 import SecimKutusu from '@/components/secim-kutusu';
-import { hakemYukleri, raporunDegerlendirmeleri, raporunHakemleri } from '@/lib/db/hakem-depo';
-import { raporlariListele, yarismalariListele } from '@/lib/depo/depo';
+import { hakemYukleri, raporlarinHakemleri } from '@/lib/db/hakem-depo';
+import {
+  raporSayilari, raporlariListele, yarismalariListele,
+} from '@/lib/depo/depo';
 import { raporRumuzu, takimRumuzu } from '@/lib/depo/maskele';
 
 export const dynamic = 'force-dynamic';
@@ -21,21 +23,56 @@ export default async function HakemlerSayfasi({
   const p = await searchParams;
   const yukler = hakemYukleri();
   const yarismalar = yarismalariListele();
+  // Açılır listelerdeki rapor sayıları TEK sorgudan; yarışma başına
+  // ayrı sorgu atmak 44 tam tablo taraması demekti.
+  const sayac = raporSayilari();
 
   // Varsayılan: raporu OLAN ilk yarışma. Boş bir yarışmada atama ekranı
   // anlamsız görünür ve kullanıcı sistemin çalışmadığını sanır.
   const secili =
     (p.yarisma as string | undefined) ??
-    yarismalar.find((y) => raporlariListele(y.id).length > 0)?.id ??
+    yarismalar.find((y) => (sayac.yarismaya.get(y.id) ?? 0) > 0)?.id ??
     yarismalar[0]?.id;
   const yarisma = yarismalar.find((y) => y.id === secili);
   const kategoriId = p.kategori as string | undefined;
 
   const raporlar = yarisma ? raporlariListele(yarisma.id, kategoriId) : [];
 
-  const satirlar: AtamaSatiri[] = raporlar.map((r) => {
-    const atananlar = raporunHakemleri(r.id);
-    const degerlendirmeler = raporunDegerlendirmeleri(r.id);
+  /*
+   * Atanmış hakemler TEK sorguda.
+   *
+   * Eskiden her satır için `raporunHakemleri()` ve
+   * `raporunDegerlendirmeleri()` çağrılıyordu: 3000 raporda 6000 sorgu.
+   * `npm run hacim -- 3000` bunu ölçtü — sayfa 650 ms sürüyordu.
+   */
+  const atamaHaritasi = raporlarinHakemleri(raporlar.map((r) => r.id));
+
+  /*
+   * SAYAÇLAR TÜM KAPSAMDAN, SATIRLAR KIRPILMIŞ.
+   *
+   * Atama panelinin işi toplu dağıtım; kullanıcının 3000 satırı görmesi
+   * gerekmiyor ve hepsini istemciye prop olarak göndermek sayfayı 1,5 MB
+   * yapıyordu (`npm run hacim -- 3000` ölçtü). Kapsam sayıları buradan
+   * gidiyor, kapsamın kendisi atama sırasında sunucuda hesaplanıyor.
+   */
+  const GORUNUR_SATIR = 60;
+  const toplamRapor = raporlar.length;
+  const toplamAtanmamis = raporlar.filter(
+    (r) => !(atamaHaritasi.get(r.id)?.length),
+  ).length;
+
+  /*
+   * Atanmamışlar listenin BAŞINA alınıyor: panelin varsayılan kapsamı
+   * "atanmamış raporlar" ve kullanıcı kırpılmış listede tam olarak onları
+   * görmek istiyor. Atanmışları öne koymak, iş bekleyen raporları
+   * görünmez yapardı.
+   */
+  const siralanmis = [
+    ...raporlar.filter((r) => !(atamaHaritasi.get(r.id)?.length)),
+    ...raporlar.filter((r) => atamaHaritasi.get(r.id)?.length),
+  ].slice(0, GORUNUR_SATIR);
+
+  const satirlar: AtamaSatiri[] = siralanmis.map((r) => {
     const kategori = yarisma?.kategoriler.find((k) => k.id === r.kategoriId);
     return {
       raporId: r.id,
@@ -45,13 +82,7 @@ export default async function HakemlerSayfasi({
       takimRumuzu: `${takimRumuzu(r.takimId)} · ${raporRumuzu(r.id)}`,
       proje: r.proje,
       kategoriAdi: kategori?.ad ?? '—',
-      atananlar: atananlar.map((h) => ({
-        id: h.id,
-        ad: h.ad,
-        tamamladi: degerlendirmeler.some(
-          (d) => d.hakemId === h.id && d.durum === 'tamamlandi',
-        ),
-      })),
+      atananlar: atamaHaritasi.get(r.id) ?? [],
       kritikBulgu: r.kontroller.some((k) => k.durum === 'hata'),
     };
   });
@@ -71,10 +102,12 @@ export default async function HakemlerSayfasi({
       uzmanlik: y.hakem.uzmanlik,
     }));
 
-  const atanmamis = satirlar.filter((s) => !s.atananlar.length).length;
-  const bekleyen = satirlar.filter(
-    (s) => s.atananlar.length && s.atananlar.some((a) => !a.tamamladi),
-  ).length;
+  // Şerit sayaçları tüm kapsamdan; kırpılmış listeden değil.
+  const atanmamis = toplamAtanmamis;
+  const bekleyen = raporlar.filter((r) => {
+    const a = atamaHaritasi.get(r.id) ?? [];
+    return a.length > 0 && a.some((x) => !x.tamamladi);
+  }).length;
 
   return (
     <>
@@ -146,7 +179,7 @@ export default async function HakemlerSayfasi({
                 etiket="Yarışma"
                 secili={secili}
                 secenekler={[...yarismalar]
-                  .map((y) => ({ y, n: raporlariListele(y.id).length }))
+                  .map((y) => ({ y, n: sayac.yarismaya.get(y.id) ?? 0 }))
                   .sort((a, b) => b.n - a.n || a.y.ad.localeCompare(b.y.ad, 'tr'))
                   .map(({ y, n }) => ({
                     deger: y.id,
@@ -164,13 +197,13 @@ export default async function HakemlerSayfasi({
                     {
                       deger: 'tumu',
                       etiket: 'Tüm kategoriler',
-                      ek: `${raporlariListele(yarisma.id).length} rapor`,
+                      ek: `${sayac.yarismaya.get(yarisma.id) ?? 0} rapor`,
                       adres: `/koordinasyon/hakemler?yarisma=${yarisma.id}`,
                     },
                     ...yarisma.kategoriler.map((k) => ({
                       deger: k.id,
                       etiket: k.ad,
-                      ek: `${raporlariListele(yarisma.id, k.id).length} rapor`,
+                      ek: `${sayac.kategoriye.get(k.id) ?? 0} rapor`,
                       adres: `/koordinasyon/hakemler?yarisma=${yarisma.id}&kategori=${k.id}`,
                     })),
                   ]}
@@ -183,6 +216,8 @@ export default async function HakemlerSayfasi({
                 yarismaId={yarisma.id}
                 kategoriId={kategoriId}
                 satirlar={satirlar}
+                toplamRapor={toplamRapor}
+                toplamAtanmamis={toplamAtanmamis}
                 hakemler={hakemler}
               />
             )}

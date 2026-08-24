@@ -6,7 +6,9 @@ import DisaAktarDugmesi from '@/components/disa-aktar-dugmesi';
 import RaporArama from '@/components/rapor-arama';
 import { raporlarinHakemDurumu } from '@/lib/db/hakem-depo';
 import { raporlariAra } from '@/lib/depo/arama';
-import { raporlariListele, yarismalariListele } from '@/lib/depo/depo';
+import {
+  raporSayilari, raporlariListele, yarismalariListele,
+} from '@/lib/depo/depo';
 import { raporuMaskele } from '@/lib/depo/maskele';
 import type { Rapor } from '@/lib/depo/tipler';
 
@@ -34,6 +36,9 @@ function suzgecleyi(raporlar: Rapor[], s: Suzgec): Rapor[] {
 export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koordinasyon/raporlar'>) {
   const p = await searchParams;
   const yarismalar = yarismalariListele();
+  // Açılır listelerdeki rapor sayıları TEK sorgudan; yarışma başına
+  // ayrı sorgu atmak 44 tam tablo taraması demekti.
+  const sayac = raporSayilari();
   /*
    * VARSAYILAN SEÇİM: raporu OLAN ilk yarışma.
    *
@@ -44,7 +49,7 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
    */
   const secili =
     (p.yarisma as string | undefined) ??
-    yarismalar.find((y) => raporlariListele(y.id).length > 0)?.id ??
+    yarismalar.find((y) => (sayac.yarismaya.get(y.id) ?? 0) > 0)?.id ??
     yarismalar[0]?.id;
   const yarisma = yarismalar.find((y) => y.id === secili);
 
@@ -65,7 +70,43 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
    * taranıyor; sekme sayaçları da arama sonucuna göre güncelleniyor.
    */
   const aranmis = aramaTerimi ? raporlariAra(tumRaporlar, aramaTerimi) : tumRaporlar;
-  const raporlar = aramaTerimi ? aranmis : suzgecleyi(tumRaporlar, suzgec);
+  const suzulmus = aramaTerimi ? aranmis : suzgecleyi(tumRaporlar, suzgec);
+
+  /*
+   * SAYFALAMA — ÖLÇÜLEREK EKLENDİ.
+   *
+   * `npm run hacim -- 1000` bu ekranı ölçtü: veritabanı sorgusu 56 ms,
+   * ama sayfanın tarayıcıya inmesi 24 SANİYE ve HTML 8,7 MB. Sebep
+   * veritabanı değil, 1000 satırın çizilmesiydi — satır başına altı rozet,
+   * toplam 6003 SVG. PRD'nin başlık problemi "yüksek hacim" olduğu için
+   * bu, kabul edilebilir bir yavaşlık değil.
+   *
+   * Sayfa boyutu 50: bir ekranda rahat kaydırılan, tarayıcıyı zorlamayan
+   * ve koordinatörün "kaçıncı sayfadayım" takibini kaybetmeyeceği aralık.
+   */
+  const SAYFA_BOYU = 50;
+  const sayfaSayisi = Math.max(1, Math.ceil(suzulmus.length / SAYFA_BOYU));
+  const sayfa = Math.min(
+    Math.max(1, Number(p.sayfa) || 1),
+    sayfaSayisi,
+  );
+  const raporlar = suzulmus.slice((sayfa - 1) * SAYFA_BOYU, sayfa * SAYFA_BOYU);
+
+  /**
+   * Sayfa bağlantısı — bütün süzgeçleri koruyor.
+   *
+   * Süzgeci düşüren bir sayfalama, kullanıcıyı 2. sayfada bambaşka bir
+   * listeye götürür ve en sinir bozucu hata sınıfıdır.
+   */
+  const sayfaAdresi = (n: number) => {
+    const q = new URLSearchParams();
+    if (yarisma) q.set('yarisma', yarisma.id);
+    if (kategori) q.set('kategori', kategori.id);
+    if (aramaTerimi) q.set('ara', aramaTerimi);
+    else q.set('durum', suzgec);
+    if (n > 1) q.set('sayfa', String(n));
+    return `/koordinasyon/raporlar?${q}`;
+  };
 
   /*
    * Hakem durumu TEK sorguda, satır satır değil.
@@ -131,7 +172,7 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
             kullanıcının işi neredeyse her zaman raporu olanlarla.
           */
           secenekler={[...yarismalar]
-            .map((y) => ({ y, n: raporlariListele(y.id).length }))
+            .map((y) => ({ y, n: sayac.yarismaya.get(y.id) ?? 0 }))
             .sort((a, b) => b.n - a.n || a.y.ad.localeCompare(b.y.ad, 'tr'))
             .map(({ y, n }) => ({
               deger: y.id,
@@ -147,7 +188,7 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
             etiket="Kategori"
             secili={kategori?.id}
             secenekler={yarisma.kategoriler.map((k) => {
-              const n = raporlariListele(yarisma.id, k.id).length;
+              const n = sayac.kategoriye.get(k.id) ?? 0;
               return {
                 deger: k.id,
                 etiket: k.ad,
@@ -396,6 +437,76 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
           </tbody>
         </table>
       </div>
+
+      {/*
+        SAYFALAMA ÇUBUĞU — yalnızca birden çok sayfa varsa.
+        Tek sayfada gösterilmesi gereksiz gürültü olurdu.
+      */}
+      {sayfaSayisi > 1 && (
+        <div className="mt-3 flex flex-wrap items-center gap-2.5">
+          <span className="text-[11.5px] font-medium text-metin-2">
+            {(sayfa - 1) * SAYFA_BOYU + 1}–
+            {Math.min(sayfa * SAYFA_BOYU, suzulmus.length)} /{' '}
+            <strong className="font-bold text-metin">{suzulmus.length}</strong> rapor
+          </span>
+
+          <div className="ml-auto flex items-center gap-1.5">
+            <Link
+              href={sayfaAdresi(Math.max(1, sayfa - 1))}
+              aria-disabled={sayfa === 1}
+              className={`rounded-lg border border-cizgi px-3 py-1.5 text-[11.5px] font-bold transition-colors ${
+                sayfa === 1
+                  ? 'pointer-events-none opacity-40'
+                  : 'hover:bg-zemin'
+              }`}
+            >
+              ← Önceki
+            </Link>
+
+            {/*
+              Sayfa numaraları: ilk, son ve geçerli sayfanın çevresi.
+              1000 raporda 20 sayfa var; hepsini basmak çubuğu taşırır.
+            */}
+            {Array.from({ length: sayfaSayisi }, (_, i) => i + 1)
+              .filter(
+                (n) =>
+                  n === 1 ||
+                  n === sayfaSayisi ||
+                  Math.abs(n - sayfa) <= 1,
+              )
+              .map((n, i, dizi) => (
+                <span key={n} className="flex items-center gap-1.5">
+                  {/* Atlanan sayfa aralığı varsa üç nokta koy. */}
+                  {i > 0 && n - dizi[i - 1] > 1 && (
+                    <span className="text-[11px] font-bold text-metin-3">…</span>
+                  )}
+                  <Link
+                    href={sayfaAdresi(n)}
+                    className={`rounded-lg px-2.5 py-1.5 text-[11.5px] font-bold transition-colors ${
+                      n === sayfa
+                        ? 'bg-kirmizi text-white'
+                        : 'border border-cizgi hover:bg-zemin'
+                    }`}
+                  >
+                    {n}
+                  </Link>
+                </span>
+              ))}
+
+            <Link
+              href={sayfaAdresi(Math.min(sayfaSayisi, sayfa + 1))}
+              aria-disabled={sayfa === sayfaSayisi}
+              className={`rounded-lg border border-cizgi px-3 py-1.5 text-[11.5px] font-bold transition-colors ${
+                sayfa === sayfaSayisi
+                  ? 'pointer-events-none opacity-40'
+                  : 'hover:bg-zemin'
+              }`}
+            >
+              Sonraki →
+            </Link>
+          </div>
+        </div>
+      )}
     </>
   );
 }

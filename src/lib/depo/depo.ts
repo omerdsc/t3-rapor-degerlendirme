@@ -423,6 +423,40 @@ export function raporlariListele(yarismaId?: string, kategoriId?: string): Rapor
 }
 
 /**
+ * Yarışma ve kategori başına rapor sayısı — TEK sorguda.
+ *
+ * ── NİYE VAR: ÖLÇÜLMÜŞ BİR N+1 SORUNU ───────────────────────────────────
+ * Yarışma ve kategori açılır listeleri her seçeneğin yanında rapor sayısı
+ * gösteriyor ve bunu `raporlariListele(y.id).length` ile alıyordu. 44
+ * yarışma = 44 tam tablo taraması, her biri bütün satırları JSON olarak
+ * çözerek. `npm run hacim -- 1000` bunu yakaladı: rapor listesi ekranı
+ * 1,5 saniye sürüyordu ve süre satır sayısından değil bu sayaçlardan
+ * geliyordu.
+ *
+ * Sayı için satırları ÇÖZMEK gerekmiyor; `COUNT` yeterli.
+ */
+export function raporSayilari(): {
+  yarismaya: Map<string, number>;
+  kategoriye: Map<string, number>;
+} {
+  const satirlar = baglanti()
+    .prepare(
+      `SELECT yarisma_id, kategori_id, COUNT(*) AS n
+         FROM rapor GROUP BY yarisma_id, kategori_id`,
+    )
+    .all() as Array<{ yarisma_id: string; kategori_id: string; n: number }>;
+
+  const yarismaya = new Map<string, number>();
+  const kategoriye = new Map<string, number>();
+  for (const s of satirlar) {
+    const n = Number(s.n) || 0;
+    yarismaya.set(s.yarisma_id, (yarismaya.get(s.yarisma_id) ?? 0) + n);
+    kategoriye.set(s.kategori_id, n);
+  }
+  return { yarismaya, kategoriye };
+}
+
+/**
  * Parmak izi çıkarılmış rapor sayısı.
  *
  * Kanıt tablosu için var. Parmak izleri `rapor` tablosundan ayrıldıktan

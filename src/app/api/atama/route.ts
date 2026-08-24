@@ -18,7 +18,8 @@
 import { kapi } from '@/lib/yetki/koordinasyon';
 import { dagit } from '@/lib/db/dagitim';
 import {
-  atamaKaldir, atamaYap, hakemGetir, hakemYukleri, raporunHakemleri,
+  atamaKaldir, atamalariYaz, hakemGetir, hakemYukleri,
+  raporlarinHakemDurumu, raporunHakemleri,
 } from '@/lib/db/hakem-depo';
 import { raporGetir, raporlariListele } from '@/lib/depo/depo';
 
@@ -32,6 +33,15 @@ export async function POST(istek: Request) {
     /** Verilirse bu kategorinin TÜM raporları hedef alınır. */
     kategoriId?: string;
     yarismaId?: string;
+    /**
+     * Kapsam sunucuda hesaplanıyor.
+     *
+     * `atanmamis` gönderildiğinde istemci rapor kimliklerini SAYMAK
+     * zorunda değil. Ölçüldü: 3000 raporda bütün satırları istemciye
+     * göndermek atama sayfasını 1,5 MB yapıyordu. İstemcinin "atanmamış
+     * olanları dağıt" demek için 3000 kimlik bilmesi gerekmiyor.
+     */
+    kapsam?: 'atanmamis';
     atayan?: string;
     sonTarih?: string;
     /** Her rapora kaç hakem atanacak — dengeli dağıtımda kullanılır. */
@@ -69,9 +79,22 @@ export async function POST(istek: Request) {
     }
   }
 
-  // Hedef raporlar: doğrudan liste ya da kategorinin tamamı.
+  // Hedef raporlar: kapsam sunucuda, ya da istemcinin verdiği liste.
   let raporIdler = (g.raporIdler ?? []).filter(Boolean);
-  if (!raporIdler.length && g.yarismaId) {
+
+  if (g.kapsam === 'atanmamis') {
+    if (!g.yarismaId) {
+      return Response.json(
+        { hata: 'Kapsam için yarışma gerekli.' },
+        { status: 400 },
+      );
+    }
+    const tumu = raporlariListele(g.yarismaId, g.kategoriId);
+    const atanmis = new Set(
+      raporlarinHakemDurumu(tumu.map((r) => r.id)).keys(),
+    );
+    raporIdler = tumu.filter((r) => !atanmis.has(r.id)).map((r) => r.id);
+  } else if (!raporIdler.length && g.yarismaId) {
     raporIdler = raporlariListele(g.yarismaId, g.kategoriId).map((r) => r.id);
   }
   if (!raporIdler.length) {
@@ -115,9 +138,8 @@ export async function POST(istek: Request) {
     basinaHakem,
   );
 
-  for (const c of sonuc.ciftler) {
-    atamaYap(c.raporId, c.hakemId, g.atayan, g.sonTarih);
-  }
+  // Tek işlemde: 6000 atama tek tek yazılınca 15,5 saniye sürüyordu.
+  atamalariYaz(sonuc.ciftler, g.atayan, g.sonTarih);
 
   const atlanan = [
     ...bulunmayan,

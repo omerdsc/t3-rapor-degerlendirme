@@ -202,37 +202,46 @@ export function hakemSil(id: string): { silindi: boolean; neden?: string } {
 
 // ------------------------------------------------------------------ atama
 
-export function atamaYap(
-  raporId: string,
-  hakemId: string,
+/**
+ * Çok atamayı TEK işlemde yazar.
+ *
+ * ── NİYE VAR: ÖLÇÜLMÜŞ 15 SANİYE ────────────────────────────────────────
+ * Önceki `atamaYap()` tek atama için tasarlanmıştı: INSERT yapıyor, sonra
+ * yazdığı satırı SELECT ile geri okuyup nesne olarak dönüyordu. Toplu
+ * atamada bu çifti 6000 kez tekrarlamak 15,5 SANİYE sürdü — hem işlem
+ * başına disk senkronizasyonu hem gereksiz 6000 SELECT.
+ *
+ * Tek işlem (`BEGIN`/`COMMIT`) disk senkronizasyonunu 6000'den 1'e
+ * indiriyor: 15,56 sn → 0,90 sn. Dönen nesnelere ihtiyaç yok, çağıran
+ * yalnızca sayıyı kullanıyor. Tek atama da bu yoldan geçiyor artık —
+ * iki ayrı yazma yolu tutmanın gerekçesi kalmadı.
+ */
+export function atamalariYaz(
+  ciftler: Array<{ raporId: string; hakemId: string }>,
   atayan?: string,
   sonTarih?: string,
-): Atama | null {
+): number {
+  if (!ciftler.length) return 0;
   const db = baglanti();
-  // (rapor, hakem) tekil: aynı hakem aynı rapora iki kez atanmıyor.
-  db.prepare(
+  const ekle = db.prepare(
     `INSERT INTO atama (id, rapor_id, hakem_id, atandi, atayan, son_tarih)
      VALUES (?, ?, ?, ?, ?, ?)
      ON CONFLICT(rapor_id, hakem_id) DO UPDATE SET
        son_tarih = excluded.son_tarih, atayan = excluded.atayan`,
-  ).run(
-    randomUUID(), raporId, hakemId, new Date().toISOString(),
-    atayan ?? null, sonTarih ?? null,
   );
+  const simdi = new Date().toISOString();
 
-  const s = db
-    .prepare('SELECT * FROM atama WHERE rapor_id = ? AND hakem_id = ?')
-    .get(raporId, hakemId) as Satir | undefined;
-  return s
-    ? {
-        id: s.id as string,
-        raporId: s.rapor_id as string,
-        hakemId: s.hakem_id as string,
-        atandi: s.atandi as string,
-        atayan: (s.atayan as string) ?? undefined,
-        sonTarih: (s.son_tarih as string) ?? undefined,
-      }
-    : null;
+  db.exec('BEGIN');
+  try {
+    for (const c of ciftler) {
+      ekle.run(randomUUID(), c.raporId, c.hakemId, simdi, atayan ?? null, sonTarih ?? null);
+    }
+    db.exec('COMMIT');
+  } catch (e) {
+    db.exec('ROLLBACK');
+    throw e;
+  }
+  return ciftler.length;
 }
 
 /**
@@ -492,6 +501,49 @@ export function raporlarinHakemDurumu(
       tamamlanan: Number(s.tamamlanan) || 0,
       taslak: Number(s.taslak) || 0,
     });
+  }
+  return sonuc;
+}
+
+/**
+ * Çok rapor için atanmış hakemler ve bitirme durumu — TEK sorguda.
+ *
+ * ── NİYE VAR: ÖLÇÜLMÜŞ BİR N+1 ──────────────────────────────────────────
+ * Atama ekranı her satır için `raporunHakemleri()` VE
+ * `raporunDegerlendirmeleri()` çağırıyordu: 3000 raporda 6000 sorgu.
+ * `npm run hacim -- 3000` bunu yakaladı — sayfa 650 ms sürüyor ve 4,9 MB
+ * iniyordu. Sorgu sayısı rapor sayısıyla çarpılıyorsa hacim iddiası
+ * tutmaz.
+ */
+export function raporlarinHakemleri(
+  raporIdler: string[],
+): Map<string, Array<{ id: string; ad: string; tamamladi: boolean }>> {
+  const sonuc = new Map<string, Array<{ id: string; ad: string; tamamladi: boolean }>>();
+  if (!raporIdler.length) return sonuc;
+
+  const yer = raporIdler.map(() => '?').join(',');
+  const satirlar = baglanti()
+    .prepare(
+      `SELECT a.rapor_id, h.id, h.ad,
+              CASE WHEN d.durum = 'tamamlandi' THEN 1 ELSE 0 END AS bitti
+         FROM atama a
+         JOIN hakem h ON h.id = a.hakem_id
+         LEFT JOIN degerlendirme d
+                ON d.rapor_id = a.rapor_id AND d.hakem_id = a.hakem_id
+        WHERE a.rapor_id IN (${yer})
+        ORDER BY a.rapor_id, h.ad`,
+    )
+    .all(...raporIdler) as Array<Record<string, unknown>>;
+
+  for (const s of satirlar) {
+    const anahtar = s.rapor_id as string;
+    const liste = sonuc.get(anahtar) ?? [];
+    liste.push({
+      id: s.id as string,
+      ad: s.ad as string,
+      tamamladi: Number(s.bitti) === 1,
+    });
+    sonuc.set(anahtar, liste);
   }
   return sonuc;
 }

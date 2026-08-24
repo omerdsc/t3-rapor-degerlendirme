@@ -15,7 +15,9 @@
     "db:gecis": "tsx scripts/db-gecis.ts",
     "db:onar": "tsx scripts/nihai-puan-onar.ts",
     "db:kontrol": "tsx scripts/tutarlilik.ts",
-    "denetim": "tsx scripts/sizinti-denetimi.ts"
+    "denetim": "tsx scripts/sizinti-denetimi.ts",
+    "hacim": "tsx scripts/hacim-olc.ts",
+    "hacim:temizle": "tsx scripts/hacim-temizle.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.120.0",
