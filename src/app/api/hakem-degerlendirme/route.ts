@@ -11,10 +11,14 @@
  * (`hakemKodIle`) toplanmış olduğu için değiştirmesi kolay.
  *
  * Atama denetimi burada da yapılıyor (depo katmanında da var): kodu doğru
- * olan hakem, kendisine ATANMAMIŞ bir rapora puan giremez.
+ * olan hakem, kendisine ATANMAMIŞ bir rapora puan giremez. Denetim
+ * sırası önemli — yetki her doğrulamadan ÖNCE, yoksa reddedilen istek
+ * bile bilgi sızdırır.
  */
 
-import { degerlendirmeKaydet, hakemKodIle, nihaiOzet } from '@/lib/db/hakem-depo';
+import {
+  degerlendirmeKaydet, hakemKodIle, hakeminRaporlari, nihaiOzet,
+} from '@/lib/db/hakem-depo';
 import { kategoriGetir, mesajEkle, raporGetir, raporGuncelle } from '@/lib/depo/depo';
 
 export async function POST(istek: Request) {
@@ -39,6 +43,28 @@ export async function POST(istek: Request) {
   if (!hakem) return Response.json({ hata: 'Erişim kodu geçersiz.' }, { status: 403 });
   if (!hakem.aktif) {
     return Response.json({ hata: 'Hesabınız pasif durumda.' }, { status: 403 });
+  }
+
+  /*
+   * YETKİ, DOĞRULAMADAN ÖNCE.
+   *
+   * Bu denetim eskiden aşağıdaydı — depo katmanında (`degerlendirmeKaydet`)
+   * yapıldığı için veri güvendeydi, ama sıra yanlıştı: atanmamış rapora
+   * puan gönderen hakem önce "8 ölçüt puanlanmadı: PROJE ÖZETİ, …" yanıtı
+   * alıyordu. Yani kaydetmeyi reddettiğimiz raporun ölçüt listesini
+   * öğreniyordu. Rubrikler şartnameden zaten açık, o yüzden sızan bilgi
+   * ağır değil; ama yetkisi olmayan istekten hiçbir şey öğrenilmemesi
+   * kuralı ucuz ve sıraya bağlı.
+   *
+   * "Rapor yok" ile "rapor size atanmamış" da tek yanıta indirildi:
+   * ikisini ayırmak, hakemin var olan rapor kimliklerini tarayarak
+   * öğrenmesine izin verirdi.
+   */
+  if (!hakeminRaporlari(hakem.id).includes(g.raporId)) {
+    return Response.json(
+      { hata: 'Bu rapor size atanmamış.' },
+      { status: 403 },
+    );
   }
 
   const rapor = raporGetir(g.raporId);

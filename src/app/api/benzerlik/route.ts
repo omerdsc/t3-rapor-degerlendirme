@@ -22,6 +22,7 @@
  * görülemesin.
  */
 
+import { kapi } from '@/lib/yetki/koordinasyon';
 import {
   ciftKarsilastir, korpusTara, type CiftSonucu, type Parmakizi,
 } from '@/lib/analiz/benzerlik';
@@ -44,6 +45,9 @@ interface RaporBasligi {
 }
 
 export async function GET(request: Request) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   const q = new URL(request.url).searchParams;
   const yarismaId = q.get('yarisma');
   const kategoriId = q.get('kategori');
@@ -152,6 +156,9 @@ export async function GET(request: Request) {
  * Bu uç, bir raporun bulgusunu güncel korpusa göre tazeler.
  */
 export async function POST(request: Request) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   let govde: { raporId?: string };
   try {
     govde = await request.json();

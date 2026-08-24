@@ -11,6 +11,7 @@
  * kapalı.
  */
 
+import { kapi } from '@/lib/yetki/koordinasyon';
 import { join } from 'node:path';
 import { pdfOku } from '@/lib/analiz/pdf';
 import { belgeKur } from '@/lib/analiz/yapi';
@@ -24,6 +25,9 @@ export const maxDuration = 300;
 const AZAMI_BOYUT = 30 * 1024 * 1024;
 
 export async function POST(request: Request) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   let form: FormData;
   try {
     form = await request.formData();
@@ -128,6 +132,9 @@ export async function POST(request: Request) {
  * çözümleniyor. İndirme ücretsiz; ücretli olan yalnızca özet çağrısı.
  */
 export async function PATCH(request: Request) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   let govde: { yarismaId?: string; kategoriId?: string };
   try {
     govde = await request.json();

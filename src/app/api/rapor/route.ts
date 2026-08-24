@@ -6,6 +6,7 @@
  * ayrı uç noktada — ücretli olduğu için hakem/yönetici tetikler.
  */
 
+import { kapi } from '@/lib/yetki/koordinasyon';
 import { raporuAnalizEt } from '@/lib/analiz';
 import { onar } from '@/lib/analiz/normalize';
 import { bicimTespitEt } from '@/lib/analiz/belge-docx';
@@ -29,6 +30,9 @@ export const maxDuration = 180;
 const AZAMI_BOYUT = 25 * 1024 * 1024;
 
 export async function GET(request: Request) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   const q = new URL(request.url).searchParams;
   return Response.json({
     raporlar: raporlariListele(q.get('yarisma') ?? undefined, q.get('kategori') ?? undefined),
@@ -36,6 +40,9 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   let form: FormData;
   try {
     form = await request.formData();

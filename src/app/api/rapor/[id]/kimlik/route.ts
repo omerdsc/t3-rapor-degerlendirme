@@ -12,9 +12,13 @@
  * puanlarken açmak zorunda değil; koordinasyon gerektiğinde açıyor.
  */
 
+import { kapi } from '@/lib/yetki/koordinasyon';
 import { raporGetir } from '@/lib/depo/depo';
 
-export async function GET(_istek: Request, ctx: RouteContext<'/api/rapor/[id]/kimlik'>) {
+export async function GET(istek: Request, ctx: RouteContext<'/api/rapor/[id]/kimlik'>) {
+  const yetkisiz = kapi(istek);
+  if (yetkisiz) return yetkisiz;
+
   const { id } = await ctx.params;
 
   const rapor = raporGetir(id);

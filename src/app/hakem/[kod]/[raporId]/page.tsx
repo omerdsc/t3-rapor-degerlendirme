@@ -135,7 +135,7 @@ export default async function HakemRaporSayfasi({
             <div className="flex items-center gap-2.5 border-b border-cizgi px-4 py-2.5">
               <h2 className="text-[12.5px] font-bold">Rapor</h2>
               <a
-                href={`/api/rapor/${rapor.id}/dosya`}
+                href={`/api/rapor/${rapor.id}/dosya?kod=${encodeURIComponent(kod)}`}
                 target="_blank"
                 rel="noreferrer"
                 className="ml-auto text-[11.5px] font-bold text-kirmizi hover:text-kirmizi-koyu"
@@ -145,7 +145,7 @@ export default async function HakemRaporSayfasi({
             </div>
             {rapor.dosyaYolu ? (
               <iframe
-                src={`/api/rapor/${rapor.id}/dosya#view=FitH`}
+                src={`/api/rapor/${rapor.id}/dosya?kod=${encodeURIComponent(kod)}#view=FitH`}
                 title="Rapor"
                 className="h-[720px] w-full"
               />

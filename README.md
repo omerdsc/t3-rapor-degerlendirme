@@ -59,9 +59,31 @@ alan adına koymak mümkün olmadığı için ayrım adres önekiyle yapıldı.
 Kurumsal kurulumda o kapı kalkar, yerini üç ayrı adres ve kurum kimlik
 doğrulaması alır.
 
-Hakemin erişim denetimi **iki katmanda**: sayfa ve API ayrı ayrı atamayı
-doğruluyor. Atanmamış hakem adres satırına rapor kimliği yazarsa 404 alır,
-API'ye puan gönderirse reddedilir.
+### Erişim denetimi
+
+| Portal | Nasıl giriyor | Neyi koruyor |
+|---|---|---|
+| Koordinasyon | `KOORDINASYON_ANAHTARI` — ortak anahtar, HttpOnly çerez | Bütün koordinasyon ekranları ve 17 API rotası |
+| Hakem | Kendi erişim kodu (`/hakem/<kod>`) | Yalnızca kendisine atanmış raporlar |
+| Yarışmacı | Başvuru numarası | Yalnızca kendi sonucu, hakem tamamladıysa |
+
+Denetim **iki katmanda**: `proxy.ts` perimetre olarak yetkisiz kullanıcıyı
+giriş sayfasına yönlendiriyor, ama gerçek karar her rotanın içinde
+(`kapi()`). Next belgeleri bunu açıkça uyarıyor — matcher değişikliği veya
+bir rotanın taşınması proxy kapsamını sessizce kaldırabilir.
+
+Hakem tarafında da aynı çift katman: atanmamış hakem adres satırına rapor
+kimliği yazarsa 404 alır, API'ye puan gönderirse 403 alır. Yetki denetimi
+her doğrulamadan ÖNCE — reddedilen istek bile bilgi sızdırmasın diye.
+Rapor belgesi ucu (`/api/rapor/<id>/dosya`) iki kapılı: koordinasyon
+anahtarı **ya da** `?kod=` ile atanmış hakem. Buradan inen dosyalar gerçek
+yarışmacı belgeleri; ekranda kimlik maskelemek, belgenin kendisi
+korunmuyorsa anlamsız kalır.
+
+**Anahtar tanımlı değilse sistem açık çalışıyor** ve her koordinasyon
+ekranında kapatılamayan bir uyarı şeridi bunu söylüyor. Kapalı kurmak,
+anahtarı bilmeyenin projeyi hiç çalıştıramaması olurdu; eksikliği gizlemek
+yerine göstermek tercih edildi.
 
 Hakem panele iki yoldan girer: giriş sayfasındaki kod kutusundan, ya da
 koordinasyonun ilettiği `/hakem/<kod>` bağlantısından. Koordinasyon hakem
@@ -74,7 +96,8 @@ kontrol edebilir.
 
 ```bash
 npm install
-cp .env.ornek .env.local        # ANTHROPIC_API_KEY girin (yalnızca AI adımı için)
+cp .env.ornek .env.local        # ANTHROPIC_API_KEY (yalnızca AI adımı için)
+                                # KOORDINASYON_ANAHTARI (boşsa panel açık kalır)
 npm run dev                     # http://localhost:3000
 ```
 
@@ -289,10 +312,15 @@ Sistem bunları kullanıcıya da söylüyor; gizlenmiyor.
 
 - **Canlıya alınmadı.** Veri SQLite'ta; kalıcı diskli bir sunucuda çalışır
   ama sunucusuz (Vercel gibi) ortamda dosya kalıcı olmaz.
-- **Kimlik doğrulama yok.** Hakem erişim kodu hem kimlik hem yetki: kodu
-  bilen o hakem adına iş görür. Tek bir yerde toplandığı için (`hakemKodIle`)
-  kurum kimlik sistemine bağlanması kolay. Koordinasyon portalı ise şu an
-  korumasız — canlıda kurum ağı ya da oturum arkasına alınmalı.
+- **Kimlik doğrulama kullanıcı bazlı değil.** Koordinasyon ekibin ORTAK
+  anahtarıyla giriyor, hakem kendi erişim koduyla. İkisi de "kimlik" değil
+  "paylaşılan sır": kim ne yaptı ayırt edilemiyor (değerlendirmeler hariç —
+  onlar hakem kaydına bağlı). Kurum kimlik sistemine (SSO) bağlanacak yer
+  tek: `src/lib/yetki/koordinasyon.ts` ve `hakemKodIle`.
+- **Kaba kuvvete karşı hız sınırlama yok.** Anahtar denemesi sınırsız; tek
+  koruma anahtarın uzunluğu.
+- **`KOORDINASYON_ANAHTARI` tanımlı değilse panel açık.** Bilinçli:
+  eksikliği gizlemek yerine her ekranda uyarı gösteriliyor.
 - **46 kategoride ağırlıklar eşit dağıtılmış taslak.** Gerçek ağırlıklar
   şartnamede olabilir; uyarı veriliyor.
 - **3 şablon PDF** olduğu için çözümlenemiyor; elle yükleme gerekiyor.

@@ -6,6 +6,7 @@
  * uç noktada olacak.
  */
 
+import { kapi } from '@/lib/yetki/koordinasyon';
 import { raporuAnalizEt } from "@/lib/analiz";
 
 /** Vercel Hobby katmanında fonksiyon süresi sınırlı; analiz ~100 ms sürüyor. */
@@ -14,6 +15,9 @@ export const maxDuration = 60;
 const AZAMI_BOYUT = 25 * 1024 * 1024;
 
 export async function POST(request: Request) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   let form: FormData;
   try {
     form = await request.formData();

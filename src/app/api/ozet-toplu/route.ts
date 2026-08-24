@@ -17,6 +17,7 @@
  * o kaynağı paylaşan bütün kategorilere yazılıyor.
  */
 
+import { kapi } from '@/lib/yetki/koordinasyon';
 import { join } from 'node:path';
 import { ClaudeIstemcisi, ButceAsimiHatasi } from '@/lib/ai/istemci';
 import { ozetiHazirla } from '@/lib/ai/ozet-hazirla';
@@ -66,7 +67,10 @@ function hedefleriTopla(): { hedefler: Hedef[]; paylasan: number } {
   return { hedefler, paylasan };
 }
 
-export async function GET() {
+export async function GET(istek: Request) {
+  const yetkisiz = kapi(istek);
+  if (yetkisiz) return yetkisiz;
+
   const { hedefler, paylasan } = hedefleriTopla();
   const hazir = yarismalariListele().reduce(
     (t, y) => t + y.kategoriler.filter((k) => k.sartname?.ozet).length,
@@ -88,6 +92,9 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   let govde: { yarismaId?: string; kategoriId?: string };
   try {
     govde = await request.json();

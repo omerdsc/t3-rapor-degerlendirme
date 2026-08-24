@@ -27,7 +27,23 @@ const MENU = [
   { yol: '/koordinasyon/yarismalar', ad: 'Yarışmalar', ipucu: 'Kurulum ve ölçütler' },
 ];
 
-export default function KenarCubugu() {
+/** Oturumu kapatır: çerezi siler ve portal seçimine döner. */
+function Cikis() {
+  return (
+    <button
+      type="button"
+      onClick={async () => {
+        await fetch('/api/koordinasyon-giris', { method: 'DELETE' });
+        window.location.href = '/';
+      }}
+      className="ml-auto cursor-pointer text-[10px] font-semibold text-metin-2/60 hover:text-kirmizi"
+    >
+      Çıkış yap
+    </button>
+  );
+}
+
+export default function KenarCubugu({ yetkiKurulu }: { yetkiKurulu: boolean }) {
   const yol = usePathname();
 
   return (
@@ -109,14 +125,19 @@ export default function KenarCubugu() {
           Yapay zekâ nihai karar verici değildir. Kontrol, analiz ve ön
           değerlendirme sunar; kararı hakem verir.
         </p>
-        {/* Portal seçimine dönüş — canlı kurulumda bu bağlantı olmaz,
-            koordinasyon kendi adresinden girer. */}
-        <Link
-          href="/"
-          className="block text-[10px] font-semibold text-metin-2/60 hover:text-metin-2"
-        >
-          ← Portal seçimi
-        </Link>
+        <div className="flex items-center gap-3">
+          {/* Portal seçimine dönüş — canlı kurulumda bu bağlantı olmaz,
+              koordinasyon kendi adresinden girer. */}
+          <Link
+            href="/"
+            className="text-[10px] font-semibold text-metin-2/60 hover:text-metin-2"
+          >
+            ← Portal seçimi
+          </Link>
+          {/* Çıkış yalnızca yetki KURULUYSA anlamlı: kurulu değilse
+              silinecek bir oturum yok ve düğme hiçbir şey yapmaz. */}
+          {yetkiKurulu && <Cikis />}
+        </div>
       </div>
     </aside>
   );

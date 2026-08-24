@@ -4,15 +4,24 @@
  * Hakem ve koordinasyon arasındaki her not değerlendirme metnine yazılamaz;
  * kimi şey rapora girmemesi gereken bir soru, hatırlatma veya karardır.
  * Bu iz kaydı yarışmacıya GÖSTERİLMEZ.
+ *
+ * ŞU AN YALNIZCA KOORDİNASYON YAZIYOR. Yazışma bileşeni yalnızca
+ * koordinasyon rapor sayfasında var; hakem panelinde yok. Bu yüzden uç
+ * koordinasyon yetkisi istiyor. Hakem tarafına yazışma eklenirse buraya
+ * `?kod=` yolu açılmalı — rapor dosyası ucunda olduğu gibi.
  */
 
+import { kapi } from '@/lib/yetki/koordinasyon';
 import { mesajEkle, raporGetir } from '@/lib/depo/depo';
 import { onar } from '@/lib/analiz/normalize';
 import type { Mesaj } from '@/lib/depo/tipler';
 
 const ROLLER: Mesaj['rol'][] = ['hakem', 'koordinasyon', 'yarisma_yoneticisi'];
 
-export async function GET(_request: Request, ctx: RouteContext<'/api/rapor/[id]/mesaj'>) {
+export async function GET(request: Request, ctx: RouteContext<'/api/rapor/[id]/mesaj'>) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   const { id } = await ctx.params;
   const rapor = raporGetir(id);
   if (!rapor) return Response.json({ hata: 'Rapor bulunamadı.' }, { status: 404 });
@@ -20,6 +29,9 @@ export async function GET(_request: Request, ctx: RouteContext<'/api/rapor/[id]/
 }
 
 export async function POST(request: Request, ctx: RouteContext<'/api/rapor/[id]/mesaj'>) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   const { id } = await ctx.params;
   if (!raporGetir(id)) return Response.json({ hata: 'Rapor bulunamadı.' }, { status: 404 });
 

@@ -7,6 +7,7 @@
  * harcanmaz.
  */
 
+import { kapi } from '@/lib/yetki/koordinasyon';
 import { join } from 'node:path';
 import { pdfOku } from '@/lib/analiz/pdf';
 import { belgeKur } from '@/lib/analiz/yapi';
@@ -22,7 +23,10 @@ import {
 
 export const maxDuration = 300;
 
-export async function POST(_request: Request, ctx: RouteContext<'/api/rapor/[id]/degerlendir'>) {
+export async function POST(request: Request, ctx: RouteContext<'/api/rapor/[id]/degerlendir'>) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   const { id } = await ctx.params;
 
   const rapor = raporGetir(id);

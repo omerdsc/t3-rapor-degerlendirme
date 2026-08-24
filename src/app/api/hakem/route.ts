@@ -7,6 +7,7 @@
  * GET    · hakem listesi ve iş yükleri
  */
 
+import { kapi } from '@/lib/yetki/koordinasyon';
 import {
   hakemEkle, hakemGuncelle, hakemleriListele, hakemSil, hakemYukleri,
 } from '@/lib/db/hakem-depo';
@@ -19,11 +20,17 @@ function metin(v: unknown): string | undefined {
   return t || undefined;
 }
 
-export async function GET() {
+export async function GET(istek: Request) {
+  const yetkisiz = kapi(istek);
+  if (yetkisiz) return yetkisiz;
+
   return Response.json({ yukler: hakemYukleri(), hakemler: hakemleriListele() });
 }
 
 export async function POST(istek: Request) {
+  const yetkisiz = kapi(istek);
+  if (yetkisiz) return yetkisiz;
+
   let g: { ad?: string; eposta?: string; kurum?: string; uzmanlik?: string[]; notlar?: string };
   try {
     g = await istek.json();
@@ -48,6 +55,9 @@ export async function POST(istek: Request) {
 }
 
 export async function PATCH(istek: Request) {
+  const yetkisiz = kapi(istek);
+  if (yetkisiz) return yetkisiz;
+
   let g: {
     id?: string; ad?: string; eposta?: string; kurum?: string;
     uzmanlik?: string[]; aktif?: boolean; notlar?: string;
@@ -72,6 +82,9 @@ export async function PATCH(istek: Request) {
 }
 
 export async function DELETE(istek: Request) {
+  const yetkisiz = kapi(istek);
+  if (yetkisiz) return yetkisiz;
+
   let g: { id?: string };
   try {
     g = await istek.json();

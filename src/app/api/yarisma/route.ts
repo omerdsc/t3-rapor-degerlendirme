@@ -10,6 +10,7 @@
  * GET   · listele
  */
 
+import { kapi } from '@/lib/yetki/koordinasyon';
 import { sablonCikar, rubrikCikar } from '@/lib/analiz/sablon-cikar';
 import { KATEGORILER } from '@/lib/analiz/kategoriler';
 import { onar } from '@/lib/analiz/normalize';
@@ -24,7 +25,10 @@ import type { Yarisma, YarismaKategorisi } from '@/lib/depo/tipler';
 
 export const maxDuration = 60;
 
-export async function GET() {
+export async function GET(istek: Request) {
+  const yetkisiz = kapi(istek);
+  if (yetkisiz) return yetkisiz;
+
   return Response.json({ yarismalar: yarismalariListele() });
 }
 
@@ -64,6 +68,9 @@ async function kategoriKur(dosya: File, ad: string, yil: number) {
 }
 
 export async function POST(request: Request) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   let form: FormData;
   try {
     form = await request.formData();
@@ -102,6 +109,9 @@ export async function POST(request: Request) {
 
 /** Var olan yarışmaya yeni kategori (ve şablonunu) ekler. */
 export async function PATCH(request: Request) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   let form: FormData;
   try {
     form = await request.formData();

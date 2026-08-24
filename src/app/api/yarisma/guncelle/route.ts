@@ -20,6 +20,7 @@
  * MALİYET: $0. Yapay zekâ çağrısı yapılmaz; var olan AI özeti korunur.
  */
 
+import { kapi } from '@/lib/yetki/koordinasyon';
 import { rubrikCikar, sablonCikar } from '@/lib/analiz/sablon-cikar';
 import { kurallariBirlestir, sartnameCozumle } from '@/lib/analiz/sartname';
 import { bicimTespitEt, docxOku } from '@/lib/analiz/belge-docx';
@@ -69,6 +70,9 @@ async function sartnameCoz(url: string, dosyaAdi: string) {
 }
 
 export async function POST(request: Request) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   let govde: { yarismaId?: string };
   try {
     govde = await request.json();

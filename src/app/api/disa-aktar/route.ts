@@ -14,6 +14,7 @@
  * kalibrasyonu paylaşılırken kimlik gerekmez.
  */
 
+import { kapi } from '@/lib/yetki/koordinasyon';
 import {
   kategoriCsv, dosyaAdiUret, type RaporHakemVerisi,
 } from '@/lib/depo/disa-aktar';
@@ -23,6 +24,9 @@ import {
 } from '@/lib/db/hakem-depo';
 
 export async function GET(istek: Request) {
+  const yetkisiz = kapi(istek);
+  if (yetkisiz) return yetkisiz;
+
   const q = new URL(istek.url).searchParams;
   const yarismaId = q.get('yarisma');
   const kategoriId = q.get('kategori');

@@ -10,6 +10,7 @@
  * PATCH  · kategoriyi onayla / onayı geri al
  */
 
+import { kapi } from '@/lib/yetki/koordinasyon';
 import { kategoriOnayla, kriterEkle, kriterSil } from '@/lib/depo/depo';
 import { onar, anahtar } from '@/lib/analiz/normalize';
 
@@ -24,6 +25,9 @@ interface Govde {
 }
 
 export async function POST(request: Request) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   let g: Govde;
   try {
     g = await request.json();
@@ -66,6 +70,9 @@ export async function POST(request: Request) {
 }
 
 export async function DELETE(request: Request) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   let g: Govde;
   try {
     g = await request.json();
@@ -89,6 +96,9 @@ export async function DELETE(request: Request) {
  * değerlendirme öncesi hangi kategorilerin incelenmediği görülebilsin.
  */
 export async function PATCH(request: Request) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   let g: Govde;
   try {
     g = await request.json();

@@ -15,6 +15,7 @@
  * test kapsamında; arayüzdeki önizleme aynı fonksiyonu çağırıyor.
  */
 
+import { kapi } from '@/lib/yetki/koordinasyon';
 import { dagit } from '@/lib/db/dagitim';
 import {
   atamaKaldir, atamaYap, hakemGetir, hakemYukleri, raporunHakemleri,
@@ -22,6 +23,9 @@ import {
 import { raporGetir, raporlariListele } from '@/lib/depo/depo';
 
 export async function POST(istek: Request) {
+  const yetkisiz = kapi(istek);
+  if (yetkisiz) return yetkisiz;
+
   let g: {
     raporIdler?: string[];
     hakemIdler?: string[];
@@ -127,6 +131,9 @@ export async function POST(istek: Request) {
 }
 
 export async function DELETE(istek: Request) {
+  const yetkisiz = kapi(istek);
+  if (yetkisiz) return yetkisiz;
+
   let g: { raporId?: string; hakemId?: string };
   try {
     g = await istek.json();

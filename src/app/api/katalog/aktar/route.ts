@@ -16,6 +16,7 @@
  * aktarımı düşürmesi, kullanılabilir 9 kategoriyi de kaybettirir.
  */
 
+import { kapi } from '@/lib/yetki/koordinasyon';
 import { rubrikCikar, sablonCikar } from '@/lib/analiz/sablon-cikar';
 import { KATEGORILER } from '@/lib/analiz/kategoriler';
 import { bicimTespitEt, docxOku } from '@/lib/analiz/belge-docx';
@@ -86,6 +87,9 @@ async function kategoriKur(
 }
 
 export async function POST(request: Request) {
+  const yetkisiz = kapi(request);
+  if (yetkisiz) return yetkisiz;
+
   let govde: { slug?: string; kategoriler?: string[]; yenidenAktar?: boolean };
   try {
     govde = await request.json();
