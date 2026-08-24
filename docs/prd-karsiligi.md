@@ -153,7 +153,10 @@ sistemi (SSO) bağlandığında rol ayrımı oradan gelir; değişecek tek yer
 > "Rapor kriterlere göre analiz edilerek hakeme **'AI 4. göz'** sunulur;
 > sonuçlardan **güçlü/zayıf yönler** ve **gelişim önerileri** üretilir."
 
-Projenin adı bu maddeden geliyor: **4. Göz**.
+PRD bu özelliği **"AI 4. göz"** diye adlandırıyor: hakemin üç gözünden
+sonra dördüncü bir bakış. Ürünün adı **TPRDS** (TEKNOFEST Proje Raporları
+Değerlendirme Sistemi); "4. göz" ise PRD'nin bu ÖZELLİĞE verdiği ad ve
+kaynak kodda o alıntı korunuyor.
 
 | Parça | Nerede görünüyor |
 |---|---|

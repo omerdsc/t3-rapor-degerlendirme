@@ -9,7 +9,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "4. Göz — Değerlendirme Sistemi",
+  title: "TPRDS — TEKNOFEST Proje Raporları Değerlendirme Sistemi",
   description:
     "TEKNOFEST proje raporları için yapay zekâ destekli hakem karar destek sistemi.",
 };

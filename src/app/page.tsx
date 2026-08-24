@@ -90,10 +90,10 @@ export default function GirisSayfasi() {
             </span>
             <div>
               <h1 className="text-[22px] leading-tight font-extrabold tracking-tight text-white">
-                4. GÖZ
+                TPRDS
               </h1>
               <p className="text-[10px] font-semibold tracking-wider text-metin-2">
-                YAPAY ZEKÂ DESTEKLİ DEĞERLENDİRME SİSTEMİ
+                TEKNOFEST PROJE RAPORLARI DEĞERLENDİRME SİSTEMİ
               </p>
             </div>
           </div>

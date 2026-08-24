@@ -1,4 +1,4 @@
-# 4. GÖZ — Yapay Zekâ Destekli Değerlendirme Sistemi
+# TPRDS — TEKNOFEST Proje Raporları Değerlendirme Sistemi
 
 T3 Vakfı Bursiyer Yapay Zekâ Creathonu · **Problem 4**
 TEKNOFEST Yarışmalar Koordinatörlüğü için hakem karar destek sistemi.
@@ -16,7 +16,7 @@ TEKNOFEST'e her yıl on binlerce proje raporu geliyor. Her yarışmanın kendi
 açtığında önce mekanik soruların cevabını arıyor: şablona uymuş mu, bölümler
 tam mı, kaynakça gerçek mi, başka bir rapordan kopya mı?
 
-4. Göz bu soruları hakem açmadan yanıtlıyor ve **kanıtıyla** sunuyor.
+TPRDS bu soruları hakem açmadan yanıtlıyor ve **kanıtıyla** sunuyor.
 
 ```
 rapor yüklenir

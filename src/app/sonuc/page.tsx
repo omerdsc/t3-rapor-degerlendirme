@@ -77,7 +77,7 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
           </span>
           <span>
             <span className="block text-[14px] leading-tight font-extrabold tracking-tight text-white">
-              4. GÖZ
+              TPRDS
             </span>
             <span className="block text-[8px] font-semibold tracking-wider text-metin-2">
               YARIŞMACI PORTALI

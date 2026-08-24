@@ -67,10 +67,10 @@ export default function KenarCubugu({ yetkiKurulu }: { yetkiKurulu: boolean }) {
         </span>
         <span>
           <span className="block text-[15px] leading-tight font-extrabold tracking-tight text-white">
-            4. GÖZ
+            TPRDS
           </span>
           <span className="mt-0.5 block text-[8.5px] font-semibold tracking-wider text-metin-2">
-            DEĞERLENDİRME SİSTEMİ
+            KOORDİNASYON PANELİ
           </span>
         </span>
       </Link>

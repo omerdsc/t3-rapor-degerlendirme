@@ -34,7 +34,28 @@ import { existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const VERI_DIZINI = () => join(process.cwd(), 'veri');
-const DB_YOLU = () => join(VERI_DIZINI(), 'dorduncu-goz.db');
+
+/**
+ * Veritabanı dosyası.
+ *
+ * ── ESKİ AD DA AÇILIYOR ─────────────────────────────────────────────────
+ * Proje adı değişti (4. Göz → TPRDS) ve dosya adı da değişti. Ama var olan
+ * kurulumlarda veri `dorduncu-goz.db` içinde: yeni adı sabitleyip bırakmak,
+ * çalışan bir sistemin BÜTÜN VERİSİNİ görünmez yapardı — dosya duruyor,
+ * uygulama boş bir veritabanı açıyor ve "hiç rapor yok" diyor.
+ *
+ * Bu yüzden yeni ad yoksa ve eski ad varsa eski dosya kullanılıyor. Ad
+ * değişikliği veri kaybına dönüşmüyor; taşımak isteyen dosyayı elle
+ * yeniden adlandırabilir.
+ */
+const YENI_AD = 'tprds.db';
+const ESKI_AD = 'dorduncu-goz.db';
+
+const DB_YOLU = () => {
+  const yeni = join(VERI_DIZINI(), YENI_AD);
+  const eski = join(VERI_DIZINI(), ESKI_AD);
+  return !existsSync(yeni) && existsSync(eski) ? eski : yeni;
+};
 
 /**
  * Şema.
@@ -206,9 +227,9 @@ let db: DatabaseSync | null = null;
 export function baglanti(): DatabaseSync {
   if (db) return db;
 
-  const g = globalThis as { __dorduncuGozDb?: DatabaseSync };
-  if (g.__dorduncuGozDb) {
-    db = g.__dorduncuGozDb;
+  const g = globalThis as { __tprdsDb?: DatabaseSync };
+  if (g.__tprdsDb) {
+    db = g.__tprdsDb;
     return db;
   }
 
@@ -232,7 +253,7 @@ export function baglanti(): DatabaseSync {
   semayiYukselt(yeni);
 
   db = yeni;
-  g.__dorduncuGozDb = yeni;
+  g.__tprdsDb = yeni;
   return yeni;
 }
 

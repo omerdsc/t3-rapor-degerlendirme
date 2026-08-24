@@ -115,7 +115,7 @@ export default function PanoSayfasi() {
     <>
       <div className="mb-5 rounded-[14px] bg-gradient-to-r from-[#C41B22] via-kirmizi to-[#E23A41] px-6 py-5">
         <h1 className="text-[23px] font-extrabold tracking-tight text-white">
-          4. Göz — Değerlendirme Panosu
+          Değerlendirme Panosu
         </h1>
         <p className="mt-1 text-[12.5px] font-medium text-white/85">
           {bugun} · {yarismalar.length} kurulu yarışma · {ozet.toplam} rapor

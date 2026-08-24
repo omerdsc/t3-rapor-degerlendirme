@@ -15,7 +15,15 @@ import type { Rapor } from '@/lib/depo/tipler';
 
 export const dynamic = 'force-dynamic';
 
-const SUTUNLAR = ['BAŞVURU', 'PROJE / TAKIM', 'ÖN KONTROLLER', '4. GÖZ', 'HAKEM DURUMU', 'DURUM', ''];
+/*
+ * Kolon adı "4. GÖZ" değil "AI ÖNERİSİ".
+ *
+ * PRD bu özelliği "AI 4. göz" diye adlandırıyor ve kaynak kodda o alıntı
+ * korunuyor; ama kolon başlığı ne olduğunu SÖYLEMELİ. Ürün adı da
+ * değiştiği için (TPRDS) kolonun ürün adını taşıması zaten yanlıştı:
+ * o hücrede duran şey modelin önerdiği puan.
+ */
+const SUTUNLAR = ['BAŞVURU', 'PROJE / TAKIM', 'ÖN KONTROLLER', 'AI ÖNERİSİ', 'HAKEM DURUMU', 'DURUM', ''];
 
 /** Hakemin işi bitti mi bitmedi mi — listenin ayrıldığı temel eksen. */
 type Suzgec = 'bekleyen' | 'tamamlanan' | 'manuel' | 'tumu';
