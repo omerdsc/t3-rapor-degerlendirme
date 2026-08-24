@@ -10,7 +10,9 @@ import type { HakemYuku } from '@/lib/db/hakem-depo';
  * ERİŞİM KODU EKRANDA GÖSTERİLİYOR
  * Hakem panele kodla giriyor; koordinasyon bu kodu hakeme iletmek zorunda.
  * Gizlemek işe yaramaz — koordinasyon zaten iletmek için görmek zorunda.
- * Kopyalanabilir olması gerekiyor, o yüzden tek tıkla kopyalanıyor.
+ * Kopyalanabilir olması gerekiyor, o yüzden tek tıkla kopyalanıyor — ve
+ * çipte YAZAN şey kopyalanıyor. Eskiden kod gösterip tam bağlantı
+ * kopyalıyordu; kullanıcı gördüğünden başka bir şey yapıştırıyordu.
  *
  * İŞ YÜKÜ NEDEN AYNI TABLODA
  * "Yeni hakem ekle" ile "kim ne kadar yüklü" ayrı ekranlarda olsa
@@ -22,7 +24,10 @@ export default function HakemYonetimi({ yukler }: { yukler: HakemYuku[] }) {
   const [acik, setAcik] = useState(false);
   const [calisiyor, setCalisiyor] = useState(false);
   const [mesaj, setMesaj] = useState<{ metin: string; hata?: boolean } | null>(null);
-  const [kopyalanan, setKopyalanan] = useState<string | null>(null);
+  /* Hangi hakemin NEYİ kopyalandı — geri bildirim doğru olsun diye. */
+  const [kopyalanan, setKopyalanan] = useState<
+    { kod: string; tur: 'kod' | 'baglanti' } | null
+  >(null);
 
   const [ad, setAd] = useState('');
   const [eposta, setEposta] = useState('');
@@ -92,12 +97,24 @@ export default function HakemYonetimi({ yukler }: { yukler: HakemYuku[] }) {
     }
   }
 
-  async function kopyala(kod: string) {
+  /**
+   * Panoya kopyalar.
+   *
+   * ── GÖRÜNEN NE İSE KOPYALANAN O ─────────────────────────────────────
+   * Kod çipi eskiden kodu GÖSTERİP tam bağlantıyı kopyalıyordu
+   * (`http://…/hakem/7KSN-NTBD`). Kullanıcı `7KSN-NTBD` görüp yapıştırınca
+   * bambaşka bir şey çıkıyordu. Düğmenin üstünde ne yazıyorsa panoya o
+   * gitmeli.
+   *
+   * Bağlantı da lazım — hakeme tıklanabilir bir adres göndermek en kolayı —
+   * ama o ayrı bir düğme. İki ihtiyaç, iki düğme.
+   */
+  async function kopyala(kod: string, tur: 'kod' | 'baglanti') {
+    const metin =
+      tur === 'kod' ? kod : `${window.location.origin}/hakem/${kod}`;
     try {
-      await navigator.clipboard.writeText(
-        `${window.location.origin}/hakem/${kod}`,
-      );
-      setKopyalanan(kod);
+      await navigator.clipboard.writeText(metin);
+      setKopyalanan({ kod, tur });
       setTimeout(() => setKopyalanan(null), 2000);
     } catch {
       // Pano erişimi reddedilebilir; kod ekranda görünür durumda kalıyor.
@@ -276,13 +293,27 @@ export default function HakemYonetimi({ yukler }: { yukler: HakemYuku[] }) {
                 ) : (
                 <>
                 <div className="flex shrink-0 items-center gap-1">
+                  {/* Çipte ne yazıyorsa panoya o gidiyor: sadece kod. */}
                   <button
                     type="button"
-                    onClick={() => kopyala(h.kod)}
-                    title="Hakemin panel bağlantısını kopyala"
+                    onClick={() => kopyala(h.kod, 'kod')}
+                    title="Erişim kodunu kopyala"
                     className="cursor-pointer rounded-md bg-zemin px-2 py-1 font-mono text-[11px] font-bold tracking-wide transition-colors hover:bg-cizgi"
                   >
-                    {kopyalanan === h.kod ? 'kopyalandı ✓' : h.kod}
+                    {kopyalanan?.kod === h.kod && kopyalanan.tur === 'kod'
+                      ? 'kod kopyalandı ✓'
+                      : h.kod}
+                  </button>
+                  {/* Tıklanabilir adres isteyenler için ayrı düğme. */}
+                  <button
+                    type="button"
+                    onClick={() => kopyala(h.kod, 'baglanti')}
+                    title="Hakemin panel bağlantısını kopyala — e-postayla göndermek için"
+                    className="cursor-pointer rounded-md border border-cizgi px-2 py-1 text-[10.5px] font-bold text-metin-2 transition-colors hover:bg-zemin"
+                  >
+                    {kopyalanan?.kod === h.kod && kopyalanan.tur === 'baglanti'
+                      ? 'bağlantı ✓'
+                      : 'Bağlantı'}
                   </button>
                   <a
                     href={`/hakem/${h.kod}`}
@@ -323,8 +354,10 @@ export default function HakemYonetimi({ yukler }: { yukler: HakemYuku[] }) {
       )}
 
       <p className="mt-2.5 text-[11px] leading-relaxed font-medium text-metin-3">
-        <strong className="font-semibold text-metin-2">Kod</strong> hakeme
-        iletilecek bağlantıyı kopyalar;{' '}
+        <strong className="font-semibold text-metin-2">Kod</strong> yalnızca
+        erişim kodunu kopyalar;{' '}
+        <strong className="font-semibold text-metin-2">Bağlantı</strong>{' '}
+        hakeme gönderilecek tam adresi;{' '}
         <strong className="font-semibold text-metin-2">Aç</strong> o panelin
         hakem tarafından nasıl göründüğünü yeni sekmede gösterir. Hakem
         yalnızca kendisine atanmış raporları görüyor, takım adları rumuzlu —
