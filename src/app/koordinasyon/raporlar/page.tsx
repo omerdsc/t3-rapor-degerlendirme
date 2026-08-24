@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import RaporYukleyici from '@/components/rapor-yukleyici';
+import TopluDegerlendirme from '@/components/toplu-degerlendirme';
 import SecimKutusu from '@/components/secim-kutusu';
 import { DurumRozeti, KontrolNoktasi } from '@/components/rozet';
 import DisaAktarDugmesi from '@/components/disa-aktar-dugmesi';
@@ -240,6 +241,16 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
           kategoriAdi={kategori.ad}
           icerikKategorileri={yarisma.icerikKategorileri}
         />
+      )}
+
+      {/*
+        TOPLU ÖN DEĞERLENDİRME — yüklemenin hemen ARDINDA.
+        PRD AKIŞ 01'in sırası bu: "raporları sisteme aktarır → AI analiz
+        sürecini başlatır." Ekranda da aynı sırada duruyor ki kullanıcı
+        yüklemeden sonra ne yapacağını aramak zorunda kalmasın.
+      */}
+      {yarisma && !aramaTerimi && (
+        <TopluDegerlendirme yarismaId={yarisma.id} kategoriId={kategori?.id} />
       )}
 
       {/* Değerlendirildi / değerlendirilmedi ayrımı */}

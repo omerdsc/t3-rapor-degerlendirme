@@ -548,6 +548,108 @@ export function raporlarinHakemleri(
   return sonuc;
 }
 
+/**
+ * Değerlendirme akışının ilerleme oranları.
+ *
+ * ── NİYE ORAN, NİYE SAYI DEĞİL ──────────────────────────────────────────
+ * PRD sayfa 03, Değerlendirme Yöneticisi rolünü şöyle tanımlıyor: "Analiz
+ * durumlarını, TAMAMLANMA ORANLARINI ve değerlendirme akışını izler."
+ * Panomuz mutlak sayı gösteriyordu — "3 rapor bekliyor" gibi. 500 raporluk
+ * bir döngüyü yöneten kişi için bu yetersiz: "3" iyi mi kötü mü, toplamın
+ * neresindeyiz? Oran bu soruyu yanıtlıyor.
+ *
+ * ── GECİKEN İŞ AYRICA SAYILIYOR ─────────────────────────────────────────
+ * "Operasyonel aksiyonları yönetir" maddesinin karşılığı: son tarihi geçmiş
+ * ama bitmemiş değerlendirme, koordinasyonun peşine düşmesi gereken tek
+ * somut iştir.
+ */
+export interface AkisOzeti {
+  /** Kapsamdaki toplam rapor. */
+  rapor: number;
+  /** En az bir hakem atanmış rapor. */
+  atanmis: number;
+  /** Atanmış bütün hakemler bitirmiş rapor. */
+  tamamlanmis: number;
+  /** Atanmış ama en az bir hakemi bekleyen rapor. */
+  suren: number;
+  /** Hiç hakem atanmamış rapor. */
+  atanmamis: number;
+  /** Beklenen toplam değerlendirme (atama sayısı). */
+  beklenenDegerlendirme: number;
+  /** Tamamlanmış değerlendirme. */
+  bitenDegerlendirme: number;
+  /** Son tarihi geçmiş, bitmemiş değerlendirme. */
+  geciken: number;
+  /** Yüzde — tamamlanmış değerlendirme / beklenen. */
+  yuzde: number;
+}
+
+export function akisOzeti(yarismaId?: string, kategoriId?: string): AkisOzeti {
+  const db = baglanti();
+  const kosul =
+    kategoriId && yarismaId
+      ? 'WHERE r.yarisma_id = ? AND r.kategori_id = ?'
+      : yarismaId
+        ? 'WHERE r.yarisma_id = ?'
+        : '';
+  const p: string[] =
+    kategoriId && yarismaId
+      ? [yarismaId, kategoriId]
+      : yarismaId
+        ? [yarismaId]
+        : [];
+
+  /*
+   * Tek sorgu, rapor başına özet. Rapor sayısı binlere çıkabildiği için
+   * satır satır sorgulamak (N+1) burada da yasak — `npm run hacim` bunu
+   * atama ekranında ölçtü, aynı hatayı panoda tekrarlamıyoruz.
+   */
+  const satirlar = db
+    .prepare(
+      `SELECT r.id,
+              COUNT(a.hakem_id) AS atanan,
+              SUM(CASE WHEN d.durum = 'tamamlandi' THEN 1 ELSE 0 END) AS biten,
+              SUM(CASE WHEN a.son_tarih IS NOT NULL
+                        AND a.son_tarih < ?
+                        AND (d.durum IS NULL OR d.durum <> 'tamamlandi')
+                       THEN 1 ELSE 0 END) AS geciken
+         FROM rapor r
+         LEFT JOIN atama a ON a.rapor_id = r.id
+         LEFT JOIN degerlendirme d
+                ON d.rapor_id = a.rapor_id AND d.hakem_id = a.hakem_id
+         ${kosul}
+        GROUP BY r.id`,
+    )
+    .all(new Date().toISOString().slice(0, 10), ...p) as Array<Record<string, number | string>>;
+
+  let atanmis = 0, tamamlanmis = 0, suren = 0, atanmamis = 0;
+  let beklenen = 0, biten = 0, geciken = 0;
+
+  for (const s of satirlar) {
+    const a = Number(s.atanan) || 0;
+    const b = Number(s.biten) || 0;
+    beklenen += a;
+    biten += b;
+    geciken += Number(s.geciken) || 0;
+
+    if (a === 0) atanmamis++;
+    else {
+      atanmis++;
+      if (b >= a) tamamlanmis++;
+      else suren++;
+    }
+  }
+
+  return {
+    rapor: satirlar.length,
+    atanmis, tamamlanmis, suren, atanmamis,
+    beklenenDegerlendirme: beklenen,
+    bitenDegerlendirme: biten,
+    geciken,
+    yuzde: beklenen ? Math.round((biten / beklenen) * 100) : 0,
+  };
+}
+
 /** Hakemin panelinde gördüğü iş listesi. */
 export function hakeminIsleri(hakemId: string): HakemIsi[] {
   const satirlar = baglanti()

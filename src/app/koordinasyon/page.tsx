@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { DurumRozeti } from '@/components/rozet';
 import { birlesikListe } from '@/lib/katalog/birlesik';
+import { akisOzeti } from '@/lib/db/hakem-depo';
 import { panoOzeti, raporlariListele, yarismalariListele } from '@/lib/depo/depo';
 import { raporuMaskele } from '@/lib/depo/maskele';
 
@@ -39,6 +40,14 @@ export default function PanoSayfasi() {
   const tumRaporlar = raporlariListele();
   const sonRaporlar = tumRaporlar.slice(0, 5);
   const birlesik = birlesikListe((id) => raporlariListele(id).length);
+  /*
+   * Değerlendirme akışı oranları.
+   *
+   * PRD sayfa 03 bu rolü "tamamlanma ORANLARINI izler" diye tanımlıyor.
+   * Pano mutlak sayı gösteriyordu; 500 raporluk bir döngüde "3 bekliyor"
+   * tek başına hiçbir şey söylemiyor.
+   */
+  const akis = akisOzeti();
 
   const onaysizKategori = yarismalar.reduce(
     (t, y) => t + y.kategoriler.filter((k) => !k.duzenlendi).length,
@@ -113,7 +122,82 @@ export default function PanoSayfasi() {
         </p>
       </div>
 
-      {/* YAPILACAK İŞLER — ekranın en üstü, çünkü kullanıcının sorusu bu. */}
+      {/*
+        DEĞERLENDİRME AKIŞI — oranlar.
+        Yapılacak işlerin ÜSTÜNDE: "neredeyiz" sorusu "ne yapmalıyım"
+        sorusundan önce gelir. Rapor yoksa gösterilmiyor; boş bir ilerleme
+        çubuğu bilgi değil gürültüdür.
+      */}
+      {akis.rapor > 0 && (
+        <section className="mb-5 rounded-xl border border-cizgi bg-white px-5 py-4">
+          <div className="mb-3 flex flex-wrap items-baseline gap-3">
+            <h2 className="text-[15px] font-bold">Değerlendirme akışı</h2>
+            <span className="text-[11.5px] font-medium text-metin-2">
+              {akis.bitenDegerlendirme}/{akis.beklenenDegerlendirme} hakem
+              değerlendirmesi tamamlandı
+            </span>
+            <span className="ml-auto text-[22px] leading-none font-extrabold text-lacivert">
+              %{akis.yuzde}
+            </span>
+          </div>
+
+          <div className="mb-3 h-[9px] overflow-hidden rounded-full bg-zemin">
+            <div
+              className="h-full rounded-full bg-yesil transition-[width] duration-500"
+              style={{ width: `${akis.yuzde}%` }}
+            />
+          </div>
+
+          {/*
+            Dört durum, biri eyleme çağırıyor. Atanmamış rapor
+            koordinasyonun işi; geciken değerlendirme de öyle.
+          */}
+          <div className="grid gap-2.5 sm:grid-cols-4">
+            {([
+              ['Tamamlandı', akis.tamamlanmis, 'text-yesil-koyu', null],
+              ['Sürüyor', akis.suren, 'text-mavi-koyu', null],
+              ['Atanmadı', akis.atanmamis, 'text-kirmizi', akis.atanmamis > 0 ? '/koordinasyon/hakemler' : null],
+              ['Gecikti', akis.geciken, 'text-amber-koyu', akis.geciken > 0 ? '/koordinasyon/hakemler' : null],
+            ] as Array<[string, number, string, string | null]>).map(
+              ([ad, n, renk, yol]) => {
+                const govde = (
+                  <>
+                    <div className={`text-[19px] leading-none font-extrabold ${n > 0 ? renk : 'text-metin-3'}`}>
+                      {n}
+                    </div>
+                    <div className="mt-1 text-[10.5px] font-bold tracking-wide text-metin-2">
+                      {ad.toLocaleUpperCase('tr')}
+                    </div>
+                  </>
+                );
+                return yol ? (
+                  <Link
+                    key={ad}
+                    href={yol}
+                    className="rounded-lg bg-zemin px-3 py-2.5 transition-colors hover:bg-cizgi"
+                  >
+                    {govde}
+                  </Link>
+                ) : (
+                  <div key={ad} className="rounded-lg bg-zemin px-3 py-2.5">
+                    {govde}
+                  </div>
+                );
+              },
+            )}
+          </div>
+
+          {akis.geciken > 0 && (
+            <p className="mt-2.5 rounded-md bg-amber-zemin px-3 py-2 text-[11px] leading-relaxed font-semibold text-amber-koyu">
+              {akis.geciken} değerlendirmenin son tarihi geçti ve hâlâ
+              tamamlanmadı. Hakemler ekranından kimin geciktiğini görüp
+              iletişime geçebilirsiniz.
+            </p>
+          )}
+        </section>
+      )}
+
+      {/* YAPILACAK İŞLER — kullanıcının ikinci sorusu: ne yapmalıyım. */}
       <section className="mb-5">
         <h2 className="mb-2.5 text-[15px] font-bold">Yapılacak işler</h2>
 
