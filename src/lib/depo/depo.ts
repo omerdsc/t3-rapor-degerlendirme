@@ -585,6 +585,10 @@ export interface PanoOzeti {
   uyumOrani: number | null;
   toplamMaliyet: number;
   raporBasinaMaliyet: number | null;
+  /** Yapay zekâ ön değerlendirmesi yapılmış rapor sayısı. */
+  degerlendirilenRapor: number;
+  /** Bunların kaçı önbellekten geldi — ücretsiz. */
+  onbellektenGelen: number;
 }
 
 export function panoOzeti(yarismaId?: string, kategoriId?: string): PanoOzeti {
@@ -596,9 +600,22 @@ export function panoOzeti(yarismaId?: string, kategoriId?: string): PanoOzeti {
   const sapmalar = tamamlananlar.map(
     (r) => Math.abs((r.hakemToplam ?? 0) - (r.aiDegerlendirme?.aiToplam ?? 0)),
   );
-  const maliyetler = raporlar
-    .map((r) => r.aiDegerlendirme?.kullanim.maliyet ?? 0)
-    .filter((m) => m > 0);
+  /*
+   * ── ÖNBELLEK RAPOR BAŞINA MALİYETİ DÜŞÜRÜR, YÜKSELTMEZ ────────────────
+   * Burada eskiden `.filter((m) => m > 0)` vardı: maliyeti sıfır olan
+   * raporlar paydadan DÜŞÜYORDU. Sonuç ters: önbellekten gelen her rapor
+   * ortalamayı yükseltiyordu. Ölçüldü — 6 rapor $0,7857 tuttu, gerçek
+   * ortalama $0,131; pano $0,157 gösteriyordu çünkü 5'e bölüyordu.
+   *
+   * Önbellek bu sistemin maliyet korumasının yarısı; kazancını gizleyen
+   * bir sayı, olmayan bir sayıdan kötüdür. Payda artık DEĞERLENDİRİLMİŞ
+   * rapor sayısı: sıfır maliyetli rapor da değerlendirilmiştir.
+   */
+  const degerlendirilenler = raporlar.filter((r) => r.aiDegerlendirme);
+  const maliyetler = degerlendirilenler.map(
+    (r) => r.aiDegerlendirme?.kullanim.maliyet ?? 0,
+  );
+  const onbellekten = maliyetler.filter((m) => m === 0).length;
 
   return {
     toplam: raporlar.length,
@@ -619,5 +636,7 @@ export function panoOzeti(yarismaId?: string, kategoriId?: string): PanoOzeti {
     raporBasinaMaliyet: maliyetler.length
       ? maliyetler.reduce((a, b) => a + b, 0) / maliyetler.length
       : null,
+    degerlendirilenRapor: degerlendirilenler.length,
+    onbellektenGelen: onbellekten,
   };
 }

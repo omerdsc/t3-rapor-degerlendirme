@@ -3,7 +3,9 @@ import { notFound } from 'next/navigation';
 import AiOnDegerlendirme from '@/components/ai-on-degerlendirme';
 import { DurumRozeti, SeviyeRozeti } from '@/components/rozet';
 import Yazisma from '@/components/yazisma';
-import { kategoriGetir, raporGetir, yarismaGetir } from '@/lib/depo/depo';
+import {
+  kategoriGetir, parmakizliRaporlar, raporGetir, yarismaGetir,
+} from '@/lib/depo/depo';
 import HakemSonuclari, { type HakemSonucu } from '@/components/hakem-sonuclari';
 import KimlikPaneli from '@/components/kimlik-paneli';
 import {
@@ -42,6 +44,19 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
   const atananlar = raporunHakemleri(rapor.id);
   const degerlendirmeler = raporunDegerlendirmeleri(rapor.id);
   const ozet = nihaiOzet(rapor.id);
+
+  /*
+   * Karşılaştırma ekranına bağlantı — AMA yalnızca karşılaştırılacak
+   * bir şey varsa.
+   *
+   * Benzerlik bulgusu yükleme anında üretiliyor; o andan sonra karşı
+   * taraftaki rapor silinmiş ya da başka kategoriye taşınmış olabilir.
+   * Bulguya bakıp bağlantı koymak, kullanıcıyı boş bir tarama ekranına
+   * göndermek olurdu. Kategoride en az iki parmak izi olmalı ki
+   * karşılaştırılacak bir ÇİFT bulunsun.
+   */
+  const karsilastirilabilir =
+    parmakizliRaporlar(rapor.yarismaId, rapor.kategoriId).length >= 2;
 
   const hakemSonuclari: HakemSonucu[] = atananlar.map((h) => {
     const d = degerlendirmeler.find((x) => x.hakemId === h.id);
@@ -176,6 +191,25 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
             yapay zekâ kullanmadan, saniyeler içinde · maliyet $0 · puana
             dahil değil
           </span>
+          {/*
+            BENZERLİK ÖTEKİ BEŞ KONTROLDEN YAPICA FARKLI.
+            Diğerleri tek belgeye bakıyor: dili nedir, şablona uyuyor mu.
+            Benzerlik ise İKİ RAPOR ARASINDA var olan bir şey — tek raporun
+            sayfasında "hangi raporla, ne kadar, nerede" sorusu
+            yanıtlanamıyor.
+
+            Bulgu burada duruyor, karşılaştırma ekranı orada duruyordu ve
+            aralarında hiçbir bağ yoktu: koordinasyon bulguyu görüp
+            menüden ayrı bir ekran bulmak zorundaydı. Bağlantı eklendi.
+          */}
+          {karsilastirilabilir && (
+            <Link
+              href={`/koordinasyon/benzerlik?yarisma=${yarisma.id}&kategori=${kategori.id}`}
+              className="ml-auto text-[11.5px] font-bold text-kirmizi hover:text-kirmizi-koyu"
+            >
+              Kategoriyi karşılaştır →
+            </Link>
+          )}
         </div>
         <div className="flex flex-wrap gap-2.5">
         {rapor.kontroller.map((k) => (

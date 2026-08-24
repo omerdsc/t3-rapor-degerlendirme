@@ -27,7 +27,9 @@ import {
   ciftKarsilastir, korpusTara, type CiftSonucu, type Parmakizi,
 } from '@/lib/analiz/benzerlik';
 import { parmakiziCoz } from '@/lib/analiz/parmakizi-depo';
-import { kategoriGetir, raporGetir, raporlariListele, yarismaGetir } from '@/lib/depo/depo';
+import {
+  kategoriGetir, parmakizliRaporlar, raporGetir, raporlariListele, yarismaGetir,
+} from '@/lib/depo/depo';
 import { maskelemeAcikMi, metindeMaskele, raporuMaskele } from '@/lib/depo/maskele';
 
 /** 100 raporlu kategoride 4.950 çift — yerel hesap ama anlık değil. */
@@ -63,12 +65,20 @@ export async function GET(request: Request) {
   const raporlar = raporlariListele(yarismaId, kategoriId ?? undefined);
 
   /*
-   * Parmakizi olmayan raporlar taramaya girmiyor ama SESSİZCE düşmüyor:
-   * sayısı döndürülüyor. Taranmış PDF'ler ve okunamayan dosyalar bu gruba
-   * girer — "0 kopya bulundu" demek, aslında 12 raporun hiç bakılmadığını
-   * gizlerse yanıltıcı olur.
+   * ── PARMAK İZLERİ AYRI TABLODAN OKUNUYOR ─────────────────────────────
+   * Burada eskiden `raporlar.filter((r) => r.parmakizi)` vardı ve HİÇBİR
+   * ZAMAN eşleşmiyordu: parmak izleri rapor başına ~40 KB olduğu için
+   * ayrı tabloya taşındı ve `raporlariListele()` onları getirmiyor —
+   * liste ekranlarına gereksiz yük olurdu.
+   *
+   * Sonuç: bu ekran SQLite göçünden beri her kategoride "karşılaştırılacak
+   * çift yok" diyordu. Rapor sayfalarındaki benzerlik bulguları yükleme
+   * anında üretildiği için duruyordu; karşılaştırma ekranı boştu ve
+   * kimse fark etmemişti.
+   *
+   * `parmakizliRaporlar()` parmak izi tablosuyla JOIN yapıyor.
    */
-  const parmakizliler = raporlar.filter((r) => r.parmakizi);
+  const parmakizliler = parmakizliRaporlar(yarismaId, kategoriId ?? undefined);
   const parmakizsiz = raporlar.length - parmakizliler.length;
 
   if (parmakizliler.length < 2) {
@@ -83,7 +93,7 @@ export async function GET(request: Request) {
     });
   }
 
-  const izler: Parmakizi[] = parmakizliler.map((r) => parmakiziCoz(r.parmakizi!));
+  const izler: Parmakizi[] = parmakizliler.map((x) => parmakiziCoz(x.parmakizi));
   const korpus = korpusTara(izler);
 
   /*

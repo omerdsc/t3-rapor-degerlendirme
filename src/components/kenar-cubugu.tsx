@@ -22,7 +22,14 @@ import { usePathname } from 'next/navigation';
 const MENU = [
   { yol: '/koordinasyon', ad: 'Panel', ipucu: 'Bekleyen işler ve özet' },
   { yol: '/koordinasyon/raporlar', ad: 'Raporlar', ipucu: 'Rapor değerlendir' },
-  { yol: '/koordinasyon/benzerlik', ad: 'Kopya Kontrolü', ipucu: 'Raporlar arası örtüşme' },
+  {
+    yol: '/koordinasyon/benzerlik',
+    ad: 'Kopya Kontrolü',
+    // "Kategoriyi tara" — çünkü öteki beş kontrolden farklı olarak bu,
+    // tek rapora değil raporlar ARASINA bakıyor ve kategori seçmeden
+    // anlamlı bir cevabı yok.
+    ipucu: 'Kategoriyi tara — raporlar arası',
+  },
   { yol: '/koordinasyon/hakemler', ad: 'Hakemler', ipucu: 'Kayıt ve rapor atama' },
   { yol: '/koordinasyon/yarismalar', ad: 'Yarışmalar', ipucu: 'Kurulum ve ölçütler' },
 ];

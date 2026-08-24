@@ -59,10 +59,18 @@ const kontroller: Array<[string, number]> = [
    * çünkü o "en az bir tamamlanmış değerlendirme" arıyor; ayrışma ise
    * BÜTÜN hakemlerin bitmesiyle ortaya çıkıyor.
    */
-  ['Tamamlanmış değerlendirmesi olup durumu "tamamlandi" olmayan rapor',
-    sor(`SELECT COUNT(*) n FROM rapor r WHERE r.durum <> 'tamamlandi'
-         AND EXISTS (SELECT 1 FROM degerlendirme d
-           WHERE d.rapor_id = r.id AND d.durum = 'tamamlandi')`)],
+  /*
+   * BURADA BİR DENETİM KALDIRILDI: "en az bir tamamlanmış değerlendirmesi
+   * olup durumu tamamlandi olmayan rapor".
+   *
+   * Tek hakemli dönemden kalmıştı ve çok hakemli modelde YANLIŞ: iki
+   * hakemden biri bitirdiğinde rapor doğru olarak "hakem bekliyor"da
+   * kalıyor, denetim bunu hata sayıyordu. Latent bir yanlış alarmdı ve
+   * ancak gerçek bir 1/2 durumu oluşunca ortaya çıktı.
+   *
+   * Doğru olan aşağıdaki simetrik çift: "tamamlandi ama hiç bitmiş
+   * değerlendirme yok" ve "BÜTÜN hakemler bitirmiş ama tamamlandi değil".
+   */
   ['Bütün hakemleri bitirmiş ama "tamamlandi" olmayan rapor',
     sor(`SELECT COUNT(*) n FROM (
            SELECT r.id

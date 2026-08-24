@@ -234,9 +234,31 @@ export default function BenzerlikTarayici({
         </details>
       )}
 
-      {!veri.isaretliler.length ? (
-        <p className="rounded-xl border border-yesil/25 bg-yesil-zemin px-5 py-8 text-center text-[12.5px] font-semibold text-yesil-koyu">
-          Eşiği geçen benzerlik bulunmadı.
+      {/*
+        ── İKİ AYRI BOŞ DURUM, İKİ AYRI CEVAP ───────────────────────────
+        "Örtüşme yok" ile "karşılaştıracak çift yok" bambaşka şeyler ama
+        ekran ikisine de "eşiği geçen benzerlik bulunmadı" diyordu.
+        İkincisinde tarama HİÇ ÇALIŞMADI; bunu "temiz" diye göstermek
+        yanlış güven verir. Bir raporun benzerlik bulgusu varken bu ekran
+        boş görünüyorsa sebebi budur: karşı taraftaki rapor silinmiş ya
+        da başka kategoriye taşınmış olabilir.
+      */}
+      {!veri.toplamCift ? (
+        <p className="rounded-xl border border-cizgi bg-white px-5 py-8 text-center text-[12.5px] leading-relaxed font-medium text-metin-2">
+          <strong className="block font-bold text-metin">
+            Karşılaştırılacak çift yok.
+          </strong>
+          Bu seçimde parmak izi çıkarılmış en az iki rapor gerekiyor;
+          şu an {veri.raporSayisi} rapor var
+          {veri.parmakizsiz > 0 && `, ${veri.parmakizsiz} tanesinin parmak izi çıkarılamamış`}.
+          Tarama çalışmadı — bu &ldquo;kopya yok&rdquo; anlamına gelmez.
+        </p>
+      ) : !veri.isaretliler.length ? (
+        <p className="rounded-xl border border-yesil/25 bg-yesil-zemin px-5 py-8 text-center text-[12.5px] leading-relaxed font-semibold text-yesil-koyu">
+          <strong className="block">Eşiği geçen benzerlik bulunmadı.</strong>
+          <span className="font-medium">
+            {veri.toplamCift} çift karşılaştırıldı.
+          </span>
         </p>
       ) : (
         <div className="flex flex-col gap-2">
@@ -392,6 +414,27 @@ export default function BenzerlikTarayici({
                         terminoloji ya da yeniden ifade edilmiş metin olabilir.
                       </p>
                     )}
+
+                    {/*
+                      RAPORLARA DÖNÜŞ YOLU.
+                      Bu ekran kanıt gösteriyor ama kararı rapor sayfasında
+                      veriyorsunuz: orada hakem atanıyor, yazışma yürüyor,
+                      durum değişiyor. Bağlantı olmadan koordinasyon rapor
+                      kodunu ezberleyip arama kutusuna yazmak zorundaydı.
+                    */}
+                    <div className="mt-3 flex flex-wrap gap-2 border-t border-cizgi pt-3">
+                      {[c.a, c.b].map((r) =>
+                        r ? (
+                          <a
+                            key={r.id}
+                            href={`/koordinasyon/rapor/${r.id}`}
+                            className="rounded-lg border border-cizgi bg-white px-3 py-1.5 text-[11.5px] font-bold transition-colors hover:bg-zemin"
+                          >
+                            {r.takim} {r.raporKodu} raporunu aç →
+                          </a>
+                        ) : null,
+                      )}
+                    </div>
 
                     <p className="mt-2.5 text-[10.5px] leading-relaxed font-medium text-metin-2">
                       Karşılaştırmadan önce şablonun kendi metni, bölüm

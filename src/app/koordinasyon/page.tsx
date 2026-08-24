@@ -299,43 +299,21 @@ export default function PanoSayfasi() {
           )}
         </section>
 
+        {/*
+          ── ÜCRETLİ KATMAN: TEK KART, TEK SORU ──────────────────────────
+          Burada iki ayrı kart vardı: "Maliyet" ve "Yapay zekâ ne kadar
+          tutuyor?". İkincisi koordinasyona hiçbir EYLEM söylemiyordu —
+          bir sistem kalite ölçüsüydü ve operasyon panosunda tek başına
+          duruyordu.
+
+          Oysa ikisi tek bir sorunun iki yarısı: "bu paraya değiyor mu?"
+          Koordinasyonun gerçekten verdiği karar bu. Birleştirildi.
+        */}
         <div className="flex flex-col gap-4">
-          <section className="rounded-xl border border-cizgi bg-white px-5 py-4">
-            <div className="mb-3 flex items-center gap-2.5">
-              <span className="h-4 w-[3px] rounded-sm bg-kirmizi" />
-              <h2 className="text-[14px] font-bold">Yapay zekâ ne kadar tutuyor?</h2>
-            </div>
-
-            {ozet.ortalamaSapma === null ? (
-              <p className="text-[11.5px] leading-relaxed font-medium text-metin-2">
-                Hakem puanları girildikçe sistem, kendi önerisiyle hakem
-                arasındaki farkı ölçüp burada gösterecek. Kendi
-                güvenilirliğini kendisi izliyor.
-              </p>
-            ) : (
-              <div className="flex items-end gap-6">
-                <div>
-                  <div className="text-[26px] leading-none font-extrabold text-yesil-koyu">
-                    ±{ozet.ortalamaSapma}
-                  </div>
-                  <div className="mt-1.5 text-[10.5px] font-semibold text-metin-2">
-                    ortalama fark
-                  </div>
-                </div>
-                <div>
-                  <div className="text-[26px] leading-none font-extrabold">
-                    %{ozet.uyumOrani}
-                  </div>
-                  <div className="mt-1.5 text-[10.5px] font-semibold text-metin-2">
-                    ±5 puan içinde
-                  </div>
-                </div>
-              </div>
-            )}
-          </section>
-
           <section className="rounded-xl bg-lacivert px-5 py-4">
-            <h2 className="mb-3 text-[14px] font-bold text-white">Maliyet</h2>
+            <h2 className="mb-3 text-[14px] font-bold text-white">
+              Ücretli katman — bu paraya değiyor mu?
+            </h2>
 
             <div className="flex items-baseline gap-1.5">
               <span className="text-[26px] leading-none font-extrabold text-white">
@@ -346,8 +324,45 @@ export default function PanoSayfasi() {
               </span>
             </div>
             <p className="mt-1 text-[11px] font-medium text-metin-2">
-              Rapor başına ${(ozet.raporBasinaMaliyet ?? 0).toFixed(3)}
+              {ozet.degerlendirilenRapor} rapor · rapor başına $
+              {(ozet.raporBasinaMaliyet ?? 0).toFixed(3)}
+              {ozet.onbellektenGelen > 0 && (
+                <>
+                  {' · '}
+                  <strong className="font-bold text-white">
+                    {ozet.onbellektenGelen} tanesi önbellekten geldi
+                  </strong>
+                  , ücretsiz
+                </>
+              )}
             </p>
+
+            {/*
+              Hakem–model farkı BURADA, maliyetin yanında: "harcadığım
+              paranın önerisi hakemin kararına ne kadar yakın" sorusu tek
+              soru. Ayrı kartta dururken hiçbir karara bağlanmıyordu.
+            */}
+            {ozet.ortalamaSapma !== null && (
+              <div className="mt-3 border-t border-lacivert-3 pt-3">
+                <p className="text-[11px] font-medium text-metin-2">
+                  Model önerisi ile hakem kararı arasındaki fark:{' '}
+                  <strong className="font-bold text-white">
+                    ortalama ±{ozet.ortalamaSapma} puan
+                  </strong>
+                  , %{ozet.uyumOrani}&apos;si ±5 puan içinde.
+                </p>
+                {/*
+                  Sayı tek başına yanıltıcı olurdu: örneklem küçük ve
+                  hakem puanlarının bir kısmı test verisi. Sistemin kendi
+                  güvenilirliğini ölçtüğünü gösteriyor, kalibrasyon
+                  yapmıyor — bu ayrım yazılı olmalı.
+                */}
+                <p className="mt-1.5 text-[10px] leading-relaxed font-medium text-metin-3">
+                  Bu bir kalibrasyon çalışması değil, kendi kendini ölçme.
+                  Gerçek hakem puanları biriktikçe sayı anlam kazanacak.
+                </p>
+              </div>
+            )}
 
             <p className="mt-3 border-t border-lacivert-3 pt-3 text-[10.5px] leading-relaxed font-medium text-metin-2">
               Dil, şablon, başlık, kaynakça, kaynak doğrulama, kategori ve
