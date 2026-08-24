@@ -164,8 +164,20 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
         sonuclar={hakemSonuclari}
       />
 
-      {/* Ön kontrol şeridi — dört otomatik kontrol tek bakışta */}
-      <div className="mb-4 flex flex-wrap gap-2.5 rounded-xl border border-cizgi bg-white px-5 py-3.5">
+      {/*
+        ÖN KONTROL ŞERİDİ — başlıklı.
+        Başlıksızken sayfadaki tek adsız bloktu: kullanıcı bu çiplerin ne
+        olduğunu, kimin ürettiğini ve puanla ilişkisini bilmiyordu.
+      */}
+      <section className="mb-4 rounded-xl border border-cizgi bg-white px-5 py-3.5">
+        <div className="mb-2.5 flex flex-wrap items-baseline gap-2">
+          <h2 className="text-[13px] font-bold">Otomatik ön kontroller</h2>
+          <span className="text-[11px] font-medium text-metin-2">
+            yapay zekâ kullanmadan, saniyeler içinde · maliyet $0 · puana
+            dahil değil
+          </span>
+        </div>
+        <div className="flex flex-wrap gap-2.5">
         {rapor.kontroller.map((k) => (
           <div key={k.kod} className="flex min-w-[150px] flex-1 items-center gap-2.5">
             <div>
@@ -180,7 +192,8 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
             </div>
           </div>
         ))}
-      </div>
+        </div>
+      </section>
 
       {/* Otomatik kontrollerin bulguları */}
       {rapor.kontroller.some((k) => k.bulgular.length > 0) && (

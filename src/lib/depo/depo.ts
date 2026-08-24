@@ -422,6 +422,21 @@ export function raporlariListele(yarismaId?: string, kategoriId?: string): Rapor
   );
 }
 
+/**
+ * Parmak izi çıkarılmış rapor sayısı.
+ *
+ * Kanıt tablosu için var. Parmak izleri `rapor` tablosundan ayrıldıktan
+ * sonra `r.parmakizi` alanı listelerde hep boş kaldı ve kanıt betiği
+ * "0 parmak izi" yazmaya başladı — kanıt olduğu söylenen yerde yanlış
+ * sayı. Sayım kaynağa, yani tabloya sorulmalı.
+ */
+export function parmakiziSayisi(): number {
+  const s = baglanti()
+    .prepare('SELECT COUNT(*) AS n FROM parmakizi')
+    .get() as { n: number };
+  return Number(s.n) || 0;
+}
+
 /** Kopya taraması için: parmak izleri DAHİL. */
 export function parmakizliRaporlar(
   yarismaId: string,

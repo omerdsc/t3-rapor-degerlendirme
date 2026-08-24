@@ -20,14 +20,26 @@ tam mı, kaynakça gerçek mi, başka bir rapordan kopya mı?
 
 ```
 rapor yüklenir
+  │
   ├─ otomatik kontroller  ($0, saniyeler)     → dil, şablon, başlık,
   │                                              kaynakça, kaynak doğrulama,
   │                                              içerik uygunluğu, kopya
-  ├─ yapay zekâ ön değerlendirmesi ($0,18)    → ölçüt bazında puan önerisi,
-  │  (isteğe bağlı, hakem başlatır)              alıntı ve gerekçeyle
-  └─ hakem puanlar ve imzalar                 → nihai karar
-       └─ yarışmacı sonucu görür
+  │
+  ├─ KOORDİNASYON ön değerlendirmeyi başlatır → ölçüt bazında puan ÖNERİSİ,
+  │  ($0,18 · isteğe bağlı)                      alıntı ve gerekçeyle
+  │                                              — puan değil, öneri
+  ├─ KOORDİNASYON raporu hakemlere atar       → en az yüklü hakem önce
+  │                                              (bir rapora 1–3 hakem)
+  ├─ HAKEM kendi panelinde puanlar            → takım adı rumuzlu,
+  │                                              kör puanlama
+  └─ nihai puan = tamamlanmış hakem
+     değerlendirmelerinin ORTALAMASI          → hakemler arası fark
+       └─ YARIŞMACI sonucunu görür               ayrıca bildiriliyor
 ```
+
+**Puanı kim verir:** hakem. Koordinasyon ön değerlendirmeyi başlatır (ücretli
+adım, bütçe kararı onun) ve sonuçları izler — puan girmez. Ekranlarda da
+böyle: koordinasyon portalında puanlama formu yok.
 
 ---
 
@@ -38,7 +50,7 @@ var ve aralarında gezinme bağlantısı yok.
 
 | Portal | Adres | Kim girer | Ne görür |
 |---|---|---|---|
-| **Koordinasyon** | `/koordinasyon` | Yarışmalar Koordinatörlüğü | Her şey: yarışma kurulumu, hakem kaydı, atama, sonuçlar, kopya taraması |
+| **Koordinasyon** | `/koordinasyon` | Yarışmalar Koordinatörlüğü | Yarışma kurulumu, hakem kaydı, atama, sonuçlar, kopya taraması. **Puan girmez** |
 | **Hakem** | `/hakem/<kod>` | Değerlendirici | **Yalnızca kendisine atanmış** raporlar. Takım adları rumuzlu; öteki hakemlerin puanı ve nihai puan görünmez |
 | **Yarışmacı** | `/sonuc` | Başvuru sahibi | Yalnızca kendi sonucu, hakem tamamladıysa. Yapay zekâ puanı hiç gösterilmez |
 
@@ -50,6 +62,11 @@ doğrulaması alır.
 Hakemin erişim denetimi **iki katmanda**: sayfa ve API ayrı ayrı atamayı
 doğruluyor. Atanmamış hakem adres satırına rapor kimliği yazarsa 404 alır,
 API'ye puan gönderirse reddedilir.
+
+Hakem panele iki yoldan girer: giriş sayfasındaki kod kutusundan, ya da
+koordinasyonun ilettiği `/hakem/<kod>` bağlantısından. Koordinasyon hakem
+listesindeki **Aç ↗** ile o panelin hakem tarafından nasıl göründüğünü
+kontrol edebilir.
 
 ---
 
@@ -83,6 +100,7 @@ değerlendirme ölçütleri çıkarılır.
 | Şablondan rubrik çıkarılan kategori | **74 / 81** |
 | Rapor başına yapay zekâ maliyeti | **$0,18** |
 | Otomatik kontrollerin maliyeti | **$0** |
+| Birim testi | **76** |
 
 Kanıt için: `npx tsx scripts/kanit-topla.ts` — bu tablonun kaynağı odur,
 elle yazılmaz.
@@ -123,6 +141,23 @@ Hakem ekranında takım adı rumuzla görünüyor (`Takım 8EM8 · R-WKT4`). İk
 gerekçe: kişisel veri ekranda tutulmuyor ve hakem "geçen yıl finale kalan
 ekip" bilgisinden etkilenmiyor. Arama gerçek veriyle **sunucuda** çalışıyor;
 gerçek adlar istemciye hiç inmiyor.
+
+### Türetilmiş değerin tek yazıcısı olur
+Nihai puan türetilmiş bir değer: tamamlanmış hakem değerlendirmelerinin
+ortalaması. Rapor listeleri bunu her satır için hesaplayamayacağı (200 rapor
+= 200 ek sorgu) için kolonda önbelleklenmiş halde duruyor. Önbellek bir kez
+ayrıştı ve **aynı rapor listede 75,5, detay sayfasında 71,8 puan gösterdi** —
+kolona eski koordinasyon formu yazıyordu, hakem puanı kaydedilince kolon hiç
+güncellenmiyordu.
+
+Kural artık tek: `nihai_puan` kolonuna yalnızca `nihaiPuaniYaz()` yazar ve
+değerlendirme durumunu değiştiren her işlemin sonunda çağrılır. Hesabın
+kendisi `nihai-hesap.ts` içinde, veritabanından bağımsız ve test kapsamında.
+`npm run db:onar` kolonu kayıtlardan yeniden yazar.
+
+Aynı ilke dağıtımda da: `dagitim.ts` hem sunucunun atama yaptığı hem
+arayüzün önizleme gösterdiği tek fonksiyon. İki kopya olsaydı kullanıcının
+basmadan önce gördüğü sayı sunucunun yaptığından sapardı.
 
 ### Çıkarım taslaktır, insan onaylar
 Şablondan çıkarılan her ölçüt "onaylanmadı" olarak işaretli. Yönetici
@@ -186,7 +221,14 @@ src/lib/ai/         ücretli katman
   sartname-ozeti.ts   şartname özeti (kategori başına bir kez)
 
 src/lib/katalog/    teknofest.org kataloğu
-src/lib/db/         SQLite bağlantısı, şema, hakem/atama/değerlendirme
+
+src/lib/db/         SQLite + hakem/atama/değerlendirme
+  baglanti.ts         bağlantı, şema, WAL, yabancı anahtarlar
+  hakem-depo.ts       sorgular — hesap YOK, yalnızca veri erişimi
+  nihai-hesap.ts      puan ortalamaları · SAF, test kapsamında
+  dagitim.ts          rapor–hakem dağıtımı · SAF, sunucu ve arayüz aynısını çağırır
+  gecis.ts            JSON → SQLite göçü
+
 src/lib/depo/       veri katmanı, maskeleme, arama, dışa aktarma
 
 src/app/
@@ -201,7 +243,8 @@ src/app/
 ## Doğrulama
 
 ```bash
-npm test                                # 49 birim testi, ~0,5 sn
+npm test                                # 76 birim testi, ~0,7 sn
+npm run db:onar                         # nihai puan kolonunu kayıtlardan yeniden yaz
 npx tsx scripts/kanit-topla.ts          # ölçülmüş durum tablosu
 npx tsx scripts/ornek-rapor-uret.ts     # 7 sentetik fikstür (her biri bir kusur)
 npx tsx scripts/analiz-et.ts            # hepsini analiz et
@@ -214,7 +257,7 @@ npm run katalog:dogrula                 # 81 şablonu indirip çözümle
 Test korpusundaki üç kurgu vaka — görsel kopya, kısmi metin kopyası, aynı
 takımın devam projesi — üçü de doğru sınıflandırıldı.
 
-Birim testleri yazılırken **iki gerçek hata** ortaya çıktı ve düzeltildi:
+Birim testleri yazılırken **dört gerçek hata** ortaya çıktı ve düzeltildi:
 
 1. **Bölümleri ayrıştırılamayan rapor kopya taramasından sessizce
    düşüyordu.** `ozgunMetin()` yalnızca tanınan bölümler üzerinden
@@ -227,6 +270,16 @@ Birim testleri yazılırken **iki gerçek hata** ortaya çıktı ve düzeltildi:
    "belge düzgün okunmuş" kanıtı sayıyordu; oysa bu harfler iki kod
    sayfasında aynı bayta düşüyor ve bozulmadan geçiyor. "Ýçindekiler" hem
    bozuk Ý hem sağlam ç taşıdığı için onarım devreye girmiyordu.
+
+3. **Nihai puan iki ekranda farklı görünüyordu.** Yukarıda anlatılan
+   önbellek ayrışması; ölçülerek bulundu, `nihai-hesap.ts` testleriyle
+   kilitlendi.
+
+4. **Yarışmacı portalı her kriteri 0 gösteriyordu.** Tek hakemli modelden
+   çok hakemli modele geçişte `rapor.hakemPuanlari` alanı boş kaldı; toplam
+   puan doğru, kriter kırılımı tamamen sıfırdı. Kırılım da hakem
+   kayıtlarından türetiliyor artık. Bu hata **ekranı gerçekten açıp
+   okumadan** görünmüyordu — tip denetimi ve testler temiz geçiyordu.
 
 ---
 

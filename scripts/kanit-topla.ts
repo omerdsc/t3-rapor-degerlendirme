@@ -7,7 +7,9 @@
  */
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { raporlariListele, yarismalariListele } from '../src/lib/depo/depo';
+import {
+  parmakiziSayisi, raporlariListele, yarismalariListele,
+} from '../src/lib/depo/depo';
 import { profilleriOku } from '../src/lib/analiz/terim-depo';
 
 const KALIN = '\x1b[1m', R = '\x1b[0m', SOLUK = '\x1b[2m';
@@ -59,7 +61,16 @@ console.log(`  terim profili                ${profilleriOku().length}`);
 
 console.log(`\n${KALIN}RAPORLAR${R}`);
 console.log(`  yüklenmiş                    ${raporlar.length}`);
-console.log(`  parmak izi çıkarılmış        ${raporlar.filter((r) => r.parmakizi).length}`);
+/*
+ * Parmak izleri AYRI TABLODA.
+ *
+ * Rapor başına ~40 KB olduğu için `rapor` tablosundan ayrıldı ve
+ * `raporlariListele()` bunları getirmiyor — liste ekranlarına gereksiz
+ * yük olurdu. Bu satır `r.parmakizi` okumaya devam ettiği için sayı
+ * yanlış (0) çıkıyordu; kanıt tablosu olduğu iddia edilen yerde yanlış
+ * sayı, hiç sayı olmamasından kötü.
+ */
+console.log(`  parmak izi çıkarılmış        ${parmakiziSayisi()}`);
 console.log(`  kaynak doğrulaması yapılmış  ${dv.length}`);
 console.log(`  yapay zekâ değerlendirmesi   ${ai.length}`);
 console.log(`  hakem tamamladı              ${tamam.length}`);
