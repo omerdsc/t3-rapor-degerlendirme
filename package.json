@@ -17,7 +17,9 @@
     "db:kontrol": "tsx scripts/tutarlilik.ts",
     "denetim": "tsx scripts/sizinti-denetimi.ts",
     "hacim": "tsx scripts/hacim-olc.ts",
-    "hacim:temizle": "tsx scripts/hacim-temizle.ts"
+    "hacim:temizle": "tsx scripts/hacim-temizle.ts",
+    "demo": "tsx scripts/demo-hazirla.ts",
+    "duman": "tsx scripts/duman-testi.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.120.0",

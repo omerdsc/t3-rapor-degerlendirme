@@ -230,7 +230,6 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
                 <div className="flex flex-col gap-4">
                   {kategori.rubrik.kriterler.map((k) => {
                     const puan = kriterPuanlari?.get(k.kod);
-                    const ai = rapor.aiDegerlendirme?.kriterler.find((x) => x.kod === k.kod);
                     const oran = k.puan ? ((puan?.puan ?? 0) / k.puan) * 100 : 0;
                     const renk = oran >= 70 ? 'bg-yesil' : oran >= 40 ? 'bg-amber' : 'bg-kirmizi';
 
@@ -246,26 +245,28 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
                         <div className="mb-1.5 h-[7px] overflow-hidden rounded-[4px] bg-zemin">
                           <div className={`h-full rounded-[4px] ${renk}`} style={{ width: `${oran}%` }} />
                         </div>
-                        {/* Hakemin notu varsa o gösterilir; yoksa hakemin onayladığı gerekçe. */}
+                        {/*
+                          YALNIZCA HAKEMİN YAZDIĞI NOT.
+
+                          Burada bir zamanlar yapay zekâ gerekçesine geri
+                          düşülüyordu — "hakem AI'ın puanını aynen kabul
+                          ettiyse" koşuluyla. İki sebeple kaldırıldı:
+
+                          1. O metin hakem onayından GEÇMEMİŞ model
+                             çıktısıydı. Sızıntı denetimi (`npm run denetim`)
+                             bunu yakaladı: TF-ANADOLU-2 sayfasında
+                             onaylanmamış bir gerekçe duruyordu.
+                          2. Çok hakemli modelde kriter puanı artık
+                             ORTALAMA. "AI puanı = hakem puanı" eşitliği
+                             mutabakat değil, tesadüf.
+
+                          Hakem not yazmadıysa hiçbir şey uydurmuyoruz.
+                          Gelişim önerileri ayrı bölümde ve onaylı.
+                        */}
                         <p className="text-[11px] leading-relaxed font-medium text-metin-2">
-                          {/*
-                            GERİ BİLDİRİMİN KAYNAĞI ÖNEMLİ.
-
-                            Hakemin kendi notu varsa o gösterilir. Yoksa AI
-                            gerekçesine düşülür — AMA yalnızca hakem AI'ın
-                            önerdiği puanı AYNEN kabul ettiyse.
-
-                            Neden: hakem "SONUÇLAR" kriterinde AI'ın önerdiği
-                            19 puanı 17'ye çektiğinde, AI'ın 19'u savunan
-                            gerekçesini 17 puanın yanında göstermek yarışmacıya
-                            çelişki okutur — aldığı puanı savunmayan bir metin.
-                            Bu durumda hiçbir şey göstermemek daha dürüst.
-                          */}
                           {puan?.notlar.length
                             ? puan.notlar.join(' — ')
-                            : (ai && puan && ai.aiPuan === puan.puan
-                                ? ai.gerekce
-                                : 'Bu kriter için ayrıca açıklama girilmemiş.')}
+                            : 'Bu ölçüt için ayrıca not girilmemiş.'}
                         </p>
                       </div>
                     );
