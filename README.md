@@ -134,6 +134,9 @@ elle yazılmaz.
 PRD'nin madde madde karşılığı — PRD'nin kendi yapısıyla, yan yana
 okunabilsin diye: **[docs/prd-karsiligi.md](docs/prd-karsiligi.md)**
 
+Görsel tanıtım (tek sayfa, tarayıcıda açılır):
+**[docs/tanitim.html](docs/tanitim.html)**
+
 ---
 
 ## Mimari kararlar
