@@ -26,7 +26,7 @@ rapor yüklenir
   │                                              içerik uygunluğu, kopya
   │
   ├─ KOORDİNASYON ön değerlendirmeyi başlatır → ölçüt bazında puan ÖNERİSİ,
-  │  ($0,18 · isteğe bağlı)                      alıntı ve gerekçeyle
+  │  ($0,13 · isteğe bağlı)                      alıntı ve gerekçeyle
   │                                              — puan değil, öneri
   ├─ KOORDİNASYON raporu hakemlere atar       → en az yüklü hakem önce
   │                                              (bir rapora 1–3 hakem)
@@ -121,7 +121,7 @@ değerlendirme ölçütleri çıkarılır.
 | Şartnamesi bağlı kategori | **70** |
 | Şartnameden çıkarılan terim profili | **70** |
 | Şablondan rubrik çıkarılan kategori | **74 / 81** |
-| Rapor başına yapay zekâ maliyeti | **$0,18** |
+| Rapor başına yapay zekâ maliyeti | **$0,131** |
 | Otomatik kontrollerin maliyeti | **$0** |
 | Birim testi | **101** |
 | Uçtan uca vaka | **31** |

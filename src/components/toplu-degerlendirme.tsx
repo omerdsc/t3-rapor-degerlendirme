@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
  * DURDURABİLİYOR.
  *
  * ── NİYE ÖNCE MALİYET SORULUYOR ─────────────────────────────────────────
- * Bu sistemin tek ücretli adımı bu. Kullanıcı "42 rapor × $0,167 = $7,01"
+ * Bu sistemin tek ücretli adımı bu. Kullanıcı "42 rapor × $0,13 = $5,50"
  * görmeden başlatmamalı; bütçesi sert sınırlı bir kurumda "başlat"a basmak
  * geri alınamaz bir harcamadır.
  *

@@ -235,7 +235,7 @@ function main() {
    * bu kurulumun bütçe ayarı — creathon için $9 yüklendiği için konuldu.
    * Kurumsal kurulumda tavan gerçek bütçeye göre ayarlanır, kod değişmez.
    */
-  const RAPOR_BASI = 0.167;
+  const RAPOR_BASI = 0.131;
   const tavan = Number(process.env.TOPLAM_TAVAN ?? 8);
 
   console.log('\nÜCRETLİ KATMAN — hacimle doğrusal, tavan yapılandırılabilir\n');

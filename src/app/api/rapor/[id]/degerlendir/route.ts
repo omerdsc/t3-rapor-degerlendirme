@@ -108,9 +108,27 @@ export async function POST(request: Request, ctx: RouteContext<'/api/rapor/[id]/
       sartnameOzeti: ozet,
     });
 
+    /*
+     * ── DURUM GERİYE ALINMAZ ────────────────────────────────────────────
+     * Bu satır eskiden şuydu:
+     *   durum: rapor.durum === 'manuel_inceleme' ? rapor.durum : 'hakem_bekliyor'
+     *
+     * Yani TAMAMLANMIŞ bir rapora ön değerlendirme çalıştırmak durumu
+     * "hakem bekliyor"a geri çeviriyordu ve yarışmacının YAYIMLANMIŞ
+     * sonucu kapanıyordu. Ölçerek bulundu: toplu değerlendirme
+     * çalıştırıldıktan sonra iki raporun bütün hakemleri bitmiş olmasına
+     * rağmen durumu "hakem bekliyor" oldu.
+     *
+     * Ön değerlendirme bir DESTEK adımı; değerlendirmenin kendisi
+     * değil. Hakem işini bitirmişse yapay zekâ çıktısı eklenmesi o kararı
+     * geri almaz. Durum yalnızca ileri gidiyor:
+     *   yuklendi/analiz_ediliyor → hakem_bekliyor → tamamlandi
+     * ve "tamamlandi" ile "manuel_inceleme" olduğu gibi korunuyor.
+     */
+    const ilerlemez: Array<typeof rapor.durum> = ['tamamlandi', 'manuel_inceleme'];
     const guncel = await raporGuncelle(id, {
       aiDegerlendirme: degerlendirme,
-      durum: rapor.durum === 'manuel_inceleme' ? rapor.durum : 'hakem_bekliyor',
+      durum: ilerlemez.includes(rapor.durum) ? rapor.durum : 'hakem_bekliyor',
     });
 
     return Response.json({

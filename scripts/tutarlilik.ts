@@ -48,10 +48,33 @@ const kontroller: Array<[string, number]> = [
     sor(`SELECT COUNT(*) n FROM rapor r WHERE r.durum = 'tamamlandi'
          AND NOT EXISTS (SELECT 1 FROM degerlendirme d
            WHERE d.rapor_id = r.id AND d.durum = 'tamamlandi')`)],
+  /*
+   * Bu iki kontrol simetrik ve ikisi de gerekli. İlki "puan var ama
+   * yayımlanmamış", ikincisi "bütün hakemler bitmiş ama rapor hâlâ
+   * bekliyor" durumunu yakalıyor.
+   *
+   * İkincisi gerçek bir hatayı yakaladı: ön değerlendirme çalıştırmak
+   * raporun durumunu "hakem bekliyor"a GERİ ÇEVİRİYORDU ve tamamlanmış
+   * raporun yarışmacı sonucu kapanıyordu. İlk kontrol bunu göremiyordu
+   * çünkü o "en az bir tamamlanmış değerlendirme" arıyor; ayrışma ise
+   * BÜTÜN hakemlerin bitmesiyle ortaya çıkıyor.
+   */
   ['Tamamlanmış değerlendirmesi olup durumu "tamamlandi" olmayan rapor',
     sor(`SELECT COUNT(*) n FROM rapor r WHERE r.durum <> 'tamamlandi'
          AND EXISTS (SELECT 1 FROM degerlendirme d
            WHERE d.rapor_id = r.id AND d.durum = 'tamamlandi')`)],
+  ['Bütün hakemleri bitirmiş ama "tamamlandi" olmayan rapor',
+    sor(`SELECT COUNT(*) n FROM (
+           SELECT r.id
+             FROM rapor r
+             JOIN atama a ON a.rapor_id = r.id
+             LEFT JOIN degerlendirme d
+                    ON d.rapor_id = a.rapor_id AND d.hakem_id = a.hakem_id
+            WHERE r.durum NOT IN ('tamamlandi', 'manuel_inceleme')
+            GROUP BY r.id
+           HAVING COUNT(a.hakem_id) > 0
+              AND SUM(CASE WHEN d.durum = 'tamamlandi' THEN 1 ELSE 0 END)
+                  >= COUNT(a.hakem_id))`)],
   /*
    * Başvuru numarası yarışmacı portalının TEK kimlik kanıtı. Yinelenen
    * numara, iki farklı takımın birbirinin sonucunu görmesi anlamına

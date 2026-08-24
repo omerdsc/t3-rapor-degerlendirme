@@ -19,7 +19,7 @@ Tablodaki sayılar iddia değil, çalışan koddan okunuyor:
 | Aşama | Nerede | Maliyet |
 |---|---|---|
 | Rapor kontrolü | `src/lib/analiz/` — 6 kontrol ailesi | **$0** |
-| Kriter bazlı analiz | `src/lib/ai/degerlendirme.ts` | $0,167/rapor |
+| Kriter bazlı analiz | `src/lib/ai/degerlendirme.ts` | $0,131/rapor |
 | Yarışmacı geri bildirimi | `/sonuc` — hakem onaylı | $0 |
 
 **"Tek yapı"** üç ayrı araç değil, uçtan uca akan tek sistem: rapor
@@ -42,7 +42,7 @@ PRD altı kontrolü tek tek sayıyor. Altısı da çalışıyor ve ölçülmüş
 | başlık-içerik | `analiz/sablon.ts`, `kaynakca.ts` | `BASLIK_EKSIK` ×25 · `BOLUM_YETERSIZ` ×5 |
 | kategori | `analiz/kategori.ts` | 7/7 rapor · 70 gerçek şartname terim profili |
 | benzerlik | `analiz/benzerlik.ts`, `phash.ts` | 6 raporda parmak izi · metin ×5, görsel ×3, devam projesi ×2 |
-| kriter bazlı değerlendirme | `ai/degerlendirme.ts` | 3 rapor · rapor başına $0,167 |
+| kriter bazlı değerlendirme | `ai/degerlendirme.ts` | **6 rapor** · rapor başına $0,131 |
 
 ### Üç acı noktası
 
@@ -92,9 +92,9 @@ sorgu atıyordu (44 tam tablo taraması) → tek `GROUP BY`; atama ekranı rapor
 başına iki sorgu yapıyordu (3000 raporda 6000 sorgu) → toplu sorgu; toplu
 atama 6000 kayıt için **15,5 saniye** sürüyordu → tek işlemde yazma.
 
-Ücretli katman hacimle doğrusal: $0,167/rapor. `TOPLAM_TAVAN` bir sistem
-sınırı değil bütçe ayarı; aşılınca sistem çağrıyı **reddediyor**, sessizce
-harcamaya devam etmiyor.
+Ücretli katman hacimle doğrusal: rapor başına **$0,131** (6 rapor üzerinde
+ölçüldü). `TOPLAM_TAVAN` bir sistem sınırı değil bütçe ayarı; aşılınca
+sistem çağrıyı **reddediyor**, sessizce harcamaya devam etmiyor.
 
 ---
 
@@ -294,6 +294,12 @@ Gizlenmiyor; sistem bunları kullanıcıya da söylüyor.
 - **3 şablon PDF** olduğu için çözümlenemiyor; elle yükleme gerekiyor.
 - **Kapaktan künye okuma her raporda tutmuyor** — alanlar tabloya ya da
   görsele gömülü olabilir. Okunamadığında kusur sayılmıyor.
-- **Yapay zekâ kalitesi 3 rapor üzerinde ölçüldü.** Hakem–model farkı
-  ortalama 27,4 puan; bu sistemin kendi kendini ölçtüğünün kanıtı ama
-  istatistiksel olarak küçük bir örneklem.
+- **Hakem–model farkı ölçülüyor ama örneklem küçük ve kısmen sentetik.**
+  6 rapor değerlendirildi, 5'inde hakem puanıyla karşılaştırılabildi:
+  ortalama fark **28,6 puan**, 1/5 değerlendirme ±5 puan içinde.
+
+  Bu sayı sistemin kendi kendini ölçtüğünün kanıtı, ama bir kalibrasyon
+  çalışması DEĞİL: karşılaştırılan hakem puanlarının bir kısmı test için
+  girilmiş sentetik puanlar. Gerçek kalibrasyon, gerçek hakemlerin gerçek
+  raporlara verdiği puanlarla yapılmalı. Mekanizma hazır — panoda
+  görünüyor ve `npm run kanit` ile raporlanıyor; eksik olan veri.

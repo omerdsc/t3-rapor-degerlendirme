@@ -20,7 +20,7 @@ import type { Guven } from '@/lib/ai/degerlendirme';
  * izler; puan girmez.
  *
  * ── ÖN DEĞERLENDİRME NEDEN KOORDİNASYONDA BAŞLATILIYOR ──────────────────
- * Rapor başına ~$0,18. Bunu hakemin başlatması, bütçe kararını hakeme
+ * Rapor başına ~$0,13. Bunu hakemin başlatması, bütçe kararını hakeme
  * devretmek olurdu. Koordinasyon hangi raporlar için ön değerlendirme
  * istediğine karar veriyor; hakem hazır bulup kullanıyor.
  */
@@ -117,7 +117,7 @@ export default function AiOnDegerlendirme({
               Ölçüt bazında puan önerisi, gerekçe ve rapordan alıntı üretir.
               Hakem bunu hazır bulur; kabul etmek zorunda değildir.{' '}
               <strong className="font-bold text-metin">
-                Tek ücretli adım — rapor başına ~$0,18.
+                Tek ücretli adım — rapor başına ~$0,13.
               </strong>{' '}
               Aynı rapor ikinci kez istenirse önbellekten gelir, ek maliyet
               olmaz.

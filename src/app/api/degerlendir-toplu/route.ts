@@ -26,7 +26,7 @@
  *
  * ── ÜCRETLİ ADIM OLDUĞU İÇİN ÖNCE MALİYET SÖYLENİYOR ────────────────────
  * GET hiçbir çağrı yapmadan hedef sayısını ve tahmini tutarı döndürüyor.
- * Kullanıcı "42 rapor × $0,167 = $7,01" görüp karar veriyor. Tavan da
+ * Kullanıcı "42 rapor × $0,13 = $5,50" görüp karar veriyor. Tavan da
  * ayrıca koruyor: aşılırsa istemci değil SUNUCU reddediyor.
  */
 
@@ -34,7 +34,7 @@ import { kapi } from '@/lib/yetki/koordinasyon';
 import { kategoriGetir, raporlariListele } from '@/lib/depo/depo';
 
 /** Rapor başına ölçülen maliyet — arayüzde tahmin göstermek için. */
-const BIRIM_MALIYET = 0.167;
+const BIRIM_MALIYET = 0.131;
 
 export async function GET(istek: Request) {
   const yetkisiz = kapi(istek);
