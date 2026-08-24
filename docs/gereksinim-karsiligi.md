@@ -13,12 +13,12 @@ okunur, elle yazılmaz.
 
 | # | Zorunluluk | Nerede | Ölçülmüş kanıt |
 |---|---|---|---|
-| 1 | **Dil uygunluğu** — rapor beklenen dilde mi | `src/lib/analiz/dil.ts` | 9/9 raporda çalıştı · `DIL_BOLUM_SAPMASI` 4 kez üretildi |
-| 2 | **Şablon uygunluğu** — yarışmanın şablonuna uyuyor mu | `src/lib/analiz/sablon.ts`, `sablon-cikar.ts` | 9/9 rapor · `SABLON_ESKI` 5 kez · 74 şablondan rubrik çıkarıldı |
-| 3 | **Başlık ve içerik kontrolü** — bölümler var mı, dolu mu | `sablon.ts`, `kaynakca.ts` | 9/9 rapor · `BASLIK_EKSIK` 25, `BOLUM_YETERSIZ` 5 |
-| 4 | **Kategori uygunluğu** — doğru yarışmaya mı başvurulmuş | `kategori.ts`, `terim-cikar.ts` | 9/9 rapor · 70 gerçek şartname profiline karşı |
-| 5 | **Benzerlik analizi** — kopya/intihal taraması | `benzerlik.ts`, `phash.ts` | 7 raporda parmak izi · `BENZERLIK_METIN` 6, `BENZERLIK_GORSEL` 4 |
-| 6 | **Yapay zekâ ile kriter değerlendirmesi** | `src/lib/ai/degerlendirme.ts` | 3 rapor değerlendirildi · rapor başına **$0,18** |
+| 1 | **Dil uygunluğu** — rapor beklenen dilde mi | `src/lib/analiz/dil.ts` | 7/7 raporda çalıştı · `DIL_BOLUM_SAPMASI` 2 kez üretildi |
+| 2 | **Şablon uygunluğu** — yarışmanın şablonuna uyuyor mu | `src/lib/analiz/sablon.ts`, `sablon-cikar.ts` | 7/7 rapor · `SABLON_ESKI` 5 kez · 74 şablondan rubrik çıkarıldı |
+| 3 | **Başlık ve içerik kontrolü** — bölümler var mı, dolu mu | `sablon.ts`, `kaynakca.ts` | 7/7 rapor · `BASLIK_EKSIK` 25, `BOLUM_YETERSIZ` 5 |
+| 4 | **Kategori uygunluğu** — doğru yarışmaya mı başvurulmuş | `kategori.ts`, `terim-cikar.ts` | 7/7 rapor · 70 gerçek şartname profiline karşı |
+| 5 | **Benzerlik analizi** — kopya/intihal taraması | `benzerlik.ts`, `phash.ts` | 6 raporda parmak izi · `BENZERLIK_METIN` 5, `BENZERLIK_GORSEL` 3, `BENZERLIK_DEVAM_PROJESI` 2 |
+| 6 | **Yapay zekâ ile kriter değerlendirmesi** | `src/lib/ai/degerlendirme.ts` | 3 rapor değerlendirildi · rapor başına **$0,167** |
 
 **1–5 arası maddelerin hiçbiri dil modeli çağırmaz.** PDF ayrıştırma, Türkçe
 metin onarımı, şablon eşleştirme, kaynakça analizi, kaynak doğrulama, TF-IDF
@@ -74,15 +74,34 @@ puan tamamlanmış değerlendirmelerin ortalaması, hakemler arası ayrışma
 ayrıca hesaplanıp uyarı olarak gösteriliyor. Rapor, atanmış bütün hakemler
 bitirmeden "tamamlandı" sayılmıyor.
 
-Ölçüm: 6 kontrol ailesi çalıştı; iki hakemin aynı rapora verdiği 85,2 ve
-55,2 puan ayrı ayrı korundu, nihai puan 70,2 ve 30 puan ayrışma
-işaretlendi.
+Ölçüm: 6 kontrol ailesi çalıştı. Üç raporda çok hakemli değerlendirme
+ölçüldü, puanlar ayrı ayrı korundu:
+
+| Rapor | Hakem puanları | Nihai (ortalama) | Ayrışma |
+|---|---|---|---|
+| TF-BOTAN | 85,2 · 55,2 | 70,2 | 30 |
+| TF-ZAP | 76 · 55 | 65,5 | 21 |
+| TF-2026-004181 | 75,5 · 80 · 60 | 71,8 | 20 |
+
+Nihai puan tek fonksiyondan yazılıyor ve `npm run db:kontrol` kolon ile
+hesabın ayrışmadığını doğruluyor.
 
 ### AKIŞ 03 · Yarışmacıya geri bildirim
 `/sonuc` → başvuru numarası → **yalnızca hakem tamamladıysa** açılır.
 
-Sızıntı denetimi: yapay zekâ puanı, güven etiketleri ve `aiDegerlendirme`
-alanının hiçbiri yarışmacı sayfasında görünmüyor — HTML kaynağında da yok.
+Kriter kırılımı ve notlar hakem kayıtlarından türetiliyor; çok hakemli
+raporda kriter puanı da ortalama, notlar birlikte sunuluyor. Hakem
+KİMLİĞİ gösterilmiyor, kaç hakem değerlendirdiği gösteriliyor: itiraz
+kurul üzerinden yürür, hakemler arası tartışma yarışmacının önüne
+konmaz.
+
+Sızıntı denetimi **betikle** yapılıyor — `npx tsx scripts/sizinti-denetimi.ts`.
+Aranan değerler veritabanından okunuyor (gerçek hakem adları, gerçek
+erişim kodları), sabit dize yazılmıyor: veri değişince denetim boşa
+düşmesin. Ölçüm: 4 tamamlanmış raporun hepsinde temiz — yapay zekâ puanı,
+güven etiketleri, şartname ihlalleri, maliyet, hakem adı, erişim kodu ve
+yazışma kaydı HTML kaynağında da yok.
+
 Hakemin ayrıldığı kriterlerde yapay zekâ gerekçesi **gösterilmez**, hakemin
 kendi notu gösterilir (çelişkili geri bildirim engellendi).
 
@@ -93,7 +112,7 @@ kendi notu gösterilir (çelişkili geri bildirim engellendi).
 | Ek | Neden değerli |
 |---|---|
 | **TEKNOFEST kataloğu** — 60 yarışma, 260 belge otomatik çekiliyor | Koordinasyon her yarışmayı elle kurmuyor; sistem kurulur kurulmaz tüm yarışmalar hazır |
-| **Kaynak doğrulama** (Crossref + OpenAlex) | Yapay zekâ ile yazılan raporlar var olmayan kaynak uydurabiliyor. 6 kaynak akademik indekste doğrulandı, 18'i indekslenemez çıktı |
+| **Kaynak doğrulama** (Crossref + OpenAlex) | Yapay zekâ ile yazılan raporlar var olmayan kaynak uydurabiliyor. 3 kaynak akademik indekste doğrulandı, 9'u indekslenemez çıktı |
 | **Teknik şartname desteği** | Puanlama ağırlıkları genel şartnamede değil teknik şartnamede. 4 yarışmada bulundu ve okundu |
 | **Kimlik maskeleme + kör puanlama** | Hakem takım adını görmez; yanlılık azalır, kişisel veri ekrana düşmez. Arama gerçek veriyle sunucuda çalışır |
 | **Rapor kapağından kimlik okuma** | Kapak künyesi başvuruyla çelişirse yakalanır — yanlış dosya yüklenmiş olabilir |
@@ -104,8 +123,11 @@ kendi notu gösterilir (çelişkili geri bildirim engellendi).
 | **Kendi kendini ölçme** | Sistem, yapay zekâ önerisi ile hakem puanı arasındaki farkı ölçüp panoda gösteriyor |
 | **Çok hakemli değerlendirme** | Bir rapora birden çok hakem atanabiliyor; puanlar ayrı kayıtta, nihai puan ortalama, hakemler arası ayrışma uyarı olarak bildiriliyor |
 | **Ayrı hakem portalı** | Hakem yalnızca kendisine atanmış raporları görüyor; erişim denetimi hem sayfada hem API'de |
-| **Toplu ve dengeli atama** | "Atanmamış 40 raporu şu 5 hakeme dağıt" tek tıklama; her hakeme yakın sayıda rapor düşüyor |
+| **Toplu ve dengeli atama** | "Atanmamış 40 raporu şu 5 hakeme dağıt" tek tıklama. Denge hakemlerin ELİNDEKİ yükü de sayıyor: en az yüklü hakem önce iş alıyor. Panel, basmadan önce hangi hakeme kaç rapor düşeceğini gösteriyor — dağıtım hesabı sunucu ile arayüzde TEK fonksiyon (`dagitim.ts`), sapamıyorlar |
 | **Denetim izi** | Puanı kimin verdiği, ne zaman tamamladığı kayıtlı. Tamamlanan değerlendirme değiştirilemiyor; değerlendirmesi olan hakem silinmiyor, pasife alınıyor |
+| **Koordinasyon erişim denetimi** | Ortak anahtar + HttpOnly çerez; 17 API rotasının hepsinde rota-içi denetim, üstüne perimetre. Rapor belgesi ucu iki kapılı: koordinasyon anahtarı ya da atanmış hakem kodu. Anahtar tanımlı değilse sistem açık ve bunu her ekranda söylüyor |
+| **Türetilmiş değerde tek yazıcı** | Nihai puan tek fonksiyondan yazılıyor; hesabın kendisi veritabanından bağımsız ve test kapsamında. Bu kural, listede 75,5 / detayda 71,8 gösteren gerçek bir hatadan sonra konuldu |
+| **Veri tutarlılığı denetimi** | `npm run db:kontrol` — 11 "olmaması gereken durum" sorgusu: yetim atama, sahipsiz değerlendirme, durumla puan çelişkisi, önbellek ayrışması |
 
 ---
 

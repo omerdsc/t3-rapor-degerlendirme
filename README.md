@@ -123,7 +123,7 @@ değerlendirme ölçütleri çıkarılır.
 | Şablondan rubrik çıkarılan kategori | **74 / 81** |
 | Rapor başına yapay zekâ maliyeti | **$0,18** |
 | Otomatik kontrollerin maliyeti | **$0** |
-| Birim testi | **76** |
+| Birim testi | **93** |
 
 Kanıt için: `npx tsx scripts/kanit-topla.ts` — bu tablonun kaynağı odur,
 elle yazılmaz.
@@ -266,8 +266,10 @@ src/app/
 ## Doğrulama
 
 ```bash
-npm test                                # 76 birim testi, ~0,7 sn
+npm test                                # 93 birim testi, ~0,8 sn
+npm run db:kontrol                      # 11 veri tutarlılığı sorgusu
 npm run db:onar                         # nihai puan kolonunu kayıtlardan yeniden yaz
+npx tsx scripts/sizinti-denetimi.ts     # yarışmacı sayfası sızıntı denetimi
 npx tsx scripts/kanit-topla.ts          # ölçülmüş durum tablosu
 npx tsx scripts/ornek-rapor-uret.ts     # 7 sentetik fikstür (her biri bir kusur)
 npx tsx scripts/analiz-et.ts            # hepsini analiz et
