@@ -4,7 +4,11 @@ import DegerlendirmePaneli from '@/components/degerlendirme-paneli';
 import { DurumRozeti, SeviyeRozeti } from '@/components/rozet';
 import Yazisma from '@/components/yazisma';
 import { kategoriGetir, raporGetir, yarismaGetir } from '@/lib/depo/depo';
+import HakemSonuclari, { type HakemSonucu } from '@/components/hakem-sonuclari';
 import KimlikPaneli from '@/components/kimlik-paneli';
+import {
+  nihaiOzet, raporunDegerlendirmeleri, raporunHakemleri,
+} from '@/lib/db/hakem-depo';
 import { raporuMaskele } from '@/lib/depo/maskele';
 
 export const dynamic = 'force-dynamic';
@@ -30,6 +34,32 @@ export default async function RaporSayfasi({ params }: PageProps<'/rapor/[id]'>)
    * MASKELEME=kapali ile kapatılabilir.
    */
   const maske = raporuMaskele(rapor);
+
+  /*
+   * Hakem başına sonuçlar. Atanmış ama başlamamış hakem de listede:
+   * koordinasyonun görmesi gereken şey "kim geciktiriyor" sorusunun cevabı.
+   */
+  const atananlar = raporunHakemleri(rapor.id);
+  const degerlendirmeler = raporunDegerlendirmeleri(rapor.id);
+  const ozet = nihaiOzet(rapor.id);
+
+  const hakemSonuclari: HakemSonucu[] = atananlar.map((h) => {
+    const d = degerlendirmeler.find((x) => x.hakemId === h.id);
+    const puanlar: HakemSonucu['puanlar'] = {};
+    for (const p of d?.puanlar ?? []) {
+      puanlar[p.kriterKodu] = { puan: p.puan, not: p.not };
+    }
+    return {
+      hakemId: h.id,
+      hakemAdi: h.ad,
+      kurum: h.kurum,
+      durum: d?.durum ?? 'baslanmadi',
+      toplam: d?.toplam,
+      aciklama: d?.aciklama,
+      tamamlandi: d?.tamamlandi,
+      puanlar,
+    };
+  });
 
   return (
     <>
@@ -69,6 +99,19 @@ export default async function RaporSayfasi({ params }: PageProps<'/rapor/[id]'>)
         raporId={rapor.id}
         uyusmazlikSayisi={rapor.kimlikUyusmazligi?.length ?? 0}
         kapaktanOkundu={!!rapor.raporKimligi?.bulunan.length}
+      />
+
+      {/*
+        HAKEM DEĞERLENDİRMELERİ — sonuçların panele dönüşü.
+        Yapay zekâ önerisinden ÖNCE geliyor: koordinasyonun sorusu "hakemler
+        ne dedi", modelin ne dediği ikincil.
+      */}
+      <HakemSonuclari
+        olcutler={kategori.rubrik.kriterler}
+        toplamPuan={kategori.rubrik.toplamPuan}
+        nihaiPuan={ozet.puan}
+        aiToplam={rapor.aiDegerlendirme?.aiToplam}
+        sonuclar={hakemSonuclari}
       />
 
       {/* Ön kontrol şeridi — dört otomatik kontrol tek bakışta */}

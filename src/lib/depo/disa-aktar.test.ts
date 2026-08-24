@@ -72,17 +72,26 @@ test('her ölçüt için ayrı sütun açılıyor', () => {
   assert.ok(baslik.includes('Yöntem (30)'));
 });
 
-test('noktalı virgül içeren metin tırnaklanıyor', () => {
-  const csv = kategoriCsv(yarisma, kategori, [
-    rapor({ hakemNotu: 'İyi; ancak eksik' }),
+function hakemli(aciklama: string) {
+  return new Map([
+    ['r1', {
+      atanan: 1,
+      degerlendirmeler: [{
+        hakemAdi: 'Dr. Test', toplam: 30, tamamlandi: true, aciklama, puanlar: [],
+      }],
+    }],
   ]);
-  assert.ok(csv.includes('"İyi; ancak eksik"'), 'kaçış yapılmadı');
+}
+
+test('noktalı virgül içeren metin tırnaklanıyor', () => {
+  const csv = kategoriCsv(yarisma, kategori, [rapor()], hakemli('İyi; ancak eksik'));
+  // Hücre hakem adıyla önekli: "Dr. Test: İyi; ancak eksik". Önemli olan
+  // noktalı virgül içeren hücrenin TIRNAKLANMASI — yoksa satır bölünür.
+  assert.ok(csv.includes('"Dr. Test: İyi; ancak eksik"'), 'kaçış yapılmadı');
 });
 
 test('tırnak içeren metin ikiye katlanıyor', () => {
-  const csv = kategoriCsv(yarisma, kategori, [
-    rapor({ hakemNotu: 'Rapor "iyi" düzeyde' }),
-  ]);
+  const csv = kategoriCsv(yarisma, kategori, [rapor()], hakemli('Rapor "iyi" düzeyde'));
   assert.ok(csv.includes('""iyi""'), 'tırnak kaçışı yapılmadı');
 });
 
@@ -95,9 +104,22 @@ test('satır sonu hücreyi bölmüyor', () => {
 });
 
 test('puanlanmamış ölçüt BOŞ kalıyor, sıfır yazılmıyor', () => {
-  const csv = kategoriCsv(yarisma, kategori, [
-    rapor({ hakemPuanlari: [{ kriterKodu: 'ozet', puan: 15 }] }),
-  ]);
+  // Ölçüt puanları artık hakem değerlendirmelerinden geliyor.
+  const csv = kategoriCsv(
+    yarisma,
+    kategori,
+    [rapor()],
+    new Map([
+      ['r1', {
+        atanan: 1,
+        nihaiPuan: 15,
+        degerlendirmeler: [{
+          hakemAdi: 'Dr. Test', toplam: 15, tamamlandi: true,
+          puanlar: [{ kriterKodu: 'ozet', puan: 15 }],
+        }],
+      }],
+    ]),
+  );
   const alanlar = csv.trim().split('\n')[1].split(';');
   // Ölçüt sütunları: 8. ve 9. (0'dan sayarak 7 ve 8)
   assert.equal(alanlar[7], '15');
@@ -105,7 +127,7 @@ test('puanlanmamış ölçüt BOŞ kalıyor, sıfır yazılmıyor', () => {
 });
 
 test('maskeli aktarımda gerçek ad geçmiyor', () => {
-  const csv = kategoriCsv(yarisma, kategori, [rapor()], { maskele: true });
+  const csv = kategoriCsv(yarisma, kategori, [rapor()], new Map(), { maskele: true });
   assert.ok(!csv.includes('Ege Robotik'), 'gerçek takım adı sızdı');
   assert.ok(!csv.includes('TF-2026-001'), 'gerçek başvuru numarası sızdı');
 });

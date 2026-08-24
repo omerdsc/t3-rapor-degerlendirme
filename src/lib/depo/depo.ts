@@ -1,134 +1,246 @@
 /**
- * Dosya tabanlı kalıcı depo.
+ * Veri katmanı — SQLite.
  *
- * Lokalde kurulum gerektirmemesi için JSON dosyaları kullanıyor. Arayüz bu
- * modülün imzasına bağlı, dosya sistemine değil — canlıya alırken Supabase'e
- * geçmek yalnızca bu dosyayı değiştirmek demek.
+ * ── NEDEN DEĞİŞTİ ───────────────────────────────────────────────────────
+ * Önceki sürüm JSON dosyalarına yazıyordu. Üç şey onu yetersiz kıldı:
  *
- * Yazma işlemleri süreç içinde sıraya alınır: Next dev sunucusu istekleri
- * paralel işliyor, aynı kaydı iki istek aynı anda yazarsa değişiklik kaybolur.
+ *   · Eşzamanlılık — birden çok hakem aynı anda puan girdiğinde dosya
+ *     tabanlı yazma kuyruğu sıraya alıyor ama kaybı önlemiyordu.
+ *   · Sorgu — "bu hakemin bitirmediği raporlar" sorusu bütün dosyaları
+ *     okumadan yanıtlanamıyordu.
+ *   · Bütünlük — atama ile değerlendirme arasındaki ilişkiyi doğrulayacak
+ *     hiçbir mekanizma yoktu.
+ *
+ * ── API BİLEREK AYNI ────────────────────────────────────────────────────
+ * Fonksiyon imzaları değişmedi: `yarismaGetir`, `raporlariListele`,
+ * `raporGuncelle`… hepsi eskisi gibi. Böylece 20'den fazla ekran ve rota
+ * dokunulmadan çalışıyor. Değişen yalnızca içerisi.
+ *
+ * Okumalar senkron, yazmalar Promise döndürüyor — eski API'nin beklentisi
+ * buydu ve çağıran taraf `await` ediyor.
  */
 
-import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
-import type { Mesaj, Rapor, Yarisma, YarismaKategorisi } from './tipler';
-import type { RubrikKriteri } from '../analiz/sablon-cikar';
+import { baglanti, bool, jsonOku, jsonYaz, sayi } from '../db/baglanti';
+import type { Mesaj, Rapor, RaporDurumu, Yarisma, YarismaKategorisi } from './tipler';
+import type { Sablon, Seviye } from '../analiz/tipler';
+import type { Rubrik, RubrikKriteri } from '../analiz/sablon-cikar';
+import type { SakliParmakizi } from '../analiz/parmakizi-depo';
+import { anahtar } from '../analiz/normalize';
 
-const KOK = join(process.cwd(), 'veri');
-const YARISMA_DIZINI = join(KOK, 'yarismalar');
-const RAPOR_DIZINI = join(KOK, 'raporlar');
-const DOSYA_DIZINI = join(KOK, 'dosyalar');
-
-function dizinleriKur() {
-  for (const d of [KOK, YARISMA_DIZINI, RAPOR_DIZINI, DOSYA_DIZINI]) {
-    if (!existsSync(d)) mkdirSync(d, { recursive: true });
-  }
-}
-
-/** Yazma kuyruğu — eşzamanlı isteklerde son yazan öbürünü ezmesin. */
-let kuyruk: Promise<unknown> = Promise.resolve();
-function sirala<T>(is: () => T): Promise<T> {
-  const sonraki = kuyruk.then(is, is);
-  kuyruk = sonraki.catch(() => undefined);
-  return sonraki;
-}
-
-function oku<T>(yol: string): T | null {
-  if (!existsSync(yol)) return null;
-  try {
-    return JSON.parse(readFileSync(yol, 'utf-8')) as T;
-  } catch {
-    return null;
-  }
-}
-
-function yaz(yol: string, veri: unknown) {
-  writeFileSync(yol, JSON.stringify(veri, null, 2), 'utf-8');
-}
+const DOSYA_DIZINI = () => join(process.cwd(), 'veri', 'dosyalar');
 
 export function kimlik(): string {
   return randomUUID();
 }
 
-// ------------------------------------------------------------- yarışma
+// ------------------------------------------------------------ satır → nesne
+
+type Satir = Record<string, unknown>;
+
+function kategoriCoz(s: Satir): YarismaKategorisi {
+  return {
+    id: s.id as string,
+    ad: s.ad as string,
+    asama: (s.asama as string) ?? undefined,
+    sablonDosyasi: s.sablon_dosyasi as string,
+    olusturuldu: s.olusturuldu as string,
+    duzenlendi: bool(s.duzenlendi),
+    sablon: jsonOku<Sablon>(s.sablon, {} as Sablon),
+    kurallar: jsonOku(s.kurallar, {} as YarismaKategorisi['kurallar']),
+    rubrik: jsonOku<Rubrik>(s.rubrik, { kriterler: [], toplamPuan: 0 }),
+    ornekKaynaklar: jsonOku<string[]>(s.ornek_kaynaklar, []),
+    uyarilar: jsonOku<string[]>(s.uyarilar, []),
+    sartname: s.sartname
+      ? jsonOku<NonNullable<YarismaKategorisi['sartname']>>(
+          s.sartname,
+          undefined as never,
+        )
+      : undefined,
+  };
+}
+
+function yarismaCoz(s: Satir, kategoriler: YarismaKategorisi[]): Yarisma {
+  return {
+    id: s.id as string,
+    ad: s.ad as string,
+    katalogSlug: (s.katalog_slug as string) ?? undefined,
+    yil: s.yil as number,
+    olusturuldu: s.olusturuldu as string,
+    kategoriler,
+    icerikKategorileri: jsonOku(s.icerik_kategorileri, []),
+  };
+}
+
+function raporCoz(s: Satir, mesajlar: Mesaj[], parmakizi?: SakliParmakizi): Rapor {
+  return {
+    id: s.id as string,
+    yarismaId: s.yarisma_id as string,
+    kategoriId: s.kategori_id as string,
+    basvuruNo: s.basvuru_no as string,
+    dosyaAdi: s.dosya_adi as string,
+    takim: s.takim as string,
+    takimId: s.takim_id as string,
+    proje: s.proje as string,
+    icerikKategoriKodu: (s.icerik_kategori_kodu as string) ?? undefined,
+    yuklendi: s.yuklendi as string,
+    durum: s.durum as RaporDurumu,
+    genelDurum: s.genel_durum as Seviye,
+    kontroller: jsonOku(s.kontroller, []),
+    istatistik: jsonOku(s.istatistik, {} as Rapor['istatistik']),
+    kaynakDogrulamasi: s.kaynak_dogrulamasi
+      ? jsonOku(s.kaynak_dogrulamasi, undefined as never)
+      : undefined,
+    aiDegerlendirme: s.ai_degerlendirme
+      ? jsonOku(s.ai_degerlendirme, undefined as never)
+      : undefined,
+    raporKimligi: s.rapor_kimligi
+      ? jsonOku(s.rapor_kimligi, undefined as never)
+      : undefined,
+    kimlikUyusmazligi: s.kimlik_uyusmazligi
+      ? jsonOku(s.kimlik_uyusmazligi, undefined as never)
+      : undefined,
+    parmakizi,
+    /*
+     * ESKİ ALANLARIN YENİ ANLAMI.
+     *
+     * `hakemToplam` / `hakemNotu` artık raporun tek puanı değil, hakem
+     * değerlendirmelerinden türetilen NİHAİ karar. Alan adları korunuyor
+     * ki yarışmacı portalı, CSV ve pano dokunulmadan çalışsın.
+     *
+     * `hakemPuanlari` artık burada dolmuyor: puanlar hakem başına ayrı
+     * tabloda. İhtiyaç duyan ekran `degerlendirmeleriGetir()` çağırıyor.
+     */
+    hakemToplam: (s.nihai_puan as number) ?? undefined,
+    hakemNotu: (s.nihai_not as string) ?? undefined,
+    tamamlandi: (s.tamamlandi as string) ?? undefined,
+    mesajlar,
+    dosyaYolu: (s.dosya_yolu as string) ?? undefined,
+  };
+}
+
+// ---------------------------------------------------------------- yarışma
 
 export function yarismaKaydet(y: Yarisma): Promise<Yarisma> {
-  return sirala(() => {
-    dizinleriKur();
-    yaz(join(YARISMA_DIZINI, `${y.id}.json`), y);
-    return y;
-  });
+  const db = baglanti();
+  db.exec('BEGIN');
+  try {
+    db.prepare(
+      `INSERT INTO yarisma (id, ad, yil, katalog_slug, olusturuldu, icerik_kategorileri)
+       VALUES (?, ?, ?, ?, ?, ?)
+       ON CONFLICT(id) DO UPDATE SET ad = excluded.ad, yil = excluded.yil,
+         katalog_slug = excluded.katalog_slug,
+         icerik_kategorileri = excluded.icerik_kategorileri`,
+    ).run(
+      y.id, y.ad, y.yil, y.katalogSlug ?? null, y.olusturuldu,
+      JSON.stringify(y.icerikKategorileri ?? []),
+    );
+
+    const ekle = db.prepare(
+      `INSERT INTO kategori (id, yarisma_id, ad, asama, sablon_dosyasi, olusturuldu,
+         duzenlendi, sablon, kurallar, rubrik, ornek_kaynaklar, uyarilar, sartname)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT(id) DO UPDATE SET ad = excluded.ad, asama = excluded.asama,
+         sablon_dosyasi = excluded.sablon_dosyasi, duzenlendi = excluded.duzenlendi,
+         sablon = excluded.sablon, kurallar = excluded.kurallar,
+         rubrik = excluded.rubrik, ornek_kaynaklar = excluded.ornek_kaynaklar,
+         uyarilar = excluded.uyarilar, sartname = excluded.sartname`,
+    );
+    for (const k of y.kategoriler) {
+      ekle.run(
+        k.id, y.id, k.ad, k.asama ?? null, k.sablonDosyasi, k.olusturuldu,
+        sayi(k.duzenlendi), JSON.stringify(k.sablon), JSON.stringify(k.kurallar),
+        JSON.stringify(k.rubrik), JSON.stringify(k.ornekKaynaklar ?? []),
+        JSON.stringify(k.uyarilar ?? []), jsonYaz(k.sartname),
+      );
+    }
+    db.exec('COMMIT');
+  } catch (e) {
+    db.exec('ROLLBACK');
+    throw e;
+  }
+  return Promise.resolve(yarismaGetir(y.id)!);
+}
+
+function kategorileriGetir(yarismaId: string): YarismaKategorisi[] {
+  return (
+    baglanti()
+      .prepare('SELECT * FROM kategori WHERE yarisma_id = ? ORDER BY olusturuldu')
+      .all(yarismaId) as Satir[]
+  ).map(kategoriCoz);
 }
 
 export function yarismaGetir(id: string): Yarisma | null {
-  dizinleriKur();
-  return oku<Yarisma>(join(YARISMA_DIZINI, `${id}.json`));
+  const s = baglanti().prepare('SELECT * FROM yarisma WHERE id = ?').get(id) as
+    | Satir
+    | undefined;
+  return s ? yarismaCoz(s, kategorileriGetir(id)) : null;
 }
 
 export function yarismalariListele(): Yarisma[] {
-  dizinleriKur();
-  return readdirSync(YARISMA_DIZINI)
-    .filter((d) => d.endsWith('.json'))
-    .map((d) => oku<Yarisma>(join(YARISMA_DIZINI, d)))
-    .filter((y): y is Yarisma => y !== null)
-    .sort((a, b) => b.olusturuldu.localeCompare(a.olusturuldu));
+  const satirlar = baglanti()
+    .prepare('SELECT * FROM yarisma ORDER BY olusturuldu DESC')
+    .all() as Satir[];
+  return satirlar.map((s) => yarismaCoz(s, kategorileriGetir(s.id as string)));
 }
 
-// ------------------------------------------------------------ kategori
+// --------------------------------------------------------------- kategori
 
-/** Yarışmaya yeni bir kategori (ve şablonunu) ekler. */
 export function kategoriEkle(
   yarismaId: string,
   kategori: YarismaKategorisi,
 ): Promise<Yarisma | null> {
-  return sirala(() => {
-    const y = yarismaGetir(yarismaId);
-    if (!y) return null;
-    const yeni: Yarisma = { ...y, kategoriler: [...y.kategoriler, kategori] };
-    yaz(join(YARISMA_DIZINI, `${yarismaId}.json`), yeni);
-    return yeni;
-  });
+  const y = yarismaGetir(yarismaId);
+  if (!y) return Promise.resolve(null);
+  return yarismaKaydet({ ...y, kategoriler: [...y.kategoriler, kategori] });
 }
 
 export function kategoriGetir(
   yarismaId: string,
   kategoriId: string,
 ): YarismaKategorisi | null {
-  return yarismaGetir(yarismaId)?.kategoriler.find((k) => k.id === kategoriId) ?? null;
+  const s = baglanti()
+    .prepare('SELECT * FROM kategori WHERE id = ? AND yarisma_id = ?')
+    .get(kategoriId, yarismaId) as Satir | undefined;
+  return s ? kategoriCoz(s) : null;
 }
 
-/** Yöneticinin kategori üzerinde yaptığı düzeltmeler. */
+function kategoriYaz(yarismaId: string, k: YarismaKategorisi): void {
+  baglanti()
+    .prepare(
+      `UPDATE kategori SET ad = ?, asama = ?, sablon_dosyasi = ?, duzenlendi = ?,
+         sablon = ?, kurallar = ?, rubrik = ?, ornek_kaynaklar = ?, uyarilar = ?,
+         sartname = ?
+       WHERE id = ? AND yarisma_id = ?`,
+    )
+    .run(
+      k.ad, k.asama ?? null, k.sablonDosyasi, sayi(k.duzenlendi),
+      JSON.stringify(k.sablon), JSON.stringify(k.kurallar), JSON.stringify(k.rubrik),
+      JSON.stringify(k.ornekKaynaklar ?? []), JSON.stringify(k.uyarilar ?? []),
+      jsonYaz(k.sartname), k.id, yarismaId,
+    );
+}
+
+/** Yöneticinin elle düzeltmesi — onayı da beraberinde verir. */
 export function kategoriGuncelle(
   yarismaId: string,
   kategoriId: string,
   degisiklik: Partial<Pick<YarismaKategorisi, 'ad' | 'sablon' | 'rubrik' | 'kurallar'>>,
 ): Promise<YarismaKategorisi | null> {
-  return sirala(() => {
-    const y = yarismaGetir(yarismaId);
-    if (!y) return null;
-    const i = y.kategoriler.findIndex((k) => k.id === kategoriId);
-    if (i < 0) return null;
-
-    const guncel: YarismaKategorisi = { ...y.kategoriler[i], ...degisiklik, duzenlendi: true };
-    const kategoriler = [...y.kategoriler];
-    kategoriler[i] = guncel;
-    yaz(join(YARISMA_DIZINI, `${yarismaId}.json`), { ...y, kategoriler });
-    return guncel;
-  });
+  const k = kategoriGetir(yarismaId, kategoriId);
+  if (!k) return Promise.resolve(null);
+  const guncel: YarismaKategorisi = { ...k, ...degisiklik, duzenlendi: true };
+  kategoriYaz(yarismaId, guncel);
+  return Promise.resolve(guncel);
 }
 
 /**
- * Kategorinin ŞABLONDAN GELEN kısmını tazeler — güncelleme akışı için.
+ * Şablondan gelen kısmı tazeler ve ONAYI SIFIRLAR.
  *
- * `kategoriGuncelle`'den ayrı bir fonksiyon, çünkü anlamları zıt:
- *
- *   kategoriGuncelle    → yönetici elle düzeltti, dolayısıyla ONAYLADI
- *   kategoriSablonuTazele → şablon dışarıdan değişti, ONAY GEÇERSİZ kaldı
- *
- * İkisini aynı fonksiyonla yapmak, TEKNOFEST'in değiştirdiği bir şablonu
- * yöneticinin onayladığı gibi göstermek olur — sistemin en temel güvencesi
- * ("çıkarım taslaktır, insan onaylar") sessizce çiğnenir.
+ * `kategoriGuncelle`'den ayrı: orada insan düzeltti (dolayısıyla onayladı),
+ * burada şablon dışarıdan değişti (dolayısıyla onay geçersiz).
  */
 export function kategoriSablonuTazele(
   yarismaId: string,
@@ -141,113 +253,24 @@ export function kategoriSablonuTazele(
     >
   >,
 ): Promise<YarismaKategorisi | null> {
-  return sirala(() => {
-    const y = yarismaGetir(yarismaId);
-    if (!y) return null;
-    const i = y.kategoriler.findIndex((k) => k.id === kategoriId);
-    if (i < 0) return null;
-
-    const guncel: YarismaKategorisi = {
-      ...y.kategoriler[i],
-      ...degisiklik,
-      // Şablon değişti: yeniden gözden geçirilmeli.
-      duzenlendi: false,
-    };
-    const kategoriler = [...y.kategoriler];
-    kategoriler[i] = guncel;
-    yaz(join(YARISMA_DIZINI, `${yarismaId}.json`), { ...y, kategoriler });
-    return guncel;
-  });
+  const k = kategoriGetir(yarismaId, kategoriId);
+  if (!k) return Promise.resolve(null);
+  const guncel: YarismaKategorisi = { ...k, ...degisiklik, duzenlendi: false };
+  kategoriYaz(yarismaId, guncel);
+  return Promise.resolve(guncel);
 }
 
-/**
- * Şablondan çıkmayan, yöneticinin elle tanımladığı kriter ekler.
- *
- * Şablonlar her zaman eksiksiz değil; koordinasyon sonradan bir ölçüt
- * getirebiliyor. Rubrik bu yüzden kapalı bir liste değil.
- */
 export function kriterEkle(
   yarismaId: string,
   kategoriId: string,
   kriter: RubrikKriteri,
 ): Promise<YarismaKategorisi | null> {
-  return sirala(() => {
-    const y = yarismaGetir(yarismaId);
-    if (!y) return null;
-    const i = y.kategoriler.findIndex((k) => k.id === kategoriId);
-    if (i < 0) return null;
-
-    const eski = y.kategoriler[i];
-    const kriterler = [...eski.rubrik.kriterler, kriter];
-    const guncel: YarismaKategorisi = {
-      ...eski,
-      duzenlendi: true,
-      rubrik: { kriterler, toplamPuan: kriterler.reduce((t, k) => t + k.puan, 0) },
-    };
-    const kategoriler = [...y.kategoriler];
-    kategoriler[i] = guncel;
-    yaz(join(YARISMA_DIZINI, `${yarismaId}.json`), { ...y, kategoriler });
-    return guncel;
-  });
-}
-
-/** Kategoriye şartname bağlar. */
-export function sartnameKaydet(
-  yarismaId: string,
-  kategoriId: string,
-  sartname: NonNullable<YarismaKategorisi['sartname']>,
-): Promise<YarismaKategorisi | null> {
-  return sirala(() => {
-    const y = yarismaGetir(yarismaId);
-    if (!y) return null;
-    const i = y.kategoriler.findIndex((k) => k.id === kategoriId);
-    if (i < 0) return null;
-
-    const eski = y.kategoriler[i];
-    // Şartname bağlayıcı metindir: sayfa sınırı çakışırsa şartname kazanır.
-    const guncel: YarismaKategorisi = {
-      ...eski,
-      sartname,
-      sablon: {
-        ...eski.sablon,
-        asgariSayfa: sartname.kurallar.asgariSayfa ?? eski.sablon.asgariSayfa,
-        azamiSayfa: sartname.kurallar.azamiSayfa ?? eski.sablon.azamiSayfa,
-      },
-    };
-    const kategoriler = [...y.kategoriler];
-    kategoriler[i] = guncel;
-    yaz(join(YARISMA_DIZINI, `${yarismaId}.json`), { ...y, kategoriler });
-    return guncel;
-  });
-}
-
-/**
- * Kategoriyi "yönetici onaylı" işaretler.
- *
- * NEDEN AYRI BİR EYLEM GEREKİYOR
- * Sistemin tasarımı "çıkarım bir TASLAKTIR, yönetici onaylar" üzerine
- * kurulu ve arayüz her kategoriyi "TASLAK · İNCELENMEDİ" diye gösteriyor.
- * Ama onay bayrağını yalnızca kriter ekleme/silme set ediyordu: çıkarım
- * DOĞRU olan bir kategoride yönetici, onaylamak için rubriği bozmak
- * zorunda kalıyordu. Doğru çıkarımı onaylamanın yolu olmaması, onay
- * mekanizmasını işlevsiz bırakır.
- */
-export function kategoriOnayla(
-  yarismaId: string,
-  kategoriId: string,
-  onayli = true,
-): Promise<YarismaKategorisi | null> {
-  return sirala(() => {
-    const y = yarismaGetir(yarismaId);
-    if (!y) return null;
-    const i = y.kategoriler.findIndex((k) => k.id === kategoriId);
-    if (i < 0) return null;
-
-    const guncel = { ...y.kategoriler[i], duzenlendi: onayli };
-    const kategoriler = [...y.kategoriler];
-    kategoriler[i] = guncel;
-    yaz(join(YARISMA_DIZINI, `${yarismaId}.json`), { ...y, kategoriler });
-    return guncel;
+  const k = kategoriGetir(yarismaId, kategoriId);
+  if (!k) return Promise.resolve(null);
+  if (k.rubrik.kriterler.some((x) => x.kod === kriter.kod)) return Promise.resolve(k);
+  const kriterler = [...k.rubrik.kriterler, kriter];
+  return kategoriGuncelle(yarismaId, kategoriId, {
+    rubrik: { kriterler, toplamPuan: kriterler.reduce((t, x) => t + x.puan, 0) },
   });
 }
 
@@ -256,109 +279,226 @@ export function kriterSil(
   kategoriId: string,
   kriterKodu: string,
 ): Promise<YarismaKategorisi | null> {
-  return sirala(() => {
-    const y = yarismaGetir(yarismaId);
-    if (!y) return null;
-    const i = y.kategoriler.findIndex((k) => k.id === kategoriId);
-    if (i < 0) return null;
-
-    const eski = y.kategoriler[i];
-    const kriterler = eski.rubrik.kriterler.filter((k) => k.kod !== kriterKodu);
-    const guncel: YarismaKategorisi = {
-      ...eski,
-      duzenlendi: true,
-      rubrik: { kriterler, toplamPuan: kriterler.reduce((t, k) => t + k.puan, 0) },
-    };
-    const kategoriler = [...y.kategoriler];
-    kategoriler[i] = guncel;
-    yaz(join(YARISMA_DIZINI, `${yarismaId}.json`), { ...y, kategoriler });
-    return guncel;
+  const k = kategoriGetir(yarismaId, kategoriId);
+  if (!k) return Promise.resolve(null);
+  const kriterler = k.rubrik.kriterler.filter((x) => x.kod !== kriterKodu);
+  return kategoriGuncelle(yarismaId, kategoriId, {
+    rubrik: { kriterler, toplamPuan: kriterler.reduce((t, x) => t + x.puan, 0) },
   });
 }
 
-// --------------------------------------------------------------- rapor
+export function kategoriOnayla(
+  yarismaId: string,
+  kategoriId: string,
+  onayli = true,
+): Promise<YarismaKategorisi | null> {
+  const k = kategoriGetir(yarismaId, kategoriId);
+  if (!k) return Promise.resolve(null);
+  const guncel = { ...k, duzenlendi: onayli };
+  kategoriYaz(yarismaId, guncel);
+  return Promise.resolve(guncel);
+}
+
+/** Kategoriye şartname bağlar; şartname sayfa sınırı şablonu ezer. */
+export function sartnameKaydet(
+  yarismaId: string,
+  kategoriId: string,
+  sartname: NonNullable<YarismaKategorisi['sartname']>,
+): Promise<YarismaKategorisi | null> {
+  const k = kategoriGetir(yarismaId, kategoriId);
+  if (!k) return Promise.resolve(null);
+  const guncel: YarismaKategorisi = {
+    ...k,
+    sartname,
+    sablon: {
+      ...k.sablon,
+      asgariSayfa: sartname.kurallar.asgariSayfa ?? k.sablon.asgariSayfa,
+      azamiSayfa: sartname.kurallar.azamiSayfa ?? k.sablon.azamiSayfa,
+    },
+  };
+  kategoriYaz(yarismaId, guncel);
+  return Promise.resolve(guncel);
+}
+
+// ------------------------------------------------------------------ rapor
+
+function mesajlariGetir(raporId: string): Mesaj[] {
+  return (
+    baglanti()
+      .prepare('SELECT * FROM mesaj WHERE rapor_id = ? ORDER BY tarih')
+      .all(raporId) as Satir[]
+  ).map((m) => ({
+    id: m.id as string,
+    yazar: m.yazar as string,
+    rol: m.rol as Mesaj['rol'],
+    metin: m.metin as string,
+    tarih: m.tarih as string,
+    otomatikMi: bool(m.otomatik) || undefined,
+  }));
+}
+
+function parmakiziGetir(raporId: string): SakliParmakizi | undefined {
+  const s = baglanti()
+    .prepare('SELECT veri FROM parmakizi WHERE rapor_id = ?')
+    .get(raporId) as { veri: string } | undefined;
+  return s ? jsonOku<SakliParmakizi>(s.veri, undefined as never) : undefined;
+}
 
 export function raporKaydet(r: Rapor): Promise<Rapor> {
-  return sirala(() => {
-    dizinleriKur();
-    yaz(join(RAPOR_DIZINI, `${r.id}.json`), r);
-    return r;
-  });
+  const db = baglanti();
+  db.exec('BEGIN');
+  try {
+    db.prepare(
+      `INSERT INTO rapor (id, yarisma_id, kategori_id, basvuru_no, dosya_adi,
+         takim, takim_id, proje, icerik_kategori_kodu, yuklendi, durum,
+         genel_durum, kontroller, istatistik, kaynak_dogrulamasi,
+         ai_degerlendirme, rapor_kimligi, kimlik_uyusmazligi, dosya_yolu,
+         nihai_puan, nihai_not, tamamlandi)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT(id) DO UPDATE SET
+         basvuru_no = excluded.basvuru_no, takim = excluded.takim,
+         takim_id = excluded.takim_id, proje = excluded.proje,
+         durum = excluded.durum, genel_durum = excluded.genel_durum,
+         kontroller = excluded.kontroller, istatistik = excluded.istatistik,
+         kaynak_dogrulamasi = excluded.kaynak_dogrulamasi,
+         ai_degerlendirme = excluded.ai_degerlendirme,
+         rapor_kimligi = excluded.rapor_kimligi,
+         kimlik_uyusmazligi = excluded.kimlik_uyusmazligi,
+         dosya_yolu = excluded.dosya_yolu, nihai_puan = excluded.nihai_puan,
+         nihai_not = excluded.nihai_not, tamamlandi = excluded.tamamlandi`,
+    ).run(
+      r.id, r.yarismaId, r.kategoriId, r.basvuruNo, r.dosyaAdi,
+      r.takim, r.takimId, r.proje, r.icerikKategoriKodu ?? null,
+      r.yuklendi, r.durum, r.genelDurum,
+      JSON.stringify(r.kontroller ?? []), JSON.stringify(r.istatistik),
+      jsonYaz(r.kaynakDogrulamasi), jsonYaz(r.aiDegerlendirme),
+      jsonYaz(r.raporKimligi), jsonYaz(r.kimlikUyusmazligi),
+      r.dosyaYolu ?? null, r.hakemToplam ?? null, r.hakemNotu ?? null,
+      r.tamamlandi ?? null,
+    );
+
+    if (r.parmakizi) {
+      db.prepare(
+        `INSERT INTO parmakizi (rapor_id, veri) VALUES (?, ?)
+         ON CONFLICT(rapor_id) DO UPDATE SET veri = excluded.veri`,
+      ).run(r.id, JSON.stringify(r.parmakizi));
+    }
+    db.exec('COMMIT');
+  } catch (e) {
+    db.exec('ROLLBACK');
+    throw e;
+  }
+  return Promise.resolve(raporGetir(r.id)!);
 }
 
 export function raporGetir(id: string): Rapor | null {
-  dizinleriKur();
-  return oku<Rapor>(join(RAPOR_DIZINI, `${id}.json`));
+  const s = baglanti().prepare('SELECT * FROM rapor WHERE id = ?').get(id) as
+    | Satir
+    | undefined;
+  return s ? raporCoz(s, mesajlariGetir(id), parmakiziGetir(id)) : null;
 }
 
+/**
+ * Liste görünümü — parmak izi OKUNMUYOR.
+ *
+ * Rapor başına ~40 KB ve yalnızca kopya taramasında gerekiyor. Listede
+ * okunsa 100 raporluk bir kategori 4 MB gereksiz veri taşırdı.
+ */
 export function raporlariListele(yarismaId?: string, kategoriId?: string): Rapor[] {
-  dizinleriKur();
-  return readdirSync(RAPOR_DIZINI)
-    .filter((d) => d.endsWith('.json'))
-    .map((d) => oku<Rapor>(join(RAPOR_DIZINI, d)))
-    .filter(
-      (r): r is Rapor =>
-        r !== null &&
-        (!yarismaId || r.yarismaId === yarismaId) &&
-        (!kategoriId || r.kategoriId === kategoriId),
-    )
-    .sort((a, b) => b.yuklendi.localeCompare(a.yuklendi));
-}
+  let sql = 'SELECT * FROM rapor';
+  const p: string[] = [];
+  if (yarismaId) {
+    sql += ' WHERE yarisma_id = ?';
+    p.push(yarismaId);
+    if (kategoriId) {
+      sql += ' AND kategori_id = ?';
+      p.push(kategoriId);
+    }
+  }
+  sql += ' ORDER BY yuklendi DESC';
 
-export function raporGuncelle(id: string, degisiklik: Partial<Rapor>): Promise<Rapor | null> {
-  return sirala(() => {
-    const mevcut = raporGetir(id);
-    if (!mevcut) return null;
-    const yeni = { ...mevcut, ...degisiklik };
-    yaz(join(RAPOR_DIZINI, `${id}.json`), yeni);
-    return yeni;
-  });
-}
-
-export function raporBasvuruNoIle(basvuruNo: string): Rapor | null {
-  const hedef = basvuruNo.trim().toLocaleUpperCase('tr');
-  return (
-    raporlariListele().find((r) => r.basvuruNo.toLocaleUpperCase('tr') === hedef) ?? null
+  return (baglanti().prepare(sql).all(...p) as Satir[]).map((s) =>
+    raporCoz(s, [], undefined),
   );
 }
 
-// -------------------------------------------------------------- mesaj
+/** Kopya taraması için: parmak izleri DAHİL. */
+export function parmakizliRaporlar(
+  yarismaId: string,
+  kategoriId?: string,
+): Array<{ rapor: Rapor; parmakizi: SakliParmakizi }> {
+  const sql = kategoriId
+    ? `SELECT r.*, p.veri AS pveri FROM rapor r
+       JOIN parmakizi p ON p.rapor_id = r.id
+       WHERE r.yarisma_id = ? AND r.kategori_id = ?`
+    : `SELECT r.*, p.veri AS pveri FROM rapor r
+       JOIN parmakizi p ON p.rapor_id = r.id
+       WHERE r.yarisma_id = ?`;
+  const p = kategoriId ? [yarismaId, kategoriId] : [yarismaId];
 
-/** Rapora yazışma ekler. Yarışmacıya gösterilmez. */
-export function mesajEkle(
-  raporId: string,
-  mesaj: Omit<Mesaj, 'id' | 'tarih'>,
-): Promise<Rapor | null> {
-  return sirala(() => {
-    const r = raporGetir(raporId);
-    if (!r) return null;
-    const yeni: Rapor = {
-      ...r,
-      mesajlar: [
-        ...(r.mesajlar ?? []),
-        { ...mesaj, id: randomUUID(), tarih: new Date().toISOString() },
-      ],
-    };
-    yaz(join(RAPOR_DIZINI, `${raporId}.json`), yeni);
-    return yeni;
+  return (baglanti().prepare(sql).all(...p) as Satir[]).map((s) => {
+    const pi = jsonOku<SakliParmakizi>(s.pveri, undefined as never);
+    return { rapor: raporCoz(s, [], pi), parmakizi: pi };
   });
 }
 
-// -------------------------------------------------------------- dosya
+export function raporGuncelle(
+  id: string,
+  degisiklik: Partial<Rapor>,
+): Promise<Rapor | null> {
+  const r = raporGetir(id);
+  if (!r) return Promise.resolve(null);
+  return raporKaydet({ ...r, ...degisiklik });
+}
 
+export function raporBasvuruNoIle(basvuruNo: string): Rapor | null {
+  const hedef = anahtar(basvuruNo);
+  // Karşılaştırma anahtar() üzerinden: yarışmacı numarayı boşluklu ya da
+  // farklı büyük/küçük harfle girebiliyor. SQL LIKE bunu yapamaz.
+  const satirlar = baglanti().prepare('SELECT * FROM rapor').all() as Satir[];
+  const s = satirlar.find((x) => anahtar(x.basvuru_no as string) === hedef);
+  return s ? raporCoz(s, mesajlariGetir(s.id as string), undefined) : null;
+}
+
+export function mesajEkle(
+  raporId: string,
+  mesaj: Omit<Mesaj, 'id' | 'tarih'> & { tarih?: string },
+): Promise<Rapor | null> {
+  baglanti()
+    .prepare(
+      `INSERT INTO mesaj (id, rapor_id, yazar, rol, metin, tarih, otomatik)
+       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    )
+    .run(
+      randomUUID(), raporId, mesaj.yazar, mesaj.rol, mesaj.metin,
+      mesaj.tarih ?? new Date().toISOString(), sayi(mesaj.otomatikMi),
+    );
+  return Promise.resolve(raporGetir(raporId));
+}
+
+// ------------------------------------------------------------------ dosya
+
+/**
+ * Rapor PDF'i dosya sisteminde kalıyor, veritabanında değil.
+ *
+ * 25 MB'lık PDF'leri SQLite'a gömmek veritabanını şişirir ve her yedekleme
+ * onları taşır. İkili büyük veri için doğru yer dosya sistemi; veritabanı
+ * yalnızca yolu tutuyor.
+ */
 export function dosyaKaydet(raporId: string, veri: Uint8Array): string {
-  dizinleriKur();
-  const yol = join(DOSYA_DIZINI, `${raporId}.pdf`);
+  const dizin = DOSYA_DIZINI();
+  if (!existsSync(dizin)) mkdirSync(dizin, { recursive: true });
+  const yol = join(dizin, `${raporId}.pdf`);
   writeFileSync(yol, veri);
   return yol;
 }
 
 export function dosyaOku(raporId: string): Buffer | null {
-  const yol = join(DOSYA_DIZINI, `${raporId}.pdf`);
+  const yol = join(DOSYA_DIZINI(), `${raporId}.pdf`);
   return existsSync(yol) ? readFileSync(yol) : null;
 }
 
-// ------------------------------------------------------------- özetler
+// ------------------------------------------------------------------- pano
 
 export interface PanoOzeti {
   toplam: number;
@@ -389,7 +529,9 @@ export function panoOzeti(yarismaId?: string, kategoriId?: string): PanoOzeti {
   return {
     toplam: raporlar.length,
     bekleyen: raporlar.filter((r) => r.durum === 'hakem_bekliyor').length,
-    analizde: raporlar.filter((r) => r.durum === 'analiz_ediliyor' || r.durum === 'yuklendi').length,
+    analizde: raporlar.filter(
+      (r) => r.durum === 'analiz_ediliyor' || r.durum === 'yuklendi',
+    ).length,
     tamamlanan: raporlar.filter((r) => r.durum === 'tamamlandi').length,
     manuelInceleme: raporlar.filter((r) => r.durum === 'manuel_inceleme').length,
     bayrakli: raporlar.filter((r) => r.genelDurum === 'hata').length,

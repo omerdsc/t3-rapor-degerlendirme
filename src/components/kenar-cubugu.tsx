@@ -20,6 +20,7 @@ const MENU = [
   { yol: '/', ad: 'Panel', ipucu: 'Bekleyen işler ve özet' },
   { yol: '/raporlar', ad: 'Raporlar', ipucu: 'Rapor değerlendir' },
   { yol: '/benzerlik', ad: 'Kopya Kontrolü', ipucu: 'Raporlar arası örtüşme' },
+  { yol: '/hakemler', ad: 'Hakemler', ipucu: 'Kayıt ve rapor atama' },
   { yol: '/yarismalar', ad: 'Yarışmalar', ipucu: 'Kurulum ve ölçütler' },
 ];
 

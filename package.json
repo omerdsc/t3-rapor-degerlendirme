@@ -11,7 +11,8 @@
     "katalog:dogrula": "tsx scripts/katalog-dogrula.ts",
     "kanit": "tsx scripts/kanit-topla.ts",
     "terim": "tsx scripts/terim-uret.ts",
-    "test": "tsx --test \"src/**/*.test.ts\""
+    "test": "tsx --test \"src/**/*.test.ts\"",
+    "db:gecis": "tsx scripts/db-gecis.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.120.0",
@@ -25,7 +26,7 @@
   "devDependencies": {
     "@pdf-lib/fontkit": "^1.1.1",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/node": "^22.20.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

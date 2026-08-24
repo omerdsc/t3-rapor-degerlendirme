@@ -1,0 +1,247 @@
+/**
+ * SQLite bağlantısı ve şema.
+ *
+ * ── NEDEN SQLITE, NEDEN node:sqlite ─────────────────────────────────────
+ * Önceki depo JSON dosyalarına yazıyordu. Bu, tek kullanıcılı yerel bir
+ * kurulumda çalışıyor ama şu üçünü karşılamıyor:
+ *
+ *   · Eşzamanlı yazma — üç hakem aynı anda puan girdiğinde dosya tabanlı
+ *     kuyruk sıraya alıyor ama çakışmayı yönetemiyor.
+ *   · Sorgu — "bu hakemin atanmış ama bitirmediği raporlar" gibi bir soru
+ *     bütün dosyaları okumadan yanıtlanamıyor.
+ *   · Bütünlük — atama ile değerlendirme arasındaki ilişki dosyada
+ *     doğrulanamıyor; yabancı anahtar diye bir şey yok.
+ *
+ * `node:sqlite` seçildi çünkü Node 22'de GÖMÜLÜ: kurulum yok, derleme yok,
+ * bağımlılık yok. `better-sqlite3` yerel derleme gerektiriyor ve Windows'ta
+ * kurulum kırılganlığı riski var; bir creathon teslimini kurulum hatasına
+ * bağlamak istemedik.
+ *
+ * API'si dar (exec / prepare / run / get / all) ve bu modülün arkasında
+ * duruyor — deneysel işaretini taşıdığı için gerekirse tek dosya
+ * değiştirilerek başka bir sürücüye geçilebilir.
+ *
+ * ── JSON SÜTUNLAR BİLİNÇLİ ──────────────────────────────────────────────
+ * Analiz çıktıları (kontroller, parmak izi, yapay zekâ değerlendirmesi)
+ * derin iç içe yapılar ve HER ZAMAN bütün olarak okunup yazılıyor; hiçbir
+ * sorgu içlerine bakmıyor. Bunları normalleştirmek onlarca tablo üretir ve
+ * hiçbir kazanç sağlamaz. Sorgulanan alanlar (durum, tarih, kimlikler)
+ * gerçek sütun; sorgulanmayan yapılar JSON.
+ */
+
+import { DatabaseSync } from 'node:sqlite';
+import { existsSync, mkdirSync } from 'node:fs';
+import { join } from 'node:path';
+
+const VERI_DIZINI = () => join(process.cwd(), 'veri');
+const DB_YOLU = () => join(VERI_DIZINI(), 'dorduncu-goz.db');
+
+/**
+ * Şema.
+ *
+ * Sürüm numarası `sema_surumu` tablosunda tutuluyor; ileride alan
+ * eklenirse geçiş yazılabilsin.
+ */
+const SEMA = `
+CREATE TABLE IF NOT EXISTS sema_surumu (surum INTEGER NOT NULL);
+
+CREATE TABLE IF NOT EXISTS yarisma (
+  id            TEXT PRIMARY KEY,
+  ad            TEXT NOT NULL,
+  yil           INTEGER NOT NULL,
+  katalog_slug  TEXT,
+  olusturuldu   TEXT NOT NULL,
+  icerik_kategorileri TEXT NOT NULL DEFAULT '[]'
+);
+
+CREATE TABLE IF NOT EXISTS kategori (
+  id             TEXT PRIMARY KEY,
+  yarisma_id     TEXT NOT NULL REFERENCES yarisma(id) ON DELETE CASCADE,
+  ad             TEXT NOT NULL,
+  asama          TEXT,
+  sablon_dosyasi TEXT NOT NULL,
+  olusturuldu    TEXT NOT NULL,
+  duzenlendi     INTEGER NOT NULL DEFAULT 0,
+  sablon         TEXT NOT NULL,
+  kurallar       TEXT NOT NULL,
+  rubrik         TEXT NOT NULL,
+  ornek_kaynaklar TEXT NOT NULL DEFAULT '[]',
+  uyarilar       TEXT NOT NULL DEFAULT '[]',
+  sartname       TEXT
+);
+CREATE INDEX IF NOT EXISTS ix_kategori_yarisma ON kategori(yarisma_id);
+
+CREATE TABLE IF NOT EXISTS rapor (
+  id            TEXT PRIMARY KEY,
+  yarisma_id    TEXT NOT NULL REFERENCES yarisma(id) ON DELETE CASCADE,
+  kategori_id   TEXT NOT NULL REFERENCES kategori(id) ON DELETE CASCADE,
+  basvuru_no    TEXT NOT NULL,
+  dosya_adi     TEXT NOT NULL,
+  takim         TEXT NOT NULL,
+  takim_id      TEXT NOT NULL,
+  proje         TEXT NOT NULL,
+  icerik_kategori_kodu TEXT,
+  yuklendi      TEXT NOT NULL,
+  durum         TEXT NOT NULL,
+  genel_durum   TEXT NOT NULL,
+  kontroller    TEXT NOT NULL DEFAULT '[]',
+  istatistik    TEXT NOT NULL,
+  kaynak_dogrulamasi TEXT,
+  ai_degerlendirme   TEXT,
+  rapor_kimligi      TEXT,
+  kimlik_uyusmazligi TEXT,
+  dosya_yolu    TEXT,
+  -- Koordinasyonun nihai kararı: hakem değerlendirmelerinden türetilir
+  -- ama elle de belirlenebilir (itiraz sonucu gibi).
+  nihai_puan    REAL,
+  nihai_not     TEXT,
+  tamamlandi    TEXT
+);
+CREATE INDEX IF NOT EXISTS ix_rapor_yarisma  ON rapor(yarisma_id);
+CREATE INDEX IF NOT EXISTS ix_rapor_kategori ON rapor(kategori_id);
+CREATE INDEX IF NOT EXISTS ix_rapor_durum    ON rapor(durum);
+CREATE INDEX IF NOT EXISTS ix_rapor_basvuru  ON rapor(basvuru_no);
+
+/*
+ * Parmak izi AYRI TABLODA.
+ *
+ * Rapor başına ~40 KB ve yalnızca kopya taramasında gerekiyor. Aynı
+ * tabloda tutulsa her rapor listesi sorgusu bu yükü taşırdı.
+ */
+CREATE TABLE IF NOT EXISTS parmakizi (
+  rapor_id TEXT PRIMARY KEY REFERENCES rapor(id) ON DELETE CASCADE,
+  veri     TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS hakem (
+  id          TEXT PRIMARY KEY,
+  ad          TEXT NOT NULL,
+  eposta      TEXT,
+  kurum       TEXT,
+  -- Hakemin panele erişim kodu. Kimlik doğrulama yerine geçen geçici
+  -- çözüm: hakem kendi kodu ile /hakem/<kod> adresinden giriyor.
+  kod         TEXT NOT NULL UNIQUE,
+  uzmanlik    TEXT NOT NULL DEFAULT '[]',
+  aktif       INTEGER NOT NULL DEFAULT 1,
+  olusturuldu TEXT NOT NULL,
+  notlar      TEXT
+);
+CREATE INDEX IF NOT EXISTS ix_hakem_kod ON hakem(kod);
+
+/*
+ * ATAMA: hangi hakem hangi raporu değerlendirecek.
+ *
+ * Bir rapora birden çok hakem atanabiliyor (TEKNOFEST'te olağan) ve bir
+ * hakem birden çok rapor alıyor. Çift atamayı engellemek için (rapor,
+ * hakem) çifti tekil.
+ */
+CREATE TABLE IF NOT EXISTS atama (
+  id         TEXT PRIMARY KEY,
+  rapor_id   TEXT NOT NULL REFERENCES rapor(id) ON DELETE CASCADE,
+  hakem_id   TEXT NOT NULL REFERENCES hakem(id) ON DELETE CASCADE,
+  atandi     TEXT NOT NULL,
+  atayan     TEXT,
+  son_tarih  TEXT,
+  UNIQUE (rapor_id, hakem_id)
+);
+CREATE INDEX IF NOT EXISTS ix_atama_hakem ON atama(hakem_id);
+CREATE INDEX IF NOT EXISTS ix_atama_rapor ON atama(rapor_id);
+
+/*
+ * DEĞERLENDİRME: hakem başına puanlama.
+ *
+ * Eski yapıda rapor tek bir puan seti taşıyordu; üç hakem atandığında
+ * birbirinin üstüne yazardı. Artık her hakemin kendi değerlendirmesi ayrı
+ * satır — nihai puan bunlardan türetiliyor ve sapma ölçülebiliyor.
+ */
+CREATE TABLE IF NOT EXISTS degerlendirme (
+  id          TEXT PRIMARY KEY,
+  rapor_id    TEXT NOT NULL REFERENCES rapor(id) ON DELETE CASCADE,
+  hakem_id    TEXT NOT NULL REFERENCES hakem(id) ON DELETE CASCADE,
+  puanlar     TEXT NOT NULL DEFAULT '[]',
+  toplam      REAL,
+  aciklama    TEXT,
+  durum       TEXT NOT NULL DEFAULT 'taslak',
+  guncellendi TEXT NOT NULL,
+  tamamlandi  TEXT,
+  UNIQUE (rapor_id, hakem_id)
+);
+CREATE INDEX IF NOT EXISTS ix_deg_rapor ON degerlendirme(rapor_id);
+CREATE INDEX IF NOT EXISTS ix_deg_hakem ON degerlendirme(hakem_id);
+CREATE INDEX IF NOT EXISTS ix_deg_durum ON degerlendirme(durum);
+
+CREATE TABLE IF NOT EXISTS mesaj (
+  id       TEXT PRIMARY KEY,
+  rapor_id TEXT NOT NULL REFERENCES rapor(id) ON DELETE CASCADE,
+  yazar    TEXT NOT NULL,
+  rol      TEXT NOT NULL,
+  metin    TEXT NOT NULL,
+  tarih    TEXT NOT NULL,
+  otomatik INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS ix_mesaj_rapor ON mesaj(rapor_id);
+`;
+
+let db: DatabaseSync | null = null;
+
+/**
+ * Bağlantıyı döndürür; ilk çağrıda şemayı kurar.
+ *
+ * Next geliştirme kipinde modülleri yeniden yüklüyor. Bağlantı global
+ * nesnede saklanmasa her sıcak yenilemede yeni bir bağlantı açılır ve
+ * dosya kilidi çakışması yaşanır.
+ */
+export function baglanti(): DatabaseSync {
+  if (db) return db;
+
+  const g = globalThis as { __dorduncuGozDb?: DatabaseSync };
+  if (g.__dorduncuGozDb) {
+    db = g.__dorduncuGozDb;
+    return db;
+  }
+
+  if (!existsSync(VERI_DIZINI())) mkdirSync(VERI_DIZINI(), { recursive: true });
+
+  const yeni = new DatabaseSync(DB_YOLU());
+
+  /*
+   * WAL kipi: okuma ve yazma birbirini kilitlemiyor. Üç hakem aynı anda
+   * puan girerken koordinasyon panosunun donmaması için gerekli.
+   *
+   * foreign_keys SQLite'ta VARSAYILAN OLARAK KAPALI — açılmazsa yabancı
+   * anahtarlar yalnızca belge süsü olur, silinen yarışmanın raporları
+   * ortada kalır.
+   */
+  yeni.exec('PRAGMA journal_mode = WAL');
+  yeni.exec('PRAGMA foreign_keys = ON');
+  yeni.exec('PRAGMA busy_timeout = 5000');
+  yeni.exec(SEMA);
+
+  const s = yeni.prepare('SELECT surum FROM sema_surumu').get() as
+    | { surum: number }
+    | undefined;
+  if (!s) yeni.prepare('INSERT INTO sema_surumu (surum) VALUES (1)').run();
+
+  db = yeni;
+  g.__dorduncuGozDb = yeni;
+  return yeni;
+}
+
+/** JSON sütunu okur; bozuksa varsayılana döner. */
+export function jsonOku<T>(ham: unknown, varsayilan: T): T {
+  if (typeof ham !== 'string' || !ham) return varsayilan;
+  try {
+    return JSON.parse(ham) as T;
+  } catch {
+    return varsayilan;
+  }
+}
+
+/** JSON sütununa yazar; undefined ise NULL. */
+export function jsonYaz(deger: unknown): string | null {
+  return deger === undefined || deger === null ? null : JSON.stringify(deger);
+}
+
+/** SQLite boolean tutmuyor; 0/1 dönüşümü tek yerde. */
+export const bool = (v: unknown): boolean => v === 1 || v === true;
+export const sayi = (v: boolean | undefined): number => (v ? 1 : 0);

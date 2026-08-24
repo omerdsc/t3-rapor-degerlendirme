@@ -25,6 +25,27 @@
 import { raporuMaskele } from './maskele';
 import type { Rapor, Yarisma, YarismaKategorisi } from './tipler';
 
+/**
+ * Bir raporun hakem değerlendirmeleri — DIŞARIDAN veriliyor.
+ *
+ * CSV üreticisi veritabanına uzanmıyor: bu onu saf bir dönüştürücü
+ * kılıyor ve birim testle sınanabilir bırakıyor. Veriyi toplamak rotanın
+ * işi, biçimlendirmek buranın.
+ */
+export interface RaporHakemVerisi {
+  /** Tamamlanmış değerlendirmeler; ölçüt puanları dahil. */
+  degerlendirmeler: Array<{
+    hakemAdi: string;
+    toplam?: number;
+    aciklama?: string;
+    tamamlandi: boolean;
+    puanlar: Array<{ kriterKodu: string; puan: number }>;
+  }>;
+  atanan: number;
+  nihaiPuan?: number;
+  sapma?: number;
+}
+
 /** CSV hücresini kaçırır. */
 function hucre(deger: string | number | undefined | null): string {
   if (deger === undefined || deger === null) return '';
@@ -54,6 +75,8 @@ export function kategoriCsv(
   yarisma: Yarisma,
   kategori: YarismaKategorisi,
   raporlar: Rapor[],
+  /** raporId → hakem verisi. Boşsa hakem sütunları boş kalır. */
+  hakemVerisi: Map<string, RaporHakemVerisi> = new Map(),
   secenekler: AktarimSecenekleri = {},
 ): string {
   const olcutler = kategori.rubrik.kriterler;
@@ -67,12 +90,21 @@ export function kategoriCsv(
     'Sayfa',
     'Kelime',
     ...olcutler.map((o) => `${o.ad} (${o.puan})`),
-    'Hakem Toplam',
+    'Nihai Puan',
     'Azami Puan',
     'Yapay Zekâ Önerisi',
     'Fark',
-    'Değerlendiren Hakem',
-    'Hakem Notu',
+    /*
+     * HAKEM BAŞINA SÜTUN YOK, TEK SÜTUNDA HEPSİ.
+     *
+     * Hakem sayısı rapor başına değişiyor (biri 1, öteki 3 hakem alabilir).
+     * Sabit "Hakem 1 / Hakem 2" sütunları ya boş kalır ya taşar. Bunun
+     * yerine "ad: puan" biçiminde tek sütun: hem eksiksiz hem okunabilir.
+     */
+    'Hakem Puanları',
+    'Hakem Sayısı',
+    'Hakemler Arası Ayrışma',
+    'Hakem Notları',
     'Otomatik Bulgular',
     'Kaynak Doğrulama',
     'Benzerlik',
@@ -81,7 +113,27 @@ export function kategoriCsv(
 
   const satirlar = raporlar.map((r) => {
     const m = secenekler.maskele ? raporuMaskele(r, true) : null;
-    const puanlar = new Map(r.hakemPuanlari?.map((p) => [p.kriterKodu, p.puan]) ?? []);
+    const hv = hakemVerisi.get(r.id);
+    const bitmis = (hv?.degerlendirmeler ?? []).filter((d) => d.tamamlandi);
+    /*
+     * Ölçüt sütunlarında hakemlerin ORTALAMASI gösteriliyor.
+     *
+     * Tek hakem varsa onun puanı; iki hakem varsa ortalaması. Hangi hakemin
+     * ne verdiği "Hakem Puanları" sütununda ve rapor sayfasında ölçüt bazında
+     * görünüyor — CSV'de ölçüt × hakem çaprazı yapmak tabloyu okunamaz kılar.
+     */
+    const puanlar = new Map<string, number>();
+    for (const o of olcutler) {
+      const degerler = bitmis
+        .map((d) => d.puanlar.find((p) => p.kriterKodu === o.kod)?.puan)
+        .filter((v): v is number => v !== undefined);
+      if (degerler.length) {
+        puanlar.set(
+          o.kod,
+          Math.round((degerler.reduce((a, b) => a + b, 0) / degerler.length) * 10) / 10,
+        );
+      }
+    }
     const ai = r.aiDegerlendirme;
 
     const kritik = r.kontroller
@@ -101,14 +153,20 @@ export function kategoriCsv(
       r.istatistik.kelimeSayisi,
       // Puanlanmamış ölçüt boş kalıyor; 0 yazmak "sıfır verildi" demek olurdu.
       ...olcutler.map((o) => puanlar.get(o.kod) ?? ''),
-      r.hakemToplam ?? '',
+      hv?.nihaiPuan ?? r.hakemToplam ?? '',
       kategori.rubrik.toplamPuan,
       ai?.aiToplam ?? '',
-      ai && r.hakemToplam !== undefined
-        ? Number((r.hakemToplam - ai.aiToplam).toFixed(1))
+      // Fark: nihai puan ile yapay zekâ önerisi arasındaki sapma.
+      ai && (hv?.nihaiPuan ?? r.hakemToplam) !== undefined
+        ? Number(((hv?.nihaiPuan ?? r.hakemToplam!) - ai.aiToplam).toFixed(1))
         : '',
-      r.hakemAdi ?? '',
-      r.hakemNotu ?? '',
+      bitmis.map((d) => `${d.hakemAdi}: ${d.toplam}`).join(' | '),
+      hv ? `${bitmis.length}/${hv.atanan}` : '',
+      hv?.sapma ?? '',
+      (hv?.degerlendirmeler ?? [])
+        .filter((d) => d.aciklama)
+        .map((d) => `${d.hakemAdi}: ${d.aciklama}`)
+        .join(' | '),
       kritik.length ? kritik.join(', ') : '',
       kd ? `${kd.dogrulanan} doğrulandı / ${kd.indekslenemez} indekslenemez` : '',
       benzerlik?.ozet ?? '',

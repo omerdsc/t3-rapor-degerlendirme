@@ -49,3 +49,6 @@ veri/
 # yoksa her dağıtımda 60 sayfa yeniden çekilmek zorunda kalır.
 !veri/katalog.json
 .dev.log
+# SQLite çalışma dosyaları — WAL ve shared-memory
+veri/*.db-wal
+veri/*.db-shm
