@@ -46,6 +46,17 @@ export async function POST(istek: Request) {
   for (const h of hakemIdler) {
     const hakem = hakemGetir(h);
     if (!hakem) return Response.json({ hata: 'Hakem bulunamadı.' }, { status: 404 });
+    /*
+     * SİSTEM KAYDINA ATAMA YAPILAMAZ.
+     * Arşiv kaydı bir insan değil; ona rapor atamak, hiç kimsenin
+     * değerlendirmeyeceği bir işi "atanmış" saymak olurdu.
+     */
+    if (hakem.sistem) {
+      return Response.json(
+        { hata: `${hakem.ad} bir sistem kaydı; rapor atanamaz.` },
+        { status: 422 },
+      );
+    }
     if (!hakem.aktif) {
       return Response.json(
         { hata: `${hakem.ad} pasif durumda; atama yapılamaz.` },

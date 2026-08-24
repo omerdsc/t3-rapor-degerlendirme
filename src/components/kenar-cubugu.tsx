@@ -78,6 +78,32 @@ export default function KenarCubugu() {
 
       </nav>
 
+      {/*
+        HAKEM PANELİNE GEÇİŞ — menüde değil, altta ve "önizleme" olarak.
+        Menüye koymak onu koordinasyonun bir işi gibi gösterirdi; oysa
+        koordinasyonun işi değil, DESTEK aracı. Ama hiç olmaması da yanlıştı:
+        kullanıcı hakem tarafına geçmeye çalıştı ve geçemedi.
+      */}
+      <div className="border-t border-lacivert-3 px-3.5 py-3">
+        <Link
+          href="/koordinasyon/hakemler#onizleme"
+          className="flex items-center gap-2 rounded-lg px-2 py-2 transition-colors hover:bg-lacivert-2"
+        >
+          <svg viewBox="0 0 24 24" className="size-3.5 shrink-0 stroke-metin-2" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+            <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+          <span>
+            <span className="block text-[11.5px] font-semibold text-metin-2">
+              Hakem panelini önizle
+            </span>
+            <span className="mt-0.5 block text-[9px] font-medium text-metin-2/60">
+              Hakem ne görüyor
+            </span>
+          </span>
+        </Link>
+      </div>
+
       <div className="border-t border-lacivert-3 p-3.5">
         <p className="mb-2.5 text-[10px] leading-relaxed font-medium text-metin-2/70">
           Yapay zekâ nihai karar verici değildir. Kontrol, analiz ve ön

@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useState, useTransition } from 'react';
+import { kodNormal } from '@/lib/db/kod';
 
 /**
  * Hakem giriş kutusu — erişim koduyla panele giriş.
@@ -24,11 +25,17 @@ export default function HakemGirisi() {
   const [kod, setKod] = useState('');
   const [gidiyor, basla] = useTransition();
 
-  /** Kodlar büyük harf ve rakam; kullanıcı küçük yazsa da çalışsın. */
-  const temiz = kod.trim().toLocaleUpperCase('en').replace(/[^A-Z0-9]/g, '');
+  /*
+   * Girdi normalleştiriliyor ve sunucu da AYNI normalleştirmeyi yapıyor.
+   *
+   * Bu satır bir kez kendi başına hataydı: tireyi atıyor, sunucu ise tam
+   * eşitlik arıyordu — kodunu doğru yazan hakem 404 alıyordu. Artık
+   * normalleştirme `kod.ts` içinde tek yerde ve iki taraf onu çağırıyor.
+   */
+  const temiz = kodNormal(kod);
 
   function gir() {
-    if (temiz.length < 4) return;
+    if (temiz.length < 8) return;
     basla(() => yonlendir.push(`/hakem/${temiz}`));
   }
 
@@ -42,14 +49,17 @@ export default function HakemGirisi() {
           value={kod}
           onChange={(e) => setKod(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && gir()}
-          placeholder="örn. K7M2QX"
+          // Yer tutucu biçimi anlatır, GERÇEK KOD VERMEZ: gerçek bir
+          // hakem kodu burada, giriş sayfasında duran kullanılabilir bir
+          // kimlik bilgisi olurdu.
+          placeholder="XXXX-XXXX"
           spellCheck={false}
           autoComplete="off"
           className="min-w-0 flex-1 rounded-md border border-cizgi bg-white px-3 py-2 font-mono text-[13px] font-bold tracking-widest uppercase outline-none focus:border-metin-3"
         />
         <button
           type="button"
-          disabled={temiz.length < 4 || gidiyor}
+          disabled={temiz.length < 8 || gidiyor}
           onClick={gir}
           className="shrink-0 cursor-pointer rounded-md bg-lacivert px-4 py-2 text-[12px] font-bold text-white transition-colors hover:bg-lacivert-2 disabled:opacity-40"
         >
@@ -57,8 +67,8 @@ export default function HakemGirisi() {
         </button>
       </div>
       <p className="mt-1.5 text-[10px] leading-relaxed font-medium text-metin-3">
-        Kod koordinasyon tarafından size iletilir. Kodunuz yoksa
-        koordinasyonla iletişime geçin.
+        8 karakter. Tireyi yazmanız gerekmiyor, küçük harf de olur. Kod
+        koordinasyon tarafından size iletilir.
       </p>
     </div>
   );

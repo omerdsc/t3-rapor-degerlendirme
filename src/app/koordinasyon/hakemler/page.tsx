@@ -1,4 +1,5 @@
 import AtamaPaneli, { type AtamaSatiri, type HakemSecenegi } from '@/components/atama-paneli';
+import HakemOnizleme from '@/components/hakem-onizleme';
 import HakemYonetimi from '@/components/hakem-yonetimi';
 import SecimKutusu from '@/components/secim-kutusu';
 import { hakemYukleri, raporunDegerlendirmeleri, raporunHakemleri } from '@/lib/db/hakem-depo';
@@ -55,8 +56,13 @@ export default async function HakemlerSayfasi({
     };
   });
 
+  /*
+   * Atama seçenekleri: aktif VE gerçek kişi olanlar.
+   * Arşiv kaydı (sistem) listede görünüyor — eski puanların sahibi olarak
+   * kayıtta kalması gerekiyor — ama ona rapor atanamaz.
+   */
   const hakemler: HakemSecenegi[] = yukler
-    .filter((y) => y.hakem.aktif)
+    .filter((y) => y.hakem.aktif && !y.hakem.sistem)
     .map((y) => ({
       id: y.hakem.id,
       ad: y.hakem.ad,
@@ -97,6 +103,23 @@ export default async function HakemlerSayfasi({
           ve hakemler arası fark ayrıca gösterilir.
         </p>
       </div>
+
+      {/*
+        ÖNİZLEME EN ÜSTTE, HAKEM LİSTESİNDEN ÖNCE.
+        Kullanıcı koordinasyondan hakem tarafına nasıl geçeceğini bulamadı;
+        erişim bağlantısı yalnızca liste satırlarının içindeydi ve orada
+        kayboluyordu. Aranan şey bir eylemse eylem görünür olmalı.
+      */}
+      <HakemOnizleme
+        hakemler={yukler
+          .filter((y) => y.hakem.aktif && !y.hakem.sistem)
+          .map((y) => ({
+            kod: y.hakem.kod,
+            ad: y.hakem.ad,
+            kurum: y.hakem.kurum,
+            bekleyen: y.atanan - y.tamamlanan,
+          }))}
+      />
 
       <section className="mb-6">
         <HakemYonetimi yukler={yukler} />

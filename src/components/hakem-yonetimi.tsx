@@ -219,11 +219,18 @@ export default function HakemYonetimi({ yukler }: { yukler: HakemYuku[] }) {
                     >
                       {h.ad}
                     </span>
-                    {!h.aktif && (
+                    {h.sistem ? (
+                      <span
+                        title="Bir kişiyi temsil etmiyor: eski puanların taşındığı arşiv kaydı. Panele giremez, rapor atanamaz."
+                        className="rounded bg-mor-zemin px-1.5 py-0.5 text-[9px] font-bold tracking-wide text-mor-koyu"
+                      >
+                        SİSTEM KAYDI
+                      </span>
+                    ) : !h.aktif ? (
                       <span className="rounded bg-zemin px-1.5 py-0.5 text-[9px] font-bold tracking-wide text-metin-2">
                         PASİF
                       </span>
-                    )}
+                    ) : null}
                     {h.uzmanlik.map((u) => (
                       <span
                         key={u}
@@ -255,6 +262,19 @@ export default function HakemYonetimi({ yukler }: { yukler: HakemYuku[] }) {
                   önceki sürümde yalnızca kopyalama vardı ve panele girmenin
                   görünür bir yolu yoktu.
                 */}
+                {/*
+                  SİSTEM KAYDINDA EYLEM YOK.
+                  Arşiv kaydına "Aç ↗" sunmak kırık bir bağlantı vermek
+                  ("giremez" kuralı sunucuda), "Aktifleştir" sunmak ise
+                  olmayan bir kişiyi işe almak olurdu. Görünmeye devam
+                  ediyor çünkü eski puanların sahibi — ama eylemsiz.
+                */}
+                {h.sistem ? (
+                  <span className="shrink-0 text-[10.5px] font-medium text-metin-3">
+                    eski puanların sahibi · giriş yok
+                  </span>
+                ) : (
+                <>
                 <div className="flex shrink-0 items-center gap-1">
                   <button
                     type="button"
@@ -293,6 +313,8 @@ export default function HakemYonetimi({ yukler }: { yukler: HakemYuku[] }) {
                   >
                     Sil
                   </button>
+                )}
+                </>
                 )}
               </div>
             );

@@ -17,6 +17,7 @@ import { baglanti, bool, jsonOku, sayi } from './baglanti';
 import type {
   Atama, DegerlendirmeDurumu, Hakem, HakemDegerlendirmesi, HakemIsi, NihaiOzet,
 } from './tipler';
+import { kodNormal, kodUret } from './kod';
 import { kriterOrtalamalari, toplamOrtalamasi } from './nihai-hesap';
 import { raporRumuzu, takimRumuzu } from '../depo/maskele';
 
@@ -29,16 +30,7 @@ type Satir = Record<string, unknown>;
  * telefonda iletiyor. Karışan karakterler (0/O, 1/I/l) çıkarıldı — hakem
  * kodu yanlış yazıp "giriş yapamıyorum" demesin.
  */
-const KOD_ALFABE = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
 
-function kodUret(): string {
-  let k = '';
-  for (let i = 0; i < 8; i++) {
-    k += KOD_ALFABE[Math.floor(Math.random() * KOD_ALFABE.length)];
-    if (i === 3) k += '-';
-  }
-  return k;
-}
 
 function hakemCoz(s: Satir): Hakem {
   return {
@@ -49,6 +41,7 @@ function hakemCoz(s: Satir): Hakem {
     kod: s.kod as string,
     uzmanlik: jsonOku<string[]>(s.uzmanlik, []),
     aktif: bool(s.aktif),
+    sistem: bool(s.sistem),
     olusturuldu: s.olusturuldu as string,
     notlar: (s.notlar as string) ?? undefined,
   };
@@ -109,17 +102,48 @@ export function hakemGetir(id: string): Hakem | null {
   return s ? hakemCoz(s) : null;
 }
 
+/**
+ * Koda göre hakem — BİÇİM FARKLARINI GÖZ ARDI EDEREK.
+ *
+ * Kod `7KSN-NTBD` biçiminde saklanıyor ama kullanıcının eline pek çok
+ * biçimde geçiyor: panodan yapıştırılıyor, e-postadan elle yazılıyor,
+ * küçük harfle giriliyor. Tam eşitlik aramak bu yüzden kırılgandı —
+ * tiresiz yazan hakem 404 alıyordu.
+ *
+ * Karşılaştırma SQL içinde normalleştirilerek yapılıyor: tire atılıp
+ * büyük harfe çevrilmiş hâl karşılaştırılıyor. Kod sayısı üç haneli
+ * kalacağı için tam tarama sorun değil; kolon eşitliği aramak yerine
+ * doğruluk tercih edildi.
+ */
 export function hakemKodIle(kod: string): Hakem | null {
-  // Kod büyük harfle üretiliyor; hakem küçük yazabilir.
+  const aranan = kodNormal(kod);
+  if (!aranan) return null;
+
+  /*
+   * SİSTEM KAYITLARI GİRİŞ YAPAMAZ.
+   *
+   * Arşiv kaydı (eski puanların taşındığı sahte hakem) bir zamanlar
+   * panele girebiliyordu; kod aramasının büyük/küçük harfe duyarlı olması
+   * bunu KAZA ile engelliyordu. Arama düzeltilince kaza da bitti ve asıl
+   * boşluk göründü: giriş kimin giriş yapabileceğini hiç sormuyordu.
+   *
+   * Süzgeç `aktif` değil `sistem` üzerinden: pasife alınmış GERÇEK hakem
+   * kendi tamamladığı işi görebilmeli, panel ona "hesabınız pasif"
+   * diyor. Sistem kaydı ise bir insan değil.
+   */
   const s = baglanti()
-    .prepare('SELECT * FROM hakem WHERE kod = ?')
-    .get(kod.trim().toUpperCase()) as Satir | undefined;
+    .prepare(
+      `SELECT * FROM hakem
+        WHERE UPPER(REPLACE(REPLACE(kod, '-', ''), ' ', '')) = ?
+          AND sistem = 0`,
+    )
+    .get(aranan) as Satir | undefined;
   return s ? hakemCoz(s) : null;
 }
 
 export function hakemleriListele(yalnizAktif = false): Hakem[] {
   const sql = yalnizAktif
-    ? 'SELECT * FROM hakem WHERE aktif = 1 ORDER BY ad'
+    ? 'SELECT * FROM hakem WHERE aktif = 1 AND sistem = 0 ORDER BY ad'
     : 'SELECT * FROM hakem ORDER BY aktif DESC, ad';
   return (baglanti().prepare(sql).all() as Satir[]).map(hakemCoz);
 }

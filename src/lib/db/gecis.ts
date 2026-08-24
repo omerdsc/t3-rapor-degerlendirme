@@ -64,15 +64,16 @@ function arsivHakemi(db: ReturnType<typeof baglanti>, ad: string): string {
 
   const id = randomUUID();
   db.prepare(
-    `INSERT INTO hakem (id, ad, kod, uzmanlik, aktif, olusturuldu, notlar)
-     VALUES (?, ?, ?, '[]', 0, ?, ?)`,
+    `INSERT INTO hakem (id, ad, kod, uzmanlik, aktif, sistem, olusturuldu, notlar)
+     VALUES (?, ?, ?, '[]', 0, 1, ?, ?)`,
   ).run(
     id,
     ad,
     ARSIV_KOD,
     new Date().toISOString(),
     'SQLite geçişinden önce girilmiş puanların taşındığı kayıt. ' +
-      'Panele giriş için kullanılmaz (aktif değil).',
+      'Sistem kaydı: panele giremez, rapor atanamaz. Sahip olduğu eski ' +
+      'değerlendirmeler kayıtta kalıyor — bir puanın sahibi silinemez.',
   );
   return id;
 }

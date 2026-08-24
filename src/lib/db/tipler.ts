@@ -28,7 +28,25 @@ export interface Hakem {
   kod: string;
   /** Uzmanlık alanları — atama önerisinde kullanılıyor. */
   uzmanlik: string[];
+  /**
+   * Hakem iş alabilir mi.
+   *
+   * Pasife alınmış hakem yeni rapor almıyor ama panele GİREBİLİYOR:
+   * tamamladığı işi görme hakkı sürüyor.
+   */
   aktif: boolean;
+  /**
+   * Bu kayıt bir insanı temsil ediyor mu.
+   *
+   * `true` ise etmiyor: veri taşımak için var olan arşiv kaydı gibi.
+   * Panele giremez, rapor atanamaz, hakem listelerinde görünmez — ama
+   * sahip olduğu eski değerlendirmeler kayıtta kalır, çünkü bir puanın
+   * sahibi silinemez.
+   *
+   * `aktif = false` bunun yerine geçmiyor: ikisi ayrı sorular. Pasif
+   * hakem çalışmayan bir insan; sistem kaydı hiç insan değil.
+   */
+  sistem: boolean;
   olusturuldu: string;
   notlar?: string;
 }

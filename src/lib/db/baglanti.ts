@@ -123,6 +123,11 @@ CREATE TABLE IF NOT EXISTS hakem (
   kod         TEXT NOT NULL UNIQUE,
   uzmanlik    TEXT NOT NULL DEFAULT '[]',
   aktif       INTEGER NOT NULL DEFAULT 1,
+  -- SİSTEM KAYDI MI. 1 ise bu satır bir insanı temsil etmiyor: arşiv
+  -- kaydı gibi, veri taşımak için var olan sahte hakem. Panele hiç
+  -- giremez ve rapor atanamaz. aktif=0 bunun yerine geçmiyor:
+  -- pasife alınmış GERÇEK hakem kendi bitmiş işini görebilmeli.
+  sistem      INTEGER NOT NULL DEFAULT 0,
   olusturuldu TEXT NOT NULL,
   notlar      TEXT
 );
@@ -217,14 +222,59 @@ export function baglanti(): DatabaseSync {
   yeni.exec('PRAGMA busy_timeout = 5000');
   yeni.exec(SEMA);
 
-  const s = yeni.prepare('SELECT surum FROM sema_surumu').get() as
-    | { surum: number }
-    | undefined;
-  if (!s) yeni.prepare('INSERT INTO sema_surumu (surum) VALUES (1)').run();
+  semayiYukselt(yeni);
 
   db = yeni;
   g.__dorduncuGozDb = yeni;
   return yeni;
+}
+
+/** Şemanın ulaştığı en son sürüm. Alan eklendikçe artıyor. */
+const SON_SURUM = 2;
+
+/**
+ * Şema sürüm yükseltmeleri.
+ *
+ * `CREATE TABLE IF NOT EXISTS` yalnızca YENİ veritabanını kurar; var olan
+ * tabloya alan eklemez. Sürüm alanı en baştan vardı ama kullanılmıyordu —
+ * ilk alan eklemesi gerektiğinde bu ortaya çıktı: yeni kurulumda `sistem`
+ * sütunu oluşuyor, mevcut veritabanında oluşmuyordu.
+ *
+ * Yükseltmeler biriktirilerek uygulanıyor ve her biri kendi sürümünü
+ * yazıyor; yarıda kesilen bir yükseltme bir sonraki açılışta kaldığı
+ * yerden devam ediyor.
+ */
+function semayiYukselt(yeni: DatabaseSync): void {
+  const s = yeni.prepare('SELECT surum FROM sema_surumu').get() as
+    | { surum: number }
+    | undefined;
+
+  if (!s) {
+    // Yeni veritabanı: SEMA zaten son hâli kurdu.
+    yeni.prepare('INSERT INTO sema_surumu (surum) VALUES (?)').run(SON_SURUM);
+    return;
+  }
+
+  let surum = s.surum;
+
+  if (surum < 2) {
+    /*
+     * `hakem.sistem` alanı. Arşiv kaydı (eski puanların taşındığı sahte
+     * hakem) panele girebiliyordu — kod aramasının büyük/küçük harfe
+     * duyarlı olması onu KAZA ile engelliyordu, kural olarak değil.
+     * Arama düzeltilince kaza da ortadan kalktı ve gerçek boşluk göründü.
+     */
+    const sutunlar = yeni.prepare('PRAGMA table_info(hakem)').all() as Array<{
+      name: string;
+    }>;
+    if (!sutunlar.some((c) => c.name === 'sistem')) {
+      yeni.exec('ALTER TABLE hakem ADD COLUMN sistem INTEGER NOT NULL DEFAULT 0');
+    }
+    // Arşiv kaydı koddan tanınıyor: geçişte sabit bu kodla yazılıyor.
+    yeni.exec("UPDATE hakem SET sistem = 1, aktif = 0 WHERE kod = 'arsiv'");
+    surum = 2;
+    yeni.prepare('UPDATE sema_surumu SET surum = ?').run(surum);
+  }
 }
 
 /** JSON sütunu okur; bozuksa varsayılana döner. */
