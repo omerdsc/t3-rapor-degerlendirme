@@ -66,7 +66,7 @@ export default function PanoSayfasi() {
       baslik: 'Kritik bulgulu rapor',
       aciklama: 'Eksik bölüm, kaynakça sorunu ya da kopya şüphesi var.',
       sayi: kritikli,
-      yol: '/raporlar',
+      yol: '/koordinasyon/raporlar',
       eylem: 'İncele',
       aciliyet: 'yuksek',
     },
@@ -76,7 +76,7 @@ export default function PanoSayfasi() {
         'Ölçütler şablondan otomatik çıkarıldı. Onaylanmadan yapılan ' +
         'puanlamanın doğruluğu garanti değil.',
       sayi: onaysizKategori,
-      yol: '/yarismalar',
+      yol: '/koordinasyon/yarismalar',
       eylem: 'Yarışmalara git',
       aciliyet: 'orta',
     },
@@ -84,7 +84,7 @@ export default function PanoSayfasi() {
       baslik: 'Kategoride şartname eksik',
       aciklama: 'Şartname olmadan eleyici kurallar ve teknik beklentiler bilinmiyor.',
       sayi: sartnamesizKategori,
-      yol: '/yarismalar',
+      yol: '/koordinasyon/yarismalar',
       eylem: 'Tamamla',
       aciliyet: 'orta',
     },
@@ -92,7 +92,7 @@ export default function PanoSayfasi() {
       baslik: 'Kurulmamış yarışma',
       aciklama: 'Şablonu yayımlanmış ama sisteme alınmamış. Kurmak ücretsiz.',
       sayi: kurulmayan,
-      yol: '/yarismalar',
+      yol: '/koordinasyon/yarismalar',
       eylem: 'Kur',
       aciliyet: 'dusuk',
     },
@@ -159,7 +159,7 @@ export default function PanoSayfasi() {
             <span className="h-4 w-[3px] rounded-sm bg-kirmizi" />
             <h2 className="text-[14px] font-bold">Son raporlar</h2>
             <Link
-              href="/raporlar"
+              href="/koordinasyon/raporlar"
               className="ml-auto text-[12px] font-bold text-kirmizi hover:text-kirmizi-koyu"
             >
               Tümü →
@@ -170,7 +170,7 @@ export default function PanoSayfasi() {
             <p className="px-5 py-10 text-center text-[12.5px] leading-relaxed font-medium text-metin-2">
               Henüz rapor yüklenmedi.
               <br />
-              <Link href="/yarismalar" className="font-bold text-kirmizi">
+              <Link href="/koordinasyon/yarismalar" className="font-bold text-kirmizi">
                 Bir yarışma kurup raporlarını aktarın →
               </Link>
             </p>
@@ -203,7 +203,7 @@ export default function PanoSayfasi() {
                     ) : null}
                     <DurumRozeti durum={r.durum} />
                     <Link
-                      href={`/rapor/${r.id}`}
+                      href={`/koordinasyon/rapor/${r.id}`}
                       className="text-[11.5px] font-bold text-kirmizi hover:text-kirmizi-koyu"
                     >
                       Aç

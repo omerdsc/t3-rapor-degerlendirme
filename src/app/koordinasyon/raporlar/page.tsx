@@ -30,7 +30,7 @@ function suzgecleyi(raporlar: Rapor[], s: Suzgec): Rapor[] {
   return raporlar;
 }
 
-export default async function RaporlarSayfasi({ searchParams }: PageProps<'/raporlar'>) {
+export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koordinasyon/raporlar'>) {
   const p = await searchParams;
   const yarismalar = yarismalariListele();
   /*
@@ -79,7 +79,7 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/rapo
         <h1 className="text-[22px] font-extrabold tracking-tight">Raporlar</h1>
         <p className="mt-5 rounded-xl border border-dashed border-metin-3/40 bg-white px-5 py-8 text-center text-[12.5px] font-medium text-metin-2">
           Önce bir yarışma kurmalısınız.{' '}
-          <Link href="/yarismalar" className="font-bold text-kirmizi hover:text-kirmizi-koyu">
+          <Link href="/koordinasyon/yarismalar" className="font-bold text-kirmizi hover:text-kirmizi-koyu">
             Yarışmalar →
           </Link>
         </p>
@@ -127,7 +127,7 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/rapo
               etiket: y.ad,
               ek: n ? `${n} rapor` : undefined,
               grup: n ? 'Raporu olanlar' : 'Rapor yüklenmemiş',
-              adres: `/raporlar?yarisma=${y.id}&durum=${suzgec}`,
+              adres: `/koordinasyon/raporlar?yarisma=${y.id}&durum=${suzgec}`,
             }))}
         />
 
@@ -141,7 +141,7 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/rapo
                 deger: k.id,
                 etiket: k.ad,
                 ek: n ? `${n} rapor` : `${k.rubrik.kriterler.length} ölçüt`,
-                adres: `/raporlar?yarisma=${yarisma.id}&kategori=${k.id}&durum=${suzgec}`,
+                adres: `/koordinasyon/raporlar?yarisma=${yarisma.id}&kategori=${k.id}&durum=${suzgec}`,
               };
             })}
           />
@@ -150,7 +150,7 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/rapo
         {yarisma && (
           <div className="sm:col-span-2">
             <RaporArama
-              temelAdres={`/raporlar?yarisma=${yarisma.id}${
+              temelAdres={`/koordinasyon/raporlar?yarisma=${yarisma.id}${
                 kategori ? `&kategori=${kategori.id}` : ''
               }&durum=${suzgec}`}
               baslangic={aramaTerimi || undefined}
@@ -329,7 +329,7 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/rapo
 
                   <td className="px-4 py-3">
                     <Link
-                      href={`/rapor/${r.id}`}
+                      href={`/koordinasyon/rapor/${r.id}`}
                       className={`rounded-lg px-3 py-1.5 text-[11.5px] font-bold transition-colors ${
                         degerlendirildi
                           ? 'border border-cizgi bg-white text-metin-2 hover:bg-zemin'

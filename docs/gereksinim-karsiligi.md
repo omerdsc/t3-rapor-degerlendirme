@@ -5,7 +5,7 @@ karşılandığına dair **ölçülmüş kanıtı** gösterir. Tablodaki sayıla
 değil, `scripts/kanit-topla.ts` çıktısıdır — depodan ve çalışan koddan
 okunur, elle yazılmaz.
 
-Ölçüm tarihi: 2026-08-24 · Kod: 77 dosya, ~15.000 satır
+Ölçüm tarihi: 2026-08-24 · Veri: SQLite · Üç ayrı portal
 
 ---
 
@@ -32,20 +32,30 @@ saf koddur. **İşletme maliyeti $0.** Ücret yalnızca 6. maddede ve şartname
 
 | Rol | Ne yapar | Ekran |
 |---|---|---|
-| **Yarışma Yöneticisi** | Yarışmayı kurar, şablon/şartname yükler, değerlendirme ölçütlerini onaylar veya kendi ölçütünü ekler | `/yarismalar`, `/yarismalar/[id]` |
-| **Hakem** | Raporu açar, otomatik bulguları ve yapay zekâ önerisini inceler, **nihai puanı kendisi verir** | `/raporlar`, `/rapor/[id]` |
-| **Değerlendirme Yöneticisi (Koordinasyon)** | İş yükünü izler, kopya taraması yapar, hakemle yazışır | `/`, `/benzerlik`, rapor içi yazışma |
-| *(dolaylı)* **Yarışmacı** | Yalnızca hakem tamamladıktan sonra kendi sonucunu ve geri bildirimini görür | `/sonuc` |
+| **Yarışma Yöneticisi** | Yarışmayı kurar, şablon/şartname yükler, ölçütleri onaylar veya kendi ölçütünü ekler | `/koordinasyon/yarismalar` |
+| **Değerlendirme Yöneticisi (Koordinasyon)** | Hakem kaydeder, raporları dağıtır, iş yükünü ve sonuçları izler, kopya taraması yapar | `/koordinasyon`, `/koordinasyon/hakemler`, `/koordinasyon/benzerlik` |
+| **Hakem** | Kendi panelinden yalnızca atanmış raporları açar, bulguları ve öneriyi inceler, **puanı kendisi verir** | `/hakem/<kod>` |
+| **Yarışmacı** | Hakem tamamladıktan sonra kendi sonucunu ve geri bildirimini görür | `/sonuc` |
 
-Roller ayrı hesaplarla değil ayrı **ekranlarla** ayrılmıştır; yetkilendirme
-canlı kuruluma bırakıldı (bkz. §6).
+Roller ayrı **portallarla** ayrılmıştır ve ayrım veri tarafında uygulanır:
+
+- Hakem paneli yalnızca `hakeminIsleri()` çağırıyor; o sorgu atama tablosuna
+  bağlı. Atanmamış rapora hem sayfa (404) hem API (403) kapalı.
+- Hakem, takım adlarını rumuzla görüyor; öteki hakemlerin puanı ve nihai
+  puan görünmüyor (yakınsama/anchoring önlemi).
+- Yarışmacı portalında yapay zekâ puanı, güven etiketleri ve
+  `aiDegerlendirme` alanı hiç bulunmuyor — HTML kaynağında da yok.
+- Portallar arasında gezinme bağlantısı yok.
+
+Eksik olan yalnızca **kimlik doğrulama**: hakem erişim kodu vekil çözüm,
+koordinasyon portalı korumasız (bkz. §6).
 
 ---
 
 ## 3 · Üç temel akış
 
 ### AKIŞ 01 · Yarışma kurulumu
-`/yarismalar` → yarışma seç → **Kur** (ücretsiz) → şablon ve şartname
+`/koordinasyon/yarismalar` → yarışma seç → **Kur** (ücretsiz) → şablon ve şartname
 indirilir, çözümlenir, değerlendirme ölçütleri çıkarılır → yönetici ölçütleri
 gözden geçirip **onaylar**.
 
@@ -53,12 +63,20 @@ gözden geçirip **onaylar**.
 bağlı. 74 şablondan rubrik çıkarıldı.
 
 ### AKIŞ 02 · Rapor değerlendirme
-`/raporlar` → rapor yükle (çoklu dosya) → otomatik kontroller anında koşar →
-hakem raporu açar, bulguları ve yapay zekâ önerisini görür → **puanı hakem
-verir** → tamamlanır.
+`/koordinasyon/raporlar` → rapor yükle (çoklu dosya; kimlik rapor kapağından
+okunuyor) → otomatik kontroller anında koşar →
+`/koordinasyon/hakemler` → raporlar hakemlere dağıtılır →
+`/hakem/<kod>` → hakem kendi panelinden açar, bulguları ve öneriyi inceler,
+**puanı kendisi verir** → sonuç koordinasyon panelinde birikir.
 
-Ölçüm: 9 rapor işlendi, 6 kontrol ailesi çalıştı, 2 rapor hakem tarafından
-tamamlandı.
+Bir rapora birden çok hakem atanabilir; **puanlar birbirini ezmez**. Nihai
+puan tamamlanmış değerlendirmelerin ortalaması, hakemler arası ayrışma
+ayrıca hesaplanıp uyarı olarak gösteriliyor. Rapor, atanmış bütün hakemler
+bitirmeden "tamamlandı" sayılmıyor.
+
+Ölçüm: 6 kontrol ailesi çalıştı; iki hakemin aynı rapora verdiği 85,2 ve
+55,2 puan ayrı ayrı korundu, nihai puan 70,2 ve 30 puan ayrışma
+işaretlendi.
 
 ### AKIŞ 03 · Yarışmacıya geri bildirim
 `/sonuc` → başvuru numarası → **yalnızca hakem tamamladıysa** açılır.
@@ -84,6 +102,10 @@ kendi notu gösterilir (çelişkili geri bildirim engellendi).
 | **Takvim eşlemesi** | Şartname takviminden hangi aşamada olunduğu çözülüyor |
 | **İki katmanlı maliyet koruması** | Disk önbelleği + bütçe tavanı; aynı rapor ikinci kez ücretlendirilmiyor |
 | **Kendi kendini ölçme** | Sistem, yapay zekâ önerisi ile hakem puanı arasındaki farkı ölçüp panoda gösteriyor |
+| **Çok hakemli değerlendirme** | Bir rapora birden çok hakem atanabiliyor; puanlar ayrı kayıtta, nihai puan ortalama, hakemler arası ayrışma uyarı olarak bildiriliyor |
+| **Ayrı hakem portalı** | Hakem yalnızca kendisine atanmış raporları görüyor; erişim denetimi hem sayfada hem API'de |
+| **Toplu ve dengeli atama** | "Atanmamış 40 raporu şu 5 hakeme dağıt" tek tıklama; her hakeme yakın sayıda rapor düşüyor |
+| **Denetim izi** | Puanı kimin verdiği, ne zaman tamamladığı kayıtlı. Tamamlanan değerlendirme değiştirilemiyor; değerlendirmesi olan hakem silinmiyor, pasife alınıyor |
 
 ---
 
@@ -109,8 +131,8 @@ Bunlar gizlenmiyor; sistem her birini kullanıcıya da söylüyor.
 
 | Sınır | Neden böyle |
 |---|---|
-| **Canlıya alınmadı** | Depo dosya sistemine yazıyor; sunucusuz ortamda kalıcı değil. Veritabanı katmanı gerekiyor |
-| **Yetkilendirme yok** | Roller ekranla ayrılmış, hesapla değil. Kurum kimlik sistemine bağlanması gerekir |
+| **Canlıya alınmadı** | Veri SQLite'ta (`node:sqlite`, sıfır bağımlılık); kalıcı diskli bir sunucuda sorunsuz çalışır ama sunucusuz ortamda dosya kalıcı olmaz |
+| **Kimlik doğrulama yok** | Hakem erişim kodu hem kimlik hem yetki: kodu bilen o hakem adına iş görür. Koordinasyon portalı korumasız — canlıda kurum ağı ya da oturum arkasına alınmalı. Tek yerde toplandığı için bağlaması kolay |
 | **46 kategoride ağırlıklar eşit dağıtılmış** | Şablon puan vermemiş; gerçek ağırlık şartnamede. Sistem bunu **uyarıyla** bildiriyor, sessizce uydurmuyor |
 | **3 şablon PDF** | Şablon çıkarıcı Word stil bilgisine dayanıyor. Bu kategoriler "elle yüklenmeli" olarak işaretli |
 | **Kapaktan kimlik her raporda okunmuyor** | Elimizdeki iki gerçek raporda alanlar tabloya/görsele gömülü. Okunamadığında "okunamadı" denir, kusur sayılmaz |

@@ -31,6 +31,28 @@ rapor yüklenir
 
 ---
 
+## Üç portal, üç ayrı erişim
+
+Rol ayrımı menüyle değil **erişimle** yapılıyor. Her portalın kendi düzeni
+var ve aralarında gezinme bağlantısı yok.
+
+| Portal | Adres | Kim girer | Ne görür |
+|---|---|---|---|
+| **Koordinasyon** | `/koordinasyon` | Yarışmalar Koordinatörlüğü | Her şey: yarışma kurulumu, hakem kaydı, atama, sonuçlar, kopya taraması |
+| **Hakem** | `/hakem/<kod>` | Değerlendirici | **Yalnızca kendisine atanmış** raporlar. Takım adları rumuzlu; öteki hakemlerin puanı ve nihai puan görünmez |
+| **Yarışmacı** | `/sonuc` | Başvuru sahibi | Yalnızca kendi sonucu, hakem tamamladıysa. Yapay zekâ puanı hiç gösterilmez |
+
+Kökteki `/` yalnızca geliştirme kolaylığı: tek uygulamada üç portalı ayrı
+alan adına koymak mümkün olmadığı için ayrım adres önekiyle yapıldı.
+Kurumsal kurulumda o kapı kalkar, yerini üç ayrı adres ve kurum kimlik
+doğrulaması alır.
+
+Hakemin erişim denetimi **iki katmanda**: sayfa ve API ayrı ayrı atamayı
+doğruluyor. Atanmamış hakem adres satırına rapor kimliği yazarsa 404 alır,
+API'ye puan gönderirse reddedilir.
+
+---
+
 ## Kurulum
 
 ```bash
@@ -164,8 +186,14 @@ src/lib/ai/         ücretli katman
   sartname-ozeti.ts   şartname özeti (kategori başına bir kez)
 
 src/lib/katalog/    teknofest.org kataloğu
-src/lib/depo/       dosya tabanlı veri katmanı, maskeleme, arama, dışa aktarma
-src/app/            Panel · Raporlar · Kopya Kontrolü · Yarışmalar · Yarışmacı portalı
+src/lib/db/         SQLite bağlantısı, şema, hakem/atama/değerlendirme
+src/lib/depo/       veri katmanı, maskeleme, arama, dışa aktarma
+
+src/app/
+  page.tsx          portal seçimi (geliştirme kolaylığı)
+  koordinasyon/     Panel · Raporlar · Kopya Kontrolü · Hakemler · Yarışmalar
+  hakem/[kod]/      hakemin kendi paneli — yalnızca atanmış raporlar
+  sonuc/            yarışmacı portalı
 ```
 
 ---
@@ -206,10 +234,12 @@ Birim testleri yazılırken **iki gerçek hata** ortaya çıktı ve düzeltildi:
 
 Sistem bunları kullanıcıya da söylüyor; gizlenmiyor.
 
-- **Canlıya alınmadı.** Depo dosya sistemine yazıyor; sunucusuz ortamda
-  kalıcı değil. Veritabanı katmanı gerekiyor.
-- **Yetkilendirme yok.** Roller ekranla ayrılmış, hesapla değil. Hakem adı
-  beyan usulü alınıyor.
+- **Canlıya alınmadı.** Veri SQLite'ta; kalıcı diskli bir sunucuda çalışır
+  ama sunucusuz (Vercel gibi) ortamda dosya kalıcı olmaz.
+- **Kimlik doğrulama yok.** Hakem erişim kodu hem kimlik hem yetki: kodu
+  bilen o hakem adına iş görür. Tek bir yerde toplandığı için (`hakemKodIle`)
+  kurum kimlik sistemine bağlanması kolay. Koordinasyon portalı ise şu an
+  korumasız — canlıda kurum ağı ya da oturum arkasına alınmalı.
 - **46 kategoride ağırlıklar eşit dağıtılmış taslak.** Gerçek ağırlıklar
   şartnamede olabilir; uyarı veriliyor.
 - **3 şablon PDF** olduğu için çözümlenemiyor; elle yükleme gerekiyor.

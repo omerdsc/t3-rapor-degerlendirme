@@ -14,7 +14,7 @@ export const dynamic = 'force-dynamic';
  */
 export default async function BenzerlikSayfasi({
   searchParams,
-}: PageProps<'/benzerlik'>) {
+}: PageProps<'/koordinasyon/benzerlik'>) {
   const p = await searchParams;
   const yarismaId = typeof p.yarisma === 'string' ? p.yarisma : undefined;
   const kategoriId = typeof p.kategori === 'string' ? p.kategori : undefined;
@@ -72,7 +72,7 @@ export default async function BenzerlikSayfasi({
                 deger: y.id,
                 etiket: y.ad,
                 ek: `${raporlar.length} rapor`,
-                adres: `/benzerlik?yarisma=${y.id}`,
+                adres: `/koordinasyon/benzerlik?yarisma=${y.id}`,
               }))}
             />
 
@@ -85,7 +85,7 @@ export default async function BenzerlikSayfasi({
                     deger: 'tumu',
                     etiket: 'Tüm kategoriler',
                     ek: `${secilen.raporlar.length} rapor`,
-                    adres: `/benzerlik?yarisma=${secilen.y.id}`,
+                    adres: `/koordinasyon/benzerlik?yarisma=${secilen.y.id}`,
                   },
                   ...secilen.y.kategoriler
                     .filter((k) => raporlariListele(secilen.y.id, k.id).length > 0)
@@ -93,7 +93,7 @@ export default async function BenzerlikSayfasi({
                       deger: k.id,
                       etiket: k.ad,
                       ek: `${raporlariListele(secilen.y.id, k.id).length} rapor`,
-                      adres: `/benzerlik?yarisma=${secilen.y.id}&kategori=${k.id}`,
+                      adres: `/koordinasyon/benzerlik?yarisma=${secilen.y.id}&kategori=${k.id}`,
                     })),
                 ]}
               />

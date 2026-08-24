@@ -36,9 +36,16 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
             </span>
           </span>
         </Link>
-        <Link href="/" className="ml-auto text-[12px] font-medium text-metin-2 hover:text-white">
-          Hakem paneline dön
-        </Link>
+        {/*
+          KOORDİNASYON PANELİNE BAĞLANTI YOK — bilinçli.
+          Bu portalın izleyicisi yarışmacı. Hakem paneline ya da
+          koordinasyon panosuna açılan bir bağlantı, ayrı portal olmanın
+          anlamını ortadan kaldırırdı. Canlı kurulumda bu portal ayrı bir
+          adreste yayınlanır.
+        */}
+        <span className="ml-auto text-[11px] font-medium text-metin-2">
+          Sonucunuzu başvuru numaranızla görüntüleyin
+        </span>
       </header>
 
       <div className="mx-auto max-w-5xl px-10 py-8">

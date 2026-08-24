@@ -13,7 +13,7 @@ import { raporuMaskele } from '@/lib/depo/maskele';
 
 export const dynamic = 'force-dynamic';
 
-export default async function RaporSayfasi({ params }: PageProps<'/rapor/[id]'>) {
+export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/rapor/[id]'>) {
   const { id } = await params;
   const rapor = raporGetir(id);
   if (!rapor) notFound();
@@ -65,7 +65,7 @@ export default async function RaporSayfasi({ params }: PageProps<'/rapor/[id]'>)
     <>
       <header className="mb-4">
         <Link
-          href={`/raporlar?yarisma=${yarisma.id}`}
+          href={`/koordinasyon/raporlar?yarisma=${yarisma.id}`}
           className="mb-2.5 inline-flex items-center gap-1.5 text-[12px] font-medium text-metin-2 hover:text-metin"
         >
           <svg viewBox="0 0 24 24" className="size-3.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">

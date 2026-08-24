@@ -24,7 +24,7 @@ const TAKVIM_RENGI: Record<string, string> = {
  * eksik?" Ölçüt düzenleme, şartname özeti ve şablon güncelleme buradan
  * yapılıyor.
  */
-export default async function YarismaSayfasi({ params }: PageProps<'/yarismalar/[id]'>) {
+export default async function YarismaSayfasi({ params }: PageProps<'/koordinasyon/yarismalar/[id]'>) {
   const { id } = await params;
   const yarisma = yarismaGetir(id);
   if (!yarisma) notFound();
@@ -39,7 +39,7 @@ export default async function YarismaSayfasi({ params }: PageProps<'/yarismalar/
     <>
       <header className="mb-4 flex flex-wrap items-center gap-3">
         <Link
-          href="/yarismalar"
+          href="/koordinasyon/yarismalar"
           className="shrink-0 rounded-lg border border-cizgi bg-white px-2.5 py-1.5 text-[12px] font-bold text-metin-2 transition-colors hover:bg-zemin"
         >
           ← Yarışmalar
@@ -64,7 +64,7 @@ export default async function YarismaSayfasi({ params }: PageProps<'/yarismalar/
           <>
             <DisaAktarDugmesi yarismaId={yarisma.id} raporSayisi={raporlar.length} />
             <Link
-              href={`/raporlar?yarisma=${yarisma.id}`}
+              href={`/koordinasyon/raporlar?yarisma=${yarisma.id}`}
               className="shrink-0 rounded-lg bg-kirmizi px-3.5 py-2 text-[12px] font-bold text-white transition-colors hover:bg-kirmizi-koyu"
             >
               Raporlar →

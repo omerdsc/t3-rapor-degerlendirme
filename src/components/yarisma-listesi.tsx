@@ -206,7 +206,7 @@ export default function YarismaListesi({
               <div className="min-w-0 flex-1">
                 {kurulu ? (
                   <Link
-                    href={`/yarismalar/${y.yarismaId}`}
+                    href={`/koordinasyon/yarismalar/${y.yarismaId}`}
                     className="block truncate text-[13.5px] font-bold hover:text-kirmizi"
                   >
                     {y.ad}
@@ -261,7 +261,7 @@ export default function YarismaListesi({
               <div className="w-[112px] shrink-0 text-right">
                 {kurulu ? (
                   <Link
-                    href={`/yarismalar/${y.yarismaId}`}
+                    href={`/koordinasyon/yarismalar/${y.yarismaId}`}
                     className="text-[12px] font-bold text-kirmizi hover:text-kirmizi-koyu"
                   >
                     Aç →

@@ -16,7 +16,7 @@ export const dynamic = 'force-dynamic';
  */
 export default async function HakemlerSayfasi({
   searchParams,
-}: PageProps<'/hakemler'>) {
+}: PageProps<'/koordinasyon/hakemler'>) {
   const p = await searchParams;
   const yukler = hakemYukleri();
   const yarismalar = yarismalariListele();
@@ -130,7 +130,7 @@ export default async function HakemlerSayfasi({
                     etiket: y.ad,
                     ek: n ? `${n} rapor` : undefined,
                     grup: n ? 'Raporu olanlar' : 'Rapor yüklenmemiş',
-                    adres: `/hakemler?yarisma=${y.id}`,
+                    adres: `/koordinasyon/hakemler?yarisma=${y.id}`,
                   }))}
               />
               {yarisma && (
@@ -142,13 +142,13 @@ export default async function HakemlerSayfasi({
                       deger: 'tumu',
                       etiket: 'Tüm kategoriler',
                       ek: `${raporlariListele(yarisma.id).length} rapor`,
-                      adres: `/hakemler?yarisma=${yarisma.id}`,
+                      adres: `/koordinasyon/hakemler?yarisma=${yarisma.id}`,
                     },
                     ...yarisma.kategoriler.map((k) => ({
                       deger: k.id,
                       etiket: k.ad,
                       ek: `${raporlariListele(yarisma.id, k.id).length} rapor`,
-                      adres: `/hakemler?yarisma=${yarisma.id}&kategori=${k.id}`,
+                      adres: `/koordinasyon/hakemler?yarisma=${yarisma.id}&kategori=${k.id}`,
                     })),
                   ]}
                 />
