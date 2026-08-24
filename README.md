@@ -123,13 +123,16 @@ değerlendirme ölçütleri çıkarılır.
 | Şablondan rubrik çıkarılan kategori | **74 / 81** |
 | Rapor başına yapay zekâ maliyeti | **$0,18** |
 | Otomatik kontrollerin maliyeti | **$0** |
-| Birim testi | **93** |
+| Birim testi | **101** |
+| Uçtan uca vaka | **31** |
+| 3000 raporda liste ekranı | **179 ms** |
+| 6000 atama yazma | **0,90 sn** |
 
 Kanıt için: `npx tsx scripts/kanit-topla.ts` — bu tablonun kaynağı odur,
 elle yazılmaz.
 
-Zorunlulukların madde madde karşılığı:
-**[docs/gereksinim-karsiligi.md](docs/gereksinim-karsiligi.md)**
+PRD'nin madde madde karşılığı — PRD'nin kendi yapısıyla, yan yana
+okunabilsin diye: **[docs/prd-karsiligi.md](docs/prd-karsiligi.md)**
 
 ---
 
@@ -181,6 +184,27 @@ kendisi `nihai-hesap.ts` içinde, veritabanından bağımsız ve test kapsamınd
 Aynı ilke dağıtımda da: `dagitim.ts` hem sunucunun atama yaptığı hem
 arayüzün önizleme gösterdiği tek fonksiyon. İki kopya olsaydı kullanıcının
 basmadan önce gördüğü sayı sunucunun yaptığından sapardı.
+
+### Yarışmacıya giden her cümle hakem onayından geçiyor
+Güçlü yönler, gelişime açık alanlar ve öneriler yapay zekâ tarafından
+üretiliyor ama **doğrudan yayımlanmıyor**. Hakem panelinde üçü de dolu
+geliyor; hakem düzeltiyor, siliyor, ekliyor ve tamamlayınca onaylamış
+oluyor. Onaylanmamış hiçbir cümle yarışmacıya gitmiyor.
+
+Eskiden bu metinler model çıktısından doğrudan basılıyordu. Puanı hakemden
+alıp metni modelden almak tutarsızdı: yarışmacı için geri bildirim de bir
+karardır ve sahibi olmalı. PRD'nin madde 06 sırası da bunu istiyor —
+"hakeme sunulur; sonuçlardan ... üretilir".
+
+`npm run denetim` bu kuralı ölçüyor: modelin ürettiği metinler sayfada
+aranıp hakem onaylılarıyla karşılaştırılıyor.
+
+### Ölçülmeyen iddia, iddia değildir
+"Hacimde çalışıyor", "yapay zekâ puanı yarışmacıya gitmiyor", "dağıtım
+dengeli" — hepsi bir zamanlar yalnızca belgede yazan cümlelerdi ve üçü de
+kısmen yanlıştı. Her biri artık bir komut: `hacim`, `denetim`, `duman`,
+`db:kontrol`. Ölçüm bu projede **sekiz gerçek hata** buldu; hiçbiri tip
+denetiminden ya da birim testlerinden geçmiyordu.
 
 ### Çıkarım taslaktır, insan onaylar
 Şablondan çıkarılan her ölçüt "onaylanmadı" olarak işaretli. Yönetici
@@ -266,10 +290,13 @@ src/app/
 ## Doğrulama
 
 ```bash
-npm test                                # 93 birim testi, ~0,8 sn
-npm run db:kontrol                      # 11 veri tutarlılığı sorgusu
-npm run db:onar                         # nihai puan kolonunu kayıtlardan yeniden yaz
-npx tsx scripts/sizinti-denetimi.ts     # yarışmacı sayfası sızıntı denetimi
+npm test                 # 101 birim testi, ~0,8 sn
+npm run duman            # 31 uçtan uca vaka — bütün ekranlar ve yetki sınırları
+npm run db:kontrol       # 11 veri tutarlılığı sorgusu
+npm run denetim          # yarışmacı sayfası sızıntı denetimi
+npm run hacim -- 3000    # performans ölçümü
+npm run demo             # üç PRD akışını yürünebilir hâle getir
+npm run db:onar          # nihai puan kolonunu kayıtlardan yeniden yaz
 npx tsx scripts/kanit-topla.ts          # ölçülmüş durum tablosu
 npx tsx scripts/ornek-rapor-uret.ts     # 7 sentetik fikstür (her biri bir kusur)
 npx tsx scripts/analiz-et.ts            # hepsini analiz et
@@ -282,7 +309,11 @@ npm run katalog:dogrula                 # 81 şablonu indirip çözümle
 Test korpusundaki üç kurgu vaka — görsel kopya, kısmi metin kopyası, aynı
 takımın devam projesi — üçü de doğru sınıflandırıldı.
 
-Birim testleri yazılırken **dört gerçek hata** ortaya çıktı ve düzeltildi:
+### Ölçüm, iddia etmekten daha çok hata buluyor
+
+Bu projede tip denetimi, birim testleri ve derleme temiz geçerken **ekranı
+gerçekte kırık** olan durumlar çıktı. Bu yüzden her iddianın bir komutu
+var. Bulunanlar:
 
 1. **Bölümleri ayrıştırılamayan rapor kopya taramasından sessizce
    düşüyordu.** `ozgunMetin()` yalnızca tanınan bölümler üzerinden
@@ -303,8 +334,25 @@ Birim testleri yazılırken **dört gerçek hata** ortaya çıktı ve düzeltild
 4. **Yarışmacı portalı her kriteri 0 gösteriyordu.** Tek hakemli modelden
    çok hakemli modele geçişte `rapor.hakemPuanlari` alanı boş kaldı; toplam
    puan doğru, kriter kırılımı tamamen sıfırdı. Kırılım da hakem
-   kayıtlarından türetiliyor artık. Bu hata **ekranı gerçekten açıp
-   okumadan** görünmüyordu — tip denetimi ve testler temiz geçiyordu.
+   kayıtlarından türetiliyor artık.
+
+5. **Hakem paneline girilemiyordu.** Giriş kutusu koddaki tireyi atıyordu
+   (`7KSN-NTBD` → `7KSNNTBD`), sunucu tam eşitlik arıyordu: kodunu DOĞRU
+   yazan hakem 404 alıyordu. Normalleştirme tek yerde toplandı, 7 test.
+
+6. **Arşiv kaydı panele girebiliyordu.** Aramayı düzeltmek, kaza ile
+   kapanmış bir kapıyı açtı: giriş "kim giriş yapabilir" sorusunu hiç
+   sormuyordu. `hakem.sistem` alanı eklendi (şema sürüm 2).
+
+7. **Rapor listesi 1000 raporda 24 saniye sürüyordu.** Sorgu 56 ms, ama
+   HTML 8,7 MB ve 6003 SVG. `npm run hacim` bunu ve üç N+1 sorununu
+   yakaladı. 3000 raporda liste artık **179 ms**.
+
+8. **Onaylanmamış model metni yarışmacıya gidiyordu.** `npm run denetim`
+   yakaladı. Sızıntı denetiminin kendisi de kırıktı: alan ADLARINI arıyordu,
+   ama sunucu bileşeninde hesaplanan değerlerin adları sayfaya düşmüyor.
+   Artık modelin ürettiği metinler doğrudan aranıp hakem onaylılarıyla
+   karşılaştırılıyor.
 
 ---
 

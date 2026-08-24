@@ -95,6 +95,18 @@ export default function HakemPuanlama({
   const [gelisim, setGelisim] = useState<string[]>(
     baslangicGeriBildirim?.gelisimAlanlari ?? aiGelisimAlanlari,
   );
+  /*
+   * Öneri alanları varsayılan olarak yalnızca PUAN KAYBEDİLEN ölçütler
+   * için gösteriliyor.
+   *
+   * Kullanıcı gözüyle bakınca panel ağırlaşmıştı: 9 puan alanı + 9 öneri
+   * alanı = 18 metin kutusu. Oysa tam puan alan ölçüte "nasıl
+   * gelişebilir" yazmak anlamsız. Puan kaybı olanlar zaten önerinin
+   * değerli olduğu yerler — hakem oraya odaklanıyor, kalanı isterse
+   * açıyor.
+   */
+  const [hepsiniGoster, setHepsiniGoster] = useState(false);
+
   const [oneriler, setOneriler] = useState<Record<string, string>>(() => {
     if (baslangicGeriBildirim) {
       return Object.fromEntries(
@@ -364,7 +376,17 @@ export default function HakemPuanlama({
               </span>
             </div>
             <div className="flex flex-col gap-1.5">
-              {olcutler.map((k) => {
+              {olcutler
+                .filter((k) => {
+                  if (hepsiniGoster) return true;
+                  // Puan girilmemişse de göster: hakem henüz karar
+                  // vermemiş, alanı saklamak bilgi kaybı olur.
+                  const girilmedi = !puanlar[k.kod];
+                  const kayip = k.puan - (Number(puanlar[k.kod]) || 0);
+                  // Zaten yazılmış öneri her durumda görünmeli.
+                  return girilmedi || kayip > 0 || !!oneriler[k.kod]?.trim();
+                })
+                .map((k) => {
                 const kayip = Math.max(
                   0,
                   k.puan - (Number(puanlar[k.kod]) || 0),
@@ -397,6 +419,23 @@ export default function HakemPuanlama({
                   </div>
                 );
               })}
+
+              {/* Gizlenen ölçüt varsa sessiz kalmıyoruz. */}
+              {!hepsiniGoster &&
+                olcutler.some(
+                  (k) =>
+                    !!puanlar[k.kod] &&
+                    k.puan - (Number(puanlar[k.kod]) || 0) <= 0 &&
+                    !oneriler[k.kod]?.trim(),
+                ) && (
+                  <button
+                    type="button"
+                    onClick={() => setHepsiniGoster(true)}
+                    className="self-start cursor-pointer text-[11px] font-bold text-kirmizi hover:text-kirmizi-koyu"
+                  >
+                    Tam puan verdiğiniz ölçütlere de öneri yaz →
+                  </button>
+                )}
             </div>
           </div>
         </div>
@@ -425,14 +464,46 @@ export default function HakemPuanlama({
             <button
               type="button"
               disabled={calisiyor !== null || girilen < olcutler.length}
-              onClick={() => kaydet(true)}
+              onClick={() => {
+                /*
+                 * GERİ BİLDİRİM BOŞSA UYARIYORUZ, ENGELLEMİYORUZ.
+                 *
+                 * PRD yarışmacının güçlü yönler / gelişime açık alanlar /
+                 * öneriler görmesini istiyor; boş bırakılırsa yarışmacı
+                 * yalnızca puan görür. Ama hakemi zorlamak da yanlış:
+                 * kimi durumda söylenecek bir şey olmayabilir ve zorunlu
+                 * alan, anlamsız metin doldurulmasına yol açar.
+                 *
+                 * Onay istiyoruz ki "farkında olmadan boş gönderdim"
+                 * durumu kalmasın.
+                 */
+                const bos =
+                  !guclu.some((g) => g.trim()) &&
+                  !gelisim.some((g) => g.trim()) &&
+                  !Object.values(oneriler).some((m) => m.trim());
+                if (
+                  bos &&
+                  !confirm(
+                    'Yarışmacıya gidecek geri bildirim boş. Yarışmacı yalnızca '
+                    + 'puanını görecek, gelişim önerisi görmeyecek.\n\n'
+                    + 'Yine de tamamlansın mı?',
+                  )
+                ) {
+                  return;
+                }
+                void kaydet(true);
+              }}
               className="cursor-pointer rounded-lg bg-kirmizi px-5 py-2.5 text-[12.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
             >
               {calisiyor === 'tamamla' ? 'Tamamlanıyor…' : 'Değerlendirmeyi tamamla'}
             </button>
-            {girilen < olcutler.length && (
+            {girilen < olcutler.length ? (
               <span className="text-[11px] font-medium text-metin-2">
                 Tamamlamak için {olcutler.length - girilen} ölçüt daha
+              </span>
+            ) : (
+              <span className="text-[11px] font-medium text-metin-2">
+                Tamamlandıktan sonra değiştirilemez.
               </span>
             )}
           </div>
