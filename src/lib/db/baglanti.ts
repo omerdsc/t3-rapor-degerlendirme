@@ -208,6 +208,14 @@ CREATE TABLE IF NOT EXISTS mesaj (
   rapor_id TEXT NOT NULL REFERENCES rapor(id) ON DELETE CASCADE,
   yazar    TEXT NOT NULL,
   rol      TEXT NOT NULL,
+  -- Yazan hakemse kimliği. Görünen ad (yazar) kimlik değil; kim yazdı
+  -- sorusunu ada göre çözmek isim değişince kopar.
+  hakem_id TEXT REFERENCES hakem(id) ON DELETE SET NULL,
+  -- HANGİ KANAL — kimin OKUYABİLECEĞİNİ belirliyor, kimin yazdığını değil.
+  --   'koordinasyon' → yazan hakem + koordinasyon. Öteki hakemler GÖREMEZ.
+  --   'kurul'        → rapora atanmış BÜTÜN hakemler + koordinasyon.
+  -- İkisi ayrı eksen: rol yazarı, kanal okuyucuyu söylüyor.
+  kanal    TEXT NOT NULL DEFAULT 'koordinasyon',
   metin    TEXT NOT NULL,
   tarih    TEXT NOT NULL,
   otomatik INTEGER NOT NULL DEFAULT 0
@@ -258,7 +266,7 @@ export function baglanti(): DatabaseSync {
 }
 
 /** Şemanın ulaştığı en son sürüm. Alan eklendikçe artıyor. */
-const SON_SURUM = 3;
+const SON_SURUM = 4;
 
 /**
  * Şema sürüm yükseltmeleri.
@@ -318,6 +326,34 @@ function semayiYukselt(yeni: DatabaseSync): void {
       yeni.exec('ALTER TABLE degerlendirme ADD COLUMN geri_bildirim TEXT');
     }
     surum = 3;
+    yeni.prepare('UPDATE sema_surumu SET surum = ?').run(surum);
+  }
+
+  if (surum < 4) {
+    /*
+     * `mesaj.kanal` ve `mesaj.hakem_id`.
+     *
+     * Ortak değerlendirilen raporlarda hakemler birbirlerinin
+     * koordinasyona yazdığı mesajları GÖRÜYORDU — yazışma rapor bazlıydı
+     * ve herkese açıktı. Bu, çok hakemli değerlendirmenin dayandığı
+     * bağımsızlığı bozuyor: B hakemi, A'nın "bu rapor zayıf" notunu
+     * puanlamadan önce okuyabiliyordu.
+     *
+     * Kanal ayrımı bunu çözüyor ve hakemler arası tartışmaya da ayrı bir
+     * yer açıyor — ama o kanal herkes puanlamayı bitirene kadar kapalı.
+     */
+    const sutunlar = yeni.prepare('PRAGMA table_info(mesaj)').all() as Array<{
+      name: string;
+    }>;
+    if (!sutunlar.some((c) => c.name === 'kanal')) {
+      yeni.exec("ALTER TABLE mesaj ADD COLUMN kanal TEXT NOT NULL DEFAULT 'koordinasyon'");
+    }
+    if (!sutunlar.some((c) => c.name === 'hakem_id')) {
+      // Var olan tabloya REFERENCES eklenemiyor; kimlik alanı yalın metin
+      // olarak ekleniyor ve uygulama tarafında doldurulup okunuyor.
+      yeni.exec('ALTER TABLE mesaj ADD COLUMN hakem_id TEXT');
+    }
+    surum = 4;
     yeni.prepare('UPDATE sema_surumu SET surum = ?').run(surum);
   }
 }

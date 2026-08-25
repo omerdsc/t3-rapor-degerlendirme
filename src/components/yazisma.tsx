@@ -1,27 +1,27 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { Mesaj } from '@/lib/depo/tipler';
 
 /**
- * Rapor üzerindeki yazışma — hakem ile koordinasyon arasında.
+ * Rapor üzerindeki yazışma — iki kanal.
  *
- * Değerlendirme metnine yazılamayacak şeyler için: "bu takımın geçen yıl
- * raporuyla karşılaştırılsın mı", "şablon sürümünü teyit eder misiniz",
- * "bu bulguyu ben açtım". Rapora değil SÜRECE ait notlar.
+ *   Koordinasyon · Hakem ile koordinasyon arasında, özel. Öteki hakemler
+ *                  görmez.
+ *   Hakem kurulu · Aynı rapora atanmış hakemler + koordinasyon.
  *
  * ── ROL SEÇİCİ KALDIRILDI ───────────────────────────────────────────────
  * Önceki sürümde gönderen kendi adını yazıp kendi rolünü SEÇİYORDU. Bir
  * denetim izinde bunun değeri sıfır: herkes "hakem" olarak yazabiliyordu.
- * Artık rol kimlik doğrulamadan geliyor ve bu bileşen hangi taraftaysa
- * onu biliyor.
+ * Artık rol kimlik doğrulamadan geliyor.
  *
- * ── AYNI BİLEŞEN İKİ PORTALDA ───────────────────────────────────────────
- * Hakem ve koordinasyon aynı yazışmayı görüyor; ikisi için ayrı bileşen
- * yazmak, birinde düzeltilen bir hatanın ötekinde kalması demekti.
- * Fark tek bir prop: `kod` verilmişse hakem tarafındayız.
+ * ── KURUL NİYE KİLİTLİ BAŞLIYOR ─────────────────────────────────────────
+ * Atanmış bütün hakemler puanlamayı bitirene kadar kapalı. Çok hakemli
+ * değerlendirmenin değeri hakemlerin BİRBİRİNDEN HABERSİZ bakmasından
+ * geliyor; erken konuşulursa ölçtüğümüz ayrışma anlamını yitirir.
  *
- * Bu yazışma YARIŞMACIYA GÖSTERİLMEZ.
+ * Kilit sunucuda da var — bu bileşen kutuyu gizliyor, ama gizlenmiş bir
+ * kutu kapatılmış bir kapı değildir.
  */
 
 const ROL_ETIKET: Record<Mesaj['rol'], string> = {
@@ -39,13 +39,17 @@ const ROL_SINIF: Record<Mesaj['rol'], string> = {
 };
 
 function neZaman(iso: string): string {
-  const fark = Date.now() - new Date(iso).getTime();
-  const dk = Math.floor(fark / 60000);
+  const dk = Math.floor((Date.now() - new Date(iso).getTime()) / 60000);
   if (dk < 1) return 'az önce';
   if (dk < 60) return `${dk} dk önce`;
-  const sa = Math.floor(dk / 60);
-  if (sa < 24) return `${sa} saat önce`;
+  if (dk < 1440) return `${Math.floor(dk / 60)} saat önce`;
   return new Date(iso).toLocaleDateString('tr', { day: 'numeric', month: 'long' });
+}
+
+interface KurulDurumu {
+  acik: boolean;
+  hakemSayisi: number;
+  bitiren: number;
 }
 
 export default function Yazisma({
@@ -60,36 +64,64 @@ export default function Yazisma({
 }) {
   const hakemTarafi = !!kod;
   const [mesajlar, setMesajlar] = useState<Mesaj[]>(baslangic);
+  const [kurul, setKurul] = useState<KurulDurumu | null>(null);
+  const [kanal, setKanal] = useState<'koordinasyon' | 'kurul'>('koordinasyon');
   const [metin, setMetin] = useState('');
   const [yazar, setYazar] = useState('');
   const [calisiyor, setCalisiyor] = useState(false);
   const [hata, setHata] = useState<string | null>(null);
 
   /*
-   * Cevap bekliyor mu — sunucudaki kuralın aynısı: son insan mesajı
-   * hakemden geldiyse koordinasyon cevaplamamış demektir. Burada yeniden
-   * hesaplanıyor çünkü mesaj gönderildikten sonra sunucuya sormadan
-   * güncellenmeli.
+   * İlk yüklemede sunucudan çekiliyor: sayfanın verdiği `baslangic`
+   * KANALA GÖRE SÜZÜLMEMİŞ olabilir. Hakem tarafında bu, öteki hakemin
+   * özel mesajını göstermek demek olurdu — kanal süzgeci sunucuda ve
+   * doğru liste oradan geliyor.
    */
-  const insan = mesajlar.filter((m) => m.rol !== 'sistem' && !m.otomatikMi);
+  useEffect(() => {
+    let iptal = false;
+    const q = kod ? `?kod=${encodeURIComponent(kod)}` : '';
+    (async () => {
+      try {
+        const y = await fetch(`/api/rapor/${raporId}/mesaj${q}`);
+        const d = await y.json();
+        if (iptal || !y.ok) return;
+        setMesajlar(d.mesajlar ?? []);
+        setKurul(d.kurul ?? null);
+      } catch {
+        // Ağ hatası: sayfanın verdiği liste duruyor.
+      }
+    })();
+    return () => {
+      iptal = true;
+    };
+  }, [raporId, kod]);
+
+  const kurulAcik = kurul?.acik ?? false;
+  const kanallik = mesajlar.filter(
+    (m) => (m.kanal ?? 'koordinasyon') === kanal,
+  );
+
+  /* Cevap bekliyor mu — sunucudaki kuralın aynısı. */
+  const insan = kanallik.filter((m) => m.rol !== 'sistem' && !m.otomatikMi);
   const sonInsan = insan.length
     ? insan.reduce((a, b) => (a.tarih >= b.tarih ? a : b))
     : null;
-  const cevapBekliyor = sonInsan?.rol === 'hakem';
+  const cevapBekliyor = kanal === 'koordinasyon' && sonInsan?.rol === 'hakem';
 
   async function gonder() {
     setCalisiyor(true);
     setHata(null);
     try {
-      const yanit = await fetch(`/api/rapor/${raporId}/mesaj`, {
+      const y = await fetch(`/api/rapor/${raporId}/mesaj`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ metin, ...(kod ? { kod } : { yazar }) }),
+        body: JSON.stringify({ metin, kanal, ...(kod ? { kod } : { yazar }) }),
       });
-      const veri = await yanit.json();
-      if (!yanit.ok) setHata(veri.hata ?? 'Mesaj gönderilemedi.');
+      const d = await y.json();
+      if (!y.ok) setHata(d.hata ?? 'Mesaj gönderilemedi.');
       else {
-        setMesajlar(veri.mesajlar ?? []);
+        setMesajlar(d.mesajlar ?? []);
+        setKurul(d.kurul ?? null);
         setMetin('');
       }
     } catch (e) {
@@ -99,25 +131,48 @@ export default function Yazisma({
     }
   }
 
+  /* Kurul sekmesi yalnızca çok hakemli raporda anlamlı. */
+  const kurulVar = (kurul?.hakemSayisi ?? 0) > 1;
+
   return (
     <section className="mb-4 overflow-hidden rounded-xl border border-cizgi bg-white">
-      <div className="flex flex-wrap items-center gap-2.5 border-b border-cizgi px-4 py-3">
-        <h2 className="text-[13px] font-bold">
-          {hakemTarafi ? 'Koordinasyona sor' : 'Hakem yazışması'}
-        </h2>
-        <span className="text-[11px] font-medium text-metin-2">
-          {mesajlar.length
-            ? `${mesajlar.length} mesaj`
-            : hakemTarafi
-              ? 'bu rapor hakkında soru sorabilirsiniz'
-              : 'henüz mesaj yok'}
-        </span>
+      <div className="flex flex-wrap items-center gap-1.5 border-b border-cizgi px-4 py-2.5">
+        {(
+          [
+            ['koordinasyon', hakemTarafi ? 'Koordinasyona sor' : 'Hakem yazışması'],
+            ['kurul', 'Hakem kurulu'],
+          ] as Array<['koordinasyon' | 'kurul', string]>
+        )
+          .filter(([k]) => k === 'koordinasyon' || kurulVar)
+          .map(([k, etiket]) => {
+            const sayi = mesajlar.filter(
+              (m) => (m.kanal ?? 'koordinasyon') === k,
+            ).length;
+            return (
+              <button
+                key={k}
+                type="button"
+                onClick={() => setKanal(k)}
+                className={`cursor-pointer rounded-lg px-3 py-1.5 text-[12px] font-bold transition-colors ${
+                  kanal === k
+                    ? 'bg-lacivert text-white'
+                    : 'text-metin-2 hover:bg-zemin'
+                }`}
+              >
+                {etiket}
+                {sayi > 0 && (
+                  <span
+                    className={kanal === k ? 'text-white/70' : 'text-metin-3'}
+                  >
+                    {' '}
+                    {sayi}
+                  </span>
+                )}
+                {k === 'kurul' && !kurulAcik && ' 🔒'}
+              </button>
+            );
+          })}
 
-        {/*
-          Cevap bekleyen soru İKİ TARAFTA DA işaretleniyor: koordinasyon
-          "bana soru var" görüyor, hakem "sorum iletildi" görüyor. Aynı
-          bilgi, iki farklı okuma.
-        */}
         {cevapBekliyor && (
           <span
             className={`ml-auto rounded px-2 py-0.5 text-[9.5px] font-bold tracking-wide ${
@@ -131,86 +186,120 @@ export default function Yazisma({
         )}
       </div>
 
-      {!!mesajlar.length && (
-        <ul className="flex max-h-[340px] flex-col gap-2 overflow-y-auto px-4 py-3">
-          {mesajlar.map((m) => (
-            <li
-              key={m.id}
-              className={`rounded-lg px-3 py-2 ${
-                m.rol === 'sistem' || m.otomatikMi
-                  ? 'bg-zemin/60'
-                  : 'border border-cizgi bg-white'
-              }`}
-            >
-              <div className="mb-1 flex flex-wrap items-center gap-2">
-                <span
-                  className={`rounded px-1.5 py-0.5 text-[9px] font-bold tracking-wide ${ROL_SINIF[m.rol]}`}
+      {/* Kanalın ne olduğunu söyleyen tek satır — sekme adı yetmiyor. */}
+      <p className="border-b border-cizgi bg-zemin/50 px-4 py-2 text-[10.5px] leading-relaxed font-medium text-metin-2">
+        {kanal === 'koordinasyon'
+          ? hakemTarafi
+            ? 'Yalnızca siz ve koordinasyon görüyor. Öteki hakemler bu yazışmayı göremez.'
+            : 'Hakemin size yazdığı özel kanal. Yarışmacı görmez.'
+          : `Bu rapora atanmış ${kurul?.hakemSayisi ?? 0} hakem ve koordinasyon görüyor.`}
+      </p>
+
+      {kanal === 'kurul' && !kurulAcik ? (
+        /*
+         * KİLİTLİ DURUM SEBEBİNİ SÖYLÜYOR.
+         * "Kapalı" demek yetmez — kullanıcı ne zaman açılacağını ve NİYE
+         * kapalı olduğunu bilmezse arayüzü bozuk sanır.
+         */
+        <div className="px-4 py-6 text-center">
+          <p className="text-[12.5px] font-bold">Kurul yazışması henüz kapalı</p>
+          <p className="mx-auto mt-1.5 max-w-[52ch] text-[11.5px] leading-relaxed font-medium text-metin-2">
+            {kurul
+              ? `${kurul.bitiren}/${kurul.hakemSayisi} hakem değerlendirmesini tamamladı. `
+              : ''}
+            Hakemler birbirini etkilemesin diye tartışma, atanmış bütün
+            hakemler puanlamayı bitirdikten sonra açılıyor —{' '}
+            <strong className="font-semibold text-metin">
+              bağımsız değerlendirme önce, tartışma sonra
+            </strong>
+            . Acil bir durum varsa koordinasyon kanalını kullanabilirsiniz.
+          </p>
+        </div>
+      ) : (
+        <>
+          {!!kanallik.length && (
+            <ul className="flex max-h-[340px] flex-col gap-2 overflow-y-auto px-4 py-3">
+              {kanallik.map((m) => (
+                <li
+                  key={m.id}
+                  className={`rounded-lg px-3 py-2 ${
+                    m.rol === 'sistem' || m.otomatikMi
+                      ? 'bg-zemin/60'
+                      : 'border border-cizgi bg-white'
+                  }`}
                 >
-                  {ROL_ETIKET[m.rol].toLocaleUpperCase('tr')}
-                </span>
-                <span className="text-[11px] font-semibold">{m.yazar}</span>
-                <span className="ml-auto text-[10px] font-medium text-metin-3">
-                  {neZaman(m.tarih)}
-                </span>
-              </div>
-              <p className="text-[11.5px] leading-relaxed whitespace-pre-wrap text-metin">
-                {m.metin}
-              </p>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      <div className="border-t border-cizgi px-4 py-3">
-        <textarea
-          value={metin}
-          onChange={(e) => setMetin(e.target.value)}
-          rows={2}
-          placeholder={
-            hakemTarafi
-              ? 'Bu rapor hakkında koordinasyona sormak istediğiniz…'
-              : 'Hakeme yanıtınız ya da notunuz…'
-          }
-          className="w-full rounded-lg border border-cizgi px-3 py-2 text-[12px] font-medium outline-none focus:border-metin-3"
-        />
-
-        <div className="mt-2 flex flex-wrap items-center gap-2.5">
-          {/*
-            Koordinasyon ORTAK hesap — kim yazdıysa adını girebilir.
-            Hakemde bu alan yok: adı kaydından geliyor ve
-            değiştirilemez, yoksa denetim izi anlamını yitirir.
-          */}
-          {!hakemTarafi && (
-            <input
-              value={yazar}
-              onChange={(e) => setYazar(e.target.value)}
-              placeholder="Adınız (isteğe bağlı)"
-              className="w-[168px] rounded-lg border border-cizgi px-2.5 py-1.5 text-[11.5px] font-medium outline-none focus:border-metin-3"
-            />
+                  <div className="mb-1 flex flex-wrap items-center gap-2">
+                    <span
+                      className={`rounded px-1.5 py-0.5 text-[9px] font-bold tracking-wide ${ROL_SINIF[m.rol]}`}
+                    >
+                      {ROL_ETIKET[m.rol].toLocaleUpperCase('tr')}
+                    </span>
+                    <span className="text-[11px] font-semibold">{m.yazar}</span>
+                    <span className="ml-auto text-[10px] font-medium text-metin-3">
+                      {neZaman(m.tarih)}
+                    </span>
+                  </div>
+                  <p className="text-[11.5px] leading-relaxed whitespace-pre-wrap text-metin">
+                    {m.metin}
+                  </p>
+                </li>
+              ))}
+            </ul>
           )}
 
-          <button
-            type="button"
-            disabled={calisiyor || metin.trim().length < 2}
-            onClick={gonder}
-            className="cursor-pointer rounded-lg bg-lacivert px-4 py-1.5 text-[12px] font-bold text-white transition-colors hover:bg-lacivert-2 disabled:opacity-50"
-          >
-            {calisiyor ? 'Gönderiliyor…' : hakemTarafi ? 'Koordinasyona gönder' : 'Yanıtla'}
-          </button>
+          <div className="border-t border-cizgi px-4 py-3">
+            <textarea
+              value={metin}
+              onChange={(e) => setMetin(e.target.value)}
+              rows={2}
+              placeholder={
+                kanal === 'kurul'
+                  ? 'Öteki hakemlere yazın — puanınızı nasıl gerekçelendirdiğiniz…'
+                  : hakemTarafi
+                    ? 'Bu rapor hakkında koordinasyona sormak istediğiniz…'
+                    : 'Hakeme yanıtınız ya da notunuz…'
+              }
+              className="w-full rounded-lg border border-cizgi px-3 py-2 text-[12px] font-medium outline-none focus:border-metin-3"
+            />
 
-          <span className="text-[10.5px] font-medium text-metin-3">
-            {hakemTarafi
-              ? 'Bu rapora bağlı olarak iletilir; yarışmacı görmez.'
-              : 'Yarışmacıya gösterilmez.'}
-          </span>
-        </div>
+            <div className="mt-2 flex flex-wrap items-center gap-2.5">
+              {!hakemTarafi && (
+                <input
+                  value={yazar}
+                  onChange={(e) => setYazar(e.target.value)}
+                  placeholder="Adınız (isteğe bağlı)"
+                  className="w-[168px] rounded-lg border border-cizgi px-2.5 py-1.5 text-[11.5px] font-medium outline-none focus:border-metin-3"
+                />
+              )}
 
-        {hata && (
-          <p className="mt-2 rounded-md bg-kirmizi-zemin px-3 py-2 text-[11.5px] font-semibold text-kirmizi-koyu">
-            {hata}
-          </p>
-        )}
-      </div>
+              <button
+                type="button"
+                disabled={calisiyor || metin.trim().length < 2}
+                onClick={gonder}
+                className="cursor-pointer rounded-lg bg-lacivert px-4 py-1.5 text-[12px] font-bold text-white transition-colors hover:bg-lacivert-2 disabled:opacity-50"
+              >
+                {calisiyor
+                  ? 'Gönderiliyor…'
+                  : kanal === 'kurul'
+                    ? 'Kurula gönder'
+                    : hakemTarafi
+                      ? 'Koordinasyona gönder'
+                      : 'Yanıtla'}
+              </button>
+
+              <span className="text-[10.5px] font-medium text-metin-3">
+                Yarışmacıya gösterilmez.
+              </span>
+            </div>
+
+            {hata && (
+              <p className="mt-2 rounded-md bg-kirmizi-zemin px-3 py-2 text-[11.5px] font-semibold text-kirmizi-koyu">
+                {hata}
+              </p>
+            )}
+          </div>
+        </>
+      )}
     </section>
   );
 }

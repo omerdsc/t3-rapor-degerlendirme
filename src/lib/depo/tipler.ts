@@ -141,6 +141,23 @@ export interface Mesaj {
   id: string;
   yazar: string;
   rol: 'hakem' | 'koordinasyon' | 'yarisma_yoneticisi' | 'sistem';
+  /**
+   * Yazan hakemin kimliği.
+   *
+   * Görünen ad kimlik değil: "kim yazdı" sorusunu ada göre çözmek isim
+   * değişince kopar. Koordinasyonun bir hakeme yazdığı yanıt da bu alanı
+   * taşıyor — hangi yazışmaya ait olduğu belli olsun diye.
+   */
+  hakemId?: string;
+  /**
+   * Kimin OKUYABİLECEĞİ.
+   *
+   *   koordinasyon · yazan hakem + koordinasyon (öteki hakemler göremez)
+   *   kurul        · rapora atanmış bütün hakemler + koordinasyon
+   *
+   * `rol` yazarı, `kanal` okuyucuyu söylüyor — ayrı eksenler.
+   */
+  kanal?: 'koordinasyon' | 'kurul';
   metin: string;
   tarih: string;
   /** Sistem tarafından üretilmiş olay kaydı mı (puan değişti, durum değişti). */

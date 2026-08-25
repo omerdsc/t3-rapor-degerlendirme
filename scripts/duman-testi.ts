@@ -27,6 +27,8 @@ interface Vaka {
   bekle: number | number[];
   /** Koordinasyon anahtarı gönderilsin mi? */
   yetkili?: boolean;
+  /** Verilirse POST edilir — yalnızca yan etkisi olmayan denemeler için. */
+  gonder?: unknown;
 }
 
 let gecen = 0;
@@ -37,7 +39,12 @@ async function dene(v: Vaka) {
   try {
     const y = await fetch(KOK + v.yol, {
       redirect: 'manual',
-      headers: v.yetkili ? { 'x-koordinasyon-anahtari': ANAHTAR } : {},
+      method: v.gonder ? 'POST' : 'GET',
+      headers: {
+        ...(v.yetkili ? { 'x-koordinasyon-anahtari': ANAHTAR } : {}),
+        ...(v.gonder ? { 'content-type': 'application/json' } : {}),
+      },
+      body: v.gonder ? JSON.stringify(v.gonder) : undefined,
     });
     if (beklenen.includes(y.status)) {
       gecen++;
@@ -182,6 +189,38 @@ async function main() {
         });
       }
     }
+  }
+
+  /*
+   * ── KURUL KANALI ───────────────────────────────────────────────────
+   * Ortak değerlendirilen bir raporda hakemler birbiriyle konuşabiliyor
+   * ama YALNIZCA herkes puanlamayı bitirdikten sonra. Kilit sunucuda;
+   * kapalıyken yazma denemesi 409 almalı.
+   */
+  const ortak = baglanti()
+    .prepare(
+      `SELECT r.id,
+              COUNT(a.hakem_id) n,
+              SUM(CASE WHEN d.durum = 'tamamlandi' THEN 1 ELSE 0 END) b,
+              MIN(h.kod) kod
+         FROM rapor r
+         JOIN atama a ON a.rapor_id = r.id
+         JOIN hakem h ON h.id = a.hakem_id AND h.sistem = 0
+         LEFT JOIN degerlendirme d
+                ON d.rapor_id = a.rapor_id AND d.hakem_id = a.hakem_id
+        GROUP BY r.id
+       HAVING n > 1 AND b < n
+        LIMIT 1`,
+    )
+    .get() as { id: string; kod: string } | undefined;
+
+  if (ortak) {
+    vakalar.push({
+      ad: 'Kurul · herkes bitirmeden yazılamıyor',
+      yol: `/api/rapor/${ortak.id}/mesaj`,
+      bekle: 409,
+      gonder: { kod: ortak.kod, kanal: 'kurul', metin: 'kilit denemesi' },
+    });
   }
 
   if (arsiv) {

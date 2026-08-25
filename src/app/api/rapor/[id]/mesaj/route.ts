@@ -1,29 +1,31 @@
 /**
- * Rapor üzerindeki yazışma — hakem ile koordinasyon arasında.
+ * Rapor üzerindeki yazışma — İKİ KANAL.
  *
- * Hakem ve koordinasyon arasındaki her not değerlendirme metnine yazılamaz;
- * kimi şey rapora girmemesi gereken bir soru, hatırlatma veya karardır.
- * Bu iz kaydı yarışmacıya GÖSTERİLMEZ.
+ *   koordinasyon · Yazan hakem ile koordinasyon arasında. Öteki hakemler
+ *                  GÖRMEZ. "Şablon sürümü doğru mu" gibi sorular buraya.
+ *   kurul        · Rapora atanmış bütün hakemler + koordinasyon.
+ *                  Hakemlerin birbiriyle konuştuğu yer.
+ *
+ * Bu yazışmaların hiçbiri yarışmacıya gösterilmiyor.
  *
  * ── KİMLİK YAZILMIYOR, DOĞRULANIYOR ─────────────────────────────────────
  * Önceki sürümde gönderen kendi adını ve kendi ROLÜNÜ yazıyordu: bir metin
- * kutusuna "Prof. Dr. X" yazıp rol olarak "hakem" seçen herkes hakem gibi
- * görünüyordu. Bir denetim izinde bunun değeri sıfırdır.
+ * kutusuna isim yazan herkes hakem gibi görünüyordu. Bir denetim izinde
+ * bunun değeri sıfırdır. Artık kimlik doğrulamadan geliyor.
  *
- * Artık kimlik kimlik doğrulamadan geliyor:
- *   · Hakem  → erişim kodu (`kod`), rapora ATANMIŞ olması şart.
- *              Yazar adı hakem kaydından okunuyor, istemciden değil.
- *   · Koordinasyon → koordinasyon anahtarı. Ortak hesap olduğu için
- *              yazan kişinin adı isteğe bağlı; rol sabit.
- *
- * ── HAKEM HANGİ RAPORU KASTETTİĞİNİ YAZMIYOR ────────────────────────────
- * Mesaj zaten bir rapora bağlı: hakem o raporun sayfasından yazıyor ve
- * koordinasyon mesajı o raporun bağlamında görüyor. "Hangi rapor
- * hakkında?" sorusu hiç doğmuyor.
+ * ── KURUL KANALI NİYE KİLİTLİ BAŞLIYOR ──────────────────────────────────
+ * Atanmış hakemlerin hepsi puanlamayı bitirene kadar kapalı — akademik
+ * hakemlikteki kuralın aynısı: önce bağımsız değerlendirme, sonra
+ * tartışma. Erken açık olsa ilk yazan ötekini etkiler ve ölçtüğümüz
+ * "hakemler arası ayrışma" anlamını yitirir; o sayının bilgi değeri, iki
+ * kişinin BİRBİRİNDEN HABERSİZ aynı rapora bakmış olmasından geliyor.
  */
 
 import { kapi } from '@/lib/yetki/koordinasyon';
-import { hakeminRaporlari, hakemKodIle } from '@/lib/db/hakem-depo';
+import {
+  hakemKodIle, raporunDegerlendirmeleri, raporunHakemleri,
+} from '@/lib/db/hakem-depo';
+import { hakeminGorebilecekleri, kurulAcikMi, type Kanal } from '@/lib/db/yazisma-kanal';
 import { mesajEkle, mesajlariGetir, raporGetir } from '@/lib/depo/depo';
 import { onar } from '@/lib/analiz/normalize';
 import type { Mesaj } from '@/lib/depo/tipler';
@@ -31,53 +33,93 @@ import type { Mesaj } from '@/lib/depo/tipler';
 interface Gonderen {
   yazar: string;
   rol: Mesaj['rol'];
+  /** Hakemse kimliği; koordinasyonsa yok. */
+  hakemId?: string;
+}
+
+/** Rapora atanmış hakemler ve değerlendirmeyi bitirip bitirmedikleri. */
+function atananDurumu(raporId: string) {
+  const degerlendirmeler = raporunDegerlendirmeleri(raporId);
+  return raporunHakemleri(raporId).map((h) => ({
+    id: h.id,
+    tamamladi: degerlendirmeler.some(
+      (d) => d.hakemId === h.id && d.durum === 'tamamlandi',
+    ),
+  }));
 }
 
 /**
- * İsteği gönderen kim?
+ * İsteği gönderen kim? `null` dönerse yetkisiz.
  *
- * `null` dönerse yetkisiz. Hakem yolu koordinasyon anahtarı gerektirmiyor
- * — hakemin anahtarı yok, kendi kodu var.
+ * Hakem yolu koordinasyon anahtarı gerektirmiyor — hakemin anahtarı yok,
+ * kendi kodu var.
  */
 function gonderenKim(istek: Request, raporId: string, kod?: string): Gonderen | null {
   if (kod) {
     const hakem = hakemKodIle(kod);
     if (!hakem || !hakem.aktif) return null;
-    // Atanmamış hakem o raporun yazışmasına giremez.
-    if (!hakeminRaporlari(hakem.id).includes(raporId)) return null;
-    return { yazar: hakem.ad, rol: 'hakem' };
+    // Atanmamış hakem o raporun yazışmasına hiç giremez.
+    if (!raporunHakemleri(raporId).some((h) => h.id === hakem.id)) return null;
+    return { yazar: hakem.ad, rol: 'hakem', hakemId: hakem.id };
   }
-  // Kod yoksa koordinasyon yolu: anahtar denetlenecek.
   return kapi(istek) ? null : { yazar: 'Koordinasyon', rol: 'koordinasyon' };
+}
+
+/** Kanal adı doğrula; tanınmayan değer varsayılana düşüyor. */
+function kanalCoz(ham: unknown): Kanal {
+  return ham === 'kurul' ? 'kurul' : 'koordinasyon';
 }
 
 export async function GET(istek: Request, ctx: RouteContext<'/api/rapor/[id]/mesaj'>) {
   const { id } = await ctx.params;
   const kod = new URL(istek.url).searchParams.get('kod') ?? undefined;
 
-  if (!gonderenKim(istek, id, kod)) {
+  const gonderen = gonderenKim(istek, id, kod);
+  if (!gonderen) {
     return Response.json({ hata: 'Bu yazışmaya erişiminiz yok.' }, { status: 403 });
   }
   if (!raporGetir(id)) {
     return Response.json({ hata: 'Rapor bulunamadı.' }, { status: 404 });
   }
-  return Response.json({ mesajlar: mesajlariGetir(id) });
+
+  const atananlar = atananDurumu(id);
+  const kurulAcik = kurulAcikMi(atananlar);
+  const hepsi = mesajlariGetir(id);
+
+  /*
+   * Koordinasyon HER ŞEYİ görüyor ve görmesi gerekiyor — aracılık eden
+   * taraf o. Hakem yalnızca kendi yazışmasını ve (açıksa) kurulu görüyor.
+   */
+  const mesajlar =
+    gonderen.rol === 'koordinasyon'
+      ? hepsi
+      : hakeminGorebilecekleri(
+          hepsi.map((m) => ({ ...m, kanal: m.kanal ?? 'koordinasyon' })),
+          gonderen.hakemId!,
+          kurulAcik,
+        );
+
+  return Response.json({
+    mesajlar,
+    kurul: {
+      acik: kurulAcik,
+      hakemSayisi: atananlar.length,
+      bitiren: atananlar.filter((h) => h.tamamladi).length,
+    },
+  });
 }
 
 export async function POST(istek: Request, ctx: RouteContext<'/api/rapor/[id]/mesaj'>) {
   const { id } = await ctx.params;
 
-  let g: { metin?: string; yazar?: string; kod?: string };
+  let g: { metin?: string; yazar?: string; kod?: string; kanal?: string };
   try {
     g = await istek.json();
   } catch {
     return Response.json({ hata: 'Geçersiz istek gövdesi.' }, { status: 400 });
   }
 
-  /*
-   * Yetki önce, doğrulama sonra: reddedilen istek raporun var olup
-   * olmadığını bile öğrenmemeli.
-   */
+  // Yetki önce, doğrulama sonra: reddedilen istek hiçbir şey öğrenmemeli.
   const gonderen = gonderenKim(istek, id, g.kod);
   if (!gonderen) {
     return Response.json({ hata: 'Bu yazışmaya erişiminiz yok.' }, { status: 403 });
@@ -86,15 +128,35 @@ export async function POST(istek: Request, ctx: RouteContext<'/api/rapor/[id]/me
     return Response.json({ hata: 'Rapor bulunamadı.' }, { status: 404 });
   }
 
+  const kanal = kanalCoz(g.kanal);
+  const atananlar = atananDurumu(id);
+  const kurulAcik = kurulAcikMi(atananlar);
+
+  /*
+   * KİLİT SUNUCUDA. Arayüz kutuyu gizliyor ama karar burada veriliyor:
+   * gizlenmiş bir kutu, kapatılmış bir kapı değildir.
+   */
+  if (kanal === 'kurul' && !kurulAcik) {
+    return Response.json(
+      {
+        hata:
+          atananlar.length < 2
+            ? 'Bu rapora tek hakem atanmış; kurul yazışması yok.'
+            : 'Kurul yazışması, atanmış bütün hakemler değerlendirmesini '
+              + 'tamamladıktan sonra açılıyor.',
+      },
+      { status: 409 },
+    );
+  }
+
   const metin = onar(g.metin ?? '').trim();
   if (metin.length < 2) {
     return Response.json({ hata: 'Mesaj boş olamaz.' }, { status: 422 });
   }
 
   /*
-   * Koordinasyon ORTAK hesap: kim yazdıysa adını girebiliyor, girmezse
-   * "Koordinasyon" kalıyor. Hakemde böyle bir seçenek yok — adı kaydından
-   * geliyor ve değiştirilemez.
+   * Koordinasyon ORTAK hesap: kim yazdıysa adını girebiliyor. Hakemde
+   * böyle bir seçenek yok — adı kaydından geliyor ve değiştirilemez.
    */
   const yazar =
     gonderen.rol === 'koordinasyon' && g.yazar?.trim()
@@ -105,7 +167,29 @@ export async function POST(istek: Request, ctx: RouteContext<'/api/rapor/[id]/me
     metin: metin.slice(0, 4000),
     yazar,
     rol: gonderen.rol,
+    hakemId: gonderen.hakemId,
+    kanal,
   });
 
-  return Response.json({ mesajlar: mesajlariGetir(id) }, { status: 201 });
+  const hepsi = mesajlariGetir(id);
+  const mesajlar =
+    gonderen.rol === 'koordinasyon'
+      ? hepsi
+      : hakeminGorebilecekleri(
+          hepsi.map((m) => ({ ...m, kanal: m.kanal ?? 'koordinasyon' })),
+          gonderen.hakemId!,
+          kurulAcik,
+        );
+
+  return Response.json(
+    {
+      mesajlar,
+      kurul: {
+        acik: kurulAcik,
+        hakemSayisi: atananlar.length,
+        bitiren: atananlar.filter((h) => h.tamamladi).length,
+      },
+    },
+    { status: 201 },
+  );
 }

@@ -331,6 +331,8 @@ export function mesajlariGetir(raporId: string): Mesaj[] {
     id: m.id as string,
     yazar: m.yazar as string,
     rol: m.rol as Mesaj['rol'],
+    hakemId: (m.hakem_id as string) ?? undefined,
+    kanal: ((m.kanal as string) ?? 'koordinasyon') as Mesaj['kanal'],
     metin: m.metin as string,
     tarih: m.tarih as string,
     otomatikMi: bool(m.otomatik) || undefined,
@@ -602,11 +604,13 @@ export function mesajEkle(
 ): Promise<Rapor | null> {
   baglanti()
     .prepare(
-      `INSERT INTO mesaj (id, rapor_id, yazar, rol, metin, tarih, otomatik)
-       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO mesaj (id, rapor_id, yazar, rol, hakem_id, kanal,
+         metin, tarih, otomatik)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     )
     .run(
-      randomUUID(), raporId, mesaj.yazar, mesaj.rol, mesaj.metin,
+      randomUUID(), raporId, mesaj.yazar, mesaj.rol,
+      mesaj.hakemId ?? null, mesaj.kanal ?? 'koordinasyon', mesaj.metin,
       mesaj.tarih ?? new Date().toISOString(), sayi(mesaj.otomatikMi),
     );
   return Promise.resolve(raporGetir(raporId));
