@@ -21,6 +21,17 @@
 
 services:
   tprds:
+    # İKİ KURULUM YOLU, TEK TANIM.
+    #
+    # `image` + `build` birlikte verildiğinde Compose şöyle davranıyor:
+    #   · `docker compose up -d --build`  → her zaman derler (güçlü sunucu)
+    #   · `docker compose up -d`          → `tprds:latest` varsa ONU kullanır,
+    #                                        yoksa derler
+    #
+    # İkincisi, 1 GB'lık ücretsiz sunucular için: imaj yerelde derlenip
+    # `docker load` ile yükleniyor, sunucu hiç derleme yapmıyor. Next
+    # derlemesi tepe noktada ~1.5 GB istiyor ve o makinede mümkün değil.
+    image: tprds:latest
     build: .
     restart: unless-stopped
     env_file: .env.sunucu

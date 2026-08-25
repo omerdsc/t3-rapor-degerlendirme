@@ -153,9 +153,38 @@ else
 fi
 
 # ── 5. Başlat ────────────────────────────────────────────────────────
+#
+# İKİ YOL, KENDİLİĞİNDEN SEÇİLİYOR.
+#
+#   Hazır imaj varsa (~/tprds-imaj.tgz) yükleniyor ve derleme HİÇ
+#   yapılmıyor. 1 GB'lık ücretsiz sunucular için tek yol bu: Next
+#   derlemesi tepe noktada ~1.5 GB istiyor ve orada "Killed" ile düşüyor.
+#
+#   Yoksa sunucuda derleniyor. Güçlü makinelerde bu daha pratik —
+#   güncelleme 80 MB imaj değil, 1.6 MB kaynak göndermek demek.
+#
+# Seçim operatöre sorulmuyor: dosyanın varlığı zaten niyeti söylüyor.
 adim "5/5 · Uygulama"
-echo "  derleniyor ve başlatılıyor, ilk seferde ~5 dakika…"
-sudo docker compose up -d --build
+HAZIR_IMAJ=""
+for aday in "$HOME/tprds-imaj.tgz" "./tprds-imaj.tgz"; do
+  [ -f "$aday" ] && HAZIR_IMAJ="$aday" && break
+done
+
+if [ -n "$HAZIR_IMAJ" ]; then
+  echo "  hazır imaj yükleniyor ($(du -h "$HAZIR_IMAJ" | cut -f1))…"
+  sudo docker load -i "$HAZIR_IMAJ" > /dev/null
+  tamam "imaj yüklendi — sunucuda derleme yapılmıyor"
+  sudo docker compose up -d
+else
+  BELLEK_MB=$(free -m | awk '/Mem:/{print $2}')
+  if [ "$BELLEK_MB" -lt 1800 ]; then
+    uyari "Bellek ${BELLEK_MB} MB ve hazır imaj yok. Derleme büyük"
+    uyari "ihtimalle 'Killed' ile düşecek. Yerelde 'npm run paket:imaj'"
+    uyari "çalıştırıp ~/tprds-imaj.tgz dosyasını buraya kopyalayın."
+  fi
+  echo "  derleniyor ve başlatılıyor, ilk seferde ~5 dakika…"
+  sudo docker compose up -d --build
+fi
 
 echo -e "\n  başlaması bekleniyor…"
 for i in $(seq 1 60); do
