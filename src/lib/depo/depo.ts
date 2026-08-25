@@ -442,13 +442,34 @@ export function raporlariListele(yarismaId?: string, kategoriId?: string): Rapor
 export function cevapBekleyenYazismalar(
   yarismaId?: string,
   kategoriId?: string,
-): Array<{ raporId: string; basvuruNo: string; proje: string; tarih: string }> {
+): Array<{
+  raporId: string;
+  basvuruNo: string;
+  proje: string;
+  tarih: string;
+  /** Soruyu soran hakem — koordinasyon kime cevap vereceğini bilsin. */
+  hakemAdi: string;
+  /** v4 öncesi kayıtlarda boş olabilir; liste anahtarı bu yüzden çift. */
+  hakemId?: string;
+}> {
   /*
    * Kapsam koşulu parça parça kuruluyor. SQL'i dize yamalarıyla düzeltmek
    * (`.replace(...)`) bir kez denendi ve boşluk/satır sonu farkı yüzünden
    * sessizce tutmadı — koşul baştan doğru kurulmalı.
    */
-  const kosullar = ["m.rol <> 'sistem'", 'm.otomatik = 0'];
+  /*
+   * KURUL MESAJI KOORDİNASYONU BEKLETMİYOR.
+   *
+   * Kanal ayrımı eklendikten sonra bu sorgu eksik kaldı: hakemin ÖTEKİ
+   * HAKEME yazdığı bir kurul mesajı da "koordinasyon cevap vermeli" diye
+   * sayılıyordu. Kurul hakemler arası bir konuşma; koordinasyon oraya
+   * cevap vermek zorunda değil.
+   */
+  const kosullar = [
+    "m.rol <> 'sistem'",
+    'm.otomatik = 0',
+    "m.kanal = 'koordinasyon'",
+  ];
   const p: string[] = [];
   if (yarismaId) {
     kosullar.unshift('r.yarisma_id = ?');
@@ -460,18 +481,32 @@ export function cevapBekleyenYazismalar(
   }
 
   /*
-   * Rapor başına SON insan mesajının rolü. Sistem mesajları ve otomatik
-   * kayıtlar dışarıda: "değerlendirme tamamlandı" bir cevap değil.
+   * HAKEM BAŞINA SON İNSAN MESAJI — rapor başına değil.
+   *
+   * İlk sürüm rapor başına bakıyordu ve çok hakemli raporda yanlış cevap
+   * veriyordu: A hakemine yanıt yazılınca B'nin cevapsız sorusu da
+   * listeden düşüyordu, çünkü "raporun son mesajı" artık koordinasyondan
+   * geliyordu. Koordinasyon kanalı tek sohbet değil — hakem başına ayrı
+   * sohbet; bekleyiş de hakem başına.
+   *
+   * Kimliksiz satırlar (v4 öncesi kayıtlar ve herkese açık duyurular)
+   * COALESCE ile tek bir ortak sohbet sayılıyor: eski davranış orada
+   * aynen korunuyor.
+   *
+   * Sistem mesajları ve otomatik kayıtlar dışarıda: "değerlendirme
+   * tamamlandı" bir cevap değil.
    */
   const satirlar = baglanti()
     .prepare(
-      `SELECT r.id, r.basvuru_no, r.proje, m.rol, m.tarih
+      `SELECT r.id, r.basvuru_no, r.proje, m.rol, m.tarih, m.yazar, m.hakem_id
          FROM rapor r
          JOIN mesaj m ON m.rapor_id = r.id
         WHERE ${kosullar.join(' AND ')}
           AND m.tarih = (
             SELECT MAX(x.tarih) FROM mesaj x
-             WHERE x.rapor_id = r.id AND x.rol <> 'sistem' AND x.otomatik = 0
+             WHERE x.rapor_id = r.id AND x.rol <> 'sistem'
+               AND x.otomatik = 0 AND x.kanal = 'koordinasyon'
+               AND COALESCE(x.hakem_id, '') = COALESCE(m.hakem_id, '')
           )`,
     )
     .all(...p) as Array<Record<string, string>>;
@@ -483,6 +518,8 @@ export function cevapBekleyenYazismalar(
       basvuruNo: s.basvuru_no,
       proje: s.proje,
       tarih: s.tarih,
+      hakemAdi: s.yazar,
+      hakemId: s.hakem_id ?? undefined,
     }));
 }
 

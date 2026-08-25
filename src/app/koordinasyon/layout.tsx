@@ -1,12 +1,20 @@
 import KenarCubugu from '@/components/kenar-cubugu';
+import { cevapBekleyenYazismalar } from '@/lib/depo/depo';
 import { yetkiKurulu } from '@/lib/yetki/koordinasyon';
 
 export default function PanelYerlesimi({ children }: LayoutProps<'/'>) {
   const acik = !yetkiKurulu();
 
+  /*
+   * Bekleyen hakem mesajları YERLEŞİMDE hesaplanıyor: kenar çubuğu her
+   * koordinasyon ekranında çiziliyor, dolayısıyla bildirim de her ekranda
+   * güncel. Sorgu tek ve indeksli; sayfa başına maliyeti ihmal edilebilir.
+   */
+  const bekleyenSorular = cevapBekleyenYazismalar();
+
   return (
     <div className="flex min-h-screen">
-      <KenarCubugu yetkiKurulu={!acik} />
+      <KenarCubugu yetkiKurulu={!acik} bekleyenSorular={bekleyenSorular} />
       <main className="min-w-0 flex-1 px-7 py-6">
         {/*
           YETKİ KURULU DEĞİLSE SÖYLE.

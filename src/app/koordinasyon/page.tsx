@@ -86,10 +86,21 @@ export default function PanoSayfasi() {
             baslik: 'Hakem sorusu cevap bekliyor',
             aciklama:
               bekleyenSorular.length === 1
-                ? `${bekleyenSorular[0].basvuruNo} raporunda bir hakem soru sordu.`
+                ? `${bekleyenSorular[0].basvuruNo} raporunda `
+                  + `${bekleyenSorular[0].hakemAdi} soru sordu.`
                 : 'Hakemler rapor üzerinden soru sordu; yanıtlanmayı bekliyor.',
             sayi: bekleyenSorular.length,
-            yol: `/koordinasyon/rapor/${bekleyenSorular[0].raporId}`,
+            /*
+             * Bağlantı hangi hakem olduğunu da taşıyor — yazışma o hakem
+             * seçili ve doğru yerde açılıyor. Aynı raporda iki hakem
+             * birden bekliyor olabilir; rapor kimliği tek başına
+             * "hangisi" sorusunu cevaplamıyor.
+             */
+            yol: `/koordinasyon/rapor/${bekleyenSorular[0].raporId}`
+              + (bekleyenSorular[0].hakemId
+                ? `?hakem=${encodeURIComponent(bekleyenSorular[0].hakemId)}`
+                : '')
+              + '#yazisma',
             eylem: bekleyenSorular.length === 1 ? 'Yanıtla' : 'İlkini aç',
             aciliyet: 'yuksek' as const,
           },

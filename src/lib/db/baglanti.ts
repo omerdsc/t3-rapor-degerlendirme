@@ -266,7 +266,7 @@ export function baglanti(): DatabaseSync {
 }
 
 /** Şemanın ulaştığı en son sürüm. Alan eklendikçe artıyor. */
-const SON_SURUM = 4;
+const SON_SURUM = 5;
 
 /**
  * Şema sürüm yükseltmeleri.
@@ -354,6 +354,36 @@ function semayiYukselt(yeni: DatabaseSync): void {
       yeni.exec('ALTER TABLE mesaj ADD COLUMN hakem_id TEXT');
     }
     surum = 4;
+    yeni.prepare('UPDATE sema_surumu SET surum = ?').run(surum);
+  }
+
+  if (surum < 5) {
+    /*
+     * v4 ÖNCESİ HAKEM MESAJLARINA KİMLİK YAZILIYOR.
+     *
+     * v4 alanı ekledi ama ESKİ satırları boş bıraktı. Yazışma hakem
+     * başına ayrı bir sohbete dönüşünce bu geçmiş kayıtlar sahipsiz
+     * kaldı: koordinasyon "kime cevap veriyorum" diye baktığında eski
+     * sorular hiçbir muhataba düşmüyordu.
+     *
+     * Kimlik uydurulmuyor, KURTARILIYOR: eski satırda yazarın adı
+     * hakem kaydından harfi harfine kopyalanmıştı. Ad tek bir hakemle
+     * eşleşiyorsa kimlik odur; iki hakem aynı adı taşıyorsa satır
+     * olduğu gibi bırakılıyor — yanlış kimlik, boş kimlikten kötüdür.
+     *
+     * Koordinasyonun eski yanıtları bilerek boş kalıyor: o dönemde
+     * yanıtlar zaten rapora atanmış herkese açıktı, yani gerçekten
+     * duyuruydular. Geçmişi bugünün kuralına göre yeniden yazmıyoruz.
+     */
+    yeni.exec(
+      "UPDATE mesaj SET hakem_id = ("
+      + '  SELECT h.id FROM hakem h WHERE h.ad = mesaj.yazar'
+      + ') '
+      + "WHERE rol = 'hakem' AND hakem_id IS NULL AND ("
+      + '  SELECT COUNT(*) FROM hakem h WHERE h.ad = mesaj.yazar'
+      + ') = 1',
+    );
+    surum = 5;
     yeni.prepare('UPDATE sema_surumu SET surum = ?').run(surum);
   }
 }

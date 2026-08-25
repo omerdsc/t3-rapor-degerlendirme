@@ -18,6 +18,9 @@ export interface YazismaMesaji {
   rol: 'hakem' | 'koordinasyon' | 'yarisma_yoneticisi' | 'sistem';
   tarih: string;
   otomatikMi?: boolean;
+  /** Yazışmanın sahibi hakem; duyuruda ve eski kayıtlarda boş. */
+  hakemId?: string;
+  kanal?: 'koordinasyon' | 'kurul';
 }
 
 /** Koordinasyonun cevaplaması bekleniyor mu? */
@@ -49,4 +52,32 @@ export function bekleyenSoruTarihi(mesajlar: YazismaMesaji[]): string | null {
     ilk = insan[i].tarih;
   }
   return ilk;
+}
+
+/**
+ * Hangi hakemlerin sorusu cevapsız kalmış?
+ *
+ * ── NİYE "BEKLİYOR MU" YETMİYOR ─────────────────────────────────────────
+ * `cevapBekliyorMu` tek bir sohbete bakıyor. Ama koordinasyon kanalı çok
+ * hakemli bir raporda TEK sohbet değil — hakem başına ayrı sohbet. A'ya
+ * cevap verilmişken B bekliyor olabilir; rapor düzeyinde bakan bir hesap
+ * bunu "cevaplandı" sayıp B'yi görünmez yapardı.
+ *
+ * Kimliksiz koordinasyon mesajı (herkese duyuru) hiçbir sırayı
+ * KAPATMIYOR: herkese yazılmış bir not, kimseye verilmiş bir cevap
+ * değildir. Kimliksiz hakem mesajı (v4 öncesi kayıt) da kimseye
+ * yazılamaz — hangi hakem olduğu bilinmiyor.
+ */
+export function bekleyenHakemler(mesajlar: YazismaMesaji[]): Set<string> {
+  const bekleyen = new Set<string>();
+  // Dizinin sırasına güvenmiyoruz: karar tarihe göre veriliyor.
+  const sirali = [...mesajlar].sort((a, b) => (a.tarih < b.tarih ? -1 : 1));
+
+  for (const m of sirali) {
+    if ((m.kanal ?? 'koordinasyon') !== 'koordinasyon') continue;
+    if (m.rol === 'sistem' || m.otomatikMi || !m.hakemId) continue;
+    if (m.rol === 'hakem') bekleyen.add(m.hakemId);
+    else bekleyen.delete(m.hakemId);
+  }
+  return bekleyen;
 }

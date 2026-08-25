@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { bekleyenHakemler } from '@/lib/db/yazisma-durum';
 import type { Mesaj } from '@/lib/depo/tipler';
 
 /**
@@ -46,6 +47,11 @@ function neZaman(iso: string): string {
   return new Date(iso).toLocaleDateString('tr', { day: 'numeric', month: 'long' });
 }
 
+interface Hakem {
+  id: string;
+  ad: string;
+}
+
 interface KurulDurumu {
   acik: boolean;
   hakemSayisi: number;
@@ -66,6 +72,10 @@ export default function Yazisma({
   const [mesajlar, setMesajlar] = useState<Mesaj[]>(baslangic);
   const [kurul, setKurul] = useState<KurulDurumu | null>(null);
   const [kanal, setKanal] = useState<'koordinasyon' | 'kurul'>('koordinasyon');
+  /* Rapora atanmış hakemler — sunucu bu listeyi yalnızca koordinasyona veriyor. */
+  const [hakemler, setHakemler] = useState<Hakem[]>([]);
+  /* Koordinasyonun muhatabı; boşsa mesaj herkese açık duyuru oluyor. */
+  const [hedef, setHedef] = useState('');
   const [metin, setMetin] = useState('');
   const [yazar, setYazar] = useState('');
   const [calisiyor, setCalisiyor] = useState(false);
@@ -87,6 +97,23 @@ export default function Yazisma({
         if (iptal || !y.ok) return;
         setMesajlar(d.mesajlar ?? []);
         setKurul(d.kurul ?? null);
+        setHakemler(d.hakemler ?? []);
+        /*
+         * Bekleyen soru varsa muhatap KENDİLİĞİNDEN o hakem oluyor.
+         * Koordinasyon bildirime tıklayıp geldiğinde bir de doğru
+         * yazışmayı araması gerekmesin — soruyu soran zaten belli.
+         */
+        const hakemListesi: Hakem[] = d.hakemler ?? [];
+        /*
+         * Bildirimden gelindiyse hangi hakem olduğu adreste yazıyor;
+         * o ipucu kendi tahminimizden önce geliyor. Tanınmayan bir
+         * kimlik sessizce yok sayılıyor — elle düzenlenmiş bir adres
+         * yüzünden boş sohbet açılmasın.
+         */
+        const ipucu = new URLSearchParams(window.location.search).get('hakem');
+        const bekleyen = [...bekleyenHakemler(d.mesajlar ?? [])];
+        if (ipucu && hakemListesi.some((h) => h.id === ipucu)) setHedef(ipucu);
+        else if (bekleyen.length) setHedef(bekleyen[0]);
       } catch {
         // Ağ hatası: sayfanın verdiği liste duruyor.
       }
@@ -97,9 +124,23 @@ export default function Yazisma({
   }, [raporId, kod]);
 
   const kurulAcik = kurul?.acik ?? false;
-  const kanallik = mesajlar.filter(
-    (m) => (m.kanal ?? 'koordinasyon') === kanal,
-  );
+  const cokHakem = hakemler.length > 1;
+  /* Muhatap seçimi yalnızca koordinasyon tarafında ve çok hakemli raporda. */
+  const secim = !hakemTarafi && kanal === 'koordinasyon' && cokHakem ? hedef : '';
+  const bekleyenler = bekleyenHakemler(mesajlar);
+  const adiyla = (id: string) => hakemler.find((h) => h.id === id)?.ad ?? id;
+
+  const kanallik = mesajlar
+    .filter((m) => (m.kanal ?? 'koordinasyon') === kanal)
+    /*
+     * Bir hakem seçiliyse liste O HAKEMİN GÖRDÜĞÜNE iniyor: kendi
+     * yazışması, herkese açık duyurular ve sistem notları — sunucudaki
+     * `hakeminGorebilecekleri` kuralının aynısı. Hepsi iç içe
+     * gösterilseydi koordinasyon kime cevap yazdığını bilemezdi.
+     */
+    .filter(
+      (m) => !secim || m.rol === 'sistem' || !m.hakemId || m.hakemId === secim,
+    );
 
   /* Cevap bekliyor mu — sunucudaki kuralın aynısı. */
   const insan = kanallik.filter((m) => m.rol !== 'sistem' && !m.otomatikMi);
@@ -115,7 +156,13 @@ export default function Yazisma({
       const y = await fetch(`/api/rapor/${raporId}/mesaj`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ metin, kanal, ...(kod ? { kod } : { yazar }) }),
+        body: JSON.stringify({
+          metin,
+          kanal,
+          ...(kod ? { kod } : { yazar }),
+          /* Kurul kanalı zaten herkese açık — orada muhatap seçimi yok. */
+          ...(secim ? { alici: secim } : {}),
+        }),
       });
       const d = await y.json();
       if (!y.ok) setHata(d.hata ?? 'Mesaj gönderilemedi.');
@@ -191,9 +238,50 @@ export default function Yazisma({
         {kanal === 'koordinasyon'
           ? hakemTarafi
             ? 'Yalnızca siz ve koordinasyon görüyor. Öteki hakemler bu yazışmayı göremez.'
-            : 'Hakemin size yazdığı özel kanal. Yarışmacı görmez.'
+            : cokHakem
+              ? secim
+                ? `${adiyla(secim)} ile özel yazışma. Öteki hakemler görmez.`
+                : 'Duyuru kipi: yazdığınızı atanmış bütün hakemler görür. Tek '
+                  + 'hakeme yazmak için yukarıdan seçin.'
+              : 'Hakemin size yazdığı özel kanal. Yarışmacı görmez.'
           : `Bu rapora atanmış ${kurul?.hakemSayisi ?? 0} hakem ve koordinasyon görüyor.`}
       </p>
+
+      {/*
+        * MUHATAP SEÇİCİ — yalnızca koordinasyonda, çok hakemli raporda.
+        *
+        * Tek hakemli raporda seçenek yok: kimliksiz mesajı zaten o tek
+        * hakem görüyor. İki hakemliden itibaren "kime" sorusu gerçek bir
+        * soru oluyor ve arayüz onu sormalı; yoksa koordinasyon A'ya
+        * yazdığını sanırken ikisine birden yazmış olur.
+        */}
+      {!hakemTarafi && kanal === 'koordinasyon' && cokHakem && (
+        <div className="flex flex-wrap items-center gap-1.5 border-b border-cizgi px-4 py-2">
+          <span className="mr-0.5 text-[9.5px] font-bold tracking-wide text-metin-3">
+            MUHATAP
+          </span>
+          {([{ id: '', ad: 'Hepsi (duyuru)' }, ...hakemler] as Hakem[]).map((h) => (
+            <button
+              key={h.id || 'hepsi'}
+              type="button"
+              onClick={() => setHedef(h.id)}
+              className={`flex cursor-pointer items-center gap-1 rounded-lg px-2.5 py-1 text-[11px] font-bold transition-colors ${
+                hedef === h.id
+                  ? 'bg-mavi-zemin text-mavi-koyu'
+                  : 'text-metin-2 hover:bg-zemin'
+              }`}
+            >
+              {h.ad}
+              {bekleyenler.has(h.id) && (
+                <span
+                  className="size-1.5 rounded-full bg-kirmizi"
+                  title="Cevap bekleyen sorusu var"
+                />
+              )}
+            </button>
+          ))}
+        </div>
+      )}
 
       {kanal === 'kurul' && !kurulAcik ? (
         /*
@@ -235,6 +323,20 @@ export default function Yazisma({
                       {ROL_ETIKET[m.rol].toLocaleUpperCase('tr')}
                     </span>
                     <span className="text-[11px] font-semibold">{m.yazar}</span>
+                    {/*
+                      * Koordinasyonun yazdığı mesajda "kime" bilgisi
+                      * metinde yok — etikette. Hakemin kendi mesajında
+                      * gereksiz: yazar adı zaten onu söylüyor.
+                      */}
+                    {!hakemTarafi
+                      && kanal === 'koordinasyon'
+                      && cokHakem
+                      && m.rol !== 'sistem'
+                      && m.rol !== 'hakem' && (
+                        <span className="rounded bg-zemin px-1.5 py-0.5 text-[9px] font-semibold text-metin-3">
+                          {m.hakemId ? `→ ${adiyla(m.hakemId)}` : 'duyuru'}
+                        </span>
+                      )}
                     <span className="ml-auto text-[10px] font-medium text-metin-3">
                       {neZaman(m.tarih)}
                     </span>
@@ -257,7 +359,11 @@ export default function Yazisma({
                   ? 'Öteki hakemlere yazın — puanınızı nasıl gerekçelendirdiğiniz…'
                   : hakemTarafi
                     ? 'Bu rapor hakkında koordinasyona sormak istediğiniz…'
-                    : 'Hakeme yanıtınız ya da notunuz…'
+                    : secim
+                      ? `${adiyla(secim)} için yanıtınız ya da notunuz…`
+                      : cokHakem
+                        ? 'Atanmış bütün hakemlere duyuru…'
+                        : 'Hakeme yanıtınız ya da notunuz…'
               }
               className="w-full rounded-lg border border-cizgi px-3 py-2 text-[12px] font-medium outline-none focus:border-metin-3"
             />
@@ -284,7 +390,9 @@ export default function Yazisma({
                     ? 'Kurula gönder'
                     : hakemTarafi
                       ? 'Koordinasyona gönder'
-                      : 'Yanıtla'}
+                      : !secim && cokHakem
+                        ? 'Duyuru gönder'
+                        : 'Yanıtla'}
               </button>
 
               <span className="text-[10.5px] font-medium text-metin-3">

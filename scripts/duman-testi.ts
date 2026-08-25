@@ -29,6 +29,12 @@ interface Vaka {
   yetkili?: boolean;
   /** Verilirse POST edilir — yalnızca yan etkisi olmayan denemeler için. */
   gonder?: unknown;
+  /*
+   * Durum kodu yetmediğinde gövdeye de bakılıyor. Sızıntı sınamalarında
+   * gerekli: 200 dönen bir uç YANLIŞ ALANI taşıyor olabilir ve durum
+   * kodu bunu hiç görmez.
+   */
+  dogrula?: (govde: unknown) => string | null;
 }
 
 let gecen = 0;
@@ -47,6 +53,14 @@ async function dene(v: Vaka) {
       body: v.gonder ? JSON.stringify(v.gonder) : undefined,
     });
     if (beklenen.includes(y.status)) {
+      if (v.dogrula) {
+        const govde = await y.json().catch(() => null);
+        const kusur = v.dogrula(govde);
+        if (kusur) {
+          basarisiz.push(`${v.ad}: ${kusur}  ${v.yol}`);
+          return;
+        }
+      }
       gecen++;
     } else {
       basarisiz.push(`${v.ad}: ${y.status} (beklenen ${beklenen.join('/')})  ${v.yol}`);
@@ -221,6 +235,55 @@ async function main() {
       bekle: 409,
       gonder: { kod: ortak.kod, kanal: 'kurul', metin: 'kilit denemesi' },
     });
+  }
+
+  /*
+   * ── MUHATAP SEÇİMİ ─────────────────────────────────────────────────
+   * Koordinasyon çok hakemli bir raporda TEK hakeme yazabiliyor. İki
+   * sınır önemli: alıcı o rapora atanmış olmalı (yoksa mesaj kimsenin
+   * göremeyeceği bir yere düşer — sessiz kayıp), ve alıcı seçebilmek
+   * için gereken hakem listesi HAKEME gitmemeli (kör puanlamada hakem
+   * ötekinin kim olduğunu bilmek zorunda değil).
+   */
+  if (ortak) {
+    const disarda = baglanti()
+      .prepare(
+        `SELECT id FROM hakem
+          WHERE sistem = 0 AND id NOT IN (SELECT hakem_id FROM atama WHERE rapor_id = ?)
+          LIMIT 1`,
+      )
+      .get(ortak.id) as { id: string } | undefined;
+
+    if (disarda) {
+      vakalar.push({
+        ad: 'Muhatap · atanmamış hakem alıcı olamıyor',
+        yol: `/api/rapor/${ortak.id}/mesaj`,
+        bekle: 422,
+        gonder: { alici: disarda.id, metin: 'yanlış alıcı denemesi' },
+      });
+    }
+
+    vakalar.push(
+      {
+        ad: 'Muhatap · hakem listesi koordinasyona veriliyor',
+        yol: `/api/rapor/${ortak.id}/mesaj`,
+        bekle: 200,
+        yetkili: true,
+        dogrula: (g) =>
+          Array.isArray((g as { hakemler?: unknown })?.hakemler)
+            ? null
+            : 'hakem listesi yok — muhatap seçilemez',
+      },
+      {
+        ad: 'Muhatap · hakem listesi HAKEME sızmıyor',
+        yol: `/api/rapor/${ortak.id}/mesaj?kod=${ortak.kod}`,
+        bekle: 200,
+        dogrula: (g) =>
+          (g as { hakemler?: unknown })?.hakemler === undefined
+            ? null
+            : 'hakem listesi hakeme gitmiş',
+      },
+    );
   }
 
   if (arsiv) {

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import PortalDonus from './portal-donus';
+import Bildirim, { type BekleyenSoru } from './bildirim';
 
 /*
  * KOORDİNASYON MENÜSÜ.
@@ -51,7 +52,14 @@ function Cikis() {
   );
 }
 
-export default function KenarCubugu({ yetkiKurulu }: { yetkiKurulu: boolean }) {
+export default function KenarCubugu({
+  yetkiKurulu,
+  bekleyenSorular = [],
+}: {
+  yetkiKurulu: boolean;
+  /** Hakemden gelip cevaplanmayan mesajlar — sunucudan geliyor. */
+  bekleyenSorular?: BekleyenSoru[];
+}) {
   const yol = usePathname();
 
   return (
@@ -75,6 +83,14 @@ export default function KenarCubugu({ yetkiKurulu }: { yetkiKurulu: boolean }) {
           </span>
         </span>
       </Link>
+
+      {/*
+        BİLDİRİM MENÜNÜN ÜSTÜNDE.
+        Bekleyen soru önce yalnızca panoda görünüyordu; koordinasyon başka
+        bir ekranda çalışırken hiçbir şey göremiyordu. Bildirim kullanıcıyı
+        BULMALI — kenar çubuğu her koordinasyon ekranında duruyor.
+      */}
+      <Bildirim sorular={bekleyenSorular} />
 
       <nav className="flex flex-1 flex-col gap-0.5 p-3">
         {MENU.map((m) => {

@@ -106,13 +106,33 @@ export async function GET(istek: Request, ctx: RouteContext<'/api/rapor/[id]/mes
       hakemSayisi: atananlar.length,
       bitiren: atananlar.filter((h) => h.tamamladi).length,
     },
+    /*
+     * Atanmış hakem listesi YALNIZCA koordinasyona gidiyor: alıcı seçimi
+     * için gerekli. Hakeme gönderilse öteki hakemlerin kim olduğunu
+     * öğrenirdi — kör puanlamada bunun bilinmesine gerek yok.
+     */
+    ...(gonderen.rol === 'koordinasyon'
+      ? {
+          hakemler: raporunHakemleri(id).map((h) => ({
+            id: h.id,
+            ad: h.ad,
+          })),
+        }
+      : {}),
   });
 }
 
 export async function POST(istek: Request, ctx: RouteContext<'/api/rapor/[id]/mesaj'>) {
   const { id } = await ctx.params;
 
-  let g: { metin?: string; yazar?: string; kod?: string; kanal?: string };
+  let g: {
+    metin?: string;
+    yazar?: string;
+    kod?: string;
+    kanal?: string;
+    /** Koordinasyon kime yazıyor — boşsa bütün hakemlere duyuru. */
+    alici?: string;
+  };
   try {
     g = await istek.json();
   } catch {
@@ -163,11 +183,35 @@ export async function POST(istek: Request, ctx: RouteContext<'/api/rapor/[id]/me
       ? `Koordinasyon · ${onar(g.yazar).trim().slice(0, 60)}`
       : gonderen.yazar;
 
+  /*
+   * KOORDİNASYON KİME YAZIYOR.
+   *
+   * Hakem yazdığında `hakemId` yazanın kendisi — yazışma ona ait.
+   * Koordinasyon yazdığında ise `hakemId` ALICIYI gösteriyor: iki hakemli
+   * bir raporda "A'ya cevap" ile "B'ye cevap" ayrı yazışmalar ve
+   * birbirini görmemeli. Alıcı verilmezse mesaj kimliksiz kalıyor ve
+   * bütün hakemlere açık bir duyuru sayılıyor.
+   *
+   * Alıcı doğrulanıyor: koordinasyon yalnızca o rapora ATANMIŞ bir
+   * hakeme yazabilir. Uydurma kimlik, kimsenin göremeyeceği bir mesaj
+   * üretirdi — sessiz kayıp.
+   */
+  let hedefHakem = gonderen.hakemId;
+  if (gonderen.rol === 'koordinasyon' && g.alici) {
+    if (!atananlar.some((h) => h.id === g.alici)) {
+      return Response.json(
+        { hata: 'Seçilen hakem bu rapora atanmamış.' },
+        { status: 422 },
+      );
+    }
+    hedefHakem = g.alici;
+  }
+
   await mesajEkle(id, {
     metin: metin.slice(0, 4000),
     yazar,
     rol: gonderen.rol,
-    hakemId: gonderen.hakemId,
+    hakemId: hedefHakem,
     kanal,
   });
 
