@@ -1,0 +1,20 @@
+# SATIR SONLARI
+#
+# Windows'ta çalışıyoruz ama üretilen kabuk betikleri LİNUX sunucuda
+# çalışıyor. Git varsayılan olarak checkout sırasında LF'yi CRLF'ye
+# çeviriyor ve bash CRLF'li bir betiği çalıştıramıyor:
+#
+#   scripts/sunucu-kur.sh: line 18: $'\r': command not found
+#   set: pipefail: invalid option name
+#
+# Ölçüldü: kurulum sunucuda tam bu yüzden düştü. Hata mesajı satır
+# sonlarından hiç bahsetmiyor, bu yüzden sebebi de anlaşılmıyor.
+#
+# Aşağıdaki kurallar bu dosyaların depoda ve çalışma kopyasında HER ZAMAN
+# LF ile durmasını sağlıyor.
+
+*.sh      text eol=lf
+Dockerfile text eol=lf
+Caddyfile text eol=lf
+*.yml     text eol=lf
+*.yaml    text eol=lf
