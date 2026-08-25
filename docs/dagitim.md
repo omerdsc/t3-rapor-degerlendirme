@@ -1,7 +1,7 @@
-# Canlıya Alma — Hetzner Cloud
+# Canlıya Alma — DigitalOcean
 
 Hedef: `https://tprds.duckdns.org` gibi bir adreste, hep açık.
-Aylık **€3.79** (saatlik ücretleniyor; sunucu silinince ödeme durur).
+Yeni hesaba verilen **$200 / 60 gün** kredi yarışma süresini karşılıyor.
 
 ## Neden bulut sunucu, neden sunucusuz değil
 
@@ -9,24 +9,17 @@ Sistem dosya tabanlı SQLite kullanıyor ve yüklenen belgeleri diske yazıyor �
 **kalıcı disk** şart. Vercel/Netlify gibi sunucusuz platformlarda her istekte
 disk sıfırlanır ve veritabanı kaybolur.
 
-## Neden Hetzner, neden Oracle değil
+## Sağlayıcı seçimi — iki kez değişti
 
-İlk hedef Oracle'ın kalıcı ücretsiz katmanıydı ve teknik olarak uygundu.
-Pratikte olmadı: ücretsiz ARM makineler Frankfurt'un üç availability
-domain'inde de dolu çıktı (`Out of capacity for shape VM.Standard.A1.Flex`).
-Kapasite gün içinde açılıp kapanıyor, yani ne zaman kurulacağı belirsiz.
+| Sağlayıcı | Neden bırakıldı |
+|---|---|
+| Oracle (ücretsiz) | Ücretsiz ARM makineler Frankfurt'un üç availability domain'inde de dolu (`Out of capacity`). Kapasite gün içinde açılıp kapanıyor; teslim tarihi olan iş için kullanılamaz. |
+| Hetzner (€3.79/ay) | Hesap doğrulaması için kartla **$25 peşin bakiye** istedi. Ücretsiz belge doğrulaması var ama insan onayı saatler sürüyor. |
+| **DigitalOcean** | Kart doğrulaması ~$1 geçici bloke. Yeni hesaba $200/60 gün kredi. Anında kurulum. |
 
-Hetzner'e geçiş ayrıca iki adımı tamamen kaldırdı:
-
-| | Oracle | Hetzner |
-|---|---|---|
-| Sanal ağ (VCN + subnet + internet gateway) | 4 ekran, elle | yok |
-| Güvenlik duvarı (iptables + Security List) | elle, atlanırsa site sessizce açılmıyor | gerek yok |
-| Kapasite beklemesi | saatler | yok |
-| Kurulum adımı | 5 | 4 |
-
-Kapsayıcı düzeni ikisinde de aynı — Dockerfile, compose, Caddy ve kurulum
-betiği değişmedi. Değişen tek şey sunucunun nereden alındığı.
+**Kapsayıcı düzeni üç sağlayıcıda da aynı** — `Dockerfile`, `docker-compose.yml`,
+`Caddyfile` ve `scripts/sunucu-kur.sh` hiç değişmedi. Bağımlılık Ubuntu'ya,
+sağlayıcıya değil. Değişen tek şey sunucunun nereden alındığı.
 
 ---
 
@@ -34,7 +27,7 @@ betiği değişmedi. Değişen tek şey sunucunun nereden alındığı.
 
 ```bash
 npm run build           # üretim derlemesi
-npm run dagitim:veri    # TEMİZ veri kümesi → dagitim/veri
+npm run dagitim:veri    # TEMİZ veri kümesi -> dagitim/veri
 npm run dagitim:demo    # sentetik raporları yükle
 npm run paket           # ~/tprds-sunucu.tgz + sızıntı denetimi
 ```
@@ -51,69 +44,73 @@ görmeden devam etmeyin.
 
 | Kategori | Set | Ne gösteriyor |
 |---|---|---|
-| İnsanlık Yararına · Lise | K01–K05 | Kopya tespiti: K01↔K03 görsel kopya (1.00), K01↔K04 metin kopyası (0.96), K02 temiz |
-| Sıfır Atık | 01–07 | Şablon uyumu, eksik kaynakça, karşılıksız atıf, eski şablon, taranmış belge |
+| İnsanlık Yararına · Lise | K01-K05 | Kopya tespiti: K01/K03 görsel kopya (1.00), K01/K04 metin kopyası (0.96), K02 temiz |
+| Sıfır Atık | 01-07 | Şablon uyumu, eksik kaynakça, karşılıksız atıf, eski şablon, taranmış belge |
 
-> Ayrı kategoriler zorunlu: 01–07 fixture'ları aynı temel metinden türüyor.
+> Ayrı kategoriler zorunlu: 01-07 fixture'ları aynı temel metinden türüyor.
 > Aynı havuza konsalar 66 çiftin 35'i işaretlenir ve kopya tespiti aşırı
 > hassas görünür. Ölçüldü.
 
 `npm run paket` arşivi üretip **içini okuyor**: gerçek veri dizini,
 `ornek_rapor`, `.env` dosyaları ve beklenmedik konumda bir PDF bulunursa
-paket siliniyor. `--exclude` listesi bugün doğru; denetim onun yarın yanlış
-yazılmasına karşı.
+paket siliniyor.
 
 ## 1 · SSH anahtarı
 
 ```bash
 ssh-keygen -t ed25519 -C "tprds-sunucu" -f ~/.ssh/tprds -N ""
-cat ~/.ssh/tprds.pub          # Hetzner'e yapıştırılacak AÇIK anahtar
+cat ~/.ssh/tprds.pub          # panele yapıştırılacak ACIK anahtar
 ```
 
-## 2 · Sunucu aç (~10 dk)
+## 2 · Droplet aç (~8 dk)
 
-[console.hetzner.cloud](https://console.hetzner.cloud) → **New project**
-(`TPRDS`) → **Add Server**
+[digitalocean.com](https://www.digitalocean.com) -> Sign up (GitHub/Google ile
+olur) -> kart ekle. Kayıt sonrası **Billing -> Credits** sayfasında $200
+kredinin göründüğünü teyit edin; görünmüyorsa makine boyutunu ona göre seçin.
+
+**Create -> Droplets**
 
 | Alan | Seçim |
 |---|---|
-| Location | Falkenstein / Nuremberg |
-| Image | Ubuntu **24.04** |
-| Type | Shared vCPU → x86 → **CX22** (2 vCPU · 4 GB · 40 GB) |
-| Networking | varsayılan (Public IPv4 açık) |
-| SSH keys | `~/.ssh/tprds.pub` içeriğini yapıştır |
-| Name | `tprds` |
+| Region | **Frankfurt** (Türkiye'ye en yakın) |
+| Image | Ubuntu **24.04 (LTS) x64** |
+| Droplet type | Basic -> Regular (SSD) |
+| Size | **$24/ay** · 4 GB / 2 vCPU / 80 GB — kredi varsa<br>**$12/ay** · 2 GB / 1 vCPU / 50 GB — kredi yoksa |
+| Authentication | **SSH Key** -> New SSH Key -> `~/.ssh/tprds.pub` içeriğini yapıştır |
+| Hostname | `tprds` |
 
-**Create & Buy now** → ~30 saniye → IPv4 adresi listede.
+**Create Droplet** -> ~45 saniye -> IPv4 adresi listede.
 
-> 4 GB RAM bilinçli seçim: kapsayıcı sunucuda derleniyor. 1 GB'lık bir
-> makinede Next derlemesi bellek yetmezliğinden düşer; o durumda imajı
-> yerelde derleyip `docker save`/`load` ile taşımak gerekir.
+> **Boyut neden önemli:** kapsayıcı sunucuda derleniyor ve Next derlemesi
+> tepe noktada ~1.5 GB bellek istiyor. 1 GB'lık ($6) makinede derleme
+> `Killed` ile düşer. `sunucu-kur.sh` 2 GB takas alanı açarak 2 GB'lık
+> makineyi de çalışır hale getiriyor, ama 4 GB rahat olan.
 
 ## 3 · Alan adı (~3 dk, ücretsiz)
 
-[duckdns.org](https://duckdns.org) → giriş → alt alan adı ekle (`tprds`) →
-**current ip** kutusuna sunucunun IPv4'ünü yaz → *update ip*.
+[duckdns.org](https://duckdns.org) -> giriş -> alt alan adı ekle (`tprds`) ->
+**current ip** kutusuna droplet'in IPv4'ünü yaz -> *update ip*.
 
 HTTPS sertifikası IP'ye değil isme veriliyor; bu adım olmadan site https
 açılmaz.
 
-## 4 · Paketi gönder ve kur
+## 4 · Paketi gönder ve kur (~7 dk)
 
 ```bash
-scp -i ~/.ssh/tprds ~/tprds-sunucu.tgz root@SUNUCU-IP:~/
+scp -i ~/.ssh/tprds ~/tprds-sunucu.tgz root@DROPLET-IP:~/
 
-ssh -i ~/.ssh/tprds root@SUNUCU-IP
+ssh -i ~/.ssh/tprds root@DROPLET-IP
 mkdir -p ~/tprds && tar -xzf ~/tprds-sunucu.tgz -C ~/tprds && cd ~/tprds
 bash scripts/sunucu-kur.sh tprds.duckdns.org
 ```
 
-Hetzner'de kullanıcı adı **`root`** (Oracle'da `ubuntu`).
+DigitalOcean'da kullanıcı adı **`root`**.
 
-Betik sırayla: Docker'ı kurar, güvenlik duvarını (varsa) açar, panel
-parolasını üretir, uygulamayı derleyip başlatır. Sonunda adresi ve parolayı
-ekrana yazar — **parolayı kaydedin**. Yarıda kalırsa baştan çalıştırılabilir;
-yapılmış adımları atlıyor.
+Betik sırayla: Docker'ı kurar, takas alanı açar, güvenlik duvarını denetler
+(DigitalOcean'da engelleyen kural yok, dokunmuyor), panel parolasını üretir,
+uygulamayı derleyip başlatır. Sonunda adresi ve parolayı ekrana yazar —
+**parolayı kaydedin**. Yarıda kalırsa baştan çalıştırılabilir; yapılmış
+adımları atlıyor.
 
 İlk derleme ~5 dakika. Sertifikayı Caddy kendisi alıyor.
 
@@ -122,6 +119,9 @@ yapılmış adımları atlıyor.
 > Bilinçli bir karar: anahtarsız panele erişen herkes bütün veriyi dışa
 > aktarabilir ve ücretli yapay zekâ çağrısı başlatabilir. Betik parolayı
 > kendisi üretiyor, bu yüzden normalde bu duruma düşülmüyor.
+
+> **Kredi bitmeden sil.** 60 gün sonunda kredi düşerse ücretlendirme başlar.
+> Droplet'i silmek ödemeyi durdurur; silmeden önce yedek alın (aşağıda).
 
 ---
 
@@ -140,7 +140,7 @@ yapılmış adımları atlıyor.
 ```bash
 # yerelde
 npm run paket
-scp -i ~/.ssh/tprds ~/tprds-sunucu.tgz root@SUNUCU-IP:~/
+scp -i ~/.ssh/tprds ~/tprds-sunucu.tgz root@DROPLET-IP:~/
 
 # sunucuda
 cd ~/tprds && tar -xzf ~/tprds-sunucu.tgz && docker compose up -d --build
@@ -172,6 +172,6 @@ cd ~/tprds && tar -czf ~/yedek-$(date +%F).tgz dagitim/veri
 | Belirti | Sebep |
 |---|---|
 | Her sayfa 500 | `KOORDINASYON_ANAHTARI` boş. `docker compose logs tprds` açıkça söylüyor. |
-| `Permission denied (publickey)` | `-i ~/.ssh/tprds` atlanmış, ya da kullanıcı adı `ubuntu` yazılmış — Hetzner'de `root`. |
+| `Permission denied (publickey)` | `-i ~/.ssh/tprds` atlanmış, ya da kullanıcı adı `ubuntu` yazılmış — DigitalOcean'da `root`. |
 | Sertifika alınamıyor | DuckDNS kaydı sunucunun IP'sini göstermiyor, ya da 80 kapalı (Let's Encrypt doğrulaması 80'i kullanıyor). |
 | `disk I/O error` | Veri dizini SQLite'ın WAL modunu desteklemiyor (ağ diski, Windows bind-mount). Yerel diske taşıyın. |

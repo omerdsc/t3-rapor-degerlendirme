@@ -2,9 +2,13 @@
 #
 # TPRDS — sunucu kurulumu, TEK KOMUT.
 #
-# Ubuntu 24.04 (Oracle Cloud Always Free / ARM veya x86) üzerinde
-# çalışır. Docker'ı kurar, güvenlik duvarını açar, ortam dosyasını
-# hazırlar ve uygulamayı ayağa kaldırır.
+# Ubuntu 24.04 üzerinde çalışır — DigitalOcean, Hetzner, Oracle, hepsi.
+# Docker'ı kurar, takas alanı açar, gerekiyorsa güvenlik duvarını açar,
+# ortam dosyasını hazırlar ve uygulamayı ayağa kaldırır.
+#
+# Sağlayıcıdan bağımsız olması bilinçli: sunucu sağlayıcısı bir kez
+# değişti (Oracle'da ücretsiz makine bulunamadı) ve betiğin tek satırı
+# bile değişmedi. Bağımlılık Ubuntu'ya, sağlayıcıya değil.
 #
 # Kullanım (sunucuda, proje klasörünün içinde):
 #   bash scripts/sunucu-kur.sh tprds.duckdns.org
@@ -50,26 +54,75 @@ else
   uyari "her seferinde sudo ister."
 fi
 
+# ── 1.5 Takas alanı ──────────────────────────────────────────────────
+#
+# NİYE: Next derlemesi tepe noktada ~1.5 GB bellek istiyor. 2 GB'lık bir
+# makinede bu, işletim sistemi ve Docker'ın payıyla birlikte sınıra
+# dayanıyor ve derleme "Killed" ile düşüyor — hata mesajı bellekten
+# bahsetmediği için sebebi de anlaşılmıyor.
+#
+# Takas alanı bunu ucuza çözüyor: yavaş ama var. Derleme bir kez oluyor,
+# yavaşlığın bedeli birkaç dakika; düşmenin bedeli kurulumun tamamı.
+#
+# Zaten takas varsa dokunulmuyor.
+adim "1.5/5 · Takas alanı"
+if [ "$(swapon --show --noheadings 2>/dev/null | wc -l)" -gt 0 ]; then
+  tamam "zaten var ($(free -h | awk '/Swap/{print $2}'))"
+else
+  BELLEK_MB=$(free -m | awk '/Mem:/{print $2}')
+  if [ "$BELLEK_MB" -ge 6000 ]; then
+    tamam "bellek yeterli (${BELLEK_MB} MB), takas gerekmiyor"
+  else
+    sudo fallocate -l 2G /swapfile 2>/dev/null || sudo dd if=/dev/zero of=/swapfile bs=1M count=2048 status=none
+    sudo chmod 600 /swapfile
+    sudo mkswap /swapfile > /dev/null
+    sudo swapon /swapfile
+    grep -q '/swapfile' /etc/fstab || echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab > /dev/null
+    tamam "2 GB takas açıldı (bellek ${BELLEK_MB} MB)"
+  fi
+fi
+
 # ── 2. Güvenlik duvarı ───────────────────────────────────────────────
 #
-# Oracle'ın Ubuntu imajı iptables'ı kilitli getiriyor: yalnızca 22 açık.
-# Bu adım atlanırsa site dışarıdan hiç açılmaz ve sebebi HİÇBİR günlükte
-# görünmez — kapsayıcılar sağlıklı, Caddy çalışıyor, sayfa gelmiyor.
+# Sağlayıcılar burada ayrışıyor:
+#
+#   DigitalOcean, Hetzner · INPUT zinciri BOŞ, politika ACCEPT. Bütün
+#     portlar açık; yapılacak bir şey yok.
+#   Oracle · iptables kilitli geliyor, yalnızca 22 açık. Bu adım
+#     atlanırsa site dışarıdan hiç açılmaz ve sebebi HİÇBİR günlükte
+#     görünmez — kapsayıcılar sağlıklı, Caddy çalışıyor, sayfa gelmiyor.
+#
+# ── DÜZELTİLEN HATA ──────────────────────────────────────────────────
+# Önceki sürüm kuralı 6. sıraya ekliyordu (`-I INPUT 6`), çünkü Oracle'ın
+# hazır kural setinde ilk beş sıra doluydu. Boş zincirli bir sunucuda
+# iptables "Index of insertion too big" diyor ve `set -e` yüzünden
+# kurulum orada ölüyor. Yani betik yalnızca Oracle'da çalışıyordu.
+#
+# 1. sıraya eklemek her iki durumda da doğru: boş zincirde tek kural
+# olur, Oracle'da ise REJECT satırından önce gelir.
 adim "2/5 · Güvenlik duvarı (80 ve 443)"
-for port in 80 443; do
-  if sudo iptables -C INPUT -m state --state NEW -p tcp --dport "$port" -j ACCEPT 2>/dev/null; then
-    tamam "$port zaten açık"
-  else
-    sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport "$port" -j ACCEPT
-    tamam "$port açıldı"
-  fi
-done
-if command -v netfilter-persistent > /dev/null 2>&1; then
-  sudo netfilter-persistent save > /dev/null 2>&1
-  tamam "kurallar kalıcı yapıldı"
+if ! command -v iptables > /dev/null 2>&1; then
+  tamam "iptables yok — portlar açık"
+elif ! sudo iptables -S INPUT 2>/dev/null | grep -qE '^-A INPUT.*(DROP|REJECT)'; then
+  # Engelleyen kural yok: portlar zaten açık, dokunmuyoruz. Gereksiz
+  # kural eklemek, olmayan bir sorunu "çözüyormuş" gibi görünürdü.
+  tamam "engelleyen kural yok, portlar açık"
 else
-  sudo apt-get update -qq && sudo apt-get install -y -qq iptables-persistent > /dev/null 2>&1 || true
-  sudo netfilter-persistent save > /dev/null 2>&1 || uyari "kurallar kalıcı yapılamadı; yeniden başlatmada tekrarlayın"
+  for port in 80 443; do
+    if sudo iptables -C INPUT -p tcp --dport "$port" -j ACCEPT 2>/dev/null; then
+      tamam "$port zaten açık"
+    else
+      sudo iptables -I INPUT 1 -p tcp --dport "$port" -j ACCEPT
+      tamam "$port açıldı"
+    fi
+  done
+  if command -v netfilter-persistent > /dev/null 2>&1; then
+    sudo netfilter-persistent save > /dev/null 2>&1 && tamam "kurallar kalıcı yapıldı"
+  else
+    sudo apt-get update -qq > /dev/null 2>&1 || true
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq iptables-persistent > /dev/null 2>&1 || true
+    sudo netfilter-persistent save > /dev/null 2>&1       || uyari "kurallar kalıcı yapılamadı; yeniden başlatmada tekrarlayın"
+  fi
 fi
 
 # ── 3. Ortam dosyası ─────────────────────────────────────────────────
