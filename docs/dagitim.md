@@ -1,12 +1,32 @@
-# Canlıya Alma — Oracle Cloud (ücretsiz)
+# Canlıya Alma — Hetzner Cloud
 
-Hedef: `https://tprds.duckdns.org` gibi bir adreste, hep açık, ücretsiz.
+Hedef: `https://tprds.duckdns.org` gibi bir adreste, hep açık.
+Aylık **€3.79** (saatlik ücretleniyor; sunucu silinince ödeme durur).
 
-**Neden Oracle?** Sistem dosya tabanlı SQLite kullanıyor ve yüklenen
-belgeleri diske yazıyor — **kalıcı disk** şart. Bu yüzden Vercel/Netlify
-gibi sunucusuz platformlar çalışmaz (her istekte disk sıfırlanır).
-Oracle'ın "Always Free" katmanı kalıcı olarak ücretsiz: 4 çekirdek ARM,
-24 GB RAM, 200 GB disk. Kart doğrulaması ister, ücret çekmez.
+## Neden bulut sunucu, neden sunucusuz değil
+
+Sistem dosya tabanlı SQLite kullanıyor ve yüklenen belgeleri diske yazıyor —
+**kalıcı disk** şart. Vercel/Netlify gibi sunucusuz platformlarda her istekte
+disk sıfırlanır ve veritabanı kaybolur.
+
+## Neden Hetzner, neden Oracle değil
+
+İlk hedef Oracle'ın kalıcı ücretsiz katmanıydı ve teknik olarak uygundu.
+Pratikte olmadı: ücretsiz ARM makineler Frankfurt'un üç availability
+domain'inde de dolu çıktı (`Out of capacity for shape VM.Standard.A1.Flex`).
+Kapasite gün içinde açılıp kapanıyor, yani ne zaman kurulacağı belirsiz.
+
+Hetzner'e geçiş ayrıca iki adımı tamamen kaldırdı:
+
+| | Oracle | Hetzner |
+|---|---|---|
+| Sanal ağ (VCN + subnet + internet gateway) | 4 ekran, elle | yok |
+| Güvenlik duvarı (iptables + Security List) | elle, atlanırsa site sessizce açılmıyor | gerek yok |
+| Kapasite beklemesi | saatler | yok |
+| Kurulum adımı | 5 | 4 |
+
+Kapsayıcı düzeni ikisinde de aynı — Dockerfile, compose, Caddy ve kurulum
+betiği değişmedi. Değişen tek şey sunucunun nereden alındığı.
 
 ---
 
@@ -16,14 +36,15 @@ Oracle'ın "Always Free" katmanı kalıcı olarak ücretsiz: 4 çekirdek ARM,
 npm run build           # üretim derlemesi
 npm run dagitim:veri    # TEMİZ veri kümesi → dagitim/veri
 npm run dagitim:demo    # sentetik raporları yükle
+npm run paket           # ~/tprds-sunucu.tgz + sızıntı denetimi
 ```
 
 `dagitim:veri` çalışan veritabanını kopyalayıp **kişiye bağlı her şeyi
-siliyor**: raporlar, parmak izleri, atamalar, değerlendirmeler,
-yazışmalar, hakemler ve yüklenmiş belgelerin kendisi. Geriye kamuya açık
-yapılandırma kalıyor — 43 yarışma, 80 kategori, şablonlar, rubrikler.
-Betik sonunda "Yarışmacı belgesi ve kişi kaydı YOK" doğrulamasını
-yapıyor; bu satırı görmeden devam etmeyin.
+siliyor**: raporlar, parmak izleri, atamalar, değerlendirmeler, yazışmalar,
+hakemler ve yüklenmiş belgelerin kendisi. Geriye kamuya açık yapılandırma
+kalıyor — 43 yarışma, 80 kategori, şablonlar, rubrikler. Betik sonunda
+"Yarışmacı belgesi ve kişi kaydı YOK" doğrulamasını yapıyor; bu satırı
+görmeden devam etmeyin.
 
 `dagitim:demo` projenin kendi sentetik üreticilerinden 12 rapor yükler,
 **iki ayrı kategoriye**:
@@ -33,65 +54,74 @@ yapıyor; bu satırı görmeden devam etmeyin.
 | İnsanlık Yararına · Lise | K01–K05 | Kopya tespiti: K01↔K03 görsel kopya (1.00), K01↔K04 metin kopyası (0.96), K02 temiz |
 | Sıfır Atık | 01–07 | Şablon uyumu, eksik kaynakça, karşılıksız atıf, eski şablon, taranmış belge |
 
-> Ayrı kategoriler zorunlu: 01–07 fixture'ları aynı temel metinden
-> türüyor. Aynı havuza konsalar 66 çiftin 35'i işaretlenir ve kopya
-> tespiti aşırı hassas görünür. Ölçüldü.
+> Ayrı kategoriler zorunlu: 01–07 fixture'ları aynı temel metinden türüyor.
+> Aynı havuza konsalar 66 çiftin 35'i işaretlenir ve kopya tespiti aşırı
+> hassas görünür. Ölçüldü.
 
----
+`npm run paket` arşivi üretip **içini okuyor**: gerçek veri dizini,
+`ornek_rapor`, `.env` dosyaları ve beklenmedik konumda bir PDF bulunursa
+paket siliniyor. `--exclude` listesi bugün doğru; denetim onun yarın yanlış
+yazılmasına karşı.
 
-## 1 · Sunucu aç (~20 dk)
-
-1. [cloud.oracle.com](https://cloud.oracle.com) → ücretsiz hesap.
-   Bölge olarak **Frankfurt** veya **Amsterdam** seçin (Türkiye'ye yakın).
-2. **Compute → Instances → Create Instance**
-   - Image: **Ubuntu 24.04**
-   - Shape: **Ampere · VM.Standard.A1.Flex** → 2 OCPU / 12 GB
-     *(Always Free sınırı 4 OCPU/24 GB; yarısını almak kapasite bulma
-     ihtimalini artırıyor)*
-   - SSH anahtarınızı yükleyin, public IP açık kalsın.
-3. **Kapasite hatası alırsanız** ("Out of host capacity") başka bir
-   bölge deneyin veya birkaç saat sonra tekrarlayın — ARM makineler
-   ücretsiz katmanda sık doluyor.
-4. **Networking → VCN → Security List** → ingress kuralı ekleyin:
-   `0.0.0.0/0` için TCP **80** ve **443**.
-
-## 2 · Alan adı (~5 dk, ücretsiz)
-
-[duckdns.org](https://duckdns.org) → GitHub ile giriş → alt alan adı
-oluşturun (`tprds`) → sunucunun public IP'sini yazın.
-Sonuç: `tprds.duckdns.org`.
-
-## 3 · Paketi sunucuya kopyala
-
-Yerel bilgisayarında (yeni terminal):
+## 1 · SSH anahtarı
 
 ```bash
-cd ~/OneDrive/Desktop/T3/dorduncu-goz
-npm run paket                              # ~/tprds-sunucu.tgz üretir
-scp ~/tprds-sunucu.tgz ubuntu@<SUNUCU-IP>:~/
+ssh-keygen -t ed25519 -C "tprds-sunucu" -f ~/.ssh/tprds -N ""
+cat ~/.ssh/tprds.pub          # Hetzner'e yapıştırılacak AÇIK anahtar
 ```
 
-`npm run paket` gönderilecek arşivi hazırlar ve **içeriğini denetler**:
-gerçek `veri/` klasörü, `.env` dosyaları ve gerçek yarışmacı belgeleri
-arşive girmiyor. Denetim geçmezse paket üretilmiyor.
+## 2 · Sunucu aç (~10 dk)
 
-## 4 · Tek komutla kur
+[console.hetzner.cloud](https://console.hetzner.cloud) → **New project**
+(`TPRDS`) → **Add Server**
+
+| Alan | Seçim |
+|---|---|
+| Location | Falkenstein / Nuremberg |
+| Image | Ubuntu **24.04** |
+| Type | Shared vCPU → x86 → **CX22** (2 vCPU · 4 GB · 40 GB) |
+| Networking | varsayılan (Public IPv4 açık) |
+| SSH keys | `~/.ssh/tprds.pub` içeriğini yapıştır |
+| Name | `tprds` |
+
+**Create & Buy now** → ~30 saniye → IPv4 adresi listede.
+
+> 4 GB RAM bilinçli seçim: kapsayıcı sunucuda derleniyor. 1 GB'lık bir
+> makinede Next derlemesi bellek yetmezliğinden düşer; o durumda imajı
+> yerelde derleyip `docker save`/`load` ile taşımak gerekir.
+
+## 3 · Alan adı (~3 dk, ücretsiz)
+
+[duckdns.org](https://duckdns.org) → giriş → alt alan adı ekle (`tprds`) →
+**current ip** kutusuna sunucunun IPv4'ünü yaz → *update ip*.
+
+HTTPS sertifikası IP'ye değil isme veriliyor; bu adım olmadan site https
+açılmaz.
+
+## 4 · Paketi gönder ve kur
 
 ```bash
-ssh ubuntu@<SUNUCU-IP>
+scp -i ~/.ssh/tprds ~/tprds-sunucu.tgz root@SUNUCU-IP:~/
+
+ssh -i ~/.ssh/tprds root@SUNUCU-IP
 mkdir -p ~/tprds && tar -xzf ~/tprds-sunucu.tgz -C ~/tprds && cd ~/tprds
 bash scripts/sunucu-kur.sh tprds.duckdns.org
 ```
 
-Betik sırayla: Docker'ı kurar, güvenlik duvarında 80/443'ü açar, panel
-parolasını üretir, uygulamayı derleyip başlatır. Sonunda adresi ve
-parolayı ekrana yazar — **parolayı kaydedin**.
+Hetzner'de kullanıcı adı **`root`** (Oracle'da `ubuntu`).
 
-İlk derleme ARM makinede ~5 dakika sürüyor. Yarıda kalırsa betik baştan
-çalıştırılabilir; yapılmış adımları atlıyor.
+Betik sırayla: Docker'ı kurar, güvenlik duvarını (varsa) açar, panel
+parolasını üretir, uygulamayı derleyip başlatır. Sonunda adresi ve parolayı
+ekrana yazar — **parolayı kaydedin**. Yarıda kalırsa baştan çalıştırılabilir;
+yapılmış adımları atlıyor.
 
-> Docker ilk kez kurulduysa betik bittikten sonra bir kez `exit` deyip
-> yeniden `ssh` ile bağlanın.
+İlk derleme ~5 dakika. Sertifikayı Caddy kendisi alıyor.
+
+> **Anahtarsız açılmıyor.** Üretimde `KOORDINASYON_ANAHTARI` yoksa uygulama
+> her isteğe 500 dönüyor — giriş sayfası dahil hiçbir ekran açılmıyor.
+> Bilinçli bir karar: anahtarsız panele erişen herkes bütün veriyi dışa
+> aktarabilir ve ücretli yapay zekâ çağrısı başlatabilir. Betik parolayı
+> kendisi üretiyor, bu yüzden normalde bu duruma düşülmüyor.
 
 ---
 
@@ -108,9 +138,12 @@ parolayı ekrana yazar — **parolayı kaydedin**.
 ## Güncelleme
 
 ```bash
-# yerelde: yeni tar, scp
-# sunucuda:
-cd ~/tprds && tar -xzf ~/tprds.tgz && docker compose up -d --build
+# yerelde
+npm run paket
+scp -i ~/.ssh/tprds ~/tprds-sunucu.tgz root@SUNUCU-IP:~/
+
+# sunucuda
+cd ~/tprds && tar -xzf ~/tprds-sunucu.tgz && docker compose up -d --build
 ```
 
 `dagitim/veri` klasörü **yerinde kalır** — kapsayıcı yeniden kurulsa da
@@ -139,6 +172,6 @@ cd ~/tprds && tar -czf ~/yedek-$(date +%F).tgz dagitim/veri
 | Belirti | Sebep |
 |---|---|
 | Her sayfa 500 | `KOORDINASYON_ANAHTARI` boş. `docker compose logs tprds` açıkça söylüyor. |
-| Site dışarıdan açılmıyor | Adım 3'teki iptables kuralları veya Oracle Security List eksik. |
+| `Permission denied (publickey)` | `-i ~/.ssh/tprds` atlanmış, ya da kullanıcı adı `ubuntu` yazılmış — Hetzner'de `root`. |
 | Sertifika alınamıyor | DuckDNS kaydı sunucunun IP'sini göstermiyor, ya da 80 kapalı (Let's Encrypt doğrulaması 80'i kullanıyor). |
 | `disk I/O error` | Veri dizini SQLite'ın WAL modunu desteklemiyor (ağ diski, Windows bind-mount). Yerel diske taşıyın. |
