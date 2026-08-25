@@ -1,0 +1,1581 @@
+<title>TPRDS Teknik Kılavuzu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+  /* ─────────────────────────────────────────────────────────────────────
+     Palet ürünün kendi belirteçlerinden (src/app/globals.css).
+     Tanıtım belgesinden AYRIM: orada kırmızı yapısaldı, burada MAVİ
+     yapıyı taşıyor — kılavuz sakin olmalı. Kırmızı yalnızca "çekirdek
+     kural" kutularına ayrıldı.
+     Açık tema bare :root'ta; koyu tema yalnızca belirteçleri yeniden
+     yazıyor, hiçbir bileşen media bloğunun içinde renk almıyor.
+     ───────────────────────────────────────────────────────────────────── */
+  :root {
+    --lacivert:    #16202e;
+    --kirmizi:     #d42027;
+    --kirmizi-koyu:#a5171d;
+    --kirmizi-zemin:#fdecec;
+
+    --zemin:       #f5f6f8;
+    --kart:        #ffffff;
+    --cizgi:       #e6e8ec;
+    --metin:       #1a2332;
+    --metin-2:     #64748b;
+    --metin-3:     #94a3b8;
+
+    --yesil:       #1e9e6a;
+    --yesil-koyu:  #137a50;
+    --yesil-zemin: #e6f6ef;
+    --amber:       #d98a15;
+    --amber-koyu:  #a9690b;
+    --amber-zemin: #fdf3e2;
+    --mavi:        #2563a8;
+    --mavi-koyu:   #1e4e7e;
+    --mavi-zemin:  #e8f0f9;
+    --mor:         #6d4aa8;
+    --mor-zemin:   #f0ebf9;
+
+    --kod-zemin:   #16202e;
+    --kod-metin:   #cfd9e4;
+    --kod-yorum:   #6b7c90;
+    --kod-vurgu:   #7fd4a8;
+
+    --seri:  "Archivo", "Plus Jakarta Sans", system-ui, sans-serif;
+    --govde: "Plus Jakarta Sans", system-ui, sans-serif;
+    --tek:   "IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --zemin:        #10161f;
+      --kart:         #18212e;
+      --cizgi:        #26313f;
+      --metin:        #e8edf3;
+      --metin-2:      #93a3b8;
+      --metin-3:      #6b7c90;
+
+      --kirmizi:      #ef4b52;
+      --kirmizi-koyu: #f87a80;
+      --kirmizi-zemin:#2e1618;
+      --yesil:        #2fbd84;
+      --yesil-koyu:   #5fd6a4;
+      --yesil-zemin:  #10291f;
+      --amber:        #e5a33c;
+      --amber-koyu:   #f0bd6b;
+      --amber-zemin:  #2b2113;
+      --mavi:         #5b93d6;
+      --mavi-koyu:    #86b2e6;
+      --mavi-zemin:   #14243a;
+      --mor:          #9b7fd4;
+      --mor-zemin:    #1e1730;
+
+      --lacivert:     #0b1017;
+      --kod-zemin:    #0b1017;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --zemin:        #10161f;
+    --kart:         #18212e;
+    --cizgi:        #26313f;
+    --metin:        #e8edf3;
+    --metin-2:      #93a3b8;
+    --metin-3:      #6b7c90;
+
+    --kirmizi:      #ef4b52;
+    --kirmizi-koyu: #f87a80;
+    --kirmizi-zemin:#2e1618;
+    --yesil:        #2fbd84;
+    --yesil-koyu:   #5fd6a4;
+    --yesil-zemin:  #10291f;
+    --amber:        #e5a33c;
+    --amber-koyu:   #f0bd6b;
+    --amber-zemin:  #2b2113;
+    --mavi:         #5b93d6;
+    --mavi-koyu:    #86b2e6;
+    --mavi-zemin:   #14243a;
+    --mor:          #9b7fd4;
+    --mor-zemin:    #1e1730;
+
+    --lacivert:     #0b1017;
+    --kod-zemin:    #0b1017;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--zemin);
+    color: var(--metin);
+    font-family: var(--govde);
+    font-size: 15px;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ══════════════════════════════════════════════ üst şerit */
+  .ust {
+    background: var(--lacivert);
+    border-bottom: 1px solid color-mix(in srgb, var(--metin-3) 26%, transparent);
+    padding: 26px 30px;
+  }
+  .ust-ic { max-width: 1300px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+  .rozet {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: var(--mavi); display: grid; place-items: center; flex-shrink: 0;
+  }
+  .rozet svg { width: 20px; height: 20px; stroke: #fff; }
+  .ust-ad { font-family: var(--seri); font-size: 18px; font-weight: 700; letter-spacing: -0.015em; color: #fff; line-height: 1.1; }
+  .ust-alt { font-family: var(--tek); font-size: 9.5px; font-weight: 500; letter-spacing: 0.13em; color: #93a3b8; margin-top: 3px; }
+  .ust-not { margin-left: auto; font-size: 12px; color: #93a3b8; }
+
+  /* ══════════════════════════════════════════════ yerleşim */
+  .kabuk {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 232px minmax(0, 1fr);
+    gap: 44px;
+    padding: 40px 30px 96px;
+    align-items: start;
+  }
+  @media (max-width: 940px) {
+    .kabuk { grid-template-columns: 1fr; gap: 26px; }
+  }
+
+  /* Gezinme rayı — uzun kılavuz aranır, baştan sona okunmaz. */
+  .ray { position: sticky; top: 24px; }
+  @media (max-width: 940px) {
+    .ray {
+      position: static;
+      border: 1px solid var(--cizgi);
+      border-radius: 12px;
+      background: var(--kart);
+      padding: 14px 16px;
+    }
+  }
+  .ray-baslik {
+    font-family: var(--tek);
+    font-size: 9.5px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--metin-3);
+    margin-bottom: 10px;
+  }
+  .ray ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1px; counter-reset: r; }
+  .ray a {
+    display: flex; gap: 9px;
+    padding: 5px 9px;
+    border-radius: 7px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--metin-2);
+    text-decoration: none;
+    line-height: 1.4;
+  }
+  .ray a:hover { background: var(--mavi-zemin); color: var(--mavi-koyu); }
+  .ray a::before {
+    counter-increment: r;
+    content: counter(r, decimal-leading-zero);
+    font-family: var(--tek);
+    font-size: 10px;
+    color: var(--metin-3);
+    padding-top: 2px;
+  }
+
+  main { min-width: 0; }
+  section { scroll-margin-top: 22px; margin-bottom: 62px; }
+  section:last-of-type { margin-bottom: 0; }
+
+  /* ══════════════════════════════════════════════ tipografi */
+  .goz-ustu {
+    font-family: var(--tek);
+    font-size: 10px; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--mavi);
+    margin-bottom: 9px;
+  }
+  h1 {
+    font-family: var(--seri);
+    font-size: clamp(28px, 4.4vw, 40px);
+    font-weight: 700; letter-spacing: -0.028em; line-height: 1.1;
+    text-wrap: balance; margin: 0 0 16px; max-width: 22ch;
+  }
+  h2 {
+    font-family: var(--seri);
+    font-size: clamp(21px, 2.7vw, 26px);
+    font-weight: 700; letter-spacing: -0.022em; line-height: 1.18;
+    text-wrap: balance; margin: 0 0 14px; max-width: 28ch;
+  }
+  h3 {
+    font-family: var(--seri);
+    font-size: 15.5px; font-weight: 600; letter-spacing: -0.01em;
+    margin: 0 0 8px;
+  }
+  h4 {
+    font-family: var(--tek);
+    font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--metin-2);
+    margin: 0 0 7px;
+  }
+  p { margin: 0 0 14px; max-width: 70ch; }
+  p:last-child { margin-bottom: 0; }
+  ul, ol.liste { margin: 0 0 14px; padding-left: 20px; max-width: 70ch; }
+  li { margin-bottom: 5px; }
+  .sonuk { color: var(--metin-2); }
+
+  code {
+    font-family: var(--tek);
+    font-size: 0.86em;
+    background: var(--zemin);
+    border: 1px solid var(--cizgi);
+    border-radius: 4px;
+    padding: 1px 5px;
+    white-space: nowrap;
+  }
+
+  a { color: var(--mavi-koyu); text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--mavi); outline-offset: 2px; border-radius: 3px; }
+
+  /* ══════════════════════════════════════════════ kartlar & tablolar */
+  .izgara { display: grid; gap: 13px; }
+  .iki { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .uc  { grid-template-columns: repeat(auto-fit, minmax(238px, 1fr)); }
+
+  .kart {
+    background: var(--kart);
+    border: 1px solid var(--cizgi);
+    border-radius: 12px;
+    padding: 17px 19px;
+  }
+  .kart p { font-size: 13.5px; line-height: 1.62; color: var(--metin-2); max-width: none; }
+  .kart ul { font-size: 13.5px; color: var(--metin-2); max-width: none; }
+
+  .tablo-kap {
+    overflow-x: auto;
+    border: 1px solid var(--cizgi);
+    border-radius: 12px;
+    background: var(--kart);
+    margin-bottom: 14px;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th {
+    text-align: left;
+    font-family: var(--tek);
+    font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--metin-2);
+    padding: 11px 15px;
+    border-bottom: 1px solid var(--cizgi);
+    white-space: nowrap;
+  }
+  td { padding: 11px 15px; border-bottom: 1px solid var(--cizgi); vertical-align: top; line-height: 1.55; }
+  tr:last-child td { border-bottom: 0; }
+  td.tek, th.tek { font-family: var(--tek); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  td strong { font-weight: 600; }
+
+  /* ══════════════════════════════════════════════ mekanizma kutusu
+     Algoritma bölümlerine özel: koddaki GERÇEK sabitler burada. */
+  .mekanizma {
+    border: 1px solid var(--cizgi);
+    border-left: 3px solid var(--mavi);
+    border-radius: 0 12px 12px 0;
+    background: var(--kart);
+    padding: 16px 19px;
+    margin-bottom: 14px;
+  }
+  .mekanizma h4 { color: var(--mavi-koyu); }
+  .sabitler {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(186px, 1fr));
+    gap: 3px 20px;
+    font-family: var(--tek);
+    font-size: 11.5px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--cizgi);
+  }
+  .sabitler > div { display: flex; gap: 8px; align-items: baseline; }
+  .sabitler b { font-weight: 600; color: var(--mavi-koyu); font-variant-numeric: tabular-nums; }
+  .sabitler span { color: var(--metin-2); font-size: 10.5px; }
+
+  /* ══════════════════════════════════════════════ kural kutusu */
+  .kural {
+    background: var(--kirmizi-zemin);
+    border: 1px solid color-mix(in srgb, var(--kirmizi) 30%, transparent);
+    border-radius: 12px;
+    padding: 18px 21px;
+    margin-bottom: 14px;
+  }
+  .kural h4 { color: var(--kirmizi-koyu); }
+  .kural p { color: var(--metin); }
+
+  /* ══════════════════════════════════════════════ kod bloğu */
+  .kod {
+    background: var(--kod-zemin);
+    border: 1px solid color-mix(in srgb, var(--metin-3) 24%, transparent);
+    border-radius: 12px;
+    padding: 16px 19px;
+    overflow-x: auto;
+    margin-bottom: 14px;
+  }
+  .kod pre { margin: 0; font-family: var(--tek); font-size: 12px; line-height: 1.75; color: var(--kod-metin); }
+  .kod .y { color: var(--kod-yorum); }
+  .kod .v { color: var(--kod-vurgu); }
+
+  /* ══════════════════════════════════════════════ akış */
+  .akis { display: flex; flex-direction: column; gap: 2px; margin-bottom: 14px; }
+  .akis-adim {
+    display: grid;
+    grid-template-columns: 118px minmax(0,1fr) 96px;
+    gap: 14px;
+    align-items: baseline;
+    background: var(--kart);
+    border: 1px solid var(--cizgi);
+    padding: 11px 16px;
+  }
+  .akis-adim:first-child { border-radius: 12px 12px 0 0; }
+  .akis-adim:last-child { border-radius: 0 0 12px 12px; }
+  .akis-kim {
+    font-family: var(--tek); font-size: 9.5px; font-weight: 600;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--metin-2);
+  }
+  .akis-ne { font-size: 13.5px; }
+  .akis-ne b { font-weight: 600; }
+  .akis-ucret {
+    font-family: var(--tek); font-size: 10.5px; font-weight: 600;
+    text-align: right; font-variant-numeric: tabular-nums;
+  }
+  .bedava { color: var(--yesil-koyu); }
+  .ucretli { color: var(--amber-koyu); }
+  @media (max-width: 620px) {
+    .akis-adim { grid-template-columns: 1fr; gap: 3px; }
+    .akis-ucret { text-align: left; }
+  }
+
+  /* ══════════════════════════════════════════════ etiketler */
+  .etiket {
+    display: inline-block;
+    font-family: var(--tek);
+    font-size: 9px; font-weight: 600; letter-spacing: 0.09em;
+    text-transform: uppercase;
+    padding: 2px 7px; border-radius: 5px;
+    vertical-align: middle;
+  }
+  .e-bedava { background: var(--yesil-zemin); color: var(--yesil-koyu); }
+  .e-ucretli { background: var(--amber-zemin); color: var(--amber-koyu); }
+  .e-mavi   { background: var(--mavi-zemin); color: var(--mavi-koyu); }
+  .e-mor    { background: var(--mor-zemin); color: var(--mor); }
+
+  .yol {
+    font-family: var(--tek);
+    font-size: 11.5px;
+    color: var(--mavi-koyu);
+    background: var(--mavi-zemin);
+    border-radius: 5px;
+    padding: 2px 7px;
+    display: inline-block;
+  }
+
+  hr { border: 0; border-top: 1px solid var(--cizgi); margin: 0 0 20px; }
+
+  .alt {
+    border-top: 1px solid var(--cizgi);
+    margin-top: 56px; padding-top: 22px;
+    font-size: 12.5px; color: var(--metin-3);
+  }
+
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<header class="ust">
+  <div class="ust-ic">
+    <span class="rozet">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 6h16M4 12h16M4 18h10"></path>
+      </svg>
+    </span>
+    <span>
+      <span class="ust-ad">TPRDS · Teknik Kılavuz</span>
+      <span class="ust-alt">TEKNOFEST PROJE RAPORLARI DEĞERLENDİRME SİSTEMİ</span>
+    </span>
+    <span class="ust-not">22.709 satır kaynak · 14 ekran · 19 API ucu · 9 tablo</span>
+  </div>
+</header>
+
+<div class="kabuk">
+
+  <!-- ══════════════════════════════════════════ GEZİNME -->
+  <nav class="ray" aria-label="İçindekiler">
+    <div class="ray-baslik">İçindekiler</div>
+    <ol>
+      <li><a href="#nedir">Proje ne yapıyor</a></li>
+      <li><a href="#akis">Uçtan uca akış</a></li>
+      <li><a href="#ekranlar">Ekran ekran</a></li>
+      <li><a href="#teknoloji">Teknoloji yığını</a></li>
+      <li><a href="#okuma">Belge okuma</a></li>
+      <li><a href="#turkce">Türkçe metin onarımı</a></li>
+      <li><a href="#dil">Dil tespiti</a></li>
+      <li><a href="#sablon">Şablon çıkarımı</a></li>
+      <li><a href="#kategori">Kategori uygunluğu</a></li>
+      <li><a href="#benzerlik">Benzerlik taraması</a></li>
+      <li><a href="#kaynak">Kaynak doğrulama</a></li>
+      <li><a href="#ai">Yapay zekâ katmanı</a></li>
+      <li><a href="#puan">Puan hesabı</a></li>
+      <li><a href="#veri">Veri modeli</a></li>
+      <li><a href="#guvenlik">Erişim ve gizlilik</a></li>
+      <li><a href="#olcum">Ölçüm ve doğrulama</a></li>
+      <li><a href="#harita">Dosya haritası</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <!-- ═════════════════════════════════════════ 01 -->
+    <section id="nedir">
+      <div class="goz-ustu">Bölüm 01</div>
+      <h1>Hakemin zamanını temel kontrollerden geri alan sistem</h1>
+
+      <p>
+        TEKNOFEST'e her yıl on binlerce proje raporu geliyor. Bir hakem raporu
+        açtığında önce mekanik soruları yanıtlamak zorunda kalıyor: rapor
+        doğru dilde mi, güncel şablonu kullanmış mı, zorunlu başlıklar var mı,
+        doğru kategoriye başvurulmuş mu, başka bir raporla örtüşüyor mu?
+        Uzman zamanı burada eriyor.
+      </p>
+
+      <p>
+        <strong>TPRDS bu soruları hakem raporu açmadan yanıtlıyor</strong> ve
+        cevapları kanıtıyla sunuyor — hangi sayfada, hangi cümlede, hangi
+        şekilde. Hakem mekanik kontrol yapmıyor; uzmanlık gerektiren işi
+        yapıyor.
+      </p>
+
+      <div class="kural">
+        <h4>Sistemin çekirdek kuralı</h4>
+        <p style="font-size:15px">
+          <strong>Yapay zekâ karar vermiyor.</strong> Kontrol ediyor, analiz
+          ediyor, öneriyor — puanı hakem veriyor. Bu bir slogan değil, kodda
+          uygulanan bir kısıt: koordinasyon panelinde puanlama formu
+          <em>yok</em>, hakem puanı girilmeden rapor tamamlanamıyor, model
+          çıktısı her ekranda <code>ÖNERİ · PUAN DEĞİL</code> etiketiyle
+          duruyor ve yarışmacıya giden her cümle hakem onayından geçiyor.
+        </p>
+      </div>
+
+      <div class="izgara uc">
+        <div class="kart">
+          <span class="etiket e-bedava">$0</span>
+          <h3 style="margin-top:8px">Ücretsiz katman</h3>
+          <p>
+            Altı kontrol ailesi saf kodla çalışıyor: dil, şablon,
+            başlık-içerik, kategori, benzerlik, kaynakça. Model çağrısı yok,
+            işletme maliyeti sıfır, süre saniyeler.
+          </p>
+        </div>
+        <div class="kart">
+          <span class="etiket e-ucretli">$0,131 / rapor</span>
+          <h3 style="margin-top:8px">Ücretli katman</h3>
+          <p>
+            Tek ücretli adım: ölçüt bazında puan önerisi, gerekçe, rapordan
+            alıntı ve güven etiketi. İsteğe bağlı — koordinasyon başlatıyor,
+            hakem hazır buluyor.
+          </p>
+        </div>
+        <div class="kart">
+          <span class="etiket e-mavi">Üç portal</span>
+          <h3 style="margin-top:8px">Rol ayrımı</h3>
+          <p>
+            Koordinasyon, hakem ve yarışmacı ayrı adreslerde. Aralarında
+            gezinme bağlantısı yok; ayrım menüyle değil <strong>veriyle</strong>
+            yapılıyor.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 02 -->
+    <section id="akis">
+      <div class="goz-ustu">Bölüm 02</div>
+      <h2>Bir rapor sisteme girdiğinde ne oluyor</h2>
+
+      <p>
+        Aşağıdaki sekiz adım, bir raporun yüklenmesinden yarışmacının
+        sonucunu görmesine kadar geçen yolun tamamı. Aradaki hiçbir adım elle
+        veri taşımayı gerektirmiyor.
+      </p>
+
+      <div class="akis">
+        <div class="akis-adim">
+          <span class="akis-kim">Koordinasyon</span>
+          <span class="akis-ne">Yarışma kurulur — şablon ve şartname indirilir, <b>değerlendirme ölçütleri şablondan otomatik çıkarılır</b></span>
+          <span class="akis-ucret bedava">$0</span>
+        </div>
+        <div class="akis-adim">
+          <span class="akis-kim">Koordinasyon</span>
+          <span class="akis-ne">Raporlar yüklenir (çoklu dosya, PDF veya Word)</span>
+          <span class="akis-ucret bedava">$0</span>
+        </div>
+        <div class="akis-adim">
+          <span class="akis-kim">Sistem</span>
+          <span class="akis-ne">Yükleme sırasında <b>altı kontrol anında koşar</b>, parmak izi çıkarılır, rapor kapağından künye okunur</span>
+          <span class="akis-ucret bedava">saniyeler · $0</span>
+        </div>
+        <div class="akis-adim">
+          <span class="akis-kim">Koordinasyon</span>
+          <span class="akis-ne">Ön değerlendirme başlatılır — tek tek ya da <b>toplu</b>, maliyet önce gösterilir</span>
+          <span class="akis-ucret ucretli">~90 sn · $0,131</span>
+        </div>
+        <div class="akis-adim">
+          <span class="akis-kim">Koordinasyon</span>
+          <span class="akis-ne">Raporlar hakemlere dağıtılır — <b>en az yüklü hakem önce iş alır</b>, dağıtım basmadan önce gösterilir</span>
+          <span class="akis-ucret bedava">$0</span>
+        </div>
+        <div class="akis-adim">
+          <span class="akis-kim">Hakem</span>
+          <span class="akis-ne">Kendi panelinde raporu açar; bulguları ve öneriyi hazır bulur, <b>puanı kendisi verir</b></span>
+          <span class="akis-ucret bedava">$0</span>
+        </div>
+        <div class="akis-adim">
+          <span class="akis-kim">Hakem</span>
+          <span class="akis-ne">Yarışmacıya gidecek geri bildirimi düzenler ve <b>onaylar</b> — onaysız hiçbir cümle yayımlanmaz</span>
+          <span class="akis-ucret bedava">$0</span>
+        </div>
+        <div class="akis-adim">
+          <span class="akis-kim">Yarışmacı</span>
+          <span class="akis-ne">Başvuru numarasıyla girer; puanını, güçlü yönlerini, gelişime açık alanlarını ve önerileri görür</span>
+          <span class="akis-ucret bedava">$0</span>
+        </div>
+      </div>
+
+      <p class="sonuk">
+        Bir rapora <strong>birden çok hakem</strong> atanabiliyor. Puanlar
+        birbirini ezmiyor, her hakem kendi kaydında; nihai puan
+        tamamlanmışların ortalaması ve hakemler arası fark ayrıca ölçülüp
+        uyarı olarak gösteriliyor.
+      </p>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 03 -->
+    <section id="ekranlar">
+      <div class="goz-ustu">Bölüm 03</div>
+      <h2>Ekran ekran: hangi sayfa ne işe yarıyor</h2>
+
+      <p>
+        14 ekran var, üç portala dağılmış. Her portalın kendi düzeni ve kendi
+        erişim yolu var.
+      </p>
+
+      <h3 style="margin-top:24px">Giriş kapıları</h3>
+      <div class="tablo-kap">
+        <table>
+          <thead>
+            <tr><th>Adres</th><th>Kim girer</th><th>Ne yapar</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="yol">/</span></td>
+              <td>Herkes</td>
+              <td>Üç portalın kapısı. Hakem erişim kodunu buradan girip kendi paneline geçiyor. Canlı kurulumda bu sayfa kalkar, yerini üç ayrı adres alır.</td>
+            </tr>
+            <tr>
+              <td><span class="yol">/giris</span></td>
+              <td>Koordinasyon</td>
+              <td>Ortak anahtarla giriş. <code>KOORDINASYON_ANAHTARI</code> tanımlı değilse bu ekran hiç görünmez, sistem açık çalışır ve her ekranda uyarı gösterir.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:24px">
+        Koordinasyon portalı <span class="etiket e-mavi">Rol 01 + 04</span>
+      </h3>
+      <div class="tablo-kap">
+        <table>
+          <thead>
+            <tr><th style="width:200px">Ekran</th><th>Üzerindeki özellikler</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Panel</strong><br><span class="yol">/koordinasyon</span></td>
+              <td>
+                <strong>Değerlendirme akışı:</strong> yüzde, ilerleme çubuğu ve dört durum — tamamlandı / sürüyor / atanmadı / gecikti. Son ikisi tıklanabilir, çünkü ikisi de koordinasyonun somut işi.<br>
+                <strong>Yapılacak işler:</strong> her satır bir eylem ve gideceği yer — kaç rapor hakem bekliyor, kaç rapor kritik bulgulu, kaç kategorinin ölçütü onaylanmamış.<br>
+                <strong>Son raporlar</strong> ve <strong>ücretli katman</strong> kartı: harcanan tutar, rapor başına maliyet, önbellekten kaç rapor geldiği ve modelin önerisiyle hakem kararı arasındaki fark.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Raporlar</strong><br><span class="yol">/koordinasyon/raporlar</span></td>
+              <td>
+                Yarışma ve kategori açılır listeleri; durum sekmeleri (değerlendirilmedi / değerlendirildi / manuel inceleme / tümü); <strong>başvuru numarası, takım adı ve rumuzla arama</strong>; çoklu dosya yükleme; <strong>toplu ön değerlendirme</strong> (maliyet önce, sırayla, durdurulabilir); CSV dışa aktarma; <strong>50 satırlık sayfalama</strong>.<br>
+                Tablo kolonları: başvuru, proje/takım, ön kontroller, AI önerisi, hakem durumu, durum.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Rapor detayı</strong><br><span class="yol">/koordinasyon/rapor/&lt;id&gt;</span></td>
+              <td>
+                Başlıkta <strong>nihai puan</strong> ve kaç hakemin ortalaması olduğu. Sırayla: kimlik paneli (kapaktan okunan künye, başvuruyla çelişiyorsa uyarı) → <strong>hakem değerlendirmeleri</strong> (hakem başına puan, ölçüt bazında karşılaştırma, ayrışma uyarısı) → altı otomatik kontrol şeridi → bulgular → <strong>yapay zekâ ön değerlendirmesi</strong> (salt okunur; burada puan girilmez) → rapor belgesi → hakem–koordinasyon yazışması.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Hakemler ve atama</strong><br><span class="yol">/koordinasyon/hakemler</span></td>
+              <td>
+                <strong>Hakem paneli önizleme:</strong> seçilen hakemin ekranını yeni sekmede açar — hakem "raporu göremiyorum" dediğinde onun gördüğünü görmek için.<br>
+                <strong>Hakem kaydı:</strong> ad, kurum, e-posta, uzmanlık; erişim kodu otomatik üretilir. İş yükü aynı tabloda (kaç atanan, kaç bekleyen, kaç bitti) — atama yaparken yükü görmeden karar verilmesin diye.<br>
+                <strong>Atama paneli:</strong> hakem seç → kapsam belirle → <strong>basmadan önce dağıtımı gör</strong> (hangi hakeme kaç rapor düşecek).
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Yarışmalar</strong><br><span class="yol">/koordinasyon/yarismalar</span></td>
+              <td>
+                TEKNOFEST kataloğundan çekilmiş 61 yarışma. <strong>Kur</strong> denince şablon ve şartname indirilip çözümlenir, değerlendirme ölçütleri çıkarılır — ücretsiz. Yönetici ölçütleri gözden geçirip <strong>onaylar</strong>, düzeltir ya da kendi ölçütünü ekler. Şablon yıl içinde değişirse <strong>yerinde güncelleme</strong>: hakem puanları, yüklenmiş raporlar ve elle eklenen ölçütler korunur.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Kopya kontrolü</strong><br><span class="yol">/koordinasyon/benzerlik</span></td>
+              <td>
+                Kategori seçilir, bütün raporlar birbiriyle karşılaştırılır. Eşiği geçen çiftler listelenir; açınca <strong>eşleşen cümleler yan yana</strong> (hangi sayfada) ve <strong>eşleşen şekiller</strong> gösterilir. Aynı takımın devam projesi ayrı işaretlenir. Buradan rapor sayfasına geçilebilir.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:24px">
+        Hakem portalı <span class="etiket e-mor">Rol 02</span>
+      </h3>
+      <div class="tablo-kap">
+        <table>
+          <thead>
+            <tr><th style="width:200px">Ekran</th><th>Üzerindeki özellikler</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>İş listesi</strong><br><span class="yol">/hakem/&lt;kod&gt;</span></td>
+              <td>
+                <strong>Yalnızca kendisine atanmış</strong> raporlar. Bekleyenler ve tamamlananlar ayrı; her satırda kaç ölçüt puanlandığı, son tarih ve kritik bulgu işareti. Takım adları rumuzlu.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Puanlama</strong><br><span class="yol">/hakem/&lt;kod&gt;/&lt;rapor&gt;</span></td>
+              <td>
+                Solda rapor belgesi gömülü. Sağda ölçüt ölçüt: <strong>modelin puan önerisi, gerekçesi, rapordan alıntısı ve güven etiketi</strong> — ama puan alanı <em>boş</em> başlar, "öneriyi al" ayrı bir tıklamadır.<br>
+                Altında <strong>yarışmacıya gidecek geri bildirim</strong>: güçlü yönler, gelişime açık alanlar ve ölçüt bazında öneriler; üçü de modelin önerisiyle dolu gelir, hakem düzeltir, siler, ekler ve tamamlayınca onaylamış olur.<br>
+                Tamamlanan değerlendirme değiştirilemez — bir karardır ve sessizce değiştirilebilirse denetim izi anlamsız kalır.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:24px">
+        Yarışmacı portalı <span class="etiket e-mavi">Rol 03</span>
+      </h3>
+      <div class="tablo-kap">
+        <table>
+          <thead>
+            <tr><th style="width:200px">Ekran</th><th>Üzerindeki özellikler</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Sonuç</strong><br><span class="yol">/sonuc</span></td>
+              <td>
+                Başvuru numarasıyla giriş. Sayfa <strong>yalnızca hakem tamamladıysa</strong> açılır. Dört bölüm: kriter bazlı puan (ölçüt ölçüt, çubuklu), <strong>Güçlü Yönleriniz</strong>, <strong>Gelişime Açık Alanlar</strong>, <strong>Gelecek Yıl İçin Öneriler</strong> (en çok puan kaybedilen ölçütten başlayarak, "+N puana kadar" hakemin puanından hesaplanmış).<br>
+                Bir başvuru numarasına birden çok rapor bağlıysa hepsi listelenir. <strong>Yapay zekâ puanı hiç gösterilmez.</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 04 -->
+    <section id="teknoloji">
+      <div class="goz-ustu">Bölüm 04</div>
+      <h2>Teknoloji yığını ve her parçanın işi</h2>
+
+      <p>
+        Bağımlılık listesi kasıtlı olarak kısa. Her satırın bir gerekçesi
+        var ve gerekçesi olmayan hiçbir paket girmedi.
+      </p>
+
+      <div class="tablo-kap">
+        <table>
+          <thead>
+            <tr><th>Teknoloji</th><th class="tek">Sürüm</th><th>Nerede ve niçin</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Next.js</strong> (App Router)</td>
+              <td class="tek">16.3.2</td>
+              <td>Bütün uygulamanın iskeleti. Sunucu bileşenleri sayesinde veri erişimi <em>sunucuda</em> kalıyor — gerçek takım adları istemciye hiç inmiyor. API rotaları da aynı çatı altında.</td>
+            </tr>
+            <tr>
+              <td><strong>React</strong></td>
+              <td class="tek">19.2.8</td>
+              <td>Arayüz. Etkileşim gereken yerler istemci bileşeni (<code>'use client'</code>), geri kalan her şey sunucuda çiziliyor.</td>
+            </tr>
+            <tr>
+              <td><strong>TypeScript</strong></td>
+              <td class="tek">5.x</td>
+              <td>Tip güvenliği. Veri modeli, analiz sonuçları ve model çıktısı tiplenmiş; <code>tsc --noEmit</code> her adımda çalıştırılıyor.</td>
+            </tr>
+            <tr>
+              <td><strong>Tailwind CSS</strong></td>
+              <td class="tek">4.x</td>
+              <td>Stil. <code>@theme inline</code> ile tasarım belirteçleri tanımlı: lacivert kenar çubuğu, kırmızı birincil renk, durum çipleri.</td>
+            </tr>
+            <tr>
+              <td><strong>node:sqlite</strong></td>
+              <td class="tek">Node 22.14</td>
+              <td><strong>Veritabanı — sıfır bağımlılık.</strong> Node 22'nin içinde geliyor; derleme gerektiren yerel modül yok. WAL kipi, yabancı anahtarlar açık, 5 sn kilit zaman aşımı.</td>
+            </tr>
+            <tr>
+              <td><strong>@anthropic-ai/sdk</strong></td>
+              <td class="tek">0.120.0</td>
+              <td>Tek ücretli katman. Model <code>claude-opus-5</code>, uyarlanabilir düşünme, JSON şemasıyla yapılandırılmış çıktı.</td>
+            </tr>
+            <tr>
+              <td><strong>unpdf</strong></td>
+              <td class="tek">1.8.1</td>
+              <td>PDF metin katmanını <strong>koordinatlarıyla</strong> çıkarıyor — satır birleştirme ve başlık tespiti buna dayanıyor. Gömülü görselleri de çıkarıyor (şekil karşılaştırması için).</td>
+            </tr>
+            <tr>
+              <td><strong>fflate</strong></td>
+              <td class="tek">0.8.3</td>
+              <td>Word okuma. DOCX aslında bir zip; <code>word/document.xml</code> açılıp okunuyor. Ağır bir Word kütüphanesi yerine tek bir zip çözücü.</td>
+            </tr>
+            <tr>
+              <td><strong>pdf-lib</strong> + fontkit</td>
+              <td class="tek">1.17.1</td>
+              <td>Yalnızca <em>test verisi üretiminde</em>: Türkçe karakterli sentetik raporlar ve benzerlik korpusu oluşturuluyor. Üretim yolunda kullanılmıyor.</td>
+            </tr>
+            <tr>
+              <td><strong>tsx</strong> + <strong>node:test</strong></td>
+              <td class="tek">4.23.12</td>
+              <td>33 bakım/ölçüm betiği ve 101 birim testi. Ayrı test çatısı kurulmadı — Node'un kendi test koşucusu yeterli.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="izgara iki">
+        <div class="kart">
+          <h3>Neden ağır bağımlılık yok</h3>
+          <p>
+            Benzerlik, algısal hash, TF-IDF, dil tespiti, Türkçe metin
+            onarımı ve kaynakça çözümlemesinin <strong>tamamı proje
+            içinde</strong> yazıldı. Hazır kütüphane kullanılsaydı Türkçe'ye
+            uyarlanamayacaktı — ve bu projede Türkçe, sonradan eklenen bir
+            özellik değil, temel kısıt.
+          </p>
+        </div>
+        <div class="kart">
+          <h3>Dış ağ nereye gidiyor</h3>
+          <p>
+            Üç adres: <strong>teknofest.org</strong> (yarışma kataloğu ve
+            belgeler), <strong>Crossref</strong> ve
+            <strong>OpenAlex</strong> (kaynak doğrulama — yalnızca kaynakça
+            künyesi gönderiliyor, rapor içeriği asla) ve
+            <strong>api.anthropic.com</strong> (ön değerlendirme).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 05 -->
+    <section id="okuma">
+      <div class="goz-ustu">Bölüm 05 · Algoritma</div>
+      <h2>Belgeyi okumak: her şeyin başladığı yer</h2>
+
+      <p>
+        PDF'ten metin çıkarmak "metni al" kadar basit değil. PDF metni
+        <em>konumlandırılmış parçalar</em> olarak saklıyor — bir cümle onlarca
+        parçaya bölünmüş olabilir, satır sırası görsel sıra olmayabilir.
+        Sistem bunu şöyle çözüyor:
+      </p>
+
+      <div class="mekanizma">
+        <h4>Boru hattı</h4>
+        <p style="font-size:13.5px;color:var(--metin-2)">
+          <strong>1.</strong> <code>unpdf</code> ile parçalar ve
+          koordinatları alınır &nbsp;→&nbsp;
+          <strong>2.</strong> Y koordinatına göre <strong>satırlar
+          birleştirilir</strong> &nbsp;→&nbsp;
+          <strong>3.</strong> Yazı tipi boyutu, kalınlık ve büyük harf
+          oranından <strong>başlıklar tespit edilir</strong> &nbsp;→&nbsp;
+          <strong>4.</strong> Başlıklar arası metin <strong>bölümlere
+          ayrılır</strong> &nbsp;→&nbsp;
+          <strong>5.</strong> Türkçe onarımı uygulanır &nbsp;→&nbsp;
+          <strong>6.</strong> Altı kontrol bu yapı üzerinde çalışır.
+        </p>
+      </div>
+
+      <p>
+        Word dosyalarında yol daha kısa: DOCX bir zip arşivi,
+        <code>word/document.xml</code> açılıp paragraflar ve stiller
+        okunuyor. Stil adı (<code>Heading1</code> gibi) başlık tespitini
+        kolaylaştırıyor.
+      </p>
+
+      <p class="sonuk">
+        <strong>Taranmış PDF ne olacak?</strong> Metin katmanı olmayan
+        belgede parmak izi çıkarılamıyor. Sistem bunu sessizce geçmiyor:
+        rapor "parmak izi çıkarılamadı" olarak sayılıyor ve kopya taramasında
+        kaç raporun tarama dışı kaldığı ayrıca bildiriliyor. "0 kopya bulundu"
+        demek, 12 raporun hiç bakılmadığını gizliyorsa yanıltıcı olur.
+      </p>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 06 -->
+    <section id="turkce">
+      <div class="goz-ustu">Bölüm 06 · Algoritma</div>
+      <h2>Türkçe metin onarımı — her şeyin temeli</h2>
+
+      <p>
+        Bu modül olmadan diğer hiçbiri doğru çalışmıyor. Üç ayrı bozulma
+        onarılıyor:
+      </p>
+
+      <div class="izgara uc">
+        <div class="kart">
+          <h4>Mojibake</h4>
+          <p>
+            Yanlış kod sayfasıyla kaydedilmiş metin: <code>Ã¼</code> →
+            <code>ü</code>. Eşleme tablosuyla düzeltiliyor.
+          </p>
+        </div>
+        <div class="kart">
+          <h4>cp1254 karışması</h4>
+          <p>
+            Eski PDF üreticilerinde <code>Ý</code> → <code>İ</code>,
+            <code>þ</code> → <code>ş</code>. Ama koşullu: <em>ç, ö, ü iki
+            kod sayfasında da aynı bayta düşüyor</em>, o yüzden onları
+            "düzgün" kanıtı saymak yanlış olur.
+          </p>
+        </div>
+        <div class="kart">
+          <h4>Ligatürler + NFC</h4>
+          <p>
+            <code>ﬁ</code> → <code>fi</code> gibi bitişik harfler açılıyor,
+            sonra Unicode NFC normalleştirmesi uygulanıyor.
+          </p>
+        </div>
+      </div>
+
+      <div class="kural">
+        <h4>JS düzenli ifadeleri Türkçede sessizce başarısız oluyor</h4>
+        <p>
+          Bu, projede defalarca yakalanan bir tuzak ve öğrenilmesi gereken en
+          önemli teknik detay:
+        </p>
+        <ul style="font-size:13.5px;margin-top:8px">
+          <li><code>/kategori/i</code> ifadesi <strong>"KATEGORİSİ" ile eşleşmiyor</strong> — büyük <code>İ</code> küçültülünce <code>i</code> + birleşen nokta olarak iki koda ayrılıyor.</li>
+          <li><code>\b</code> kelime sınırı <strong>ı, ş, ğ harflerini kelime karakteri saymıyor</strong>; <code>\bYarışması\b</code> hiçbir zaman eşleşmiyor.</li>
+          <li>Sondaki <code>\b</code> ekleri kesiyor: <code>incelenecek\b</code> "incelenecektir" ile eşleşmiyor.</li>
+        </ul>
+        <p style="margin-top:8px">
+          Çözüm: karşılaştırma öncesi <strong>uzunluğu koruyan</strong> bir
+          ASCII katlama uygulanıyor (<code>İ→i</code>, <code>I→ı</code>) ve
+          kelime sınırı yerine açık ayraç kümeleri kullanılıyor.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 07 -->
+    <section id="dil">
+      <div class="goz-ustu">Bölüm 07 · Algoritma</div>
+      <h2>Dil tespiti <span class="etiket e-bedava">$0</span></h2>
+
+      <p>
+        Harici kütüphane yok. İki sinyal sayılıyor: <strong>Türkçeye özgü
+        harfler</strong> (ç, ğ, ı, İ, ö, ş, ü) ve <strong>iki dilin işlev
+        sözcükleri</strong> — Türkçe için <em>ve, bir, için, ile,
+        edilmiştir…</em>, İngilizce için <em>the, and, of, to, is…</em>
+      </p>
+
+      <p>
+        Kritik ayrıntı: tespit <strong>bölüm bazında</strong> da yapılıyor.
+        Yarısı İngilizce yazılmış bir rapor tek bir "tr" etiketiyle
+        geçiştirilmiyor; sapan bölüm <code>DIL_BOLUM_SAPMASI</code> bulgusu
+        olarak işaretleniyor.
+      </p>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 08 -->
+    <section id="sablon">
+      <div class="goz-ustu">Bölüm 08 · Algoritma</div>
+      <h2>Şablon çıkarımı: rubriği sormaya gerek yok</h2>
+
+      <p>
+        TEKNOFEST her yarışma için <strong>ayrı şablon</strong> hazırlıyor ve
+        kurallar şablonun içinde. İki gerçek örnek yan yana konunca yapının
+        ne kadar değiştiği görülüyor:
+      </p>
+
+      <div class="kod">
+<pre><span class="y">Havacılıkta YZ · Ön Tasarım Raporu     Maden Teknolojileri · Ön Değ. Raporu
+─────────────────────────────────     ──────────────────────────────────</span>
+TAKIM ŞEMASI                          PROJE ÖZETİ <span class="v">(18)</span>
+PROJE MEVCUT DURUM DEĞ. <span class="v">(10)</span>          SORUNUN TANIMI VE ÇÖZÜM <span class="v">(35)</span>
+ALGORİTMALAR VE SİSTEM MİM. <span class="v">(30)</span>      YENİLİKÇİLİK / YERLİLEŞTİRME <span class="v">(15)</span>
+  Veri Setleri <span class="v">(10)</span>                   UYGULANABİLİRLİK <span class="v">(15)</span>
+  Algoritmalar <span class="v">(15)</span>                   HAZIRLANIŞ SÜRECİ <span class="v">(10)</span>
+  Akış Şeması <span class="v">(5)</span>                     PROJE TAKIMI <span class="v">(2)</span>
+ÖZGÜNLÜK <span class="v">(10)</span> · TAKVİM <span class="v">(10)</span>          KAYNAKLAR <span class="v">(3)</span>
+SONUÇLAR <span class="v">(30)</span> · KAYNAKÇA <span class="v">(5)</span>         RAPOR DÜZENİ <span class="v">(2)</span></pre>
+      </div>
+
+      <p>
+        Bölüm adları, ağırlıklar, sayfa sınırları, hatta kaynakça bölümünün
+        adı bile farklı. Bu yüzden motorda hiçbir şey sabit değil — şablon
+        dosyası yüklenince sistem <strong>kendisi çıkarıyor</strong>:
+      </p>
+
+      <div class="mekanizma">
+        <h4>İki kazanç</h4>
+        <p style="font-size:13.5px;color:var(--metin-2)">
+          <strong>1 · Yönerge metinleri</strong> — şablonun bölüm altına
+          yazdığı açıklama, "bu bölüm doldurulmamış" tespitinin dayanağı
+          oluyor. Bölümde yönerge metninin dışında kayda değer içerik
+          kalmıyorsa bölüm boş sayılıyor.<br><br>
+          <strong>2 · Başlıktaki "(N Puan)"</strong> — MVP 6'nın rubriği
+          bu. Ölçütleri ve ağırlıklarını kimseye sormaya gerek yok, şablonun
+          kendisi söylüyor.
+        </p>
+        <div class="sabitler">
+          <div><b>0,72</b> <span>başlık eşleşme eşiği</span></div>
+          <div><b>0,80</b> <span>yönerge metni eşiği</span></div>
+          <div><b>74 / 81</b> <span>rubrik çıkarılabilen kategori</span></div>
+        </div>
+      </div>
+
+      <p>
+        Başlık kontrolünde ince bir ayrıntı var: bir bölümün kelime sayısı
+        <strong>alt başlıklarıyla birlikte</strong> ölçülüyor. Üst başlığın
+        kendi gövdesi boş olabilir, içerik alt başlıklarındadır — yalnızca
+        kendi gövdesine bakan kontrol dolu bir bölümü "yetersiz" diye
+        işaretlerdi.
+      </p>
+
+      <p class="sonuk">
+        Şablon yıl içinde değişirse <strong>yerinde güncelleme</strong>
+        yapılıyor: hakem puanları, yüklenmiş raporlar ve elle eklenen
+        ölçütler korunuyor. Yalnızca şablondan türeyen ölçütler
+        karşılaştırılıp onay durumu güncelleniyor.
+      </p>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 09 -->
+    <section id="kategori">
+      <div class="goz-ustu">Bölüm 09 · Algoritma</div>
+      <h2>Kategori uygunluğu: TF-IDF ve üstünlük oranı</h2>
+
+      <p>
+        Yarışmacı başvurusunu yanlış kategoriye yapmış olabilir. Sınıflandırma
+        <strong>TF-IDF</strong> ile yapılıyor — model çağrısı yok.
+      </p>
+
+      <p>
+        IDF'in işlevi burada kritik: "sistem", "proje", "yazılım" gibi her
+        kategoride geçen terimler otomatik olarak <strong>değersizleşiyor</strong>,
+        ayırt edici terimler öne çıkıyor. Elle ağırlık vermek gerekmiyor.
+        Terim profilleri de uydurma değil — <strong>70 gerçek TEKNOFEST
+        şartnamesinden</strong> çıkarıldı.
+      </p>
+
+      <div class="kural">
+        <h4>Kararlar orana değil üstünlüğe bakıyor</h4>
+        <p>
+          İlk sürüm normalize edilmiş orana bakıyordu: "en iyi eşleşme
+          %30'un altındaysa belirsiz". Bu <strong>ölçeğe bağımlı</strong> ve
+          karşılaştırma kümesi büyüyünce bozuluyor — 4 kategoriyle doğruydu,
+          gerçek şartnamelerden 70 profil çıkarılınca pay 70'e bölündü,
+          hiçbir eşleşme %30'a ulaşamadı ve <strong>her rapor "belirsiz"
+          damgası yedi</strong>.
+        </p>
+        <p style="margin-top:8px">
+          Doğru ölçüt oran değil <strong>üstünlük</strong>: en iyi eşleşme
+          ikinciden belirgin biçimde önde mi? Bu ölçütün kategori sayısıyla
+          ilgisi yok — 4 kategoride de 70 kategoride de aynı anlama geliyor.
+        </p>
+      </div>
+
+      <div class="mekanizma">
+        <h4>Karar eşikleri</h4>
+        <div class="sabitler">
+          <div><b>1,4×</b> <span>en iyi / ikinci — altındaysa karar yok</span></div>
+          <div><b>3</b> <span>asgari eşleşen terim</span></div>
+          <div><b>2×</b> <span>beyan edilen kategori bu kadar gerideyse uyarı</span></div>
+          <div><b>sublineer</b> <span>tf — terim yüzlerce kez geçse de baskın olmasın</span></div>
+        </div>
+      </div>
+
+      <p class="sonuk">
+        Güven düşük kaldığında sistem <strong>karar vermiyor</strong>; hakeme
+        "belirsiz" olarak sunuyor. Yanlış kategori suçlaması güçlü kanıt
+        istediği için sapma eşiği (2×) üstünlük eşiğinden (1,4×) yüksek
+        tutuldu.
+      </p>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 10 -->
+    <section id="benzerlik">
+      <div class="goz-ustu">Bölüm 10 · Algoritma</div>
+      <h2>Benzerlik taraması: neyi benzerlik <em>saymadığı</em></h2>
+
+      <p>
+        Bu modülün değerini belirleyen şey, neyi eledigidir. Aynı kategorideki
+        raporlar zaten birbirine benzer — aynı şablonu kullanırlar, aynı
+        terminolojiyi paylaşırlar, aynı kaynaklara atıf yaparlar. Ham benzerlik
+        oranı bu yüzden anlamsız.
+      </p>
+
+      <h3 style="margin-top:22px">Metin: MinHash + kapsama oranı</h3>
+
+      <div class="mekanizma">
+        <h4>Nasıl çalışıyor</h4>
+        <p style="font-size:13.5px;color:var(--metin-2)">
+          Metin <strong>4 kelimelik shingle</strong>'lara bölünüyor, her
+          shingle <strong>FNV-1a</strong> ile karmalanıyor, 128 permütasyonla
+          <strong>MinHash imzası</strong> çıkarılıyor. İki imzanın eşleşen
+          konum oranı Jaccard tahminini veriyor.
+        </p>
+        <div class="sabitler">
+          <div><b>4</b> <span>shingle uzunluğu (kelime)</span></div>
+          <div><b>128</b> <span>MinHash permütasyonu ≈ ±%4 hata</span></div>
+          <div><b>8</b> <span>asgari cümle uzunluğu</span></div>
+          <div><b>0,55</b> <span>cümle eşleşme eşiği</span></div>
+        </div>
+      </div>
+
+      <div class="kural">
+        <h4>Jaccard değil, kapsama oranı</h4>
+        <p>
+          Jaccard kısmi kopyayı <strong>seyreltiyor</strong>. Bir rapor
+          diğerinin yalnızca iki bölümünü kopyaladıysa — sahada en sık
+          görülen durum — Jaccard düşük kalıyor ve kopya kaçıyor.
+        </p>
+        <p style="margin-top:8px">
+          Kapsama oranı doğru soruyu soruyor:
+          <strong>"küçük belgenin ne kadarı öbüründe var?"</strong>
+          <code>J = |A∩B| / |A∪B|</code> olduğundan
+          <code>|A∩B| = J·(|A|+|B|) / (1+J)</code> ile kesişim geri
+          hesaplanıp küçük belgenin boyutuna bölünüyor.
+        </p>
+      </div>
+
+      <h3 style="margin-top:22px">Görsel: algısal hash (pHash)</h3>
+
+      <p>
+        Metni yeniden yazıp <strong>aynı şekli</strong> kullanmak sahada en
+        sık görülen kopya biçimi ve metin benzerliğiyle yakalanamıyor.
+      </p>
+
+      <div class="mekanizma">
+        <h4>DCT tabanlı 64 bit imza</h4>
+        <p style="font-size:13.5px;color:var(--metin-2)">
+          Görsel <strong>32×32</strong> griye indiriliyor →
+          <strong>DCT-II</strong> uygulanıyor → sol üst <strong>8×8</strong>
+          düşük frekans bloğu alınıyor → medyanla eşikleniyor →
+          <strong>64 bitlik</strong> imza. Yeniden boyutlandırma, sıkıştırma
+          ve hafif renk değişimi imzayı bozmuyor; gerçek içerik değişimi
+          bozuyor. Karşılaştırma <strong>Hamming mesafesi</strong> ile.
+        </p>
+        <div class="sabitler">
+          <div><b>32×32</b> <span>DCT giriş boyutu</span></div>
+          <div><b>8×8</b> <span>düşük frekans bloğu</span></div>
+          <div><b>≤ 6</b> <span>azami Hamming mesafesi (64 bit)</span></div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:22px">Eşik: her kategori kendi tabanını belirliyor</h3>
+
+      <div class="kural">
+        <h4>Sabit eşik yok — olamaz</h4>
+        <p>
+          Aynı kategorideki raporlar ortak terminoloji taşıyor: "İHA", "görev
+          yükü", "YOLOv8" her raporda geçiyor. Sabit bir eşik ya
+          <strong>her çifti</strong> işaretler ya <strong>hiçbirini</strong>.
+        </p>
+        <p style="margin-top:8px">
+          Motor her kategorinin <strong>kendi doğal benzerlik tabanını</strong>
+          hesaplayıp eşiği <code>taban + 3×MAD</code> alıyor. İşaretlenen
+          çift "bu kategoride <em>olağandışı derecede</em> benzer" demek.
+        </p>
+      </div>
+
+      <p>
+        Karşılaştırmadan önce şablonun kendi metni, bölüm başlıkları, sayfa
+        üst/alt bilgisi ve kaynakça <strong>çıkarılıyor</strong> — iki raporun
+        aynı şablonu kullanması benzerlik sayılmıyor. Aynı takımın devam
+        projesi de ayrı sınıflandırılıyor: kopya değil, süreklilik.
+      </p>
+
+      <p class="sonuk">
+        <strong>Sistem "intihal" demiyor.</strong> Yüksek örtüşme tek başına
+        intihal değildir — ortak şablon, ortak kaynak, aynı takımın devam
+        projesi olabilir. Ekran karar vermiyor, <strong>kanıt gösteriyor</strong>:
+        eşleşen cümleler yan yana, hangi sayfada, eşleşen şekiller hangi
+        oranda.
+      </p>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 11 -->
+    <section id="kaynak">
+      <div class="goz-ustu">Bölüm 11 · Algoritma</div>
+      <h2>Kaynak doğrulama: uydurma kaynakça tespiti</h2>
+
+      <p>
+        Raporlar giderek yapay zekâ ile yazılıyor ve model kaynakça
+        <strong>uyduruyor</strong>: künye biçimsel olarak kusursuz görünüyor
+        — yazar var, yıl var, dergi var, sayfa aralığı var — ama öyle bir
+        yayın yok. <strong>Biçime bakan hiçbir kontrol bunu yakalayamaz.</strong>
+      </p>
+
+      <div class="izgara uc">
+        <div class="kart">
+          <h4>1 · Çevrimdışı sezgi</h4>
+          <p>
+            Künyenin kendisiyle çelişkiler: gelecek tarihli yayın, atıf
+            yapılamaz kaynak türü, kaynakçanın tamamında hiç DOI olmaması.
+          </p>
+        </div>
+        <div class="kart">
+          <h4>2 · DOI çözümleme</h4>
+          <p>
+            DOI varsa <strong>Crossref</strong>'te gerçekten var mı, künye
+            tutuyor mu.
+          </p>
+        </div>
+        <div class="kart">
+          <h4>3 · Başlık araması</h4>
+          <p>
+            <strong>OpenAlex</strong> ve Crossref'te başlık + yazar + yıl
+            araması.
+          </p>
+        </div>
+      </div>
+
+      <div class="kural">
+        <h4>"Bulunamadı" ile "sahte" aynı şey değildir</h4>
+        <p>
+          DergiPark'taki yerel bir Türkçe dergi, kurumsal rapor ya da veri
+          seti akademik indekslerde bulunmaz. Sistem bunları
+          <strong>ayrı sınıflandırıyor</strong> ve hiçbir künye için "sahte"
+          demiyor — kanıtı hakemin önüne koyuyor. Ölçülen sonuç: 3 kaynak
+          indekste doğrulandı, 9'u indekslenemez çıktı.
+        </p>
+      </div>
+
+      <p class="sonuk">
+        Ağa yalnızca <strong>kaynakça künyesi</strong> gidiyor; rapor
+        içeriğinden hiçbir şey gönderilmiyor.
+      </p>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 12 -->
+    <section id="ai">
+      <div class="goz-ustu">Bölüm 12 · Algoritma</div>
+      <h2>Yapay zekâ katmanı <span class="etiket e-ucretli">$0,131 / rapor</span></h2>
+
+      <p>
+        Sistemin <strong>tek</strong> ücretli adımı. Model
+        <code>claude-opus-5</code>; uyarlanabilir düşünme ve
+        <strong>JSON şemasıyla yapılandırılmış çıktı</strong> kullanılıyor —
+        yani model serbest metin değil, doğrulanmış bir yapı döndürüyor.
+      </p>
+
+      <div class="mekanizma">
+        <h4>Modele ne gönderiliyor</h4>
+        <p style="font-size:13.5px;color:var(--metin-2)">
+          Rapor metni · şablondan çıkarılan <strong>rubrik</strong> (ölçüt
+          adları ve ağırlıkları) · şablon uyum özeti ·
+          <strong>şartname özeti</strong> (eleyici kurallar) ·
+          <strong>rapordaki şekiller</strong> — akış şemasını görsel olarak
+          çizen rapor cezalandırılmasın diye.
+        </p>
+      </div>
+
+      <div class="mekanizma">
+        <h4>Model ne döndürüyor</h4>
+        <p style="font-size:13.5px;color:var(--metin-2)">
+          Her ölçüt için: <strong>puan önerisi</strong>,
+          <strong>gerekçe</strong>, <strong>rapordan alıntı</strong> (sayfa
+          numarasıyla), <strong>güven etiketi</strong> (yüksek/orta/düşük),
+          <strong>iyileştirme önerisi</strong> ve
+          <strong>hakem incelemesi gerekli mi</strong> bayrağı.<br><br>
+          Ayrıca genel <strong>güçlü yönler</strong>, <strong>gelişime açık
+          alanlar</strong> ve <strong>şartname ihlalleri</strong> —
+          sonuncusu puanlamaya dahil değil, uygunluk konusu.
+        </p>
+      </div>
+
+      <div class="kural">
+        <h4>"Emin değilsen puan uydurma"</h4>
+        <p>
+          Sistem istemine yazılı olan kural: model emin olmadığında güveni
+          <em>düşük</em> işaretliyor ve <code>hakemIncelemesiGerekli</code>
+          bayrağını kaldırıyor. Ekranda bu ölçütler ayrıca sayılıyor:
+          "N ölçüt inceleme istiyor".
+        </p>
+      </div>
+
+      <h3 style="margin-top:22px">Maliyet iki katmanda korunuyor</h3>
+
+      <div class="izgara iki">
+        <div class="kart">
+          <h4>Disk önbelleği</h4>
+          <p>
+            Aynı rapor ikinci kez değerlendirilirse çağrı yapılmıyor,
+            önbellekten dönüyor — <strong>$0</strong>. Önbellek isabetleri
+            panoda ayrıca gösteriliyor.
+          </p>
+        </div>
+        <div class="kart">
+          <h4>Bütçe tavanı</h4>
+          <p>
+            <code>TOPLAM_TAVAN</code> aşılırsa istemci <strong>çağrı yapmayı
+            reddediyor</strong>. Toplu değerlendirmede sunucu 402 dönünce
+            döngü duruyor — aynı hatayı 40 kez almak "sistem bozuk" gibi
+            görünür.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 13 -->
+    <section id="puan">
+      <div class="goz-ustu">Bölüm 13</div>
+      <h2>Puan nasıl hesaplanıyor</h2>
+
+      <p>
+        Bir rapora birden çok hakem atanabiliyor ve <strong>puanlar
+        birbirini ezmiyor</strong> — her hakemin değerlendirmesi kendi
+        satırında. Nihai puan bunlardan türetiliyor.
+      </p>
+
+      <div class="mekanizma">
+        <h4>Kurallar</h4>
+        <p style="font-size:13.5px;color:var(--metin-2)">
+          <strong>Nihai puan</strong> = tamamlanmış değerlendirmelerin
+          ortalaması. <em>Taslaklar sayılmıyor</em> — yarım kalmış bir
+          puanlamayı nihai puana katmak, hakemi bitirmeden karar vermiş
+          göstermek olurdu.<br><br>
+          <strong>Ayrışma</strong> = en yüksek − en düşük. 10 puanı aşınca
+          uyarı veriliyor: koordinasyonun bakması gereken bir sinyal.<br><br>
+          <strong>Kriter ortalaması</strong> o ölçütü <em>puanlayan</em>
+          hakem sayısına bölünüyor, tamamlanan hakem sayısına değil. Bir
+          hakem bir ölçütü boş bırakırsa o ölçütün puanı haksız yere
+          düşmesin.
+        </p>
+      </div>
+
+      <div class="kural">
+        <h4>Türetilmiş değerin tek yazıcısı olur</h4>
+        <p>
+          Nihai puan liste ekranlarında her satır için hesaplanamayacağı için
+          (200 rapor = 200 ek sorgu) kolonda önbelleklenmiş duruyor. Bu
+          önbellek bir kez ayrıştı ve <strong>aynı rapor listede 75,5,
+          detayda 71,8 puan</strong> gösterdi.
+        </p>
+        <p style="margin-top:8px">
+          Kural artık tek: o kolona <strong>yalnızca bir fonksiyon</strong>
+          yazıyor ve değerlendirme durumunu değiştiren her işlemin sonunda
+          çağrılıyor. Hesabın kendisi veritabanından bağımsız bir dosyada ve
+          test kapsamında.
+        </p>
+      </div>
+
+      <p>
+        Ölçülmüş çok hakemli örnekler:
+      </p>
+      <div class="tablo-kap">
+        <table>
+          <thead>
+            <tr><th>Rapor</th><th class="tek">Hakem puanları</th><th class="tek">Nihai</th><th class="tek">Ayrışma</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>TF-BOTAN</td><td class="tek">85,2 · 55,2</td><td class="tek">70,2</td><td class="tek">30</td></tr>
+            <tr><td>TF-ZAP</td><td class="tek">76 · 55</td><td class="tek">65,5</td><td class="tek">21</td></tr>
+            <tr><td>TF-2026-004181</td><td class="tek">75,5 · 80 · 60</td><td class="tek">71,8</td><td class="tek">20</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 14 -->
+    <section id="veri">
+      <div class="goz-ustu">Bölüm 14</div>
+      <h2>Veri modeli</h2>
+
+      <p>
+        SQLite, dokuz tablo. <code>node:sqlite</code> Node 22'nin içinde
+        geldiği için <strong>hiç bağımlılık yok</strong> ve derleme
+        gerektiren yerel modül kurulmuyor.
+      </p>
+
+      <div class="tablo-kap">
+        <table>
+          <thead>
+            <tr><th>Tablo</th><th>Ne tutuyor</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="tek">yarisma</td><td>Yarışma tanımı, yıl, katalog bağlantısı</td></tr>
+            <tr><td class="tek">kategori</td><td>Şablon, kurallar, <strong>rubrik</strong>, şartname, onay durumu</td></tr>
+            <tr><td class="tek">rapor</td><td>Başvuru künyesi, kontrol sonuçları, AI değerlendirmesi, nihai puan</td></tr>
+            <tr><td class="tek">parmakizi</td><td><strong>Ayrı tablo</strong> — rapor başına ~40 KB; liste sorgularına yük olmasın</td></tr>
+            <tr><td class="tek">hakem</td><td>Kimlik, erişim kodu, uzmanlık, aktiflik, <strong>sistem kaydı mı</strong></td></tr>
+            <tr><td class="tek">atama</td><td>(rapor, hakem) çifti, son tarih, atayan</td></tr>
+            <tr><td class="tek">degerlendirme</td><td>Hakem başına puanlar, açıklama, <strong>onaylı geri bildirim</strong>, durum</td></tr>
+            <tr><td class="tek">mesaj</td><td>Hakem–koordinasyon yazışması (yarışmacıya gösterilmez)</td></tr>
+            <tr><td class="tek">sema_surumu</td><td>Şema sürümü — alan eklendikçe geçiş yazılıyor</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="izgara iki">
+        <div class="kart">
+          <h4>Ayarlar</h4>
+          <p>
+            <code>WAL</code> kipi: okuma ve yazma birbirini kilitlemiyor —
+            üç hakem aynı anda puan girerken pano donmasın.<br>
+            <code>foreign_keys = ON</code>: SQLite'ta <strong>varsayılan
+            olarak kapalı</strong>; açılmazsa yabancı anahtarlar yalnızca
+            belge süsü olur.<br>
+            <code>busy_timeout = 5000</code>: kilit çakışmasında 5 sn bekle.
+          </p>
+        </div>
+        <div class="kart">
+          <h4>Şema geçişleri</h4>
+          <p>
+            <code>CREATE TABLE IF NOT EXISTS</code> yalnızca <em>yeni</em>
+            veritabanını kuruyor, var olan tabloya alan <strong>eklemiyor</strong>.
+            Bu yüzden sürümlü geçiş yazıldı: sürüm 2 <code>hakem.sistem</code>,
+            sürüm 3 <code>degerlendirme.geri_bildirim</code> alanını ekliyor.
+            9 indeks tanımlı.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 15 -->
+    <section id="guvenlik">
+      <div class="goz-ustu">Bölüm 15</div>
+      <h2>Erişim, gizlilik ve kör puanlama</h2>
+
+      <div class="tablo-kap">
+        <table>
+          <thead>
+            <tr><th>Portal</th><th>Nasıl giriyor</th><th>Neyi koruyor</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Koordinasyon</strong></td>
+              <td>Ortak anahtar, HttpOnly çerez</td>
+              <td>Bütün koordinasyon ekranları ve 19 API ucu</td>
+            </tr>
+            <tr>
+              <td><strong>Hakem</strong></td>
+              <td>Kendi erişim kodu</td>
+              <td>Yalnızca kendisine atanmış raporlar</td>
+            </tr>
+            <tr>
+              <td><strong>Yarışmacı</strong></td>
+              <td>Başvuru numarası</td>
+              <td>Yalnızca kendi sonucu, hakem tamamladıysa</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="izgara iki">
+        <div class="kart">
+          <h4>Denetim iki katmanda</h4>
+          <p>
+            <code>proxy.ts</code> perimetre olarak yetkisiz kullanıcıyı giriş
+            sayfasına yönlendiriyor, ama <strong>gerçek karar her rotanın
+            içinde</strong>. Next belgeleri bunu açıkça uyarıyor: bir rotanın
+            taşınması perimetre kapsamını sessizce kaldırabilir.
+          </p>
+        </div>
+        <div class="kart">
+          <h4>Yetki doğrulamadan önce</h4>
+          <p>
+            Reddedilen istek bile bilgi sızdırmamalı. "Rapor yok" ile "size
+            atanmamış" tek yanıta indirildi — ikisini ayırmak, gerçek rapor
+            kimliklerinin taranarak öğrenilmesine izin verirdi.
+          </p>
+        </div>
+        <div class="kart">
+          <h4>Kimlik maskeleme</h4>
+          <p>
+            Hakem ekranında takım adı <strong>rumuzla</strong> görünüyor
+            (<code>Takım 8EM8 · R-WKT4</code>). Rumuz FNV-1a karmasından
+            üretiliyor — gerçek adın son harflerini almak "anadolu" → "DOLU"
+            gibi sızıntı yaratırdı. Arama gerçek veriyle
+            <strong>sunucuda</strong> çalışıyor.
+          </p>
+        </div>
+        <div class="kart">
+          <h4>Erişim kodu tasarımı</h4>
+          <p>
+            <code>XXXX-XXXX</code> biçiminde. Alfabede <strong>0/O ve
+            1/I/l yok</strong> — kod telefonda okunup elle yazılabiliyor.
+            Karşılaştırma tire, boşluk ve büyük/küçük harf farkını göz ardı
+            ediyor.
+          </p>
+        </div>
+      </div>
+
+      <div class="kural">
+        <h4>Yarışmacıya giden her cümle hakem onayından geçiyor</h4>
+        <p>
+          Güçlü yönler, gelişime açık alanlar ve öneriler model tarafından
+          üretiliyor ama <strong>doğrudan yayımlanmıyor</strong>. Hakem
+          panelinde dolu geliyor, hakem düzeltip tamamlayınca onaylamış
+          oluyor. <code>npm run denetim</code> bu kuralı ölçüyor: modelin
+          ürettiği metinler sayfada aranıp hakem onaylılarıyla
+          karşılaştırılıyor.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 16 -->
+    <section id="olcum">
+      <div class="goz-ustu">Bölüm 16</div>
+      <h2>Ölçüm ve doğrulama: her iddianın bir komutu var</h2>
+
+      <p>
+        "Hacimde çalışıyor", "yapay zekâ puanı yarışmacıya gitmiyor",
+        "dağıtım dengeli" — üçü de bir zamanlar yalnızca belgede yazan
+        cümlelerdi ve üçü de kısmen yanlıştı.
+      </p>
+
+      <div class="kod">
+<pre><span class="v">npm test</span>                 <span class="y"># 101 birim testi</span>
+<span class="v">npm run duman</span>            <span class="y"># 31 uçtan uca vaka: ekranlar + yetki sınırları</span>
+<span class="v">npm run db:kontrol</span>       <span class="y"># 12 veri tutarlılığı sorgusu</span>
+<span class="v">npm run denetim</span>          <span class="y"># yarışmacı sayfası sızıntı denetimi</span>
+<span class="v">npm run hacim -- 3000</span>    <span class="y"># performans ölçümü</span>
+<span class="v">npm run kanit</span>            <span class="y"># kanıt tablosu — belgedeki sayıların kaynağı</span>
+<span class="v">npm run demo</span>             <span class="y"># üç akışı yürünebilir hâle getir</span>
+<span class="v">npm run katalog</span>          <span class="y"># teknofest.org kataloğunu çek</span>
+<span class="v">npm run db:onar</span>           <span class="y"># türetilmiş değerleri kayıtlardan yeniden yaz</span></pre>
+      </div>
+
+      <h3 style="margin-top:22px">Hacim: 3000 rapor, üretim derlemesi</h3>
+
+      <div class="tablo-kap">
+        <table>
+          <thead>
+            <tr><th>Ekran ya da işlem</th><th class="tek">Süre</th><th class="tek">Boyut</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Rapor listesi</td><td class="tek">179 ms</td><td class="tek">417 KB</td></tr>
+            <tr><td>Hakemler ve atama</td><td class="tek">205 ms</td><td class="tek">147 KB</td></tr>
+            <tr><td>Pano</td><td class="tek">331 ms</td><td class="tek">30 KB</td></tr>
+            <tr><td>6000 atamanın yazılması</td><td class="tek">0,90 sn</td><td class="tek">—</td></tr>
+            <tr><td>Dağıtım dengesi</td><td class="tek" colspan="2">hakem başına 1499–1502 rapor (fark 3)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="kural">
+        <h4>Ölçüm on hata buldu; hiçbiri testlerden geçmiyordu</h4>
+        <p>
+          Tip denetimi, birim testleri ve derleme temiz geçerken ekranı
+          gerçekte kırık olan durumlar çıktı. Öne çıkanlar: rapor listesi
+          1000 raporda <strong>24 saniye</strong> sürüyordu (8,7 MB HTML,
+          6003 SVG); toplu atama 6000 kayıt için <strong>15,5 saniye</strong>;
+          yarışmacı portalı <strong>her kriteri 0</strong> gösteriyordu; kopya
+          kontrolü paneli <strong>veritabanı göçünden beri hiç
+          çalışmıyordu</strong>.
+        </p>
+        <p style="margin-top:8px">
+          Ortak sebep dört kez tekrarlandı: <em>bir alan ayrı tabloya
+          taşındı, tüketici eski alanı okumaya devam etti</em>. Tip denetimi
+          bunu göremiyor çünkü alan hâlâ var — sadece hep boş.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════════════ 17 -->
+    <section id="harita">
+      <div class="goz-ustu">Bölüm 17</div>
+      <h2>Dosya haritası</h2>
+
+      <div class="kod">
+<pre><span class="v">src/lib/analiz/</span>        <span class="y">ücretsiz katman — model çağrısı yok</span>
+  normalize.ts        <span class="y">Türkçe metin onarımı · her şeyin temeli</span>
+  pdf.ts              <span class="y">PDF metni + koordinatlar (unpdf)</span>
+  belge-docx.ts       <span class="y">Word okuma (fflate ile zip açma)</span>
+  yapi.ts             <span class="y">satır birleştirme, başlık tespiti</span>
+  dil.ts              <span class="y">dil tespiti · bölüm bazlı</span>
+  sablon.ts           <span class="y">şablon uygunluğu, başlık/içerik kontrolü</span>
+  sablon-cikar.ts     <span class="y">şablondan ölçüt ve rubrik çıkarımı</span>
+  kategori.ts         <span class="y">TF-IDF + üstünlük oranı</span>
+  benzerlik.ts        <span class="y">MinHash + kapsama + cümle eşleştirme</span>
+  phash.ts            <span class="y">algısal görsel hash (DCT)</span>
+  kaynakca.ts         <span class="y">kaynakça çözümleme</span>
+  kaynak-dogrula.ts   <span class="y">Crossref + OpenAlex doğrulaması</span>
+  kimlik.ts           <span class="y">rapor kapağından künye okuma</span>
+  sartname.ts         <span class="y">şartname çözümleme</span>
+  takvim.ts           <span class="y">aşama–tarih eşlemesi</span>
+  terim-cikar.ts      <span class="y">şartnameden terim profili</span>
+
+<span class="v">src/lib/ai/</span>            <span class="y">ücretli katman</span>
+  istemci.ts          <span class="y">önbellek + bütçe tavanı</span>
+  degerlendirme.ts    <span class="y">ölçüt bazlı ön değerlendirme</span>
+  sartname-ozeti.ts   <span class="y">şartname özeti (kategori başına bir kez)</span>
+
+<span class="v">src/lib/db/</span>            <span class="y">SQLite + hakem/atama/değerlendirme</span>
+  baglanti.ts         <span class="y">bağlantı, şema, sürümlü geçişler</span>
+  hakem-depo.ts       <span class="y">sorgular — hesap YOK, yalnızca veri erişimi</span>
+  nihai-hesap.ts      <span class="y">puan ortalamaları · SAF, test kapsamında</span>
+  dagitim.ts          <span class="y">rapor–hakem dağıtımı · SAF</span>
+  kod.ts              <span class="y">erişim kodu üretimi ve normalleştirme</span>
+
+<span class="v">src/lib/depo/</span>          <span class="y">veri katmanı</span>
+  depo.ts             <span class="y">rapor/yarışma/kategori erişimi</span>
+  maskele.ts          <span class="y">kimlik maskeleme (FNV-1a rumuz)</span>
+  arama.ts            <span class="y">Türkçe duyarlı arama</span>
+  disa-aktar.ts       <span class="y">CSV (BOM + noktalı virgül)</span>
+
+<span class="v">src/lib/katalog/</span>       <span class="y">teknofest.org kataloğu</span>
+<span class="v">src/lib/yetki/</span>         <span class="y">koordinasyon erişim denetimi</span>
+<span class="v">src/app/</span>               <span class="y">14 ekran, 19 API ucu</span>
+<span class="v">src/components/</span>        <span class="y">27 arayüz bileşeni</span>
+<span class="v">scripts/</span>               <span class="y">33 bakım ve ölçüm betiği</span></pre>
+      </div>
+
+      <div class="izgara uc">
+        <div class="kart">
+          <h4>Kaynak</h4>
+          <p style="font-family:var(--tek);font-size:19px;color:var(--metin);font-variant-numeric:tabular-nums">22.709 <span style="font-size:12px;color:var(--metin-2)">satır</span></p>
+        </div>
+        <div class="kart">
+          <h4>Test</h4>
+          <p style="font-family:var(--tek);font-size:19px;color:var(--metin);font-variant-numeric:tabular-nums">1.030 <span style="font-size:12px;color:var(--metin-2)">satır · 101 test</span></p>
+        </div>
+        <div class="kart">
+          <h4>Üretim bağımlılığı</h4>
+          <p style="font-family:var(--tek);font-size:19px;color:var(--metin);font-variant-numeric:tabular-nums">7 <span style="font-size:12px;color:var(--metin-2)">paket</span></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="alt">
+      <p style="max-width:none">
+        <strong style="color:var(--metin-2)">TPRDS</strong> · TEKNOFEST Proje
+        Raporları Değerlendirme Sistemi. T3 Vakfı Yapay Zekâ Creathonu 2026,
+        Problem 4. PRD ön değerlendirme özelliğini <em>"AI 4. göz"</em> diye
+        adlandırıyor.
+      </p>
+      <p style="max-width:none;margin-top:6px">
+        Bu belgedeki bütün sayılar çalışan koddan okundu:
+        <code>npm run kanit</code> · <code>npm run hacim</code> ·
+        <code>npm run db:kontrol</code>
+      </p>
+    </div>
+
+  </main>
+</div>

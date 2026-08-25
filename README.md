@@ -134,8 +134,10 @@ elle yazılmaz.
 PRD'nin madde madde karşılığı — PRD'nin kendi yapısıyla, yan yana
 okunabilsin diye: **[docs/prd-karsiligi.md](docs/prd-karsiligi.md)**
 
-Görsel tanıtım (tek sayfa, tarayıcıda açılır):
-**[docs/tanitim.html](docs/tanitim.html)**
+Görsel belgeler (tarayıcıda açılır):
+**[docs/tanitim.html](docs/tanitim.html)** — kısa tanıtım, jüri için
+**[docs/kilavuz.html](docs/kilavuz.html)** — 17 bölümlük teknik kılavuz:
+her ekran, her teknoloji, her algoritma
 
 ---
 
