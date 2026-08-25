@@ -1,45 +1,89 @@
 /**
- * Rapor üzerindeki yazışma.
+ * Rapor üzerindeki yazışma — hakem ile koordinasyon arasında.
  *
  * Hakem ve koordinasyon arasındaki her not değerlendirme metnine yazılamaz;
  * kimi şey rapora girmemesi gereken bir soru, hatırlatma veya karardır.
  * Bu iz kaydı yarışmacıya GÖSTERİLMEZ.
  *
- * ŞU AN YALNIZCA KOORDİNASYON YAZIYOR. Yazışma bileşeni yalnızca
- * koordinasyon rapor sayfasında var; hakem panelinde yok. Bu yüzden uç
- * koordinasyon yetkisi istiyor. Hakem tarafına yazışma eklenirse buraya
- * `?kod=` yolu açılmalı — rapor dosyası ucunda olduğu gibi.
+ * ── KİMLİK YAZILMIYOR, DOĞRULANIYOR ─────────────────────────────────────
+ * Önceki sürümde gönderen kendi adını ve kendi ROLÜNÜ yazıyordu: bir metin
+ * kutusuna "Prof. Dr. X" yazıp rol olarak "hakem" seçen herkes hakem gibi
+ * görünüyordu. Bir denetim izinde bunun değeri sıfırdır.
+ *
+ * Artık kimlik kimlik doğrulamadan geliyor:
+ *   · Hakem  → erişim kodu (`kod`), rapora ATANMIŞ olması şart.
+ *              Yazar adı hakem kaydından okunuyor, istemciden değil.
+ *   · Koordinasyon → koordinasyon anahtarı. Ortak hesap olduğu için
+ *              yazan kişinin adı isteğe bağlı; rol sabit.
+ *
+ * ── HAKEM HANGİ RAPORU KASTETTİĞİNİ YAZMIYOR ────────────────────────────
+ * Mesaj zaten bir rapora bağlı: hakem o raporun sayfasından yazıyor ve
+ * koordinasyon mesajı o raporun bağlamında görüyor. "Hangi rapor
+ * hakkında?" sorusu hiç doğmuyor.
  */
 
 import { kapi } from '@/lib/yetki/koordinasyon';
-import { mesajEkle, raporGetir } from '@/lib/depo/depo';
+import { hakeminRaporlari, hakemKodIle } from '@/lib/db/hakem-depo';
+import { mesajEkle, mesajlariGetir, raporGetir } from '@/lib/depo/depo';
 import { onar } from '@/lib/analiz/normalize';
 import type { Mesaj } from '@/lib/depo/tipler';
 
-const ROLLER: Mesaj['rol'][] = ['hakem', 'koordinasyon', 'yarisma_yoneticisi'];
-
-export async function GET(request: Request, ctx: RouteContext<'/api/rapor/[id]/mesaj'>) {
-  const yetkisiz = kapi(request);
-  if (yetkisiz) return yetkisiz;
-
-  const { id } = await ctx.params;
-  const rapor = raporGetir(id);
-  if (!rapor) return Response.json({ hata: 'Rapor bulunamadı.' }, { status: 404 });
-  return Response.json({ mesajlar: rapor.mesajlar ?? [] });
+interface Gonderen {
+  yazar: string;
+  rol: Mesaj['rol'];
 }
 
-export async function POST(request: Request, ctx: RouteContext<'/api/rapor/[id]/mesaj'>) {
-  const yetkisiz = kapi(request);
-  if (yetkisiz) return yetkisiz;
+/**
+ * İsteği gönderen kim?
+ *
+ * `null` dönerse yetkisiz. Hakem yolu koordinasyon anahtarı gerektirmiyor
+ * — hakemin anahtarı yok, kendi kodu var.
+ */
+function gonderenKim(istek: Request, raporId: string, kod?: string): Gonderen | null {
+  if (kod) {
+    const hakem = hakemKodIle(kod);
+    if (!hakem || !hakem.aktif) return null;
+    // Atanmamış hakem o raporun yazışmasına giremez.
+    if (!hakeminRaporlari(hakem.id).includes(raporId)) return null;
+    return { yazar: hakem.ad, rol: 'hakem' };
+  }
+  // Kod yoksa koordinasyon yolu: anahtar denetlenecek.
+  return kapi(istek) ? null : { yazar: 'Koordinasyon', rol: 'koordinasyon' };
+}
 
+export async function GET(istek: Request, ctx: RouteContext<'/api/rapor/[id]/mesaj'>) {
   const { id } = await ctx.params;
-  if (!raporGetir(id)) return Response.json({ hata: 'Rapor bulunamadı.' }, { status: 404 });
+  const kod = new URL(istek.url).searchParams.get('kod') ?? undefined;
 
-  let g: { metin?: string; yazar?: string; rol?: string };
+  if (!gonderenKim(istek, id, kod)) {
+    return Response.json({ hata: 'Bu yazışmaya erişiminiz yok.' }, { status: 403 });
+  }
+  if (!raporGetir(id)) {
+    return Response.json({ hata: 'Rapor bulunamadı.' }, { status: 404 });
+  }
+  return Response.json({ mesajlar: mesajlariGetir(id) });
+}
+
+export async function POST(istek: Request, ctx: RouteContext<'/api/rapor/[id]/mesaj'>) {
+  const { id } = await ctx.params;
+
+  let g: { metin?: string; yazar?: string; kod?: string };
   try {
-    g = await request.json();
+    g = await istek.json();
   } catch {
     return Response.json({ hata: 'Geçersiz istek gövdesi.' }, { status: 400 });
+  }
+
+  /*
+   * Yetki önce, doğrulama sonra: reddedilen istek raporun var olup
+   * olmadığını bile öğrenmemeli.
+   */
+  const gonderen = gonderenKim(istek, id, g.kod);
+  if (!gonderen) {
+    return Response.json({ hata: 'Bu yazışmaya erişiminiz yok.' }, { status: 403 });
+  }
+  if (!raporGetir(id)) {
+    return Response.json({ hata: 'Rapor bulunamadı.' }, { status: 404 });
   }
 
   const metin = onar(g.metin ?? '').trim();
@@ -47,13 +91,21 @@ export async function POST(request: Request, ctx: RouteContext<'/api/rapor/[id]/
     return Response.json({ hata: 'Mesaj boş olamaz.' }, { status: 422 });
   }
 
-  const rol = (ROLLER as string[]).includes(g.rol ?? '') ? (g.rol as Mesaj['rol']) : 'hakem';
+  /*
+   * Koordinasyon ORTAK hesap: kim yazdıysa adını girebiliyor, girmezse
+   * "Koordinasyon" kalıyor. Hakemde böyle bir seçenek yok — adı kaydından
+   * geliyor ve değiştirilemez.
+   */
+  const yazar =
+    gonderen.rol === 'koordinasyon' && g.yazar?.trim()
+      ? `Koordinasyon · ${onar(g.yazar).trim().slice(0, 60)}`
+      : gonderen.yazar;
 
-  const rapor = await mesajEkle(id, {
+  await mesajEkle(id, {
     metin: metin.slice(0, 4000),
-    yazar: onar(g.yazar ?? '').trim().slice(0, 80) || 'Bilinmeyen',
-    rol,
+    yazar,
+    rol: gonderen.rol,
   });
 
-  return Response.json({ mesajlar: rapor?.mesajlar ?? [] }, { status: 201 });
+  return Response.json({ mesajlar: mesajlariGetir(id) }, { status: 201 });
 }

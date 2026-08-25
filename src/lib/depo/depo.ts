@@ -322,7 +322,7 @@ export function sartnameKaydet(
 
 // ------------------------------------------------------------------ rapor
 
-function mesajlariGetir(raporId: string): Mesaj[] {
+export function mesajlariGetir(raporId: string): Mesaj[] {
   return (
     baglanti()
       .prepare('SELECT * FROM mesaj WHERE rapor_id = ? ORDER BY tarih')
@@ -420,6 +420,68 @@ export function raporlariListele(yarismaId?: string, kategoriId?: string): Rapor
   return (baglanti().prepare(sql).all(...p) as Satir[]).map((s) =>
     raporCoz(s, [], undefined),
   );
+}
+
+/**
+ * Hakemin sorup koordinasyonun cevaplamadığı yazışmalar — TEK sorguda.
+ *
+ * ── NİYE VAR: MESAJ ULAŞMIYORDU ─────────────────────────────────────────
+ * Yazışma rapor sayfasının en altındaydı ve orada kalıyordu. Hakem bir
+ * soru sorduğunda koordinasyonun bunu görmesi için o raporu AÇMASI
+ * gerekiyordu — yani soruyu görmek için sorunun varlığını bilmek
+ * gerekiyordu. Ulaşmayan mesaj, mesaj değildir.
+ *
+ * Cevap bekleyen soru artık panoda "yapılacak iş" olarak sayılıyor ve
+ * rapor listesinde işaretleniyor.
+ *
+ * Durum SAKLANMIYOR, türetiliyor: son insan mesajı hakemden geldiyse
+ * cevap bekliyor. Kural `yazisma-durum.ts` içinde ve test kapsamında.
+ */
+export function cevapBekleyenYazismalar(
+  yarismaId?: string,
+  kategoriId?: string,
+): Array<{ raporId: string; basvuruNo: string; proje: string; tarih: string }> {
+  /*
+   * Kapsam koşulu parça parça kuruluyor. SQL'i dize yamalarıyla düzeltmek
+   * (`.replace(...)`) bir kez denendi ve boşluk/satır sonu farkı yüzünden
+   * sessizce tutmadı — koşul baştan doğru kurulmalı.
+   */
+  const kosullar = ["m.rol <> 'sistem'", 'm.otomatik = 0'];
+  const p: string[] = [];
+  if (yarismaId) {
+    kosullar.unshift('r.yarisma_id = ?');
+    p.push(yarismaId);
+    if (kategoriId) {
+      kosullar.splice(1, 0, 'r.kategori_id = ?');
+      p.push(kategoriId);
+    }
+  }
+
+  /*
+   * Rapor başına SON insan mesajının rolü. Sistem mesajları ve otomatik
+   * kayıtlar dışarıda: "değerlendirme tamamlandı" bir cevap değil.
+   */
+  const satirlar = baglanti()
+    .prepare(
+      `SELECT r.id, r.basvuru_no, r.proje, m.rol, m.tarih
+         FROM rapor r
+         JOIN mesaj m ON m.rapor_id = r.id
+        WHERE ${kosullar.join(' AND ')}
+          AND m.tarih = (
+            SELECT MAX(x.tarih) FROM mesaj x
+             WHERE x.rapor_id = r.id AND x.rol <> 'sistem' AND x.otomatik = 0
+          )`,
+    )
+    .all(...p) as Array<Record<string, string>>;
+
+  return satirlar
+    .filter((s) => s.rol === 'hakem')
+    .map((s) => ({
+      raporId: s.id,
+      basvuruNo: s.basvuru_no,
+      proje: s.proje,
+      tarih: s.tarih,
+    }));
 }
 
 /**

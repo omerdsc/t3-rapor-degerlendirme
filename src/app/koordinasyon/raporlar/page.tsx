@@ -6,6 +6,7 @@ import { DurumRozeti, KontrolNoktasi } from '@/components/rozet';
 import DisaAktarDugmesi from '@/components/disa-aktar-dugmesi';
 import RaporArama from '@/components/rapor-arama';
 import { raporlarinHakemDurumu } from '@/lib/db/hakem-depo';
+import { cevapBekleyenYazismalar } from '@/lib/depo/depo';
 import { raporlariAra } from '@/lib/depo/arama';
 import {
   raporSayilari, raporlariListele, yarismalariListele,
@@ -126,6 +127,15 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
    * kaçı bitirdi. Puan zaten tamamlanınca yazılıyor.
    */
   const hakemDurumu = raporlarinHakemDurumu(raporlar.map((r) => r.id));
+
+  /*
+   * Hakem sorusu olan raporlar listede işaretleniyor. Koordinasyon
+   * listeye bakarken hangi raporun kendisini beklediğini görmeli;
+   * her raporu tek tek açmak zorunda kalmamalı.
+   */
+  const soruBekleyen = new Set(
+    cevapBekleyenYazismalar(yarisma?.id, kategori?.id).map((x) => x.raporId),
+  );
 
   const sayilar: Record<Suzgec, number> = {
     bekleyen: suzgecleyi(aranmis, 'bekleyen').length,
@@ -328,8 +338,26 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
                           : 'border-l-[3px] border-transparent'
                     }`}
                   >
-                    <div className="text-[12.5px] font-bold">
-                      {raporuMaskele(r).basvuruNo}
+                    {/*
+                      KOORDİNASYON GERÇEK BAŞVURU NUMARASINI GÖRÜYOR.
+                      Eskiden burada rumuz vardı (#2CFE) ve koordinasyon
+                      bir yarışmacıyla iletişim kurarken numarasını
+                      söyleyemiyordu — kendi sisteminde bulamıyordu.
+                      Başvuru numarası koordinasyonun OPERASYONEL
+                      ANAHTARI; takım ADI ise maskeli kalıyor.
+                    */}
+                    <div className="flex items-center gap-1.5">
+                      <span className="font-mono text-[12px] font-bold" title="Başvuru numarası">
+                        {r.basvuruNo}
+                      </span>
+                      {soruBekleyen.has(r.id) && (
+                        <span
+                          title="Bir hakem soru sordu, yanıt bekliyor"
+                          className="rounded bg-amber-zemin px-1.5 py-0.5 text-[9px] font-bold text-amber-koyu"
+                        >
+                          SORU
+                        </span>
+                      )}
                     </div>
                     <div className="mt-0.5 text-[10.5px] font-medium text-metin-3">
                       {new Date(r.yuklendi).toLocaleDateString('tr')}

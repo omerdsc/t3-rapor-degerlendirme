@@ -676,9 +676,22 @@ export function hakeminIsleri(hakemId: string): HakemIsi[] {
 
     return {
       raporId: s.id as string,
-      basvuruNo: s.basvuru_no as string,
+      /*
+       * BAŞVURU NUMARASI HAKEME GİTMİYOR.
+       *
+       * Ölçüldü: 7 raporun 5'inde başvuru numarası takım adını içeriyor
+       * ("TF-BOTAN" → Takım Botan). Takım adını rumuzlayıp numarayı ham
+       * göndermek kör puanlamayı boşa çıkarıyordu — hakem `Takım RJZI`
+       * görüyor ama yanında `TF-BOTAN` yazıyordu.
+       *
+       * Hakemin bir referansa ihtiyacı var (koordinasyonla yazışırken
+       * "hangi rapor" demek için); onu `raporKodu` karşılıyor ve kimlik
+       * taşımıyor.
+       */
+      basvuruNo: raporRumuzu(s.id as string),
       // Hakem gerçek takım adını GÖRMÜYOR — kör puanlama.
-      takimRumuzu: `${takimRumuzu(s.takim_id as string)} · ${raporRumuzu(s.id as string)}`,
+      // Rapor kodu zaten `basvuruNo` alanında; burada tekrar etmiyor.
+      takimRumuzu: takimRumuzu(s.takim_id as string),
       proje: s.proje as string,
       yarismaAdi: s.yarisma_adi as string,
       kategoriAdi: s.kategori_adi as string,

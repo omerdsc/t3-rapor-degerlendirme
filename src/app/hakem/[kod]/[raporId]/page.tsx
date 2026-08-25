@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import PortalDonus from '@/components/portal-donus';
+import Yazisma from '@/components/yazisma';
 import { notFound } from 'next/navigation';
 import HakemPuanlama from '@/components/hakem-puanlama';
 import { KontrolNoktasi } from '@/components/rozet';
@@ -69,9 +70,21 @@ export default async function HakemRaporSayfasi({
             ← Listem
           </Link>
           <div className="min-w-0 flex-1">
+            {/*
+              Ham başvuru numarası KALDIRILDI: takım adını içerebiliyor
+              ("TF-BOTAN") ve rumuzun yanında durunca maskelemeyi boşa
+              çıkarıyordu. Yerinde rapor kodu var — kimlik taşımayan,
+              yazışmada kullanılabilir sabit bir referans.
+            */}
             <h1 className="truncate text-[15px] font-extrabold tracking-tight text-white">
-              {rapor.basvuruNo} · {takimRumuzu(rapor.takimId)} ·{' '}
-              {raporRumuzu(rapor.id)}
+              <span
+                title="Rapor kodu — koordinasyonla yazışırken bu kodu kullanın"
+                className="font-mono"
+              >
+                {raporRumuzu(rapor.id)}
+              </span>
+              {' · '}
+              {takimRumuzu(rapor.takimId)}
             </h1>
             <p className="mt-0.5 truncate text-[11.5px] font-medium text-metin-2">
               {yarisma.ad}
@@ -182,6 +195,24 @@ export default async function HakemRaporSayfasi({
             aiGelisimAlanlari={rapor.aiDegerlendirme?.genelGelisimAlanlari ?? []}
             tamamlandi={tamamlandi}
           />
+
+          {/*
+            KOORDİNASYONA SORU — puanlamanın hemen ardında.
+            Hakemin koordinasyona yazacağı şey genellikle puanlarken
+            aklına geliyor: "şablon sürümü doğru mu", "bu takımın geçen
+            yılki raporuna bakılsın mı". Ayrı bir ekrana gitmesi
+            gerekseydi çoğu soru hiç sorulmazdı.
+
+            Mesaj bu rapora bağlı gidiyor; hakem hangi rapordan söz
+            ettiğini ayrıca yazmak zorunda değil.
+          */}
+          <div className="mt-4">
+            <Yazisma
+              raporId={rapor.id}
+              baslangic={rapor.mesajlar ?? []}
+              kod={kod}
+            />
+          </div>
         </div>
       </main>
     </div>

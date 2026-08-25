@@ -136,7 +136,19 @@ function IsSatiri({
 
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-[13px] font-bold">{is.basvuruNo}</span>
+          {/*
+            RAPOR KODU, BAŞVURU NUMARASI DEĞİL.
+            Başvuru numarası takım adını içerebiliyor ("TF-BOTAN") ve
+            hakem ekranında kör puanlamayı boşa çıkarıyordu. Hakemin
+            ihtiyacı olan şey KİMLİK değil, koordinasyonla yazışırken
+            kullanacağı sabit bir REFERANS.
+          */}
+          <span
+            title="Rapor kodu — koordinasyonla yazışırken bu kodu kullanın"
+            className="rounded bg-zemin px-1.5 py-0.5 font-mono text-[12px] font-bold"
+          >
+            {is.basvuruNo}
+          </span>
           <span className="text-[11px] font-medium text-metin-2">
             {is.takimRumuzu}
           </span>

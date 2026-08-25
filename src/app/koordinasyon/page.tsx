@@ -3,7 +3,9 @@ import { DurumRozeti } from '@/components/rozet';
 import { birlesikListe } from '@/lib/katalog/birlesik';
 import { akisOzeti } from '@/lib/db/hakem-depo';
 import { maliyetGorunur } from '@/lib/gorunum/maliyet';
-import { panoOzeti, raporlariListele, yarismalariListele } from '@/lib/depo/depo';
+import {
+  cevapBekleyenYazismalar, panoOzeti, raporlariListele, yarismalariListele,
+} from '@/lib/depo/depo';
 import { raporuMaskele } from '@/lib/depo/maskele';
 
 export const dynamic = 'force-dynamic';
@@ -50,6 +52,15 @@ export default function PanoSayfasi() {
    */
   const akis = akisOzeti();
 
+  /*
+   * Hakemin sorup cevaplanmayan soruları.
+   *
+   * Yazışma rapor sayfasının dibindeydi ve orada kalıyordu: koordinasyonun
+   * bir soruyu görmesi için o raporu AÇMASI gerekiyordu — yani sorunun
+   * varlığını zaten bilmesi gerekiyordu. Ulaşmayan mesaj mesaj değildir.
+   */
+  const bekleyenSorular = cevapBekleyenYazismalar();
+
   const onaysizKategori = yarismalar.reduce(
     (t, y) => t + y.kategoriler.filter((k) => !k.duzenlendi).length,
     0,
@@ -64,6 +75,26 @@ export default function PanoSayfasi() {
   ).length;
 
   const isler: Is[] = ([
+    /*
+     * HAKEM SORUSU EN ÜSTTE.
+     * Öteki maddeler sistemin ürettiği durumlar; bu, bir İNSANIN bekliyor
+     * olması. Bekleyen bir kişi, bekleyen bir işten önce gelir.
+     */
+    ...(bekleyenSorular.length
+      ? [
+          {
+            baslik: 'Hakem sorusu cevap bekliyor',
+            aciklama:
+              bekleyenSorular.length === 1
+                ? `${bekleyenSorular[0].basvuruNo} raporunda bir hakem soru sordu.`
+                : 'Hakemler rapor üzerinden soru sordu; yanıtlanmayı bekliyor.',
+            sayi: bekleyenSorular.length,
+            yol: `/koordinasyon/rapor/${bekleyenSorular[0].raporId}`,
+            eylem: bekleyenSorular.length === 1 ? 'Yanıtla' : 'İlkini aç',
+            aciliyet: 'yuksek' as const,
+          },
+        ]
+      : []),
     {
       baslik: 'Rapor değerlendirilmeyi bekliyor',
       aciklama: 'Otomatik kontroller bitti; hakem puanı bekleniyor.',
@@ -263,6 +294,7 @@ export default function PanoSayfasi() {
             <ul className="flex flex-col">
               {sonRaporlar.map((r) => {
                 const m = raporuMaskele(r);
+                // Başvuru numarası gerçek; takım adı maskeli kalıyor.
                 return (
                   <li
                     key={r.id}

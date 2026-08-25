@@ -21,6 +21,11 @@ import { COKKI, anahtarDogru, yetkiKurulu } from '@/lib/yetki/koordinasyon';
  *
  * `/giris` ve `/api/koordinasyon-giris` matcher'ın dışında: kilidi açan
  * kapının kilitli olması olmaz.
+ *
+ * `/api/rapor/:id/mesaj` de dışarıda — yazışmayı HAKEM de kullanıyor ve
+ * kendi erişim koduyla giriyor. Perimetreye alınsaydı hakem koordinasyona
+ * hiç yazamazdı. O uç yetkiyi kendi içinde denetliyor: kod geçerli mi ve
+ * rapor o hakeme atanmış mı.
  */
 export function proxy(istek: NextRequest) {
   if (!yetkiKurulu()) return NextResponse.next();
@@ -77,7 +82,6 @@ export const config = {
     '/api/rapor',
     '/api/rapor/:id/degerlendir',
     '/api/rapor/:id/kimlik',
-    '/api/rapor/:id/mesaj',
     '/api/sartname',
     '/api/yarisma',
     '/api/yarisma/:yol*',

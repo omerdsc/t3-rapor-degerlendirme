@@ -146,6 +146,21 @@ async function main() {
         yol: `/api/rapor/${hakeminRaporu.rapor_id}/dosya?kod=${hakem.hakem.kod}`,
         bekle: [200, 404],
       },
+      /*
+       * Yazışma iki yönlü ve iki ayrı kimlikle çalışıyor. Hakem kendi
+       * koduyla giriyor; kod geçersizse ya da rapor ona atanmamışsa
+       * yazışmaya hiç erişemiyor.
+       */
+      {
+        ad: 'Yazışma · hakem kendi koduyla okuyor',
+        yol: `/api/rapor/${hakeminRaporu.rapor_id}/mesaj?kod=${hakem.hakem.kod}`,
+        bekle: 200,
+      },
+      {
+        ad: 'Yazışma · geçersiz kodla reddediliyor',
+        yol: `/api/rapor/${hakeminRaporu.rapor_id}/mesaj?kod=YOKBOYLE`,
+        bekle: 403,
+      },
     );
     if (baskaHakem) {
       /*

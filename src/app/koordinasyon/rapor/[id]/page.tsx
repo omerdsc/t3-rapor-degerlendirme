@@ -97,7 +97,10 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
               <DurumRozeti durum={rapor.durum} />
             </div>
             <p className="mt-1.5 text-[12px] font-medium text-metin-2">
-              {maske.basvuruNo} · {maske.takim} · {maske.raporKodu} ·{' '}
+              <strong className="font-mono font-bold text-metin" title="Başvuru numarası — yarışmacıya bunu söyleyin">
+                {rapor.basvuruNo}
+              </strong>{' · '}
+              {maske.takim} · {maske.raporKodu} ·{' '}
               {rapor.istatistik.sayfaSayisi} sayfa ·{' '}
               {rapor.istatistik.kelimeSayisi.toLocaleString('tr')} kelime ·{' '}
               {rapor.istatistik.gorselSayisi} görsel · {yarisma.ad} · {kategori.ad}
@@ -342,6 +345,14 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
         )}
       </section>
 
+      {/*
+        YAZIŞMA ARTIK İKİ YÖNLÜ.
+        Eskiden yalnızca koordinasyon yazabiliyordu ve gönderen kendi
+        rolünü SEÇİYORDU — herkes "hakem" olarak mesaj atabiliyordu.
+        Artık hakem kendi panelinden yazıyor, kimliği erişim kodundan
+        geliyor ve cevap bekleyen soru panoda "yapılacak iş" olarak
+        sayılıyor.
+      */}
       <Yazisma raporId={rapor.id} baslangic={rapor.mesajlar ?? []} />
     </>
   );
