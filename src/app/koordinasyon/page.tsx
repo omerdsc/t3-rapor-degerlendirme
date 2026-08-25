@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { DurumRozeti } from '@/components/rozet';
 import { birlesikListe } from '@/lib/katalog/birlesik';
 import { akisOzeti } from '@/lib/db/hakem-depo';
+import { maliyetGorunur } from '@/lib/gorunum/maliyet';
 import { panoOzeti, raporlariListele, yarismalariListele } from '@/lib/depo/depo';
 import { raporuMaskele } from '@/lib/depo/maskele';
 
@@ -300,47 +301,70 @@ export default function PanoSayfasi() {
         </section>
 
         {/*
-          ── ÜCRETLİ KATMAN: TEK KART, TEK SORU ──────────────────────────
-          Burada iki ayrı kart vardı: "Maliyet" ve "Yapay zekâ ne kadar
-          tutuyor?". İkincisi koordinasyona hiçbir EYLEM söylemiyordu —
-          bir sistem kalite ölçüsüydü ve operasyon panosunda tek başına
-          duruyordu.
+          ── YAPAY ZEKÂ KATMANI ──────────────────────────────────────────
+          Burada "Maliyet" ve "Yapay zekâ ne kadar tutuyor?" diye iki ayrı
+          kart vardı. İkincisi koordinasyona hiçbir EYLEM söylemiyordu ve
+          birleştirildi.
 
-          Oysa ikisi tek bir sorunun iki yarısı: "bu paraya değiyor mu?"
-          Koordinasyonun gerçekten verdiği karar bu. Birleştirildi.
+          Tutarlar `MALIYET_GOSTER` anahtarına bağlı ve varsayılan KAPALI.
+          Rakam gizlense de kartın kendisi duruyor: hangi katmanın ücretli
+          olduğu ve modelin hakemle ne kadar örtüştüğü, para konuşulmasa da
+          koordinasyonun bilmesi gereken şeyler.
         */}
         <div className="flex flex-col gap-4">
           <section className="rounded-xl bg-lacivert px-5 py-4">
             <h2 className="mb-3 text-[14px] font-bold text-white">
-              Ücretli katman — bu paraya değiyor mu?
+              Yapay zekâ ön değerlendirmesi
             </h2>
 
-            <div className="flex items-baseline gap-1.5">
-              <span className="text-[26px] leading-none font-extrabold text-white">
-                ${ozet.toplamMaliyet.toFixed(2)}
-              </span>
-              <span className="text-[12px] font-semibold text-metin-2">
-                toplam harcandı
-              </span>
-            </div>
-            <p className="mt-1 text-[11px] font-medium text-metin-2">
-              {ozet.degerlendirilenRapor} rapor · rapor başına $
-              {(ozet.raporBasinaMaliyet ?? 0).toFixed(3)}
-              {ozet.onbellektenGelen > 0 && (
-                <>
-                  {' · '}
-                  <strong className="font-bold text-white">
-                    {ozet.onbellektenGelen} tanesi önbellekten geldi
-                  </strong>
-                  , ücretsiz
-                </>
-              )}
-            </p>
+            {maliyetGorunur() ? (
+              <>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-[26px] leading-none font-extrabold text-white">
+                    ${ozet.toplamMaliyet.toFixed(2)}
+                  </span>
+                  <span className="text-[12px] font-semibold text-metin-2">
+                    toplam harcandı
+                  </span>
+                </div>
+                <p className="mt-1 text-[11px] font-medium text-metin-2">
+                  {ozet.degerlendirilenRapor} rapor · rapor başına $
+                  {(ozet.raporBasinaMaliyet ?? 0).toFixed(3)}
+                  {ozet.onbellektenGelen > 0 && (
+                    <>
+                      {' · '}
+                      <strong className="font-bold text-white">
+                        {ozet.onbellektenGelen} tanesi önbellekten geldi
+                      </strong>
+                    </>
+                  )}
+                </p>
+              </>
+            ) : (
+              <>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-[26px] leading-none font-extrabold text-white">
+                    {ozet.degerlendirilenRapor}
+                  </span>
+                  <span className="text-[12px] font-semibold text-metin-2">
+                    rapor değerlendirildi
+                  </span>
+                </div>
+                {ozet.onbellektenGelen > 0 && (
+                  <p className="mt-1 text-[11px] font-medium text-metin-2">
+                    <strong className="font-bold text-white">
+                      {ozet.onbellektenGelen} tanesi önbellekten geldi
+                    </strong>{' '}
+                    — yeniden hesaplanmadı
+                  </p>
+                )}
+              </>
+            )}
 
             {/*
-              Hakem–model farkı BURADA, maliyetin yanında: "harcadığım
-              paranın önerisi hakemin kararına ne kadar yakın" sorusu tek
-              soru. Ayrı kartta dururken hiçbir karara bağlanmıyordu.
+              Hakem–model farkı: "modelin önerisi hakemin kararına ne kadar
+              yakın" sorusu. Ücret gizlense de bu ölçüm duruyor — sistemin
+              kendi güvenilirliğini izlediğini gösteren tek sayı bu.
             */}
             {ozet.ortalamaSapma !== null && (
               <div className="mt-3 border-t border-lacivert-3 pt-3">
@@ -351,12 +375,6 @@ export default function PanoSayfasi() {
                   </strong>
                   , %{ozet.uyumOrani}&apos;si ±5 puan içinde.
                 </p>
-                {/*
-                  Sayı tek başına yanıltıcı olurdu: örneklem küçük ve
-                  hakem puanlarının bir kısmı test verisi. Sistemin kendi
-                  güvenilirliğini ölçtüğünü gösteriyor, kalibrasyon
-                  yapmıyor — bu ayrım yazılı olmalı.
-                */}
                 <p className="mt-1.5 text-[10px] leading-relaxed font-medium text-metin-3">
                   Bu bir kalibrasyon çalışması değil, kendi kendini ölçme.
                   Gerçek hakem puanları biriktikçe sayı anlam kazanacak.
@@ -366,10 +384,10 @@ export default function PanoSayfasi() {
 
             <p className="mt-3 border-t border-lacivert-3 pt-3 text-[10.5px] leading-relaxed font-medium text-metin-2">
               Dil, şablon, başlık, kaynakça, kaynak doğrulama, kategori ve
-              kopya kontrolü model kullanmıyor —{' '}
-              <strong className="font-bold text-white">bu kalemler $0.</strong>{' '}
-              Ücret yalnızca yapay zekâ ön değerlendirmesi ve şartname özeti
-              için.
+              kopya kontrolü{' '}
+              <strong className="font-bold text-white">model kullanmıyor</strong>
+              {' '}— saf kod, saniyeler içinde. Yapay zekâ yalnızca ölçüt
+              bazlı ön değerlendirme ve şartname özeti için devreye giriyor.
             </p>
           </section>
         </div>

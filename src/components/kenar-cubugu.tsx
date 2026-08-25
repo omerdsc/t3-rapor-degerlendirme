@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import PortalDonus from './portal-donus';
 
 /*
  * KOORDİNASYON MENÜSÜ.
@@ -132,15 +133,14 @@ export default function KenarCubugu({ yetkiKurulu }: { yetkiKurulu: boolean }) {
           Yapay zekâ nihai karar verici değildir. Kontrol, analiz ve ön
           değerlendirme sunar; kararı hakem verir.
         </p>
-        <div className="flex items-center gap-3">
-          {/* Portal seçimine dönüş — canlı kurulumda bu bağlantı olmaz,
-              koordinasyon kendi adresinden girer. */}
-          <Link
-            href="/"
-            className="text-[10px] font-semibold text-metin-2/60 hover:text-metin-2"
-          >
-            ← Portal seçimi
-          </Link>
+        {/*
+          Portal seçimine dönüş, kenar çubuğunun dibinde 10 piksellik gri
+          bir yazıydı ve bulunamıyordu. Üç portalda da aynı düğme duruyor
+          artık. Canlı kurulumda üç portal ayrı adreste yayınlanacağı için
+          bu kapı kalkar.
+        */}
+        <div className="flex flex-wrap items-center gap-2">
+          <PortalDonus />
           {/* Çıkış yalnızca yetki KURULUYSA anlamlı: kurulu değilse
               silinecek bir oturum yok ve düğme hiçbir şey yapmaz. */}
           {yetkiKurulu && <Cikis />}

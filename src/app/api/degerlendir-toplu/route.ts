@@ -32,6 +32,7 @@
 
 import { kapi } from '@/lib/yetki/koordinasyon';
 import { kategoriGetir, raporlariListele } from '@/lib/depo/depo';
+import { maliyetGorunur } from '@/lib/gorunum/maliyet';
 
 /** Rapor başına ölçülen maliyet — arayüzde tahmin göstermek için. */
 const BIRIM_MALIYET = 0.131;
@@ -71,12 +72,31 @@ export async function GET(istek: Request) {
 
   const tavan = Number(process.env.TOPLAM_TAVAN ?? 8);
 
+  /*
+   * TUTARLAR ANAHTARA BAĞLI — ama sunucuda karar veriliyor.
+   *
+   * Rakam gizlenecekse istemciye HİÇ GÖNDERİLMEMELİ: sayfa kaynağında
+   * duran bir rakam gizlenmiş sayılmaz. Adımın ücretli olduğu bilgisi
+   * gizlenmiyor, yalnızca tutar.
+   */
+  const goster = maliyetGorunur();
+
   return Response.json({
     hedefler,
     zatenVar: raporlar.length - hedefler.length,
-    birimMaliyet: BIRIM_MALIYET,
-    tahminiTutar: Number((hedefler.length * BIRIM_MALIYET).toFixed(2)),
-    tavan,
+    maliyetGoster: goster,
+    ...(goster
+      ? {
+          birimMaliyet: BIRIM_MALIYET,
+          tahminiTutar: Number((hedefler.length * BIRIM_MALIYET).toFixed(2)),
+          tavan,
+          tavaniAsiyor: hedefler.length * BIRIM_MALIYET > tavan,
+        }
+      : {
+          // Tavan aşımı UYARISI tutarsız da verilebilmeli: kullanıcı
+          // işlemin yarıda duracağını bilmeli.
+          tavaniAsiyor: hedefler.length * BIRIM_MALIYET > tavan,
+        }),
     onaysizOlcut: hedefler.filter((h) => !h.olcutOnayli).length,
   });
 }

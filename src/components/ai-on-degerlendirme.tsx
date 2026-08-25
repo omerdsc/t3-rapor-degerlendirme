@@ -20,9 +20,15 @@ import type { Guven } from '@/lib/ai/degerlendirme';
  * izler; puan girmez.
  *
  * ── ÖN DEĞERLENDİRME NEDEN KOORDİNASYONDA BAŞLATILIYOR ──────────────────
- * Rapor başına ~$0,13. Bunu hakemin başlatması, bütçe kararını hakeme
+ * Ücretli bir adım. Bunu hakemin başlatması, bütçe kararını hakeme
  * devretmek olurdu. Koordinasyon hangi raporlar için ön değerlendirme
  * istediğine karar veriyor; hakem hazır bulup kullanıyor.
+ *
+ * ── TUTARLAR ANAHTARA BAĞLI ─────────────────────────────────────────────
+ * Ekranda para rakamı gösterilmesi istenmedi; `MALIYET_GOSTER` kapalıyken
+ * tutarlar gizleniyor ama adımın ÜCRETLİ OLDUĞU gizlenmiyor. İkisi ayrı
+ * şey: rakamı saklamak sunum tercihi, ücretli olduğunu saklamak
+ * kullanıcıyı yanıltmak olurdu.
  */
 
 interface AiKriter {
@@ -70,12 +76,19 @@ export default function AiOnDegerlendirme({
   olcutler,
   ai,
   hakemAtandi,
+  maliyetGoster,
 }: {
   raporId: string;
   olcutler: RubrikKriteri[];
   ai?: AiOzeti;
   /** Hiç hakem atanmadıysa ön değerlendirme henüz kimseye yaramıyor. */
   hakemAtandi: boolean;
+  /*
+   * Tutar ekranda görünsün mü — sunucudan geliyor (`MALIYET_GOSTER`).
+   * İstemci bileşeni `process.env` okuyamaz; okusa da bu bir sunum
+   * tercihi, istemcinin kararı değil.
+   */
+  maliyetGoster: boolean;
 }) {
   const yonlendir = useRouter();
   const [calisiyor, setCalisiyor] = useState(false);
@@ -93,9 +106,10 @@ export default function AiOnDegerlendirme({
         setMesaj({
           tur: 'bilgi',
           metin:
-            `Ön değerlendirme hazır · $${(d.maliyet ?? 0).toFixed(4)}` +
-            (d.sekilSayisi ? ` · ${d.sekilSayisi} şekil okundu` : '') +
-            (d.ozetMaliyeti ? ' · şartname özeti de üretildi' : ''),
+            'Ön değerlendirme hazır'
+            + (maliyetGoster ? ` · $${(d.maliyet ?? 0).toFixed(4)}` : '')
+            + (d.sekilSayisi ? ` · ${d.sekilSayisi} şekil okundu` : '')
+            + (d.ozetMaliyeti ? ' · şartname özeti de üretildi' : ''),
         });
         yonlendir.refresh();
       }
@@ -117,10 +131,11 @@ export default function AiOnDegerlendirme({
               Ölçüt bazında puan önerisi, gerekçe ve rapordan alıntı üretir.
               Hakem bunu hazır bulur; kabul etmek zorunda değildir.{' '}
               <strong className="font-bold text-metin">
-                Tek ücretli adım — rapor başına ~$0,13.
+                Sistemin tek yapay zekâ adımı
+                {maliyetGoster ? ' — rapor başına ~$0,13' : ''}.
               </strong>{' '}
-              Aynı rapor ikinci kez istenirse önbellekten gelir, ek maliyet
-              olmaz.
+              Aynı rapor ikinci kez istenirse önbellekten gelir, yeniden
+              hesaplanmaz.
             </p>
           </div>
           <button
@@ -309,7 +324,7 @@ export default function AiOnDegerlendirme({
       )}
 
       <div className="flex flex-wrap gap-x-6 gap-y-1 border-t border-cizgi px-4 py-2 text-[10.5px] font-medium text-metin-2">
-        <span>maliyet ${ai.maliyet.toFixed(4)}</span>
+        {maliyetGoster && <span>maliyet ${ai.maliyet.toFixed(4)}</span>}
         <span>süre {Math.round(ai.sureMs / 1000)} sn</span>
         <span>bu öneri hakem panelinde de görünüyor</span>
       </div>

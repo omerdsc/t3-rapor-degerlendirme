@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PortalDonus from '@/components/portal-donus';
 import { notFound } from 'next/navigation';
 import { hakeminIsleri, hakemKodIle } from '@/lib/db/hakem-depo';
 
@@ -55,6 +56,7 @@ export default async function HakemPaneli({ params }: PageProps<'/hakem/[kod]'>)
               HESABINIZ PASİF
             </span>
           )}
+          <PortalDonus />
         </div>
       </header>
 

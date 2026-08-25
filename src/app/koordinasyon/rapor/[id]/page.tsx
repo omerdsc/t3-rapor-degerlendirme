@@ -12,6 +12,7 @@ import {
   nihaiOzet, raporunDegerlendirmeleri, raporunHakemleri,
 } from '@/lib/db/hakem-depo';
 import { raporuMaskele } from '@/lib/depo/maskele';
+import { maliyetGorunur } from '@/lib/gorunum/maliyet';
 
 export const dynamic = 'force-dynamic';
 
@@ -188,7 +189,7 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
         <div className="mb-2.5 flex flex-wrap items-baseline gap-2">
           <h2 className="text-[13px] font-bold">Otomatik ön kontroller</h2>
           <span className="text-[11px] font-medium text-metin-2">
-            yapay zekâ kullanmadan, saniyeler içinde · maliyet $0 · puana
+            yapay zekâ kullanmadan, saniyeler içinde · ücretsiz · puana
             dahil değil
           </span>
           {/*
@@ -235,7 +236,7 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
           <summary className="cursor-pointer px-5 py-3.5 text-[13px] font-bold">
             Ön kontrol bulguları
             <span className="ml-2 font-medium text-metin-2">
-              ({rapor.kontroller.reduce((t, k) => t + k.bulgular.length, 0)} bulgu · maliyet $0)
+              ({rapor.kontroller.reduce((t, k) => t + k.bulgular.length, 0)} bulgu · ücretsiz)
             </span>
           </summary>
           <div className="flex flex-col gap-1.5 border-t border-cizgi px-5 py-3.5">
@@ -287,6 +288,7 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
         raporId={rapor.id}
         olcutler={kategori.rubrik.kriterler}
         hakemAtandi={atananlar.length > 0}
+        maliyetGoster={maliyetGorunur()}
         ai={
           rapor.aiDegerlendirme
             ? {

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PortalDonus from '@/components/portal-donus';
 import { notFound } from 'next/navigation';
 import HakemPuanlama from '@/components/hakem-puanlama';
 import { KontrolNoktasi } from '@/components/rozet';
@@ -82,6 +83,7 @@ export default async function HakemRaporSayfasi({
           <span className="shrink-0 text-[11px] font-medium text-metin-2">
             {hakem.ad}
           </span>
+          <PortalDonus />
         </div>
       </header>
 

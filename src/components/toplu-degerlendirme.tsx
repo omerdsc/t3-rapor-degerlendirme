@@ -12,10 +12,15 @@ import { useEffect, useState } from 'react';
  * gidince her rapordan sonra harcanan tutar görünüyor ve kullanıcı
  * DURDURABİLİYOR.
  *
- * ── NİYE ÖNCE MALİYET SORULUYOR ─────────────────────────────────────────
- * Bu sistemin tek ücretli adımı bu. Kullanıcı "42 rapor × $0,13 = $5,50"
- * görmeden başlatmamalı; bütçesi sert sınırlı bir kurumda "başlat"a basmak
- * geri alınamaz bir harcamadır.
+ * ── NİYE ÖNCE ONAY İSTENİYOR ────────────────────────────────────────────
+ * Bu sistemin tek ücretli adımı bu ve "başlat"a basmak geri alınamaz bir
+ * işlem. Kullanıcı kaç raporun işleneceğini ve ne kadar süreceğini
+ * görmeden başlatmamalı.
+ *
+ * Tutarlar `MALIYET_GOSTER` anahtarına bağlı ve varsayılan kapalı; kapalıyken
+ * rakam sunucudan İSTEMCİYE HİÇ GÖNDERİLMİYOR — sayfa kaynağında duran bir
+ * rakam gizlenmiş sayılmaz. Ama tavan aşımı uyarısı tutarsız da veriliyor:
+ * işlemin yarıda duracağını bilmek fiyat bilgisi değil, davranış bilgisi.
  *
  * ── BÜTÇE AŞIMINDA DÖNGÜ DURUYOR ────────────────────────────────────────
  * Sunucu 402 dönerse kalan raporlar denenmiyor. Aynı hatayı 40 kez almak
@@ -32,9 +37,12 @@ interface Hedef {
 interface Durum {
   hedefler: Hedef[];
   zatenVar: number;
-  birimMaliyet: number;
-  tahminiTutar: number;
-  tavan: number;
+  /** Tutarlar `MALIYET_GOSTER` kapalıysa sunucudan hiç gelmiyor. */
+  maliyetGoster: boolean;
+  birimMaliyet?: number;
+  tahminiTutar?: number;
+  tavan?: number;
+  tavaniAsiyor: boolean;
   onaysizOlcut: number;
 }
 
@@ -132,7 +140,7 @@ export default function TopluDegerlendirme({
     ) : null;
   }
 
-  const tutarAsiyor = durum.tahminiTutar > durum.tavan;
+  const tutarAsiyor = durum.tavaniAsiyor;
 
   return (
     <div className="mb-4 rounded-xl border border-cizgi bg-white px-4 py-3.5">
@@ -143,11 +151,16 @@ export default function TopluDegerlendirme({
           </h2>
           <p className="mt-1 text-[11.5px] leading-relaxed font-medium text-metin-2">
             Ölçüt bazında puan önerisi, gerekçe ve rapordan alıntı üretir;
-            hakem hazır bulur. Tahmini tutar{' '}
-            <strong className="font-bold text-metin">
-              ${durum.tahminiTutar.toFixed(2)}
-            </strong>{' '}
-            ({durum.hedefler.length} × ${durum.birimMaliyet}).
+            hakem hazır bulur.
+            {durum.maliyetGoster && durum.tahminiTutar !== undefined && (
+              <>
+                {' '}Tahmini tutar{' '}
+                <strong className="font-bold text-metin">
+                  ${durum.tahminiTutar.toFixed(2)}
+                </strong>{' '}
+                ({durum.hedefler.length} × ${durum.birimMaliyet}).
+              </>
+            )}
             {durum.zatenVar > 0 && ` ${durum.zatenVar} rapor zaten değerlendirilmiş, atlanacak.`}
           </p>
         </div>
@@ -175,16 +188,27 @@ export default function TopluDegerlendirme({
         <div className="mt-3 rounded-lg bg-zemin px-3.5 py-3">
           <p className="text-[11.5px] leading-relaxed font-medium text-metin">
             <strong className="font-bold">
-              {durum.hedefler.length} rapor değerlendirilecek · ~$
-              {durum.tahminiTutar.toFixed(2)} · yaklaşık{' '}
+              {durum.hedefler.length} rapor değerlendirilecek
+              {durum.maliyetGoster && durum.tahminiTutar !== undefined
+                ? ` · ~$${durum.tahminiTutar.toFixed(2)}`
+                : ''}
+              {' · yaklaşık '}
               {Math.ceil((durum.hedefler.length * 90) / 60)} dakika
             </strong>
           </p>
 
+          {/*
+            TAVAN UYARISI TUTARSIZ DA VERİLİYOR.
+            Tutar gizlense bile kullanıcı işlemin yarıda duracağını
+            bilmeli — bu bir davranış bilgisi, fiyat değil.
+          */}
           {tutarAsiyor && (
             <p className="mt-2 rounded-md bg-amber-zemin px-2.5 py-2 text-[11px] leading-relaxed font-semibold text-amber-koyu">
-              Tahmini tutar bu kurulumun tavanını (${durum.tavan}) aşıyor.
-              Sistem tavana ulaşınca çağrıyı reddedip duracak — başlatmak
+              Bu işlem kurulumun bütçe tavanını aşıyor
+              {durum.maliyetGoster && durum.tavan !== undefined
+                ? ` ($${durum.tavan})`
+                : ''}
+              . Sistem tavana ulaşınca çağrıyı reddedip duracak — başlatmak
               güvenli, ama hepsi tamamlanmayacak. Tavanı{' '}
               <code className="font-mono">TOPLAM_TAVAN</code> ile
               yükseltebilirsiniz.
@@ -201,9 +225,9 @@ export default function TopluDegerlendirme({
           )}
 
           <p className="mt-2 text-[10.5px] leading-relaxed font-medium text-metin-2">
-            Raporlar sırayla işlenir; her adımda harcanan tutar görünür ve
-            istediğiniz an durdurabilirsiniz. Durdurulan işlem tamamlanmış
-            raporları geri almaz.
+            Raporlar sırayla işlenir ve istediğiniz an
+            durdurabilirsiniz. Durdurulan işlem tamamlanmış raporları geri
+            almaz.
           </p>
 
           <button
@@ -222,9 +246,11 @@ export default function TopluDegerlendirme({
             <span className="text-[12px] font-bold">
               {ilerleme.bitti}/{durum.hedefler.length} rapor
             </span>
-            <span className="text-[11.5px] font-semibold text-metin-2">
-              harcanan ${ilerleme.harcanan.toFixed(4)}
-            </span>
+            {durum.maliyetGoster && (
+              <span className="text-[11.5px] font-semibold text-metin-2">
+                harcanan ${ilerleme.harcanan.toFixed(4)}
+              </span>
+            )}
             {calisiyor && (
               <span className="text-[11px] font-medium text-metin-2">
                 sürüyor…

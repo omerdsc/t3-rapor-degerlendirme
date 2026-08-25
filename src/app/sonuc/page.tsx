@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PortalDonus from '@/components/portal-donus';
 import {
   kategoriGetir, raporlariBasvuruNoIle, yarismaGetir,
 } from '@/lib/depo/depo';
@@ -94,6 +95,7 @@ export default async function SonucSayfasi({ searchParams }: PageProps<'/sonuc'>
         <span className="ml-auto text-[11px] font-medium text-metin-2">
           Sonucunuzu başvuru numaranızla görüntüleyin
         </span>
+        <PortalDonus />
       </header>
 
       <div className="mx-auto max-w-5xl px-10 py-8">
