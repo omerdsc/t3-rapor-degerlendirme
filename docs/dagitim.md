@@ -61,65 +61,37 @@ yapıyor; bu satırı görmeden devam etmeyin.
 oluşturun (`tprds`) → sunucunun public IP'sini yazın.
 Sonuç: `tprds.duckdns.org`.
 
-## 3 · Sunucuyu kur
+## 3 · Paketi sunucuya kopyala
 
-```bash
-ssh ubuntu@<SUNUCU-IP>
-
-# Docker
-curl -fsSL https://get.docker.com | sudo sh
-sudo usermod -aG docker ubuntu && exit     # çıkıp tekrar girin
-ssh ubuntu@<SUNUCU-IP>
-
-# Oracle imajı iptables'ı kilitli getiriyor; 80/443 açılmalı
-sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 80 -j ACCEPT
-sudo iptables -I INPUT 6 -m state --state NEW -p tcp --dport 443 -j ACCEPT
-sudo netfilter-persistent save
-```
-
-> Bu adım atlanırsa site dışarıdan açılmaz ve sebebi hiçbir günlükte
-> görünmez — Oracle'ın Ubuntu imajındaki varsayılan güvenlik duvarı
-> yalnızca 22'yi açık bırakıyor.
-
-## 4 · Projeyi kopyala
-
-Yerelden (yeni terminal):
+Yerel bilgisayarında (yeni terminal):
 
 ```bash
 cd ~/OneDrive/Desktop/T3/dorduncu-goz
-tar --exclude=node_modules --exclude=.next --exclude=veri \
-    --exclude=.git --exclude='.env*' -czf /tmp/tprds.tgz .
-scp /tmp/tprds.tgz ubuntu@<SUNUCU-IP>:~/
+npm run paket                              # ~/tprds-sunucu.tgz üretir
+scp ~/tprds-sunucu.tgz ubuntu@<SUNUCU-IP>:~/
 ```
 
-Sunucuda:
+`npm run paket` gönderilecek arşivi hazırlar ve **içeriğini denetler**:
+gerçek `veri/` klasörü, `.env` dosyaları ve gerçek yarışmacı belgeleri
+arşive girmiyor. Denetim geçmezse paket üretilmiyor.
+
+## 4 · Tek komutla kur
 
 ```bash
-mkdir -p ~/tprds && tar -xzf ~/tprds.tgz -C ~/tprds && cd ~/tprds
-cp .env.sunucu.ornek .env.sunucu
-nano .env.sunucu        # aşağıya bakın
+ssh ubuntu@<SUNUCU-IP>
+mkdir -p ~/tprds && tar -xzf ~/tprds-sunucu.tgz -C ~/tprds && cd ~/tprds
+bash scripts/sunucu-kur.sh tprds.duckdns.org
 ```
 
-`.env.sunucu` içinde **en az** şu ikisi:
+Betik sırayla: Docker'ı kurar, güvenlik duvarında 80/443'ü açar, panel
+parolasını üretir, uygulamayı derleyip başlatır. Sonunda adresi ve
+parolayı ekrana yazar — **parolayı kaydedin**.
 
-```
-TPRDS_ALAN_ADI=tprds.duckdns.org
-KOORDINASYON_ANAHTARI=<openssl rand -base64 32 çıktısı>
-```
+İlk derleme ARM makinede ~5 dakika sürüyor. Yarıda kalırsa betik baştan
+çalıştırılabilir; yapılmış adımları atlıyor.
 
-> **Anahtarsız açılmıyor.** Üretimde `KOORDINASYON_ANAHTARI` yoksa
-> uygulama her isteğe 500 dönüyor. Bilinçli bir karar: anahtarsız panele
-> erişen herkes bütün veriyi dışa aktarabilir ve ücretli yapay zekâ
-> çağrısı başlatabilir.
-
-## 5 · Başlat
-
-```bash
-docker compose up -d --build     # ilk derleme ~5 dk (ARM)
-docker compose logs -f tprds
-```
-
-Caddy sertifikayı kendisi alıyor. `https://tprds.duckdns.org` açılmalı.
+> Docker ilk kez kurulduysa betik bittikten sonra bir kez `exit` deyip
+> yeniden `ssh` ile bağlanın.
 
 ---
 

@@ -22,7 +22,8 @@
     "duman": "tsx scripts/duman-testi.ts",
     "ai:denetim": "tsx scripts/ai-puan-denetimi.ts",
     "dagitim:veri": "tsx scripts/dagitim-verisi.ts",
-    "dagitim:demo": "tsx scripts/dagitim-demo.ts"
+    "dagitim:demo": "tsx scripts/dagitim-demo.ts",
+    "paket": "tsx scripts/paket-hazirla.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.120.0",
