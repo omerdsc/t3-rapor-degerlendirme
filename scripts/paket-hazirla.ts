@@ -104,7 +104,14 @@ function main(): void {
   console.log(`\n  ${YESIL}✓${R} Gerçek belge, anahtar veya çalışan veri YOK.`);
   console.log(`\n  ${CIKTI}\n`);
   console.log('  Sunucuya göndermek için:');
-  console.log(`    scp ${CIKTI} ubuntu@<SUNUCU-IP>:~/\n`);
+  /*
+   * Kullanıcı adı sağlayıcıya göre değişiyor: DigitalOcean ve Hetzner
+   * `root`, Oracle `ubuntu`. Yanlış ad "Permission denied (publickey)"
+   * veriyor ve hata anahtarı işaret ettiği için sebep yanlış yerde
+   * aranıyor — bu yüzden ikisi de yazılı.
+   */
+  console.log(`    scp -i ~/.ssh/tprds ${CIKTI} root@<SUNUCU-IP>:~/`);
+  console.log('    (Oracle kullanıyorsanız root yerine ubuntu)\n');
 }
 
 main();
