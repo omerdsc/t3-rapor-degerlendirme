@@ -20,7 +20,9 @@
     "hacim:temizle": "tsx scripts/hacim-temizle.ts",
     "demo": "tsx scripts/demo-hazirla.ts",
     "duman": "tsx scripts/duman-testi.ts",
-    "ai:denetim": "tsx scripts/ai-puan-denetimi.ts"
+    "ai:denetim": "tsx scripts/ai-puan-denetimi.ts",
+    "dagitim:veri": "tsx scripts/dagitim-verisi.ts",
+    "dagitim:demo": "tsx scripts/dagitim-demo.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.120.0",

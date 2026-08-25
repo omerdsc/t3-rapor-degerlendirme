@@ -18,9 +18,10 @@ import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { baglanti, jsonYaz, sayi } from './baglanti';
 import type { Rapor, Yarisma } from '../depo/tipler';
+import { veriDizini } from '@/lib/yol';
 
-const YARISMA_DIZINI = () => join(process.cwd(), 'veri', 'yarismalar');
-const RAPOR_DIZINI = () => join(process.cwd(), 'veri', 'raporlar');
+const YARISMA_DIZINI = () => join(veriDizini(), 'yarismalar');
+const RAPOR_DIZINI = () => join(veriDizini(), 'raporlar');
 
 export interface GecisSonucu {
   yarisma: number;

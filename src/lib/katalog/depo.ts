@@ -9,8 +9,9 @@
 import { existsSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Katalog, KatalogYarismasi } from './tipler';
+import { veriDizini } from '@/lib/yol';
 
-const YOL = () => join(process.cwd(), 'veri', 'katalog.json');
+const YOL = () => join(veriDizini(), 'katalog.json');
 
 let onbellek: { mtime: number; katalog: Katalog } | null = null;
 

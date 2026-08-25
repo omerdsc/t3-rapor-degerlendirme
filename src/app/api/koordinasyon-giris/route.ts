@@ -35,14 +35,31 @@ export async function POST(istek: Request) {
   /*
    * HttpOnly: sayfadaki betikler okuyamıyor, XSS ile çalınamıyor.
    * SameSite=Lax: başka siteden gelen POST isteklerinde çerez gitmiyor.
-   * Secure YOK: geliştirme http üzerinde çalışıyor ve Secure çerez
-   * http'de hiç kurulmaz. Canlıda eklenmeli — README'de yazılı.
+   *
+   * Secure BAĞLANTIYA GÖRE ekleniyor, ortama göre değil. Sebep: `Secure`
+   * çerez http üzerinde hiç kurulmuyor — sabit açık bırakılsa geliştirme
+   * girişi sessizce çalışmaz, sabit kapalı bırakılsa canlıda oturum
+   * çerezi şifresiz taşınır. Doğru soru "hangi ortamdayız" değil, "bu
+   * istek şifreli mi geldi".
+   *
+   * Ters vekil (Caddy/nginx) arkasında istek uygulamaya http olarak
+   * ulaşıyor; asıl protokol `x-forwarded-proto` başlığında. Başlığı
+   * yalnızca vekilin yazdığına güveniyoruz — doğrudan internete açık
+   * çalıştırma senaryosu yok, dağıtım her zaman vekil arkasında.
    */
   yanit.headers.append(
     'set-cookie',
-    `${COKKI}=${encodeURIComponent(g.anahtar)}; Path=/; HttpOnly; SameSite=Lax; Max-Age=43200`,
+    `${COKKI}=${encodeURIComponent(g.anahtar)}; Path=/; HttpOnly; SameSite=Lax; `
+      + `Max-Age=43200${sifreliMi(istek) ? '; Secure' : ''}`,
   );
   return yanit;
+}
+
+/** İstek kullanıcıya https olarak mı göründü? */
+function sifreliMi(istek: Request): boolean {
+  const iletilen = istek.headers.get('x-forwarded-proto');
+  if (iletilen) return iletilen.split(',')[0].trim() === 'https';
+  return new URL(istek.url).protocol === 'https:';
 }
 
 /** Çıkış — çerezi siler. */

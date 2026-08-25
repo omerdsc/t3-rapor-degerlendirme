@@ -29,8 +29,9 @@ import type { Sablon, Seviye } from '../analiz/tipler';
 import type { Rubrik, RubrikKriteri } from '../analiz/sablon-cikar';
 import type { SakliParmakizi } from '../analiz/parmakizi-depo';
 import { anahtar } from '../analiz/normalize';
+import { veriDizini } from '@/lib/yol';
 
-const DOSYA_DIZINI = () => join(process.cwd(), 'veri', 'dosyalar');
+const DOSYA_DIZINI = () => join(veriDizini(), 'dosyalar');
 
 export function kimlik(): string {
   return randomUUID();

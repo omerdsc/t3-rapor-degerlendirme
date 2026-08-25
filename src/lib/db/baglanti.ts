@@ -32,8 +32,9 @@
 import { DatabaseSync } from 'node:sqlite';
 import { existsSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { veriDizini } from '@/lib/yol';
 
-const VERI_DIZINI = () => join(process.cwd(), 'veri');
+const VERI_DIZINI = veriDizini;
 
 /**
  * Veritabanı dosyası.

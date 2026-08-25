@@ -20,6 +20,7 @@ import { sartnameCozumle, kurallariBirlestir } from '@/lib/analiz/sartname';
 import { sartnameOzetle } from '@/lib/ai/sartname-ozeti';
 import { ClaudeIstemcisi, ButceAsimiHatasi } from '@/lib/ai/istemci';
 import { kategoriGetir, sartnameKaydet, yarismaGetir } from '@/lib/depo/depo';
+import { onbellekDizini } from '@/lib/yol';
 
 export const maxDuration = 300;
 const AZAMI_BOYUT = 30 * 1024 * 1024;
@@ -88,7 +89,7 @@ export async function POST(request: Request) {
     try {
       const istemci = new ClaudeIstemcisi({
         toplamTavan: Number(process.env.TOPLAM_TAVAN ?? 8),
-        diskOnbellegi: join(process.cwd(), '.onbellek'),
+        diskOnbellegi: onbellekDizini(),
       });
       const sonuc = await sartnameOzetle(cozum.metin, `${yarisma.ad} · ${kategori.ad}`, {
         istemci,
@@ -204,7 +205,7 @@ export async function PATCH(request: Request) {
   try {
     const istemci = new ClaudeIstemcisi({
       toplamTavan: Number(process.env.TOPLAM_TAVAN ?? 8),
-      diskOnbellegi: join(process.cwd(), '.onbellek'),
+      diskOnbellegi: onbellekDizini(),
     });
     const sonuc = await sartnameOzetle(
       cozum.metin,

@@ -17,6 +17,7 @@ import { sablonUyumu } from '@/lib/analiz/sablon';
 import { raporuDegerlendir } from '@/lib/ai/degerlendirme';
 import { ClaudeIstemcisi, ButceAsimiHatasi } from '@/lib/ai/istemci';
 import { ozetiHazirla } from '@/lib/ai/ozet-hazirla';
+import { onbellekDizini } from '@/lib/yol';
 import {
   dosyaOku, kategoriGetir, raporGetir, raporGuncelle, yarismaGetir,
 } from '@/lib/depo/depo';
@@ -74,7 +75,7 @@ export async function POST(request: Request, ctx: RouteContext<'/api/rapor/[id]/
 
   const istemci = new ClaudeIstemcisi({
     toplamTavan: Number(process.env.TOPLAM_TAVAN ?? 8),
-    diskOnbellegi: join(process.cwd(), '.onbellek'),
+    diskOnbellegi: onbellekDizini(),
   });
 
   /*

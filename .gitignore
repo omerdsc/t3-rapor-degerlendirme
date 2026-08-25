@@ -52,3 +52,9 @@ veri/
 # SQLite çalışma dosyaları — WAL ve shared-memory
 veri/*.db-wal
 veri/*.db-shm
+
+# Dağıtım için hazırlanan temiz veri kümesi — üretiliyor, kaynak değil.
+# Sentetik rapor taşıyor ama yine de depoya girmesin: `npm run dagitim:veri`
+# ile her an yeniden üretilebiliyor.
+dagitim/
+test-verisi/

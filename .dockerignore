@@ -1,0 +1,28 @@
+# İmaja GİRMEYECEKLER.
+#
+# En önemlisi ilk iki blok: `veri/` gerçek yarışmacı belgeleri ve
+# değerlendirme verisi taşıyor, `.env*` ise API anahtarı ve koordinasyon
+# parolası. İkisi de bir kapsayıcı imajının içinde durmamalı — imaj
+# kopyalanır, paylaşılır, kayıt defterine yüklenir; içindeki her şey
+# onunla birlikte gider.
+
+veri/
+ornek_rapor/
+test-verisi/
+dagitim/
+.onbellek/
+
+.env
+.env.*
+!.env.ornek
+
+node_modules/
+.next/
+.git/
+.gitignore
+*.log
+.dev.log
+
+docs/
+*.md
+!README.md

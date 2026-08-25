@@ -21,6 +21,7 @@ import { kapi } from '@/lib/yetki/koordinasyon';
 import { join } from 'node:path';
 import { ClaudeIstemcisi, ButceAsimiHatasi } from '@/lib/ai/istemci';
 import { ozetiHazirla } from '@/lib/ai/ozet-hazirla';
+import { onbellekDizini } from '@/lib/yol';
 import {
   kategoriGetir, sartnameKaydet, yarismaGetir, yarismalariListele,
 } from '@/lib/depo/depo';
@@ -114,7 +115,7 @@ export async function POST(request: Request) {
 
   const istemci = new ClaudeIstemcisi({
     toplamTavan: Number(process.env.TOPLAM_TAVAN ?? 8),
-    diskOnbellegi: join(process.cwd(), '.onbellek'),
+    diskOnbellegi: onbellekDizini(),
   });
 
   try {

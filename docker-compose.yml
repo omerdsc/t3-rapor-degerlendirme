@@ -1,0 +1,58 @@
+# TPRDS — sunucu düzeni
+#
+# İki kapsayıcı:
+#   tprds  · uygulamanın kendisi, yalnızca iç ağda
+#   caddy  · dışa bakan ters vekil; sertifikayı kendi alıyor ve yeniliyor
+#
+# ── NİYE TERS VEKİL ──────────────────────────────────────────────────────
+# Uygulama https konuşmuyor ve konuşmamalı: sertifika yönetimi (alma,
+# yenileme, http→https yönlendirme) çözülmüş bir iş ve Caddy bunu
+# yapılandırma olmadan yapıyor. Uygulamanın işi değerlendirme.
+#
+# Ayrıca güvenlik: `tprds` kapsayıcısı hiçbir portu dışarı AÇMIYOR
+# (`expose`, `ports` değil). Dışarıdan tek giriş 80 ve 443. Uygulamayı
+# doğrudan 3000'den açık bırakmak, Caddy'nin arkasındaki her korumayı
+# atlanabilir kılardı.
+#
+# Kurulum:
+#   1. .env.sunucu dosyasını doldurun (docs/dagitim.md)
+#   2. dagitim/veri klasörünü sunucuya kopyalayın
+#   3. docker compose up -d --build
+
+services:
+  tprds:
+    build: .
+    restart: unless-stopped
+    env_file: .env.sunucu
+    environment:
+      # Kalıcı disk. Dockerfile'da da tanımlı; burada açıkça yazılıyor
+      # çünkü bu dosyayı okuyanın veri konumunu görmesi gerekiyor.
+      TPRDS_VERI_DIZINI: /veri
+      TPRDS_ONBELLEK_DIZINI: /veri/.onbellek
+    volumes:
+      # Sol taraf sunucudaki klasör, sağ taraf kapsayıcı içi.
+      # Uygulama güncellendiğinde bu klasör YERİNDE KALIYOR — kapsayıcı
+      # silinip yeniden kurulsa da veritabanı ve belgeler kaybolmuyor.
+      - ./dagitim/veri:/veri
+    expose:
+      - "3000"
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    env_file: .env.sunucu
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      # Sertifikalar burada duruyor. Kalıcı olmazsa her yeniden
+      # başlatmada yeniden alınır ve Let's Encrypt hız sınırına takılır.
+      - caddy_veri:/data
+      - caddy_yapilandirma:/config
+    depends_on:
+      - tprds
+
+volumes:
+  caddy_veri:
+  caddy_yapilandirma:

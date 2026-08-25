@@ -23,6 +23,7 @@
 import { existsSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Kategori } from './kategori';
+import { veriDizini } from '@/lib/yol';
 
 export interface TerimProfili {
   yarismaId: string;
@@ -33,7 +34,7 @@ export interface TerimProfili {
   terimler: string[];
 }
 
-const YOL = () => join(process.cwd(), 'veri', 'terim-profilleri.json');
+const YOL = () => join(veriDizini(), 'terim-profilleri.json');
 
 let onbellek: { mtime: number; profiller: TerimProfili[] } | null = null;
 

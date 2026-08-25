@@ -1,0 +1,39 @@
+# Ters vekil ve TLS.
+#
+# Alan adı `.env.sunucu` içindeki TPRDS_ALAN_ADI'ndan geliyor. Caddy o
+# ad için Let's Encrypt sertifikasını kendisi alıyor, kendisi yeniliyor
+# ve http'yi https'e yönlendiriyor — ek yapılandırma yok.
+#
+# Alan adı yoksa (yalnızca IP ile deneme) `:80` yazıp bu bloğu sadeleştirin;
+# o durumda https olmaz ve koordinasyon çerezi `Secure` almaz.
+
+{$TPRDS_ALAN_ADI} {
+	# Uygulama iç ağda; adı compose servis adı.
+	reverse_proxy tprds:3000
+
+	# Yükleme sınırı uygulamada 25 MB; vekil daha erken kesmesin.
+	request_body {
+		max_size 30MB
+	}
+
+	encode zstd gzip
+
+	header {
+		# Tarayıcı bu siteye bir daha http ile bağlanmasın.
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		# İçerik türü tahmini kapalı: yüklenen bir PDF'in HTML gibi
+		# yorumlanması bu üründe gerçek bir risk — belgeler kullanıcı
+		# tarafından yükleniyor.
+		X-Content-Type-Options "nosniff"
+		# Başka sitenin bu sayfayı çerçeve içine almasını engeller.
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		# Sunucu yazılımını duyurmanın faydası yok.
+		-Server
+	}
+
+	log {
+		output stdout
+		format console
+	}
+}
