@@ -26,7 +26,14 @@
 		# tarafından yükleniyor.
 		X-Content-Type-Options "nosniff"
 		# Başka sitenin bu sayfayı çerçeve içine almasını engeller.
-		X-Frame-Options "DENY"
+		#
+		# SAMEORIGIN, DENY DEĞİL — ölçülmüş bir hatanın sonucu.
+		# DENY, aynı siteden gelen gömmeyi de engelliyor. Hakem panelinde
+		# rapor PDF'i bir çerçeve içinde gösteriliyor ve bu başlıkla birlikte
+		# panelin sol yarısı boş bir kutu olarak açılıyordu. Uç nokta 200 ve
+		# doğru içerik türü dönüyordu; engel tarayıcıdaydı, sunucuda değil —
+		# bu yüzden günlüklerde hiçbir iz yoktu.
+		X-Frame-Options "SAMEORIGIN"
 		Referrer-Policy "strict-origin-when-cross-origin"
 		# Sunucu yazılımını duyurmanın faydası yok.
 		-Server

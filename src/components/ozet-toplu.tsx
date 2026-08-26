@@ -30,7 +30,13 @@ interface Durum {
   farkliBelge: number;
   ayniBelgeyiPaylasan: number;
   ozetiHazirKategori: number;
-  tahminiMaliyet: number;
+  /*
+   * Tutar YALNIZCA `MALIYET_GOSTER` açıkken geliyor. Kapalıyken alan hiç
+   * gönderilmiyor — bu yüzden isteğe bağlı. Ekranda "gizlenmiş" ama
+   * sayfa kaynağında duran bir rakam, gizlenmiş sayılmaz.
+   */
+  maliyetGoster?: boolean;
+  tahminiMaliyet?: number;
 }
 
 export default function OzetToplu() {
@@ -139,10 +145,14 @@ export default function OzetToplu() {
             {durum.ozetiHazirKategori > 0 && `${durum.ozetiHazirKategori} kategoride hazır. `}
             {durum.farkliBelge} şartname için özet yok. Özet olmadan da
             değerlendirme yapılır — o kategoride ilk raporda kendiliğinden
-            üretilir. Hepsini şimdiden hazırlamak istersen tahmini tutar{' '}
+            üretilir. Hepsini şimdiden hazırlamak istersen{' '}
             <strong className="font-bold text-metin">
-              ${durum.tahminiMaliyet.toFixed(2)}
-            </strong>
+              {durum.farkliBelge} çağrı
+            </strong>{' '}
+            yapılır
+            {durum.maliyetGoster && durum.tahminiMaliyet !== undefined
+              ? `, tahmini tutar $${durum.tahminiMaliyet.toFixed(2)}`
+              : ''}
             .
           </p>
         </div>
@@ -160,10 +170,10 @@ export default function OzetToplu() {
         <div className="mt-3 border-t border-cizgi pt-3">
           <p className="mb-2.5 text-[11.5px] leading-relaxed font-medium text-metin-2">
             <strong className="font-bold text-metin">{durum.farkliBelge} çağrı</strong>{' '}
-            yapılacak, tahmini tutar{' '}
-            <strong className="font-bold text-metin">
-              ${durum.tahminiMaliyet.toFixed(2)}
-            </strong>
+            yapılacak
+            {durum.maliyetGoster && durum.tahminiMaliyet !== undefined
+              ? `, tahmini tutar $${durum.tahminiMaliyet.toFixed(2)}`
+              : ''}
             .
             {durum.ayniBelgeyiPaylasan > 0 && (
               <>
@@ -185,7 +195,9 @@ export default function OzetToplu() {
             >
               {calisiyor
                 ? 'Hazırlanıyor…'
-                : `Başlat (~$${durum.tahminiMaliyet.toFixed(2)})`}
+                : durum.maliyetGoster && durum.tahminiMaliyet !== undefined
+                  ? `Başlat (~$${durum.tahminiMaliyet.toFixed(2)})`
+                  : `Başlat (${durum.farkliBelge} çağrı)`}
             </button>
             {calisiyor && (
               <button

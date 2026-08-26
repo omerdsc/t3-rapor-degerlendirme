@@ -18,6 +18,7 @@
  */
 
 import { kapi } from '@/lib/yetki/koordinasyon';
+import { maliyetGorunur } from '@/lib/gorunum/maliyet';
 import { join } from 'node:path';
 import { ClaudeIstemcisi, ButceAsimiHatasi } from '@/lib/ai/istemci';
 import { ozetiHazirla } from '@/lib/ai/ozet-hazirla';
@@ -78,6 +79,19 @@ export async function GET(istek: Request) {
     0,
   );
 
+  /*
+   * TUTAR, AYAR KAPALIYKEN GÖNDERİLMİYOR.
+   *
+   * `MALIYET_GOSTER` kapalıyken rakamın istemciye HİÇ ulaşmaması gerekiyor
+   * — "gizlenmiş ama sayfa kaynağında duran" bir rakam gizlenmiş sayılmaz.
+   * Bu uç noktası o kuralı uygulamıyordu ve şartname özetleri kutusunda
+   * tutar, ayar kapalı olmasına rağmen ekranda görünüyordu.
+   *
+   * Kaç çağrı yapılacağı (`farkliBelge`) gönderilmeye devam ediyor:
+   * o bir fiyat değil, işin büyüklüğü.
+   */
+  const goster = maliyetGorunur();
+
   return Response.json({
     hedefler: hedefler.map((h) => ({
       yarismaId: h.yarismaId,
@@ -87,8 +101,13 @@ export async function GET(istek: Request) {
     farkliBelge: hedefler.length,
     ayniBelgeyiPaylasan: paylasan,
     ozetiHazirKategori: hazir,
-    tahminiMaliyet: Number((hedefler.length * BIRIM_MALIYET).toFixed(2)),
-    birimMaliyet: BIRIM_MALIYET,
+    maliyetGoster: goster,
+    ...(goster
+      ? {
+          tahminiMaliyet: Number((hedefler.length * BIRIM_MALIYET).toFixed(2)),
+          birimMaliyet: BIRIM_MALIYET,
+        }
+      : {}),
   });
 }
 
