@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import AiOnDegerlendirme from '@/components/ai-on-degerlendirme';
+import KaynakcaDenetimi from '@/components/kaynakca-denetimi';
+import BarajRozeti from '@/components/baraj-rozeti';
+import { kaynakcaDenetimiGetir } from '@/lib/db/kaynakca-denetim-depo';
 import { DurumRozeti, SeviyeRozeti } from '@/components/rozet';
 import Yazisma from '@/components/yazisma';
 import {
@@ -43,6 +46,7 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
    * koordinasyonun görmesi gereken şey "kim geciktiriyor" sorusunun cevabı.
    */
   const atananlar = raporunHakemleri(rapor.id);
+  const denetim = kaynakcaDenetimiGetir(rapor.id);
   const degerlendirmeler = raporunDegerlendirmeleri(rapor.id);
   const ozet = nihaiOzet(rapor.id);
 
@@ -184,6 +188,24 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
       />
 
       {/*
+        BARAJ KOORDİNASYONDA DA GÖRÜNÜYOR.
+        Yarışmacı kendi sayfasında "barajın altında kaldınız" yazısını
+        okuyunca koordinasyona soruyor. Aynı bilgi burada da olmasaydı
+        koordinasyon soruyu cevaplamak için puanı elle eşikle
+        karşılaştırmak zorunda kalırdı.
+      */}
+      <div className="mb-4">
+        <BarajRozeti
+          taraf="koordinasyon"
+          girdi={{
+            baraj: kategori.rubrik.barajPuani,
+            puan: ozet.puan,
+            tamamlandi: ozet.atanan > 0 && ozet.tamamlanan >= ozet.atanan,
+          }}
+        />
+      </div>
+
+      {/*
         ÖN KONTROL ŞERİDİ — başlıklı.
         Başlıksızken sayfadaki tek adsız bloktu: kullanıcı bu çiplerin ne
         olduğunu, kimin ürettiğini ve puanla ilişkisini bilmiyordu.
@@ -192,7 +214,7 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
         <div className="mb-2.5 flex flex-wrap items-baseline gap-2">
           <h2 className="text-[13px] font-bold">Otomatik ön kontroller</h2>
           <span className="text-[11px] font-medium text-metin-2">
-            yapay zekâ kullanmadan, saniyeler içinde · ücretsiz · puana
+            yapay zekâ kullanmadan, saniyeler içinde · puana
             dahil değil
           </span>
           {/*
@@ -239,7 +261,7 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
           <summary className="cursor-pointer px-5 py-3.5 text-[13px] font-bold">
             Ön kontrol bulguları
             <span className="ml-2 font-medium text-metin-2">
-              ({rapor.kontroller.reduce((t, k) => t + k.bulgular.length, 0)} bulgu · ücretsiz)
+              ({rapor.kontroller.reduce((t, k) => t + k.bulgular.length, 0)} bulgu)
             </span>
           </summary>
           <div className="flex flex-col gap-1.5 border-t border-cizgi px-5 py-3.5">
@@ -287,11 +309,33 @@ export default async function RaporSayfasi({ params }: PageProps<'/koordinasyon/
         geçerli olduğu belirsiz kalıyordu. Puanı hakem verir; koordinasyon
         ön değerlendirmeyi başlatır ve sonucu izler.
       */}
+      {/*
+        KAYNAKÇA DENETİMİ ÖN DEĞERLENDİRMENİN ÜSTÜNDE.
+
+        İkisi de ücretli ve ikisi de koordinasyonun başlattığı iş, ama
+        sıra tesadüf değil: uydurma kaynakça bulunan bir raporda puanlama
+        tartışmalı hale geliyor. Koordinasyonun önce bakması gereken şey bu.
+      */}
+      <KaynakcaDenetimi
+        raporId={rapor.id}
+        baslangic={
+          denetim
+            ? {
+                durum: denetim.durum,
+                karar: denetim.karar,
+                adimlar: denetim.adimlar,
+                tur: denetim.tur,
+                maliyet: denetim.maliyet,
+                hata: denetim.hata,
+              }
+            : null
+        }
+      />
+
       <AiOnDegerlendirme
         raporId={rapor.id}
         olcutler={kategori.rubrik.kriterler}
         hakemAtandi={atananlar.length > 0}
-        maliyetGoster={maliyetGorunur()}
         ai={
           rapor.aiDegerlendirme
             ? {

@@ -369,15 +369,49 @@ export default function HakemPuanlama({
           <div>
             <div className="mb-1.5 flex items-center gap-2">
               <span className="size-2 rounded-full bg-mavi" />
-              <span className="text-[11.5px] font-bold">Ölçüt bazında öneriler</span>
+              {/*
+                BAŞLIK KENDİ KENDİNİ ANLATIYOR.
+
+                "Ölçüt bazında öneriler" tek başına kimin yazdığını
+                söylemiyordu; bölümün en üstündeki açıklama ise ekranın
+                çok yukarısında kalıyor ve buraya kaydıran hakem onu
+                görmüyor. Etiket artık iki soruyu birden cevaplıyor:
+                kim yazıyor (siz) ve nereye gidiyor (yarışmacıya).
+              */}
+              <span className="text-[11.5px] font-bold">
+                Ölçüt bazında öneriler
+              </span>
+              <span className="text-[10.5px] font-medium text-metin-2">
+                {tamamlandi
+                  ? 'yarışmacıya gitti'
+                  : 'siz yazıyorsunuz · yarışmacıya gider'}
+              </span>
               <span className="text-[10.5px] font-medium text-metin-3">
                 {Object.values(oneriler).filter((m) => m.trim()).length}/
-                {olcutler.length} ölçüt
+                {olcutler.length}
               </span>
             </div>
+            {tamamlandi
+              && !Object.values(oneriler).some((m) => m.trim()) && (
+              <p className="rounded-lg bg-zemin px-3 py-2 text-[11px] font-medium text-metin-2">
+                Bu değerlendirmede ölçüt bazında öneri yazılmadı.
+              </p>
+            )}
+
             <div className="flex flex-col gap-1.5">
               {olcutler
                 .filter((k) => {
+                  /*
+                    TAMAMLANMIŞ DEĞERLENDİRMEDE BOŞ KUTU YOK.
+
+                    Kayıt kilitli; boş bir öneri alanına artık hiçbir şey
+                    yazılamıyor. Yine de çiziliyordu ve ekranda "Bu ölçütte
+                    nasıl gelişebilir?" diye soran, doldurulamayan sekiz
+                    kutu duruyordu — hakem doldurması gereken bir şey
+                    sanıyordu. Kilitliyken yalnızca YAZILMIŞ öneriler
+                    kalıyor: onlar yarışmacıya giden metin.
+                  */
+                  if (tamamlandi) return !!oneriler[k.kod]?.trim();
                   if (hepsiniGoster) return true;
                   // Puan girilmemişse de göster: hakem henüz karar
                   // vermemiş, alanı saklamak bilgi kaybı olur.
@@ -387,6 +421,8 @@ export default function HakemPuanlama({
                   return girilmedi || kayip > 0 || !!oneriler[k.kod]?.trim();
                 })
                 .map((k) => {
+                const puanlandi =
+                  puanlar[k.kod] !== undefined && puanlar[k.kod] !== '';
                 const kayip = Math.max(
                   0,
                   k.puan - (Number(puanlar[k.kod]) || 0),
@@ -398,13 +434,23 @@ export default function HakemPuanlama({
                     </span>
                     {/* Kaç puan kaybedildiği burada gösteriliyor: hakem
                         önceliği görsün, en çok kaybedilen ölçüte öneri
-                        yazmak en değerli. */}
+                        yazmak en değerli.
+
+                        PUAN GİRİLMEDEN KAYIP YAZMIYOR. Boş puan alanı 0
+                        sayılıyordu ve değerlendirmeye yeni başlayan hakem her
+                        ölçütün yanında "−10 puan" görüyordu — henüz kimse
+                        bir şey kaybetmemişken. Alan boş bırakılıyor ama
+                        genişliğini koruyor: puan girilince sütun kaymasın. */}
                     <span
                       className={`mt-1.5 w-[52px] shrink-0 text-[10px] font-bold ${
                         kayip > 0 ? 'text-amber-koyu' : 'text-metin-3'
                       }`}
                     >
-                      {kayip > 0 ? `−${Math.round(kayip * 10) / 10} puan` : 'tam'}
+                      {!puanlandi
+                        ? ''
+                        : kayip > 0
+                          ? `−${Math.round(kayip * 10) / 10} puan`
+                          : 'tam'}
                     </span>
                     <textarea
                       value={oneriler[k.kod] ?? ''}
@@ -457,7 +503,7 @@ export default function HakemPuanlama({
               type="button"
               disabled={calisiyor !== null}
               onClick={() => kaydet(false)}
-              className="cursor-pointer rounded-lg border border-cizgi px-4 py-2.5 text-[12.5px] font-bold transition-colors hover:bg-zemin disabled:opacity-50"
+              className="dugme border border-cizgi px-4 py-2.5 text-[12.5px] font-bold transition-colors hover:bg-zemin disabled:opacity-50"
             >
               {calisiyor === 'taslak' ? 'Kaydediliyor…' : 'Taslak kaydet'}
             </button>
@@ -493,7 +539,7 @@ export default function HakemPuanlama({
                 }
                 void kaydet(true);
               }}
-              className="cursor-pointer rounded-lg bg-kirmizi px-5 py-2.5 text-[12.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
+              className="dugme bg-kirmizi px-5 py-2.5 text-[12.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
             >
               {calisiyor === 'tamamla' ? 'Tamamlanıyor…' : 'Değerlendirmeyi tamamla'}
             </button>

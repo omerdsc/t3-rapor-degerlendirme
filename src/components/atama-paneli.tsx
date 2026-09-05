@@ -342,7 +342,7 @@ export default function AtamaPaneli({
             <select
               value={basinaHakem}
               onChange={(e) => setBasinaHakem(Number(e.target.value))}
-              className="w-full cursor-pointer rounded-lg border border-cizgi px-2.5 py-1.5 text-[12px] font-semibold outline-none"
+              className="w-full dugme border border-cizgi px-2.5 py-1.5 text-[12px] font-semibold outline-none"
             >
               {[1, 2, 3].map((n) => (
                 <option key={n} value={n} disabled={n > seciliHakem.size}>
@@ -423,7 +423,7 @@ export default function AtamaPaneli({
             type="button"
             disabled={calisiyor || !onizleme || onizleme.toplam === 0}
             onClick={ata}
-            className="mt-3 w-full cursor-pointer rounded-lg bg-kirmizi px-4 py-2.5 text-[12.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
+            className="mt-3 w-full dugme bg-kirmizi px-4 py-2.5 text-[12.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
           >
             {calisiyor
               ? 'Atanıyor…'
@@ -558,7 +558,7 @@ export default function AtamaPaneli({
             <button
               type="button"
               onClick={() => setGorunurSinir((n) => n + 200)}
-              className="ml-auto cursor-pointer rounded-lg border border-cizgi bg-white px-3 py-1.5 text-[11.5px] font-bold transition-colors hover:bg-zemin"
+              className="ml-auto dugme border border-cizgi bg-white px-3 py-1.5 text-[11.5px] font-bold transition-colors hover:bg-zemin"
             >
               200 tane daha göster
             </button>

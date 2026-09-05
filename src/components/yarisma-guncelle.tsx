@@ -68,7 +68,6 @@ export default function YarismaGuncelle({
       >
         {calisiyor ? 'Kontrol ediliyor…' : 'Şablonları teknofest.org’dan yenile'}
       </button>
-      <span className="ml-2 text-[11px] font-medium text-metin-3">ücretsiz</span>
 
       {sonuc && (
         <div className="mt-3 flex flex-col gap-1.5 text-[11.5px]">

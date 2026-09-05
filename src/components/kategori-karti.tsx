@@ -50,7 +50,21 @@ export default function KategoriKarti({
     {
       ad: 'Ölçütler',
       tamam: rubrik.kriterler.length >= 3,
-      aciklama: `${rubrik.kriterler.length} ölçüt · ${rubrik.toplamPuan} puan`,
+      /*
+       * BARAJ ÖZET SATIRINDA DA GÖRÜNÜYOR.
+       *
+       * Eşik "Ölçütler" panelinin içinde, bir tıklama arkasındaydı.
+       * Kart kapalıyken bir kategoride baraj olup olmadığı görünmüyordu;
+       * koordinasyon "hangi kategorilerde eleme var" sorusunu ancak
+       * kategorileri tek tek açarak cevaplayabiliyordu — oysa bu ekranın
+       * işi zaten "kategori hazır mı" sorusunu bir bakışta cevaplamak.
+       *
+       * Baraj yoksa yazılmıyor: eleme olmaması bir eksiklik değil, bir
+       * tercih. "Baraj yok" diye bir satır, olmayan bir eksiği duyururdu.
+       */
+      aciklama:
+        `${rubrik.kriterler.length} ölçüt · ${rubrik.toplamPuan} puan`
+        + (rubrik.barajPuani ? ` · baraj ${rubrik.barajPuani}` : ''),
     },
     {
       ad: 'Şartname',
@@ -180,7 +194,7 @@ export default function KategoriKarti({
                 'onay',
               )
             }
-            className="cursor-pointer rounded-lg bg-kirmizi px-3 py-1.5 text-[11.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
+            className="dugme bg-kirmizi px-3 py-1.5 text-[11.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
           >
             {calisiyor === 'onay' ? '…' : 'Ölçütleri onayla'}
           </button>
@@ -202,10 +216,10 @@ export default function KategoriKarti({
                 'ozet',
               )
             }
-            title="Yapay zekâ, şartnameden değerlendirmede kullanılacak maddeleri çıkarır. Kategori başına bir kez, ~$0.15."
-            className="cursor-pointer rounded-lg border border-cizgi px-3 py-1.5 text-[11.5px] font-bold transition-colors hover:bg-zemin disabled:opacity-50"
+            title="Yapay zekâ, şartnameden değerlendirmede kullanılacak maddeleri çıkarır. Kategori başına bir kez."
+            className="dugme border border-cizgi px-3 py-1.5 text-[11.5px] font-bold transition-colors hover:bg-zemin disabled:opacity-50"
           >
-            {calisiyor === 'ozet' ? 'Hazırlanıyor…' : 'Şartname özetini hazırla (~$0.15)'}
+            {calisiyor === 'ozet' ? 'Hazırlanıyor…' : 'Şartname özetini hazırla'}
           </button>
         )}
 
@@ -330,7 +344,7 @@ export default function KategoriKarti({
                 setYeniAd('');
                 setYeniPuan('');
               }}
-              className="cursor-pointer rounded-lg bg-lacivert px-3 py-1.5 text-[11.5px] font-bold text-white transition-colors hover:bg-lacivert-2 disabled:opacity-50"
+              className="dugme bg-lacivert px-3 py-1.5 text-[11.5px] font-bold text-white transition-colors hover:bg-lacivert-2 disabled:opacity-50"
             >
               {calisiyor === 'ekle' ? '…' : 'Ölçüt ekle'}
             </button>
@@ -343,6 +357,24 @@ export default function KategoriKarti({
               ağırlıklar şartnamede olabilir.
             </p>
           )}
+
+          {/*
+            BARAJ ÖLÇÜTLERİN ALTINDA, ÇÜNKÜ ONLARA BAĞLI.
+            Eşiğin anlamı toplam puana göre değişiyor; 70, toplamı 100
+            olan bir rubrikte başka, 85 olanda başka bir şey demek.
+            Ayrı bir sekmeye konsaydı koordinasyon eşiği neye göre
+            belirlediğini görmeden yazardı.
+          */}
+          <div className="mt-3 border-t border-cizgi pt-3">
+            <Baraj
+              yarismaId={yarismaId}
+              kategoriId={kategori.id}
+              mevcut={rubrik.barajPuani}
+              toplamPuan={rubrik.toplamPuan}
+              istek={istek}
+              calisiyor={calisiyor === 'baraj'}
+            />
+          </div>
         </div>
       )}
 
@@ -451,5 +483,104 @@ export default function KategoriKarti({
         </div>
       )}
     </div>
+  );
+}
+
+/**
+ * Baraj puanı girişi.
+ *
+ * ── NİYE MODÜL DÜZEYİNDE ────────────────────────────────────────────────
+ * Kart fonksiyonunun İÇİNDE tanımlansaydı her çizimde yeni bir bileşen
+ * tipi olurdu ve React onu her seferinde baştan bağlardı — kullanıcı
+ * yazarken alanın odağı kaçardı.
+ *
+ * ── NİYE BOŞ BIRAKILABİLİR ──────────────────────────────────────────────
+ * Baraj zorunlu değil. Bir yarışmada eleme olmayabilir ve o zaman
+ * sistemin kimseyi elememesi gerekir. Varsayılan bir eşik konsaydı
+ * (örneğin 50), koordinasyon farkında olmadan bir eleme kuralı
+ * yürürlüğe koymuş olurdu.
+ */
+function Baraj({
+  yarismaId,
+  kategoriId,
+  mevcut,
+  toplamPuan,
+  istek,
+  calisiyor,
+}: {
+  yarismaId: string;
+  kategoriId: string;
+  mevcut?: number;
+  toplamPuan: number;
+  istek: (yol: string, secenek: RequestInit, basarili: string, etiket: string) => Promise<void>;
+  calisiyor: boolean;
+}) {
+  const [deger, setDeger] = useState(mevcut ? String(mevcut) : '');
+
+  const sayi = Number(deger.replace(',', '.'));
+  const gecerli = deger.trim() !== '' && Number.isFinite(sayi) && sayi > 0 && sayi <= toplamPuan;
+  const degisti = (mevcut ?? null) !== (gecerli ? sayi : null);
+
+  function gonder(puan: number | null) {
+    void istek(
+      '/api/kriter',
+      {
+        method: 'PATCH',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ yarismaId, kategoriId, barajPuani: puan }),
+      },
+      puan === null ? 'Baraj kaldırıldı.' : `Baraj ${puan} puan olarak ayarlandı.`,
+      'baraj',
+    );
+  }
+
+  return (
+    <>
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="text-[11px] font-bold">Baraj puanı</span>
+        <div className="flex items-center gap-1.5">
+          <input
+            value={deger}
+            onChange={(e) => setDeger(e.target.value)}
+            inputMode="decimal"
+            placeholder="—"
+            className="w-[64px] rounded-md border border-cizgi bg-white px-2 py-1 text-center font-mono text-[12px] font-bold outline-none focus:border-metin-3"
+          />
+          <span className="font-mono text-[11px] font-bold text-metin-3">
+            /{toplamPuan}
+          </span>
+        </div>
+        <button
+          type="button"
+          disabled={calisiyor || !gecerli || !degisti}
+          onClick={() => gonder(sayi)}
+          className="dugme border border-cizgi px-3 py-1 text-[11.5px] font-bold text-metin hover:bg-zemin disabled:opacity-40"
+        >
+          {calisiyor ? '…' : 'Kaydet'}
+        </button>
+        {mevcut !== undefined && (
+          <button
+            type="button"
+            disabled={calisiyor}
+            onClick={() => {
+              setDeger('');
+              gonder(null);
+            }}
+            className="cursor-pointer text-[11px] font-bold text-metin-3 hover:text-kirmizi disabled:opacity-40"
+          >
+            Barajı kaldır
+          </button>
+        )}
+      </div>
+
+      <p className="mt-1.5 max-w-[70ch] text-[10.5px] leading-relaxed font-medium text-metin-3">
+        {mevcut === undefined
+          ? 'Boş bırakılırsa eleme yapılmaz. Girilirse yarışmacı, bütün '
+            + 'hakemler değerlendirmeyi bitirdikten sonra barajı geçip '
+            + 'geçmediğini kendi sayfasında görür.'
+          : `Nihai puanı ${mevcut} ve üzeri olan yarışmacılar geçer. Sonuç, `
+            + 'yalnızca atanmış bütün hakemler bitirdikten sonra yayımlanır.'}
+      </p>
+    </>
   );
 }

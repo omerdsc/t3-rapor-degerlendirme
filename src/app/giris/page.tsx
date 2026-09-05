@@ -52,11 +52,8 @@ export default async function GirisSayfasi({ searchParams }: PageProps<'/giris'>
         </div>
 
         <p className="mt-4 text-[10.5px] leading-relaxed font-medium text-metin-3">
-          Anahtar koordinasyon ekibinin ortak parolası ve{' '}
-          <code className="font-mono">KOORDINASYON_ANAHTARI</code> ortam
-          değişkeninden okunuyor. Kurumsal kurulumda bunun yerini kurum
-          kimlik doğrulaması (SSO) alır. Hakem ve yarışmacı portalları bu
-          anahtarı istemiyor — onlar kendi erişimleriyle giriyor.
+          Bu anahtar yarışma koordinasyon ekibine aittir. Hakemler kendi
+          erişim kodlarıyla, yarışmacılar kendi hesaplarıyla giriş yapar.
         </p>
 
         <Link

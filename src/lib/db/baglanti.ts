@@ -93,11 +93,149 @@ CREATE TABLE IF NOT EXISTS kategori (
 );
 CREATE INDEX IF NOT EXISTS ix_kategori_yarisma ON kategori(yarisma_id);
 
+/*
+ * YARIŞMACI HESABI.
+ *
+ * ── NİYE HESAP, NİYE SADECE KOD DEĞİL ───────────────────────────────────
+ * Erişim kodu tek bir başvuruya bağlıydı ve o başvuruyu koordinasyon
+ * açıyordu. Yarışmacının kendi takımını kurması, takımına üye eklemesi ve
+ * birden çok yarışmaya başvurması gerekiyor — bunların hiçbiri tek bir
+ * başvuruya asılamaz. Profil de bir kişiye ait, bir başvuruya değil:
+ * aynı kişi iki takımda olabilir.
+ *
+ * ── PAROLA ÖZETİ ────────────────────────────────────────────────────────
+ * scrypt, rastgele tuzla. Parola hiçbir yerde açık saklanmıyor ve
+ * 'parola_ozeti' alanı hiçbir sorguda dışarı çıkmıyor.
+ */
+CREATE TABLE IF NOT EXISTS yarismaci (
+  id            TEXT PRIMARY KEY,
+  -- Küçük harfe indirgenmiş biçimde saklanıyor: aynı e-posta iki kez
+  -- kayıt olamasın diye tekillik bu alanda.
+  eposta        TEXT NOT NULL UNIQUE,
+  parola_ozeti  TEXT NOT NULL,
+  ad_soyad      TEXT NOT NULL,
+  telefon       TEXT,
+  kurum         TEXT,
+  sehir         TEXT,
+  aktif         INTEGER NOT NULL DEFAULT 1,
+  olusturuldu   TEXT NOT NULL,
+  son_giris     TEXT
+);
+
+/*
+ * OTURUM.
+ *
+ * İmzalı çerez yerine tabloda tutuluyor. Sebep: imzalama bir sunucu
+ * sırrı gerektiriyor ve sır tanımlı değilse ya her yeniden başlatmada
+ * oturumlar düşer ya da sabit bir sır koda gömülür. Tablodaki oturum
+ * ayrıca İPTAL EDİLEBİLİR — parola değişince ya da hesap kapanınca açık
+ * oturumlar tek sorguyla düşüyor.
+ */
+CREATE TABLE IF NOT EXISTS oturum (
+  belirtec      TEXT PRIMARY KEY,
+  yarismaci_id  TEXT NOT NULL REFERENCES yarismaci(id) ON DELETE CASCADE,
+  olusturuldu   TEXT NOT NULL,
+  son_kullanma  TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS ix_oturum_yarismaci ON oturum(yarismaci_id);
+
+/*
+ * TAKIM.
+ *
+ * ── NİYE BAŞVURUDAN AYRI ────────────────────────────────────────────────
+ * Bir takım birden çok yarışmaya başvurabiliyor ve başvurular yıldan yıla
+ * değişirken takım aynı kalıyor. Takımı başvurunun içine gömmek, aynı
+ * takımın her başvuruda yeniden kurulması demekti.
+ *
+ * 'katilim_kodu' üyeleri davet etmek için: kaptan kodu paylaşıyor, üye
+ * kendi hesabıyla girip takıma katılıyor. Böylece üye listesi elle
+ * yazılmış adlardan değil, gerçek hesaplardan oluşuyor.
+ */
+CREATE TABLE IF NOT EXISTS takim (
+  id            TEXT PRIMARY KEY,
+  ad            TEXT NOT NULL,
+  katilim_kodu  TEXT NOT NULL UNIQUE,
+  kurum         TEXT,
+  sehir         TEXT,
+  danisman      TEXT,
+  kaptan_id     TEXT NOT NULL REFERENCES yarismaci(id) ON DELETE CASCADE,
+  olusturuldu   TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS ix_takim_kaptan ON takim(kaptan_id);
+
+CREATE TABLE IF NOT EXISTS takim_uyesi (
+  id            TEXT PRIMARY KEY,
+  takim_id      TEXT NOT NULL REFERENCES takim(id) ON DELETE CASCADE,
+  yarismaci_id  TEXT NOT NULL REFERENCES yarismaci(id) ON DELETE CASCADE,
+  rol           TEXT NOT NULL DEFAULT 'uye',
+  katildi       TEXT NOT NULL,
+  -- Aynı kişi aynı takıma iki kez katılamaz.
+  UNIQUE (takim_id, yarismaci_id)
+);
+CREATE INDEX IF NOT EXISTS ix_uye_takim     ON takim_uyesi(takim_id);
+CREATE INDEX IF NOT EXISTS ix_uye_yarismaci ON takim_uyesi(yarismaci_id);
+
+/*
+ * BAŞVURU: yarışmacının kimliği ve panele giriş hakkı.
+ *
+ * ── NİYE AYRI TABLO, NİYE rapor'un İÇİNDE DEĞİL ─────────────────────────
+ * Başvuru rapordan ÖNCE var oluyor ve rapor olmadan da var kalıyor. Kayıt
+ * listesi yarışma açılınca içeri aktarılıyor; rapor haftalar sonra
+ * yükleniyor, hiç yüklenmeyebiliyor da. Kimliği rapora gömmek "raporunu
+ * henüz yüklememiş başvuru" diye bir şeyi imkânsız kılardı — oysa
+ * koordinasyonun en çok bakacağı liste tam olarak o.
+ *
+ * ── NİYE ERİŞİM KODU ────────────────────────────────────────────────────
+ * Yarışmacı artık raporunu KENDİSİ yüklüyor; yükleme bir yazma işlemi.
+ * Başvuru numarası tek başına yeterli değil: numaralar sıralı ve tahmin
+ * edilebilir, biri başkasının numarasına sahte rapor yükleyebilirdi.
+ * Kod hakem kodlarıyla aynı üreticiden geliyor (kod.ts) — karışabilecek
+ * harfler alfabede yok, çünkü bu kod da elle yazılıyor.
+ */
+CREATE TABLE IF NOT EXISTS basvuru (
+  id            TEXT PRIMARY KEY,
+  basvuru_no    TEXT NOT NULL UNIQUE,
+  kod           TEXT NOT NULL UNIQUE,
+  yarisma_id    TEXT NOT NULL REFERENCES yarisma(id) ON DELETE CASCADE,
+  kategori_id   TEXT NOT NULL REFERENCES kategori(id) ON DELETE CASCADE,
+  takim         TEXT NOT NULL,
+  takim_id      TEXT,
+  proje         TEXT,
+  eposta        TEXT,
+  /*
+   * Başvuruyu yapan takım ve kişi. İKİSİ DE BOŞ OLABİLİR: koordinasyonun
+   * listeden açtığı ön kayıtlı başvurularda henüz bir hesap yok. Yarışmacı
+   * kayıt olup başvurusunu üstlendiğinde doluyor.
+   *
+   * 'takim_id' metin alanı (TEKNOFEST takım kimliği) İLE KARIŞMASIN diye
+   * ad 'takim_kaydi_id': biri yarışmacının beyan ettiği kod, öteki bu
+   * sistemdeki takım kaydı.
+   */
+  takim_kaydi_id TEXT REFERENCES takim(id) ON DELETE SET NULL,
+  yarismaci_id   TEXT REFERENCES yarismaci(id) ON DELETE SET NULL,
+  -- Pasif başvuru panele giremez ve rapor yükleyemez. Silmek yerine
+  -- pasife almak: yüklenmiş raporu olan bir başvuruyu silmek raporu da
+  -- götürürdü.
+  aktif         INTEGER NOT NULL DEFAULT 1,
+  olusturuldu   TEXT NOT NULL,
+  notlar        TEXT
+);
+CREATE INDEX IF NOT EXISTS ix_basvuru_kod      ON basvuru(kod);
+CREATE INDEX IF NOT EXISTS ix_basvuru_kategori ON basvuru(kategori_id);
+
 CREATE TABLE IF NOT EXISTS rapor (
   id            TEXT PRIMARY KEY,
   yarisma_id    TEXT NOT NULL REFERENCES yarisma(id) ON DELETE CASCADE,
   kategori_id   TEXT NOT NULL REFERENCES kategori(id) ON DELETE CASCADE,
   basvuru_no    TEXT NOT NULL,
+  /*
+   * Hangi başvuru kaydından geldiği. BOŞ OLABİLİR: koordinasyonun
+   * doğrudan yüklediği raporlarda başvuru kaydı yok ve bu meşru bir
+   * durum — sistem yarışma ortasında devralınabilir, elde yalnızca
+   * dosyalar olabilir. basvuru_no metni her hâlde dolu; bu alan yalnızca
+   * "yarışmacı kendisi yükledi" bağını kuruyor.
+   */
+  basvuru_id    TEXT REFERENCES basvuru(id) ON DELETE SET NULL,
   dosya_adi     TEXT NOT NULL,
   takim         TEXT NOT NULL,
   takim_id      TEXT NOT NULL,
@@ -222,6 +360,85 @@ CREATE TABLE IF NOT EXISTS mesaj (
   otomatik INTEGER NOT NULL DEFAULT 0
 );
 CREATE INDEX IF NOT EXISTS ix_mesaj_rapor ON mesaj(rapor_id);
+
+/*
+ * KAYNAKÇA DENETİMİ — ajanın çıktısı.
+ *
+ * Rapor tablosuna bir sütun olarak değil, AYRI TABLO olarak duruyor:
+ * kayıt yalnızca kararı değil ADIM İZİNİ de taşıyor ve iz, kararın
+ * kendisinden büyük. Rapor satırı her listelemede okunuyor; oraya
+ * konsaydı hiç kimsenin bakmadığı bir iz, her rapor listesinde diskten
+ * okunurdu.
+ *
+ * İz niye saklanıyor: ajanın kararı ancak NASIL vardığı görülebilirse
+ * denetlenebilir. "Bu künye uydurma şüphesi" cümlesi tek başına bir
+ * hakem için kara kutu; hangi indekste ne arandığı görününce hakem
+ * katılmadığında nereye bakacağını biliyor.
+ */
+CREATE TABLE IF NOT EXISTS kaynakca_denetimi (
+  rapor_id   TEXT PRIMARY KEY REFERENCES rapor(id) ON DELETE CASCADE,
+  durum      TEXT NOT NULL,
+  -- Ajanın kararı (bulgular + özet), JSON.
+  karar      TEXT,
+  -- Adım izi, JSON dizi.
+  adimlar    TEXT NOT NULL,
+  tur        INTEGER NOT NULL,
+  maliyet    REAL NOT NULL,
+  hata       TEXT,
+  olusturuldu TEXT NOT NULL
+);
+
+/*
+ * KOPYA SORUŞTURMASI — ikinci ajanın çıktısı.
+ *
+ * Anahtar ÇİFT: soruşturulan şey tek bir rapor değil, iki rapor
+ * arasındaki bağ. Kimlikler SİRALI saklanıyor (küçük olan önce), yoksa
+ * aynı çift iki ayrı satır olurdu ve ikinci soruşturma birincisini
+ * bulamazdı.
+ */
+CREATE TABLE IF NOT EXISTS kopya_sorusturmasi (
+  a_id        TEXT NOT NULL REFERENCES rapor(id) ON DELETE CASCADE,
+  b_id        TEXT NOT NULL REFERENCES rapor(id) ON DELETE CASCADE,
+  durum       TEXT NOT NULL,
+  karar       TEXT,
+  adimlar     TEXT NOT NULL,
+  tur         INTEGER NOT NULL,
+  maliyet     REAL NOT NULL,
+  hata        TEXT,
+  olusturuldu TEXT NOT NULL,
+  PRIMARY KEY (a_id, b_id)
+);
+
+/*
+ * BAŞVURU YAZIŞMASI — yarışmacı ↔ koordinasyon.
+ *
+ * ── NİYE 'mesaj' TABLOSUNU KULLANMIYOR ──────────────────────────────────
+ * 'mesaj' rapora bağlı (rapor_id NOT NULL) ve hakem–koordinasyon
+ * yazışması için kurulmuş. Yarışmacının yazmaya en çok ihtiyaç duyduğu
+ * an ise raporun HENÜZ OLMADIĞI an: "yükleyemiyorum", "yanlış kategoriye
+ * başvurdum", "süre doldu ama mazeretim var". O tabloya bağlanmak, bu
+ * mesajların hiçbirini mümkün kılmazdı.
+ *
+ * Ayrıca izleyicileri farklı: hakem yazışması kör puanlamayı korumak için
+ * yarışmacıdan gizli. İki yazışmayı tek tabloda tutmak, kanal süzgecinde
+ * yapılacak tek bir hatayı hakem notlarının yarışmacıya sızması hâline
+ * getirirdi. Ayrı tablo bu hatayı imkânsız kılıyor.
+ */
+CREATE TABLE IF NOT EXISTS basvuru_mesaji (
+  id           TEXT PRIMARY KEY,
+  basvuru_id   TEXT NOT NULL REFERENCES basvuru(id) ON DELETE CASCADE,
+  -- 'yarismaci' | 'koordinasyon'
+  yazar_rol    TEXT NOT NULL,
+  yarismaci_id TEXT REFERENCES yarismaci(id) ON DELETE SET NULL,
+  yazar_adi    TEXT NOT NULL,
+  metin        TEXT NOT NULL,
+  tarih        TEXT NOT NULL,
+  -- Karşı taraf okudu mu. Koordinasyon panosundaki bekleyen sayacı bunu
+  -- kullanıyor: cevapsız soru görünmez kalmasın.
+  okundu       INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS ix_bmesaj_basvuru ON basvuru_mesaji(basvuru_id);
+CREATE INDEX IF NOT EXISTS ix_bmesaj_okundu  ON basvuru_mesaji(okundu);
 `;
 
 let db: DatabaseSync | null = null;
@@ -260,14 +477,41 @@ export function baglanti(): DatabaseSync {
   yeni.exec(SEMA);
 
   semayiYukselt(yeni);
+  gecisSonrasiIndeksler(yeni);
 
   db = yeni;
   g.__tprdsDb = yeni;
   return yeni;
 }
 
+/**
+ * SONRADAN EKLENEN SÜTUNLARIN İNDEKSLERİ — geçişten SONRA kuruluyor.
+ *
+ * ── NİYE SEMA'NIN İÇİNDE DEĞİL ──────────────────────────────────────────
+ * `SEMA` her açılışta ve geçişlerden ÖNCE koşuyor. Bir indeks orada
+ * tanımlandığında, dayandığı sütunun o anda var olması gerekiyor. Yeni
+ * kurulumda var — `CREATE TABLE` onu az önce oluşturdu. MEVCUT
+ * veritabanında yok: `CREATE TABLE IF NOT EXISTS` var olan tabloya
+ * dokunmuyor ve sütunu ekleyen `ALTER TABLE` henüz koşmadı.
+ *
+ * Bu tam olarak yaşandı: `ix_rapor_basvuru_id` SEMA'ya yazıldı ve
+ * uygulama var olan her veritabanında "no such column: basvuru_id" ile
+ * açılmayı reddetti. Hata geçişte değil, geçişten önceki adımdaydı —
+ * yani geçiş kodu ne kadar doğru yazılırsa yazılsın çalışma fırsatı
+ * bulamıyordu.
+ *
+ * Sonradan eklenen bir sütuna indeks gerekiyorsa yeri BURASI: iki yol da
+ * (yeni kurulum ve yükseltilmiş veritabanı) buraya vardığında sütun
+ * kesinlikle var.
+ */
+function gecisSonrasiIndeksler(yeni: DatabaseSync): void {
+  yeni.exec('CREATE INDEX IF NOT EXISTS ix_rapor_basvuru_id ON rapor(basvuru_id)');
+  yeni.exec('CREATE INDEX IF NOT EXISTS ix_basvuru_takim ON basvuru(takim_kaydi_id)');
+  yeni.exec('CREATE INDEX IF NOT EXISTS ix_basvuru_yarismaci ON basvuru(yarismaci_id)');
+}
+
 /** Şemanın ulaştığı en son sürüm. Alan eklendikçe artıyor. */
-const SON_SURUM = 5;
+const SON_SURUM = 10;
 
 /**
  * Şema sürüm yükseltmeleri.
@@ -385,6 +629,98 @@ function semayiYukselt(yeni: DatabaseSync): void {
       + ') = 1',
     );
     surum = 5;
+    yeni.prepare('UPDATE sema_surumu SET surum = ?').run(surum);
+  }
+
+  if (surum < 6) {
+    /*
+     * BAŞVURU TABLOSU ve `rapor.basvuru_id`.
+     *
+     * Yarışmacı artık raporunu kendisi yüklüyor. Koordinasyonun her
+     * raporu tek tek yüklemesi ölçeklenmiyordu: 90 değerlendirme birimi
+     * ve binlerce rapor, tek bir ekipin dosya trafiğine bağlıydı.
+     *
+     * VAR OLAN RAPORLAR OLDUĞU GİBİ KALIYOR. Onlara başvuru kaydı
+     * UYDURULMUYOR: koordinasyonun yüklediği bir raporun arkasında
+     * gerçekten bir başvuru kaydı yok ve varmış gibi göstermek, "bu
+     * raporu kim teslim etti" sorusuna yanlış cevap verirdi. Alan boş
+     * kalıyor; boş olması doğru bilgidir.
+     *
+     * `CREATE TABLE IF NOT EXISTS` mevcut veritabanında da çalışıyor:
+     * SEMA her açılışta koşuyor, tablo orada oluşuyor. Burada yalnızca
+     * eski `rapor` tablosuna eksik sütun ekleniyor.
+     */
+    const sutunlar = yeni.prepare('PRAGMA table_info(rapor)').all() as Array<{
+      name: string;
+    }>;
+    if (!sutunlar.some((c) => c.name === 'basvuru_id')) {
+      // Var olan tabloya REFERENCES eklenemiyor (SQLite kısıtı); alan
+      // yalın metin olarak ekleniyor. Yeni kurulumlarda SEMA gerçek
+      // yabancı anahtarı kuruyor.
+      yeni.exec('ALTER TABLE rapor ADD COLUMN basvuru_id TEXT');
+    }
+    // İndeks burada DEĞİL: `gecisSonrasiIndeksler()` kuruyor. Sebebi
+    // orada yazıyor — yeni kurulum bu bloğa hiç uğramıyor.
+    surum = 6;
+    yeni.prepare('UPDATE sema_surumu SET surum = ?').run(surum);
+  }
+
+  if (surum < 7) {
+    /*
+     * YARIŞMACI HESABI, TAKIM, ÜYELİK, OTURUM.
+     *
+     * Yarışmacı portalı tek başvuruya bağlı bir koddan gerçek bir hesaba
+     * geçti: kayıt olunuyor, profil dolduruluyor, takım kuruluyor, üye
+     * ekleniyor ve yarışmaya başvuruluyor. Yeni tablolar SEMA'da; burada
+     * yalnızca var olan `basvuru` tablosuna eksik sütunlar ekleniyor.
+     *
+     * ÖNCEDEN AÇILMIŞ BAŞVURULAR SAHİPSİZ KALIYOR ve bu doğru: onları
+     * koordinasyon listeden açtı, arkalarında bir hesap YOK. Yarışmacı
+     * kayıt olup başvurusunu üstlendiğinde alanlar doluyor. Var olmayan
+     * bir sahiplik uydurmak, "bu başvuruyu kim yaptı" sorusuna yanlış
+     * cevap verirdi.
+     */
+    const sutunlar = yeni.prepare('PRAGMA table_info(basvuru)').all() as Array<{
+      name: string;
+    }>;
+    if (!sutunlar.some((c) => c.name === 'takim_kaydi_id')) {
+      yeni.exec('ALTER TABLE basvuru ADD COLUMN takim_kaydi_id TEXT');
+    }
+    if (!sutunlar.some((c) => c.name === 'yarismaci_id')) {
+      yeni.exec('ALTER TABLE basvuru ADD COLUMN yarismaci_id TEXT');
+    }
+    surum = 7;
+    yeni.prepare('UPDATE sema_surumu SET surum = ?').run(surum);
+  }
+
+  if (surum < 8) {
+    /*
+     * BAŞVURU YAZIŞMASI.
+     *
+     * Sistem yarışmacıya birçok yerde "koordinasyonla iletişime geçin"
+     * diyordu ama iletişim kuracak hiçbir yol yoktu — kullanıcıyı
+     * olmayan bir kapıya yönlendiren bir metin. Tablo SEMA'da kuruluyor;
+     * burada yapılacak bir alan eklemesi yok, sürüm yalnızca ilerliyor.
+     */
+    surum = 8;
+    yeni.prepare('UPDATE sema_surumu SET surum = ?').run(surum);
+  }
+
+  if (surum < 9) {
+    /*
+     * KAYNAKÇA DENETİM AJANI.
+     *
+     * Tablo SEMA'da kuruluyor (CREATE TABLE IF NOT EXISTS), burada
+     * yapılacak bir alan eklemesi yok; sürüm yalnızca ilerliyor ki
+     * mevcut veritabanı da tabloyu almış sayılsın.
+     */
+    surum = 9;
+    yeni.prepare('UPDATE sema_surumu SET surum = ?').run(surum);
+  }
+
+  if (surum < 10) {
+    /* Kopya soruşturma ajanı — tablo SEMA'da; sürüm ilerliyor. */
+    surum = 10;
     yeni.prepare('UPDATE sema_surumu SET surum = ?').run(surum);
   }
 }

@@ -169,6 +169,15 @@ export interface Rapor {
   yarismaId: string;
   /** Hangi kategoriye ait — şablon ve rubrik buradan gelir. */
   kategoriId: string;
+  /**
+   * Raporu teslim eden başvuru kaydı. BOŞ OLABİLİR.
+   *
+   * Yarışmacı kendisi yüklediyse dolu; koordinasyonun doğrudan yüklediği
+   * raporlarda boş. Boş olması bir eksiklik değil, bilgi: o raporun
+   * arkasında bir başvuru oturumu yok. Uydurulmuş bir bağ, "bu raporu kim
+   * teslim etti" sorusuna yanlış cevap verirdi.
+   */
+  basvuruId?: string;
   basvuruNo: string;
   dosyaAdi: string;
   takim: string;

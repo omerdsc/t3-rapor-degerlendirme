@@ -120,7 +120,7 @@ export default function SecimKutusu({
           if (!hedef) return;
           gecisBaslat(() => yonlendir.push(hedef.adres));
         }}
-        className={`w-full cursor-pointer rounded-lg border border-cizgi bg-white px-3 py-2 text-[12.5px] font-semibold outline-none transition-[border-color,opacity] hover:border-metin-3 focus:border-metin-3 ${
+        className={`w-full dugme border border-cizgi bg-white px-3 py-2 text-[12.5px] font-semibold outline-none transition-[border-color,opacity] hover:border-metin-3 focus:border-metin-3 ${
           bekliyor ? 'opacity-60' : ''
         }`}
       >

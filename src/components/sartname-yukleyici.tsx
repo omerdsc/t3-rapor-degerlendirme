@@ -51,7 +51,7 @@ export default function SartnameYukleyici({
         setBilgi(
           veri.zatenVar
             ? 'Bu şartnamenin özeti zaten var; yeni çağrı yapılmadı.'
-            : `Özet üretildi · $${veri.maliyet.toFixed(4)} (tek seferlik)`,
+            : 'Özet üretildi.',
         );
         yonlendir.refresh();
       }
@@ -80,7 +80,7 @@ export default function SartnameYukleyici({
       else {
         setBilgi(
           veri.maliyet > 0
-            ? `Şartname çözümlendi ve özetlendi · $${veri.maliyet.toFixed(4)} (tek seferlik)`
+            ? 'Şartname çözümlendi ve özetlendi.'
             : 'Şartname çözümlendi · maliyet $0',
         );
         yonlendir.refresh();
@@ -257,7 +257,7 @@ export default function SartnameYukleyici({
           type="button"
           disabled={calisiyor}
           onClick={() => girdiRef.current?.click()}
-          className="cursor-pointer rounded-lg border border-cizgi bg-white px-3.5 py-2 text-[12px] font-bold transition-colors hover:bg-zemin disabled:opacity-50"
+          className="dugme border border-cizgi bg-white px-3.5 py-2 text-[12px] font-bold transition-colors hover:bg-zemin disabled:opacity-50"
         >
           {calisiyor ? 'Çözümleniyor…' : s ? 'Şartnameyi değiştir' : 'Şartname yükle'}
         </button>
@@ -270,9 +270,9 @@ export default function SartnameYukleyici({
             type="button"
             disabled={calisiyor}
             onClick={kaynaktanOzetle}
-            className="cursor-pointer rounded-lg bg-lacivert px-3.5 py-2 text-[12px] font-bold text-white transition-colors hover:bg-lacivert-2 disabled:opacity-50"
+            className="dugme bg-lacivert px-3.5 py-2 text-[12px] font-bold text-white transition-colors hover:bg-lacivert-2 disabled:opacity-50"
           >
-            {calisiyor ? 'Özetleniyor…' : 'Kayıtlı şartnameden AI özeti üret (~$0.19)'}
+            {calisiyor ? 'Özetleniyor…' : 'Kayıtlı şartnameden AI özeti üret'}
           </button>
         )}
 
@@ -284,7 +284,7 @@ export default function SartnameYukleyici({
             className="size-3.5 accent-kirmizi"
           />
           AI özeti üret{' '}
-          <span className="text-metin-3">(~$0.19, tek seferlik)</span>
+          <span className="text-metin-3">(tek seferlik)</span>
         </label>
       </div>
 

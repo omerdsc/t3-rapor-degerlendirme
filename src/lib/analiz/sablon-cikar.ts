@@ -533,6 +533,19 @@ export interface RubrikKriteri {
 export interface Rubrik {
   kriterler: RubrikKriteri[];
   toplamPuan: number;
+  /**
+   * Bir sonraki aşamaya geçmek için gereken en az puan.
+   *
+   * KATEGORİ BAZINDA, yarışma bazında değil: her kategorinin kendi
+   * rubriği ve kendi toplamı var (kimi 100, kimi 85). Yarışma düzeyinde
+   * tek bir sayı tutulsaydı, "70" farklı kategorilerde farklı yüzdelere
+   * karşılık gelirdi.
+   *
+   * Şablondan çıkarılmıyor: baraj bir değerlendirme ölçütü değil, bir
+   * YARIŞMA KARARI. Koordinasyon giriyor; girilmezse baraj yok ve
+   * sistem kimseyi elemiyor.
+   */
+  barajPuani?: number;
 }
 
 /** Şablondan MVP 6'nın rubriğini üretir. */

@@ -50,3 +50,128 @@ body {
   color: var(--color-metin);
   -webkit-font-smoothing: antialiased;
 }
+
+/*
+ * ── HAREKET ─────────────────────────────────────────────────────────────
+ * TEKNOFEST arayüzlerinin tonu: kartlar dokununca hafifçe kalkıyor, geçiş
+ * hızlı ve kısa. Süre 160 ms — 300 ms'in üstü "yavaş" hissi veriyor,
+ * 100 ms'in altı hiç fark edilmiyor.
+ *
+ * NİYE SINIF, NİYE HER YERDE AYRI UTILITY
+ * Aynı hareket beş ayrı bileşende tekrarlanınca biri kaçınılmaz olarak
+ * ayrışıyor ve iki kart aynı sayfada farklı davranıyor. Tek yerde
+ * tanımlı olması, tutarlılığı bir tercih olmaktan çıkarıp varsayılan
+ * yapıyor.
+ */
+@utility kart {
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-cizgi);
+  background: #fff;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+@utility kart-etkilesimli {
+  cursor: pointer;
+}
+.kart-etkilesimli:hover {
+  border-color: color-mix(in srgb, var(--color-kirmizi) 45%, transparent);
+  box-shadow: 0 6px 20px -8px rgb(22 32 46 / 0.18);
+  transform: translateY(-2px);
+}
+.kart-etkilesimli:active {
+  transform: translateY(0);
+}
+
+/*
+ * Kartların sayfaya giriş animasyonu.
+ *
+ * Gecikme satır içinde `--sira` ile veriliyor: kartlar sırayla belirip
+ * gözü listeye yönlendiriyor. 6. karttan sonra gecikme sabitleniyor —
+ * uzun listede son kart yarım saniye sonra gelirse bu bekleme olur,
+ * hareket olmaz.
+ */
+@keyframes belir {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility belir {
+  animation: belir 260ms ease-out backwards;
+  animation-delay: calc(min(var(--sira, 0), 6) * 45ms);
+}
+
+/*
+ * HAREKETİ AZALT.
+ *
+ * İşletim sisteminde "hareketi azalt" açık olan kullanıcı için
+ * animasyon süresi sıfırlanıyor; kartlar yine görünüyor, kayarak
+ * gelmiyorlar. Vestibüler rahatsızlığı olan biri için kayan bir
+ * arayüz yalnızca hoş olmayan değil, kullanılamaz olabiliyor.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * Düğme temeli. Basıldığında hafifçe küçülüyor — dokunmatik ekranda
+ * "bastım mı" sorusunun cevabı bu.
+ */
+@utility dugme {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease,
+    transform 120ms ease,
+    opacity 160ms ease;
+}
+.dugme:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.dugme:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/*
+ * Odak halkası — klavyeyle gezenler için.
+ * `:focus-visible`, `:focus` DEĞİL: fareyle tıklayanda halka çıkmıyor,
+ * sekmeyle gezende çıkıyor.
+ */
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--color-kirmizi);
+  outline-offset: 2px;
+}
+
+/*
+ * HAREKETİ AZALT tercihi işletim sisteminden geliyor ve saygı görüyor.
+ * Vestibüler rahatsızlığı olan kullanıcı için kayan kartlar rahatsız
+ * edici; içerik aynı kalıyor, yalnızca hareket kalkıyor.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -382,7 +382,7 @@ export default function Yazisma({
                 type="button"
                 disabled={calisiyor || metin.trim().length < 2}
                 onClick={gonder}
-                className="cursor-pointer rounded-lg bg-lacivert px-4 py-1.5 text-[12px] font-bold text-white transition-colors hover:bg-lacivert-2 disabled:opacity-50"
+                className="dugme bg-lacivert px-4 py-1.5 text-[12px] font-bold text-white transition-colors hover:bg-lacivert-2 disabled:opacity-50"
               >
                 {calisiyor
                   ? 'Gönderiliyor…'

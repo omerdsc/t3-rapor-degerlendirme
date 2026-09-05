@@ -170,15 +170,33 @@ export async function POST(istek: Request) {
   });
 
   if (tamamla) {
+    /*
+     * SİSTEM MESAJI NE AD NE DE TEK TEK PUAN SÖYLÜYOR.
+     *
+     * Eskiden "<hakem adı> değerlendirmesini tamamladı: 78/100 puan"
+     * yazıyordu ve sistem mesajları kanal süzgecinden muaf — yani bu satırı
+     * rapora atanmış BÜTÜN hakemler, kendi puanlarını vermeden önce
+     * okuyordu. İki ayrı sızıntı aynı cümlede: hakemin kimliği (KVKK) ve
+     * ötekinin puanı. İkincisi kör değerlendirmenin tamamını çözüyordu —
+     * "arkadaşım 78 vermiş" bilgisiyle bakılan rapor bağımsız
+     * değerlendirilmiş sayılmaz ve hakemler arası ayrışma ölçüsü anlamını
+     * yitirir.
+     *
+     * Kalan bilgi durum bilgisi: kaç hakem kaldı. Kimin ne verdiğini
+     * koordinasyon rapor ekranındaki değerlendirme tablosundan görüyor;
+     * orası doğru yer, yazışma değil.
+     */
+    const bekleyen = ozet.atanan - ozet.tamamlanan;
     await mesajEkle(rapor.id, {
       yazar: 'Sistem',
       rol: 'sistem',
-      metin:
-        `${hakem.ad} değerlendirmesini tamamladı: ` +
-        `${sonuc.toplam}/${kategori.rubrik.toplamPuan} puan. ` +
-        (hepsiBitti
-          ? `Bütün hakemler bitirdi — nihai puan ${ozet.puan}.`
-          : `${ozet.atanan - ozet.tamamlanan} hakem bekleniyor.`),
+      metin: hepsiBitti
+        ? (ozet.atanan === 1
+            ? `Değerlendirme tamamlandı — puan ${ozet.puan}.`
+            : `Atanmış ${ozet.atanan} hakemin hepsi değerlendirmesini `
+              + `tamamladı — nihai puan ${ozet.puan}. Kurul yazışması açıldı.`)
+        : `Bir hakem değerlendirmesini tamamladı. `
+          + `${bekleyen} hakem bekleniyor.`,
       otomatikMi: true,
     });
   }

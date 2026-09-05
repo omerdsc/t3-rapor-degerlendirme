@@ -1,5 +1,4 @@
 import AtamaPaneli, { type AtamaSatiri, type HakemSecenegi } from '@/components/atama-paneli';
-import HakemOnizleme from '@/components/hakem-onizleme';
 import HakemYonetimi from '@/components/hakem-yonetimi';
 import SecimKutusu from '@/components/secim-kutusu';
 import { hakemYukleri, raporlarinHakemleri } from '@/lib/db/hakem-depo';
@@ -46,6 +45,26 @@ export default async function HakemlerSayfasi({
    * `npm run hacim -- 3000` bunu ölçtü — sayfa 650 ms sürüyordu.
    */
   const atamaHaritasi = raporlarinHakemleri(raporlar.map((r) => r.id));
+
+  /*
+   * SAYFA PANOSU — bu ekranın kendi soruları.
+   * "Kaç hakemim var, iş nasıl dağılmış, kim geride kalıyor."
+   */
+  const gercekHakemler = yukler.filter((y) => !y.hakem.sistem);
+  const aktifHakem = gercekHakemler.filter((y) => y.hakem.aktif).length;
+  const toplamAtama = gercekHakemler.reduce((t, y) => t + y.atanan, 0);
+  const bitenAtama = gercekHakemler.reduce((t, y) => t + y.tamamlanan, 0);
+  const bekleyenAtama = toplamAtama - bitenAtama;
+
+  const olcutler: Array<{ n: number; ad: string; vurgu?: string }> = [
+    { n: aktifHakem, ad: 'AKTİF HAKEM' },
+    { n: toplamAtama, ad: 'TOPLAM ATAMA' },
+    { n: bitenAtama, ad: 'TAMAMLANDI', vurgu: 'text-yesil-koyu' },
+    {
+      n: bekleyenAtama, ad: 'BEKLİYOR',
+      vurgu: bekleyenAtama > 0 ? 'text-amber-koyu' : undefined,
+    },
+  ];
 
   /*
    * SAYAÇLAR TÜM KAPSAMDAN, SATIRLAR KIRPILMIŞ.
@@ -120,39 +139,30 @@ export default async function HakemlerSayfasi({
         </p>
       </header>
 
-      <div className="mb-5 flex items-start gap-3 rounded-xl border border-mavi/25 bg-mavi-zemin px-4 py-3">
-        <svg viewBox="0 0 24 24" className="mt-px size-4 shrink-0 stroke-mavi" fill="none" strokeWidth={2.1} strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M12 16v-4M12 8h.01" />
-        </svg>
-        <p className="text-[11.5px] leading-relaxed font-medium text-mavi-koyu">
-          <strong className="font-bold">Her hakem kendi panelini görür.</strong>{' '}
-          Hakeme verdiğiniz bağlantı yalnızca ona atanmış raporları açar;
-          takım adları rumuzlu olduğu için puanlama kör kalır. Bir rapora
-          birden çok hakem atanabilir —{' '}
-          <strong className="font-bold">
-            puanları birbirini ezmez, nihai puan ortalamadır
-          </strong>{' '}
-          ve hakemler arası fark ayrıca gösterilir.
-        </p>
-      </div>
-
       {/*
-        ÖNİZLEME EN ÜSTTE, HAKEM LİSTESİNDEN ÖNCE.
-        Kullanıcı koordinasyondan hakem tarafına nasıl geçeceğini bulamadı;
-        erişim bağlantısı yalnızca liste satırlarının içindeydi ve orada
-        kayboluyordu. Aranan şey bir eylemse eylem görünür olmalı.
+        AÇIKLAMA KUTUSU YERİNE PANO.
+
+        Burada "Her hakem kendi panelini görür… puanları birbirini ezmez…"
+        diye bir paragraf duruyordu. Sistemin nasıl çalıştığını
+        anlatıyordu; kullanıcının bu ekranda sorduğu soru o değil:
+        kaç hakemim var, iş nasıl dağılmış, kim geride kalıyor.
       */}
-      <HakemOnizleme
-        hakemler={yukler
-          .filter((y) => y.hakem.aktif && !y.hakem.sistem)
-          .map((y) => ({
-            kod: y.hakem.kod,
-            ad: y.hakem.ad,
-            kurum: y.hakem.kurum,
-            bekleyen: y.atanan - y.tamamlanan,
-          }))}
-      />
+      <div className="mb-4 grid grid-cols-2 gap-2.5 lg:grid-cols-4">
+        {olcutler.map((o, i) => (
+          <div
+            key={o.ad}
+            style={{ '--sira': i } as React.CSSProperties}
+            className="kart belir px-4 py-3.5"
+          >
+            <p className={`text-[24px] leading-none font-extrabold tabular-nums ${o.vurgu ?? ''}`}>
+              {o.n}
+            </p>
+            <p className="mt-1.5 text-[9.5px] leading-tight font-bold tracking-wide text-metin-2">
+              {o.ad}
+            </p>
+          </div>
+        ))}
+      </div>
 
       <section className="mb-6">
         <HakemYonetimi yukler={yukler} />

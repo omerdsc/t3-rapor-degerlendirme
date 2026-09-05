@@ -18,11 +18,28 @@
  * Bulgu metinlerinde ham kimlik ("64e55f97-…") değil maskeli rumuz
  * ("Takım 8EM8 R-WKT4") yazıyor. Hakem bulguyu okuduğunda hangi raporun
  * kastedildiğini anlamalı ama gerçek takım adını görmemeli.
+ *
+ * ── ÖLÇÜLMÜŞ HATA: TARAMA HİÇ ÇALIŞMIYORDU ──────────────────────────────
+ * Bu fonksiyon raporları `raporlariListele()` ile çekiyordu. O fonksiyon
+ * LİSTE GÖRÜNÜMÜ ve parmak izlerini BİLEREK okumuyor — rapor başına
+ * ~40 KB, listede taşınması anlamsız (kendi kodunda yazılı). Sonuç:
+ * `r.parmakizi` her zaman `undefined` geliyor, her rapor "parmakizsiz"
+ * sayılıyor ve fonksiyon iki iz bulamadığı için ERKEN DÖNÜYORDU.
+ *
+ * Yani her yüklemeden sonra koşan otomatik kopya taraması hiçbir zaman
+ * hiçbir şey taramadı. Hata sessizdi: fonksiyon başarıyla dönüyor,
+ * "0 çift" diyor ve bu "kopya yok" gibi okunuyordu. Kopya bulgusu
+ * yalnızca kopya ekranından ELLE tarama koşturulduğunda çıkıyordu —
+ * çünkü o yol `parmakizliRaporlar()` kullanıyor.
+ *
+ * Örnek kopya verisi kurulurken yakalandı: iki birbirinin kopyası rapor
+ * kaydedildi, veritabanında parmak izleri duruyordu, tarama "4 izsiz"
+ * dedi.
  */
 
 import { benzerlikKontrolu, korpusTara, type Parmakizi } from './benzerlik';
 import { parmakiziCoz } from './parmakizi-depo';
-import { raporGuncelle, raporlariListele } from '../depo/depo';
+import { parmakizliRaporlar, raporGuncelle, raporSayilari } from '../depo/depo';
 import { raporuMaskele } from '../depo/maskele';
 
 export interface TazelemeSonucu {
@@ -36,13 +53,18 @@ export async function benzerlikTazele(
   yarismaId: string,
   kategoriId: string,
 ): Promise<TazelemeSonucu> {
-  const raporlar = raporlariListele(yarismaId, kategoriId);
-  const parmakizliler = raporlar.filter((r) => r.parmakizi);
+  /*
+   * `parmakizliRaporlar` — parmak izini GERÇEKTEN okuyan sorgu.
+   * Toplam sayı ayrı ve ucuz bir sayaçtan geliyor; "kaç rapor izsiz"
+   * sorusunu cevaplamak için bütün raporları nesneye çevirmek gereksiz.
+   */
+  const parmakizliler = parmakizliRaporlar(yarismaId, kategoriId).map((x) => x.rapor);
+  const toplamRapor = raporSayilari().kategoriye.get(kategoriId) ?? parmakizliler.length;
 
   if (parmakizliler.length < 2) {
     return {
       taranan: parmakizliler.length,
-      parmakizsiz: raporlar.length - parmakizliler.length,
+      parmakizsiz: Math.max(0, toplamRapor - parmakizliler.length),
       guncellenen: 0,
       isaretliCift: 0,
     };
@@ -52,7 +74,7 @@ export async function benzerlikTazele(
   const korpus = korpusTara(izler);
 
   const adlar = new Map(
-    raporlar.map((r) => {
+    parmakizliler.map((r) => {
       const m = raporuMaskele(r);
       return [r.id, `${m.takim} ${m.raporKodu}`];
     }),
@@ -85,7 +107,7 @@ export async function benzerlikTazele(
 
   return {
     taranan: parmakizliler.length,
-    parmakizsiz: raporlar.length - parmakizliler.length,
+    parmakizsiz: Math.max(0, toplamRapor - parmakizliler.length),
     guncellenen,
     isaretliCift: korpus.isaretliler.length,
   };

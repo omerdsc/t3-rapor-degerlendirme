@@ -1,15 +1,16 @@
 import Link from 'next/link';
-import RaporYukleyici from '@/components/rapor-yukleyici';
 import TopluDegerlendirme from '@/components/toplu-degerlendirme';
 import SecimKutusu from '@/components/secim-kutusu';
 import { DurumRozeti, KontrolNoktasi } from '@/components/rozet';
 import DisaAktarDugmesi from '@/components/disa-aktar-dugmesi';
 import RaporArama from '@/components/rapor-arama';
+import KopyaPaneli from '@/components/kopya-paneli';
+import SezonSecici from '@/components/sezon-secici';
 import { raporlarinHakemDurumu } from '@/lib/db/hakem-depo';
 import { cevapBekleyenYazismalar } from '@/lib/depo/depo';
 import { raporlariAra } from '@/lib/depo/arama';
 import {
-  raporSayilari, raporlariListele, yarismalariListele,
+  raporSayilari, raporlariListele, sezonlar, yarismalariListele,
 } from '@/lib/depo/depo';
 import { raporuMaskele } from '@/lib/depo/maskele';
 import type { Rapor } from '@/lib/depo/tipler';
@@ -27,12 +28,13 @@ export const dynamic = 'force-dynamic';
 const SUTUNLAR = ['BAŞVURU', 'PROJE / TAKIM', 'ÖN KONTROLLER', 'AI ÖNERİSİ', 'HAKEM DURUMU', 'DURUM', ''];
 
 /** Hakemin işi bitti mi bitmedi mi — listenin ayrıldığı temel eksen. */
-type Suzgec = 'bekleyen' | 'tamamlanan' | 'manuel' | 'tumu';
+type Suzgec = 'bekleyen' | 'tamamlanan' | 'manuel' | 'kopya' | 'tumu';
 
 const SUZGEC_ETIKET: Record<Suzgec, string> = {
   bekleyen: 'Değerlendirilmedi',
   tamamlanan: 'Değerlendirildi',
   manuel: 'Manuel inceleme',
+  kopya: 'Kopya şüphesi',
   tumu: 'Tümü',
 };
 
@@ -40,12 +42,43 @@ function suzgecleyi(raporlar: Rapor[], s: Suzgec): Rapor[] {
   if (s === 'bekleyen') return raporlar.filter((r) => r.durum === 'hakem_bekliyor' || r.durum === 'yuklendi');
   if (s === 'tamamlanan') return raporlar.filter((r) => r.durum === 'tamamlandi');
   if (s === 'manuel') return raporlar.filter((r) => r.durum === 'manuel_inceleme');
+  /*
+   * KOPYA ŞÜPHESİ AYRI BİR EKRAN DEĞİL, BİR SÜZGEÇ.
+   *
+   * "Kopya Kontrolü" kendi menü maddesiydi ve koordinasyon oraya ancak
+   * aklına gelirse gidiyordu — kopya şüphesini görmek için kopya şüphesi
+   * olduğunu tahmin etmesi gerekiyordu. Oysa bu, raporların bir
+   * ÖZELLİĞİ; rapor listesinin bir sekmesi olması gereken yer.
+   *
+   * Tarama işi de burada: seçili kategoriyi tara düğmesi bu sekmede.
+   */
+  if (s === 'kopya') {
+    return raporlar.filter((r) =>
+      r.kontroller.some((k) => k.kod === 'benzerlik' && k.durum !== 'temiz'),
+    );
+  }
   return raporlar;
 }
 
 export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koordinasyon/raporlar'>) {
   const p = await searchParams;
-  const yarismalar = yarismalariListele();
+  const mevcutSezonlar = sezonlar();
+  /*
+   * Varsayılan sezon EN YENİSİ. "Tümü" olsaydı koordinasyon bu yılın
+   * işini yaparken geçen yılların birikimini de listede görürdü ve
+   * sekme sayaçları hangi yıla ait olduğu belirsiz sayılar olurdu.
+   */
+  const sezonParam = p.sezon as string | undefined;
+  const sezon =
+    sezonParam === 'tumu'
+      ? undefined
+      : sezonParam
+        ? Number(sezonParam)
+        : mevcutSezonlar[0];
+
+  const yarismalar = yarismalariListele().filter(
+    (y) => sezon === undefined || y.yil === sezon,
+  );
   // Açılır listelerdeki rapor sayıları TEK sorgudan; yarışma başına
   // ayrı sorgu atmak 44 tam tablo taraması demekti.
   const sayac = raporSayilari();
@@ -66,10 +99,26 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
   // Şablon ve rubrik kategoriye bağlı; yükleme de kategori seçilerek yapılır.
   const kategoriId = (p.kategori as string | undefined) ?? yarisma?.kategoriler[0]?.id;
   const kategori = yarisma?.kategoriler.find((k) => k.id === kategoriId);
-  const tumRaporlar = yarisma ? raporlariListele(yarisma.id, kategori?.id) : [];
-
-  const suzgec = ((p.durum as string | undefined) ?? 'bekleyen') as Suzgec;
+  const secilenSuzgec = p.durum as Suzgec | undefined;
   const aramaTerimi = (p.ara as string | undefined) ?? '';
+
+  /*
+   * ARAMA YARIŞMA SINIRINI AŞIYOR.
+   *
+   * Koordinasyon bir takımın raporunu ararken hangi yarışmaya
+   * başvurduğunu bilmiyor olabilir — zaten onu bulmaya çalışıyor.
+   * Arama tek yarışmayla sınırlıyken 43 yarışmayı tek tek denemek
+   * gerekiyordu; bulunamayan rapor "yok" sanılıyordu.
+   *
+   * Aranırken kapsam SEZONUN TAMAMI: yıl seçili, yarışma serbest. Arama
+   * yokken normal kapsam (seçili yarışma + kategori) geçerli — 3000
+   * raporu sebepsiz listelemek de doğru değil.
+   */
+  const tumRaporlar = aramaTerimi
+    ? raporlariListele(undefined, undefined, sezon)
+    : yarisma
+      ? raporlariListele(yarisma.id, kategori?.id, sezon)
+      : [];
 
   /*
    * ARAMA SÜZGEÇTEN ÖNCE UYGULANIYOR.
@@ -80,6 +129,25 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
    * taranıyor; sekme sayaçları da arama sonucuna göre güncelleniyor.
    */
   const aranmis = aramaTerimi ? raporlariAra(tumRaporlar, aramaTerimi) : tumRaporlar;
+
+  /*
+   * VARSAYILAN SEKME BOŞ KALMIYOR.
+   *
+   * Varsayılan her zaman "Değerlendirilmedi" idi. Rapor var ama hepsi
+   * değerlendirilmişse ekran şunu gösteriyordu: üstte "1 rapor", altta
+   * boş bir tablo ve "grubunda rapor yok". Bakan kişi bunu sistemin
+   * çalışmadığı diye okuyor — sayaç bir şey, tablo başka bir şey diyor.
+   *
+   * Kullanıcı bir sekme SEÇTİYSE ona dokunulmuyor; boş bir seçim bilinçli
+   * olabilir ("bekleyen var mı?"). Yalnızca VARSAYILAN, dolu olan ilk
+   * gruba kayıyor.
+   */
+  const bosDegilse = (d: Suzgec) => suzgecleyi(tumRaporlar, d).length > 0;
+  const suzgec: Suzgec =
+    secilenSuzgec
+    ?? (['bekleyen', 'manuel', 'kopya', 'tamamlanan'] as Suzgec[]).find(bosDegilse)
+    ?? 'bekleyen';
+
   const suzulmus = aramaTerimi ? aranmis : suzgecleyi(tumRaporlar, suzgec);
 
   /*
@@ -114,6 +182,7 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
     if (kategori) q.set('kategori', kategori.id);
     if (aramaTerimi) q.set('ara', aramaTerimi);
     else q.set('durum', suzgec);
+    q.set('sezon', String(sezon ?? 'tumu'));
     if (n > 1) q.set('sayfa', String(n));
     return `/koordinasyon/raporlar?${q}`;
   };
@@ -141,6 +210,7 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
     bekleyen: suzgecleyi(aranmis, 'bekleyen').length,
     tamamlanan: suzgecleyi(aranmis, 'tamamlanan').length,
     manuel: suzgecleyi(aranmis, 'manuel').length,
+    kopya: suzgecleyi(aranmis, 'kopya').length,
     tumu: aranmis.length,
   };
 
@@ -158,16 +228,32 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
     );
   }
 
+  /*
+   * Bağlantılar SEZONU TAŞIYOR. Taşımasaydı sekme değiştiren kullanıcı
+   * sessizce varsayılan sezona düşerdi — en sinir bozucu hata sınıfı:
+   * kullanıcı bir şeyi değiştiriyor, başka bir şey de değişiyor.
+   */
+  const sezonEki = `&sezon=${sezon ?? 'tumu'}`;
   const bagAdresi = (d: Suzgec) =>
-    `/raporlar?yarisma=${secili}&kategori=${kategori?.id ?? ''}&durum=${d}`;
+    `/koordinasyon/raporlar?yarisma=${secili}&kategori=${kategori?.id ?? ''}&durum=${d}${sezonEki}`;
 
   return (
     <>
-      <header className="mb-4">
-        <h1 className="text-[22px] font-extrabold tracking-tight">Raporlar</h1>
-        <p className="mt-1.5 text-[12.5px] font-medium text-metin-2">
-          Raporu aç → bulguları incele → puanla ve tamamla
-        </p>
+      <header className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h1 className="text-[22px] leading-tight font-extrabold tracking-tight">
+            Raporlar
+          </h1>
+          <p className="mt-1.5 text-[12.5px] font-medium text-metin-2">
+            Yarışmacıların teslim ettiği raporlar. Aç → bulguları incele →
+            hakeme ata
+          </p>
+        </div>
+        <SezonSecici
+          sezonlar={mevcutSezonlar}
+          secili={sezon}
+          adres={(sz) => `/koordinasyon/raporlar?sezon=${sz ?? 'tumu'}`}
+        />
       </header>
 
       {/*
@@ -181,7 +267,7 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
         Raporu OLAN yarışmalar üstte, sayaçlarıyla birlikte: kullanıcı boş
         yarışmaları elemek için tek tek denemek zorunda kalmasın.
       */}
-      <div className="mb-4 grid gap-3 rounded-xl border border-cizgi bg-white px-4 py-3 sm:grid-cols-2">
+      <div className="mb-4 grid gap-3 rounded-xl border border-cizgi bg-white px-4 py-3 lg:grid-cols-[1fr_1fr_1.2fr]">
         <SecimKutusu
           etiket="Yarışma"
           secili={secili}
@@ -197,8 +283,8 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
               deger: y.id,
               etiket: y.ad,
               ek: n ? `${n} rapor` : undefined,
-              grup: n ? 'Raporu olanlar' : 'Rapor yüklenmemiş',
-              adres: `/koordinasyon/raporlar?yarisma=${y.id}&durum=${suzgec}`,
+              grup: n ? 'Raporu olanlar' : 'Rapor gelmemiş',
+              adres: `/koordinasyon/raporlar?yarisma=${y.id}&durum=${suzgec}${sezonEki}`,
             }))}
         />
 
@@ -212,75 +298,65 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
                 deger: k.id,
                 etiket: k.ad,
                 ek: n ? `${n} rapor` : `${k.rubrik.kriterler.length} ölçüt`,
-                adres: `/koordinasyon/raporlar?yarisma=${yarisma.id}&kategori=${k.id}&durum=${suzgec}`,
+                adres: `/koordinasyon/raporlar?yarisma=${yarisma.id}&kategori=${k.id}&durum=${suzgec}${sezonEki}`,
               };
             })}
           />
         )}
         {/* Arama kutusu seçim kutularının yanında: aynı iş, aynı yer. */}
         {yarisma && (
-          <div className="sm:col-span-2">
+          <div>
+            {/* Arama sezonu taşıyor, yarışmayı değil: kapsam kasten geniş. */}
             <RaporArama
-              temelAdres={`/koordinasyon/raporlar?yarisma=${yarisma.id}${
-                kategori ? `&kategori=${kategori.id}` : ''
-              }&durum=${suzgec}`}
+              temelAdres={`/koordinasyon/raporlar?durum=${suzgec}${sezonEki}`}
               baslangic={aramaTerimi || undefined}
             />
           </div>
         )}
       </div>
 
-      {/* Sonuçları dışa aktarma: koordinasyonun sıralama listesi, üst birim
-          raporu ve itiraz dosyası buradan çıkıyor. */}
-      {yarisma && tumRaporlar.length > 0 && (
-        <div className="mb-3">
-          <DisaAktarDugmesi
-            yarismaId={yarisma.id}
-            kategoriId={kategori?.id}
-            raporSayisi={tumRaporlar.length}
-          />
+      {aramaTerimi && (
+        <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 rounded-lg bg-mavi-zemin px-3.5 py-2.5">
+          <span className="text-[12px] font-bold text-mavi-koyu">
+            &ldquo;{aramaTerimi}&rdquo; · {aranmis.length} rapor
+          </span>
+          <span className="text-[11.5px] font-semibold text-mavi-koyu/85">
+            {sezon ? `${sezon} sezonunun tamamında arandı` : 'Bütün sezonlarda arandı'}
+          </span>
+          <span className="text-[11px] font-medium text-mavi-koyu/70">
+            · başvuru numarası, takım adı, takım ID, proje adı ve rapor
+            kapağından okunan bilgiler
+          </span>
+          <a
+            href={`/koordinasyon/raporlar?sezon=${sezon ?? 'tumu'}`}
+            className="ml-auto text-[11.5px] font-bold text-mavi-koyu hover:underline"
+          >
+            Aramayı temizle ×
+          </a>
         </div>
       )}
 
-      {aramaTerimi && (
-        <p className="mb-3 flex flex-wrap items-center gap-2 rounded-lg bg-mavi-zemin px-3.5 py-2.5 text-[11.5px] font-semibold text-mavi-koyu">
-          &ldquo;{aramaTerimi}&rdquo; için {aranmis.length} rapor bulundu
-          <span className="font-medium text-mavi-koyu/75">
-            · başvuru numarası, takım adı, takım ID, proje adı ve rapor
-            kapağından okunan bilgiler tarandı
-          </span>
-        </p>
-      )}
-
-      {yarisma && kategori && !aramaTerimi && (
-        <RaporYukleyici
-          yarismaId={yarisma.id}
-          kategoriId={kategori.id}
-          kategoriAdi={kategori.ad}
-          icerikKategorileri={yarisma.icerikKategorileri}
-        />
-      )}
-
       {/*
-        TOPLU ÖN DEĞERLENDİRME — yüklemenin hemen ARDINDA.
-        PRD AKIŞ 01'in sırası bu: "raporları sisteme aktarır → AI analiz
-        sürecini başlatır." Ekranda da aynı sırada duruyor ki kullanıcı
-        yüklemeden sonra ne yapacağını aramak zorunda kalmasın.
-      */}
-      {yarisma && !aramaTerimi && (
-        <TopluDegerlendirme yarismaId={yarisma.id} kategoriId={kategori?.id} />
-      )}
+        SEKMELER VE ARAÇLAR AYNI SATIRDA.
 
-      {/* Değerlendirildi / değerlendirilmedi ayrımı */}
-      <nav className="mt-5 flex flex-wrap gap-1.5 border-b border-cizgi">
-        {(['bekleyen', 'tamamlanan', 'manuel', 'tumu'] as Suzgec[]).map((d) => {
+        Önce ekranda sekmelerin ÜSTÜNDE üç ayrı blok vardı: dışa aktarma,
+        toplu yapay zekâ değerlendirmesi ve kopya tarayıcı. Kullanıcı
+        tabloya inmeden önce üç kutu okuyordu ve hiçbiri onun o an
+        yapmak istediği iş değildi. Araçlar sekme satırının sağına
+        taşındı: görünür ama yolun ortasında değil.
+
+        Araç, ilgili olduğu sekmede beliriyor — toplu değerlendirme
+        "değerlendirilmedi" sekmesinde, tarayıcı "kopya" sekmesinde.
+      */}
+      <nav className="mt-5 flex flex-wrap items-end gap-x-1.5 gap-y-2 border-b border-cizgi">
+        {(['bekleyen', 'tamamlanan', 'manuel', 'kopya', 'tumu'] as Suzgec[]).map((d) => {
           const aktif = d === suzgec;
           const renk =
             d === 'bekleyen'
               ? 'text-amber-koyu'
               : d === 'tamamlanan'
                 ? 'text-yesil-koyu'
-                : d === 'manuel'
+                : d === 'manuel' || d === 'kopya'
                   ? 'text-kirmizi-koyu'
                   : 'text-metin-2';
           return (
@@ -298,7 +374,29 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
             </Link>
           );
         })}
+
+        <div className="mb-1.5 ml-auto flex flex-wrap items-center gap-2">
+          {yarisma && tumRaporlar.length > 0 && (
+            <DisaAktarDugmesi
+              yarismaId={yarisma.id}
+              kategoriId={kategori?.id}
+              raporSayisi={tumRaporlar.length}
+            />
+          )}
+        </div>
       </nav>
+
+      {/* Sekmeye özel araç — yalnızca ilgili sekmede. */}
+      {suzgec === 'bekleyen' && yarisma && !aramaTerimi && (
+        <div className="border-x border-cizgi bg-white px-4 pt-4">
+          <TopluDegerlendirme yarismaId={yarisma.id} kategoriId={kategori?.id} />
+        </div>
+      )}
+      {suzgec === 'kopya' && yarisma && !aramaTerimi && (
+        <div className="border-x border-cizgi bg-white px-4 pt-4">
+          <KopyaPaneli yarismaId={yarisma.id} kategoriId={kategori?.id} />
+        </div>
+      )}
 
       <div className="overflow-x-auto rounded-b-xl border border-t-0 border-cizgi bg-white">
         <table className="w-full border-collapse">
@@ -315,8 +413,13 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
             {!raporlar.length && (
               <tr>
                 <td colSpan={7} className="px-4 py-10 text-center text-[12.5px] font-medium text-metin-2">
+                  {/*
+                    "Yukarıdan yükleyin" DEĞİL: yükleme artık burada değil.
+                    Olmayan bir düğmeye yönlendiren metin, kullanıcıyı
+                    aramaya gönderiyordu.
+                  */}
                   {tumRaporlar.length === 0
-                    ? 'Bu yarışmada henüz rapor yok. Yukarıdan yükleyin.'
+                    ? 'Bu yarışmada henüz rapor teslim edilmedi. Raporlar yarışmacı portalından geliyor; teslim edildikçe burada listelenir.'
                     : `"${SUZGEC_ETIKET[suzgec]}" grubunda rapor yok.`}
                 </td>
               </tr>
@@ -359,8 +462,32 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
                         </span>
                       )}
                     </div>
-                    <div className="mt-0.5 text-[10.5px] font-medium text-metin-3">
+                    <div className="mt-0.5 flex items-center gap-1.5 text-[10.5px] font-medium text-metin-3">
                       {new Date(r.yuklendi).toLocaleDateString('tr')}
+                      {/*
+                        RAPORUN KAYNAĞI GÖRÜNÜR.
+                        `basvuruId` dolu olan raporu yarışmacı kendi
+                        hesabından teslim etti; arkasında doğrulanmış bir
+                        başvuru kaydı var. Boş olanlar sistem devralınmadan
+                        önce koordinasyonun yüklediği eski kayıtlar. İkisi
+                        aynı görünürse koordinasyon, kimliği doğrulanmamış
+                        bir raporu doğrulanmış sanar.
+                      */}
+                      {r.basvuruId ? (
+                        <span
+                          title="Yarışmacı kendi hesabından teslim etti"
+                          className="rounded bg-mavi-zemin px-1.5 py-0.5 text-[9px] font-bold text-mavi-koyu"
+                        >
+                          TESLİM
+                        </span>
+                      ) : (
+                        <span
+                          title="Başvuru kaydı yok — sistem devralınmadan önce eklenmiş kayıt"
+                          className="rounded bg-zemin px-1.5 py-0.5 text-[9px] font-bold text-metin-3"
+                        >
+                          ARŞİV
+                        </span>
+                      )}
                     </div>
                   </td>
 
@@ -368,6 +495,17 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
                     <div className="max-w-[280px] truncate text-[12.5px] font-semibold">{r.proje}</div>
                     <div className="mt-0.5 text-[11px] font-medium text-metin-2">
                       {raporuMaskele(r).takim}
+                      {/*
+                        ARAMADA YARIŞMA ADI DA YAZIYOR.
+                        Arama sezonun tamamını tarıyor; hangi yarışmanın
+                        raporu olduğu yazmazsa sonuçlar bağlamsız kalır.
+                      */}
+                      {aramaTerimi && (
+                        <span className="text-metin-3">
+                          {' · '}
+                          {yarismalar.find((y) => y.id === r.yarismaId)?.ad ?? '—'}
+                        </span>
+                      )}
                     </div>
                   </td>
 
@@ -456,6 +594,29 @@ export default async function RaporlarSayfasi({ searchParams }: PageProps<'/koor
 
                   <td className="px-4 py-3">
                     <DurumRozeti durum={r.durum} />
+                    {/*
+                      KOPYA ŞÜPHESİ SATIRDA AÇIKÇA YAZIYOR.
+                      Bulgu "ÖN KONTROLLER" sütununda küçük bir kırmızı
+                      nokta olarak duruyordu ve altı kontrolün arasında
+                      seçilmiyordu: listeye bakan "hangilerinde kopya
+                      şüphesi var" sorusunu cevaplayamıyordu. Rozet o
+                      soruyu doğrudan cevaplıyor ve bulgunun kendi
+                      cümlesini de taşıyor.
+                    */}
+                    {(() => {
+                      const k = r.kontroller.find(
+                        (x) => x.kod === 'benzerlik' && x.durum !== 'temiz',
+                      );
+                      if (!k) return null;
+                      return (
+                        <span
+                          title={k.bulgular?.[0]?.baslik ?? k.ozet}
+                          className="mt-1 block w-fit rounded-md bg-kirmizi px-2 py-0.5 text-[9px] font-bold tracking-wide text-white"
+                        >
+                          KOPYA ŞÜPHESİ
+                        </span>
+                      );
+                    })()}
                   </td>
 
                   {/*

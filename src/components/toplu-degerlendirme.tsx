@@ -152,15 +152,6 @@ export default function TopluDegerlendirme({
           <p className="mt-1 text-[11.5px] leading-relaxed font-medium text-metin-2">
             Ölçüt bazında puan önerisi, gerekçe ve rapordan alıntı üretir;
             hakem hazır bulur.
-            {durum.maliyetGoster && durum.tahminiTutar !== undefined && (
-              <>
-                {' '}Tahmini tutar{' '}
-                <strong className="font-bold text-metin">
-                  ${durum.tahminiTutar.toFixed(2)}
-                </strong>{' '}
-                ({durum.hedefler.length} × ${durum.birimMaliyet}).
-              </>
-            )}
             {durum.zatenVar > 0 && ` ${durum.zatenVar} rapor zaten değerlendirilmiş, atlanacak.`}
           </p>
         </div>
@@ -169,7 +160,7 @@ export default function TopluDegerlendirme({
           <button
             type="button"
             onClick={() => setAcik((a) => !a)}
-            className="shrink-0 cursor-pointer rounded-lg bg-kirmizi px-4 py-2.5 text-[12.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu"
+            className="shrink-0 dugme bg-kirmizi px-4 py-2.5 text-[12.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu"
           >
             {acik ? 'Vazgeç' : 'Toplu başlat'}
           </button>
@@ -189,26 +180,20 @@ export default function TopluDegerlendirme({
           <p className="text-[11.5px] leading-relaxed font-medium text-metin">
             <strong className="font-bold">
               {durum.hedefler.length} rapor değerlendirilecek
-              {durum.maliyetGoster && durum.tahminiTutar !== undefined
-                ? ` · ~$${durum.tahminiTutar.toFixed(2)}`
-                : ''}
               {' · yaklaşık '}
               {Math.ceil((durum.hedefler.length * 90) / 60)} dakika
             </strong>
           </p>
 
           {/*
-            TAVAN UYARISI TUTARSIZ DA VERİLİYOR.
-            Tutar gizlense bile kullanıcı işlemin yarıda duracağını
-            bilmeli — bu bir davranış bilgisi, fiyat değil.
+            TAVAN UYARISI TUTAR YAZMADAN VERİLİYOR.
+            Kullanıcı işlemin yarıda duracağını bilmeli — bu bir davranış
+            bilgisi, fiyat değil. Rakam ekranda hiçbir yerde yazmıyor.
           */}
           {tutarAsiyor && (
             <p className="mt-2 rounded-md bg-amber-zemin px-2.5 py-2 text-[11px] leading-relaxed font-semibold text-amber-koyu">
-              Bu işlem kurulumun bütçe tavanını aşıyor
-              {durum.maliyetGoster && durum.tavan !== undefined
-                ? ` ($${durum.tavan})`
-                : ''}
-              . Sistem tavana ulaşınca çağrıyı reddedip duracak — başlatmak
+              Bu işlem kurulumun işlem tavanını aşıyor. Sistem tavana
+              ulaşınca çağrıyı reddedip duracak — başlatmak
               güvenli, ama hepsi tamamlanmayacak. Tavanı{' '}
               <code className="font-mono">TOPLAM_TAVAN</code> ile
               yükseltebilirsiniz.
@@ -233,7 +218,7 @@ export default function TopluDegerlendirme({
           <button
             type="button"
             onClick={basla}
-            className="mt-3 cursor-pointer rounded-lg bg-kirmizi px-4 py-2.5 text-[12.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu"
+            className="mt-3 dugme bg-kirmizi px-4 py-2.5 text-[12.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu"
           >
             Onaylıyorum, başlat
           </button>

@@ -62,7 +62,7 @@ export default function RaporArama({
       <button
         type="submit"
         disabled={bekliyor}
-        className="cursor-pointer rounded-lg bg-lacivert px-3.5 py-2 text-[12px] font-bold text-white transition-colors hover:bg-lacivert-2 disabled:opacity-60"
+        className="dugme bg-lacivert px-3.5 py-2 text-[12px] font-bold text-white transition-colors hover:bg-lacivert-2 disabled:opacity-60"
       >
         Ara
       </button>
@@ -73,7 +73,7 @@ export default function RaporArama({
             setTerim('');
             ara('');
           }}
-          className="cursor-pointer rounded-lg border border-cizgi px-3 py-2 text-[12px] font-bold text-metin-2 transition-colors hover:bg-zemin"
+          className="dugme border border-cizgi px-3 py-2 text-[12px] font-bold text-metin-2 transition-colors hover:bg-zemin"
         >
           Temizle
         </button>

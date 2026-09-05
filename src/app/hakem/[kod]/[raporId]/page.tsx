@@ -3,6 +3,9 @@ import PortalDonus from '@/components/portal-donus';
 import Yazisma from '@/components/yazisma';
 import { notFound } from 'next/navigation';
 import HakemPuanlama from '@/components/hakem-puanlama';
+import RaporBolmesi from '@/components/rapor-bolmesi';
+import KaynakcaDenetimi from '@/components/kaynakca-denetimi';
+import { kaynakcaDenetimiGetir } from '@/lib/db/kaynakca-denetim-depo';
 import { KontrolNoktasi } from '@/components/rozet';
 import {
   degerlendirmeGetir, hakemKodIle, hakeminRaporlari,
@@ -49,6 +52,7 @@ export default async function HakemRaporSayfasi({
 
   const mevcut = degerlendirmeGetir(raporId, hakem.id);
   const tamamlandi = mevcut?.durum === 'tamamlandi';
+  const denetim = kaynakcaDenetimiGetir(rapor.id);
 
   const baslangicPuanlar: Record<string, string> = {};
   for (const p of mevcut?.puanlar ?? []) {
@@ -101,21 +105,25 @@ export default async function HakemRaporSayfasi({
       </header>
 
       <main className="mx-auto max-w-6xl px-6 py-5">
-        {/* Otomatik kontroller — hakem raporu okumadan önce ne bilmeli */}
-        <div className="mb-4 flex flex-wrap gap-2.5 rounded-xl border border-cizgi bg-white px-4 py-3">
-          {rapor.kontroller.map((k) => (
-            <KontrolNoktasi
-              key={k.kod}
-              seviye={k.durum}
-              baslik={`${k.ad}: ${k.ozet}`}
-            />
-          ))}
-          {!rapor.kontroller.length && (
-            <span className="text-[11.5px] font-medium text-metin-2">
-              Otomatik kontrol kaydı yok.
-            </span>
-          )}
-        </div>
+        {/*
+          Otomatik kontroller — hakem raporu okumadan önce ne bilmeli.
+
+          KONTROL YOKSA KUTU DA YOK. Önceden boş bir şerit çiziliyor ve
+          içinde "Otomatik kontrol kaydı yok." yazıyordu. Hakemin bir
+          sorusunu cevaplamıyordu: olmayan bir şeyin yokluğunu duyurmak
+          ekranda yer kaplamaktan başka bir işe yaramıyor.
+        */}
+        {!!rapor.kontroller.length && (
+          <div className="mb-4 flex flex-wrap gap-2.5 rounded-xl border border-cizgi bg-white px-4 py-3">
+            {rapor.kontroller.map((k) => (
+              <KontrolNoktasi
+                key={k.kod}
+                seviye={k.durum}
+                baslik={`${k.ad}: ${k.ozet}`}
+              />
+            ))}
+          </div>
+        )}
 
         {!!bulgular.length && (
           <details className="mb-4 rounded-xl border border-cizgi bg-white px-4 py-3">
@@ -144,69 +152,135 @@ export default async function HakemRaporSayfasi({
           </details>
         )}
 
-        <div className="grid gap-4 lg:grid-cols-[1fr_1fr]">
-          {/* Rapor PDF'i — hakem belgeyi görmeden puanlamamalı */}
-          <section className="overflow-hidden rounded-xl border border-cizgi bg-white">
-            <div className="flex items-center gap-2.5 border-b border-cizgi px-4 py-2.5">
-              <h2 className="text-[12.5px] font-bold">Rapor</h2>
-              <a
-                href={`/api/rapor/${rapor.id}/dosya?kod=${encodeURIComponent(kod)}`}
-                target="_blank"
-                rel="noreferrer"
-                className="ml-auto text-[11.5px] font-bold text-kirmizi hover:text-kirmizi-koyu"
-              >
-                Yeni sekmede aç →
-              </a>
-            </div>
-            {rapor.dosyaYolu ? (
-              <iframe
-                src={`/api/rapor/${rapor.id}/dosya?kod=${encodeURIComponent(kod)}#view=FitH`}
-                title="Rapor"
-                className="h-[720px] w-full"
-              />
-            ) : (
-              <p className="px-4 py-16 text-center text-[12px] font-medium text-metin-2">
-                Bu rapor Word olarak yüklendiği için gömülü görüntüleme yok.
-                Yukarıdaki bağlantıdan indirebilirsiniz.
-              </p>
-            )}
-          </section>
+        {/*
+          KAYNAKÇA DENETİMİ HAKEMDE DE — AMA SALT OKUNUR.
 
-          <HakemPuanlama
-            kod={kod}
-            raporId={rapor.id}
-            olcutler={kategori.rubrik.kriterler}
-            toplamPuan={kategori.rubrik.toplamPuan}
-            aiKriterler={(rapor.aiDegerlendirme?.kriterler ?? []).map((k) => ({
-              kod: k.kod,
-              aiPuan: k.aiPuan,
-              guven: k.guven,
-              gerekce: k.gerekce,
-              kanitlar: k.kanitlar,
-              oneri: k.oneri,
-              hakemIncelemesiGerekli: k.hakemIncelemesiGerekli,
-            }))}
-            baslangicPuanlar={baslangicPuanlar}
-            baslangicAciklama={mevcut?.aciklama ?? ''}
-            // Kayıtlı taslak varsa o gösterilir; yoksa yapay zekâ önerisi
-            // dolu gelir ve hakem onaylayarak yayımlar.
-            baslangicGeriBildirim={mevcut?.geriBildirim}
-            aiGucluYonler={rapor.aiDegerlendirme?.genelGucluYonler ?? []}
-            aiGelisimAlanlari={rapor.aiDegerlendirme?.genelGelisimAlanlari ?? []}
-            tamamlandi={tamamlandi}
-          />
+          Uydurma kaynakça bulunan bir raporda puanlama tartışmalı hâle
+          geliyor; bu bilgiye en çok ihtiyacı olan kişi puanı veren
+          hakem. Önce yalnızca koordinasyon görüyordu ve bilgi karar
+          veren tarafa hiç ulaşmıyordu.
+
+          Düğme yok: denetim ücretli ve bütçe ortak. Harcamayı
+          başlatan taraf koordinasyon, hakem sonucu okuyor. Denetim
+          hiç yapılmamışsa bölüm çizilmiyor.
+        */}
+        {denetim && (
+          <div>
+            <KaynakcaDenetimi
+              raporId={rapor.id}
+              saltOkunur
+              baslangic={{
+                durum: denetim.durum,
+                karar: denetim.karar,
+                adimlar: denetim.adimlar,
+                tur: denetim.tur,
+                maliyet: denetim.maliyet,
+                hata: denetim.hata,
+              }}
+            />
+          </div>
+        )}
+
+        {/*
+          BELGE YOKSA İKİ SÜTUN YOK.
+
+          Düzen 50/50'ye sabitti. Görüntülenebilir bir belge olmadığında
+          sol yarı bir uyarı cümlesiyle boş kalıyor, sağdaki puanlama da
+          gereksiz yere ekranın yarısına sıkışıyordu — bir sütun boş,
+          öteki dar. Belge yoksa puanlama tam genişlik alıyor ve uyarı
+          tek satıra iniyor.
+        */}
+        <div
+          className={`grid items-start gap-4 ${
+            rapor.dosyaYolu ? 'lg:grid-cols-[1fr_1fr]' : 'grid-cols-1'
+          }`}
+        >
+          {rapor.dosyaYolu ? (
+            <RaporBolmesi raporId={rapor.id} kod={kod} dosyaAdi={rapor.dosyaAdi} />
+          ) : (
+            /*
+              MESAJ DOSYA ADINDAN OKUNUYOR, TAHMİNDEN DEĞİL.
+
+              Eskiden koşulsuz "Bu rapor Word olarak yüklendiği için…"
+              yazıyordu. Oysa `dosyaYolu` yalnızca PDF'lerde doluyor; dosyası
+              hiç saklanmamış bir raporda da bu cümle çıkıyor ve hakem
+              olmayan bir Word belgesi arıyordu. Yanlış açıklama, açıklama
+              yokluğundan kötüdür.
+            */
+            <div className="flex flex-wrap items-center gap-3 rounded-xl border border-cizgi bg-white px-4 py-3">
+              <svg viewBox="0 0 24 24" className="size-4 shrink-0 stroke-metin-3" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+                <path d="M14 2v6h6" />
+              </svg>
+              {/\.docx?$/i.test(rapor.dosyaAdi) ? (
+                <>
+                  <p className="min-w-0 flex-1 text-[12px] font-medium text-metin-2">
+                    <strong className="font-bold text-metin">{rapor.dosyaAdi}</strong>{' '}
+                    — Word belgeleri tarayıcıda gömülü açılmıyor.
+                  </p>
+                  <a
+                    href={`/api/rapor/${rapor.id}/dosya?kod=${encodeURIComponent(kod)}`}
+                    className="dugme shrink-0 border border-cizgi px-3.5 py-1.5 text-[12px] text-metin hover:bg-zemin"
+                  >
+                    Belgeyi indir
+                  </a>
+                </>
+              ) : (
+                <p className="min-w-0 flex-1 text-[12px] font-medium text-metin-2">
+                  <strong className="font-bold text-metin">Belge açılamıyor</strong> —
+                  bu raporun dosyası sistemde saklanmamış. Aşağıdaki ölçütler
+                  ve bulgular geçerli; belgeyi görmeniz gerekiyorsa
+                  koordinasyondan isteyebilirsiniz.
+                </p>
+              )}
+            </div>
+          )}
 
           {/*
-            KOORDİNASYONA SORU — puanlamanın hemen ardında.
-            Hakemin koordinasyona yazacağı şey genellikle puanlarken
-            aklına geliyor: "şablon sürümü doğru mu", "bu takımın geçen
-            yılki raporuna bakılsın mı". Ayrı bir ekrana gitmesi
-            gerekseydi çoğu soru hiç sorulmazdı.
+            SAĞ SÜTUN: PUANLAMA + YAZIŞMA BİRLİKTE.
 
-            Mesaj bu rapora bağlı gidiyor; hakem hangi rapordan söz
-            ettiğini ayrıca yazmak zorunda değil.
+            Yazışma gridin ÜÇÜNCÜ hücresiydi; iki sütunlu düzende ikinci
+            satırın sol hücresine, yani yapışkan rapor bölmesinin altındaki
+            dar şeride düşüyordu. Ekranda belgenin altından taşan, yarısı
+            kesik bir mesaj kutusu görünüyordu. İkisi tek bir sütunda:
+            rapor solda kalıyor, hakemin yazdığı her şey sağda ve tam
+            genişlikte.
           */}
-          <div className="mt-4">
+          <div className="flex min-w-0 flex-col gap-4">
+            <HakemPuanlama
+              kod={kod}
+              raporId={rapor.id}
+              olcutler={kategori.rubrik.kriterler}
+              toplamPuan={kategori.rubrik.toplamPuan}
+              aiKriterler={(rapor.aiDegerlendirme?.kriterler ?? []).map((k) => ({
+                kod: k.kod,
+                aiPuan: k.aiPuan,
+                guven: k.guven,
+                gerekce: k.gerekce,
+                kanitlar: k.kanitlar,
+                oneri: k.oneri,
+                hakemIncelemesiGerekli: k.hakemIncelemesiGerekli,
+              }))}
+              baslangicPuanlar={baslangicPuanlar}
+              baslangicAciklama={mevcut?.aciklama ?? ''}
+              // Kayıtlı taslak varsa o gösterilir; yoksa yapay zekâ önerisi
+              // dolu gelir ve hakem onaylayarak yayımlar.
+              baslangicGeriBildirim={mevcut?.geriBildirim}
+              aiGucluYonler={rapor.aiDegerlendirme?.genelGucluYonler ?? []}
+              aiGelisimAlanlari={rapor.aiDegerlendirme?.genelGelisimAlanlari ?? []}
+              tamamlandi={tamamlandi}
+            />
+
+            {/*
+              KOORDİNASYONA SORU — puanlamanın hemen ardında.
+              Hakemin koordinasyona yazacağı şey genellikle puanlarken
+              aklına geliyor: "şablon sürümü doğru mu", "bu takımın geçen
+              yılki raporuna bakılsın mı". Ayrı bir ekrana gitmesi
+              gerekseydi çoğu soru hiç sorulmazdı.
+
+              Mesaj bu rapora bağlı gidiyor; hakem hangi rapordan söz
+              ettiğini ayrıca yazmak zorunda değil.
+            */}
             <Yazisma
               raporId={rapor.id}
               baslangic={rapor.mesajlar ?? []}

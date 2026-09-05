@@ -1,51 +1,63 @@
 import KenarCubugu from '@/components/kenar-cubugu';
-import { cevapBekleyenYazismalar } from '@/lib/depo/depo';
+import MesajCekmecesi from '@/components/mesaj-cekmecesi';
+import { bekleyenKonusmaSayisi } from '@/lib/db/gelen-kutusu';
 import { yetkiKurulu } from '@/lib/yetki/koordinasyon';
 
+/**
+ * Koordinasyon yerleşimi — kenar çubuğu + üst şerit.
+ *
+ * ── ÜST ŞERİT NİYE VAR ──────────────────────────────────────────────────
+ * Tek amacı mesaj simgesini SAĞ ÜST KÖŞEDE tutmak. Simge önce kenar
+ * çubuğundaydı ve orada bir menü maddesi gibi okunuyordu — oysa bir sayfa
+ * değil, bir katman açıyor. Sağ üst köşe bildirimin beklendiği yer;
+ * kullanıcı oraya bakmayı zaten biliyor.
+ *
+ * Şerit başka hiçbir şey taşımıyor: sayfa başlıkları kendi içeriklerinde
+ * ve oraya bir kez daha yazmak dikey alanı iki kez harcamak olurdu.
+ */
 export default function PanelYerlesimi({ children }: LayoutProps<'/'>) {
-  const acik = !yetkiKurulu();
-
   /*
-   * Bekleyen hakem mesajları YERLEŞİMDE hesaplanıyor: kenar çubuğu her
-   * koordinasyon ekranında çiziliyor, dolayısıyla bildirim de her ekranda
-   * güncel. Sorgu tek ve indeksli; sayfa başına maliyeti ihmal edilebilir.
+   * Bekleyen konuşma sayısı YERLEŞİMDE hesaplanıyor: şerit her
+   * koordinasyon ekranında çiziliyor, dolayısıyla rozet de her ekranda
+   * güncel.
+   *
+   * SEZONA GÖRE SÜZÜLMÜYOR — bilerek. Pano sezona göre süzülüyor ama
+   * mesaj rozeti bir hatırlatıcı, bir rapor değil: koordinasyon arşiv
+   * sezonuna baktığı sırada bu yılın cevapsız sorusu unutulmamalı.
    */
-  const bekleyenSorular = cevapBekleyenYazismalar();
+  const bekleyenMesaj = bekleyenKonusmaSayisi();
 
   return (
     <div className="flex min-h-screen">
-      <KenarCubugu yetkiKurulu={!acik} bekleyenSorular={bekleyenSorular} />
-      <main className="min-w-0 flex-1 px-7 py-6">
+      <KenarCubugu yetkiKurulu={yetkiKurulu()} />
+
+      {/*
+        SİMGE KÖŞEDE, ŞERİT YOK.
+        Önce üstte 52 piksellik beyaz bir şerit vardı ve içinde tek bir
+        düğme duruyordu: bir düğme için kurulmuş bir bar. Şerit kalktı,
+        simge sayfanın sağ üst köşesinde duruyor — `sticky` olduğu için
+        aşağı kaydırınca da orada kalıyor.
+
+        Simge HER SAYFADA: hakemin sorusu koordinasyon hangi ekranda
+        çalışıyorsa o sırada geliyor. Yalnızca panoda olsaydı mesajı
+        görmek için panoya gitmek, yani mesaj olduğunu önceden bilmek
+        gerekirdi — ulaşmayan bildirim bildirim değildir.
+      */}
+      <div className="flex min-w-0 flex-1 flex-col">
         {/*
-          YETKİ KURULU DEĞİLSE SÖYLE.
-          `KOORDINASYON_ANAHTARI` tanımlı değilken panel herkese açık.
-          Bunu gizlemek, kapalı sanılan bir kapı bırakmak olurdu; açık
-          olduğu bilinen kapı daha güvenlidir. Şerit kapatılamıyor:
-          kapatılabilir bir uyarı kapatılır ve unutulur.
+          ŞERİT SAYDAM: kendi yerini koruyor ama görünmüyor.
+
+          Önce beyaz ve çerçeveliydi — tek düğme için kurulmuş bir bar gibi
+          duruyordu. Sonra tamamen kaldırılıp simge içeriğin ÜSTÜNE
+          bindirildi ve bu sefer sayfa başlığındaki sezon seçicisini
+          kapattı. Sayfa zemininde, çerçevesiz bir satır ikisini de çözüyor:
+          göz bir bar görmüyor, içerik de simgenin altına girmiyor.
         */}
-        {acik && (
-          <div className="mb-4 flex items-start gap-2.5 rounded-xl border border-amber/30 bg-amber-zemin px-4 py-3">
-            <svg viewBox="0 0 24 24" className="mt-px size-4 shrink-0 stroke-amber-koyu" fill="none" strokeWidth={2.1} strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 9v4M12 17h.01" />
-              <path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" />
-            </svg>
-            <p className="text-[11.5px] leading-relaxed font-medium text-amber-koyu">
-              <strong className="font-bold">
-                Kimlik doğrulama kurulu değil — bu panel herkese açık.
-              </strong>{' '}
-              Sunucuya erişebilen herkes hakem ekleyip silebilir, atama
-              yapabilir, ücretli yapay zekâ çağrısı başlatabilir ve gerçek
-              yarışmacı belgelerini indirebilir.{' '}
-              <code className="rounded bg-white/60 px-1 font-mono font-semibold">
-                KOORDINASYON_ANAHTARI
-              </code>{' '}
-              ortam değişkenini <code className="font-mono font-semibold">.env.local</code>{' '}
-              içinde tanımlayıp sunucuyu yeniden başlatın.
-            </p>
-          </div>
-        )}
-        {children}
-      </main>
+        <div className="flex shrink-0 justify-end px-7 pt-5 pb-1">
+          <MesajCekmecesi baslangicBekleyen={bekleyenMesaj} />
+        </div>
+        <main className="min-w-0 flex-1 px-7 pt-1 pb-8">{children}</main>
+      </div>
     </div>
   );
 }

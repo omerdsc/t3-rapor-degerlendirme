@@ -60,7 +60,7 @@ export default function KoordinasyonGirisi({ devam }: { devam: string }) {
         type="button"
         disabled={!anahtar || calisiyor}
         onClick={gir}
-        className="mt-3 w-full cursor-pointer rounded-lg bg-kirmizi px-4 py-2.5 text-[13px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
+        className="mt-3 w-full dugme bg-kirmizi px-4 py-2.5 text-[13px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
       >
         {calisiyor ? 'Giriliyor…' : 'Koordinasyon paneline gir'}
       </button>

@@ -584,20 +584,30 @@ export interface AkisOzeti {
   yuzde: number;
 }
 
-export function akisOzeti(yarismaId?: string, kategoriId?: string): AkisOzeti {
+export function akisOzeti(
+  yarismaId?: string,
+  kategoriId?: string,
+  sezon?: number,
+): AkisOzeti {
   const db = baglanti();
-  const kosul =
-    kategoriId && yarismaId
-      ? 'WHERE r.yarisma_id = ? AND r.kategori_id = ?'
-      : yarismaId
-        ? 'WHERE r.yarisma_id = ?'
-        : '';
-  const p: string[] =
-    kategoriId && yarismaId
-      ? [yarismaId, kategoriId]
-      : yarismaId
-        ? [yarismaId]
-        : [];
+
+  const kosullar: string[] = [];
+  const p: Array<string | number> = [];
+  if (yarismaId) {
+    kosullar.push('r.yarisma_id = ?');
+    p.push(yarismaId);
+    if (kategoriId) {
+      kosullar.push('r.kategori_id = ?');
+      p.push(kategoriId);
+    }
+  }
+  // Sezon yarışmanın YILI; birleştirme yalnızca gerektiğinde ekleniyor.
+  if (sezon !== undefined) {
+    kosullar.push('y.yil = ?');
+    p.push(sezon);
+  }
+  const kosul = kosullar.length ? `WHERE ${kosullar.join(' AND ')}` : '';
+  const sezonBirlesim = sezon !== undefined ? 'JOIN yarisma y ON y.id = r.yarisma_id' : '';
 
   /*
    * Tek sorgu, rapor başına özet. Rapor sayısı binlere çıkabildiği için
@@ -606,7 +616,7 @@ export function akisOzeti(yarismaId?: string, kategoriId?: string): AkisOzeti {
    */
   const satirlar = db
     .prepare(
-      `SELECT r.id,
+      `SELECT r.id, r.durum,
               COUNT(a.hakem_id) AS atanan,
               SUM(CASE WHEN d.durum = 'tamamlandi' THEN 1 ELSE 0 END) AS biten,
               SUM(CASE WHEN a.son_tarih IS NOT NULL
@@ -614,6 +624,7 @@ export function akisOzeti(yarismaId?: string, kategoriId?: string): AkisOzeti {
                         AND (d.durum IS NULL OR d.durum <> 'tamamlandi')
                        THEN 1 ELSE 0 END) AS geciken
          FROM rapor r
+         ${sezonBirlesim}
          LEFT JOIN atama a ON a.rapor_id = r.id
          LEFT JOIN degerlendirme d
                 ON d.rapor_id = a.rapor_id AND d.hakem_id = a.hakem_id
@@ -631,6 +642,20 @@ export function akisOzeti(yarismaId?: string, kategoriId?: string): AkisOzeti {
     beklenen += a;
     biten += b;
     geciken += Number(s.geciken) || 0;
+
+    /*
+     * TAMAMLANMIŞ RAPOR "ATANMADI" SAYILMIYOR.
+     *
+     * Arşivden aktarılan raporlarda atama satırı yok ama rapor bitmiş ve
+     * puanı yazılmış. Eski sayım bunları atanmamış kabul ediyordu ve ekran
+     * kendi kendisiyle çelişiyordu: "3 sonuçlandı" ile "3 rapor hakeme
+     * atanmadı" yan yana duruyordu. İkisi de tekniken doğruydu ama
+     * bakanın çıkardığı sonuç yanlıştı — dağıtılacak iş yok.
+     */
+    if (s.durum === 'tamamlandi' && a === 0) {
+      tamamlanmis++;
+      continue;
+    }
 
     if (a === 0) atanmamis++;
     else {

@@ -271,7 +271,7 @@ export default function YarismaListesi({
                     type="button"
                     disabled={!!calisan || topluCalisiyor}
                     onClick={() => kur(y.slug!)}
-                    className="cursor-pointer rounded-lg bg-kirmizi px-3 py-1.5 text-[11.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
+                    className="dugme bg-kirmizi px-3 py-1.5 text-[11.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
                   >
                     {calisan === y.slug ? '…' : 'Kur'}
                   </button>
@@ -292,8 +292,6 @@ export default function YarismaListesi({
 
       <p className="mt-3 text-[11px] leading-relaxed font-medium text-metin-3">
         Durum sırası: {DURUM_SIRA.map((d) => durumMetni[d].etiket).join(' → ')}.
-        Kurulum ücretsizdir; yapay zekâ yalnızca rapor değerlendirmesinde
-        kullanılır.
       </p>
     </div>
   );

@@ -25,7 +25,8 @@
     "dagitim:demo": "tsx scripts/dagitim-demo.ts",
     "paket": "tsx scripts/paket-hazirla.ts",
     "paket:imaj": "tsx scripts/imaj-paketle.ts",
-    "dagitim:degerlendir": "tsx scripts/dagitim-degerlendir.ts"
+    "dagitim:degerlendir": "tsx scripts/dagitim-degerlendir.ts",
+    "ornek": "tsx scripts/ornek-veri.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.120.0",

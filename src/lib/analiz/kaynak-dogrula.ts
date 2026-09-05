@@ -415,3 +415,83 @@ export async function kaynaklariDogrula(
     agKullanildi: agKullan,
   };
 }
+
+// ─────────────────────────────────────────────── ajan için ham sorgular
+
+/**
+ * Ajanın kullandığı ADAY listeleri.
+ *
+ * Yukarıdaki `crossrefBaslik` / `openalexBaslik` en iyi adayı seçip 0.55
+ * eşiğinin altındaysa `null` dönüyor. Sabit akış için doğru: karar veren
+ * kimse yokken bir eşik gerekiyor.
+ *
+ * Ajan için YANLIŞ. "Hiçbir şey bulunamadı" ile "başlığı %48 tutan bir
+ * kayıt var" bambaşka iki durum: ikincisinde künye büyük ihtimalle
+ * gerçek ama yazımı bozuk, birincisinde uydurma şüphesi var. Eşik bu iki
+ * durumu aynı `null`'a indiriyordu. Ajan adayları ham hâliyle görüyor ve
+ * kararı kendisi veriyor — eşiğin yaptığı işi yapan taraf artık o.
+ */
+export interface Aday {
+  baslik: string;
+  yil?: number;
+  doi?: string;
+  yazar?: string;
+  /** Sorgulanan başlıkla örtüşme oranı (0-1). */
+  oran: number;
+}
+
+const AJAN_ZAMAN_ASIMI = 8000;
+
+export async function crossrefDoiSorgula(
+  doi: string,
+  iletisim = 'tprds@ornek.org',
+): Promise<Aday | null> {
+  const k = await crossrefDoi(doi, iletisim, AJAN_ZAMAN_ASIMI);
+  return k ? { baslik: k.baslik, yil: k.yil, doi: k.doi, yazar: k.yazar, oran: 1 } : null;
+}
+
+export async function crossrefAdaylar(
+  baslik: string,
+  iletisim = 'tprds@ornek.org',
+): Promise<Aday[]> {
+  const veri = (await getir(
+    `https://api.crossref.org/works?query.bibliographic=${encodeURIComponent(baslik)}`
+    + '&rows=4&select=title,author,DOI,issued',
+    iletisim, AJAN_ZAMAN_ASIMI,
+  )) as { message?: { items?: Array<Record<string, unknown>> } } | null;
+
+  return (veri?.message?.items ?? []).map((r) => {
+    const bulunan = (r.title as string[] | undefined)?.[0] ?? '';
+    return {
+      baslik: bulunan,
+      yil: (r.issued as { 'date-parts'?: number[][] } | undefined)?.['date-parts']?.[0]?.[0],
+      doi: r.DOI as string | undefined,
+      yazar: (r.author as Array<{ family?: string }> | undefined)?.[0]?.family,
+      oran: Number(benzerlik(baslik, bulunan).toFixed(2)),
+    };
+  });
+}
+
+export async function openalexAdaylar(
+  baslik: string,
+  iletisim = 'tprds@ornek.org',
+): Promise<Aday[]> {
+  const veri = (await getir(
+    `https://api.openalex.org/works?search=${encodeURIComponent(baslik)}`
+    + `&per-page=4&mailto=${encodeURIComponent(iletisim)}`,
+    iletisim, AJAN_ZAMAN_ASIMI,
+  )) as { results?: Array<Record<string, unknown>> } | null;
+
+  return (veri?.results ?? []).map((r) => {
+    const bulunan = (r.display_name as string) ?? '';
+    return {
+      baslik: bulunan,
+      yil: r.publication_year as number | undefined,
+      doi: ((r.doi as string) ?? '').replace('https://doi.org/', '') || undefined,
+      yazar: (
+        r.authorships as Array<{ author?: { display_name?: string } }> | undefined
+      )?.[0]?.author?.display_name,
+      oran: Number(benzerlik(baslik, bulunan).toFixed(2)),
+    };
+  });
+}

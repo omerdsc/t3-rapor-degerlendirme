@@ -61,15 +61,19 @@ export default async function HakemPaneli({ params }: PageProps<'/hakem/[kod]'>)
       </header>
 
       <main className="mx-auto max-w-5xl px-6 py-6">
-        <div className="mb-5 rounded-xl border border-mavi/25 bg-mavi-zemin px-4 py-3">
-          <p className="text-[11.5px] leading-relaxed font-medium text-mavi-koyu">
-            <strong className="font-bold">Puanı siz veriyorsunuz.</strong>{' '}
-            Sistem raporu önceden inceleyip bulguları ve bir puan önerisi
-            sunuyor; öneriyi kabul etmek zorunda değilsiniz. Takım adları
-            rumuzlanmıştır — değerlendirme kör yapılır. Tamamladığınız bir
-            değerlendirme değiştirilemez.
-          </p>
-        </div>
+        {/*
+          AÇIKLAMA KUTUSU KALDIRILDI.
+
+          Burada "Puanı siz veriyorsunuz… takım adları rumuzlanmıştır…
+          tamamladığınız değerlendirme değiştirilemez" diye bir paragraf
+          duruyordu. Hakem onu bir kez okuyup bir daha hiç okumuyor ve
+          her girişte panelin en üstünde yer kaplıyordu.
+
+          Anlattığı üç şeyin üçü de ZATEN EKRANDA: puan kutusunu hakem
+          dolduruyor, takım adları rumuz olarak yazıyor, tamamlanmış
+          değerlendirme kilitli açılıyor. Arayüzün kendini anlatması
+          gerekiyorsa anlatım değil arayüz düzeltilir.
+        */}
 
         {!isler.length ? (
           <p className="rounded-xl border border-dashed border-metin-3/40 bg-white px-5 py-12 text-center text-[12.5px] font-medium text-metin-2">

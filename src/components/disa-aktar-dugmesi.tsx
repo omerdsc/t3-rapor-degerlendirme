@@ -68,7 +68,7 @@ export default function DisaAktarDugmesi({
         type="button"
         disabled={calisiyor}
         onClick={indir}
-        className="cursor-pointer rounded-lg border border-cizgi bg-white px-3 py-1.5 text-[12px] font-bold transition-colors hover:bg-zemin disabled:opacity-50"
+        className="dugme border border-cizgi bg-white px-3 py-1.5 text-[12px] font-bold transition-colors hover:bg-zemin disabled:opacity-50"
       >
         {calisiyor ? 'Hazırlanıyor…' : `Sonuçları indir (${raporSayisi} rapor)`}
       </button>

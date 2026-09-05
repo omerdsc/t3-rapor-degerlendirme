@@ -7,11 +7,13 @@
  *
  * POST   · kriter ekle
  * DELETE · kriter kaldır
- * PATCH  · kategoriyi onayla / onayı geri al
+ * PATCH  · kategoriyi onayla / onayı geri al · baraj puanını ayarla
  */
 
 import { kapi } from '@/lib/yetki/koordinasyon';
-import { kategoriOnayla, kriterEkle, kriterSil } from '@/lib/depo/depo';
+import {
+  barajPuaniAyarla, kategoriGetir, kategoriOnayla, kriterEkle, kriterSil,
+} from '@/lib/depo/depo';
 import { onar, anahtar } from '@/lib/analiz/normalize';
 
 interface Govde {
@@ -22,6 +24,8 @@ interface Govde {
   puan?: number;
   olcut?: string[];
   kod?: string;
+  /** Baraj puanı; `null` barajı kaldırır, `undefined` dokunmaz. */
+  barajPuani?: number | null;
 }
 
 export async function POST(request: Request) {
@@ -107,6 +111,45 @@ export async function PATCH(request: Request) {
   }
   if (!g.yarismaId || !g.kategoriId) {
     return Response.json({ hata: 'Yarışma ve kategori gerekli.' }, { status: 400 });
+  }
+
+  /*
+   * BARAJ AYRI BİR İSTEK, ONAYLA BİRLİKTE DEĞİL.
+   *
+   * Baraj girmek rubriği onaylamak değildir. Aynı istekte ikisi de
+   * yapılsaydı, eşiği yazan koordinasyon farkında olmadan çıkarım
+   * taslağını da onaylamış olurdu.
+   */
+  if (g.barajPuani !== undefined) {
+    const kategori = kategoriGetir(g.yarismaId, g.kategoriId);
+    if (!kategori) return Response.json({ hata: 'Kategori bulunamadı.' }, { status: 404 });
+
+    if (g.barajPuani !== null) {
+      const p = Number(g.barajPuani);
+      if (!Number.isFinite(p) || p <= 0) {
+        return Response.json({ hata: 'Baraj puanı pozitif bir sayı olmalı.' }, { status: 422 });
+      }
+      /*
+       * TOPLAMDAN BÜYÜK BARAJ KİMSENİN GEÇEMEYECEĞİ BİR EŞİKTİR.
+       * Sessizce kabul edilseydi bütün kategori elenir ve sebebi
+       * aylar sonra anlaşılırdı.
+       */
+      if (p > kategori.rubrik.toplamPuan) {
+        return Response.json(
+          {
+            hata:
+              `Baraj, kategorinin toplam puanından (${kategori.rubrik.toplamPuan}) `
+              + 'büyük olamaz; kimse geçemezdi.',
+          },
+          { status: 422 },
+        );
+      }
+      const guncel = await barajPuaniAyarla(g.yarismaId, g.kategoriId, p);
+      return Response.json({ kategori: guncel });
+    }
+
+    const guncel = await barajPuaniAyarla(g.yarismaId, g.kategoriId, null);
+    return Response.json({ kategori: guncel });
   }
 
   const kategori = await kategoriOnayla(g.yarismaId, g.kategoriId, g.onayli !== false);

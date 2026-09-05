@@ -26,6 +26,13 @@ import { COKKI, anahtarDogru, yetkiKurulu } from '@/lib/yetki/koordinasyon';
  * kendi erişim koduyla giriyor. Perimetreye alınsaydı hakem koordinasyona
  * hiç yazamazdı. O uç yetkiyi kendi içinde denetliyor: kod geçerli mi ve
  * rapor o hakeme atanmış mı.
+ *
+ * `/basvuru/*`, `/api/basvuru/giris` ve `/api/basvuru/rapor` da dışarıda:
+ * yarışmacının kendi portalı. Kendi oturum katmanı var (başvuru numarası
+ * + erişim kodu) ve koordinasyon anahtarının arkasına alınsaydı raporunu
+ * kimse yükleyemezdi. Buna karşılık `/api/basvuru` — kayıt listesinin
+ * yönetildiği uç — perimetrenin İÇİNDE: matcher tam yol eşleşmesi
+ * yaptığı için alt yollar ondan etkilenmiyor.
  */
 export function proxy(istek: NextRequest) {
   if (!yetkiKurulu()) return NextResponse.next();
@@ -73,6 +80,14 @@ export const config = {
     '/koordinasyon/:yol*',
     '/api/analiz',
     '/api/atama',
+    /*
+     * YALNIZCA `/api/basvuru` — alt yollar DEĞİL.
+     * `/api/basvuru/giris` ve `/api/basvuru/rapor` yarışmacının kendi
+     * uçları; buraya alınsalardı yarışmacı koordinasyon anahtarı olmadan
+     * giriş bile yapamazdı. Next matcher'ı tam yol eşleştiriyor, bu
+     * yüzden alt yollar kendiliğinden dışarıda kalıyor.
+     */
+    '/api/basvuru',
     '/api/benzerlik',
     '/api/disa-aktar',
     '/api/hakem',

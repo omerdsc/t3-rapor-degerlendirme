@@ -20,7 +20,7 @@
  * buydu ve çağıran taraf `await` ediyor.
  */
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { randomUUID } from 'node:crypto';
 import { baglanti, bool, jsonOku, jsonYaz, sayi } from '../db/baglanti';
@@ -80,6 +80,7 @@ function raporCoz(s: Satir, mesajlar: Mesaj[], parmakizi?: SakliParmakizi): Rapo
     id: s.id as string,
     yarismaId: s.yarisma_id as string,
     kategoriId: s.kategori_id as string,
+    basvuruId: (s.basvuru_id as string) ?? undefined,
     basvuruNo: s.basvuru_no as string,
     dosyaAdi: s.dosya_adi as string,
     takim: s.takim as string,
@@ -288,6 +289,30 @@ export function kriterSil(
   });
 }
 
+/**
+ * Kategorinin baraj puanını ayarlar; `null` barajı kaldırır.
+ *
+ * `kategoriGuncelle` üzerinden geçmiyor çünkü o çağrı `duzenlendi`
+ * bayrağını true yapıyor — yani "insan rubriği gözden geçirdi ve
+ * onayladı" demek. Baraj girmek rubriği onaylamak değildir; ikisini
+ * birbirine bağlamak, baraj yazan koordinasyonun farkında olmadan
+ * çıkarım taslakını onaylamış sayılmasına yol açardı.
+ */
+export function barajPuaniAyarla(
+  yarismaId: string,
+  kategoriId: string,
+  puan: number | null,
+): Promise<YarismaKategorisi | null> {
+  const k = kategoriGetir(yarismaId, kategoriId);
+  if (!k) return Promise.resolve(null);
+  const rubrik = { ...k.rubrik };
+  if (puan === null) delete rubrik.barajPuani;
+  else rubrik.barajPuani = puan;
+  const guncel: YarismaKategorisi = { ...k, rubrik };
+  kategoriYaz(yarismaId, guncel);
+  return Promise.resolve(guncel);
+}
+
 export function kategoriOnayla(
   yarismaId: string,
   kategoriId: string,
@@ -352,13 +377,15 @@ export function raporKaydet(r: Rapor): Promise<Rapor> {
   db.exec('BEGIN');
   try {
     db.prepare(
-      `INSERT INTO rapor (id, yarisma_id, kategori_id, basvuru_no, dosya_adi,
+      `INSERT INTO rapor (id, yarisma_id, kategori_id, basvuru_id, basvuru_no,
+         dosya_adi,
          takim, takim_id, proje, icerik_kategori_kodu, yuklendi, durum,
          genel_durum, kontroller, istatistik, kaynak_dogrulamasi,
          ai_degerlendirme, rapor_kimligi, kimlik_uyusmazligi, dosya_yolu,
          nihai_puan, nihai_not, tamamlandi)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
        ON CONFLICT(id) DO UPDATE SET
+         basvuru_id = excluded.basvuru_id,
          basvuru_no = excluded.basvuru_no, takim = excluded.takim,
          takim_id = excluded.takim_id, proje = excluded.proje,
          durum = excluded.durum, genel_durum = excluded.genel_durum,
@@ -370,7 +397,7 @@ export function raporKaydet(r: Rapor): Promise<Rapor> {
          dosya_yolu = excluded.dosya_yolu, nihai_puan = excluded.nihai_puan,
          nihai_not = excluded.nihai_not, tamamlandi = excluded.tamamlandi`,
     ).run(
-      r.id, r.yarismaId, r.kategoriId, r.basvuruNo, r.dosyaAdi,
+      r.id, r.yarismaId, r.kategoriId, r.basvuruId ?? null, r.basvuruNo, r.dosyaAdi,
       r.takim, r.takimId, r.proje, r.icerikKategoriKodu ?? null,
       r.yuklendi, r.durum, r.genelDurum,
       JSON.stringify(r.kontroller ?? []), JSON.stringify(r.istatistik),
@@ -407,22 +434,62 @@ export function raporGetir(id: string): Rapor | null {
  * Rapor başına ~40 KB ve yalnızca kopya taramasında gerekiyor. Listede
  * okunsa 100 raporluk bir kategori 4 MB gereksiz veri taşırdı.
  */
-export function raporlariListele(yarismaId?: string, kategoriId?: string): Rapor[] {
-  let sql = 'SELECT * FROM rapor';
-  const p: string[] = [];
+export function raporlariListele(
+  yarismaId?: string,
+  kategoriId?: string,
+  sezon?: number,
+): Rapor[] {
+  const kosul: string[] = [];
+  const p: Array<string | number> = [];
+
   if (yarismaId) {
-    sql += ' WHERE yarisma_id = ?';
+    kosul.push('r.yarisma_id = ?');
     p.push(yarismaId);
     if (kategoriId) {
-      sql += ' AND kategori_id = ?';
+      kosul.push('r.kategori_id = ?');
       p.push(kategoriId);
     }
   }
-  sql += ' ORDER BY yuklendi DESC';
+  /*
+   * SEZON YARIŞMANIN YILI, RAPORUN YÜKLENME TARİHİ DEĞİL.
+   *
+   * "2025 raporları" demek, 2025 sezonunda yarışan takımların raporları
+   * demek. Yükleme tarihine bakılsaydı yılbaşına denk gelen bir teslim
+   * bir önceki sezona düşerdi ve arşiv, gerçek sezonundan farklı bir
+   * yılda görünürdü.
+   */
+  if (sezon !== undefined) {
+    kosul.push('y.yil = ?');
+    p.push(sezon);
+  }
+
+  const sql =
+    'SELECT r.* FROM rapor r JOIN yarisma y ON y.id = r.yarisma_id'
+    + (kosul.length ? ` WHERE ${kosul.join(' AND ')}` : '')
+    + ' ORDER BY r.yuklendi DESC';
 
   return (baglanti().prepare(sql).all(...p) as Satir[]).map((s) =>
     raporCoz(s, [], undefined),
   );
+}
+
+/**
+ * Sistemdeki sezonlar — yeniden eskiye.
+ *
+ * ── NİYE VAR ────────────────────────────────────────────────────────────
+ * Sistem yıldan yıla birikiyor: 2025'in raporları 2026'da da duruyor ve
+ * durmalı — itiraz, arşiv ve karşılaştırma için gerekli. Ama koordinasyon
+ * bu yılın işini yaparken geçen yılın 3000 raporunu listede görmemeli.
+ *
+ * Sezon listesi VERİDEN geliyor, sabit bir aralıktan değil: sistem hangi
+ * yıllara ait yarışma taşıyorsa süzgeçte o yıllar var.
+ */
+export function sezonlar(): number[] {
+  return (
+    baglanti()
+      .prepare('SELECT DISTINCT yil FROM yarisma ORDER BY yil DESC')
+      .all() as Array<{ yil: number }>
+  ).map((s) => s.yil);
 }
 
 /**
@@ -443,6 +510,7 @@ export function raporlariListele(yarismaId?: string, kategoriId?: string): Rapor
 export function cevapBekleyenYazismalar(
   yarismaId?: string,
   kategoriId?: string,
+  sezon?: number,
 ): Array<{
   raporId: string;
   basvuruNo: string;
@@ -471,7 +539,7 @@ export function cevapBekleyenYazismalar(
     'm.otomatik = 0',
     "m.kanal = 'koordinasyon'",
   ];
-  const p: string[] = [];
+  const p: Array<string | number> = [];
   if (yarismaId) {
     kosullar.unshift('r.yarisma_id = ?');
     p.push(yarismaId);
@@ -480,6 +548,19 @@ export function cevapBekleyenYazismalar(
       p.push(kategoriId);
     }
   }
+  /*
+   * SEZON SÜZGECİ BURAYA DA GEREKİYORDU.
+   *
+   * Pano 2025 arşivine geçtiğinde bütün sayaçlar süzülüyor ama bekleyen
+   * sorular süzülmüyordu: arşiv sezonunda "2 hakem sorusu cevap bekliyor"
+   * yazıyordu ve o sorular 2026'ya aitti. Süzgecin bir kısmını uygulamak,
+   * hiç uygulamamaktan kötü — kullanıcı ekranın süzüldüğünü sanıyor.
+   */
+  if (sezon !== undefined) {
+    kosullar.unshift('y.yil = ?');
+    p.push(sezon);
+  }
+  const sezonBirlesim = sezon !== undefined ? 'JOIN yarisma y ON y.id = r.yarisma_id' : '';
 
   /*
    * HAKEM BAŞINA SON İNSAN MESAJI — rapor başına değil.
@@ -501,6 +582,7 @@ export function cevapBekleyenYazismalar(
     .prepare(
       `SELECT r.id, r.basvuru_no, r.proje, m.rol, m.tarih, m.yazar, m.hakem_id
          FROM rapor r
+         ${sezonBirlesim}
          JOIN mesaj m ON m.rapor_id = r.id
         WHERE ${kosullar.join(' AND ')}
           AND m.tarih = (
@@ -676,6 +758,35 @@ export function dosyaOku(raporId: string): Buffer | null {
   return existsSync(yol) ? readFileSync(yol) : null;
 }
 
+/**
+ * Raporu ve dosyasını siler.
+ *
+ * ── NİYE VAR ────────────────────────────────────────────────────────────
+ * Yarışmacı yanlış dosyayı yükleyebiliyor ve teslim tarihine kadar
+ * düzeltmesi meşru. Eski kaydı bırakıp yenisini eklemek, aynı başvuruya
+ * iki rapor bağlar ve hakemin hangisini değerlendireceği belirsiz kalır.
+ *
+ * ── DOSYA DA SİLİNİYOR ──────────────────────────────────────────────────
+ * Yalnızca satır silinseydi PDF diskte öksüz kalırdı: hiçbir kayıttan
+ * erişilemeyen ama yer kaplayan ve yedeklere giren bir yarışmacı belgesi.
+ * Silme başarısız olursa (dosya kilitli, izin yok) işlem yine de
+ * ilerliyor — kaydı silememek, kaydı yarım silmekten kötü.
+ */
+export function raporSil(raporId: string): boolean {
+  const r = raporGetir(raporId);
+  if (!r) return false;
+
+  baglanti().prepare('DELETE FROM rapor WHERE id = ?').run(raporId);
+
+  const yol = join(DOSYA_DIZINI(), `${raporId}.pdf`);
+  try {
+    if (existsSync(yol)) rmSync(yol);
+  } catch {
+    // Yoksay: veritabanı kaydı gitti, asıl iş tamam.
+  }
+  return true;
+}
+
 // ------------------------------------------------------------------- pano
 
 export interface PanoOzeti {
@@ -695,8 +806,12 @@ export interface PanoOzeti {
   onbellektenGelen: number;
 }
 
-export function panoOzeti(yarismaId?: string, kategoriId?: string): PanoOzeti {
-  const raporlar = raporlariListele(yarismaId, kategoriId);
+export function panoOzeti(
+  yarismaId?: string,
+  kategoriId?: string,
+  sezon?: number,
+): PanoOzeti {
+  const raporlar = raporlariListele(yarismaId, kategoriId, sezon);
 
   const tamamlananlar = raporlar.filter(
     (r) => r.durum === 'tamamlandi' && r.hakemToplam !== undefined && r.aiDegerlendirme,

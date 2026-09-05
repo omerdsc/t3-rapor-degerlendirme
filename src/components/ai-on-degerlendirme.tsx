@@ -76,7 +76,6 @@ export default function AiOnDegerlendirme({
   olcutler,
   ai,
   hakemAtandi,
-  maliyetGoster,
 }: {
   raporId: string;
   olcutler: RubrikKriteri[];
@@ -88,7 +87,6 @@ export default function AiOnDegerlendirme({
    * İstemci bileşeni `process.env` okuyamaz; okusa da bu bir sunum
    * tercihi, istemcinin kararı değil.
    */
-  maliyetGoster: boolean;
 }) {
   const yonlendir = useRouter();
   const [calisiyor, setCalisiyor] = useState(false);
@@ -107,7 +105,6 @@ export default function AiOnDegerlendirme({
           tur: 'bilgi',
           metin:
             'Ön değerlendirme hazır'
-            + (maliyetGoster ? ` · $${(d.maliyet ?? 0).toFixed(4)}` : '')
             + (d.sekilSayisi ? ` · ${d.sekilSayisi} şekil okundu` : '')
             + (d.ozetMaliyeti ? ' · şartname özeti de üretildi' : ''),
         });
@@ -131,8 +128,7 @@ export default function AiOnDegerlendirme({
               Ölçüt bazında puan önerisi, gerekçe ve rapordan alıntı üretir.
               Hakem bunu hazır bulur; kabul etmek zorunda değildir.{' '}
               <strong className="font-bold text-metin">
-                Sistemin tek yapay zekâ adımı
-                {maliyetGoster ? ' — rapor başına ~$0,13' : ''}.
+                Sistemin tek yapay zekâ adımı.
               </strong>{' '}
               Aynı rapor ikinci kez istenirse önbellekten gelir, yeniden
               hesaplanmaz.
@@ -142,7 +138,7 @@ export default function AiOnDegerlendirme({
             type="button"
             disabled={calisiyor}
             onClick={baslat}
-            className="shrink-0 cursor-pointer rounded-lg bg-kirmizi px-4 py-2.5 text-[12.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
+            className="shrink-0 dugme bg-kirmizi px-4 py-2.5 text-[12.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
           >
             {calisiyor ? 'Değerlendiriliyor… (~90 sn)' : 'Ön değerlendirmeyi başlat'}
           </button>
@@ -324,7 +320,6 @@ export default function AiOnDegerlendirme({
       )}
 
       <div className="flex flex-wrap gap-x-6 gap-y-1 border-t border-cizgi px-4 py-2 text-[10.5px] font-medium text-metin-2">
-        {maliyetGoster && <span>maliyet ${ai.maliyet.toFixed(4)}</span>}
         <span>süre {Math.round(ai.sureMs / 1000)} sn</span>
         <span>bu öneri hakem panelinde de görünüyor</span>
       </div>

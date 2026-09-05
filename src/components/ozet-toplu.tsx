@@ -131,7 +131,6 @@ export default function OzetToplu() {
     return (
       <p className="rounded-xl border border-yesil/25 bg-yesil-zemin px-4 py-3 text-[11.5px] font-semibold text-yesil-koyu">
         Bütün şartname özetleri hazır ({durum.ozetiHazirKategori} kategori).
-        Yapay zekâ her değerlendirmede bunları okuyor.
       </p>
     );
   }
@@ -141,26 +140,28 @@ export default function OzetToplu() {
       <div className="flex flex-wrap items-center gap-2.5">
         <div className="min-w-0 flex-1">
           <h2 className="text-[13px] font-bold">Şartname özetleri</h2>
+          {/*
+            METİN KISALDI.
+
+            Önce dört cümleydi ve "çağrı" gibi teknik bir birim
+            kullanıyordu — kullanıcının bilmesi gereken bir şey değil.
+            Kalan tek bilgi şu: özet eksik olsa da değerlendirme çalışıyor,
+            hazırlamak isteğe bağlı. Gerisi düğmenin arkasında.
+          */}
           <p className="mt-0.5 text-[11.5px] leading-relaxed font-medium text-metin-2">
-            {durum.ozetiHazirKategori > 0 && `${durum.ozetiHazirKategori} kategoride hazır. `}
-            {durum.farkliBelge} şartname için özet yok. Özet olmadan da
-            değerlendirme yapılır — o kategoride ilk raporda kendiliğinden
-            üretilir. Hepsini şimdiden hazırlamak istersen{' '}
-            <strong className="font-bold text-metin">
-              {durum.farkliBelge} çağrı
-            </strong>{' '}
-            yapılır
-            {durum.maliyetGoster && durum.tahminiMaliyet !== undefined
-              ? `, tahmini tutar $${durum.tahminiMaliyet.toFixed(2)}`
+            {durum.ozetiHazirKategori > 0
+              ? `${durum.ozetiHazirKategori} kategoride hazır, `
               : ''}
-            .
+            {durum.farkliBelge} kategoride eksik. Özet olmadan da
+            değerlendirme yapılıyor — eksik olanlar o kategorideki ilk
+            raporda kendiliğinden hazırlanır.
           </p>
         </div>
         <button
           type="button"
           disabled={calisiyor}
           onClick={() => setAcik((a) => !a)}
-          className="shrink-0 cursor-pointer rounded-lg border border-cizgi px-3 py-1.5 text-[12px] font-bold transition-colors hover:bg-zemin disabled:opacity-50"
+          className="shrink-0 dugme border border-cizgi px-3 py-1.5 text-[12px] font-bold transition-colors hover:bg-zemin disabled:opacity-50"
         >
           {acik ? 'Kapat' : 'Hepsini hazırla…'}
         </button>
@@ -171,9 +172,6 @@ export default function OzetToplu() {
           <p className="mb-2.5 text-[11.5px] leading-relaxed font-medium text-metin-2">
             <strong className="font-bold text-metin">{durum.farkliBelge} çağrı</strong>{' '}
             yapılacak
-            {durum.maliyetGoster && durum.tahminiMaliyet !== undefined
-              ? `, tahmini tutar $${durum.tahminiMaliyet.toFixed(2)}`
-              : ''}
             .
             {durum.ayniBelgeyiPaylasan > 0 && (
               <>
@@ -191,19 +189,17 @@ export default function OzetToplu() {
               type="button"
               disabled={calisiyor}
               onClick={basla}
-              className="cursor-pointer rounded-lg bg-kirmizi px-3.5 py-2 text-[12px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
+              className="dugme bg-kirmizi px-3.5 py-2 text-[12px] font-bold text-white transition-colors hover:bg-kirmizi-koyu disabled:opacity-50"
             >
               {calisiyor
                 ? 'Hazırlanıyor…'
-                : durum.maliyetGoster && durum.tahminiMaliyet !== undefined
-                  ? `Başlat (~$${durum.tahminiMaliyet.toFixed(2)})`
-                  : `Başlat (${durum.farkliBelge} çağrı)`}
+                : `Başlat (${durum.farkliBelge} çağrı)`}
             </button>
             {calisiyor && (
               <button
                 type="button"
                 onClick={() => setDur(true)}
-                className="cursor-pointer rounded-lg border border-cizgi px-3 py-2 text-[12px] font-bold transition-colors hover:bg-zemin"
+                className="dugme border border-cizgi px-3 py-2 text-[12px] font-bold transition-colors hover:bg-zemin"
               >
                 Durdur
               </button>
@@ -216,11 +212,11 @@ export default function OzetToplu() {
                 <span className="font-bold">
                   {ilerleme.bitti}/{durum.hedefler.length}
                 </span>
-                <span className="font-medium text-metin-2">
-                  harcanan ${ilerleme.harcanan.toFixed(4)}
-                  {ilerleme.kopyalanan > 0 &&
-                    ` · ${ilerleme.kopyalanan} kategoriye ücretsiz kopyalandı`}
-                </span>
+                {ilerleme.kopyalanan > 0 && (
+                  <span className="font-medium text-metin-2">
+                    {ilerleme.kopyalanan} kategoriye kopyalandı
+                  </span>
+                )}
               </div>
               <div className="h-1.5 overflow-hidden rounded-full bg-zemin">
                 <div

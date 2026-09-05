@@ -245,7 +245,7 @@ export default function AnalizPaneli() {
         <button
           type="button"
           onClick={() => girdiRef.current?.click()}
-          className="shrink-0 cursor-pointer rounded-lg bg-kirmizi px-4 py-2.5 text-[12.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu"
+          className="shrink-0 dugme bg-kirmizi px-4 py-2.5 text-[12.5px] font-bold text-white transition-colors hover:bg-kirmizi-koyu"
         >
           Dosya seç
         </button>

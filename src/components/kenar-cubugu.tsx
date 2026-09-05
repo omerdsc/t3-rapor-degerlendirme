@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import PortalDonus from './portal-donus';
-import Bildirim, { type BekleyenSoru } from './bildirim';
 
 /*
  * KOORDİNASYON MENÜSÜ.
@@ -16,22 +15,31 @@ import Bildirim, { type BekleyenSoru } from './bildirim';
  *
  * Her madde bir İŞ:
  *   Panel          → şimdi ne yapmalıyım
- *   Raporlar       → rapor değerlendir
- *   Kopya Kontrolü → kategoriyi kopyaya karşı tara
+ *   Başvurular     → kayıt listesi ve erişim kodları
+ *   Raporlar       → rapor değerlendir, kopya kontrolü
  *   Hakemler       → kayıt ve rapor atama
  *   Yarışmalar     → yarışma kur, ölçütleri onayla, şablonu güncelle
+ *
+ * Başvurular, Raporlar'ın ÜSTÜNDE: sıra işin akışını izliyor. Başvuru
+ * kaydı açılmadan rapor gelmiyor, çünkü raporu artık yarışmacı kendisi
+ * yüklüyor ve bunu ancak kaydı varsa yapabiliyor.
  */
 const MENU = [
   { yol: '/koordinasyon', ad: 'Panel', ipucu: 'Bekleyen işler ve özet' },
-  { yol: '/koordinasyon/raporlar', ad: 'Raporlar', ipucu: 'Rapor değerlendir' },
   {
-    yol: '/koordinasyon/benzerlik',
-    ad: 'Kopya Kontrolü',
-    // "Kategoriyi tara" — çünkü öteki beş kontrolden farklı olarak bu,
-    // tek rapora değil raporlar ARASINA bakıyor ve kategori seçmeden
-    // anlamlı bir cevabı yok.
-    ipucu: 'Kategoriyi tara — raporlar arası',
+    yol: '/koordinasyon/basvurular',
+    ad: 'Başvurular',
+    ipucu: 'Kayıt listesi ve erişim kodları',
   },
+  /*
+   * KOPYA KONTROLÜ MENÜDEN KALKTI.
+   * Kendi maddesiydi ve koordinasyon oraya ancak aklına gelirse
+   * gidiyordu — kopya şüphesini görmek için kopya şüphesi olduğunu
+   * tahmin etmesi gerekiyordu. Artık Raporlar'ın bir sekmesi; ayrıca
+   * panoda sayacı var. Menüde bir madde eksildi, işlev iki yerde
+   * görünür oldu.
+   */
+  { yol: '/koordinasyon/raporlar', ad: 'Raporlar', ipucu: 'Değerlendir · kopya kontrolü' },
   { yol: '/koordinasyon/hakemler', ad: 'Hakemler', ipucu: 'Kayıt ve rapor atama' },
   { yol: '/koordinasyon/yarismalar', ad: 'Yarışmalar', ipucu: 'Kurulum ve ölçütler' },
 ];
@@ -52,14 +60,7 @@ function Cikis() {
   );
 }
 
-export default function KenarCubugu({
-  yetkiKurulu,
-  bekleyenSorular = [],
-}: {
-  yetkiKurulu: boolean;
-  /** Hakemden gelip cevaplanmayan mesajlar — sunucudan geliyor. */
-  bekleyenSorular?: BekleyenSoru[];
-}) {
+export default function KenarCubugu({ yetkiKurulu }: { yetkiKurulu: boolean }) {
   const yol = usePathname();
 
   return (
@@ -83,14 +84,6 @@ export default function KenarCubugu({
           </span>
         </span>
       </Link>
-
-      {/*
-        BİLDİRİM MENÜNÜN ÜSTÜNDE.
-        Bekleyen soru önce yalnızca panoda görünüyordu; koordinasyon başka
-        bir ekranda çalışırken hiçbir şey göremiyordu. Bildirim kullanıcıyı
-        BULMALI — kenar çubuğu her koordinasyon ekranında duruyor.
-      */}
-      <Bildirim sorular={bekleyenSorular} />
 
       <nav className="flex flex-1 flex-col gap-0.5 p-3">
         {MENU.map((m) => {
@@ -118,37 +111,20 @@ export default function KenarCubugu({
 
       </nav>
 
-      {/*
-        HAKEM PANELİNE GEÇİŞ — menüde değil, altta ve "önizleme" olarak.
-        Menüye koymak onu koordinasyonun bir işi gibi gösterirdi; oysa
-        koordinasyonun işi değil, DESTEK aracı. Ama hiç olmaması da yanlıştı:
-        kullanıcı hakem tarafına geçmeye çalıştı ve geçemedi.
-      */}
-      <div className="border-t border-lacivert-3 px-3.5 py-3">
-        <Link
-          href="/koordinasyon/hakemler#onizleme"
-          className="flex items-center gap-2 rounded-lg px-2 py-2 transition-colors hover:bg-lacivert-2"
-        >
-          <svg viewBox="0 0 24 24" className="size-3.5 shrink-0 stroke-metin-2" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-            <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
-            <circle cx="12" cy="12" r="3" />
-          </svg>
-          <span>
-            <span className="block text-[11.5px] font-semibold text-metin-2">
-              Hakem panelini önizle
-            </span>
-            <span className="mt-0.5 block text-[9px] font-medium text-metin-2/60">
-              Hakem ne görüyor
-            </span>
-          </span>
-        </Link>
-      </div>
-
       <div className="border-t border-lacivert-3 p-3.5">
-        <p className="mb-2.5 text-[10px] leading-relaxed font-medium text-metin-2/70">
-          Yapay zekâ nihai karar verici değildir. Kontrol, analiz ve ön
-          değerlendirme sunar; kararı hakem verir.
-        </p>
+        {/*
+          KENAR ÇUBUĞUNDAKİ İLKE METNİ KALDIRILDI.
+
+          "Yapay zekâ nihai karar verici değildir…" burada her koordinasyon
+          ekranında, her açılışta duruyordu. Doğru bir cümle ama kenar
+          çubuğu tekrarın en pahalı olduğu yer: kullanıcı onu ilk gün
+          okuyor, sonraki her gün görmezden geliyor ve sonunda okumadığı
+          bir metin ekranın dibinde yer kaplıyor.
+
+          İlke metinle değil YAPIYLA uygulanıyor zaten: koordinasyon
+          panelinde puanlama formu yok, hakem onaylamadan yarışmacıya
+          hiçbir metin gitmiyor.
+        */}
         {/*
           Portal seçimine dönüş, kenar çubuğunun dibinde 10 piksellik gri
           bir yazıydı ve bulunamıyordu. Üç portalda da aynı düğme duruyor

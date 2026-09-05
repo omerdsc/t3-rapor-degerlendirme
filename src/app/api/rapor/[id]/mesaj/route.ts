@@ -26,6 +26,7 @@ import {
   hakemKodIle, raporunDegerlendirmeleri, raporunHakemleri,
 } from '@/lib/db/hakem-depo';
 import { hakeminGorebilecekleri, kurulAcikMi, type Kanal } from '@/lib/db/yazisma-kanal';
+import { hakemGozuyle } from '@/lib/gorunum/hakem-takma-ad';
 import { mesajEkle, mesajlariGetir, raporGetir } from '@/lib/depo/depo';
 import { onar } from '@/lib/analiz/normalize';
 import type { Mesaj } from '@/lib/depo/tipler';
@@ -42,6 +43,7 @@ function atananDurumu(raporId: string) {
   const degerlendirmeler = raporunDegerlendirmeleri(raporId);
   return raporunHakemleri(raporId).map((h) => ({
     id: h.id,
+    ad: h.ad,
     tamamladi: degerlendirmeler.some(
       (d) => d.hakemId === h.id && d.durum === 'tamamlandi',
     ),
@@ -63,6 +65,35 @@ function gonderenKim(istek: Request, raporId: string, kod?: string): Gonderen | 
     return { yazar: hakem.ad, rol: 'hakem', hakemId: hakem.id };
   }
   return kapi(istek) ? null : { yazar: 'Koordinasyon', rol: 'koordinasyon' };
+}
+
+/**
+ * Yanıta girecek mesaj listesi — kim soruyorsa ona göre.
+ *
+ * İki süzgeç üst üste: önce HANGİ mesajları göreceği (`hakeminGorebilecekleri`),
+ * sonra o mesajlarda KİMİ göreceği (`hakemGozüyle`). İkincisi olmadan kurul
+ * kanalında hakem, öteki hakemin gerçek adını okuyordu — KVKK'nın veri
+ * minimizasyonu ilkesine aykırı ve kör değerlendirmeyi de bozan bir sap.
+ *
+ * Koordinasyon iki süzgecin de dışında: atamayı o yapıyor, itiraz hâlinde
+ * kaydı o tutuyor.
+ */
+function gorunenMesajlar(
+  hepsi: Mesaj[],
+  gonderen: Gonderen,
+  atananlar: Array<{ id: string; ad: string; tamamladi: boolean }>,
+  kurulAcik: boolean,
+): Mesaj[] {
+  if (gonderen.rol === 'koordinasyon') return hepsi;
+  return hakemGozuyle(
+    hakeminGorebilecekleri(
+      hepsi.map((m) => ({ ...m, kanal: m.kanal ?? 'koordinasyon' })),
+      gonderen.hakemId!,
+      kurulAcik,
+    ),
+    atananlar,
+    gonderen.hakemId!,
+  );
 }
 
 /** Kanal adı doğrula; tanınmayan değer varsayılana düşüyor. */
@@ -90,14 +121,7 @@ export async function GET(istek: Request, ctx: RouteContext<'/api/rapor/[id]/mes
    * Koordinasyon HER ŞEYİ görüyor ve görmesi gerekiyor — aracılık eden
    * taraf o. Hakem yalnızca kendi yazışmasını ve (açıksa) kurulu görüyor.
    */
-  const mesajlar =
-    gonderen.rol === 'koordinasyon'
-      ? hepsi
-      : hakeminGorebilecekleri(
-          hepsi.map((m) => ({ ...m, kanal: m.kanal ?? 'koordinasyon' })),
-          gonderen.hakemId!,
-          kurulAcik,
-        );
+  const mesajlar = gorunenMesajlar(hepsi, gonderen, atananlar, kurulAcik);
 
   return Response.json({
     mesajlar,
@@ -216,14 +240,7 @@ export async function POST(istek: Request, ctx: RouteContext<'/api/rapor/[id]/me
   });
 
   const hepsi = mesajlariGetir(id);
-  const mesajlar =
-    gonderen.rol === 'koordinasyon'
-      ? hepsi
-      : hakeminGorebilecekleri(
-          hepsi.map((m) => ({ ...m, kanal: m.kanal ?? 'koordinasyon' })),
-          gonderen.hakemId!,
-          kurulAcik,
-        );
+  const mesajlar = gorunenMesajlar(hepsi, gonderen, atananlar, kurulAcik);
 
   return Response.json(
     {
