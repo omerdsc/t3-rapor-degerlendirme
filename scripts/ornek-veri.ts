@@ -38,6 +38,7 @@ import {
   takimKur, takimaKatil, yarismaciKaydet, yarismacininTakimlari,
 } from '@/lib/db/yarismaci-depo';
 import { dosyaKaydet, kimlik, raporSil, yarismalariListele } from '@/lib/depo/depo';
+import { dosyaOku } from '@/lib/depo/depo';
 import { pdfUret } from './ornek-pdf';
 import { raporSayfalari } from './ornek-rapor-metni';
 import type { Rapor } from '@/lib/depo/tipler';
@@ -210,6 +211,22 @@ function ornekRapor(g: {
   };
 }
 
+/*
+ * BORU HATTI KİPİ — `--boruhatti`.
+ *
+ * Varsayılan kip rapor kaydını doğrudan yazıyor: yerelde geliştirirken
+ * her tohumlamada rapor başına ~10 saniyelik kaynak doğrulamasını
+ * beklemek işi durdururdu.
+ *
+ * DAĞITIMDA bu doğru seçim değil. Doğrudan yazılan raporun otomatik
+ * kontrolleri boş kalıyor ve jüri "Otomatik ön kontroller" şeridini boş
+ * görüyor — altı MVP maddesinden biri ekranda hiç görünmüyor. Bu kip
+ * raporu gerçek boru hattından (`raporuAl`) geçiriyor: şablon uyumu,
+ * başlık denetimi, künye okuma, kaynak doğrulama, parmak izi ve
+ * benzerlik tazeleme — hepsi gerçekte nasıl çalışıyorsa öyle.
+ */
+const BORU_HATTI = process.argv.includes('--boruhatti');
+
 // ─────────────────────────────────────────────────────────────── kur
 
 async function kur() {
@@ -302,12 +319,28 @@ async function kur() {
     }
 
     // ---- rapor
-    const rapor = ornekRapor({
+    const taslak = ornekRapor({
       yarismaId: yarisma.id, kategoriId: kategori.id,
       basvuruId: basvuru.id, basvuruNo: basvuru.basvuruNo,
       takim: takim.ad, proje: b.proje, gunOnce: 3 + i * 4,
     });
-    await raporKaydet(rapor);
+
+    let rapor = taslak;
+    if (BORU_HATTI) {
+      const { raporuAl } = await import('@/lib/analiz/rapor-alma');
+      const bayt = dosyaOku(taslak.id);
+      const sonuc = await raporuAl({
+        veri: new Uint8Array(bayt!),
+        dosyaAdi: taslak.dosyaAdi,
+        yarisma,
+        kategori,
+        beyan: { takim: takim.ad, proje: b.proje, basvuruNo: basvuru.basvuruNo },
+        basvuruId: basvuru.id,
+      });
+      rapor = sonuc.rapor;
+    } else {
+      await raporKaydet(taslak);
+    }
 
     if (b.asama === 'rapor') {
       console.log(`  ${basvuru.basvuruNo}  ${b.proje.slice(0, 34).padEnd(36)} rapor teslim edildi`);
