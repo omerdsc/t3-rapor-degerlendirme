@@ -105,7 +105,55 @@ function main(): void {
   db.exec('PRAGMA foreign_keys = ON');
 
   const once: Record<string, number> = {};
-  const TABLOLAR = ['rapor', 'parmakizi', 'atama', 'degerlendirme', 'mesaj', 'hakem'];
+  /*
+   * KİŞİSEL TABLO LİSTESİ — VE NİYE ŞEMAYLA KARŞILAŞTIRILIYOR.
+   *
+   * Bu liste bir kez elle yazıldı ve öyle kaldı. Yarışmacı portalı gelince
+   * `yarismaci`, `takim`, `takim_uyesi`, `basvuru`, `basvuru_mesaji` ve
+   * `oturum` tabloları eklendi; liste onları bilmediği için betık 11
+   * yarışmacı hesabını (parola özetleriyle), 4 takımı, 10 başvuruyu ve
+   * 3 AÇIK OTURUMU pakete koyup "kişi kaydı YOK" diye yeşil tik bastı.
+   * Ölçüldü.
+   *
+   * Bir daha olmaması için liste ŞEMAYLA KARŞILAŞTIRILIYOR: veritabanında
+   * ne KAMİ ne de KİŞİSEL diye işaretlenmiş bir tablo varsa betık duruyor.
+   * Yeni tablo ekleyen kişi hangi kovaya ait olduğunu söylemek zorunda —
+   * unutmak artık sessiz bir sızıntı değil, gürültülü bir hata.
+   */
+  const KISISEL = [
+    // Silme SIRASI: bağımlı olan önce.
+    'mesaj', 'degerlendirme', 'atama', 'parmakizi',
+    'kaynakca_denetimi', 'kopya_sorusturmasi',
+    'basvuru_mesaji', 'rapor', 'basvuru',
+    'takim_uyesi', 'takim', 'oturum', 'yarismaci', 'hakem',
+  ];
+  const KAMUYA_ACIK = ['yarisma', 'kategori', 'sema_surumu'];
+
+  const semadakiler = (
+    db.prepare(
+      "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'",
+    ).all() as Array<{ name: string }>
+  ).map((t) => t.name);
+
+  const siniflanmamis = semadakiler.filter(
+    (t) => !KISISEL.includes(t) && !KAMUYA_ACIK.includes(t),
+  );
+  if (siniflanmamis.length) {
+    db.close();
+    console.error(
+      [
+        '',
+        `  Sınıflandırılmamış tablo: ${siniflanmamis.join(', ')}`,
+        '  scripts/dagitim-verisi.ts içindeki KISISEL ya da KAMUYA_ACIK',
+        '  listesine ekleyin. Kişisel veri taşıyor olabilir; tahmin',
+        '  etmiyoruz, söylemenizi istiyoruz.',
+      ].join('\n'),
+    );
+    process.exit(1);
+  }
+
+  // Yalnızca gerçekten var olanlar — eski veritabanında kimi tablo olmayabilir.
+  const TABLOLAR = KISISEL.filter((t) => semadakiler.includes(t));
   for (const t of TABLOLAR) {
     once[t] = (db.prepare(`SELECT COUNT(*) n FROM ${t}`).get() as { n: number }).n;
   }
@@ -117,12 +165,7 @@ function main(): void {
    * kalmasın. `foreign_keys` varsayılan olarak KAPALI geliyor ve bu
    * projede bir kez bunun bedeli ödendi.
    */
-  db.exec('DELETE FROM mesaj');
-  db.exec('DELETE FROM degerlendirme');
-  db.exec('DELETE FROM atama');
-  db.exec('DELETE FROM parmakizi');
-  db.exec('DELETE FROM rapor');
-  db.exec('DELETE FROM hakem');
+  for (const t of TABLOLAR) db.exec(`DELETE FROM "${t}"`);
   db.exec('VACUUM');
 
   const kalan: Record<string, number> = {};
@@ -167,7 +210,13 @@ function main(): void {
   const kacBelge = existsSync(join(hedef, 'dosyalar'))
     ? readdirSync(join(hedef, 'dosyalar')).length
     : 0;
-  const dogru = kalan.rapor === 0 && kalan.hakem === 0 && kacBelge === 0;
+  /*
+   * Doğrulama artık İKİ tabloya değil, kişisel sayılan HER tabloya bakıyor.
+   * Eskiden yalnızca `rapor` ve `hakem` kontrol ediliyordu; hesaplar dolu
+   * olsa bile yeşil tik basılıyordu.
+   */
+  const dolu = TABLOLAR.filter((t) => (kalan[t] ?? 0) > 0);
+  const dogru = dolu.length === 0 && kacBelge === 0;
 
   console.log(`\n  hedef veritabanı: ${boyut(hedefDb)}`);
   console.log(
