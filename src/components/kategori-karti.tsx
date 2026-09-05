@@ -351,11 +351,41 @@ export default function KategoriKarti({
           </div>
 
           {rubrik.toplamPuan !== 100 && (
-            <p className="mt-2 text-[10.5px] leading-relaxed font-medium text-amber-koyu">
-              Ölçüt toplamı {rubrik.toplamPuan} puan, 100 değil. Şablon
-              ağırlıkları vermemişse eşit dağıtılmış olabilir — gerçek
-              ağırlıklar şartnamede olabilir.
-            </p>
+            /*
+              ÖLÇEKLEME OTOMATİK DEĞİL, DÜĞMEYLE.
+
+              Sessizce 100'e çekilseydi yarışmanın kendi ağırlıklandırması
+              fark edilmeden değişirdi; çıkarım hatası taşıyan bir rubrik de
+              düzeltilmiş gibi görünüp gizlenirdi. Koordinasyon önce
+              uyarıyı okuyor, sonra bilerek basıyor.
+            */
+            <div className="mt-2 flex flex-wrap items-center gap-2 rounded-lg bg-amber-zemin px-3 py-2">
+              <p className="min-w-0 flex-1 text-[10.5px] leading-relaxed font-medium text-amber-koyu">
+                Ölçüt toplamı <strong className="font-bold">{rubrik.toplamPuan} puan</strong>,
+                100 değil. Şablon ağırlıkları vermemişse eşit dağıtılmış olabilir.
+              </p>
+              <button
+                type="button"
+                disabled={!!calisiyor}
+                onClick={() =>
+                  istek(
+                    '/api/kriter',
+                    {
+                      method: 'PATCH',
+                      headers: { 'content-type': 'application/json' },
+                      body: JSON.stringify({
+                        yarismaId, kategoriId: kategori.id, olcekle: true,
+                      }),
+                    },
+                    'Rubrik 100 puana ölçeklendi; ağırlık oranları korundu.',
+                    'olcek',
+                  )
+                }
+                className="dugme shrink-0 border border-amber-koyu/30 bg-white px-3 py-1 text-[11.5px] font-bold text-amber-koyu hover:bg-amber-zemin disabled:opacity-50"
+              >
+                {calisiyor === 'olcek' ? '…' : '100 puana ölçekle'}
+              </button>
+            </div>
           )}
 
           {/*

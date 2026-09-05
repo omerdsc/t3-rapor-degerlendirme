@@ -7,12 +7,13 @@
  *
  * POST   · kriter ekle
  * DELETE · kriter kaldır
- * PATCH  · kategoriyi onayla / onayı geri al · baraj puanını ayarla
+ * PATCH  · kategoriyi onayla · baraj puanı · rubriği 100'e ölçekle
  */
 
 import { kapi } from '@/lib/yetki/koordinasyon';
 import {
   barajPuaniAyarla, kategoriGetir, kategoriOnayla, kriterEkle, kriterSil,
+  rubrigiOlcekle,
 } from '@/lib/depo/depo';
 import { onar, anahtar } from '@/lib/analiz/normalize';
 
@@ -26,6 +27,8 @@ interface Govde {
   kod?: string;
   /** Baraj puanı; `null` barajı kaldırır, `undefined` dokunmaz. */
   barajPuani?: number | null;
+  /** true ise rubrik 100 puana ölçeklenir. */
+  olcekle?: boolean;
 }
 
 export async function POST(request: Request) {
@@ -111,6 +114,12 @@ export async function PATCH(request: Request) {
   }
   if (!g.yarismaId || !g.kategoriId) {
     return Response.json({ hata: 'Yarışma ve kategori gerekli.' }, { status: 400 });
+  }
+
+  if (g.olcekle) {
+    const guncel = await rubrigiOlcekle(g.yarismaId, g.kategoriId);
+    if (!guncel) return Response.json({ hata: 'Kategori bulunamadı.' }, { status: 404 });
+    return Response.json({ kategori: guncel });
   }
 
   /*

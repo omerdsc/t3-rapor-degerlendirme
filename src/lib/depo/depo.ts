@@ -313,6 +313,59 @@ export function barajPuaniAyarla(
   return Promise.resolve(guncel);
 }
 
+/**
+ * Rubriği 100 puana ölçekler — AĞIRLIK ORANLARINI KORUYARAK.
+ *
+ * Şablondan çıkarılan ölçütlerin toplamı her zaman 100 etmiyor; kimi
+ * şablon ağırlık vermiyor, kimi 120 puanlık bir tablo taşıyor. Koordinasyon
+ * elle ölçüt ekleyince de toplam kolayca 100'ü aşıyor.
+ *
+ * ÖLÇEKLEME OTOMATİK DEĞİL, BİR KARAR. Sessizce yapılsaydı yarışmanın kendi
+ * ağırlıklandırması fark edilmeden değişirdi; çıkarım hatası olan bir rubrik
+ * de düzeltilmiş gibi görünüp gizlenirdi. Koordinasyon önce uyarıyı
+ * görüyor, sonra bilerek basıyor.
+ *
+ * ── ARTIK PUAN EN BÜYÜK ÖLÇÜTE VERİLİYOR ──────────────────────────────
+ * Ondalığa yuvarlama sonrası toplam 99,9 ya da 100,1 çıkabiliyor. Fark tek
+ * bir ölçüte — en büyüğüne — ekleniyor, böylece toplam TAM 100 oluyor.
+ * En küçüğe eklenseydi oransal sapma orada en büyük olurdu.
+ */
+export function rubrigiOlcekle(
+  yarismaId: string,
+  kategoriId: string,
+  hedef = 100,
+): Promise<YarismaKategorisi | null> {
+  const k = kategoriGetir(yarismaId, kategoriId);
+  if (!k) return Promise.resolve(null);
+
+  const kriterler = k.rubrik.kriterler;
+  const toplam = kriterler.reduce((t, x) => t + x.puan, 0);
+  if (!kriterler.length || toplam <= 0) return Promise.resolve(k);
+
+  const oran = hedef / toplam;
+  const yeni = kriterler.map((x) => ({
+    ...x,
+    puan: Math.round(x.puan * oran * 10) / 10,
+  }));
+
+  const artik = Math.round((hedef - yeni.reduce((t, x) => t + x.puan, 0)) * 10) / 10;
+  if (artik !== 0) {
+    let enBuyuk = 0;
+    for (let i = 1; i < yeni.length; i++) if (yeni[i].puan > yeni[enBuyuk].puan) enBuyuk = i;
+    yeni[enBuyuk] = {
+      ...yeni[enBuyuk],
+      puan: Math.round((yeni[enBuyuk].puan + artik) * 10) / 10,
+    };
+  }
+
+  const guncel: YarismaKategorisi = {
+    ...k,
+    rubrik: { ...k.rubrik, kriterler: yeni, toplamPuan: hedef },
+  };
+  kategoriYaz(yarismaId, guncel);
+  return Promise.resolve(guncel);
+}
+
 export function kategoriOnayla(
   yarismaId: string,
   kategoriId: string,
