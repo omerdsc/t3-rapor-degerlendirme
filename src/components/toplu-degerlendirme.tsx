@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 /**
  * Toplu ön değerlendirme — PRD AKIŞ 01'in "AI analiz sürecini başlatır" adımı.
@@ -65,6 +65,28 @@ export default function TopluDegerlendirme({
     hata: string[];
   } | null>(null);
 
+  /*
+   * DURDURMA BAYRAĞI HEM STATE HEM REF.
+   *
+   * `basla()` içindeki döngü bir kez kuruluyor ve dakikalarca koşuyor.
+   * Durdurma yalnızca state'te tutulsaydı döngü, çağrıldığı render'da
+   * yakaladığı `durdur` değerini okurdu — kullanıcı "Durdur"a bastığında
+   * yeni bir render ve yeni bir `basla` üretilir ama KOŞMAKTA OLAN döngü
+   * hâlâ eski `false`'u görürdü. Düğme "Durduruluyor…" yazar, raporlar
+   * işlenmeye ve para harcanmaya devam ederdi; döngü ancak liste bitince
+   * ya da bütçe tavanı 402 dönünce dururdu.
+   *
+   * Ref, render'dan bağımsız tek bir kutu: döngü her turda güncel değeri
+   * okuyor. State ise düğmenin etiketi için duruyor — ikisi birlikte
+   * `durdurIste()` ile yazılıyor ki ayrışmasınlar.
+   */
+  const durdurRef = useRef(false);
+
+  function durdurIste() {
+    durdurRef.current = true;
+    setDurdur(true);
+  }
+
   /* Hedef listesi ve maliyet tahmini — GET hiçbir şey harcamıyor. */
   useEffect(() => {
     let iptal = false;
@@ -87,6 +109,7 @@ export default function TopluDegerlendirme({
   async function basla() {
     if (!durum) return;
     setCalisiyor(true);
+    durdurRef.current = false;
     setDurdur(false);
     let harcanan = 0;
     let atlanan = 0;
@@ -94,7 +117,7 @@ export default function TopluDegerlendirme({
 
     for (const [i, h] of durum.hedefler.entries()) {
       // Kullanıcı durdurduysa kalanları hiç denemiyoruz.
-      if (durdur) break;
+      if (durdurRef.current) break;
       try {
         const y = await fetch(`/api/rapor/${h.raporId}/degerlendir`, {
           method: 'POST',
@@ -167,7 +190,7 @@ export default function TopluDegerlendirme({
         ) : (
           <button
             type="button"
-            onClick={() => setDurdur(true)}
+            onClick={durdurIste}
             className="shrink-0 cursor-pointer rounded-lg border border-kirmizi px-4 py-2.5 text-[12.5px] font-bold text-kirmizi transition-colors hover:bg-kirmizi-zemin"
           >
             {durdur ? 'Durduruluyor…' : 'Durdur'}
