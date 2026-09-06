@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { headers } from 'next/headers';
 import AsamaCizelgesi from '@/components/asama-cizelgesi';
-import BasvuruUstlen from '@/components/basvuru-ustlen';
 import BosDurum from '@/components/bos-durum';
 import DurumRozeti from '@/components/durum-rozeti';
 import ProfilKarti from '@/components/profil-karti';
@@ -184,7 +183,20 @@ export default async function YarismaciPanosu() {
               >
                 Yarışmalara göz at
               </Link>
-              <BasvuruUstlen takimlar={kaptanTakimlari} />
+              {/*
+                "Mevcut başvurumu üstlen" ŞİMDİLİK GİZLİ.
+
+                Düğme, koordinasyonun toplu içeri aktardığı sahipsiz bir
+                başvuruyu numara + erişim koduyla hesaba bağlamak içindi.
+                Ön kayıt listesi henüz kullanılmıyor; kullanılmayan bir
+                akış için yarışmacıya numara/kod soran bir düğme
+                göstermek, portalın ilk ekranını gereksiz karmaşık
+                yapıyor.
+
+                Bileşen ve `islem: 'ustlen'` ucu duruyor — ön kayıtla
+                açılan bir yarışma olduğunda tek satırla geri gelir:
+                  <BasvuruUstlen takimlar={kaptanTakimlari} />
+              */}
             </div>
           </section>
 
