@@ -27,7 +27,7 @@ async function main() {
 
   const ozet = await kaynaklariDogrula(k.kaynaklar, {
     agKullan,
-    iletisim: 'creathon55takim@turkiyeteknolojitakimi.org',
+    iletisim: process.env.DOGRULAMA_ILETISIM,
   });
 
   for (const x of ozet.kayitlar) {
