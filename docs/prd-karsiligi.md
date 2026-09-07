@@ -263,13 +263,17 @@ metin doldurulmasına yol açardı.
 | **Türetilmiş değerde tek yazıcı** | Nihai puan tek fonksiyondan yazılıyor; hesap veritabanından bağımsız ve test kapsamında. Kural, listede 75,5 / detayda 71,8 gösteren gerçek bir hatadan sonra konuldu |
 | **Ölçüm ve denetim betikleri** | `hacim` (performans), `db:kontrol` (11 tutarlılık sorgusu), `denetim` (sızıntı), `duman` (31 vaka), `kanit` (kanıt tablosu) — hepsi tek komut |
 | **Denetim izi** | Puanı kimin verdiği, ne zaman tamamladığı kayıtlı. Tamamlanan değerlendirme değiştirilemiyor; değerlendirmesi olan hakem silinmiyor, pasife alınıyor |
+| **İki AGENT** — kaynakça denetimi ve kopya soruşturması | Kaç adım gerekeceği önceden bilinemeyen iki soru. Ajan künyeyi Crossref'te bulamazsa OpenAlex'e, orada da bulamazsa derginin kendisine bakıyor; kopyada ise ortak cümleleri açıp gerçek kopyayı şablon kalıbından ayırıyor. Attığı her adım hakem ekranında görünüyor |
+| **Baraj puanı** | Koordinasyon kategori bazında geçme eşiği yazıyor, yarışmacı kendi sayfasında görüyor. Karar bütün hakemler tamamlamadan verilmiyor ve ekrandaki yuvarlanmış puan üzerinden yapılıyor — gösterilen sayıyla kullanılan sayı ayrışmasın |
+| **Yarışmacı portalı** | PRD tek bir sonuç sorgusu istiyordu. Yerine hesaplı portal: başvuru, takım kurma, rapor yükleme ve sonuç izleme aynı yerde |
+| **Hakemler arası maskeleme** | Aynı rapora bakan hakemler birbirlerini `Hakem C` olarak görüyor — mesajlaşmada da. Kör puanlamanın hakem-hakem ayağı |
 
 ---
 
 ## Doğrulama komutları
 
 ```bash
-npm test                 # 101 birim testi
+npm test                 # 223 birim testi
 npm run db:kontrol       # 11 veri tutarlılığı sorgusu
 npm run duman            # 31 uçtan uca vaka (sunucu çalışırken)
 npm run denetim          # yarışmacı sayfası sızıntı denetimi
