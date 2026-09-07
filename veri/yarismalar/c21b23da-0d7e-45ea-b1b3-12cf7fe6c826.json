@@ -1,0 +1,554 @@
+{
+  "id": "c21b23da-0d7e-45ea-b1b3-12cf7fe6c826",
+  "ad": "Hareketli Uydu Terminali Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:53:54.449Z",
+  "kategoriler": [
+    {
+      "id": "72926dc3-ac12-4e82-9359-528f6c7642f5",
+      "ad": "Kritik",
+      "sablonDosyasi": "2026_Hareketli_Uydu_Terminali_KTR_Sablon_TR_1_5awSB.docx",
+      "asama": "KTR",
+      "olusturuldu": "2026-08-23T13:53:53.749Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-72926dc3",
+        "ad": "Kritik",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 25,
+        "basliklar": [
+          {
+            "ad": "TEMEL SİSTEM ÖZETİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde, uydu haberleşme sisteminin görev tanımı ve özellikleri kısaca açıklanır. Projenin amacı olan stabilizasyon yeteneğinin gösterimi ile ilgili bilgi verilir. Genel sistemi oluşturan bileşenlerin de tanımları ve sistem içerisindeki görevlerinden bahsedilir."
+            ]
+          },
+          {
+            "ad": "ORGANİZASYON ÖZETİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "2.1 Takım Organizasyonu",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, takımın organizasyon şeması ve birimlerin görevlerinden bahsedilir."
+            ]
+          },
+          {
+            "ad": "2.2 Zaman Akış Çizelgesi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, planlanan zaman akış çizelgesi ile gerçekleşen akış çizelgesindeki farklar (gecikmeler, erken tamamlananlar vb.) yer almalıdır."
+            ]
+          },
+          {
+            "ad": "2.3 Maliyet Analizi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde projenin beklenen maliyet analizi gösterilecektir. Detaylı malzeme kırılımı ve malzeme maliyetleri belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "DETAYLI TASARIM ÖZETİ",
+            "zorunlu": true,
+            "puan": 30,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "3.1 Uydu Haberleşme Sistemi Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde; uydu haberleşme sistemi, alt sistemlerin sistem içi yerleşimleri, cihazların konumu görsellerde/blok şemalarda bulunmalıdır. Aynı zamanda, yarışma günü teknik kontrolde, burada verilen görseller/blok şemalar üzerinden, tasarlanan sistem ile alana gelen sistem karşılaştırılacaktır."
+            ]
+          },
+          {
+            "ad": "3.2 Uydu Haberleşme Sistemi Elektronik Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde uydu haberleşme sisteminin elektronik aksam tasarım aşamaları, kullanılması planlanan sayısal kart, elektronik donanım, vb. bileşenlerin işlevleri detaylıca gösterilmelidir.",
+              "Ayrıca yapılan analizler bu kısımda anlatılmalıdır."
+            ]
+          },
+          {
+            "ad": "3.3 Uydu Haberleşme Sistemi Mekanik Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde uydu haberleşme sisteminin mekanik aksam tasarım aşamaları, kullanılan materyal, reflektör çapı, ağırlık merkezi, maksimum ivme, yerleşim vb. bilgiler detaylıca verilmelidir. Üç boyutlu tasarım, boyutlar teknik çizim ile gösterilmelidir. Kullanılması planlanan mekanik sistem/alt sistem/bileşenlerin işlevleri açıklanmalıdır.",
+              "Ayrıca yapılan analizler bu kısımda anlatılmalıdır.",
+              "Antenlerin mekanik olarak bağlanacağı steward platformunun bağlantı yüzeyi aşağıdaki verilmiştir. Anten bu plaka üzerine sabitlenecektir. Birimler mm cinsindedir."
+            ]
+          },
+          {
+            "ad": "3.4 Nihai Sistem Mimarisi ve Alt Sistemler Özeti",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, sistem mimarisinin nihai hali, kullanılacak donanımların marka/model bilgisine kadar yer almalıdır. Yer alan sistem mimarisinde tüm kablo (güç, haberleşme, vb.) hatlarının gösterilmesi beklenmektedir. Sistem mimarisinin görsel olarak eklenmesi istenmektedir.",
+              "Eklenen sistem mimarisine ek olarak; seçilen alt sistemlerin teknik özellikleri ve bu sistemlerin birbirleri ile uyumlulukları açıklanmalıdır. Eğer aynı görev için araştırılan birden fazla seçenek varsa, nihai ürünün neden seçildiği açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "Uydu Haberleşme Sistemi Ağırlık Dağılımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, uydu haberleşme sisteminin alt sistem seviyesinde ağırlık dağılımı verilecektir. (Tüm alt parçaların ağırlıkları ve seçilen referans noktasına göre konumları belirtilmelidir.)",
+              "Takımlar, gerçekleştirecekleri görev konsepti doğrultusunda dikkate aldıkları kriterleri (stabilizasyon, takip algoritması, hata toleransı, hareket performansı, uydu takibi, gerçek zamanlılık vb.) ifade etmeli ve seçilen yöntemlerin/çözüm yollarının neden seçildiği, avantaj ve dezavantajları detaylandırılmalıdır. Bu kapsamda güncel akademik veya teknik kaynaklara atıf yapılması beklenmektedir.",
+              "Yarışma görev isterlerinin yerine getirilebilmesi için kullanılan veya planlanan genel algoritmik yaklaşımın detaylı akış diyagramı sunulmalıdır. Akış diyagramında terminalin açılması, durağan halde/hareket halinde takip etme ve stabilizasyon adımlarının detaylandırılarak açıklanması beklenmektedir.",
+              "Ayrıca yapılan analizler bu kısımda anlatılmalıdır."
+            ]
+          },
+          {
+            "ad": "SİMÜLASYON VE TEST",
+            "zorunlu": true,
+            "puan": 25,
+            "yonergeMetni": [
+              "Bu bölümde, teorik olarak açıklanan tasarım çözümlerinin ve geliştirilen algoritmaların, yarışma görevlerini yerine getirebilme kabiliyetinin simülasyon ortamında doğrulanması beklenmektedir.",
+              "Hareketli uydu terminali tasarımları, algoritmaları için yapılan simülasyon çalışmaları; tutarlı, mantıklı ve değerlendirilebilir sonuçlar ile sunulmalıdır. Hareketli uydu terminali simülasyonu herhangi bir programlama dili veya simülasyon ortamı kullanılarak gerçekleştirilebilir. Kullanılan simülasyon ortamı ile temel varsayımlar ve kısıtlar kısaca açıklanmalıdır.",
+              "Simülasyon sonuçları yalnızca görsel olarak sunulmamalı; algoritmaların davranışı, görev başarımı ve geliştirme sürecinde yapılan iyileştirmeler üzerinden kısaca yorumlanmalıdır. Karşılaşılan sınırlamalar veya başarısız senaryolar ve bunlara yönelik planlanan geliştirme adımlarına değinilmesi beklenmektedir.",
+              "Eğer uydu haberleşme sisteminin test edileceği bir platform bulunuyor ise test süreci detaylandırılmalıdır. (Platform kabiliyetleri, test adımları, test sonuçları, vb.)"
+            ]
+          },
+          {
+            "ad": "GÜVENLİK",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde, karşılaşması muhtemele risklerin tespiti ve bu risklere karşı alınan önlemler anlatılmalıdır. Acil durumlarda takip edilecek acil durum kontrol adımlarından bahsedilmelidir. (Ör: Çalışma ortamında ilk yardım çantası bulunması, hareketlli platformda kablajın herhangi bir sıkışmaya neden olmayacak seviyede yapılması, vb.)"
+            ]
+          },
+          {
+            "ad": "REFERANSLAR",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu kısımda referanslar yer almalıdır."
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "REFERANSLAR",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+          "Tüm raporlar “İçindekiler” ve “Referanslar” içermelidir.",
+          "Her rapor bir kapak sayfası içermelidir.",
+          "Rapor sayfaları ardışık olarak numaralandırılmalıdır.",
+          "Kapak hariç sayfaların alt bilgisinde takım adı ve sayfa numarası yazılmalı, üst bilgisinde ise “Hareketli Uydu Terminali Yarışması 2026” yazılmalıdır.",
+          "Yazı tipi: Arial, Punto: 12, Satır Aralıkları: 1,15",
+          "Tüm metinler iki tarafa yaslı şekilde olması gerekmektedir.",
+          "Sayfa düzeni: A4 Tipi ve Kenar Boşlukları 2,5 cm",
+          "Rapor tüm sayfalar dahil 25 sayfayı geçmemelidir.",
+          "Raporunda, web sitemizde yer alan geçmiş yıl raporlarından yararlanmış olan takımlar alıntı yaptığını ilgili sayfada belirtmesi gerekmektedir. Açıklamayı alıntı yapılan cümlenin ardından belirtmeniz gerekmektedir.",
+          "ALINTI FORMATI: \"Alıntı yapılan Cümle/ler\" (Yıl, Yarışma Adı, Kategori, Takım Adı)",
+          "ÖRNEK ALINTI: \"Enkazda depremzedenin nerede olduğunu tespit edilememesi, enkaz kaldırma ve deprem-zede arama çalışmalarını yavaşlatan en önemli sorundur.\" (2022, İnsanlık Yararına Teknoloji Yarışması, Afet Yönetimi, X Takımı)",
+          "Kritik Tasarım Raporu puanlaması aşağıdaki şablona göre yapılacaktır.",
+          "Temel Sistem Özeti",
+          "Organizasyon Özeti",
+          "Detaylı Tasarım Özeti",
+          "Algoritma Tasarımı",
+          "Simülasyon ve Test"
+        ],
+        "eleyiciMi": false,
+        "azamiSayfa": 25,
+        "yaziTipi": "Arial",
+        "govdePunto": 12
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "temel-sistem-ozeti",
+            "ad": "TEMEL SİSTEM ÖZETİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, uydu haberleşme sisteminin görev tanımı ve özellikleri kısaca açıklanır. Projenin amacı olan stabilizasyon yeteneğinin gösterimi ile ilgili bilgi verilir. Genel sistemi oluşturan bileşenlerin de tanımları ve sistem içerisindeki görevlerinden bahsedilir."
+            ],
+            "bolumAdi": "TEMEL SİSTEM ÖZETİ"
+          },
+          {
+            "kod": "organizasyon-ozeti",
+            "ad": "ORGANİZASYON ÖZETİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ORGANİZASYON ÖZETİ"
+          },
+          {
+            "kod": "detayli-tasarim-ozeti",
+            "ad": "DETAYLI TASARIM ÖZETİ",
+            "puan": 30,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "DETAYLI TASARIM ÖZETİ"
+          },
+          {
+            "kod": "simulasyon-ve-test",
+            "ad": "SİMÜLASYON VE TEST",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, teorik olarak açıklanan tasarım çözümlerinin ve geliştirilen algoritmaların, yarışma görevlerini yerine getirebilme kabiliyetinin simülasyon ortamında doğrulanması beklenmektedir.",
+              "Hareketli uydu terminali tasarımları, algoritmaları için yapılan simülasyon çalışmaları; tutarlı, mantıklı ve değerlendirilebilir sonuçlar ile sunulmalıdır. Hareketli uydu terminali simülasyonu herhangi bir programlama dili veya simülasyon ortamı kullanılarak gerçekleştirilebilir. Kullanılan simülasyon ortamı ile temel varsayımlar ve kısıtlar kısaca açıklanmalıdır.",
+              "Simülasyon sonuçları yalnızca görsel olarak sunulmamalı; algoritmaların davranışı, görev başarımı ve geliştirme sürecinde yapılan iyileştirmeler üzerinden kısaca yorumlanmalıdır. Karşılaşılan sınırlamalar veya başarısız senaryolar ve bunlara yönelik planlanan geliştirme adımlarına değinilmesi beklenmektedir.",
+              "Eğer uydu haberleşme sisteminin test edileceği bir platform bulunuyor ise test süreci detaylandırılmalıdır. (Platform kabiliyetleri, test adımları, test sonuçları, vb.)"
+            ],
+            "bolumAdi": "SİMÜLASYON VE TEST"
+          },
+          {
+            "kod": "guvenlik",
+            "ad": "GÜVENLİK",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, karşılaşması muhtemele risklerin tespiti ve bu risklere karşı alınan önlemler anlatılmalıdır. Acil durumlarda takip edilecek acil durum kontrol adımlarından bahsedilmelidir. (Ör: Çalışma ortamında ilk yardım çantası bulunması, hareketlli platformda kablajın herhangi bir sıkışmaya neden olmayacak seviyede yapılması, vb.)"
+            ],
+            "bolumAdi": "GÜVENLİK"
+          },
+          {
+            "kod": "referanslar",
+            "ad": "REFERANSLAR",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda referanslar yer almalıdır."
+            ],
+            "bolumAdi": "REFERANSLAR"
+          }
+        ],
+        "toplamPuan": 75
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [],
+      "sartname": {
+        "dosyaAdi": "Teknofest_Hareketli_Uydu_Terminali_Yarısması_Sartnamesi_TR_4d8Az.pdf",
+        "yuklendi": "2026-08-23T20:12:39.987Z",
+        "sayfaSayisi": 19,
+        "kelimeSayisi": 3579,
+        "kurallar": {
+          "tarihler": [],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Bu rapor üzerinden ön eleme yapılır; uygun bulunmayan projeler elenir."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 10
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden tarih çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/Teknofest_Hareketli_Uydu_Terminali_Yar%C4%B1smas%C4%B1_Sartnamesi_TR_4d8Az.pdf"
+      }
+    },
+    {
+      "id": "ced8321b-34a5-4b01-8a13-201a8eb68ef9",
+      "ad": "Hareketli Uydu Terminali Yarışması · ÖTR",
+      "sablonDosyasi": "2026_Hareketli_Uydu_Terminali_OTR_CeQC4.docx",
+      "asama": "ÖTR",
+      "olusturuldu": "2026-08-23T13:53:54.449Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-ced8321b",
+        "ad": "Hareketli Uydu Terminali Yarışması · ÖTR",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "ÖZET",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "{Proje raporunun özeti en fazla 250 kelime kullanılarak ifade edilmelidir.}"
+            ]
+          },
+          {
+            "ad": "ORGANİZASYON ŞEMASI VE PROJE TAKVİMİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "{Takım üyelerini de içeren proje organizasyonu verilmelidir. Her takım üyesinin projede aldığı görev hakkında bilgi sunulmalıdır. Proje takvimi sunulmalıdır.}"
+            ]
+          },
+          {
+            "ad": "HAREKETLİ UYDU TERMİNALİ TASARIMI",
+            "zorunlu": true,
+            "puan": 40,
+            "yonergeMetni": [
+              "{Bu bölümde takımlar, yarışma kapsamında kullanmayı planladıkları Hareketli Uydu Terminalinin ön tasarımını (kullanılan materyal, ağırlık merkezi, yerleşim vb.) açıklamalıdır. Terminalin genel tasarım yaklaşımı blok şemalar ile yarışma görevlerine uygunluğu anlaşılır şekilde ifade edilmelidir.",
+              "Kullanılması planlanan sayısal kartlar, mekanik parçalar ve kullanılacak ekipmanlar kullanım amaçları ile birlikte açıkça ifade edilmelidir.}"
+            ]
+          },
+          {
+            "ad": "SİSTEM MİMARİSİ VE ALGORİTMA TASARIMI",
+            "zorunlu": true,
+            "puan": 40,
+            "yonergeMetni": [
+              "{Bu bölümde sistemde yer alan tüm alt sistem ve bileşenlerin mimari bağlantılarını içeren genel bir sistem mimari şeması sistemin çalışma prensibi ile beraber sunulmalıdır.",
+              "Takımlar, gerçekleştirecekleri görev konsepti doğrultusunda dikkate aldıkları kriterleri (stabilizasyon, takip algoritması, hata toleransı, hareket performansı, uydu takibi, gerçek zamanlılık vb.) ifade etmeli; mimarinin avantaj ve dezavantajlarını literatürdeki benzer çalışmalarla karşılaştırmalı olarak sunmalıdır. Bu kapsamda güncel akademik veya teknik kaynaklara atıf yapılması beklenmektedir.",
+              "Yarışma görev isterlerinin yerine getirilebilmesi için kullanılan veya planlanan genel algoritmik yaklaşımın akış diyagramı sunulmalıdır. Akış diyagramında terminalin açılması, durağan halde/hareket halinde takip etme ve stabilizasyon adımlarının detaylandırılarak açıklanması beklenmektedir.}"
+            ]
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "{Bu bölümde literatürde yararlanılan çalışmalar anlatılacaktır. Kaynakçalar, kaynakça formatına uygun bir şekilde dokümanda belirtilmelidir.}"
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "ozet",
+            "ad": "ÖZET",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Proje raporunun özeti en fazla 250 kelime kullanılarak ifade edilmelidir.}"
+            ],
+            "bolumAdi": "ÖZET"
+          },
+          {
+            "kod": "organizasyon-semasi-ve-proje-takvimi",
+            "ad": "ORGANİZASYON ŞEMASI VE PROJE TAKVİMİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Takım üyelerini de içeren proje organizasyonu verilmelidir. Her takım üyesinin projede aldığı görev hakkında bilgi sunulmalıdır. Proje takvimi sunulmalıdır.}"
+            ],
+            "bolumAdi": "ORGANİZASYON ŞEMASI VE PROJE TAKVİMİ"
+          },
+          {
+            "kod": "hareketli-uydu-terminali-tasarimi",
+            "ad": "HAREKETLİ UYDU TERMİNALİ TASARIMI",
+            "puan": 40,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde takımlar, yarışma kapsamında kullanmayı planladıkları Hareketli Uydu Terminalinin ön tasarımını (kullanılan materyal, ağırlık merkezi, yerleşim vb.) açıklamalıdır. Terminalin genel tasarım yaklaşımı blok şemalar ile yarışma görevlerine uygunluğu anlaşılır şekilde ifade edilmelidir.",
+              "Kullanılması planlanan sayısal kartlar, mekanik parçalar ve kullanılacak ekipmanlar kullanım amaçları ile birlikte açıkça ifade edilmelidir.}"
+            ],
+            "bolumAdi": "HAREKETLİ UYDU TERMİNALİ TASARIMI"
+          },
+          {
+            "kod": "sistem-mimarisi-ve-algoritma-tasarimi",
+            "ad": "SİSTEM MİMARİSİ VE ALGORİTMA TASARIMI",
+            "puan": 40,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde sistemde yer alan tüm alt sistem ve bileşenlerin mimari bağlantılarını içeren genel bir sistem mimari şeması sistemin çalışma prensibi ile beraber sunulmalıdır.",
+              "Takımlar, gerçekleştirecekleri görev konsepti doğrultusunda dikkate aldıkları kriterleri (stabilizasyon, takip algoritması, hata toleransı, hareket performansı, uydu takibi, gerçek zamanlılık vb.) ifade etmeli; mimarinin avantaj ve dezavantajlarını literatürdeki benzer çalışmalarla karşılaştırmalı olarak sunmalıdır. Bu kapsamda güncel akademik veya teknik kaynaklara atıf yapılması beklenmektedir.",
+              "Yarışma görev isterlerinin yerine getirilebilmesi için kullanılan veya planlanan genel algoritmik yaklaşımın akış diyagramı sunulmalıdır. Akış diyagramında terminalin açılması, durağan halde/hareket halinde takip etme ve stabilizasyon adımlarının detaylandırılarak açıklanması beklenmektedir.}"
+            ],
+            "bolumAdi": "SİSTEM MİMARİSİ VE ALGORİTMA TASARIMI"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde literatürde yararlanılan çalışmalar anlatılacaktır. Kaynakçalar, kaynakça formatına uygun bir şekilde dokümanda belirtilmelidir.}"
+            ],
+            "bolumAdi": "KAYNAKÇA"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Sayfa sınırı kurallardan çıkarılamadı."
+      ],
+      "sartname": {
+        "dosyaAdi": "Teknofest_Hareketli_Uydu_Terminali_Yarısması_Sartnamesi_TR_4d8Az.pdf",
+        "yuklendi": "2026-08-23T20:12:43.118Z",
+        "sayfaSayisi": 19,
+        "kelimeSayisi": 3579,
+        "kurallar": {
+          "tarihler": [],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Bu rapor üzerinden ön eleme yapılır; uygun bulunmayan projeler elenir."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 10
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden tarih çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/Teknofest_Hareketli_Uydu_Terminali_Yar%C4%B1smas%C4%B1_Sartnamesi_TR_4d8Az.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "hareketli-uydu-terminali-yarismasi"
+}

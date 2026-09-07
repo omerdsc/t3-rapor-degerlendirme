@@ -1,0 +1,1169 @@
+{
+  "id": "abc963d5-c419-4cf2-bc80-983086936342",
+  "ad": "Çip Tasarım Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:49:50.100Z",
+  "kategoriler": [
+    {
+      "id": "a9f96dbe-a55b-4584-b9ce-51f7a644d5b8",
+      "ad": "Analog Tasarım · ÖTR",
+      "sablonDosyasi": "2026_OTR_Cip_Tasarim_Yarismasi_Analog_Tasarim_xuMTS.docx",
+      "asama": "ÖTR",
+      "olusturuldu": "2026-08-23T13:49:48.478Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-a9f96dbe",
+        "ad": "Analog Tasarım · ÖTR",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "Giriş",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Sistem Mimarisi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde yapılması beklenen tasarımın isterleri açıklanmalıdır.",
+              "İsterleri sağlamak adına kullanılması planlanan devre topolojilerine değinilmeli ve neden seçildiği kısaca açıklanmalıdır. (3. Bölümde bu topolojiler ayrıntılı olarak açıklanmalıdır.)",
+              "Bu topolojileri kullanarak tasarım yapıldığında hedeflenen performans değerleri belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "Tasarım Detayları",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Tasarıma ait blok diyagram çizilmeli ve açıklanmalıdır.",
+              "İsterleri sağlamak için gerekli alt bloklar ve bunların arasındaki ilişki gösterilmeli ve açıklanmalıdır.",
+              "İsterleri sağlamak adına kullanılması planlanan devre topolojileri gösterilmeli ve ayrıntılı olarak açıklanmalıdır.",
+              "Çip tasarım akışı açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "Takım Organizasyonu ve İş Planı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde takım organizasyonu (üyelerin isimleri, üniversiteleri, bölümleri, sınıfları vb.) ve iş paketlerini içeren proje takvimi yer almalıdır. Her katılımcı başına düşen iş paketi, harcanması öngörülen zaman ile birleştirilip, ilk aşamadan son teslime kadar geçecek süreyi kapsayacak şekilde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "Kaynakça ve Ekler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Faydalanılan referanslar varsa paylaşılmalıdır (örneğin, tasarımınıza ilham veren bir makale, yeniden kullanacağınız tüm açık kaynaklı bloklar, vb.).",
+              "Kullanılan referanslar ve referanslama tarzı şartnameye uygun olarak hazırlanmalıdır.",
+              "İnternet sitelerin yanı sıra akademik kaynaklardan (kitaplardan, makalelerden) da yararlanılmalı, güncel kaynaklar tercih edilmeye çalışılmalıdır."
+            ]
+          },
+          {
+            "ad": "Genel Kurallar",
+            "zorunlu": true,
+            "yonergeMetni": []
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "Kaynakça ve Ekler",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        },
+        "azamiSayfa": 30
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "giris",
+            "ad": "Giriş",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Giriş"
+          },
+          {
+            "kod": "sistem-mimarisi",
+            "ad": "Sistem Mimarisi",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde yapılması beklenen tasarımın isterleri açıklanmalıdır.",
+              "İsterleri sağlamak adına kullanılması planlanan devre topolojilerine değinilmeli ve neden seçildiği kısaca açıklanmalıdır. (3. Bölümde bu topolojiler ayrıntılı olarak açıklanmalıdır.)",
+              "Bu topolojileri kullanarak tasarım yapıldığında hedeflenen performans değerleri belirtilmelidir."
+            ],
+            "bolumAdi": "Sistem Mimarisi"
+          },
+          {
+            "kod": "tasarim-detaylari",
+            "ad": "Tasarım Detayları",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Tasarıma ait blok diyagram çizilmeli ve açıklanmalıdır.",
+              "İsterleri sağlamak için gerekli alt bloklar ve bunların arasındaki ilişki gösterilmeli ve açıklanmalıdır.",
+              "İsterleri sağlamak adına kullanılması planlanan devre topolojileri gösterilmeli ve ayrıntılı olarak açıklanmalıdır.",
+              "Çip tasarım akışı açıklanmalıdır."
+            ],
+            "bolumAdi": "Tasarım Detayları"
+          },
+          {
+            "kod": "takim-organizasyonu-ve-is-plani",
+            "ad": "Takım Organizasyonu ve İş Planı",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde takım organizasyonu (üyelerin isimleri, üniversiteleri, bölümleri, sınıfları vb.) ve iş paketlerini içeren proje takvimi yer almalıdır. Her katılımcı başına düşen iş paketi, harcanması öngörülen zaman ile birleştirilip, ilk aşamadan son teslime kadar geçecek süreyi kapsayacak şekilde sunulmalıdır."
+            ],
+            "bolumAdi": "Takım Organizasyonu ve İş Planı"
+          },
+          {
+            "kod": "kaynakca-ve-ekler",
+            "ad": "Kaynakça ve Ekler",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Faydalanılan referanslar varsa paylaşılmalıdır (örneğin, tasarımınıza ilham veren bir makale, yeniden kullanacağınız tüm açık kaynaklı bloklar, vb.).",
+              "Kullanılan referanslar ve referanslama tarzı şartnameye uygun olarak hazırlanmalıdır.",
+              "İnternet sitelerin yanı sıra akademik kaynaklardan (kitaplardan, makalelerden) da yararlanılmalı, güncel kaynaklar tercih edilmeye çalışılmalıdır."
+            ],
+            "bolumAdi": "Kaynakça ve Ekler"
+          },
+          {
+            "kod": "genel-kurallar",
+            "ad": "Genel Kurallar",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Genel Kurallar"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 6 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_Çip_Tasarım_Yarışması_Şartnamesi_v1_3_draft_1_LK3oV.pdf",
+        "yuklendi": "2026-08-23T20:17:23.909Z",
+        "sayfaSayisi": 31,
+        "kelimeSayisi": 7756,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "Yarışma Takvimi Son Başvuru Tarihi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Yarışma Takvimi ÖTR Sonuçları",
+              "tarih": "2026-04-06"
+            },
+            {
+              "etiket": "Mikrodenetleyici Kategorisi yapıldı,",
+              "tarih": "2026-04-27"
+            },
+            {
+              "etiket": "Ön Tasarım Raporu (ÖTR) Son Teslim Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "Açıklanması",
+              "tarih": "2026-04-12"
+            },
+            {
+              "etiket": "Finalist Takımların Açıklanması",
+              "tarih": "2026-06-07"
+            },
+            {
+              "etiket": "Final Değerlendirme Sunumları ve Demolar Ağustos - Eylül 2026",
+              "tarih": "2026-07-31"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": [],
+          "azamiSayfa": 30,
+          "azamiUye": 5
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C3%87ip_Tasar%C4%B1m_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartnamesi_v1_3_draft_1_LK3oV.pdf"
+      }
+    },
+    {
+      "id": "573670f8-0d1e-446d-9de0-7f537af17109",
+      "ad": "Analog Tasarım · DTR",
+      "sablonDosyasi": "2026_DTR_Çip_Tasarım_Yarışması_Analog_v1_1Vl3m.docx",
+      "asama": "DTR",
+      "olusturuldu": "2026-08-23T13:49:49.297Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-573670f8",
+        "ad": "Analog Tasarım · DTR",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "VERSİYONLAR",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "{Bu kısımda proje kapsamında yürütülen faaliyetlerle ilgili olarak özet bilgi sunulur. Ön Tasarım Raporunun değerlendirmesi yapılır. Varsa ön tasarımdan sonra yapılan değişiklikler ve değişikliklerin neden yapıldığı açıklanır.}"
+            ]
+          },
+          {
+            "ad": "PROJE DETAY TASARIMI VE TEST SONUÇLARI",
+            "zorunlu": true,
+            "puan": 60,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Sistem Mimarisi",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "{Bu kısımda projenin nihai tasarımının üst seviye blok şeması verilir ve yarışma şartnamesi ile tasarlanan sistemin uyumluluklarına değinilir. Üst-seviye blok şemada; devrelerin işaret ve güç giriş-çıkışları ve alt-bloklar arası bağlantılar anlaşılır bir şekilde çizilmelidir.}"
+            ]
+          },
+          {
+            "ad": "Tasarım Detayı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{DTR raporunda şematik seviye benzetim sonuçlarının sunulması beklenmektedir. Serim ve serim sonrası benzetim sonuçlar final sunumunda beklenmektedir.",
+              "Blokların pinleri aşağıdaki şekilde isimlendirilmelidir:",
+              "Transistörlerin parmak genişliği (max finger width, w) azami 30um olmalıdır.}"
+            ]
+          },
+          {
+            "ad": "Bant Aralığı Referans Gerilim Devresi",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": [
+              "{Nihai bant aralığı referans gerilim devresinin topolojisinin neden seçildiği ve nasıl çalıştığı anlatılır. ÖTR’de hedeflenen topoloji değiştirildiyse gerekçesi belirtilir.",
+              "Referans devresinin ayrıntılı şematik çizimleri verilir. (Bu çizimlerde; transistör boyutları, direnç ve sığaç değerleri ilgili devre elemanın yanına ayrıntılı olarak yazılmalıdır. Ayrıca, devredeki düğümlerin gerilimleri de çizimlerde gösterilmelidir)",
+              "Şartnamede belirtilen isterlerin nasıl karşılandığına ve “Başarım Kriterlerine” yönelik devrede yapılan tekniklere/optimizasyonlara değinilir.",
+              "Devrenin şematik seviye performansı benzetim sonuçlarıyla gösterilir ve şartnamedeki isterleri sağladığı doğrulanır.}"
+            ]
+          },
+          {
+            "ad": "Analog Ön-Uç (AFE) Devresi",
+            "zorunlu": true,
+            "puan": 40,
+            "yonergeMetni": [
+              "{Nihai AFE topolojisinin neden seçildiği ve nasıl çalıştığı anlatılır. ÖTR’de hedeflenen topoloji değiştirildiyse gerekçesi belirtilir.",
+              "AFE devresinin ayrıntılı şematik çizimleri verilir. (Bu çizimlerde; transistör boyutları, direnç ve sığaç değerleri ilgili devre elemanın yanına ayrıntılı olarak yazılmalıdır. Ayrıca, devredeki düğümlerin gerilimleri de çizimlerde gösterilmelidir)",
+              "Şartnamede belirtilen isterlerin nasıl karşılandığına ve “Başarım Kriterlerine” yönelik devrede yapılan tekniklere/optimizasyonlara değinilir.",
+              "Devrenin şematik seviye performansı benzetim sonuçlarıyla gösterilir ve şartnamedeki isterleri sağladığı doğrulanır.}"
+            ]
+          },
+          {
+            "ad": "TEST ORTAMI",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "{Bu kısımda tasarlanan blokların optimizasyon ve doğrulanması için oluşturulan test ortamları (test şematikleri, test ayarları vs.) sunulur.}"
+            ]
+          },
+          {
+            "ad": "ÇİP TASARIM AKIŞI",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "{Çip tasarım akışında hangi programların kullanıldığı akış şeması üzerinde gösterilmelidir. Akışta kullanılan programların ne amaçla kullanıldığına değinilmelidir. Tasarım sürecinde gerek yazılımsal olarak gerek tasarımsal olarak karşılaşılan sorunlara ve bu sorunların nasıl çözüldüğüne değinilmelidir. Çip tasarım akışı boyunca faydalanılan topluluklar, Slack kanalları gibi yerler varsa bunların hangilerinden ne yönde yararlanıldığından bahsedilmelidir. Çip akışında geçirilen aşamaların hangilerinin daha kolay hangilerinin daha zor bulunduğuna, hangilerinde ne kadar zaman geçirildiğine kısaca değinilmelidir.}"
+            ]
+          },
+          {
+            "ad": "TAKIM ORGANİZASYONU",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Takım Organizasyonu",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda nihai takım üyeleri ve varsa danışman hakkında bilgi verilir. (İsim, soyisim, okul, bölüm, sınıf)}"
+            ]
+          },
+          {
+            "ad": "Görev Dağılımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda nihai ekip organizasyonu hakkında bilgi verilir ve DTR kapsamında tamamlanan işlerde ekip üyelerinin katkıları ayrıntılarıyla belirtilir.}"
+            ]
+          },
+          {
+            "ad": "İŞ PLANI ve RİSK PLANLAMASI",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "{ÖTR’de projenin tasarım, serim ve test süreçlerini içeren bir iş planlaması yapılmıştı. Bu iş planına ne kadar uyulabildiği, ÖTR’de öngörülmemiş hangi riskler/sebepler sonucu planın nasıl güncellendiği ve iş paketlerinin ne kadar tamamlandığı açık bir şekilde ifade edilir. Güncel iş planı tablosu çizilir. Ayrıca tamamlanmamış iş paketleri için olası riskler öngörülür ve bir risk planlaması yapılır.}"
+            ]
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "{Bu bölümde raporda kullanılan kaynaklar yer almalıdır.}"
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        },
+        "azamiSayfa": 30
+      },
+      "kurallar": {
+        "ham": [
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+          "Raporlarda şablondaki başlıklandırmaya uyulmalıdır. İlgili başlıkların puanlanmasında sadece ilgili başlığın altına yazılanlar değerlendirmeye alınacaktır. Şablondaki başlıklara uyulmak kaydıyla yeni alt başlıklar eklenebilir.",
+          "Her rapor İçindekiler ve Kaynakça içermelidir.",
+          "Her rapor bir kapak sayfası içermelidir.",
+          "Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+          "Yazı tipi: Aptos, Punto: 12, Satır Aralıkları: 1.0",
+          "Rapor en fazla kapak sayfaları hariç 30 sayfa olmalıdır. 30 sayfadan fazla olduğu takdirde fazla sayfalar puanlamaya dahil edilmeyecektir.",
+          "Şartname Bölüm 3.2’deki kurallara uyulmalıdır."
+        ],
+        "eleyiciMi": false,
+        "yaziTipi": "Aptos",
+        "govdePunto": 12
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "proje-mevcut-durum-degerlendirmesi",
+            "ad": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda proje kapsamında yürütülen faaliyetlerle ilgili olarak özet bilgi sunulur. Ön Tasarım Raporunun değerlendirmesi yapılır. Varsa ön tasarımdan sonra yapılan değişiklikler ve değişikliklerin neden yapıldığı açıklanır.}"
+            ],
+            "bolumAdi": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ"
+          },
+          {
+            "kod": "proje-detay-tasarimi-ve-test-sonuclari",
+            "ad": "PROJE DETAY TASARIMI VE TEST SONUÇLARI",
+            "puan": 60,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "PROJE DETAY TASARIMI VE TEST SONUÇLARI"
+          },
+          {
+            "kod": "sistem-mimarisi",
+            "ad": "Sistem Mimarisi",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda projenin nihai tasarımının üst seviye blok şeması verilir ve yarışma şartnamesi ile tasarlanan sistemin uyumluluklarına değinilir. Üst-seviye blok şemada; devrelerin işaret ve güç giriş-çıkışları ve alt-bloklar arası bağlantılar anlaşılır bir şekilde çizilmelidir.}"
+            ],
+            "bolumAdi": "Sistem Mimarisi"
+          },
+          {
+            "kod": "bant-araligi-referans-gerilim-devresi",
+            "ad": "Bant Aralığı Referans Gerilim Devresi",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Nihai bant aralığı referans gerilim devresinin topolojisinin neden seçildiği ve nasıl çalıştığı anlatılır. ÖTR’de hedeflenen topoloji değiştirildiyse gerekçesi belirtilir.",
+              "Referans devresinin ayrıntılı şematik çizimleri verilir. (Bu çizimlerde; transistör boyutları, direnç ve sığaç değerleri ilgili devre elemanın yanına ayrıntılı olarak yazılmalıdır. Ayrıca, devredeki düğümlerin gerilimleri de çizimlerde gösterilmelidir)",
+              "Şartnamede belirtilen isterlerin nasıl karşılandığına ve “Başarım Kriterlerine” yönelik devrede yapılan tekniklere/optimizasyonlara değinilir.",
+              "Devrenin şematik seviye performansı benzetim sonuçlarıyla gösterilir ve şartnamedeki isterleri sağladığı doğrulanır.}"
+            ],
+            "bolumAdi": "Bant Aralığı Referans Gerilim Devresi"
+          },
+          {
+            "kod": "analog-on-uc-afe-devresi",
+            "ad": "Analog Ön-Uç (AFE) Devresi",
+            "puan": 40,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Nihai AFE topolojisinin neden seçildiği ve nasıl çalıştığı anlatılır. ÖTR’de hedeflenen topoloji değiştirildiyse gerekçesi belirtilir.",
+              "AFE devresinin ayrıntılı şematik çizimleri verilir. (Bu çizimlerde; transistör boyutları, direnç ve sığaç değerleri ilgili devre elemanın yanına ayrıntılı olarak yazılmalıdır. Ayrıca, devredeki düğümlerin gerilimleri de çizimlerde gösterilmelidir)",
+              "Şartnamede belirtilen isterlerin nasıl karşılandığına ve “Başarım Kriterlerine” yönelik devrede yapılan tekniklere/optimizasyonlara değinilir.",
+              "Devrenin şematik seviye performansı benzetim sonuçlarıyla gösterilir ve şartnamedeki isterleri sağladığı doğrulanır.}"
+            ],
+            "bolumAdi": "Analog Ön-Uç (AFE) Devresi"
+          },
+          {
+            "kod": "test-ortami",
+            "ad": "TEST ORTAMI",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda tasarlanan blokların optimizasyon ve doğrulanması için oluşturulan test ortamları (test şematikleri, test ayarları vs.) sunulur.}"
+            ],
+            "bolumAdi": "TEST ORTAMI"
+          },
+          {
+            "kod": "cip-tasarim-akisi",
+            "ad": "ÇİP TASARIM AKIŞI",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Çip tasarım akışında hangi programların kullanıldığı akış şeması üzerinde gösterilmelidir. Akışta kullanılan programların ne amaçla kullanıldığına değinilmelidir. Tasarım sürecinde gerek yazılımsal olarak gerek tasarımsal olarak karşılaşılan sorunlara ve bu sorunların nasıl çözüldüğüne değinilmelidir. Çip tasarım akışı boyunca faydalanılan topluluklar, Slack kanalları gibi yerler varsa bunların hangilerinden ne yönde yararlanıldığından bahsedilmelidir. Çip akışında geçirilen aşamaların hangilerinin daha kolay hangilerinin daha zor bulunduğuna, hangilerinde ne kadar zaman geçirildiğine kısaca değinilmelidir.}"
+            ],
+            "bolumAdi": "ÇİP TASARIM AKIŞI"
+          },
+          {
+            "kod": "takim-organizasyonu",
+            "ad": "TAKIM ORGANİZASYONU",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TAKIM ORGANİZASYONU"
+          },
+          {
+            "kod": "is-plani-ve-risk-planlamasi",
+            "ad": "İŞ PLANI ve RİSK PLANLAMASI",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{ÖTR’de projenin tasarım, serim ve test süreçlerini içeren bir iş planlaması yapılmıştı. Bu iş planına ne kadar uyulabildiği, ÖTR’de öngörülmemiş hangi riskler/sebepler sonucu planın nasıl güncellendiği ve iş paketlerinin ne kadar tamamlandığı açık bir şekilde ifade edilir. Güncel iş planı tablosu çizilir. Ayrıca tamamlanmamış iş paketleri için olası riskler öngörülür ve bir risk planlaması yapılır.}"
+            ],
+            "bolumAdi": "İŞ PLANI ve RİSK PLANLAMASI"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde raporda kullanılan kaynaklar yer almalıdır.}"
+            ],
+            "bolumAdi": "KAYNAKÇA"
+          }
+        ],
+        "toplamPuan": 160
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Rubrik toplamı 160 puan. Ağırlıklar yöneticiye doğrulatılmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_Çip_Tasarım_Yarışması_Şartnamesi_v1_3_draft_1_LK3oV.pdf",
+        "yuklendi": "2026-08-23T20:17:28.010Z",
+        "sayfaSayisi": 31,
+        "kelimeSayisi": 7756,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "Yarışma Takvimi Son Başvuru Tarihi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Yarışma Takvimi ÖTR Sonuçları",
+              "tarih": "2026-04-06"
+            },
+            {
+              "etiket": "Mikrodenetleyici Kategorisi yapıldı,",
+              "tarih": "2026-04-27"
+            },
+            {
+              "etiket": "Ön Tasarım Raporu (ÖTR) Son Teslim Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "Açıklanması",
+              "tarih": "2026-04-12"
+            },
+            {
+              "etiket": "Finalist Takımların Açıklanması",
+              "tarih": "2026-06-07"
+            },
+            {
+              "etiket": "Final Değerlendirme Sunumları ve Demolar Ağustos - Eylül 2026",
+              "tarih": "2026-07-31"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": [],
+          "azamiSayfa": 30,
+          "azamiUye": 5
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C3%87ip_Tasar%C4%B1m_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartnamesi_v1_3_draft_1_LK3oV.pdf"
+      }
+    },
+    {
+      "id": "ab1abebd-f97d-422a-948f-1f6a848d9044",
+      "ad": "Mikrodenetleyici Tasarım · DTR",
+      "sablonDosyasi": "2026_Mikrodenetleyici_Tasarim_DTR_Sablonu_1_w0HlD.docx",
+      "asama": "DTR",
+      "olusturuldu": "2026-08-23T13:49:49.847Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-ab1abebd",
+        "ad": "Mikrodenetleyici Tasarım · DTR",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "Sistem Tanımı ve Temel Tasarım Özeti (5p)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda sistemin basitçe genel tanımı ve proje kapsamında yürütülen faaliyetlerle ilgili olarak özet bilgiler sunulur. Örneğin RTL tasarımı, RTL doğrulaması, çip akışı faaliyetleri vb. tamamlanma oranları nelerdir?}"
+            ]
+          },
+          {
+            "ad": "Proje Detay Tasarımı (55p)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Sistem Mimarisi (15p)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda projenin nihai tasarımının blok şeması verilir ve yarışma şartnamesi ile tasarlanan sistemin uyumluluklarına değinilir. Alt bloklardan ve görevlerinden bahsedilir. Bus yapısı, boot sekansı, çevre birimlerinin bağlantı detayları, yazılım ile ilgili yapılan çalışmalar, linker script, projenin FPGA ve ASIC implementasyon aşamalarındaki farklar vb. açıklanır.}"
+            ]
+          },
+          {
+            "ad": "Tasarım Detayları (40p)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "İşlemci ve Bus Yapısının Tasarımı (10p)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{CV32E40P işlemcisinin portları mikrodenetleyici içerisinde nasıl bağlanıyor? Hangi bus yapısı kullanıldı, işlemci ve çevre birimleri bu bus’a nasıl bağlandılar? Seçilen yöntem ve metotların diğerlerine göre artı eksileri nelerdir? Karşılaşılan zorluklar ve çözümleri ne oldu? Bu aşamada bu hedefin başarılmış olması beklenmektedir.}"
+            ]
+          },
+          {
+            "ad": "Çevre Birim Tasarım Detayları (8p)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Şartnamede tanımlanan çevre birimlerin tasarım detayları hakkında bilgi verilmesi. C driver’ları (en azından header dosyaları) hazırlandı mı? Header ve Verilog kodları için GitHub hesabınızdaki ilgili dosya yoluna link verilebilir ama DTR’de çevre birim tasarımı detaylandırılmalıdır, sadece koda link verilip geçilmemelidir. Bütün çevre birimleri için tasarım ve doğrulama hangi aşamada (tamamlandı, şu şu fonksiyonlar eksik vs. bilgileri)? Seçilen yöntem ve metotların diğerlerine göre artı eksileri? Karşılaşılan zorluklar ve çözümleri ne oldu? Eğer henüz tasarımı veyahut entegrasyonu tamamlanmamış çevre birimleri varsa bunların hangi aşamada olduğu ve henüz tamamlanmamış entegrasyonlara dair planlanan aktiviteler açıklanmalıdır. Bu aşamada sisteme en azından UART çevre biriminin tamamen entegre edilmiş olması beklenmektedir.}"
+            ]
+          },
+          {
+            "ad": "YZ Hızlandırıcı Tasarım Detayları (11p)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Şartnamede tanımlanan YZ hızlandırıcının tasarım detayları hakkında bilgi verilmesi. Yazılım modellemesi aktiviteleri, modelden RTL gerçekleme akışı, tasarımın veri akış şeması nelerdir? İlgili model ve RTL kodları için GitHub hesabınızdaki ilgili dosya yoluna link verilebilir ama DTR’de YZ hızlandırıcı tasarımı detaylandırılmalıdır, sadece koda link verilip geçilmemelidir. Karşılaşılan zorluklar ve çözümleri ne oldu?}"
+            ]
+          },
+          {
+            "ad": "Boot (6p)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Yazılan C/assembly kodunun derlenip simülasyon ortamında boot memory veya flash memory’e (bu aşamada opsiyonel) yüklenmesine ve çekirdek tarafından çalıştırılmasına dair detaylar. Bu aşamada en azından belirtilen düzeyde boot faaliyetlerinin tamamlanmış olması beklenmektedir.}"
+            ]
+          },
+          {
+            "ad": "FPGA Prototipleme (5p)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{FPGA prototipleme detayları. FPGA’da işlemci üzerinde yazılım koşturuldu mu? Yazılımlarla çevre birimleri test edildi mi? C kodları için GitHub hesabınızdaki ilgili dosya yoluna link verilebilir ama FPGA üzerinde veya simülasyon ortamındaki çalışmalar DTR’de detaylandırılmalıdır. Alınan sonuçlar görsellerle belirtilmelidir. Karşılaşılan zorluklar ve çözümleri ne oldu?}"
+            ]
+          },
+          {
+            "ad": "Çip Tasarım Akışı (5p)",
+            "zorunlu": false,
+            "yonergeMetni": [
+              "{Ticari EDA araçlarının DTR aşamasının sonuçlanmasını müteakiben sağlanması planlandığı için bu aşamada detaylı bir faaliyet raporu beklenmemektedir. Bu başlık altında beklenen tasarım akışı aşamaları hakkında teknik bilgi, süreç için yapılan planlar ve -varsa- öncül çalışmaların yazılması beklenmektedir. Çip tasarım akışı boyunca faydalanılan topluluklar, Slack kanalları gibi yerler varsa bunların hangilerinden ne yönde yararlanıldığından bahsedilmelidir.}"
+            ],
+            "raporda": false
+          },
+          {
+            "ad": "Test (25p)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda henüz tasarımın tamamen bitmiş olması beklenmediğinden ötürü test planları ve yapılmış olan test faaliyetlerine odaklanılmalıdır. Tasarımın bu aşamasında en az bir adet çekirdek ve bir çevre birimi/hızlandırıcı bulunduran bir sistem testi ve kapsamlı çevre birimi/hızlandırıcı tekil test(ler)i tamamlanmış olmalıdır (örneğin bir UART bloğu için UART bloğunun farklı baud rate’ler ile ve hem TX hem RX olarak çalışabilmesi vb. senaryoların test edilmesi). Tekil testler sistem düzeyinde de IP düzeyinde de gerçeklenebilir. Bu faaliyetlerin üzerine yapılan faaliyetlerin geneli için puanlandırmada kısmi bir aralık bulunacaktır.}"
+            ]
+          },
+          {
+            "ad": "Takım Organizasyonu (3p)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Takım Tanımı (1p)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda takım üyeleri ve varsa danışman hakkında bilgi verilir. (İsim, soy isim, okul, bölüm, sınıf)}"
+            ]
+          },
+          {
+            "ad": "Görev Dağılımı (2p)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda görev dağılımı ve ekip organizasyonu hakkında bilgi verilir. Kim hangi kısımlardan sorumlu? ÖTR planlamasına kıyasla değişiklikler varsa nedenleri.}"
+            ]
+          },
+          {
+            "ad": "İş Planı ve Risk Planlaması (5p)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda projenin FPGA prototipleme ve çip akışı aşamaları için tasarım, doğrulama, sentez, fiziksel gerçekleme ve test süreçlerini içeren bir zaman planlaması ve risk planlaması yapılır. Zaman akış çizelgesi üzerinde iş paketlerinin ne kadarının tamamlandığı ne kadarının henüz tamamlanmadığı, takvimde gecikme olup olmadığı açık bir şekilde gösterilmelidir.}"
+            ]
+          },
+          {
+            "ad": "Kaynakça (2p)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu bölümde raporda kullanılan kaynaklar, tutarlı bir kaynakça üslubuyla yer almalıdır. Kaynaklar rapor içerisinde referanslanmalıdır.}",
+              "DTR ile İlgili Notlar (Bu tablo, yapılacak DTR teslimatlarından çıkartılmalıdır)"
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "Kaynakça (2p)",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        },
+        "azamiSayfa": 30
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "sistem-tanimi-ve-temel-tasarim-ozeti-5p",
+            "ad": "Sistem Tanımı ve Temel Tasarım Özeti (5p)",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda sistemin basitçe genel tanımı ve proje kapsamında yürütülen faaliyetlerle ilgili olarak özet bilgiler sunulur. Örneğin RTL tasarımı, RTL doğrulaması, çip akışı faaliyetleri vb. tamamlanma oranları nelerdir?}"
+            ],
+            "bolumAdi": "Sistem Tanımı ve Temel Tasarım Özeti (5p)"
+          },
+          {
+            "kod": "proje-detay-tasarimi-55p",
+            "ad": "Proje Detay Tasarımı (55p)",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Proje Detay Tasarımı (55p)"
+          },
+          {
+            "kod": "sistem-mimarisi-15p",
+            "ad": "Sistem Mimarisi (15p)",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda projenin nihai tasarımının blok şeması verilir ve yarışma şartnamesi ile tasarlanan sistemin uyumluluklarına değinilir. Alt bloklardan ve görevlerinden bahsedilir. Bus yapısı, boot sekansı, çevre birimlerinin bağlantı detayları, yazılım ile ilgili yapılan çalışmalar, linker script, projenin FPGA ve ASIC implementasyon aşamalarındaki farklar vb. açıklanır.}"
+            ],
+            "bolumAdi": "Sistem Mimarisi (15p)"
+          },
+          {
+            "kod": "tasarim-detaylari-40p",
+            "ad": "Tasarım Detayları (40p)",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Tasarım Detayları (40p)"
+          },
+          {
+            "kod": "islemci-ve-bus-yapisinin-tasarimi-10p",
+            "ad": "İşlemci ve Bus Yapısının Tasarımı (10p)",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{CV32E40P işlemcisinin portları mikrodenetleyici içerisinde nasıl bağlanıyor? Hangi bus yapısı kullanıldı, işlemci ve çevre birimleri bu bus’a nasıl bağlandılar? Seçilen yöntem ve metotların diğerlerine göre artı eksileri nelerdir? Karşılaşılan zorluklar ve çözümleri ne oldu? Bu aşamada bu hedefin başarılmış olması beklenmektedir.}"
+            ],
+            "bolumAdi": "İşlemci ve Bus Yapısının Tasarımı (10p)"
+          },
+          {
+            "kod": "cevre-birim-tasarim-detaylari-8p",
+            "ad": "Çevre Birim Tasarım Detayları (8p)",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Şartnamede tanımlanan çevre birimlerin tasarım detayları hakkında bilgi verilmesi. C driver’ları (en azından header dosyaları) hazırlandı mı? Header ve Verilog kodları için GitHub hesabınızdaki ilgili dosya yoluna link verilebilir ama DTR’de çevre birim tasarımı detaylandırılmalıdır, sadece koda link verilip geçilmemelidir. Bütün çevre birimleri için tasarım ve doğrulama hangi aşamada (tamamlandı, şu şu fonksiyonlar eksik vs. bilgileri)? Seçilen yöntem ve metotların diğerlerine göre artı eksileri? Karşılaşılan zorluklar ve çözümleri ne oldu? Eğer henüz tasarımı veyahut entegrasyonu tamamlanmamış çevre birimleri varsa bunların hangi aşamada olduğu ve henüz tamamlanmamış entegrasyonlara dair planlanan aktiviteler açıklanmalıdır. Bu aşamada sisteme en azından UART çevre biriminin tamamen entegre edilmiş olması beklenmektedir.}"
+            ],
+            "bolumAdi": "Çevre Birim Tasarım Detayları (8p)"
+          },
+          {
+            "kod": "yz-hizlandirici-tasarim-detaylari-11p",
+            "ad": "YZ Hızlandırıcı Tasarım Detayları (11p)",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Şartnamede tanımlanan YZ hızlandırıcının tasarım detayları hakkında bilgi verilmesi. Yazılım modellemesi aktiviteleri, modelden RTL gerçekleme akışı, tasarımın veri akış şeması nelerdir? İlgili model ve RTL kodları için GitHub hesabınızdaki ilgili dosya yoluna link verilebilir ama DTR’de YZ hızlandırıcı tasarımı detaylandırılmalıdır, sadece koda link verilip geçilmemelidir. Karşılaşılan zorluklar ve çözümleri ne oldu?}"
+            ],
+            "bolumAdi": "YZ Hızlandırıcı Tasarım Detayları (11p)"
+          },
+          {
+            "kod": "boot-6p",
+            "ad": "Boot (6p)",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Yazılan C/assembly kodunun derlenip simülasyon ortamında boot memory veya flash memory’e (bu aşamada opsiyonel) yüklenmesine ve çekirdek tarafından çalıştırılmasına dair detaylar. Bu aşamada en azından belirtilen düzeyde boot faaliyetlerinin tamamlanmış olması beklenmektedir.}"
+            ],
+            "bolumAdi": "Boot (6p)"
+          },
+          {
+            "kod": "fpga-prototipleme-5p",
+            "ad": "FPGA Prototipleme (5p)",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{FPGA prototipleme detayları. FPGA’da işlemci üzerinde yazılım koşturuldu mu? Yazılımlarla çevre birimleri test edildi mi? C kodları için GitHub hesabınızdaki ilgili dosya yoluna link verilebilir ama FPGA üzerinde veya simülasyon ortamındaki çalışmalar DTR’de detaylandırılmalıdır. Alınan sonuçlar görsellerle belirtilmelidir. Karşılaşılan zorluklar ve çözümleri ne oldu?}"
+            ],
+            "bolumAdi": "FPGA Prototipleme (5p)"
+          },
+          {
+            "kod": "test-25p",
+            "ad": "Test (25p)",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda henüz tasarımın tamamen bitmiş olması beklenmediğinden ötürü test planları ve yapılmış olan test faaliyetlerine odaklanılmalıdır. Tasarımın bu aşamasında en az bir adet çekirdek ve bir çevre birimi/hızlandırıcı bulunduran bir sistem testi ve kapsamlı çevre birimi/hızlandırıcı tekil test(ler)i tamamlanmış olmalıdır (örneğin bir UART bloğu için UART bloğunun farklı baud rate’ler ile ve hem TX hem RX olarak çalışabilmesi vb. senaryoların test edilmesi). Tekil testler sistem düzeyinde de IP düzeyinde de gerçeklenebilir. Bu faaliyetlerin üzerine yapılan faaliyetlerin geneli için puanlandırmada kısmi bir aralık bulunacaktır.}"
+            ],
+            "bolumAdi": "Test (25p)"
+          },
+          {
+            "kod": "takim-organizasyonu-3p",
+            "ad": "Takım Organizasyonu (3p)",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Takım Organizasyonu (3p)"
+          },
+          {
+            "kod": "takim-tanimi-1p",
+            "ad": "Takım Tanımı (1p)",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda takım üyeleri ve varsa danışman hakkında bilgi verilir. (İsim, soy isim, okul, bölüm, sınıf)}"
+            ],
+            "bolumAdi": "Takım Tanımı (1p)"
+          },
+          {
+            "kod": "gorev-dagilimi-2p",
+            "ad": "Görev Dağılımı (2p)",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda görev dağılımı ve ekip organizasyonu hakkında bilgi verilir. Kim hangi kısımlardan sorumlu? ÖTR planlamasına kıyasla değişiklikler varsa nedenleri.}"
+            ],
+            "bolumAdi": "Görev Dağılımı (2p)"
+          },
+          {
+            "kod": "is-plani-ve-risk-planlamasi-5p",
+            "ad": "İş Planı ve Risk Planlaması (5p)",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda projenin FPGA prototipleme ve çip akışı aşamaları için tasarım, doğrulama, sentez, fiziksel gerçekleme ve test süreçlerini içeren bir zaman planlaması ve risk planlaması yapılır. Zaman akış çizelgesi üzerinde iş paketlerinin ne kadarının tamamlandığı ne kadarının henüz tamamlanmadığı, takvimde gecikme olup olmadığı açık bir şekilde gösterilmelidir.}"
+            ],
+            "bolumAdi": "İş Planı ve Risk Planlaması (5p)"
+          },
+          {
+            "kod": "kaynakca-2p",
+            "ad": "Kaynakça (2p)",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde raporda kullanılan kaynaklar, tutarlı bir kaynakça üslubuyla yer almalıdır. Kaynaklar rapor içerisinde referanslanmalıdır.}",
+              "DTR ile İlgili Notlar (Bu tablo, yapılacak DTR teslimatlarından çıkartılmalıdır)"
+            ],
+            "bolumAdi": "Kaynakça (2p)"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 15 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_Çip_Tasarım_Yarışması_Şartnamesi_v1_3_draft_1_LK3oV.pdf",
+        "yuklendi": "2026-08-23T20:17:32.430Z",
+        "sayfaSayisi": 31,
+        "kelimeSayisi": 7756,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "Yarışma Takvimi Son Başvuru Tarihi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Yarışma Takvimi ÖTR Sonuçları",
+              "tarih": "2026-04-06"
+            },
+            {
+              "etiket": "Mikrodenetleyici Kategorisi yapıldı,",
+              "tarih": "2026-04-27"
+            },
+            {
+              "etiket": "Ön Tasarım Raporu (ÖTR) Son Teslim Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "Açıklanması",
+              "tarih": "2026-04-12"
+            },
+            {
+              "etiket": "Finalist Takımların Açıklanması",
+              "tarih": "2026-06-07"
+            },
+            {
+              "etiket": "Final Değerlendirme Sunumları ve Demolar Ağustos - Eylül 2026",
+              "tarih": "2026-07-31"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": [],
+          "azamiSayfa": 30,
+          "azamiUye": 5
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C3%87ip_Tasar%C4%B1m_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartnamesi_v1_3_draft_1_LK3oV.pdf"
+      }
+    },
+    {
+      "id": "0d43615a-30b6-4e91-858e-e46edbb88024",
+      "ad": "Mikrodenetleyici Tasarım · ÖTR",
+      "sablonDosyasi": "2026_OTR_Cip_Tasarim_Yarismasi_Mikrodenetleyici_Tasarim_Hd5WJ.docx",
+      "asama": "ÖTR",
+      "olusturuldu": "2026-08-23T13:49:50.100Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-0d43615a",
+        "ad": "Mikrodenetleyici Tasarım · ÖTR",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "Giriş",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Sistem Mimarisi",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Tasarım Detayları",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Takım Organizasyonu ve İş Planı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Kaynakça ve Ekler",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Genel Kurallar",
+            "zorunlu": true,
+            "yonergeMetni": []
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "Kaynakça ve Ekler",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        },
+        "azamiSayfa": 30
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "giris",
+            "ad": "Giriş",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Giriş"
+          },
+          {
+            "kod": "sistem-mimarisi",
+            "ad": "Sistem Mimarisi",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Sistem Mimarisi"
+          },
+          {
+            "kod": "tasarim-detaylari",
+            "ad": "Tasarım Detayları",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Tasarım Detayları"
+          },
+          {
+            "kod": "takim-organizasyonu-ve-is-plani",
+            "ad": "Takım Organizasyonu ve İş Planı",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Takım Organizasyonu ve İş Planı"
+          },
+          {
+            "kod": "kaynakca-ve-ekler",
+            "ad": "Kaynakça ve Ekler",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Kaynakça ve Ekler"
+          },
+          {
+            "kod": "genel-kurallar",
+            "ad": "Genel Kurallar",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Genel Kurallar"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 6 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_Çip_Tasarım_Yarışması_Şartnamesi_v1_3_draft_1_LK3oV.pdf",
+        "yuklendi": "2026-08-23T20:17:36.096Z",
+        "sayfaSayisi": 31,
+        "kelimeSayisi": 7756,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "Yarışma Takvimi Son Başvuru Tarihi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Yarışma Takvimi ÖTR Sonuçları",
+              "tarih": "2026-04-06"
+            },
+            {
+              "etiket": "Mikrodenetleyici Kategorisi yapıldı,",
+              "tarih": "2026-04-27"
+            },
+            {
+              "etiket": "Ön Tasarım Raporu (ÖTR) Son Teslim Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "Açıklanması",
+              "tarih": "2026-04-12"
+            },
+            {
+              "etiket": "Finalist Takımların Açıklanması",
+              "tarih": "2026-06-07"
+            },
+            {
+              "etiket": "Final Değerlendirme Sunumları ve Demolar Ağustos - Eylül 2026",
+              "tarih": "2026-07-31"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": [],
+          "azamiSayfa": 30,
+          "azamiUye": 5
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C3%87ip_Tasar%C4%B1m_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartnamesi_v1_3_draft_1_LK3oV.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "cip-tasarim-yarismasi"
+}

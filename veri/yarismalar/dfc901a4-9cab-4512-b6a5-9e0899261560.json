@@ -1,0 +1,573 @@
+{
+  "id": "dfc901a4-9cab-4512-b6a5-9e0899261560",
+  "ad": "Sanayide Robotik Uygulamalar Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:57:59.944Z",
+  "kategoriler": [
+    {
+      "id": "ce2b8b31-f3bf-41a3-aab6-aca5bec4e157",
+      "ad": "Proje Detay",
+      "sablonDosyasi": "2026_Sanayide_Robotik_Uygulamalar_Yarışması_Proje_Detay_Raporu_Şablonu_0L.docx",
+      "asama": "PDR",
+      "olusturuldu": "2026-08-23T13:57:59.375Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-ce2b8b31",
+        "ad": "Proje Detay",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "asgariSayfa": 15,
+        "azamiSayfa": 60,
+        "basliklar": [
+          {
+            "ad": "RAPOR ÖZETİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [],
+            "grupMu": true
+          },
+          {
+            "ad": "TAKIM ŞEMASI",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ARAÇ TASARIMI",
+            "zorunlu": true,
+            "puan": 40,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Sistem Tasarımı",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Aracın Mekanik Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Mekanik Tasarım Süreci",
+            "zorunlu": true,
+            "puan": 3,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Malzemeler",
+            "zorunlu": true,
+            "puan": 3,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Üretim Yöntemleri",
+            "zorunlu": true,
+            "puan": 2,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Fiziksel Özellikler",
+            "zorunlu": true,
+            "puan": 2,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Elektronik Tasarım, Algoritma ve Yazılım Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Elektronik Tasarım Süreci",
+            "zorunlu": true,
+            "puan": 3,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Algoritma Tasarım Süreci",
+            "zorunlu": true,
+            "puan": 3,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Yazılım Tasarım Süreci",
+            "zorunlu": true,
+            "puan": 4,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Dış Arayüzler",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "GÜVENLİK",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [],
+            "grupMu": true
+          },
+          {
+            "ad": "TEST",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ZAMAN, BÜTÇE VE RİSK PLANLAMASI",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ÖZGÜNLÜK VE YERLİLİK",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TİCARİLEŞME POTANSİYELİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Proje Detay Raporu; Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en az 15 sayfa en fazla 60 sayfa olacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak, İçindekiler ve Kaynakça” başlıkları için 3 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst-alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynısı ve tekrarı niteliğinde olmamalıdır.",
+          "Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+          "Bu aşamada proje tanıtım videosu bulunmamaktadır.",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir. Kullanılan kaynaklar metin içerisinde gösterilmelidir. Metin içi gösterimde köşeli parantez kullanımı tavsiye edilmektedir. (Örn: [1], [4,7,21], [5-11])",
+          "Dijital/Web Kaynak Gösterimi: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Akademik Kaynak Gösterimi: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası, DOI.",
+          "Rapor şablonuna uymayan Proje Detay Raporları değerlendirilmeyecektir."
+        ],
+        "eleyiciMi": true,
+        "asgariSayfa": 15,
+        "azamiSayfa": 60,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14,
+        "atifBicimi": "koseli-parantez"
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "takim-semasi",
+            "ad": "TAKIM ŞEMASI",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TAKIM ŞEMASI"
+          },
+          {
+            "kod": "proje-mevcut-durum-degerlendirmesi",
+            "ad": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ"
+          },
+          {
+            "kod": "arac-tasarimi",
+            "ad": "ARAÇ TASARIMI",
+            "puan": 40,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ARAÇ TASARIMI"
+          },
+          {
+            "kod": "sistem-tasarimi",
+            "ad": "Sistem Tasarımı",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Sistem Tasarımı"
+          },
+          {
+            "kod": "mekanik-tasarim-sureci",
+            "ad": "Mekanik Tasarım Süreci",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Mekanik Tasarım Süreci"
+          },
+          {
+            "kod": "malzemeler",
+            "ad": "Malzemeler",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Malzemeler"
+          },
+          {
+            "kod": "uretim-yontemleri",
+            "ad": "Üretim Yöntemleri",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Üretim Yöntemleri"
+          },
+          {
+            "kod": "fiziksel-ozellikler",
+            "ad": "Fiziksel Özellikler",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Fiziksel Özellikler"
+          },
+          {
+            "kod": "elektronik-tasarim-sureci",
+            "ad": "Elektronik Tasarım Süreci",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Elektronik Tasarım Süreci"
+          },
+          {
+            "kod": "algoritma-tasarim-sureci",
+            "ad": "Algoritma Tasarım Süreci",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Algoritma Tasarım Süreci"
+          },
+          {
+            "kod": "yazilim-tasarim-sureci",
+            "ad": "Yazılım Tasarım Süreci",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Yazılım Tasarım Süreci"
+          },
+          {
+            "kod": "dis-arayuzler",
+            "ad": "Dış Arayüzler",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Dış Arayüzler"
+          },
+          {
+            "kod": "test",
+            "ad": "TEST",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEST"
+          },
+          {
+            "kod": "zaman-butce-ve-risk-planlamasi",
+            "ad": "ZAMAN, BÜTÇE VE RİSK PLANLAMASI",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ZAMAN, BÜTÇE VE RİSK PLANLAMASI"
+          },
+          {
+            "kod": "ozgunluk-ve-yerlilik",
+            "ad": "ÖZGÜNLÜK VE YERLİLİK",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ÖZGÜNLÜK VE YERLİLİK"
+          },
+          {
+            "kod": "ticarilesme-potansiyeli",
+            "ad": "TİCARİLEŞME POTANSİYELİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TİCARİLEŞME POTANSİYELİ"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "KAYNAKÇA"
+          }
+        ],
+        "toplamPuan": 115
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "\"RAPOR ÖZETİ\" üst başlık olarak işaretlendi: 10 puanı alt başlıklarına dağıtılmış (2 alt başlık).",
+        "\"GÜVENLİK\" üst başlık olarak işaretlendi: 10 puanı alt başlıklarına dağıtılmış (2 alt başlık).",
+        "Rubrik toplamı 115 puan. Ağırlıklar yöneticiye doğrulatılmalı."
+      ]
+    },
+    {
+      "id": "7e1a14d1-64d3-48c9-8d6d-f97540c3e1fe",
+      "ad": "Teknik Yeterlilik Formu",
+      "sablonDosyasi": "2026_SDT_Teknik_Yeterlilik_Formu_RJCw5.docx",
+      "olusturuldu": "2026-08-23T13:57:59.944Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-7e1a14d1",
+        "ad": "Teknik Yeterlilik Formu",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "SANAYİDE ROBOTİK UYGULAMALAR YARIŞMASI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TEKNİK YETERLİLİK FORMU",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "SANAYİDE ROBOTİK UYGULAMALAR YARIŞMASI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TEKNİK YETERLİLİK FORMU",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "TEKNİK YETERLİLİK FORMU DOLDURULURKEN DİKKAT EDİLMESİ GEREKEN HUSUSLAR:",
+              "Yarışmaya uygun olarak kullanmayı planladığınız mekanik tasarım görselini (tercihen ön izometrik görünüş) buraya ekleyiniz. Sadece 1(bir) adet görsel konulması gerekmektedir.",
+              "Üç boyutlu (3D) görsel (render, prototip fotoğrafı vb.) olması gerekmektedir. Eklenen görselin nihai tasarımı yansıtma zorunluluğu yoktur. Planlanan, hayal edilen tasarımla ilgili görsel de (3 boyutlu olmak kaydıyla) eklenebilir.",
+              "Kasa transferi mekanik aksam",
+              "Kullanmayı planladığınız iticinin görselini (tercihen ön izometrik görünüş) buraya ekleyiniz. Sadece 1 (bir) adet görsel konulması gerekmektedir.",
+              "Üç boyutlu (3D) görsel (render, prototip fotoğrafı vb.) olması gerekmektedir. Eklenen görselin nihai tasarımı yansıtma zorunluluğu yoktur. Planlanan, hayal edilen tasarımla ilgili görsel de (3 boyutlu olmak kaydıyla) eklenebilir.",
+              "Kullanılan / kullanılması planlanan bütün sensörler (Inertial Measurement Unit (IMU), kamera, akustik sensörler vb.) alttaki tabloya eklenmelidir. İhtiyaç dahilinde satır sayısı arttırılabilir.",
+              "Sinyal ve güç hatlarını da gösterecek şekilde donanımları içeren elektronik şemasını buraya ekleyiniz. Sadece 1 (bir) adet şema konulması gerekmektedir.",
+              "Eklenen şemanın nihai tasarımı yansıtma zorunluluğu yoktur. Planlanan, hayal edilen şema da eklenebilir.",
+              "Form İçerisinde Yer Alan Fiyatların Toplamı"
+            ]
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "sanayide-robotik-uygulamalar-yarismasi",
+            "ad": "SANAYİDE ROBOTİK UYGULAMALAR YARIŞMASI",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "SANAYİDE ROBOTİK UYGULAMALAR YARIŞMASI"
+          },
+          {
+            "kod": "teknik-yeterlilik-formu",
+            "ad": "TEKNİK YETERLİLİK FORMU",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEKNİK YETERLİLİK FORMU"
+          },
+          {
+            "kod": "sanayide-robotik-uygulamalar-yarismasi",
+            "ad": "SANAYİDE ROBOTİK UYGULAMALAR YARIŞMASI",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "SANAYİDE ROBOTİK UYGULAMALAR YARIŞMASI"
+          },
+          {
+            "kod": "teknik-yeterlilik-formu",
+            "ad": "TEKNİK YETERLİLİK FORMU",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "TEKNİK YETERLİLİK FORMU DOLDURULURKEN DİKKAT EDİLMESİ GEREKEN HUSUSLAR:",
+              "Yarışmaya uygun olarak kullanmayı planladığınız mekanik tasarım görselini (tercihen ön izometrik görünüş) buraya ekleyiniz. Sadece 1(bir) adet görsel konulması gerekmektedir.",
+              "Üç boyutlu (3D) görsel (render, prototip fotoğrafı vb.) olması gerekmektedir. Eklenen görselin nihai tasarımı yansıtma zorunluluğu yoktur. Planlanan, hayal edilen tasarımla ilgili görsel de (3 boyutlu olmak kaydıyla) eklenebilir.",
+              "Kasa transferi mekanik aksam",
+              "Kullanmayı planladığınız iticinin görselini (tercihen ön izometrik görünüş) buraya ekleyiniz. Sadece 1 (bir) adet görsel konulması gerekmektedir.",
+              "Üç boyutlu (3D) görsel (render, prototip fotoğrafı vb.) olması gerekmektedir. Eklenen görselin nihai tasarımı yansıtma zorunluluğu yoktur. Planlanan, hayal edilen tasarımla ilgili görsel de (3 boyutlu olmak kaydıyla) eklenebilir.",
+              "Kullanılan / kullanılması planlanan bütün sensörler (Inertial Measurement Unit (IMU), kamera, akustik sensörler vb.) alttaki tabloya eklenmelidir. İhtiyaç dahilinde satır sayısı arttırılabilir.",
+              "Sinyal ve güç hatlarını da gösterecek şekilde donanımları içeren elektronik şemasını buraya ekleyiniz. Sadece 1 (bir) adet şema konulması gerekmektedir.",
+              "Eklenen şemanın nihai tasarımı yansıtma zorunluluğu yoktur. Planlanan, hayal edilen şema da eklenebilir.",
+              "Form İçerisinde Yer Alan Fiyatların Toplamı"
+            ],
+            "bolumAdi": "TEKNİK YETERLİLİK FORMU"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablonda Word başlık stili yok; başlıklar kalın biçimlendirmeden tahmin edildi. Bölüm listesini onaylamadan önce gözden geçirin.",
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 4 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ]
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "sanayide-robotik-uygulamalar-yarismasi"
+}

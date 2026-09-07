@@ -1,0 +1,439 @@
+{
+  "id": "3fcb49e7-9af0-4f9a-bd41-41d1c035a691",
+  "ad": "Blokzincir Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:53:31.544Z",
+  "kategoriler": [
+    {
+      "id": "376d7210-db59-40af-bbd2-f9eb288ee24f",
+      "ad": "Blokzincir Yarışması",
+      "sablonDosyasi": "BlokzincirYarışması2026ÖDRŞablonu.TR_EX2RH.docx",
+      "asama": "ÖDR",
+      "olusturuldu": "2026-08-23T13:53:31.543Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-376d7210",
+        "ad": "Blokzincir Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 30,
+        "basliklar": [
+          {
+            "ad": "PROJE ÖZETİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Projenin konusu, amacı; seçilen yarışma kapsamı ve yöntem dikkate alınarak açık bir dille ifade edilmelidir."
+            ]
+          },
+          {
+            "ad": "KATMA DEĞER VE YENİLİKÇİLİK",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TEKNOLOJİ KULLANIMI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "UYGULANABİLİRLİK",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "YAYGIN ETKİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Projenin önermiş olduğu teknolojik yenilikleri sayesinde geniş bir kitleye hitap edebilme potansiyeli ile toplumsal ve ekonomik anlamda veya endüstri düzeyinde olumlu bir etki yaratma kapasitesi değerlendirilmelidir."
+            ]
+          },
+          {
+            "ad": "SÜRDÜRÜLEBİLİRLİK",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Proje, finansal, çevresel ve sosyal sürdürülebilirlik ilkesine uygun olarak planlanmalıdır. Uzun vadeli başarı için, kaynak ve değişen koşullara uyum sağlama yeteneğine sahip olmak önemlidir. Proje kapsamındaki iş ve işlemlerde, potansiyel risklerin farkındalığıyla sürdürebilirliğe nasıl katkıda bulunulacağı göz önünde bulundurulmalı ve paylaşılmalıdır."
+            ]
+          },
+          {
+            "ad": "PROJE TAKVİMİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Proje kapsamında iş paketleri alt faaliyetleri ile birlikte detaylı, açık belirlenmiş ve gerçekçi olmalıdır. Görsel açıdan anlaşılır ve düzenli bir şema / tablo kullanılmalıdır."
+            ]
+          },
+          {
+            "ad": "TAKIM YAPISI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu kısımda takım üyelerinin görev dağılımı, uzmanlıkları ve ekip organizasyonu hakkında bilgi verilir. Takım üyelerinin isim ve fotoğraf gibi kişisel bilgilerini EKLEMEYİNİZ."
+            ]
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Kaynakça başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Dijital/web kaynakları, Akademik Yayınlar vb.)”",
+              "Raporda kullanılan şekiller/tablolar/diyagramlar anlaşılır ve kurallara uygun düzende hazırlanmış olmalıdır."
+            ]
+          },
+          {
+            "ad": "PROJE RAPOR DÜZENİ VE PUANLAMA",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "(Raporda yer verilmeyecek)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Rapor yazımında sayfa sınırlarına, akademik yazım kurallarına, kaynakça ve içindekiler yazımlarına dikkat edilmiş olmalıdır.",
+              "Raporda yer alması gereken başlıklar ve puanlamaya etkileri sırasıyla aşağıdaki şekildedir:",
+              "2.KATMA DEĞER VE YENİLİKÇİLİK (15 Puan)",
+              "3.TEKNOLOJİ KULLANIMI (20 Puan)",
+              "4.UYGULANABİLİRLİK (15 Puan)",
+              "6.SÜRDÜRÜLEBİLİRLİK (10 Puan)",
+              "9.KAYNAKÇA (Formata Uygunluk- 5 Puan)"
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Ön Değerlendirme Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en fazla 30 sayfa olacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak, İçindekiler ve Kaynakça” başlıkları için 3 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst-alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynısı ve tekrarı niteliğinde olmamalıdır.",
+          "Bu aşamada proje tanıtım videosu bulunmamaktadır.",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir. Kullanılan kaynaklar metin içerisinde gösterilmelidir. Metin içi gösterimde köşeli parantez kullanımı tavsiye edilmektedir. (Örn: [1], [4,7,21], [5-11])",
+          "Dijital/Web Kaynak Gösterimi: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Akademik Kaynak Gösterimi: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası, DOI.",
+          "Rapor şablonuna uymayan Ön Değerlendirme Raporları değerlendirilmeyecektir."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 30,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14,
+        "atifBicimi": "koseli-parantez"
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "proje-ozeti",
+            "ad": "PROJE ÖZETİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Projenin konusu, amacı; seçilen yarışma kapsamı ve yöntem dikkate alınarak açık bir dille ifade edilmelidir."
+            ],
+            "bolumAdi": "PROJE ÖZETİ"
+          },
+          {
+            "kod": "katma-deger-ve-yenilikcilik",
+            "ad": "KATMA DEĞER VE YENİLİKÇİLİK",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "KATMA DEĞER VE YENİLİKÇİLİK"
+          },
+          {
+            "kod": "teknoloji-kullanimi",
+            "ad": "TEKNOLOJİ KULLANIMI",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEKNOLOJİ KULLANIMI"
+          },
+          {
+            "kod": "uygulanabilirlik",
+            "ad": "UYGULANABİLİRLİK",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "UYGULANABİLİRLİK"
+          },
+          {
+            "kod": "yaygin-etki",
+            "ad": "YAYGIN ETKİ",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Projenin önermiş olduğu teknolojik yenilikleri sayesinde geniş bir kitleye hitap edebilme potansiyeli ile toplumsal ve ekonomik anlamda veya endüstri düzeyinde olumlu bir etki yaratma kapasitesi değerlendirilmelidir."
+            ],
+            "bolumAdi": "YAYGIN ETKİ"
+          },
+          {
+            "kod": "surdurulebilirlik",
+            "ad": "SÜRDÜRÜLEBİLİRLİK",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Proje, finansal, çevresel ve sosyal sürdürülebilirlik ilkesine uygun olarak planlanmalıdır. Uzun vadeli başarı için, kaynak ve değişen koşullara uyum sağlama yeteneğine sahip olmak önemlidir. Proje kapsamındaki iş ve işlemlerde, potansiyel risklerin farkındalığıyla sürdürebilirliğe nasıl katkıda bulunulacağı göz önünde bulundurulmalı ve paylaşılmalıdır."
+            ],
+            "bolumAdi": "SÜRDÜRÜLEBİLİRLİK"
+          },
+          {
+            "kod": "proje-takvimi",
+            "ad": "PROJE TAKVİMİ",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Proje kapsamında iş paketleri alt faaliyetleri ile birlikte detaylı, açık belirlenmiş ve gerçekçi olmalıdır. Görsel açıdan anlaşılır ve düzenli bir şema / tablo kullanılmalıdır."
+            ],
+            "bolumAdi": "PROJE TAKVİMİ"
+          },
+          {
+            "kod": "takim-yapisi",
+            "ad": "TAKIM YAPISI",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda takım üyelerinin görev dağılımı, uzmanlıkları ve ekip organizasyonu hakkında bilgi verilir. Takım üyelerinin isim ve fotoğraf gibi kişisel bilgilerini EKLEMEYİNİZ."
+            ],
+            "bolumAdi": "TAKIM YAPISI"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Kaynakça başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Dijital/web kaynakları, Akademik Yayınlar vb.)”",
+              "Raporda kullanılan şekiller/tablolar/diyagramlar anlaşılır ve kurallara uygun düzende hazırlanmış olmalıdır."
+            ],
+            "bolumAdi": "KAYNAKÇA"
+          },
+          {
+            "kod": "proje-rapor-duzeni-ve-puanlama",
+            "ad": "PROJE RAPOR DÜZENİ VE PUANLAMA",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "PROJE RAPOR DÜZENİ VE PUANLAMA"
+          },
+          {
+            "kod": "raporda-yer-verilmeyecek",
+            "ad": "(Raporda yer verilmeyecek)",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Rapor yazımında sayfa sınırlarına, akademik yazım kurallarına, kaynakça ve içindekiler yazımlarına dikkat edilmiş olmalıdır.",
+              "Raporda yer alması gereken başlıklar ve puanlamaya etkileri sırasıyla aşağıdaki şekildedir:",
+              "2.KATMA DEĞER VE YENİLİKÇİLİK (15 Puan)",
+              "3.TEKNOLOJİ KULLANIMI (20 Puan)",
+              "4.UYGULANABİLİRLİK (15 Puan)",
+              "6.SÜRDÜRÜLEBİLİRLİK (10 Puan)",
+              "9.KAYNAKÇA (Formata Uygunluk- 5 Puan)"
+            ],
+            "bolumAdi": "(Raporda yer verilmeyecek)"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Şablonda puan ağırlığı yok; 11 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_BLOKZİNCİR_YARIŞMASI_ŞARTNAMESİ_TR.20_02_rBh8h.pdf",
+        "yuklendi": "2026-08-23T20:12:21.606Z",
+        "sayfaSayisi": 15,
+        "kelimeSayisi": 2468,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk Versiyon",
+              "tarih": "2026-01-02"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Proje Ön Değerlendirme Raporu Son Teslim Tarihi",
+              "tarih": "2026-03-27"
+            },
+            {
+              "etiket": "Proje Ön Değerlendirme Raporu Sonuçlarına",
+              "tarih": "2026-04-24"
+            },
+            {
+              "etiket": "Proje Sunum Raporu Teslim Tarihi",
+              "tarih": "2026-06-26"
+            },
+            {
+              "etiket": "Özet Proje Sunum Raporu Teslim Tarihi",
+              "tarih": "2026-07-10"
+            },
+            {
+              "etiket": "Proje Sunum Aşaması (Çevrim İçi)",
+              "tarih": "2026-07-20 → 2026-07-25"
+            },
+            {
+              "etiket": "Finalistlerin Açıklanması",
+              "tarih": "2026-07-31"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 5
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_BLOKZ%C4%B0NC%C4%B0R_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_TR.20_02_rBh8h.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "blokzincir-yarismasi"
+}

@@ -1,0 +1,552 @@
+{
+  "id": "f6744448-c8b0-4e8a-bc8b-720635e08054",
+  "ad": "Çelikkubbe Hava Savunma Sistemleri Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:53:34.414Z",
+  "kategoriler": [
+    {
+      "id": "61fe6bff-d336-4112-b448-a4cff7917e50",
+      "ad": "Çelikkubbe Hava Savunma Sistemleri Yarışması",
+      "sablonDosyasi": "2026_Çelikkubbe_HavaSavunmaSistemleri_KTR_şablon_TR_eE7lb.docx",
+      "asama": "KTR",
+      "olusturuldu": "2026-08-23T13:53:34.414Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-61fe6bff",
+        "ad": "Çelikkubbe Hava Savunma Sistemleri Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 10,
+        "basliklar": [
+          {
+            "ad": "RAPOR ÖZETİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde proje kapsamında yürütülen faaliyetlerle ilgili olarak özet bilgi sunulur. Takım ve sistem tarihçesi verilmemelidir. Ön Tasarım Raporu’ndan farklı olarak yapılan çalışmalar belirtilmelidir. Detayları ilgili bölümlerde verilmek üzere, burada kısaca sistemin, alt sistemin tasarım/üretim durumlarının ne aşamaya geldiği belirtilir."
+            ]
+          },
+          {
+            "ad": "TAKIM ŞEMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde takım görev dağılımı ve ekip organizasyonu tablo olarak gösterilir ve açıklama yapılarak verilir. Takım üyelerinin yetkinliklerinden bahsedilir. Kişisel bilgiler şartnamede belirtildiği üzere tabloda yer almaması gerekmektedir."
+            ]
+          },
+          {
+            "ad": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde Ön Tasarım Raporunun değerlendirmesi yapılır. Varsa ön tasarımdan sonra yapılan değişiklikler ve değişikliklerin neden yapıldığı açıklanır."
+            ]
+          },
+          {
+            "ad": "SİSTEM TASARIMI",
+            "zorunlu": true,
+            "puan": 60,
+            "yonergeMetni": [
+              "Bu bölümde sistemin tüm alt donanımları nihai tasarım ile birlikte detaylı olarak blok şemada verilir."
+            ]
+          },
+          {
+            "ad": "Mekanik Tasarım",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "Bu bölümde sistemin mekanik tasarım süreçleri adım adım anlatılır. Tasarımlara ait görseller, teknik resimler, prototip fotoğrafları paylaşılır. Final tasarımın neden seçildiği açıklanır. Final tasarıma ait detaylar verilir. Sistemin final tasarımına ait teknik resimler, fotoğraflar ek olarak paylaşılmalıdır."
+            ]
+          },
+          {
+            "ad": "Malzemeler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Sistemin üretiminde kullanılan malzemeler, malzemelerin özellikleri ve neden seçildiği/değiştirildiği açıklanır. Hazır alınan ve/veya geliştirilen/tasarlanan alt bileşenler belirtilir."
+            ]
+          },
+          {
+            "ad": "Üretim Yöntemleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Sistemin üretiminde kullanılan yöntemler ve bu yöntemlerin neden seçildiği açıklanır."
+            ]
+          },
+          {
+            "ad": "Fiziksel Özellikler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Sistemin boyutları, ağırlığı, hacmi gibi fiziksel özellikleri belirtilir."
+            ]
+          },
+          {
+            "ad": "Elektronik Tasarım, Algoritma ve Yazılım Tasarımı",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Elektronik Tasarım Süreci",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde sistemin elektronik tasarım süreçleri anlatılır. Final tasarımın neden seçildiği açıklanır. Sistem son tasarımına getirilene kadar yapılmış olan tasarımlara ait görsellere (Blok şema, teknik resim, prototip fotoğrafları vb.) yer verilir. Kullanılan malzemeler (Sensörler, kameralar, kablolar, anakart, motor sürücüler, güç kartları vb.) hakkında bilgi verilir ve neden seçildiği veya nasıl tasarlandığı açıklanır. Bu kısımda sadece internetten elde edilmiş bileşen bilgileri değil araca ait yapıdan söz edilmelidir. Her bir bileşenin detayının internetten kopyala-yapıştır olarak sunulmasına gerek yoktur."
+            ]
+          },
+          {
+            "ad": "Yazılım Tasarım Süreci",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde sistemin kullanıcı arayüz yazılımları, algoritmaların uygulama yöntemleri, atış kontrol yazılımı (hedef tespit, hedef takip, angajman kabul, hedefe yönlenme, hedef imha değerlendirme) süreçleri anlatılır. Tüm bu yazılımların hangi programlama dillerinde programlanacağı ve bunların seçilme nedenleri belirtilir."
+            ]
+          },
+          {
+            "ad": "Arayüzler",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Sistemin dış arayüzleri, bu arayüzlerde kullanılan alt bileşenler ve mesaj arayüzleri anlatılır. Sistemin kontrolünde kullanılan kontrol istasyonunun arayüzü, görüntü ve veri aktarımı gibi yerlerde kullanılan yazılımlar ve seçilen yazılım dilleri hakkında bilgi verilir.",
+              "Önemli not: Arayüz kavramı sadece kullanıcı arayüzü ile kısıtlı olarak düşünülmemelidir. Aşağıdaki maddeler ilgili bölüm için arayüzlere örnek olarak verilebilir. Örnekler bütün arayüzleri kapsamamakla birlikte arttırılabilir.",
+              "Bütün takımların yukarıdaki maddeler doğrultusunda arayüzlerini açıklamaları gerekmektedir."
+            ]
+          },
+          {
+            "ad": "Sistem İşleyiş Senaryoları",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu bölümde sistemin davranışı sistem senaryoları üzerinden anlatılacaktır. Aşağıda tanımlanan ve elde edilen sonuçların açık ve anlaşılır şekilde sunulması beklenmektedir."
+            ]
+          },
+          {
+            "ad": "Sistem Kullanım Durumlarının Tanımlanması",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde sistem kara kutu yaklaşımıyla ele alınmalı ve kavramsal seviyede operasyonel amaçları ortaya konmalıdır. Kara kutu yaklaşımında sistemin iç yapısı dikkate alınmadan, sistemin dış dünya ile etkileşimi ve gerçekleştirdiği işlevler tanımlanır. Bu kapsamda:",
+              "Kullanım durumları, sistem gereksinimlerinin operasyonel davranışa dönüştürülmesinde önemli bir rol oynar ve temelde “sistem ne yapar?” sorusuna cevap verir. Kullanım durumları belirlenirken yarışma şartnamesinde tanımlanan görevler ve operasyonel ihtiyaçlar dikkate alınmalıdır."
+            ]
+          },
+          {
+            "ad": "Sistem Mod ve Durumlarının Tanımlanması",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Sistemlerin çalışma süresi boyunca farklı modlarda ve durumlarda bulunması mümkündür. Bu nedenle sistemin farklı koşullar altında nasıl davrandığı açık şekilde tanımlanmalıdır. Bu kapsamda;",
+              "Mod ve durum tanımları, sistem davranışının kapsamını ve sınırlarını belirlemeye yardımcı olur."
+            ]
+          },
+          {
+            "ad": "Hata Durum Senaryoları",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Sistemin yalnızca normal çalışma koşulları değil, aynı zamanda hata ve beklenmeyen durumlar altında nasıl davranacağı da açıklanmalıdır. Bu kapsamda;",
+              "Bu çalışmalar kapsamında kötü gün senaryoları (rainy-day scenarios) hazırlanmalı ve sistemin bu durumlarda nasıl tepki vereceği açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "Davranış Modelleme Diyagramları",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Tanımlanan sistem kullanım durumlarının davranışı, aktivite diyagramları ve sekans diyagramları kullanılarak modellenmelidir. Aktivite diyagramları, süreçlerin, mantıksal akışını, karar mekanizmalarını, farklı koşullarda izlenen yolları göstermek için kullanılmalıdır. Sekans diyagramları ise sistem bileşenleri ve aktörler arasındaki etkileşimleri mesajlaşmanın zaman sıralı yapısını göstermek için kullanılmalıdır.",
+              "Bu diyagramlarda aşağıdaki sorulara cevap verilmesi beklenecektir:"
+            ]
+          },
+          {
+            "ad": "TEST",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu bölümde sisteme (uygulandıysa) uygulanan test senaryoları ve sonuçları hakkında bilgi verilir. Yapılan testlerin sonuçları ile yapılan tasarımın ne kadar uyumlu olduğu karşılaştırılır. Test yapamayan takımlar burada ilerleyen zamanlarda yapılacak testler hakkında bilgi verebilir. Test ekipmanları ve planlanan süreçlerinizi burada belirtebilirsiniz."
+            ]
+          },
+          {
+            "ad": "GÜVENLİK",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde yarışma şartnamesinde belirtilen güvenlik ihtiyaçlarının karşılanması için alınan önlemler ve çözüm yöntemleri açıklanır. Seçilen malzeme, kullanılan donanım, yazılım belirtilebilir.",
+              "Önemli Not: Acil DURDUR yeteneği olmayan sistemler bu kısımdan puan alamayacaktır."
+            ]
+          },
+          {
+            "ad": "TECRÜBE",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölüm sistemin tasarım, üretim ve test aşamalarında karşılaşılan problemler, yaşanan kazalar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir."
+            ]
+          },
+          {
+            "ad": "ZAMAN, BÜTÇE VE RİSK PLANLAMASI",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde sistemin kritik tasarım, üretim ve test süreçlerini içeren bir zaman planlaması, nihai bütçe planlaması ve risk planlaması yapılır. Ön tasarımda planlanan bütçe ve son bütçe arasında karşılaştırma yapılır."
+            ]
+          },
+          {
+            "ad": "ÖZGÜNLÜK",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde projenin/sistemin özgün tarafları anlatılmalıdır. Takım ismi, sistemin tüm tasarımının takım tarafından yapılması vb. bilgiler sistemin özgünlüğüne işaret etmemektedir. Özgünlük araç üzerinde kullanılan bütün alt sistemler (mekanik, elektronik, yazılım) için yazılabilir."
+            ]
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde raporda kullanılan kaynaklar uygun bir format ile yer almalıdır. Rapor içerisinde çeşitli sitelerden elde edilen, özellikle elektronik bileşenlere ait kaynak bildirimi yapılmalıdır. Kaynakçada verilen tüm referanslar, rapor içerisinde kullanılmalıdır."
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "Açıklama, Kapak, İçindekiler ve görsel (teknik resim vs.) olmak üzere en fazla 30 sayfa olacaktır. 30 sayfayı geçen raporlar değerlendirmeye alınmayacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak” ve “İçindekiler” olacak şekilde iki ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Satır Aralıkları: 1,15, İki tarafa yaslı, Sayfa kenar boşlukları üst-alt-sağ-sol 2,5 cm olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynı ve tekrarı niteliğinde olmamalıdır.",
+          "Raporunda, web sitemizde yer alan geçmiş yıl raporlarından yararlanmış olan takımlar alıntı yaptığını ilgili sayfada belirtmesi gerekmektedir. Açıklamayı alıntı yapılan cümlenin ardından belirtmeniz gerekmektedir.",
+          "ALINTI FORMATI: \"Alıntı yapılan Cümle/ler\" (Yıl, Yarışma Adı, Kategori, Takım Adı)",
+          "ÖRNEK ALINTI: \"Enkazda depremzedenin nerede olduğunu tespit edilememesi, enkaz kaldırma ve deprem-zede arama çalışmalarını yavaşlatan en önemli sorundur.\" (2020, İnsanlık Yararına Teknoloji Yarışması, Afet Yönetimi, X Takımı)",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir.",
+          "Dijital Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Basılı Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası"
+        ],
+        "eleyiciMi": false,
+        "azamiSayfa": 30,
+        "yaziTipi": "Arial",
+        "govdePunto": 12
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "proje-mevcut-durum-degerlendirmesi",
+            "ad": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde Ön Tasarım Raporunun değerlendirmesi yapılır. Varsa ön tasarımdan sonra yapılan değişiklikler ve değişikliklerin neden yapıldığı açıklanır."
+            ],
+            "bolumAdi": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ"
+          },
+          {
+            "kod": "sistem-tasarimi",
+            "ad": "SİSTEM TASARIMI",
+            "puan": 60,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde sistemin tüm alt donanımları nihai tasarım ile birlikte detaylı olarak blok şemada verilir."
+            ],
+            "bolumAdi": "SİSTEM TASARIMI"
+          },
+          {
+            "kod": "mekanik-tasarim",
+            "ad": "Mekanik Tasarım",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde sistemin mekanik tasarım süreçleri adım adım anlatılır. Tasarımlara ait görseller, teknik resimler, prototip fotoğrafları paylaşılır. Final tasarımın neden seçildiği açıklanır. Final tasarıma ait detaylar verilir. Sistemin final tasarımına ait teknik resimler, fotoğraflar ek olarak paylaşılmalıdır."
+            ],
+            "bolumAdi": "Mekanik Tasarım"
+          },
+          {
+            "kod": "elektronik-tasarim-algoritma-ve-yazilim-",
+            "ad": "Elektronik Tasarım, Algoritma ve Yazılım Tasarımı",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Elektronik Tasarım, Algoritma ve Yazılım Tasarımı"
+          },
+          {
+            "kod": "arayuzler",
+            "ad": "Arayüzler",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Sistemin dış arayüzleri, bu arayüzlerde kullanılan alt bileşenler ve mesaj arayüzleri anlatılır. Sistemin kontrolünde kullanılan kontrol istasyonunun arayüzü, görüntü ve veri aktarımı gibi yerlerde kullanılan yazılımlar ve seçilen yazılım dilleri hakkında bilgi verilir.",
+              "Önemli not: Arayüz kavramı sadece kullanıcı arayüzü ile kısıtlı olarak düşünülmemelidir. Aşağıdaki maddeler ilgili bölüm için arayüzlere örnek olarak verilebilir. Örnekler bütün arayüzleri kapsamamakla birlikte arttırılabilir.",
+              "Bütün takımların yukarıdaki maddeler doğrultusunda arayüzlerini açıklamaları gerekmektedir."
+            ],
+            "bolumAdi": "Arayüzler"
+          },
+          {
+            "kod": "sistem-isleyis-senaryolari",
+            "ad": "Sistem İşleyiş Senaryoları",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde sistemin davranışı sistem senaryoları üzerinden anlatılacaktır. Aşağıda tanımlanan ve elde edilen sonuçların açık ve anlaşılır şekilde sunulması beklenmektedir."
+            ],
+            "bolumAdi": "Sistem İşleyiş Senaryoları"
+          },
+          {
+            "kod": "test",
+            "ad": "TEST",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde sisteme (uygulandıysa) uygulanan test senaryoları ve sonuçları hakkında bilgi verilir. Yapılan testlerin sonuçları ile yapılan tasarımın ne kadar uyumlu olduğu karşılaştırılır. Test yapamayan takımlar burada ilerleyen zamanlarda yapılacak testler hakkında bilgi verebilir. Test ekipmanları ve planlanan süreçlerinizi burada belirtebilirsiniz."
+            ],
+            "bolumAdi": "TEST"
+          },
+          {
+            "kod": "guvenlik",
+            "ad": "GÜVENLİK",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde yarışma şartnamesinde belirtilen güvenlik ihtiyaçlarının karşılanması için alınan önlemler ve çözüm yöntemleri açıklanır. Seçilen malzeme, kullanılan donanım, yazılım belirtilebilir.",
+              "Önemli Not: Acil DURDUR yeteneği olmayan sistemler bu kısımdan puan alamayacaktır."
+            ],
+            "bolumAdi": "GÜVENLİK"
+          },
+          {
+            "kod": "tecrube",
+            "ad": "TECRÜBE",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölüm sistemin tasarım, üretim ve test aşamalarında karşılaşılan problemler, yaşanan kazalar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir."
+            ],
+            "bolumAdi": "TECRÜBE"
+          },
+          {
+            "kod": "zaman-butce-ve-risk-planlamasi",
+            "ad": "ZAMAN, BÜTÇE VE RİSK PLANLAMASI",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde sistemin kritik tasarım, üretim ve test süreçlerini içeren bir zaman planlaması, nihai bütçe planlaması ve risk planlaması yapılır. Ön tasarımda planlanan bütçe ve son bütçe arasında karşılaştırma yapılır."
+            ],
+            "bolumAdi": "ZAMAN, BÜTÇE VE RİSK PLANLAMASI"
+          },
+          {
+            "kod": "ozgunluk",
+            "ad": "ÖZGÜNLÜK",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde projenin/sistemin özgün tarafları anlatılmalıdır. Takım ismi, sistemin tüm tasarımının takım tarafından yapılması vb. bilgiler sistemin özgünlüğüne işaret etmemektedir. Özgünlük araç üzerinde kullanılan bütün alt sistemler (mekanik, elektronik, yazılım) için yazılabilir."
+            ],
+            "bolumAdi": "ÖZGÜNLÜK"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde raporda kullanılan kaynaklar uygun bir format ile yer almalıdır. Rapor içerisinde çeşitli sitelerden elde edilen, özellikle elektronik bileşenlere ait kaynak bildirimi yapılmalıdır. Kaynakçada verilen tüm referanslar, rapor içerisinde kullanılmalıdır."
+            ],
+            "bolumAdi": "KAYNAKÇA"
+          }
+        ],
+        "toplamPuan": 160
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Rubrik toplamı 160 puan. Ağırlıklar yöneticiye doğrulatılmalı."
+      ],
+      "sartname": {
+        "dosyaAdi": "28.07.2026_-_2026_Şartname_TR_v1.5_CtfFw.pdf",
+        "yuklendi": "2026-08-23T20:17:19.920Z",
+        "sayfaSayisi": 25,
+        "kelimeSayisi": 4277,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk Yayın",
+              "tarih": "2026-01-02"
+            },
+            {
+              "etiket": "Aşama-2 ve Aşama-3'ün",
+              "tarih": "2026-06-23"
+            },
+            {
+              "etiket": "Ön Tasarım Raporu Son Teslim Tarihi",
+              "tarih": "2026-03-17"
+            },
+            {
+              "etiket": "Ön Tasarım Raporu Sonuçlarının Açıklanması",
+              "tarih": "2026-04-13"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu Son Teslim Tarihi",
+              "tarih": "2026-06-02"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu Sonuçlarının Açıklanması",
+              "tarih": "2026-06-25"
+            },
+            {
+              "etiket": "Sistem Kabiliyeti Videolarının Son Teslim Tarihi",
+              "tarih": "2026-08-21"
+            },
+            {
+              "etiket": "Finale Kalan (Finalist) Takımların Açıklanması",
+              "tarih": "2026-09-01"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": [],
+          "azamiSayfa": 10,
+          "azamiUye": 15
+        },
+        "catismalar": [
+          "Azami sayfa sayısı çakışıyor: şablon 30, şartname 10. Şartname esas alındı."
+        ],
+        "uyarilar": [
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/28.07.2026_-_2026_%C5%9Eartname_TR_v1.5_CtfFw.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "celikkubbe-hava-savunma-sistemleri-yarismasi"
+}

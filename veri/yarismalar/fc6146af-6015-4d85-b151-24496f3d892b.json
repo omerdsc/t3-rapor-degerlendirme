@@ -1,0 +1,423 @@
+{
+  "id": "fc6146af-6015-4d85-b151-24496f3d892b",
+  "ad": "Maden Teknolojileri Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:55:01.947Z",
+  "kategoriler": [
+    {
+      "id": "3672f4b7-4d9d-48b9-a5bd-626502e53133",
+      "ad": "Maden Teknolojileri Yarışması",
+      "sablonDosyasi": "Maden_Teknolojileri_Yarısması_2026_ODR_Sablonu_2_RflR2_m6Pf5.docx",
+      "asama": "ÖDR",
+      "olusturuldu": "2026-08-23T13:55:01.947Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-3672f4b7",
+        "ad": "Maden Teknolojileri Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 10,
+        "basliklar": [
+          {
+            "ad": "PROJE ÖZETİ",
+            "zorunlu": true,
+            "puan": 18,
+            "yonergeMetni": [
+              "Proje özeti 150-250 kelime arasında olmalıdır hazırlanmalıdır. Bu özet; projenin amacı, ele aldığı problem, hedeflediği etki ve benimsediği temel yaklaşım dikkate alınarak özlü ve tutarlı ve bir anlatımla sunulmalıdır. Kullanılan dil; açık, anlaşılır ve teknik olmalıdır. Okuyucunun projenin hangi teknolojik alanı (örneğin; otonom araçlar, cevher zenginleştirme, iş sağlığı ve güvenliği, arama teknikleri vb.) kapsadığını hemen anlamasını sağlanmalıdır.",
+              "Bu bölümde, sınırlı kalmamakla birlikte aşağıdaki bilgilere yer verilmelidir:"
+            ],
+            "asgariKelime": 150,
+            "azamiKelime": 250
+          },
+          {
+            "ad": "SORUNUN TANIMI VE ÇÖZÜM ÖNERİSİ",
+            "zorunlu": true,
+            "puan": 35,
+            "yonergeMetni": [
+              "Bu bölümde, projenin; hangi soruna çözüm sağlayacağı/hangi süreçleri geliştireceği detaylandırılmalı ve çözümün süreçleri nasıl etkileyeceği detaylı ve teknik bir biçimde ortaya konulmalıdır."
+            ]
+          },
+          {
+            "ad": "YENİLİKÇİLİK VEYA YERLİLEŞTİRME HAMLESİ",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "UYGULANABİLİRLİK VE SÜRDÜRÜLEBİLİRLİK",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": [
+              "Projenin teknik ve ekonomik olarak sahada uygulanabilirliği, madenlerin zorlu çalışma koşullarına uyumu ve çevresel/sosyal sürdürülebilirlik ilkelerine katkısı açıklanmalıdır. Projenin uzun vadede nasıl ayakta kalacağı ve kaynakları ne kadar verimli kullanacağı detaylandırılmalıdır.",
+              "Önerilen teknolojinin mevcut madencilik altyapısına kolayca entegre edilebilirliği teknik bir şekilde aktarılmalıdır.",
+              "Projenin, finansal (ekonomik olarak maliyetlere etkisi, uzun süre uygulanabilirliği, vb.), çevresel (karbon ayak izine, enerji verimliliğine, vb. etkisi) ve sosyal (iş sağlığı ve güvenliğini, yerel istihdamı artırma, vb.) sürdürülebilirlik ilkelerine uygun düşen yönleri detaylıca anlatılmalıdır.",
+              "Projenin değişen koşullara uyum sağlama kapasitesi açıklanmalıdır.",
+              "Projenin mevcut şartlarda ticari bir ürüne dönüştürülebilirliği değerlendirilmelidir."
+            ]
+          },
+          {
+            "ad": "PROJENİN HAZIRLANIŞ SÜRECİ VE ÇALIŞMA YÖNTEMİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Proje fikrinin ortaya çıkışından projenin gerçekleşmesine kadar geçen ve geçecek olan süreç planlı, kronolojik ve metodolojik bir sırayla anlatılmalıdır. Süreç içinde (kullanılacaksa) hangi bilimsel yöntemlerin, mühendislik prensiplerinin veya tasarım süreçlerinin kullanılacağı belirtilmelidir. Projenin hangi teknik aşamalardan (literatür taraması, tasarım, simülasyon, prototipleme, test, vb.) geçeceği iş paketleri halinde açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "PROJE TAKIMI",
+            "zorunlu": true,
+            "puan": 2,
+            "yonergeMetni": [
+              "Sınıf/Sektörde Geçirdiği Yıl Sayısı",
+              "Not: Proje takımı en fazla 6 öğrenciden oluşmalıdır. (Danışman bu sayıya dâhil değildir.)"
+            ]
+          },
+          {
+            "ad": "KAYNAKLAR",
+            "zorunlu": true,
+            "puan": 3,
+            "yonergeMetni": [
+              "Bu bölümde, proje hazırlanırken yararlanılan bilgi kaynakları şeffaf ve düzenli biçimde sunulmalıdır. Kaynak listesi, projenin bilgiye dayalı olarak geliştirildiğini ve etik kullanım bilincinin gözetildiğini gösterecek nitelikte olmalıdır."
+            ]
+          },
+          {
+            "ad": "PROJE RAPOR DÜZENİ VE ŞABLONA UYUM",
+            "zorunlu": false,
+            "puan": 2,
+            "yonergeMetni": [
+              "Bu bölüm, raporun okunabilirliğini, anlaşılabilirliğini ve değerlendirmeye uygunluğunu esas alır. Amaç, standartlara uygun ve değerlendirilebilir bir sunum sağlanıp sağlanmadığını tespit etmektir."
+            ],
+            "raporda": false
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKLAR",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Ön Değerlendirme Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en fazla 10 sayfa olacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak, İçindekiler ve Kaynakça” başlıkları için 3 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst-alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynısı ve tekrarı niteliğinde olmamalıdır.",
+          "Bu aşamada proje tanıtım videosu bulunmamaktadır.",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir. Kullanılan kaynaklar metin içerisinde gösterilmelidir. Metin içi gösterimde köşeli parantez kullanımı tavsiye edilmektedir. (Örn: [1], [4,7,21], [5-11])",
+          "Dijital/Web Kaynak Gösterimi: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Akademik Kaynak Gösterimi: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası, DOI.",
+          "Rapor şablonuna uymayan Ön Değerlendirme Raporları değerlendirilmeyecektir."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 10,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14,
+        "atifBicimi": "koseli-parantez"
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "proje-ozeti",
+            "ad": "PROJE ÖZETİ",
+            "puan": 18,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Proje özeti 150-250 kelime arasında olmalıdır hazırlanmalıdır. Bu özet; projenin amacı, ele aldığı problem, hedeflediği etki ve benimsediği temel yaklaşım dikkate alınarak özlü ve tutarlı ve bir anlatımla sunulmalıdır. Kullanılan dil; açık, anlaşılır ve teknik olmalıdır. Okuyucunun projenin hangi teknolojik alanı (örneğin; otonom araçlar, cevher zenginleştirme, iş sağlığı ve güvenliği, arama teknikleri vb.) kapsadığını hemen anlamasını sağlanmalıdır.",
+              "Bu bölümde, sınırlı kalmamakla birlikte aşağıdaki bilgilere yer verilmelidir:"
+            ],
+            "bolumAdi": "PROJE ÖZETİ"
+          },
+          {
+            "kod": "sorunun-tanimi-ve-cozum-onerisi",
+            "ad": "SORUNUN TANIMI VE ÇÖZÜM ÖNERİSİ",
+            "puan": 35,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, projenin; hangi soruna çözüm sağlayacağı/hangi süreçleri geliştireceği detaylandırılmalı ve çözümün süreçleri nasıl etkileyeceği detaylı ve teknik bir biçimde ortaya konulmalıdır."
+            ],
+            "bolumAdi": "SORUNUN TANIMI VE ÇÖZÜM ÖNERİSİ"
+          },
+          {
+            "kod": "yenilikcilik-veya-yerlilestirme-hamlesi",
+            "ad": "YENİLİKÇİLİK VEYA YERLİLEŞTİRME HAMLESİ",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "YENİLİKÇİLİK VEYA YERLİLEŞTİRME HAMLESİ"
+          },
+          {
+            "kod": "uygulanabilirlik-ve-surdurulebilirlik",
+            "ad": "UYGULANABİLİRLİK VE SÜRDÜRÜLEBİLİRLİK",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Projenin teknik ve ekonomik olarak sahada uygulanabilirliği, madenlerin zorlu çalışma koşullarına uyumu ve çevresel/sosyal sürdürülebilirlik ilkelerine katkısı açıklanmalıdır. Projenin uzun vadede nasıl ayakta kalacağı ve kaynakları ne kadar verimli kullanacağı detaylandırılmalıdır.",
+              "Önerilen teknolojinin mevcut madencilik altyapısına kolayca entegre edilebilirliği teknik bir şekilde aktarılmalıdır.",
+              "Projenin, finansal (ekonomik olarak maliyetlere etkisi, uzun süre uygulanabilirliği, vb.), çevresel (karbon ayak izine, enerji verimliliğine, vb. etkisi) ve sosyal (iş sağlığı ve güvenliğini, yerel istihdamı artırma, vb.) sürdürülebilirlik ilkelerine uygun düşen yönleri detaylıca anlatılmalıdır.",
+              "Projenin değişen koşullara uyum sağlama kapasitesi açıklanmalıdır.",
+              "Projenin mevcut şartlarda ticari bir ürüne dönüştürülebilirliği değerlendirilmelidir."
+            ],
+            "bolumAdi": "UYGULANABİLİRLİK VE SÜRDÜRÜLEBİLİRLİK"
+          },
+          {
+            "kod": "projenin-hazirlanis-sureci-ve-calisma-yo",
+            "ad": "PROJENİN HAZIRLANIŞ SÜRECİ VE ÇALIŞMA YÖNTEMİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Proje fikrinin ortaya çıkışından projenin gerçekleşmesine kadar geçen ve geçecek olan süreç planlı, kronolojik ve metodolojik bir sırayla anlatılmalıdır. Süreç içinde (kullanılacaksa) hangi bilimsel yöntemlerin, mühendislik prensiplerinin veya tasarım süreçlerinin kullanılacağı belirtilmelidir. Projenin hangi teknik aşamalardan (literatür taraması, tasarım, simülasyon, prototipleme, test, vb.) geçeceği iş paketleri halinde açıklanmalıdır."
+            ],
+            "bolumAdi": "PROJENİN HAZIRLANIŞ SÜRECİ VE ÇALIŞMA YÖNTEMİ"
+          },
+          {
+            "kod": "proje-takimi",
+            "ad": "PROJE TAKIMI",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Sınıf/Sektörde Geçirdiği Yıl Sayısı",
+              "Not: Proje takımı en fazla 6 öğrenciden oluşmalıdır. (Danışman bu sayıya dâhil değildir.)"
+            ],
+            "bolumAdi": "PROJE TAKIMI"
+          },
+          {
+            "kod": "kaynaklar",
+            "ad": "KAYNAKLAR",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, proje hazırlanırken yararlanılan bilgi kaynakları şeffaf ve düzenli biçimde sunulmalıdır. Kaynak listesi, projenin bilgiye dayalı olarak geliştirildiğini ve etik kullanım bilincinin gözetildiğini gösterecek nitelikte olmalıdır."
+            ],
+            "bolumAdi": "KAYNAKLAR"
+          },
+          {
+            "kod": "proje-rapor-duzeni-ve-sablona-uyum",
+            "ad": "PROJE RAPOR DÜZENİ VE ŞABLONA UYUM",
+            "puan": 2,
+            "bolumBekleniyor": false,
+            "olcut": [
+              "Bu bölüm, raporun okunabilirliğini, anlaşılabilirliğini ve değerlendirmeye uygunluğunu esas alır. Amaç, standartlara uygun ve değerlendirilebilir bir sunum sağlanıp sağlanmadığını tespit etmektir."
+            ],
+            "bolumAdi": "PROJE RAPOR DÜZENİ VE ŞABLONA UYUM"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [],
+      "sartname": {
+        "dosyaAdi": "2026_MADEN_TEKNOLOJİLERİ_YARIŞMASI_ŞARTNAMESİ_20_02_2026_vTarih_urMBc.pdf",
+        "yuklendi": "2026-08-23T20:13:24.261Z",
+        "sayfaSayisi": 25,
+        "kelimeSayisi": 4935,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "Proje Ön Değerlendirme Raporu Son Teslim",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "Elemeyi Geçen Takımların Açıklanması",
+              "tarih": "2026-05-15"
+            },
+            {
+              "etiket": "Finalistlerin Açıklanması",
+              "tarih": "2026-07-20"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 6
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_MADEN_TEKNOLOJ%C4%B0LER%C4%B0_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_20_02_2026_vTarih_urMBc.pdf",
+        "ozet": {
+          "yarismaninAmaci": [
+            "Madencilikte dışa bağımlılığı azaltacak yerli yazılım, donanım, ekipman ve kimyasal çözümler geliştirmek",
+            "Kritik hammaddelerin (bor, NTE, lityum, kobalt vb.) aranmasından uç ürüne dönüştürülmesine kadar milli mühendislik çözümleri üretmek",
+            "Otonom sistemler, yapay zeka ve IoT ile 'Madencilik 4.0' ve iş güvenliği uygulamalarını yaygınlaştırmak",
+            "Döngüsel ekonomi, atık değerlendirme, su/enerji verimliliği ve düşük karbonlu sürdürülebilir madencilik modelleri geliştirmek"
+          ],
+          "teknikBeklentiler": [
+            "Proje, şartnamedeki üç ana temadan (ileri cevher işleme/yerli arama-izleme-ölçme, otonom madencilik-YZ-İSG, çevreci madencilik-döngüsel ekonomi) en az biriyle doğrudan ilişkili olmalı",
+            "Bilimsel yaklaşımın ve yöntemin raporda açık, gerekçeli biçimde ortaya konması",
+            "Yaratıcılık ve yenilikçilik: mevcut çözümlerden farkın ve özgünlüğün gösterilmesi",
+            "Uygulanabilirlik: çözümün yerli imkanlarla üretilebilir ve saha/operasyona entegre edilebilir olduğunun gösterilmesi",
+            "Sektörel ve ulusal fayda ile dışa bağımlılığı azaltma potansiyelinin somutlaştırılması",
+            "Proje fikrinin işlevsel bir prototip/maket/yazılım arayüzü ile doğrulanabilir olduğunun raporda gösterilmesi"
+          ],
+          "katiKisitlar": [
+            "Proje yalnızca yükseköğretim ve üstü seviyeye uygun tek bir kategoriye/yarışmaya başvurmuş olmalı",
+            "Geçmiş TEKNOFEST projelerinden yararlanılıyorsa proje geliştirilmiş/dönüştürülmüş olmalı ve kaynak gösterilmeli",
+            "Daha önce başka bir yarışmaya katılmış proje ise yarışma adı, yeri, tarihi, organizatörü ve sonucu rapor içinde bildirilmeli",
+            "Proje, öğrenciler tarafından üretilmiş olmalı; danışman yalnızca yönlendirici rolde kalmalı"
+          ],
+          "eleyiciDurumlar": [
+            "Proje Ön Değerlendirme Raporunun belirtilen tarih/saate kadar eksiksiz yüklenmemesi",
+            "Raporun yarışma kapsamı/temaları ile ilgisiz olması (uygunluk ön elemesinde itiraz hakkı yoktur)",
+            "Geçmiş bir proje raporunun/fikrinin birebir aynısı, kopyası, benzeri veya taklidi olması",
+            "Etik ihlali: başkasına ait fikir, metin, tasarım, yazılım veya verinin kaynak gösterilmeden kullanılması",
+            "Projenin öğrenci yerine danışman ya da üçüncü kişilerce üretilip öğrenci çalışması gibi sunulması",
+            "Aynı proje ile birden fazla kategoriye/yarışmaya başvurulması"
+          ],
+          "hakemNotlari": [
+            "Ön değerlendirme raporu puanı nihai başarı puanına etki etmez; yalnızca bir sonraki aşamaya geçişi belirler",
+            "Değerlendirmede dört temel ölçüt esastır: bilimsel yaklaşım, yaratıcılık-yenilikçilik, uygulanabilirlik, sektörel ve ulusal fayda",
+            "Baraj puanının en fazla 25 puan altında kalan takımlar itiraz edebilir; itirazlar farklı bir hakem heyetince yeniden değerlendirilir",
+            "Prototipte estetik değil, çalışma prensibinin doğrulanması ve işlevsellik önceliklidir; maket, ekran görüntüsü veya çizim kabul edilir",
+            "Bireysel başvurular da takım olarak değerlendirilir; takım büyüklüğü puanlama ölçütü değildir"
+          ]
+        }
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "maden-teknolojileri-yarismasi"
+}

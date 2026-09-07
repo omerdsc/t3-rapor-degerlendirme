@@ -1,0 +1,1023 @@
+{
+  "id": "3453cb93-7a84-44fd-b142-bed47c99261e",
+  "ad": "Savaşan İHA Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:58:10.461Z",
+  "kategoriler": [
+    {
+      "id": "1bd05af8-8c2f-445c-9191-823baaa2e07f",
+      "ad": "Kritik Tasarım",
+      "sablonDosyasi": "SIHA_KTR_2026_TR_v2_KBa6W.docx",
+      "asama": "KTR",
+      "olusturuldu": "2026-08-23T13:58:09.175Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-1bd05af8",
+        "ad": "Kritik Tasarım",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 25,
+        "basliklar": [
+          {
+            "ad": "TEMEL SİSTEM ÖZETİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "1.1 Sistem Tanımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, sistemin görev tanımı ve özellikleri kısaca açıklanır. Genel sistemi oluşturan bileşenlerin (Yer Kontrol İstasyonu, Yer Anteni, Kumanda, Hava Aracı vs.) de tanımları ve sistem içerisindeki görevlerinden bahsedilir."
+            ]
+          },
+          {
+            "ad": "1.2 Sistem Nihai Performans Özellikleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, nihai hava aracı performans değerlerine yer verilmelidir. (Ör: Kanat açıklığı, seyir hızı, kalkış ağırlığı, tutunma hızı, haberleşme menzili, uçuş süresi vb.). Burada yer alacak performans değerleri tablo şeklinde gösterilmelidir."
+            ]
+          },
+          {
+            "ad": "ORGANİZASYON ÖZETİ",
+            "zorunlu": true,
+            "puan": 4,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "2.1 Takım Organizasyonu",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, takımın organizasyon şeması ve birimlerin görevlerinden kısaca bahsedilir. (Ekip üyelerinin isim ve fotoğraf gibi kişisel bilgileri dahil EDİLMEMELİDİR.)"
+            ]
+          },
+          {
+            "ad": "2.2 Zaman Akış Çizelgesi ve Bütçe",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, planlanan zaman akış çizelgesi ile gerçekleşen akış çizelgesindeki farklar (gecikmeler, erken tamamlananlar vb.) ile benzer şekilde tahmini bütçe ve gerçekleşen bütçe farkları da yer almalıdır."
+            ]
+          },
+          {
+            "ad": "DETAYLI TASARIM ÖZETİ",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "3.1 Hava Aracının Üç Boyutlu Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde; hava aracının boyutları, alt sistemlerin araç içi yerleşimleri, güvenlik ihtiyaçları kapsamında yerleştirilen sigortanın konumu görsellerde bulunmalıdır. Aynı zamanda, yarışma günü teknik kontrolde, burada verilen görseller üzerinden, tasarlanan araç ile alana gelen araç karşılaştırılacaktır."
+            ]
+          },
+          {
+            "ad": "3.2 Hava Aracı Performans Özeti",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde hava aracının bir müsabaka turu boyunca havada kalabileceği uçuş süresi hesaplamaları detaylıca gösterilmelidir.",
+              "Ayrıca yapılan analizler (Ör: Aerodinamik analizler, yapısal analizler vb.) bu kısımda anlatılmalıdır."
+            ]
+          },
+          {
+            "ad": "3. 3 Nihai Sistem Mimarisi ve Alt Sistemler Özeti",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, sistem mimarisinin nihai hali, kullanılacak donanımların marka/model bilgisine kadar yer almalıdır. Yer alan sistem mimarisinde tüm güç ve haberleşme hatlarının gösterilmesi beklenmektedir. Sistem mimarisinin görsel olarak eklenmesi istenmektedir.",
+              "Eklenen sistem mimarisine ek olarak; seçilen alt sistemlerin teknik özellikleri ve bu sistemlerin birbirleri ile uyumlulukları açıklanmalıdır. Eğer aynı görev için araştırılan birden fazla seçenek varsa, nihai ürünün neden seçildiği açıklanmalıdır. Kullanılan RF cihazların frekans bandı seçimlerinin nasıl yapıldığı bu bölümde açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "3.4 Hava Aracı Ağırlık Dağılımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, hava aracının alt sistem seviyesinde ağırlık dağılımı verilecektir. (Tüm alt parçaların ağırlıkları ve seçilen referans noktasına göre konumları belirtilmelidir. Ayrıca HA’nın kanat ucuna göre ağırlık merkezi verilmelidir.)"
+            ]
+          },
+          {
+            "ad": "OTONOM GÖREVLER",
+            "zorunlu": true,
+            "puan": 25,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "4.1 Otonom Kilitlenme",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, takımın sunucudan gelen verileri nasıl değerlendireceği ve takip edilmeye en uygun rakip hava aracına nasıl karar vereceği anlatılmalıdır. Takibe uygun görülen hava aracına nasıl yaklaşılacağı, yaklaşma sırasında nasıl bir yol izleneceğinden bahsedilmelidir.",
+              "Kullanılacak nesne tespit ve takip algoritmalarının nasıl seçildiği/geliştirildiği anlatılmalıdır. Bu açıklamanın yanı sıra alternatif yöntemler ile karşılaştırılıp avantaj/dezavantajlarından bahsedilmelidir.",
+              "Tasarlanan algoritmada hava aracının görüntüdeki hataya karşılık duruş (yatış, dikilme, yönelme) ve hız kontrolünü nasıl yapacağı gibi bilgiler verilmelidir. Bu açıklamanın yanı sıra alternatif yöntemler ile karşılaştırılıp avantaj/dezavantajları anlatılmalıdır.",
+              "Bu bölümde anlatılan algoritmalar; akış diyagramları, kontrolcü şemaları, grafikler veya figürler ile desteklenebilir."
+            ]
+          },
+          {
+            "ad": "4.2 Kamikaze Görevi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, İHA’nın Kamikaze görevini nasıl gerçekleştireceği, hedefe yaklaşma (intikal), dalış ve pas geçme fazları detaylıca açıklanmalıdır (Ör: dalış açısı, hedefe yaklaşma sırasındaki rüzgâr yönü, dalış ve pas geçme irtifası, dalış sırasında ulaşılacak azami hız vb.).",
+              "Kamikaze sırasında QR kod görüntüsünün Hedef Vuruş Alanı içerisinde tutmak için kullanılacak duruş (yatış, dikilme, yönelme) kontrolcüleri detaylıca açıklanmalıdır. Hava aracının görev esnasında yapısal dayanımı (Ör: dalış ve pas geçme sırasında hava aracının maruz kalacağı azami G kuvveti vb.) detaylarıyla anlatılmalıdır.",
+              "QR hedefin nasıl bir algoritma ile tespit edilip, elde edilen QR verisinin sunucuya nasıl aktarılacağı açıklanmalıdır. Görüntüde oluşabilecek bozulmaların önüne nasıl geçileceği, kullanılacak kameranın QR hedefini kaç metre irtifadan okuyabildiği açıklanmalıdır.",
+              "Bu bölümde anlatılan algoritmalar; akış diyagramları, kontrolcü şemaları, grafikler veya figürler ile desteklenebilir."
+            ]
+          },
+          {
+            "ad": "HAVA SAVUNMA SİSTEMİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde, hava savunma sisteminin aktif olduğu durumlarda yasaklı alanlardan nasıl kaçınılacağı detaylandırılmalıdır. Eğer kullanılacaksa otonom kaçış veya rota planlama algoritmaları açıklanmalıdır. Eğer kaçınma otonom yapılmayacaksa, operatör tarafından gerçekleştirilecek kaçınma adımları detaylandırılmalıdır.",
+              "Bu bölümde anlatılan algoritmalar; akış diyagramları, kontrolcü şemaları, grafikler veya figürler ile desteklenebilir."
+            ]
+          },
+          {
+            "ad": "YER KONTROL İSTASYONU, HABERLEŞME VE KULLANICI ARAYÜZÜ",
+            "zorunlu": true,
+            "puan": 12,
+            "yonergeMetni": [
+              "Bu bölümde, hava aracı-yer kontrol istasyonu arasındaki haberleşme, ayrıntılı şekilde açıklanmalı, (Ör: anten frekansları, haberleşme protokolleri, haberleşme donanımları, görüntü aktarım sistemleri, takipçi anten, modem, router, yarışma sunucusu ile haberleşme vb.) diyagram olarak gösterilmelidir.",
+              "Ek olarak, yer kontrol istasyonunda kullanılacak olan arayüzün/arayüzlerin tasarımı/tasarımları açıklanacaktır. Burada hız, yükseklik, mod değişimi, kilitlenme dörtgeni, hava savunma sistemleri, uçuş sınırları, varsa rakip hava araçlarının anlık görsel gösterimleri gibi bilgilerin nerede bulunduğu arayüzün/arayüzlerin üzerinde görsellerle gösterilmelidir.",
+              "(Gerçek sınırlar müsabaka günü yarışmacılar ile paylaşılacaktır. KTR’de gösterilecek sınırlar farazi olarak takımlar tarafından belirlenebilir.)"
+            ]
+          },
+          {
+            "ad": "HAVA ARACI ENTEGRASYONU",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "7.1 Yapısal ve Mekanik Entegrasyon",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, hava aracının nasıl üretildiği/birleştirildiği, yapısal bütünlüğün nasıl sağlandığı, montajın nasıl gerçekleştirildiği, kontrol yüzeyi/motor gibi hareketli parçaların nasıl sabitlendiği açıklanmalı ve görseller ile desteklenmelidir. (Ör: kanat, gövde, kuyruk, iniş takımı, motor vb.)"
+            ]
+          },
+          {
+            "ad": "7.2 Elektronik Entegrasyon",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, hava aracının içerisinde bulunan elektronik parçaların (sensörler, aviyonikler, aktüatörler, kamera, batarya vb.) yerleşimi, nasıl sabitlendiği, araç içi kablolamanın hangi tip kablolar/konnektörler kullanılarak yapıldığı, hava aracı içerisinde uygulanan toprak/sigorta bağlantıları açıklanmalı ve gerçekleştirilen adımlar görseller ile desteklenmelidir."
+            ]
+          },
+          {
+            "ad": "TEST VE SİMÜLASYON",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "8.1 Alt Sistem Testleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, araç geliştirme sırasında yapılan veya yapılması planlanan testler yer alacaktır. Gerçekleştirilen her test bu bölümde alt başlık olarak yer almalıdır. Örneğin: 8.1.1 İtki Testi, 8.1.2 Kanat Yükleme Testi, 8.1.3 Haberleşme Menzil Testi…"
+            ]
+          },
+          {
+            "ad": "8.2 Uçuş Kontrol Listesi ve Uçuş Listesi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde uçuş öncesi sisteme ait ‘Uçuş Kontrol Listesi’ yer almalıdır.",
+              "Aynı zamanda var ise yapılan uçuş testlerine ait görseller ve bu testlerin sonuçları derlenmiş halde paylaşılmalıdır. Henüz uçuş testi gerçekleştirilmemiş ise, yarışma tarihine kadar gerçekleştirilmesi hedeflenen uçuş testlerinin sayısı, test amaçları ve beklenen çıkarımlar verilmelidir (Ör: Azami uçuş süresi testi, Otonom iniş testi, vb.)."
+            ]
+          },
+          {
+            "ad": "8.3 Görev Testleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Uçuş testlerinde gerçekleştirilen yarışma görevlerinin detaylarına ait görseller ve bu testlerin sonuçları derlenmiş halde paylaşılmalıdır (Ör: Dalış Testi, Kilitlenme Testi, Hava Savunma Sisteminden Kaçma vb.). Yarışmada kullanılması planlanan algoritmaların testinin gerçekleştirilmesi için simülasyon ortamlarından destek alınmalıdır. Bahsi geçen testler yazılım çevrim (SITL) veya donanım çevrim (HITL) şeklinde yapılabilir. Dünya ortamını matematiksel veya görsel olarak simüle etmek için çeşitli simülasyon ortamları kullanılabilir (Ör: Flightgear, XPlane, Gazebo, Unity, Unreal Engine). Yapılan testlerin yöntemleri, uygulama adımları ve sonuçları paylaşılmalıdır."
+            ]
+          },
+          {
+            "ad": "GÜVENLİK",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde, karşılaşması muhtemele risklerin tespiti ve bu risklere karşı alınan önlemler anlatılmalıdır. Acil durumlarda takip edilecek acil durum kontrol adımlarından bahsedilmelidir. (Ör: Çalışma ortamında ilk yardım çantası bulunması, özel pil çantası kullanılması, vb.)"
+            ]
+          },
+          {
+            "ad": "REFERANSLAR",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu kısımda referanslar yer almalıdır."
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "REFERANSLAR",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+          "Tüm raporlar “İçindekiler” ve “Referanslar” içermelidir.",
+          "Her rapor bir kapak sayfası içermelidir.",
+          "Rapor sayfaları ardışık olarak numaralandırılmalıdır.",
+          "Kapak hariç sayfaların alt bilgisinde takım adı ve sayfa numarası yazılmalı, üst bilgisinde ise “Savaşan İHA Yarışması 2025” yazılmalıdır.",
+          "Yazı tipi: Arial, Punto: 12, Satır Aralıkları: 1,15",
+          "Tüm metinler iki tarafa yaslı şekilde olması gerekmektedir.",
+          "Sayfa düzeni: A4 Tipi ve Kenar Boşlukları 2,5 cm",
+          "Rapor tüm sayfalar dahil 25 sayfayı geçmemelidir.",
+          "Raporunda, web sitemizde yer alan geçmiş yıl raporlarından yararlanmış olan takımlar alıntı yaptığını ilgili sayfada belirtmesi gerekmektedir. Açıklamayı alıntı yapılan cümlenin ardından belirtmeniz gerekmektedir.",
+          "ALINTI FORMATI: \"Alıntı yapılan Cümle/ler\" (Yıl, Yarışma Adı, Kategori, Takım Adı)",
+          "ÖRNEK ALINTI: \"Enkazda depremzedenin nerede olduğunu tespit edilememesi, enkaz kaldırma ve deprem-zede arama çalışmalarını yavaşlatan en önemli sorundur.\" (2022, İnsanlık Yararına Teknoloji Yarışması, Afet Yönetimi, X Takımı)",
+          "Kritik Tasarım Raporu puanlaması aşağıdaki şablona göre yapılacaktır.",
+          "Temel Sistem Özeti",
+          "Organizasyon Özeti",
+          "Detaylı Tasarım Özeti",
+          "Hava Savunma Sistemi",
+          "Yer Kontrol İstasyonu, Haberleşme ve Kullanıcı Arayüzü",
+          "Hava Aracı Entegrasyonu",
+          "Test ve Simülasyon"
+        ],
+        "eleyiciMi": false,
+        "azamiSayfa": 25,
+        "yaziTipi": "Arial",
+        "govdePunto": 12
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "temel-sistem-ozeti",
+            "ad": "TEMEL SİSTEM ÖZETİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEMEL SİSTEM ÖZETİ"
+          },
+          {
+            "kod": "organizasyon-ozeti",
+            "ad": "ORGANİZASYON ÖZETİ",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ORGANİZASYON ÖZETİ"
+          },
+          {
+            "kod": "detayli-tasarim-ozeti",
+            "ad": "DETAYLI TASARIM ÖZETİ",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "DETAYLI TASARIM ÖZETİ"
+          },
+          {
+            "kod": "otonom-gorevler",
+            "ad": "OTONOM GÖREVLER",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "OTONOM GÖREVLER"
+          },
+          {
+            "kod": "hava-savunma-sistemi",
+            "ad": "HAVA SAVUNMA SİSTEMİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, hava savunma sisteminin aktif olduğu durumlarda yasaklı alanlardan nasıl kaçınılacağı detaylandırılmalıdır. Eğer kullanılacaksa otonom kaçış veya rota planlama algoritmaları açıklanmalıdır. Eğer kaçınma otonom yapılmayacaksa, operatör tarafından gerçekleştirilecek kaçınma adımları detaylandırılmalıdır.",
+              "Bu bölümde anlatılan algoritmalar; akış diyagramları, kontrolcü şemaları, grafikler veya figürler ile desteklenebilir."
+            ],
+            "bolumAdi": "HAVA SAVUNMA SİSTEMİ"
+          },
+          {
+            "kod": "yer-kontrol-istasyonu-haberlesme-ve-kull",
+            "ad": "YER KONTROL İSTASYONU, HABERLEŞME VE KULLANICI ARAYÜZÜ",
+            "puan": 12,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, hava aracı-yer kontrol istasyonu arasındaki haberleşme, ayrıntılı şekilde açıklanmalı, (Ör: anten frekansları, haberleşme protokolleri, haberleşme donanımları, görüntü aktarım sistemleri, takipçi anten, modem, router, yarışma sunucusu ile haberleşme vb.) diyagram olarak gösterilmelidir.",
+              "Ek olarak, yer kontrol istasyonunda kullanılacak olan arayüzün/arayüzlerin tasarımı/tasarımları açıklanacaktır. Burada hız, yükseklik, mod değişimi, kilitlenme dörtgeni, hava savunma sistemleri, uçuş sınırları, varsa rakip hava araçlarının anlık görsel gösterimleri gibi bilgilerin nerede bulunduğu arayüzün/arayüzlerin üzerinde görsellerle gösterilmelidir.",
+              "(Gerçek sınırlar müsabaka günü yarışmacılar ile paylaşılacaktır. KTR’de gösterilecek sınırlar farazi olarak takımlar tarafından belirlenebilir.)"
+            ],
+            "bolumAdi": "YER KONTROL İSTASYONU, HABERLEŞME VE KULLANICI ARAYÜZÜ"
+          },
+          {
+            "kod": "hava-araci-entegrasyonu",
+            "ad": "HAVA ARACI ENTEGRASYONU",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "HAVA ARACI ENTEGRASYONU"
+          },
+          {
+            "kod": "test-ve-simulasyon",
+            "ad": "TEST VE SİMÜLASYON",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEST VE SİMÜLASYON"
+          },
+          {
+            "kod": "guvenlik",
+            "ad": "GÜVENLİK",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, karşılaşması muhtemele risklerin tespiti ve bu risklere karşı alınan önlemler anlatılmalıdır. Acil durumlarda takip edilecek acil durum kontrol adımlarından bahsedilmelidir. (Ör: Çalışma ortamında ilk yardım çantası bulunması, özel pil çantası kullanılması, vb.)"
+            ],
+            "bolumAdi": "GÜVENLİK"
+          }
+        ],
+        "toplamPuan": 96
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [],
+      "sartname": {
+        "dosyaAdi": "2026_SAVASAN_İHA_YARISMA_SARTNAMESİ_TR_v1.4_Q373N.pdf",
+        "yuklendi": "2026-08-23T20:16:08.507Z",
+        "sayfaSayisi": 35,
+        "kelimeSayisi": 8446,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "TEKNOFEST 2026 İlk Versiyon",
+              "tarih": "2026-01-09"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Haberleşme Hızı",
+              "tarih": "2026-03-25"
+            },
+            {
+              "etiket": "Bilgilendirmesi Eklenmiştir.",
+              "tarih": "2026-04-11"
+            },
+            {
+              "etiket": "Takvim güncellemesi.",
+              "tarih": "2026-08-15"
+            },
+            {
+              "etiket": "Teknik Yeterlilik Formu Son Teslim Tarihi",
+              "tarih": "2026-03-24"
+            },
+            {
+              "etiket": "Teknik Yeterlilik Formu Sonuçlarının Açıklanması",
+              "tarih": "2026-04-10"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu Son Teslim Tarihi",
+              "tarih": "2026-04-30"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu Sonuçlarının Açıklanması",
+              "tarih": "2026-05-22"
+            },
+            {
+              "etiket": "Sistem Tanımlama ve Uçuş Kanıt Videolarının Son Teslim Tarihi",
+              "tarih": "2026-07-14"
+            },
+            {
+              "etiket": "Finale Kalan (Finalist) Takımların Açıklanması",
+              "tarih": "2026-07-31"
+            }
+          ],
+          "asamalar": [
+            "Yarışma Takvimi",
+            "Teknik Yeterlilik Formu",
+            "Kritik Tasarım Raporu",
+            "Uçuş ve Pilot Kanıt Videosu",
+            "Sistem Tanımlama Videosu",
+            "Yarışmanın Puanlaması",
+            "Rapor ve Video Puanlaması (%30)",
+            "Görev Puanlaması (%70)",
+            "Toplam Puan",
+            "Otonomi ve Kilitlenme Değerlendirme Yöntemi"
+          ],
+          "eleyiciHukumler": [
+            "Birden fazla danışman bulunan takımların başvuruları geçersiz sayılacaktır.",
+            "Sunucu saati yazmayan ya da farklı bir saat yazan görüntüler değerlendirilmeyecektir."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 15
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_SAVASAN_%C4%B0HA_YARISMA_SARTNAMES%C4%B0_TR_v1.4_Q373N.pdf"
+      }
+    },
+    {
+      "id": "7b0fac9e-cb1e-4d2d-b8e5-19c35f1bdf8f",
+      "ad": "Teknik Yeterlilik Formu",
+      "sablonDosyasi": "TEKNOFEST26_Savasan_IHA_TYF_TR_zMqMG.docx",
+      "olusturuldu": "2026-08-23T13:58:10.460Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-7b0fac9e",
+        "ad": "Teknik Yeterlilik Formu",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "TEKNİK YETERLİLİK FORMU ÖRNEK ŞABLONU",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu şablonda paylaşılan sorular daha sonra KYS platformunda açılacak olan Teknik Yeterlilik Formu üzerinde doldurulacaktır. Şablon sizlerin hazırlık yapabilmesi adına paylaşılmaktadır.",
+              "Bu form dosya olarak sisteme yüklenmeyecektir.",
+              "*** Form değerlendirmelerinin ardından puan açıklaması gerçekleştirilmeyecek olup, teknik yeterlilik olarak yapılan değerlendirmeler sonucunda başarılı / başarısız şeklinde sonuç açıklanacaktır."
+            ]
+          },
+          {
+            "ad": "TEKNİK YETERLİLİK FORMUNDA YER ALACAK SORULAR",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Yarışmaya Katılacak Olan Hava Aracının Tipi Nedir? (Sabit Kanat: Uçuş için gerekli taşıma kuvvetini kanatlarından sağlar. VTOL: Dikey iniş/kalkış yapıp uçuş için gerekli taşımayı kanatlar vasıtasıyla gerçekleştirir)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Yarışmaya Katılacak Olan Hava Aracını Tanıtınız. (Yarışmaya katılacak olan hava aracının hazır mı kullanılacağı veya özgün tasarım mı olacağını belirtiniz ve bir paragrafla tasarımı özetleyiniz (Tasarım, Tipi, Üretim, Malzeme vb.))",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Paragraf (Max. 500 Karakter)"
+            ]
+          },
+          {
+            "ad": "Hava Aracının Kalkış Ağırlığı Nedir?",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Hava Aracının Uzunluğu Nedir?",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Hava Aracının Eni Nedir?",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Hava Aracının Yüksekliği Nedir?",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Hava Aracının Kalkış Türü Nedir?",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Hava aracının kalkışını açıklayınız. (Örneğin: Koşu mesafesi, Tırmanış yüksekliği, Katapult boyutları, Kalkış modu)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Paragraf (Max. 300 Karakter)"
+            ]
+          },
+          {
+            "ad": "Hava aracının iniş türü nedir?",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Hava aracının inişini açıklayınız. (Örneğin: Paraşüt boyutu, Glide Slope, Gövde koruma sistemi)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Paragraf (Max. 300 Karakter)"
+            ]
+          },
+          {
+            "ad": "Sistem mimarinizi açıklayınız. (Kullanacağınız sistem mimarisini görsel olarak sisteme yükleyiniz. (Araç içi aviyonik bağlantılar vb.) Yüklenecek mimaride haberleşme ve güç gibi sistemlerin belirtilmesi beklenmektedir.)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Örnek Sistem Mimarisi Görseli:"
+            ]
+          },
+          {
+            "ad": "Hava aracının batarya türü nedir? (Hava aracında bulunan otopilot, ESC gibi elektronik sistemleri besleyecek güç kaynağının kapasite bilgisi, hücre bilgisi, pil türü… Örn: 10000 mAh 4S Li-Po Pil)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Paragraf (Max. 300 Karakter)"
+            ]
+          },
+          {
+            "ad": "Hava aracının güç sistemini açıklayınız. (Örneğin: Seçim nedeni, Kapasite, Şarj edilme, Tahmini uçuş süresi)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Paragraf (Max. 300 Karakter)",
+              "Kullanılacak itki sistemini kısaca açıklayınız. (Örneğin: Motor tipi, Motor/ESC marka model, ESC max Akım, Pervane Boyutu, Max itki. -Max. 300 Karakter)",
+              "Paragraf (Max. 300 Karakter)"
+            ]
+          },
+          {
+            "ad": "Otopilot sisteminizi tanımlayınız. (Hava aracında bulunan otopilot sistemi için kullanacağınız donanım ve yazılımların özelliklerini açıklayınız.)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Paragraf (Max. 500 Karakter)"
+            ]
+          },
+          {
+            "ad": "Kullanılacak görüntüleme sistemini kısaca açıklayınız. (Örneğin: Kamera Marka ve Modeli, Kamera çözünürlüğü, Kamera Görüş Açısı, Kamera Tipi (Analog/Dijital))",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Paragraf (Max. 300 Karakter)"
+            ]
+          },
+          {
+            "ad": "RF Cihazlarınızı tanımlayınız. (Müsabaka sırasında diğer takımlar ile frekans çakışmalarının önlenmesi adına, takımların belirli bir frekans aralığında olması gerekmektedir. Frekans atamasının sağlıklı ve efektif yapılabilmesi için frekansı değiştirilebilir RF cihazlarının kullanılması zorunludur. RF cihazlarının marka ve model bilgilerini, ayarlanabilir frekans aralığını ve haberleşme menzilini açıklayınız.)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Paragraf (Max. 300 Karakter)"
+            ]
+          },
+          {
+            "ad": "Yer kontrol istasyonunu tanımlayınız. (Yer Kontrol İstasyonu için hangi yazılımları / programları kullanmayı düşünüyorsunuz? Açıklayınız.)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Paragraf (Max. 500 Karakter)"
+            ]
+          },
+          {
+            "ad": "Görüntü işleme ve aktarım sistemlerini tanımlayınız. (Görüntünün nasıl işleneceği, kullanılması planlanan görüntü işleme algoritması hakkında bilgi veriniz.)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Paragraf (Max. 500 Karakter)"
+            ]
+          },
+          {
+            "ad": "Kamikaze görevinin nasıl yapılacağı hakkında bilgi veriniz. (İntikal, Dalış, Kilitlenme, Pas Geçme gibi Kamikaze görev adımları için kullanılması planlanan algoritmalar ve tasarlanacak kontrolcüler hakkında bilgi verilmelidir.)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Paragraf (Max. 500 Karakter)"
+            ]
+          },
+          {
+            "ad": "Rakip hava aracına yaklaşma ve takip görevinin nasıl yapılacağı hakkında bilgi veriniz. (Savaşan İHA görevinde kullanılacak algoritmalar ve tasarlanacak kontrolcüler hakkında bilgi verilmelidir. Kontrolcü girişlerindeki hataya karşılık; İHA'nın yönlendirme algoritması, kullanılacak olan görüntü işleme ve model algoritmaları teorik olarak anlatılmalıdır.)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Paragraf (Max. 500 Karakter)"
+            ]
+          },
+          {
+            "ad": "Uçuşa yasaklı alanlardan kaçış için nasıl bir yol izleneceği hakkında bilgi veriniz. (Uçuşa yasaklı bölgelerin İHA tarafından nasıl anlamlandırılacağı, İHA'yı yönlendirecek üst kontrolcü ve genel kaçınma algoritmaları hakkında bilgi verilmelidir.)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Paragraf (Max. 500 Karakter)"
+            ]
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "teknik-yeterlilik-formu-ornek-sablonu",
+            "ad": "TEKNİK YETERLİLİK FORMU ÖRNEK ŞABLONU",
+            "puan": 12,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu şablonda paylaşılan sorular daha sonra KYS platformunda açılacak olan Teknik Yeterlilik Formu üzerinde doldurulacaktır. Şablon sizlerin hazırlık yapabilmesi adına paylaşılmaktadır.",
+              "Bu form dosya olarak sisteme yüklenmeyecektir.",
+              "*** Form değerlendirmelerinin ardından puan açıklaması gerçekleştirilmeyecek olup, teknik yeterlilik olarak yapılan değerlendirmeler sonucunda başarılı / başarısız şeklinde sonuç açıklanacaktır."
+            ],
+            "bolumAdi": "TEKNİK YETERLİLİK FORMU ÖRNEK ŞABLONU"
+          },
+          {
+            "kod": "teknik-yeterlilik-formunda-yer-alacak-so",
+            "ad": "TEKNİK YETERLİLİK FORMUNDA YER ALACAK SORULAR",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEKNİK YETERLİLİK FORMUNDA YER ALACAK SORULAR"
+          },
+          {
+            "kod": "yarismaya-katilacak-olan-hava-aracinin-t",
+            "ad": "Yarışmaya Katılacak Olan Hava Aracının Tipi Nedir? (Sabit Kanat: Uçuş için gerekli taşıma kuvvetini kanatlarından sağlar. VTOL: Dikey iniş/kalkış yapıp uçuş için gerekli taşımayı kanatlar vasıtasıyla gerçekleştirir)",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Yarışmaya Katılacak Olan Hava Aracının Tipi Nedir? (Sabit Kanat: Uçuş için gerekli taşıma kuvvetini kanatlarından sağlar. VTOL: Dikey iniş/kalkış yapıp uçuş için gerekli taşımayı kanatlar vasıtasıyla gerçekleştirir)"
+          },
+          {
+            "kod": "yarismaya-katilacak-olan-hava-aracini-ta",
+            "ad": "Yarışmaya Katılacak Olan Hava Aracını Tanıtınız. (Yarışmaya katılacak olan hava aracının hazır mı kullanılacağı veya özgün tasarım mı olacağını belirtiniz ve bir paragrafla tasarımı özetleyiniz (Tasarım, Tipi, Üretim, Malzeme vb.))",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Paragraf (Max. 500 Karakter)"
+            ],
+            "bolumAdi": "Yarışmaya Katılacak Olan Hava Aracını Tanıtınız. (Yarışmaya katılacak olan hava aracının hazır mı kullanılacağı veya özgün tasarım mı olacağını belirtiniz ve bir paragrafla tasarımı özetleyiniz (Tasarım, Tipi, Üretim, Malzeme vb.))"
+          },
+          {
+            "kod": "hava-aracinin-kalkis-agirligi-nedir",
+            "ad": "Hava Aracının Kalkış Ağırlığı Nedir?",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Hava Aracının Kalkış Ağırlığı Nedir?"
+          },
+          {
+            "kod": "hava-aracinin-uzunlugu-nedir",
+            "ad": "Hava Aracının Uzunluğu Nedir?",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Hava Aracının Uzunluğu Nedir?"
+          },
+          {
+            "kod": "hava-aracinin-eni-nedir",
+            "ad": "Hava Aracının Eni Nedir?",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Hava Aracının Eni Nedir?"
+          },
+          {
+            "kod": "hava-aracinin-yuksekligi-nedir",
+            "ad": "Hava Aracının Yüksekliği Nedir?",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Hava Aracının Yüksekliği Nedir?"
+          },
+          {
+            "kod": "hava-aracinin-kalkis-turu-nedir",
+            "ad": "Hava Aracının Kalkış Türü Nedir?",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Hava Aracının Kalkış Türü Nedir?"
+          },
+          {
+            "kod": "hava-aracinin-kalkisini-aciklayiniz-orne",
+            "ad": "Hava aracının kalkışını açıklayınız. (Örneğin: Koşu mesafesi, Tırmanış yüksekliği, Katapult boyutları, Kalkış modu)",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Paragraf (Max. 300 Karakter)"
+            ],
+            "bolumAdi": "Hava aracının kalkışını açıklayınız. (Örneğin: Koşu mesafesi, Tırmanış yüksekliği, Katapult boyutları, Kalkış modu)"
+          },
+          {
+            "kod": "hava-aracinin-inis-turu-nedir",
+            "ad": "Hava aracının iniş türü nedir?",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Hava aracının iniş türü nedir?"
+          },
+          {
+            "kod": "hava-aracinin-inisini-aciklayiniz-ornegi",
+            "ad": "Hava aracının inişini açıklayınız. (Örneğin: Paraşüt boyutu, Glide Slope, Gövde koruma sistemi)",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Paragraf (Max. 300 Karakter)"
+            ],
+            "bolumAdi": "Hava aracının inişini açıklayınız. (Örneğin: Paraşüt boyutu, Glide Slope, Gövde koruma sistemi)"
+          },
+          {
+            "kod": "sistem-mimarinizi-aciklayiniz-kullanacag",
+            "ad": "Sistem mimarinizi açıklayınız. (Kullanacağınız sistem mimarisini görsel olarak sisteme yükleyiniz. (Araç içi aviyonik bağlantılar vb.) Yüklenecek mimaride haberleşme ve güç gibi sistemlerin belirtilmesi beklenmektedir.)",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Örnek Sistem Mimarisi Görseli:"
+            ],
+            "bolumAdi": "Sistem mimarinizi açıklayınız. (Kullanacağınız sistem mimarisini görsel olarak sisteme yükleyiniz. (Araç içi aviyonik bağlantılar vb.) Yüklenecek mimaride haberleşme ve güç gibi sistemlerin belirtilmesi beklenmektedir.)"
+          },
+          {
+            "kod": "hava-aracinin-batarya-turu-nedir-hava-ar",
+            "ad": "Hava aracının batarya türü nedir? (Hava aracında bulunan otopilot, ESC gibi elektronik sistemleri besleyecek güç kaynağının kapasite bilgisi, hücre bilgisi, pil türü… Örn: 10000 mAh 4S Li-Po Pil)",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Paragraf (Max. 300 Karakter)"
+            ],
+            "bolumAdi": "Hava aracının batarya türü nedir? (Hava aracında bulunan otopilot, ESC gibi elektronik sistemleri besleyecek güç kaynağının kapasite bilgisi, hücre bilgisi, pil türü… Örn: 10000 mAh 4S Li-Po Pil)"
+          },
+          {
+            "kod": "hava-aracinin-guc-sistemini-aciklayiniz-",
+            "ad": "Hava aracının güç sistemini açıklayınız. (Örneğin: Seçim nedeni, Kapasite, Şarj edilme, Tahmini uçuş süresi)",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Paragraf (Max. 300 Karakter)",
+              "Kullanılacak itki sistemini kısaca açıklayınız. (Örneğin: Motor tipi, Motor/ESC marka model, ESC max Akım, Pervane Boyutu, Max itki. -Max. 300 Karakter)",
+              "Paragraf (Max. 300 Karakter)"
+            ],
+            "bolumAdi": "Hava aracının güç sistemini açıklayınız. (Örneğin: Seçim nedeni, Kapasite, Şarj edilme, Tahmini uçuş süresi)"
+          },
+          {
+            "kod": "otopilot-sisteminizi-tanimlayiniz-hava-a",
+            "ad": "Otopilot sisteminizi tanımlayınız. (Hava aracında bulunan otopilot sistemi için kullanacağınız donanım ve yazılımların özelliklerini açıklayınız.)",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Paragraf (Max. 500 Karakter)"
+            ],
+            "bolumAdi": "Otopilot sisteminizi tanımlayınız. (Hava aracında bulunan otopilot sistemi için kullanacağınız donanım ve yazılımların özelliklerini açıklayınız.)"
+          },
+          {
+            "kod": "kullanilacak-goruntuleme-sistemini-kisac",
+            "ad": "Kullanılacak görüntüleme sistemini kısaca açıklayınız. (Örneğin: Kamera Marka ve Modeli, Kamera çözünürlüğü, Kamera Görüş Açısı, Kamera Tipi (Analog/Dijital))",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Paragraf (Max. 300 Karakter)"
+            ],
+            "bolumAdi": "Kullanılacak görüntüleme sistemini kısaca açıklayınız. (Örneğin: Kamera Marka ve Modeli, Kamera çözünürlüğü, Kamera Görüş Açısı, Kamera Tipi (Analog/Dijital))"
+          },
+          {
+            "kod": "rf-cihazlarinizi-tanimlayiniz-musabaka-s",
+            "ad": "RF Cihazlarınızı tanımlayınız. (Müsabaka sırasında diğer takımlar ile frekans çakışmalarının önlenmesi adına, takımların belirli bir frekans aralığında olması gerekmektedir. Frekans atamasının sağlıklı ve efektif yapılabilmesi için frekansı değiştirilebilir RF cihazlarının kullanılması zorunludur. RF cihazlarının marka ve model bilgilerini, ayarlanabilir frekans aralığını ve haberleşme menzilini açıklayınız.)",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Paragraf (Max. 300 Karakter)"
+            ],
+            "bolumAdi": "RF Cihazlarınızı tanımlayınız. (Müsabaka sırasında diğer takımlar ile frekans çakışmalarının önlenmesi adına, takımların belirli bir frekans aralığında olması gerekmektedir. Frekans atamasının sağlıklı ve efektif yapılabilmesi için frekansı değiştirilebilir RF cihazlarının kullanılması zorunludur. RF cihazlarının marka ve model bilgilerini, ayarlanabilir frekans aralığını ve haberleşme menzilini açıklayınız.)"
+          },
+          {
+            "kod": "yer-kontrol-istasyonunu-tanimlayiniz-yer",
+            "ad": "Yer kontrol istasyonunu tanımlayınız. (Yer Kontrol İstasyonu için hangi yazılımları / programları kullanmayı düşünüyorsunuz? Açıklayınız.)",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Paragraf (Max. 500 Karakter)"
+            ],
+            "bolumAdi": "Yer kontrol istasyonunu tanımlayınız. (Yer Kontrol İstasyonu için hangi yazılımları / programları kullanmayı düşünüyorsunuz? Açıklayınız.)"
+          },
+          {
+            "kod": "goruntu-isleme-ve-aktarim-sistemlerini-t",
+            "ad": "Görüntü işleme ve aktarım sistemlerini tanımlayınız. (Görüntünün nasıl işleneceği, kullanılması planlanan görüntü işleme algoritması hakkında bilgi veriniz.)",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Paragraf (Max. 500 Karakter)"
+            ],
+            "bolumAdi": "Görüntü işleme ve aktarım sistemlerini tanımlayınız. (Görüntünün nasıl işleneceği, kullanılması planlanan görüntü işleme algoritması hakkında bilgi veriniz.)"
+          },
+          {
+            "kod": "kamikaze-gorevinin-nasil-yapilacagi-hakk",
+            "ad": "Kamikaze görevinin nasıl yapılacağı hakkında bilgi veriniz. (İntikal, Dalış, Kilitlenme, Pas Geçme gibi Kamikaze görev adımları için kullanılması planlanan algoritmalar ve tasarlanacak kontrolcüler hakkında bilgi verilmelidir.)",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Paragraf (Max. 500 Karakter)"
+            ],
+            "bolumAdi": "Kamikaze görevinin nasıl yapılacağı hakkında bilgi veriniz. (İntikal, Dalış, Kilitlenme, Pas Geçme gibi Kamikaze görev adımları için kullanılması planlanan algoritmalar ve tasarlanacak kontrolcüler hakkında bilgi verilmelidir.)"
+          },
+          {
+            "kod": "rakip-hava-aracina-yaklasma-ve-takip-gor",
+            "ad": "Rakip hava aracına yaklaşma ve takip görevinin nasıl yapılacağı hakkında bilgi veriniz. (Savaşan İHA görevinde kullanılacak algoritmalar ve tasarlanacak kontrolcüler hakkında bilgi verilmelidir. Kontrolcü girişlerindeki hataya karşılık; İHA'nın yönlendirme algoritması, kullanılacak olan görüntü işleme ve model algoritmaları teorik olarak anlatılmalıdır.)",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Paragraf (Max. 500 Karakter)"
+            ],
+            "bolumAdi": "Rakip hava aracına yaklaşma ve takip görevinin nasıl yapılacağı hakkında bilgi veriniz. (Savaşan İHA görevinde kullanılacak algoritmalar ve tasarlanacak kontrolcüler hakkında bilgi verilmelidir. Kontrolcü girişlerindeki hataya karşılık; İHA'nın yönlendirme algoritması, kullanılacak olan görüntü işleme ve model algoritmaları teorik olarak anlatılmalıdır.)"
+          },
+          {
+            "kod": "ucusa-yasakli-alanlardan-kacis-icin-nasi",
+            "ad": "Uçuşa yasaklı alanlardan kaçış için nasıl bir yol izleneceği hakkında bilgi veriniz. (Uçuşa yasaklı bölgelerin İHA tarafından nasıl anlamlandırılacağı, İHA'yı yönlendirecek üst kontrolcü ve genel kaçınma algoritmaları hakkında bilgi verilmelidir.)",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Paragraf (Max. 500 Karakter)"
+            ],
+            "bolumAdi": "Uçuşa yasaklı alanlardan kaçış için nasıl bir yol izleneceği hakkında bilgi veriniz. (Uçuşa yasaklı bölgelerin İHA tarafından nasıl anlamlandırılacağı, İHA'yı yönlendirecek üst kontrolcü ve genel kaçınma algoritmaları hakkında bilgi verilmelidir.)"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 23 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_SAVASAN_İHA_YARISMA_SARTNAMESİ_TR_v1.4_Q373N.pdf",
+        "yuklendi": "2026-08-23T20:16:14.032Z",
+        "sayfaSayisi": 35,
+        "kelimeSayisi": 8446,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "TEKNOFEST 2026 İlk Versiyon",
+              "tarih": "2026-01-09"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Haberleşme Hızı",
+              "tarih": "2026-03-25"
+            },
+            {
+              "etiket": "Bilgilendirmesi Eklenmiştir.",
+              "tarih": "2026-04-11"
+            },
+            {
+              "etiket": "Takvim güncellemesi.",
+              "tarih": "2026-08-15"
+            },
+            {
+              "etiket": "Teknik Yeterlilik Formu Son Teslim Tarihi",
+              "tarih": "2026-03-24"
+            },
+            {
+              "etiket": "Teknik Yeterlilik Formu Sonuçlarının Açıklanması",
+              "tarih": "2026-04-10"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu Son Teslim Tarihi",
+              "tarih": "2026-04-30"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu Sonuçlarının Açıklanması",
+              "tarih": "2026-05-22"
+            },
+            {
+              "etiket": "Sistem Tanımlama ve Uçuş Kanıt Videolarının Son Teslim Tarihi",
+              "tarih": "2026-07-14"
+            },
+            {
+              "etiket": "Finale Kalan (Finalist) Takımların Açıklanması",
+              "tarih": "2026-07-31"
+            }
+          ],
+          "asamalar": [
+            "Yarışma Takvimi",
+            "Teknik Yeterlilik Formu",
+            "Kritik Tasarım Raporu",
+            "Uçuş ve Pilot Kanıt Videosu",
+            "Sistem Tanımlama Videosu",
+            "Yarışmanın Puanlaması",
+            "Rapor ve Video Puanlaması (%30)",
+            "Görev Puanlaması (%70)",
+            "Toplam Puan",
+            "Otonomi ve Kilitlenme Değerlendirme Yöntemi"
+          ],
+          "eleyiciHukumler": [
+            "Birden fazla danışman bulunan takımların başvuruları geçersiz sayılacaktır.",
+            "Sunucu saati yazmayan ya da farklı bir saat yazan görüntüler değerlendirilmeyecektir."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 15
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_SAVASAN_%C4%B0HA_YARISMA_SARTNAMES%C4%B0_TR_v1.4_Q373N.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "savasan-iha-yarismasi"
+}

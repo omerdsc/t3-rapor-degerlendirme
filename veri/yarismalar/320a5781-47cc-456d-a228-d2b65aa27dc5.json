@@ -1,0 +1,435 @@
+{
+  "id": "320a5781-47cc-456d-a228-d2b65aa27dc5",
+  "ad": "Jet Motor Tasarım Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:54:36.488Z",
+  "kategoriler": [
+    {
+      "id": "402c8205-f35c-4d19-bba5-a0f04f66ef9b",
+      "ad": "Jet Motor Tasarım Yarışması",
+      "sablonDosyasi": "DTR_TR_JetMotorTasarım2026_jLHzz.docx",
+      "asama": "DTR",
+      "olusturuldu": "2026-08-23T13:54:36.488Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-402c8205",
+        "ad": "Jet Motor Tasarım Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 80,
+        "basliklar": [
+          {
+            "ad": "ŞEKİLLER",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TABLOLAR",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "SİMGELER ve KISALTMALAR DİZİNİ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TAKIM TANITIMI VE GÖREV DAĞILIMI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "*Danışman yoksa ilgili satır silinmeli, var ise bilgileri doldurulmalıdır."
+            ]
+          },
+          {
+            "ad": "ÖZET VE GİRİŞ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "DETAY TASARIM GELİŞTİRME VE FİZİBİLİTE ÇALIŞMALARI",
+            "zorunlu": true,
+            "puan": 70,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Detay tasarımın tarif edilmesi",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Performans ve Aerodinamik hesaplamalar",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Mekanik tasarım detayları",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Mekanizma tasarım detayları ve hesaplamaları",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Yapısal analiz detayları",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Eyleyici tasarım detayları ve hesaplamaları",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Montaj edilebilirlik değerlendirmesi",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "İmal edilebilirlik değerlendirmesi",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "DETAY TASARIMIN DEĞERLENDİRİLMESİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Parçaların toplam ağırlığı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Lüle en açık konumdayken toplam uzunluğu",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Performans isterleriyle kıyaslama",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Mekanik tasarım isterleriyle kıyaslama",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Mekanizma isterleriyle kıyaslama",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Eyleyici isterleriyle kıyaslama",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "RİSK ANALİZİ (2.5 PUAN)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "KAYNAKÇA (2.5 PUAN)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "EKLER",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Detay tasarım ile ilgili teknik resimler",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Hesaplama yöntemleri ile ilgili detay bilgiler",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Hesaplama araçlarının Excel/Matlab/vb.. rapora eklenmesi",
+            "zorunlu": true,
+            "yonergeMetni": []
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA (2.5 PUAN)",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+          "Tüm raporlar “İçindekiler” ve “Kaynakça” içermelidir.",
+          "Her rapor bir “Kapak Sayfası” içermelidir.",
+          "“Kapak Sayfası”, “İçindekiler”, “Kaynakça” ve “Görseller” ile birlikte Detay Tasarım Raporu en fazla 80 sayfa olmalıdır.",
+          "Her rapor “Kapak”, “İçindekiler”, “Kaynakça” ve “Ekler” başlıkları için ayrı sayfa/sayfalar içermelidir.",
+          "Detay Tasarım Raporu 2026 Rapor şablonu taslağına ve kurallarına uygun olarak hazırlanmalıdır.",
+          "Başlıkların yanında yer alan puanlar rapor teslimi yapılmadan önce silinmelidir.",
+          "Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+          "Yazı tipi ve satır aralıkları rapor şablonuyla uyumlu olmalıdır."
+        ],
+        "eleyiciMi": false,
+        "azamiSayfa": 80
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "ozet-ve-giris",
+            "ad": "ÖZET VE GİRİŞ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ÖZET VE GİRİŞ"
+          },
+          {
+            "kod": "detay-tasarim-gelistirme-ve-fizibilite-c",
+            "ad": "DETAY TASARIM GELİŞTİRME VE FİZİBİLİTE ÇALIŞMALARI",
+            "puan": 70,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "DETAY TASARIM GELİŞTİRME VE FİZİBİLİTE ÇALIŞMALARI"
+          },
+          {
+            "kod": "detay-tasarimin-degerlendirilmesi",
+            "ad": "DETAY TASARIMIN DEĞERLENDİRİLMESİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "DETAY TASARIMIN DEĞERLENDİRİLMESİ"
+          },
+          {
+            "kod": "ekler",
+            "ad": "EKLER",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "EKLER"
+          }
+        ],
+        "toplamPuan": 95
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [],
+      "sartname": {
+        "dosyaAdi": "2026_JET_MOTOR_TASARIM_YARIŞMASI_ŞARTNAMESİ_TR_V1.5_4bcs0.pdf",
+        "yuklendi": "2026-08-23T20:12:59.398Z",
+        "sayfaSayisi": 23,
+        "kelimeSayisi": 3671,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk yayım",
+              "tarih": "2026-01-02"
+            },
+            {
+              "etiket": "İkinci yayım",
+              "tarih": "2026-03-28"
+            },
+            {
+              "etiket": "Üçüncü yayım",
+              "tarih": "2026-06-10"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-07-30"
+            },
+            {
+              "etiket": "Yarışma son başvuru tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "KTR aşamasındaki takımlara",
+              "tarih": "2026-03-11"
+            },
+            {
+              "etiket": "Kavramsal Tasarım Raporu son teslim",
+              "tarih": "2026-05-04"
+            },
+            {
+              "etiket": "Detay Tasarım Raporu son teslim tarihi",
+              "tarih": "2026-07-17"
+            },
+            {
+              "etiket": "Finale kalan takımların açıklanması",
+              "tarih": "2026-08-12"
+            }
+          ],
+          "asamalar": [
+            "Yarışma Takvimi",
+            "Kavramsal Tasarım Raporu",
+            "Detay Tasarım Raporu",
+            "Yarışma Puanlandırması ve Değerlendirme",
+            "Rapor Puanlandırması ve Değerlendirme (%70)",
+            "Sunum Puanlandırması ve Değerlendirmesi (%30)",
+            "Toplam Puanlandırma"
+          ],
+          "eleyiciHukumler": [
+            "Tespiti halinde takımlar diskalifiye edilir.",
+            "Tespiti halinde raporlar geçersiz sayılacaktır."
+          ],
+          "katilimciSeviyeleri": [
+            "mezun"
+          ],
+          "azamiSayfa": 80,
+          "azamiUye": 10
+        },
+        "catismalar": [],
+        "uyarilar": [],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_JET_MOTOR_TASARIM_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_TR_V1.5_4bcs0.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "jet-motor-tasarim-yarismasi"
+}

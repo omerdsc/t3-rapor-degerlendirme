@@ -1,0 +1,529 @@
+{
+  "id": "0090d167-7b74-4028-b19d-bf81902506a2",
+  "ad": "Liseler Arası İnsansız Hava Araçları Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:54:43.130Z",
+  "kategoriler": [
+    {
+      "id": "ca424d55-fced-4832-abd0-cb431e9df353",
+      "ad": "Sabit-Döner Kanat",
+      "sablonDosyasi": "2026_Liseler_Arası_İHA_Sabit-Döner_PSR_Şablonu_3WC6z.docx",
+      "olusturuldu": "2026-08-23T13:54:42.880Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-ca424d55",
+        "ad": "Sabit-Döner Kanat",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "ORGANİZASYON ÖZETİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [],
+            "grupMu": true
+          },
+          {
+            "ad": "Takım Organizasyonu",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Zaman Çizelgesi ve Geliştirme Süreci",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "İNSANSIZ HAVA ARACININ ÖZELLİKLERİ",
+            "zorunlu": true,
+            "puan": 80,
+            "yonergeMetni": [],
+            "grupMu": true
+          },
+          {
+            "ad": "Görevler için İHA Konfigürasyonu ve Yenilikçi Tasarım Özellikleri",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Malzeme Seçimi, Gövde ve Mekanik Sistem Üretim Teknikleri",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Görev Mekanizması Sistemi",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Elektrik ve Elektronik Donanım ile Güç Sistemleri",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Yazılım ve Kontrol Sistemi",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "İHA Performans Parametreleri",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Görsel Tasarım Konfigürasyonu",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "takim-organizasyonu",
+            "ad": "Takım Organizasyonu",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Takım Organizasyonu"
+          },
+          {
+            "kod": "zaman-cizelgesi-ve-gelistirme-sureci",
+            "ad": "Zaman Çizelgesi ve Geliştirme Süreci",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Zaman Çizelgesi ve Geliştirme Süreci"
+          },
+          {
+            "kod": "gorevler-icin-iha-konfigurasyonu-ve-yeni",
+            "ad": "Görevler için İHA Konfigürasyonu ve Yenilikçi Tasarım Özellikleri",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Görevler için İHA Konfigürasyonu ve Yenilikçi Tasarım Özellikleri"
+          },
+          {
+            "kod": "malzeme-secimi-govde-ve-mekanik-sistem-u",
+            "ad": "Malzeme Seçimi, Gövde ve Mekanik Sistem Üretim Teknikleri",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Malzeme Seçimi, Gövde ve Mekanik Sistem Üretim Teknikleri"
+          },
+          {
+            "kod": "gorev-mekanizmasi-sistemi",
+            "ad": "Görev Mekanizması Sistemi",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Görev Mekanizması Sistemi"
+          },
+          {
+            "kod": "elektrik-ve-elektronik-donanim-ile-guc-s",
+            "ad": "Elektrik ve Elektronik Donanım ile Güç Sistemleri",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Elektrik ve Elektronik Donanım ile Güç Sistemleri"
+          },
+          {
+            "kod": "yazilim-ve-kontrol-sistemi",
+            "ad": "Yazılım ve Kontrol Sistemi",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Yazılım ve Kontrol Sistemi"
+          },
+          {
+            "kod": "iha-performans-parametreleri",
+            "ad": "İHA Performans Parametreleri",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "İHA Performans Parametreleri"
+          },
+          {
+            "kod": "gorsel-tasarim-konfigurasyonu",
+            "ad": "Görsel Tasarım Konfigürasyonu",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Görsel Tasarım Konfigürasyonu"
+          }
+        ],
+        "toplamPuan": 90
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablonda Word başlık stili yok; başlıklar kalın biçimlendirmeden tahmin edildi. Bölüm listesini onaylamadan önce gözden geçirin.",
+        "Kapak bloğu sayıldığı için 14 açılış satırı bölüm listesinden çıkarıldı (İNSANSIZ HAVA ARAÇLARI YARIŞMA…).",
+        "\"ORGANİZASYON ÖZETİ\" üst başlık olarak işaretlendi: 10 puanı alt başlıklarına dağıtılmış (2 alt başlık).",
+        "\"İNSANSIZ HAVA ARACININ ÖZELLİKLERİ\" üst başlık olarak işaretlendi: 80 puanı alt başlıklarına dağıtılmış (7 alt başlık).",
+        "Sayfa sınırı kurallardan çıkarılamadı."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_İHA_Yarışmaları_Şartnamesi_TR_v6_n7Mv5.pdf",
+        "yuklendi": "2026-08-23T20:13:11.010Z",
+        "sayfaSayisi": 80,
+        "kelimeSayisi": 18792,
+        "kurallar": {
+          "tarihler": [],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Aksinin tespiti halinde kişinin bulunduğu takımlar yarışmadan elenir.",
+            "Aksinin tespiti halinde kişinin bulunduğu takımlar her iki yarışmadan da elenir.",
+            "Aksinin tespiti durumunda takım yarışmadan elenir.",
+            "Video linkini sisteme eklemeyen takımlar yarışmadan elenir."
+          ],
+          "katilimciSeviyeleri": []
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden tarih çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0HA_Yar%C4%B1%C5%9Fmalar%C4%B1_%C5%9Eartnamesi_TR_v6_n7Mv5.pdf"
+      }
+    },
+    {
+      "id": "46c38172-073c-4f10-a67c-f13faab66028",
+      "ad": "Serbest Görev",
+      "sablonDosyasi": "2026_Liseler_Arası_İHA_Serbest_Görev_PSR_Şablonu_lZW0f.docx",
+      "olusturuldu": "2026-08-23T13:54:43.129Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-46c38172",
+        "ad": "Serbest Görev",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "ÖZET",
+            "zorunlu": true,
+            "puan": 8,
+            "yonergeMetni": [],
+            "grupMu": true
+          },
+          {
+            "ad": "Takım Organizasyonu",
+            "zorunlu": true,
+            "puan": 4,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Görev Başlığı",
+            "zorunlu": true,
+            "puan": 4,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "GÖREV BİLGİLERİ",
+            "zorunlu": true,
+            "puan": 28,
+            "yonergeMetni": [],
+            "grupMu": true
+          },
+          {
+            "ad": "Uçuş Görevinin Tanımı",
+            "zorunlu": true,
+            "puan": 18,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Uçuş Görevinin Özgünlüğü",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "İHA BİLGİLERİ",
+            "zorunlu": true,
+            "puan": 54,
+            "yonergeMetni": [],
+            "grupMu": true
+          },
+          {
+            "ad": "Tasarım",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Donanım",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Yazılım",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Özgünlük-Takım Üretimi ve Yerli Ürün Kullanımı",
+            "zorunlu": true,
+            "puan": 24,
+            "yonergeMetni": []
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "takim-organizasyonu",
+            "ad": "Takım Organizasyonu",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Takım Organizasyonu"
+          },
+          {
+            "kod": "gorev-basligi",
+            "ad": "Görev Başlığı",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Görev Başlığı"
+          },
+          {
+            "kod": "ucus-gorevinin-tanimi",
+            "ad": "Uçuş Görevinin Tanımı",
+            "puan": 18,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Uçuş Görevinin Tanımı"
+          },
+          {
+            "kod": "ucus-gorevinin-ozgunlugu",
+            "ad": "Uçuş Görevinin Özgünlüğü",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Uçuş Görevinin Özgünlüğü"
+          },
+          {
+            "kod": "tasarim",
+            "ad": "Tasarım",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Tasarım"
+          },
+          {
+            "kod": "donanim",
+            "ad": "Donanım",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Donanım"
+          },
+          {
+            "kod": "yazilim",
+            "ad": "Yazılım",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Yazılım"
+          },
+          {
+            "kod": "ozgunluk-takim-uretimi-ve-yerli-urun-kul",
+            "ad": "Özgünlük-Takım Üretimi ve Yerli Ürün Kullanımı",
+            "puan": 24,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Özgünlük-Takım Üretimi ve Yerli Ürün Kullanımı"
+          }
+        ],
+        "toplamPuan": 90
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablonda Word başlık stili yok; başlıklar kalın biçimlendirmeden tahmin edildi. Bölüm listesini onaylamadan önce gözden geçirin.",
+        "Kapak bloğu sayıldığı için 8 açılış satırı bölüm listesinden çıkarıldı (SERBEST GÖREV KATEGORİSİ…).",
+        "\"ÖZET\" üst başlık olarak işaretlendi: 8 puanı alt başlıklarına dağıtılmış (2 alt başlık).",
+        "\"GÖREV BİLGİLERİ\" üst başlık olarak işaretlendi: 28 puanı alt başlıklarına dağıtılmış (2 alt başlık).",
+        "\"İHA BİLGİLERİ\" üst başlık olarak işaretlendi: 54 puanı alt başlıklarına dağıtılmış (4 alt başlık).",
+        "Sayfa sınırı kurallardan çıkarılamadı."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_İHA_Yarışmaları_Şartnamesi_TR_v6_n7Mv5.pdf",
+        "yuklendi": "2026-08-23T20:13:20.264Z",
+        "sayfaSayisi": 80,
+        "kelimeSayisi": 18792,
+        "kurallar": {
+          "tarihler": [],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Aksinin tespiti halinde kişinin bulunduğu takımlar yarışmadan elenir.",
+            "Aksinin tespiti halinde kişinin bulunduğu takımlar her iki yarışmadan da elenir.",
+            "Aksinin tespiti durumunda takım yarışmadan elenir.",
+            "Video linkini sisteme eklemeyen takımlar yarışmadan elenir."
+          ],
+          "katilimciSeviyeleri": []
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden tarih çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0HA_Yar%C4%B1%C5%9Fmalar%C4%B1_%C5%9Eartnamesi_TR_v6_n7Mv5.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "liseler-arasi-insansiz-hava-araclari-yarismasi"
+}

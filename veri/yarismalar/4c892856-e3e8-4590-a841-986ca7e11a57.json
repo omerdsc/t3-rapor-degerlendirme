@@ -1,0 +1,441 @@
+{
+  "id": "4c892856-e3e8-4590-a841-986ca7e11a57",
+  "ad": "Havacılıkta Yapay Zeka Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T19:28:22.759Z",
+  "kategoriler": [
+    {
+      "id": "2831ed92-8793-4bc6-8cc4-44ac300af826",
+      "ad": "Havacılıkta Yapay Zeka Yarışması",
+      "sablonDosyasi": "2026_HYZ_OTR_Sablon_TR_RKgye.docx",
+      "asama": "ÖTR",
+      "olusturuldu": "2026-08-23T19:28:22.759Z",
+      "duzenlendi": true,
+      "sablon": {
+        "kod": "kategori-2831ed92",
+        "ad": "Havacılıkta Yapay Zeka Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "asgariSayfa": 6,
+        "azamiSayfa": 15,
+        "basliklar": [
+          {
+            "ad": "TAKIM ŞEMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu kısımda takım üyelerinin görev dağılımı ve ekip organizasyonu hakkında bilgi verilir. Takım şemasında takım üyelerinin kişisel bilgilerine (İsim, Soyisim vb.) yer verilmemelidir. Takım şeması Üye 1, Üye 2, Kaptan vs. şeklinde oluşturulabilir. Üyelerin takımdaki görevleri belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu kısımda projenin değerlendirmesi yapılır. Şu ana kadar yapılan çalışmalar özet halinde ifade edilir."
+            ]
+          },
+          {
+            "ad": "ALGORİTMALAR VE SİSTEM MİMARİSİ",
+            "zorunlu": true,
+            "puan": 30,
+            "yonergeMetni": [],
+            "grupMu": true
+          },
+          {
+            "ad": "Veri Setleri",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Kullanılacak veri setleri açıklanacaktır. Kullanılan veri setlerinin hangi sebeplerden dolayı seçildiği anlatılır. Kullanılacak veri setlerinin eğitilen model üzerindeki farklılıkları açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "Algoritmalar",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": [
+              "Problemin çözümünde kullanılacak algoritmalar açıklanır. Kullanılan algoritmaların hangi sebeplerden dolayı seçildiği anlatılır. Algoritmalar üzerindeki farklılıklardan bahsedilmelidir."
+            ]
+          },
+          {
+            "ad": "Akış Şeması",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu kısımda yarışma görevini gerçekleştirmek için geliştirilen tüm sistemin akış şeması ile ifade edilmesi gerekmektedir."
+            ]
+          },
+          {
+            "ad": "ÖZGÜNLÜK",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Ekibin, veri setleri, algoritma ve yazılım mimarisi açısından geliştirdiği yöntemlerin özgünlüğü ve literatüre katkısı açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "PROJE TAKVİMİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Projedeki kilometre taşlarının açıklanması ve tarihlerinin belirtilmesi gerekmektedir."
+            ]
+          },
+          {
+            "ad": "SONUÇLAR VE İNCELEME",
+            "zorunlu": true,
+            "puan": 30,
+            "yonergeMetni": [
+              "Bu kısımda geliştirilen sistemin yarışmacılar tarafından elde edilmiş sonuçları paylaşılır ve bu sonuçlar üzerine sistemin performansı üzerine inceleme sunulur. Uygulanan test senaryoları ve sonuçları hakkında bilgi verilir. Yapılan testlerin sonuçları ile uygulanan yöntemlerin ne kadar uyumlu olduğu karşılaştırılır. Tüm aşamalarında yaşanan sorunlar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir."
+            ]
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde raporda kullanılan kaynaklara yer verilir."
+            ]
+          },
+          {
+            "ad": "GENEL RAPOR DÜZENİ",
+            "zorunlu": false,
+            "puan": 5,
+            "yonergeMetni": [
+              "Raporun genel düzeni, takım şeması, tablolar ve yazım kuralları bu başlık altında incelenecektir."
+            ],
+            "raporda": false
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Tüm raporlar Ön Tasarım Raporu Standartlarına uygun olarak yazılmalıdır.",
+          "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+          "Tüm raporlar “İçindekiler” ve “Kaynakça” içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst-alt-sağ-sol 2.5 olmalıdır.",
+          "Her rapor bir kapak sayfası içermelidir.",
+          "Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+          "“Kapak”, “İçindekiler”, “Şekil Listesi”, “Tablo Listesi” ve “Kısaltmalar” kısmı hariç Rapor 10 sayfayı geçmemelidir.",
+          "Toplam sayfa sayısı en az 6 sayfa en fazla 15 sayfa olmalıdır.",
+          "Rapor şablonunda verilen başlıkların aynı sayfada olması sorun teşkil etmemektedir. Raporda verilen sıralamayı değiştirmeyiniz."
+        ],
+        "eleyiciMi": false,
+        "asgariSayfa": 6,
+        "azamiSayfa": 15,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "proje-mevcut-durum-degerlendirmesi",
+            "ad": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda projenin değerlendirmesi yapılır. Şu ana kadar yapılan çalışmalar özet halinde ifade edilir."
+            ],
+            "bolumAdi": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ"
+          },
+          {
+            "kod": "veri-setleri",
+            "ad": "Veri Setleri",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Kullanılacak veri setleri açıklanacaktır. Kullanılan veri setlerinin hangi sebeplerden dolayı seçildiği anlatılır. Kullanılacak veri setlerinin eğitilen model üzerindeki farklılıkları açıklanmalıdır."
+            ],
+            "bolumAdi": "Veri Setleri"
+          },
+          {
+            "kod": "algoritmalar",
+            "ad": "Algoritmalar",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Problemin çözümünde kullanılacak algoritmalar açıklanır. Kullanılan algoritmaların hangi sebeplerden dolayı seçildiği anlatılır. Algoritmalar üzerindeki farklılıklardan bahsedilmelidir."
+            ],
+            "bolumAdi": "Algoritmalar"
+          },
+          {
+            "kod": "akis-semasi",
+            "ad": "Akış Şeması",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda yarışma görevini gerçekleştirmek için geliştirilen tüm sistemin akış şeması ile ifade edilmesi gerekmektedir."
+            ],
+            "bolumAdi": "Akış Şeması"
+          },
+          {
+            "kod": "ozgunluk",
+            "ad": "ÖZGÜNLÜK",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Ekibin, veri setleri, algoritma ve yazılım mimarisi açısından geliştirdiği yöntemlerin özgünlüğü ve literatüre katkısı açıklanmalıdır."
+            ],
+            "bolumAdi": "ÖZGÜNLÜK"
+          },
+          {
+            "kod": "proje-takvimi",
+            "ad": "PROJE TAKVİMİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Projedeki kilometre taşlarının açıklanması ve tarihlerinin belirtilmesi gerekmektedir."
+            ],
+            "bolumAdi": "PROJE TAKVİMİ"
+          },
+          {
+            "kod": "sonuclar-ve-inceleme",
+            "ad": "SONUÇLAR VE İNCELEME",
+            "puan": 30,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda geliştirilen sistemin yarışmacılar tarafından elde edilmiş sonuçları paylaşılır ve bu sonuçlar üzerine sistemin performansı üzerine inceleme sunulur. Uygulanan test senaryoları ve sonuçları hakkında bilgi verilir. Yapılan testlerin sonuçları ile uygulanan yöntemlerin ne kadar uyumlu olduğu karşılaştırılır. Tüm aşamalarında yaşanan sorunlar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir."
+            ],
+            "bolumAdi": "SONUÇLAR VE İNCELEME"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde raporda kullanılan kaynaklara yer verilir."
+            ],
+            "bolumAdi": "KAYNAKÇA"
+          },
+          {
+            "kod": "genel-rapor-duzeni",
+            "ad": "GENEL RAPOR DÜZENİ",
+            "puan": 5,
+            "bolumBekleniyor": false,
+            "olcut": [
+              "Raporun genel düzeni, takım şeması, tablolar ve yazım kuralları bu başlık altında incelenecektir."
+            ],
+            "bolumAdi": "GENEL RAPOR DÜZENİ"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [
+        "D. Kasparov, «Why Chess?,» Journal of Chess, pp. 215-269, 2012.",
+        "V. Anderson, Aerodynamics, Ottawa: Helenova Publishing, 1999."
+      ],
+      "uyarilar": [
+        "\"ALGORİTMALAR VE SİSTEM MİMARİSİ\" üst başlık olarak işaretlendi: 30 puanı alt başlıklarına dağıtılmış (3 alt başlık)."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_HAVACILIKTA_YAPAY_ZEKA_TEKNIK_SARTNAME_TR_v1_2026_04_20_QotGO.pdf",
+        "yuklendi": "2026-08-23T20:12:46.526Z",
+        "sayfaSayisi": 33,
+        "kelimeSayisi": 4541,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "TEKNOFEST 2026 İlk Versiyon",
+              "tarih": "2026-02-21"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": []
+        },
+        "ozet": {
+          "yarismaninAmaci": [
+            "Hava aracı alt-görüş kamerası görüntülerinden taşıt, insan, UAP ve UAİ alanlarını tespit eden algoritma geliştirmek",
+            "Taşıtların hareketli/hareketsiz, iniş alanlarının inişe uygun/uygun değil durumunu belirlemek",
+            "Konumlandırma sistemi devre dışıyken yalnızca görüntüden hava aracının x, y, z pozisyonunu kestirmek",
+            "Oturum başında verilen daha önce tanımlanmamış referans nesneleri görüntülerde eşleyip tespit etmek"
+          ],
+          "teknikBeklentiler": [
+            "Kamera hareketinden kaynaklı görünür yer değiştirme ile gerçek taşıt hareketini ayırt eden yöntem tasarlanmış olması",
+            "Gece, kar/yağmur, şehir/orman/deniz, RGB ve termal, bulanıklık/ölü piksel/kare donması gibi bozulmalara dayanıklılık ele alınmış olması",
+            "Değişken irtifa ve 70-90 derece kamera açısı aralığında, kısmen görünen veya kısmen örtülü nesnelerin tespiti",
+            "Görüntü tabanlı pozisyon kestirimi için öğrenen model veya matematiksel (görsel odometri vb.) yaklaşımın gerekçelendirilmesi",
+            "Farklı kamera türü, açı, irtifa, uydu/yer görüntüsü ve görüntü işlemeden geçmiş referanslara dayanıklı eşleştirme algoritması",
+            "Literatür çalışması, kullanılan/alternatif algoritmalar, veri toplama süreci ve test sonuçlarının raporlanması"
+          ],
+          "katiKisitlar": [
+            "Çözüm tamamen çevrim dışı çalışmalı; yarışma ağında internet erişimi yoktur",
+            "Her görüntü karesi için tek sonuç üretilmeli, kareler sıralı işlenmeli ve toplu indirme varsayımı yapılmamalı",
+            "UAP/UAİ alanı yalnızca tamamı kare içindeyse ve üzerinde/hemen yanında hiçbir cisim yokken 'inişe uygun' bildirilmeli",
+            "Bisiklet/motosiklet sürücüsü insan değil taşıtla bütün olarak, scooter sürücülüyken insan olarak değerlendirilmeli; tren lokomotif ve vagonları ayrı nesnelerdir",
+            "Sağlık değeri 0 olduğunda pozisyon, takımın kendi algoritmasıyla kestirilmiş olmalıdır"
+          ],
+          "eleyiciDurumlar": [
+            "Ön Tasarım Raporu teslim edilmezse yarışmaya katılım hakkı doğmaz",
+            "Final Tasarım Raporu teslim edilmeyen takım dereceye giremez",
+            "Çevrimiçi Yarışma Simülasyonunda açıklanacak başarı kriterinin altında kalmak veya sunucuya hiç bağlanmamak sonraki aşamaya geçişi engeller",
+            "Rapor şablonunun bozulması değerlendirmeyi olumsuz etkiler (format puanlamaya dahildir)"
+          ],
+          "hakemNotlari": [
+            "Final Tasarım Raporu genel yarışma puanının yalnızca %5'idir; değerlendirmede hem içerik hem format dikkate alınır",
+            "Görev ağırlıkları: 1. görev %25, 2. görev %40, 3. görev %25 — pozisyon kestirimi en yüksek ağırlıklı görevdir",
+            "Nesne tespiti ve görüntü eşleme mAP ile, IoU eşiği 0.5 olarak değerlendirilir; aynı nesneye fazladan kutu göndermek AP'yi düşürür",
+            "Yanlış hareket veya iniş durumu bildirimi ilgili sınıfın AP değerini düşürür",
+            "Algoritma hızı puanlama kriteri değildir; saniyede 1 kare işleyebilme yeterlidir, donanım gücü avantaj sağlamaz"
+          ]
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_HAVACILIKTA_YAPAY_ZEKA_TEKNIK_SARTNAME_TR_v1_2026_04_20_QotGO.pdf",
+        "teknikMi": true
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "havacilikta-yapay-zeka-yarismasi"
+}

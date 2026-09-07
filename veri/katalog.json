@@ -1,0 +1,2999 @@
+{
+  "cekildi": "2026-08-23T13:35:16.710Z",
+  "kaynak": "https://www.teknofest.org/tr/yarismalar/",
+  "yarismalar": [
+    {
+      "slug": "5g-yapay-zeka-ile-akilli-yol-guvenligi-yarismasi",
+      "ad": "5G & Yapay Zeka ile Akıllı Yol Güvenliği Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/5g-yapay-zeka-ile-akilli-yol-guvenligi-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_5G_Yapay_Zeka_ile_Ak%C4%B1ll%C4%B1_Yol_G%C3%BCvenli%C4%9Fi_FTR_%C5%9Fablon_TR_1_e4PVw.docx",
+          "etiket": "5G & Yapay Zeka ile Akıllı Yol Güvenliği Yarışması - Final Tasarım Raporu Şablonu",
+          "dosyaAdi": "2026_5G_Yapay_Zeka_ile_Akıllı_Yol_Güvenliği_FTR_şablon_TR_1_e4PVw.docx",
+          "tur": "sablon",
+          "uzanti": "docx",
+          "ayirtEdici": "Final"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_5G_Yapay_Zeka_ile_Ak%C4%B1ll%C4%B1_Yol_G%C3%BCvenli%C4%9Fi_%C3%96TR_%C5%9Fablon_TR_rYLTN.docx",
+          "etiket": "5G & Yapay Zeka ile Akıllı Yol Güvenliği Yarışması - Ön Tasarım Raporu Şablonu",
+          "dosyaAdi": "2026_5G_Yapay_Zeka_ile_Akıllı_Yol_Güvenliği_ÖTR_şablon_TR_rYLTN.docx",
+          "tur": "sablon",
+          "asama": "ÖTR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_5G_YAPAY_ZEKA_%C4%B0LE_AKILLI_YOL_G%C3%9CVENL%C4%B0%C4%9E%C4%B0_YARISMASI_SARTNAMESI_2_PORZ6.pdf",
+          "etiket": "2026 5G YAPAY ZEKA İLE AKILLI YOL GÜVENLİĞİ YARISMASI SARTNAMESI 2 PORZ6",
+          "dosyaAdi": "2026_5G_YAPAY_ZEKA_İLE_AKILLI_YOL_GÜVENLİĞİ_YARISMASI_SARTNAMESI_2_PORZ6.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/5G_ve_Yapay_Zeka_ile_Ak%C4%B1ll%C4%B1_Yol_G%C3%BCvenli%C4%9Fi_Yar%C4%B1%C5%9Fmas%C4%B1_-_FTR_A%C5%9Famas%C4%B1_Teslim_D.pdf",
+          "etiket": "5G ve Yapay Zeka ile Akıllı Yol Güvenliği Yarışması - FTR Aşaması Teslim Dokümantasyonu",
+          "dosyaAdi": "5G_ve_Yapay_Zeka_ile_Akıllı_Yol_Güvenliği_Yarışması_-_FTR_Aşaması_Teslim_D.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "ÖTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "bagimliliklarla-mucadelede-teknolojik-uygulamalar-yarismasi",
+      "ad": "Bağımlılıklarla Mücadelede Teknolojik Uygulamalar Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/bagimliliklarla-mucadelede-teknolojik-uygulamalar-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Bagimliliklarla_M%C3%BCcadelede_Teknolojik_Uygulamalar_Sartnamesi_v1_3MQrt.pdf",
+          "etiket": "Bagimliliklarla Mücadelede Teknolojik Uygulamalar Sartnamesi v1 3MQrt",
+          "dosyaAdi": "Bagimliliklarla_Mücadelede_Teknolojik_Uygulamalar_Sartnamesi_v1_3MQrt.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Bagimliliklarla_M%C3%BCcadelede_Teknolojik_Uygulamalar_Yar%C4%B1%C5%9Fmas%C4%B1_Proje_Detay_R.docx",
+          "etiket": "Bagimliliklarla Mücadelede Teknolojik Uygulamalar Yarışması Proje Detay R",
+          "dosyaAdi": "Bagimliliklarla_Mücadelede_Teknolojik_Uygulamalar_Yarışması_Proje_Detay_R.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "biyoteknoloji-inovasyon-yarismasi",
+      "ad": "Biyoteknoloji İnovasyon Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/biyoteknoloji-inovasyon-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Biyoteknoloji_Inovasyon_Yarismasi_PDR_VJcZb.docx",
+          "etiket": "2026 Biyoteknoloji İnovasyon Yarışması Proje Detay Raporu Şablonu - Tüm Kategoriler",
+          "dosyaAdi": "2026_Biyoteknoloji_Inovasyon_Yarismasi_PDR_VJcZb.docx",
+          "tur": "sablon",
+          "asama": "PDR",
+          "tumKategoriler": true,
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Biyoteknoloji_%C4%B0novasyon_Lise-%C3%96DR__2026_2_gV8iQ.docx",
+          "etiket": "2026 Biyoteknoloji İnovasyon Yarışması Proje Ön Değerlendirme Raporu Şablonu Lise Kategorisi",
+          "dosyaAdi": "Biyoteknoloji_İnovasyon_Lise-ÖDR__2026_2_gV8iQ.docx",
+          "tur": "sablon",
+          "asama": "ÖDR",
+          "kategoriAdi": "Lise",
+          "seviye": "Lise",
+          "uzanti": "docx",
+          "kategori": "Lise",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Biyoteknoloji_%C4%B0novasyon_%C3%9Cniversite_%C3%96DR_2026_TR_2_ahAY1.docx",
+          "etiket": "2026 Biyoteknoloji İnovasyon Yarışması Proje Ön Değerlendirme Raporu Şablonu Üniversite ve Üzeri Seviyesi Fikir/Proje Kategorisi",
+          "dosyaAdi": "Biyoteknoloji_İnovasyon_Üniversite_ÖDR_2026_TR_2_ahAY1.docx",
+          "tur": "sablon",
+          "asama": "ÖDR",
+          "kategoriAdi": "Üniversite ve Üzeri Seviyesi Fikir/Proje",
+          "seviye": "Üniversite",
+          "uzanti": "docx",
+          "kategori": "Üniversite ve Üzeri Seviyesi Fikir/Proje",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026-TR_Biyoteknoloji_%C4%B0novasyon_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartname-_1I5Kr.pdf",
+          "etiket": "2026-TR Biyoteknoloji İnovasyon Yarışması Şartname- 1I5Kr",
+          "dosyaAdi": "2026-TR_Biyoteknoloji_İnovasyon_Yarışması_Şartname-_1I5Kr.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [
+        "Lise",
+        "Üniversite ve Üzeri Seviyesi Fikir/Proje"
+      ],
+      "asamalar": [
+        "PDR",
+        "ÖDR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "blokzincir-yarismasi",
+      "ad": "Blokzincir Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/blokzincir-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/BlokzincirYar%C4%B1%C5%9Fmas%C4%B12026%C3%96DR%C5%9Eablonu.TR_EX2RH.docx",
+          "etiket": "2026 Blokzincir Yarışması Ön Değerlendirme Raporu Şablonu",
+          "dosyaAdi": "BlokzincirYarışması2026ÖDRŞablonu.TR_EX2RH.docx",
+          "tur": "sablon",
+          "asama": "ÖDR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_BLOKZ%C4%B0NC%C4%B0R_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_TR.20_02_rBh8h.pdf",
+          "etiket": "2026 BLOKZİNCİR YARIŞMASI ŞARTNAMESİ TR.20 02 rBh8h",
+          "dosyaAdi": "2026_BLOKZİNCİR_YARIŞMASI_ŞARTNAMESİ_TR.20_02_rBh8h.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "ÖDR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "celikkubbe-hava-savunma-sistemleri-yarismasi",
+      "ad": "Çelikkubbe Hava Savunma Sistemleri Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/celikkubbe-hava-savunma-sistemleri-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C3%87elikkubbe_HavaSavunmaSistemleri_KTR_%C5%9Fablon_TR_eE7lb.docx",
+          "etiket": "2026 Çelikkubbe Hava Savunma Sistemleri Yarışması Kritik Tasarım Raporu Şablonu",
+          "dosyaAdi": "2026_Çelikkubbe_HavaSavunmaSistemleri_KTR_şablon_TR_eE7lb.docx",
+          "tur": "sablon",
+          "asama": "KTR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/28.07.2026_-_2026_%C5%9Eartname_TR_v1.5_CtfFw.pdf",
+          "etiket": "28.07.2026 - 2026 Şartname TR v1.5 CtfFw",
+          "dosyaAdi": "28.07.2026_-_2026_Şartname_TR_v1.5_CtfFw.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Modeller_Kil6t.zip",
+          "etiket": "2026 Çelikkubbe Hava Savunma Sistemleri Yarışması Modeller",
+          "dosyaAdi": "Modeller_Kil6t.zip",
+          "tur": "diger",
+          "uzanti": "zip"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/%C3%87elikkubbe_Hava_Savunma_Sistemleri_-_Parkur_%C3%87izim_jZlAL.pdf",
+          "etiket": "2026 Çelikkubbe Hava Savunma Sistemleri Yarışması Parkur Çizimi",
+          "dosyaAdi": "Çelikkubbe_Hava_Savunma_Sistemleri_-_Parkur_Çizim_jZlAL.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "KTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "cip-tasarim-yarismasi",
+      "ad": "Çip Tasarım Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/cip-tasarim-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_OTR_Cip_Tasarim_Yarismasi_Analog_Tasarim_xuMTS.docx",
+          "etiket": "2026 Analog Tasarım Kategorisi Ön Tasarım Raporu Şablonu",
+          "dosyaAdi": "2026_OTR_Cip_Tasarim_Yarismasi_Analog_Tasarim_xuMTS.docx",
+          "tur": "sablon",
+          "asama": "ÖTR",
+          "kategoriAdi": "Analog Tasarım",
+          "uzanti": "docx",
+          "kategori": "Analog Tasarım",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_DTR_%C3%87ip_Tasar%C4%B1m_Yar%C4%B1%C5%9Fmas%C4%B1_Analog_v1_1Vl3m.docx",
+          "etiket": "2026 Çip Tasarım Yarışması Analog Tasarım Kategorisi DTR Şablonu",
+          "dosyaAdi": "2026_DTR_Çip_Tasarım_Yarışması_Analog_v1_1Vl3m.docx",
+          "tur": "sablon",
+          "asama": "DTR",
+          "kategoriAdi": "Analog Tasarım",
+          "uzanti": "docx",
+          "kategori": "Analog Tasarım",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Mikrodenetleyici_Tasarim_DTR_Sablonu_1_w0HlD.docx",
+          "etiket": "2026 Çip Tasarım Yarışması Mikrodenetleyici Tasarım Kategorisi DTR Şablonu",
+          "dosyaAdi": "2026_Mikrodenetleyici_Tasarim_DTR_Sablonu_1_w0HlD.docx",
+          "tur": "sablon",
+          "asama": "DTR",
+          "kategoriAdi": "Mikrodenetleyici Tasarım",
+          "uzanti": "docx",
+          "kategori": "Mikrodenetleyici Tasarım",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_OTR_Cip_Tasarim_Yarismasi_Mikrodenetleyici_Tasarim_Hd5WJ.docx",
+          "etiket": "2026 Mikrodenetleyici Tasarım Kategorisi Ön Tasarım Raporu Şablonu",
+          "dosyaAdi": "2026_OTR_Cip_Tasarim_Yarismasi_Mikrodenetleyici_Tasarim_Hd5WJ.docx",
+          "tur": "sablon",
+          "asama": "ÖTR",
+          "kategoriAdi": "Mikrodenetleyici Tasarım",
+          "uzanti": "docx",
+          "kategori": "Mikrodenetleyici Tasarım",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C3%87ip_Tasar%C4%B1m_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartnamesi_v1_3_draft_1_LK3oV.pdf",
+          "etiket": "2026 Çip Tasarım Yarışması Şartnamesi v1 3 draft 1 LK3oV",
+          "dosyaAdi": "2026_Çip_Tasarım_Yarışması_Şartnamesi_v1_3_draft_1_LK3oV.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [
+        "Analog Tasarım",
+        "Mikrodenetleyici Tasarım"
+      ],
+      "asamalar": [
+        "ÖTR",
+        "DTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "dikey-inisli-roket-yarismasi",
+      "ad": "Dikey İnişli Roket Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/dikey-inisli-roket-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Dikey_%C4%B0ni%C5%9Fli_Roket-Kritik_Tasar%C4%B1m_Raporu_Format%C4%B1-2026_EkRapor_V02_ezCHz.docx",
+          "etiket": "2026 Dikey İnişli Roket Yarışması - Kritik Tasarım Raporu Eki Şablonu",
+          "dosyaAdi": "Dikey_İnişli_Roket-Kritik_Tasarım_Raporu_Formatı-2026_EkRapor_V02_ezCHz.docx",
+          "tur": "sablon",
+          "asama": "KTR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/T%C3%9CB%C4%B0TAK_SAGE_Dikey_Inisli_Roket_Yar%C4%B1smas%C4%B1_Sartnamesi_2026_Qu4ap.pdf",
+          "etiket": "TÜBİTAK SAGE Dikey Inisli Roket Yarısması Sartnamesi 2026 Qu4ap",
+          "dosyaAdi": "TÜBİTAK_SAGE_Dikey_Inisli_Roket_Yarısması_Sartnamesi_2026_Qu4ap.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "KTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "e-ticaret-yarismasi",
+      "ad": "E-Ticaret Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/e-ticaret-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/E-T%C4%B0CARET_T_NFSoo.pdf",
+          "etiket": "2026 E-Ticaret Yarışması Genel Şartname",
+          "dosyaAdi": "E-TİCARET_T_NFSoo.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "elektronik-harp-yarismasi",
+      "ad": "Elektronik Harp Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/elektronik-harp-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/260503_Teknofest26_ElektronikHarp_KTR_TR_v1_lqE5E.docx",
+          "etiket": "2026 Elektronik Harp Yarışması KTR Şablonu",
+          "dosyaAdi": "260503_Teknofest26_ElektronikHarp_KTR_TR_v1_lqE5E.docx",
+          "tur": "sablon",
+          "asama": "KTR",
+          "uzanti": "docx",
+          "ayirtEdici": "KTR"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST26_ElektronikHarp_TYF_TR_2ieWj.pdf",
+          "etiket": "2026 Elektronik Harp Yarışması TYF Şablonu",
+          "dosyaAdi": "TEKNOFEST26_ElektronikHarp_TYF_TR_2ieWj.pdf",
+          "tur": "sablon",
+          "uzanti": "pdf",
+          "ayirtEdici": "TYF"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_ELEKTRONIK_HARP_SARTNAMESI_TR_G%C3%BCncel_jjwso.pdf",
+          "etiket": "2026 ELEKTRONIK HARP SARTNAMESI TR Güncel jjwso",
+          "dosyaAdi": "2026_ELEKTRONIK_HARP_SARTNAMESI_TR_Güncel_jjwso.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "KTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "finansal-teknolojiler-yarismasi",
+      "ad": "Finansal Teknolojiler Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/finansal-teknolojiler-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Finansal_Teknolojiler_T%C3%BCrk%C3%A7e_%C3%96DR_%C5%9Eablon_6Wfrb.docx",
+          "etiket": "2026 Finansal Teknolojiler Yarışması Ön Değerlendirme Raporu Şablonu",
+          "dosyaAdi": "Finansal_Teknolojiler_Türkçe_ÖDR_Şablon_6Wfrb.docx",
+          "tur": "sablon",
+          "asama": "ÖDR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026-Finansal_Teknolojiler_%C5%9Eartname_M5Jbl_1_ptIng.pdf",
+          "etiket": "2026-Finansal Teknolojiler Şartname M5Jbl 1 ptIng",
+          "dosyaAdi": "2026-Finansal_Teknolojiler_Şartname_M5Jbl_1_ptIng.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "ÖDR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "fpv-drone-izleme-tracking-yarismasi",
+      "ad": "FPV Drone İzleme (Tracking) Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/fpv-drone-izleme-tracking-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026.01.13-FPV_DRON_TAKIP_YARISMASI-KRITIK_TASARIM_RAPORU_SABLONU_003_1_n.docx",
+          "etiket": "2026 FPV Drone İzleme Yarışması Kritik Tasarım Raporu Şablonu",
+          "dosyaAdi": "2026.01.13-FPV_DRON_TAKIP_YARISMASI-KRITIK_TASARIM_RAPORU_SABLONU_003_1_n.docx",
+          "tur": "sablon",
+          "asama": "KTR",
+          "uzanti": "docx",
+          "ayirtEdici": "Kritik"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/FPV_DRONE_%C4%B0ZLEME_YARISMASI-ON_TASARIM_RAPORU_SABLONU_yQKqW.docx",
+          "etiket": "2026 FPV Drone İzleme Yarışması Ön Tasarım Raporu Şablonu",
+          "dosyaAdi": "FPV_DRONE_İZLEME_YARISMASI-ON_TASARIM_RAPORU_SABLONU_yQKqW.docx",
+          "tur": "sablon",
+          "asama": "ÖTR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST_2026_TEKNIK_SARTNAMESI_FPV_DRONE_%C4%B0ZLEME_YARISMASI_son_versiyon_8.pdf",
+          "etiket": "TEKNOFEST 2026 TEKNIK SARTNAMESI FPV DRONE İZLEME YARISMASI son versiyon 8",
+          "dosyaAdi": "TEKNOFEST_2026_TEKNIK_SARTNAMESI_FPV_DRONE_İZLEME_YARISMASI_son_versiyon_8.pdf",
+          "tur": "teknik_sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST_2026_YARI%C5%9EMA_B%C4%B0LG%C4%B0LEND%C4%B0RME_DOK%C3%9CMANI_fP9aQ.pdf",
+          "etiket": "2026 FPV Drone İzleme Yarışması Bilgilendirme Dokümanı",
+          "dosyaAdi": "TEKNOFEST_2026_YARIŞMA_BİLGİLENDİRME_DOKÜMANI_fP9aQ.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/FPV_Drone_Izleme_Kayit_Formati_Ek_Dokumani_Taslak_TR_003_n7FCw.pdf",
+          "etiket": "2026 FPV Drone İzleme Yarışması Kayıt Formatı Ek Dökümanı",
+          "dosyaAdi": "FPV_Drone_Izleme_Kayit_Formati_Ek_Dokumani_Taslak_TR_003_n7FCw.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "KTR",
+        "ÖTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": false,
+      "teknikSartnameVar": true
+    },
+    {
+      "slug": "hackmasters-guneydogu",
+      "ad": "HackMasters Güneydoğu",
+      "url": "https://www.teknofest.org/tr/yarismalar/hackmasters-guneydogu/",
+      "belgeler": [],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": false,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "hareketli-uydu-terminali-yarismasi",
+      "ad": "Hareketli Uydu Terminali Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/hareketli-uydu-terminali-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Hareketli_Uydu_Terminali_KTR_Sablon_TR_1_5awSB.docx",
+          "etiket": "2026 Hareketli Uydu Terminali Yarışması Kritik Tasarım Rapor Şablonu",
+          "dosyaAdi": "2026_Hareketli_Uydu_Terminali_KTR_Sablon_TR_1_5awSB.docx",
+          "tur": "sablon",
+          "asama": "KTR",
+          "uzanti": "docx",
+          "ayirtEdici": "Kritik"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Hareketli_Uydu_Terminali_OTR_CeQC4.docx",
+          "etiket": "2026 Hareketli Uydu Terminali Yarışması Ön Tasarım Rapor Şablonu",
+          "dosyaAdi": "2026_Hareketli_Uydu_Terminali_OTR_CeQC4.docx",
+          "tur": "sablon",
+          "asama": "ÖTR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Teknofest_Hareketli_Uydu_Terminali_Yar%C4%B1smas%C4%B1_Sartnamesi_TR_4d8Az.pdf",
+          "etiket": "Teknofest Hareketli Uydu Terminali Yarısması Sartnamesi TR 4d8Az",
+          "dosyaAdi": "Teknofest_Hareketli_Uydu_Terminali_Yarısması_Sartnamesi_TR_4d8Az.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "KTR",
+        "ÖTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "havacilikta-yapay-zeka-yarismasi",
+      "ad": "Havacılıkta Yapay Zeka Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/havacilikta-yapay-zeka-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_HYZ_OTR_Sablon_TR_RKgye.docx",
+          "etiket": "2026 Havacılıkta Yapay Zeka Yarışması ÖTR Şablonu",
+          "dosyaAdi": "2026_HYZ_OTR_Sablon_TR_RKgye.docx",
+          "tur": "sablon",
+          "asama": "ÖTR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_HAVACILIKTA_YAPAY_ZEKA_TR__1nPH7.pdf",
+          "etiket": "2026 Havacılıkta Yapay Zeka Yarışması Genel Şartname",
+          "dosyaAdi": "2026_HAVACILIKTA_YAPAY_ZEKA_TR__1nPH7.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_HAVACILIKTA_YAPAY_ZEKA_TEKNIK_SARTNAME_TR_v1_2026_04_20_QotGO.pdf",
+          "etiket": "2026 Havacılıkta Yapay Zeka Yarışması Teknik Şartname",
+          "dosyaAdi": "2026_HAVACILIKTA_YAPAY_ZEKA_TEKNIK_SARTNAME_TR_v1_2026_04_20_QotGO.pdf",
+          "tur": "teknik_sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "ÖTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": true
+    },
+    {
+      "slug": "hyperloop-gelistirme-yarismasi",
+      "ad": "Hyperloop Geliştirme Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/hyperloop-gelistirme-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TP%C3%87K_Raporu_%C5%9Eablonu_TR_V2_kZt8e.docx",
+          "etiket": "2026 Hyperloop Geliştirme Yarışması - Tanımlı Problem Çözümü Kategorisi Şablonu",
+          "dosyaAdi": "TPÇK_Raporu_Şablonu_TR_V2_kZt8e.docx",
+          "tur": "sablon",
+          "kategoriAdi": "Tanımlı Problem Çözümü",
+          "uzanti": "docx",
+          "kategori": "Tanımlı Problem Çözümü",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Teknik_Tasar%C4%B1m_Rapor_Sablonu_UAgsr.docx",
+          "etiket": "2026 Hyperloop Geliştirme Yarışması - Teknik Tasarım Raporu Şablonu",
+          "dosyaAdi": "Teknik_Tasarım_Rapor_Sablonu_UAgsr.docx",
+          "tur": "sablon",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Teknoloji_G%C3%B6sterim_Rapor_Sablonu_TR_v2_Ndj16.docx",
+          "etiket": "2026 Hyperloop Geliştirme Yarışması - Teknoloji Gösterim Kategorisi Raporu Şablonu",
+          "dosyaAdi": "Teknoloji_Gösterim_Rapor_Sablonu_TR_v2_Ndj16.docx",
+          "tur": "sablon",
+          "kategoriAdi": "Teknoloji Gösterim",
+          "uzanti": "docx",
+          "kategori": "Teknoloji Gösterim",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_5_TR_V1_OQJqr.pdf",
+          "etiket": "2026 HGY Kurallar Kitapçığı Bölüm - 5 Teknik Tasarım Raporu Kuralları",
+          "dosyaAdi": "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_5_TR_V1_OQJqr.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_1_TR_V2.5_2lEkO.pdf",
+          "etiket": "2026 HGY Kurallar Kitapçığı Bölüm 1 - İdari ve Mali Kurallar",
+          "dosyaAdi": "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_1_TR_V2.5_2lEkO.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_2_TR_V1_89EpH.pdf",
+          "etiket": "2026 HGY Kurallar Kitapçığı Bölüm 2- Performans Kategorisi Teknik Kurallar",
+          "dosyaAdi": "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_2_TR_V1_89EpH.pdf",
+          "tur": "sartname",
+          "kategoriAdi": "Performans",
+          "uzanti": "pdf",
+          "kategori": "Performans",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_3_TR_V3_deWa5.pdf",
+          "etiket": "2026 HGY Kurallar Kitapçığı Bölüm 3 - Teknoloji Gösterim Kategorisi Teknik Kurallar",
+          "dosyaAdi": "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_3_TR_V3_deWa5.pdf",
+          "tur": "sartname",
+          "kategoriAdi": "Teknoloji Gösterim",
+          "uzanti": "pdf",
+          "kategori": "Teknoloji Gösterim",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_4_TR_V1_z4YQs.pdf",
+          "etiket": "2026 HGY Kurallar Kitapçığı Bölüm 4 - Tanımlı Problem Çözümü Kategorisi Kuralları",
+          "dosyaAdi": "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_4_TR_V1_z4YQs.pdf",
+          "tur": "sartname",
+          "kategoriAdi": "Tanımlı Problem Çözümü",
+          "uzanti": "pdf",
+          "kategori": "Tanımlı Problem Çözümü",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_6_TR_V1.2_xhMoF.pdf",
+          "etiket": "2026 HGY Kurallar Kitapçığı Bölüm 6 - Rapor Yazım Kılavuzu",
+          "dosyaAdi": "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_6_TR_V1.2_xhMoF.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_9_TR_V1.1_NP9Dl.pdf",
+          "etiket": "2026 HGY Kurallar Kitapçığı Bölüm 9 - Hazırlık Kampı Programı",
+          "dosyaAdi": "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_9_TR_V1.1_NP9Dl.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/05_Geri_Cekilme_Dilekcesi_Hyperloop_2026_HHgKu.docx",
+          "etiket": "2026 Hyperloop Geliştirme Yarışması - GERİ ÇEKİLME DİLEKÇESİ",
+          "dosyaAdi": "05_Geri_Cekilme_Dilekcesi_Hyperloop_2026_HHgKu.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Haz%C4%B1rl%C4%B1k_Kamp%C4%B1_Talep_Formu_v2.1_J9qUW.docx",
+          "etiket": "2026 Hyperloop Geliştirme Yarışması - HAZIRLIK KAMPI TALEP FORMU",
+          "dosyaAdi": "2026_Hazırlık_Kampı_Talep_Formu_v2.1_J9qUW.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/06_Is_Sagligi_ve_Guvenligi_Taahhutnamesi_Hyperloop_2026_CrTSH.docx",
+          "etiket": "2026 Hyperloop Geliştirme Yarışması - İŞ SAĞLIĞI VE GÜVENLİĞİ TAAHHÜTNAMESİ",
+          "dosyaAdi": "06_Is_Sagligi_ve_Guvenligi_Taahhutnamesi_Hyperloop_2026_CrTSH.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/02_Taahhutname_Hyperloop_2026_19uum.docx",
+          "etiket": "2026 Hyperloop Geliştirme Yarışması - KATILIMCILAR İÇİN TAAHHÜTNAME",
+          "dosyaAdi": "02_Taahhutname_Hyperloop_2026_19uum.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/01_Muvafakatname_Hyperloop_2026_GG9Hu.docx",
+          "etiket": "2026 Hyperloop Geliştirme Yarışması - MUVAFAKATNAME",
+          "dosyaAdi": "01_Muvafakatname_Hyperloop_2026_GG9Hu.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/03_Takim_Kaptani_Degisikligi_Dilekcesi_Hyperloop_2026_i2kA8.docx",
+          "etiket": "2026 Hyperloop Geliştirme Yarışması - TAKIM KAPTANI DEĞİŞİKLİĞİ DİLEKÇESİ",
+          "dosyaAdi": "03_Takim_Kaptani_Degisikligi_Dilekcesi_Hyperloop_2026_i2kA8.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/04_Teslim_Tutanagi_Uluslararasi_Hyperloop_2026_BpVS6.docx",
+          "etiket": "2026 Hyperloop Geliştirme Yarışması - TESLİM TUTANAĞI",
+          "dosyaAdi": "04_Teslim_Tutanagi_Uluslararasi_Hyperloop_2026_BpVS6.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        }
+      ],
+      "kategoriler": [
+        "Performans",
+        "Tanımlı Problem Çözümü",
+        "Teknoloji Gösterim"
+      ],
+      "asamalar": [],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "ileri-otonom-sistemler-tasarim-ve-operasyon-yarismasi",
+      "ad": "İleri Otonom Sistemler Tasarım ve Operasyon Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/ileri-otonom-sistemler-tasarim-ve-operasyon-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/DDR_Sablon_TR_BhrGu.pdf",
+          "etiket": "2026 İleri Otonom Sistemler Tasarım ve Operasyon Yarışması Detay Değerlendirme Raporu Şablonu",
+          "dosyaAdi": "DDR_Sablon_TR_BhrGu.pdf",
+          "tur": "sablon",
+          "uzanti": "pdf",
+          "ayirtEdici": "Detay"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/FDR_2_qNiVF.pdf",
+          "etiket": "2026 İleri Otonom Sistemler Tasarım ve Operasyon Yarışması Final Değerlendirme Raporu Şablonu",
+          "dosyaAdi": "FDR_2_qNiVF.pdf",
+          "tur": "sablon",
+          "uzanti": "pdf",
+          "ayirtEdici": "Final"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/%C4%B0leri_Otonom_Sistemler_Tsar%C4%B1m_ve_Operasyon_Yar%C4%B1%C5%9Fmas%C4%B1_%C3%96DR_%C5%9Eablonu_TR_13.04.docx",
+          "etiket": "2026 İleri Otonom Sistemler Tasarım ve Operasyon Yarışması Ön Değerlendirme Raporu Şablonu",
+          "dosyaAdi": "İleri_Otonom_Sistemler_Tsarım_ve_Operasyon_Yarışması_ÖDR_Şablonu_TR_13.04.docx",
+          "tur": "sablon",
+          "asama": "ÖDR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Ileri_Otonom_Sistemler_Tasar%C4%B1m_ve_Operasyon_Yarismasi_Sartname_TR_Ltktw.pdf",
+          "etiket": "Ileri Otonom Sistemler Tasarım ve Operasyon Yarismasi Sartname TR Ltktw",
+          "dosyaAdi": "Ileri_Otonom_Sistemler_Tasarım_ve_Operasyon_Yarismasi_Sartname_TR_Ltktw.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/%C4%B0leri_Otonom_Sistemler_Tasar%C4%B1m_ve_Operasyon_Yar%C4%B1%C5%9Fmas%C4%B1_Requirements_Set-TR.xlsx",
+          "etiket": "2026 İleri Otonom Sistemler Tasarım ve Operasyon Yarışması Gereksinimler Listesi",
+          "dosyaAdi": "İleri_Otonom_Sistemler_Tasarım_ve_Operasyon_Yarışması_Requirements_Set-TR.xlsx",
+          "tur": "diger",
+          "uzanti": "xlsx"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "ÖDR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "insanlik-yararina-teknolojiler-yarismasi-ilkokul-seviyesi",
+      "ad": "İnsanlık Yararına Teknolojiler Yarışması - İlkokul Seviyesi",
+      "url": "https://www.teknofest.org/tr/yarismalar/insanlik-yararina-teknolojiler-yarismasi-ilkokul-seviyesi/",
+      "adSeviyesi": "İlkokul",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/%C4%B0nsanl%C4%B1kYarar%C4%B1naTeknolojilerYar%C4%B1%C5%9Fmas%C4%B1_%C3%96DR_TR_1_%C4%B0lkokul_Hr7xt.docx",
+          "etiket": "İnsanlık Yararına Teknolojiler Yarışması İlkokul Seviyesi Ön Değerlendime Rapor Şablonu",
+          "dosyaAdi": "İnsanlıkYararınaTeknolojilerYarışması_ÖDR_TR_1_İlkokul_Hr7xt.docx",
+          "tur": "sablon",
+          "asama": "ÖDR",
+          "seviye": "İlkokul",
+          "uzanti": "docx",
+          "kategori": "İlkokul",
+          "kategoriKaynagi": "seviye"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0NSANLIK_YARARINA_TEKNOLOJ%C4%B0LER_YARI%C5%9EMASI_-_%C4%B0LKOKUL_SEV%C4%B0YES%C4%B0_%C5%9EARTNAMES.pdf",
+          "etiket": "2026 İNSANLIK YARARINA TEKNOLOJİLER YARIŞMASI - İLKOKUL SEVİYESİ ŞARTNAMES",
+          "dosyaAdi": "2026_İNSANLIK_YARARINA_TEKNOLOJİLER_YARIŞMASI_-_İLKOKUL_SEVİYESİ_ŞARTNAMES.pdf",
+          "tur": "sartname",
+          "seviye": "İlkokul",
+          "uzanti": "pdf",
+          "kategori": "İlkokul",
+          "kategoriKaynagi": "seviye"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/%C4%B0YTY_-_MUVAFAKATNAME_INeBz.pdf",
+          "etiket": "İnsanlık Yararına Teknolojiler - İlkokul Seviyesi Muvafakatname",
+          "dosyaAdi": "İYTY_-_MUVAFAKATNAME_INeBz.pdf",
+          "tur": "diger",
+          "seviye": "İlkokul",
+          "uzanti": "pdf",
+          "kategori": "İlkokul",
+          "kategoriKaynagi": "seviye"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/%C4%B0nsanl%C4%B1k_Yarar%C4%B1na_Teknolojiler_-_%C4%B0lkokul_Seviyesi_Taahh%C3%BCtname_9CUjV.pdf",
+          "etiket": "İnsanlık Yararına Teknolojiler - İlkokul Seviyesi Taahhütname",
+          "dosyaAdi": "İnsanlık_Yararına_Teknolojiler_-_İlkokul_Seviyesi_Taahhütname_9CUjV.pdf",
+          "tur": "diger",
+          "seviye": "İlkokul",
+          "uzanti": "pdf",
+          "kategori": "İlkokul",
+          "kategoriKaynagi": "seviye"
+        }
+      ],
+      "kategoriler": [
+        "İlkokul"
+      ],
+      "asamalar": [
+        "ÖDR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "insanlik-yararina-teknolojiler-yarismasi-lise-seviyesi",
+      "ad": "İnsanlık Yararına Teknolojiler Yarışması - Lise Seviyesi",
+      "url": "https://www.teknofest.org/tr/yarismalar/insanlik-yararina-teknolojiler-yarismasi-lise-seviyesi/",
+      "adSeviyesi": "Lise",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/%C4%B0nsanl%C4%B1kYarar%C4%B1naTeknolojilerYar%C4%B1%C5%9Fmas%C4%B1.%C3%96DR.TR.1_Lise_vFhXX.docx",
+          "etiket": "2026 İnsanlık Yararına Teknolojiler Yarışması - Lise Seviyesi Ön Değerlendirme Raporu Şablonu",
+          "dosyaAdi": "İnsanlıkYararınaTeknolojilerYarışması.ÖDR.TR.1_Lise_vFhXX.docx",
+          "tur": "sablon",
+          "asama": "ÖDR",
+          "seviye": "Lise",
+          "uzanti": "docx",
+          "kategori": "Lise",
+          "kategoriKaynagi": "seviye"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0NSANLIK_YARARINA_TEKNOLOJ%C4%B0LER_YARI%C5%9EMASI_-_L%C4%B0SE_SEV%C4%B0YES%C4%B0_%C5%9EARTNAMES%C4%B0_T.pdf",
+          "etiket": "2026 İNSANLIK YARARINA TEKNOLOJİLER YARIŞMASI - LİSE SEVİYESİ ŞARTNAMESİ T",
+          "dosyaAdi": "2026_İNSANLIK_YARARINA_TEKNOLOJİLER_YARIŞMASI_-_LİSE_SEVİYESİ_ŞARTNAMESİ_T.pdf",
+          "tur": "sartname",
+          "seviye": "Lise",
+          "uzanti": "pdf",
+          "kategori": "Lise",
+          "kategoriKaynagi": "seviye"
+        }
+      ],
+      "kategoriler": [
+        "Lise"
+      ],
+      "asamalar": [
+        "ÖDR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "insanlik-yararina-teknolojiler-yarismasi-ortaokul-seviyesi",
+      "ad": "İnsanlık Yararına Teknolojiler Yarışması - Ortaokul Seviyesi",
+      "url": "https://www.teknofest.org/tr/yarismalar/insanlik-yararina-teknolojiler-yarismasi-ortaokul-seviyesi/",
+      "adSeviyesi": "Ortaokul",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Insanl%C4%B1kYarar%C4%B1naTeknolojilerYar%C4%B1smas%C4%B1_ODR_TR_1_Ortaokul_mOhHp_2_JtCzq.docx",
+          "etiket": "İnsanlık Yararına Teknolojiler Yarışması ÖDR Şablonu",
+          "dosyaAdi": "InsanlıkYararınaTeknolojilerYarısması_ODR_TR_1_Ortaokul_mOhHp_2_JtCzq.docx",
+          "tur": "sablon",
+          "asama": "ÖDR",
+          "seviye": "Ortaokul",
+          "uzanti": "docx",
+          "kategori": "Ortaokul",
+          "kategoriKaynagi": "seviye"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0NSANLIK_YARARINA_TEKNOLOJ%C4%B0LER_YARI%C5%9EMASI_ORTAOKUL_VERS%C4%B0YON_BA%C5%9EVURU_TA.pdf",
+          "etiket": "2026 İNSANLIK YARARINA TEKNOLOJİLER YARIŞMASI ORTAOKUL VERSİYON BAŞVURU TA",
+          "dosyaAdi": "2026_İNSANLIK_YARARINA_TEKNOLOJİLER_YARIŞMASI_ORTAOKUL_VERSİYON_BAŞVURU_TA.pdf",
+          "tur": "diger",
+          "seviye": "Ortaokul",
+          "uzanti": "pdf",
+          "kategori": "Ortaokul",
+          "kategoriKaynagi": "seviye"
+        }
+      ],
+      "kategoriler": [
+        "Ortaokul"
+      ],
+      "asamalar": [
+        "ÖDR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": false,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "insansiz-deniz-araci-yarismasi",
+      "ad": "İnsansız Deniz Aracı Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/insansiz-deniz-araci-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Insans%C4%B1z_Deniz_Araci_KTR_Sablonu_iedLX.docx",
+          "etiket": "2026 İnsansız Deniz Aracı Yarışması - Kritik Tasarım Raporu Şablonu",
+          "dosyaAdi": "2026_Insansız_Deniz_Araci_KTR_Sablonu_iedLX.docx",
+          "tur": "sablon",
+          "asama": "KTR",
+          "uzanti": "docx",
+          "ayirtEdici": "Kritik Tasarım"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Insans%C4%B1z_Deniz_Araci_TYR_Sablonu_TR_KLBrN.docx",
+          "etiket": "2026 İnsansız Deniz Aracı Yarışması - Teknik Yeterlilik Raporu Şablonu",
+          "dosyaAdi": "2026_Insansız_Deniz_Araci_TYR_Sablonu_TR_KLBrN.docx",
+          "tur": "sablon",
+          "uzanti": "docx",
+          "ayirtEdici": "Teknik Yeterlilik"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0nsans%C4%B1z_Deniz_Araci_%C5%9Eartnamesi_TR_18_05___QqiGV.pdf",
+          "etiket": "2026 İnsansız Deniz Araci Şartnamesi TR 18 05   QqiGV",
+          "dosyaAdi": "2026_İnsansız_Deniz_Araci_Şartnamesi_TR_18_05___QqiGV.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "KTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "insansiz-kara-araci-yarismasi",
+      "ad": "İnsansız Kara Aracı Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/insansiz-kara-araci-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST_2026_%C4%B0KA_KTR_%C5%9EABLONU_xi1fe.docx",
+          "etiket": "2026 İnsansız Kara Aracı Yarışması Kritik Tasarım Raporu Şablonu",
+          "dosyaAdi": "TEKNOFEST_2026_İKA_KTR_ŞABLONU_xi1fe.docx",
+          "tur": "sablon",
+          "asama": "KTR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0nsans%C4%B1z_Kara_Arac%C4%B1_T%C3%BCrk%C3%A7e_%C5%9Eartname_2awot.pdf",
+          "etiket": "2026 İnsansız Kara Aracı Türkçe Şartname 2awot",
+          "dosyaAdi": "2026_İnsansız_Kara_Aracı_Türkçe_Şartname_2awot.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/20260629_ParkurDosyalar%C4%B1_rLtWN.pdf",
+          "etiket": "2026 İnsansız Kara Aracı Yarışması Teknik Doküman",
+          "dosyaAdi": "20260629_ParkurDosyaları_rLtWN.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "KTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "insansiz-su-alti-sistemleri-yarismasi",
+      "ad": "İnsansız Su Altı Sistemleri Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/insansiz-su-alti-sistemleri-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/%C4%B0nsans%C4%B1z_Su_Alti_Sistemleri_Yar%C4%B1%C5%9Fmas%C4%B1_KTR_2026_pz6Io.docx",
+          "etiket": "2026 İnsansız Su Altı Sistemleri Yarışması Kritik Tasarım Raporu Şablonu",
+          "dosyaAdi": "İnsansız_Su_Alti_Sistemleri_Yarışması_KTR_2026_pz6Io.docx",
+          "tur": "sablon",
+          "asama": "KTR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0NSANSIZ_SU_ALTI_S%C4%B0STEMLER%C4%B0_YARI%C5%9EMASI_-_T%C3%9CRK%C3%87E_-_13.07.2026_jOTfB.pdf",
+          "etiket": "2026 İNSANSIZ SU ALTI SİSTEMLERİ YARIŞMASI - TÜRKÇE - 13.07.2026 jOTfB",
+          "dosyaAdi": "2026_İNSANSIZ_SU_ALTI_SİSTEMLERİ_YARIŞMASI_-_TÜRKÇE_-_13.07.2026_jOTfB.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "KTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": false,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "insansiz-su-alti-sistemleri-yildizlar-yarismasi",
+      "ad": "İnsansız Su Altı Sistemleri Yıldızlar Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/insansiz-su-alti-sistemleri-yildizlar-yarismasi/",
+      "adSeviyesi": "Yıldızlar",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0nsans%C4%B1z_Su_Alt%C4%B1_Sistemleri_Y%C4%B1ld%C4%B1zlar_Sartname_3_D%C3%BCzeltilmi%C5%9F_oASWa.pdf",
+          "etiket": "2026 İnsansız Su Altı Sistemleri Yıldızlar Sartname 3 Düzeltilmiş oASWa",
+          "dosyaAdi": "2026_İnsansız_Su_Altı_Sistemleri_Yıldızlar_Sartname_3_Düzeltilmiş_oASWa.pdf",
+          "tur": "sartname",
+          "seviye": "Yıldızlar",
+          "uzanti": "pdf",
+          "kategori": "Yıldızlar",
+          "kategoriKaynagi": "seviye"
+        }
+      ],
+      "kategoriler": [
+        "Yıldızlar"
+      ],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "jet-motor-tasarim-yarismasi",
+      "ad": "Jet Motor Tasarım Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/jet-motor-tasarim-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/DTR_TR_JetMotorTasar%C4%B1m2026_jLHzz.docx",
+          "etiket": "2026 Jet Motor Tasarım Yarışması DTR Şablonu",
+          "dosyaAdi": "DTR_TR_JetMotorTasarım2026_jLHzz.docx",
+          "tur": "sablon",
+          "asama": "DTR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_JET_MOTOR_TASARIM_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_TR_V1.5_4bcs0.pdf",
+          "etiket": "2026 JET MOTOR TASARIM YARIŞMASI ŞARTNAMESİ TR V1.5 4bcs0",
+          "dosyaAdi": "2026_JET_MOTOR_TASARIM_YARIŞMASI_ŞARTNAMESİ_TR_V1.5_4bcs0.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/egitim_teknofest_8fgHq.pdf",
+          "etiket": "egitim teknofest 8fgHq",
+          "dosyaAdi": "egitim_teknofest_8fgHq.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "DTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "kuantum-teknolojileri-yarismasi",
+      "ad": "Kuantum Teknolojileri Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/kuantum-teknolojileri-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026-Kuantum_teknofest-On_Asama_Sablonu_C0RqB.docx",
+          "etiket": "2026 Kuantum Teknolojileri Yarışması Donanım Kategorisi Ön Aşama Raporu Şablonu",
+          "dosyaAdi": "2026-Kuantum_teknofest-On_Asama_Sablonu_C0RqB.docx",
+          "tur": "sablon",
+          "kategoriAdi": "Donanım",
+          "uzanti": "docx",
+          "kategori": "Donanım",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Kuantum_Hackathon_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartnamesi_03_06_2026_34Q5G.pdf",
+          "etiket": "2026 Kuantum Hackathon Yarışması Şartnamesi 03 06 2026 34Q5G",
+          "dosyaAdi": "2026_Kuantum_Hackathon_Yarışması_Şartnamesi_03_06_2026_34Q5G.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Kuantum_Teknolojileri_Yar%C4%B1smas%C4%B1_Donan%C4%B1m_Kategorisi_Sartnamesi_SQquS.pdf",
+          "etiket": "2026 Kuantum Teknolojileri Yarısması Donanım Kategorisi Sartnamesi SQquS",
+          "dosyaAdi": "2026_Kuantum_Teknolojileri_Yarısması_Donanım_Kategorisi_Sartnamesi_SQquS.pdf",
+          "tur": "sartname",
+          "kategoriAdi": "Donanım",
+          "uzanti": "pdf",
+          "kategori": "Donanım",
+          "kategoriKaynagi": "etiket"
+        }
+      ],
+      "kategoriler": [
+        "Donanım"
+      ],
+      "asamalar": [],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "kure-teknofest-mavi-vatan-madde-yazim-yarismasi",
+      "ad": "KÜRE TEKNOFEST Mavi Vatan Madde Yazım Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/kure-teknofest-mavi-vatan-madde-yazim-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/KURE_TEKNOFEST_Mavi_Vatan_Madde_Yazim_Yarismasi_2026_TR._e9LOj.pdf",
+          "etiket": "KURE TEKNOFEST Mavi Vatan Madde Yazim Yarismasi 2026 TR. e9LOj",
+          "dosyaAdi": "KURE_TEKNOFEST_Mavi_Vatan_Madde_Yazim_Yarismasi_2026_TR._e9LOj.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": false,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "lise-ogrencileri-iklim-degisikligi-arastirma-projeleri-yarismasi",
+      "ad": "Lise Öğrencileri İklim Değişikliği Araştırma Projeleri Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/lise-ogrencileri-iklim-degisikligi-arastirma-projeleri-yarismasi/",
+      "adSeviyesi": "Lise",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/proje_yazma_sablonu_2025-2026_web_tLwbQ.docx",
+          "etiket": "2026 Proje Yazma Şablonu",
+          "dosyaAdi": "proje_yazma_sablonu_2025-2026_web_tLwbQ.docx",
+          "tur": "sablon",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_2204_D_Lise_%C3%96%C4%9Frencileri_%C4%B0klim_De%C4%9Fi%C5%9Fikli%C4%9Fi_Ara%C5%9Ft%C4%B1rma_Projeleri_Yar%C4%B1%C5%9Fma.pdf",
+          "etiket": "2026 2204 D Lise Öğrencileri İklim Değişikliği Araştırma Projeleri Yarışma",
+          "dosyaAdi": "2026_2204_D_Lise_Öğrencileri_İklim_Değişikliği_Araştırma_Projeleri_Yarışma.pdf",
+          "tur": "diger",
+          "seviye": "Lise",
+          "uzanti": "pdf",
+          "kategori": "Lise",
+          "kategoriKaynagi": "seviye"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2204_D_iklim_proje_rehberi__2026__wj4MS.pdf",
+          "etiket": "2026 Lise Öğrencileri İklim Değişikliği Araştırma Projeleri Yarışması (2204-D) Proje Rehberi",
+          "dosyaAdi": "2204_D_iklim_proje_rehberi__2026__wj4MS.pdf",
+          "tur": "diger",
+          "seviye": "Lise",
+          "uzanti": "pdf",
+          "kategori": "Lise",
+          "kategoriKaynagi": "seviye"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": true,
+      "sartnameVar": false,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "lise-ogrencileri-kutup-arastirma-projeleri-yarismasi",
+      "ad": "Lise Öğrencileri Kutup Araştırma Projeleri Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/lise-ogrencileri-kutup-arastirma-projeleri-yarismasi/",
+      "adSeviyesi": "Lise",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/proje_yazma_sablonu_2025-2026_web_tLwbQ.docx",
+          "etiket": "2026 Proje Yazma Şablonu",
+          "dosyaAdi": "proje_yazma_sablonu_2025-2026_web_tLwbQ.docx",
+          "tur": "sablon",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_2204_C_Lise_%C3%96%C4%9Frencileri_Kutup_Ara%C5%9Ft%C4%B1rma_Projeleri_Yar%C4%B1%C5%9Fmas%C4%B1_V1.0_1_jc.pdf",
+          "etiket": "2026 2204 C Lise Öğrencileri Kutup Araştırma Projeleri Yarışması V1.0 1 jc",
+          "dosyaAdi": "2026_2204_C_Lise_Öğrencileri_Kutup_Araştırma_Projeleri_Yarışması_V1.0_1_jc.pdf",
+          "tur": "diger",
+          "seviye": "Lise",
+          "uzanti": "pdf",
+          "kategori": "Lise",
+          "kategoriKaynagi": "seviye"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2204_C_kutup_proje_rehberi_2026__6xqed.pdf",
+          "etiket": "2026 Lise Öğrencileri Kutup Araştırma Projeleri Yarışması (2204-C) Proje Rehberi",
+          "dosyaAdi": "2204_C_kutup_proje_rehberi_2026__6xqed.pdf",
+          "tur": "diger",
+          "seviye": "Lise",
+          "uzanti": "pdf",
+          "kategori": "Lise",
+          "kategoriKaynagi": "seviye"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": true,
+      "sartnameVar": false,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "liseler-arasi-insansiz-hava-araclari-yarismasi",
+      "ad": "Liseler Arası İnsansız Hava Araçları Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/liseler-arasi-insansiz-hava-araclari-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Liseler_Aras%C4%B1_%C4%B0HA_Sabit-D%C3%B6ner_PSR_%C5%9Eablonu_3WC6z.docx",
+          "etiket": "2026 Liseler Arası İHA Sabit-Döner Kanat PSR Şablonu",
+          "dosyaAdi": "2026_Liseler_Arası_İHA_Sabit-Döner_PSR_Şablonu_3WC6z.docx",
+          "tur": "sablon",
+          "uzanti": "docx",
+          "ayirtEdici": "Sabit-Döner Kanat",
+          "kategori": "Sabit-Döner Kanat",
+          "kategoriKaynagi": "turetildi"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Liseler_Aras%C4%B1_%C4%B0HA_Serbest_G%C3%B6rev_PSR_%C5%9Eablonu_lZW0f.docx",
+          "etiket": "2026 Liseler Arası İHA Serbest Görev PSR Şablonu",
+          "dosyaAdi": "2026_Liseler_Arası_İHA_Serbest_Görev_PSR_Şablonu_lZW0f.docx",
+          "tur": "sablon",
+          "uzanti": "docx",
+          "ayirtEdici": "Serbest Görev",
+          "kategori": "Serbest Görev",
+          "kategoriKaynagi": "turetildi"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0HA_Yar%C4%B1%C5%9Fmalar%C4%B1_%C5%9Eartnamesi_TR_v6_n7Mv5.pdf",
+          "etiket": "2026 İHA Yarışmaları Şartnamesi TR v6 n7Mv5",
+          "dosyaAdi": "2026_İHA_Yarışmaları_Şartnamesi_TR_v6_n7Mv5.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_E%C4%9E%C4%B0T%C4%B0M_MUVAFAKATNAME_wynQ5.pdf",
+          "etiket": "2026 İHA YARIŞMALARI EĞİTİM MUVAFAKATNAMESİ",
+          "dosyaAdi": "2026_EĞİTİM_MUVAFAKATNAME_wynQ5.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_E%C4%9E%C4%B0T%C4%B0M_TAAHH%C3%9CTNAME_t60OE.pdf",
+          "etiket": "2026 İHA YARIŞMALARI EĞİTİM TAAHHÜTNAMESİ",
+          "dosyaAdi": "2026_EĞİTİM_TAAHHÜTNAME_t60OE.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0HA_YARI%C5%9EMALARI_MUVAFAKATNAME_1_fgyrY.pdf",
+          "etiket": "2026 İHA YARIŞMALARI MUVAFAKATNAME",
+          "dosyaAdi": "2026_İHA_YARIŞMALARI_MUVAFAKATNAME_1_fgyrY.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0HA_YARI%C5%9EMALARI_TAAHH%C3%9CTNAME_1_c2HPU.pdf",
+          "etiket": "2026 İHA YARIŞMALARI TAAHHÜTNAME",
+          "dosyaAdi": "2026_İHA_YARIŞMALARI_TAAHHÜTNAME_1_c2HPU.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Liseler_Aras%C4%B1_%C4%B0HA_Sabit-D%C3%B6ner_PSR_Haz%C4%B1rlama_K%C4%B1lavuzu_jhLtT.pdf",
+          "etiket": "2026 Liseler Arası İHA Sabit-Döner Kanat PSR Hazırlama Kılavuzu",
+          "dosyaAdi": "2026_Liseler_Arası_İHA_Sabit-Döner_PSR_Hazırlama_Kılavuzu_jhLtT.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Liseler_Aras%C4%B1_%C4%B0HA_Serbest_G%C3%B6rev_PSR_Haz%C4%B1rlama_K%C4%B1lavuzu_PhvJg.pdf",
+          "etiket": "2026 Liseler Arası İHA Serbest PSR Hazırlama Kılavuzu",
+          "dosyaAdi": "2026_Liseler_Arası_İHA_Serbest_Görev_PSR_Hazırlama_Kılavuzu_PhvJg.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_L%C4%B0SELER_ARASI_%C4%B0HA_SAB%C4%B0T_VE_D%C3%96NER_KANAT_HAZ._VE_G%C3%96REV_V%C4%B0DEOSU_HAZIRLAM.pdf",
+          "etiket": "2026 LİSELER ARASI İNSANSIZ HAVA ARAÇLARI YARIŞMASI SABİT VE DÖNER KANAT KATEGORİLERİ HAZIRLIK VE GÖREV VİDEOSU HAZIRLAMA KILAVUZU",
+          "dosyaAdi": "2026_LİSELER_ARASI_İHA_SABİT_VE_DÖNER_KANAT_HAZ._VE_GÖREV_VİDEOSU_HAZIRLAM.pdf",
+          "tur": "diger",
+          "kategoriAdi": "LİSELER ARASI İNSANSIZ HAVA ARAÇLARI YARIŞMASI SABİT VE DÖNER KANAT",
+          "uzanti": "pdf",
+          "kategori": "LİSELER ARASI İNSANSIZ HAVA ARAÇLARI YARIŞMASI SABİT VE DÖNER KANAT",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_L%C4%B0SELER_ARASI_%C4%B0HA_SERBEST_G%C3%96REV_KATEGOR%C4%B0S%C4%B0_G%C3%96REV_V%C4%B0DEOSU_HAZIRLAMA_KI.pdf",
+          "etiket": "2026 LİSELER ARASI İNSANSIZ HAVA ARAÇLARI YARIŞMASI SERBEST GÖREV KATEGORİSİ HAZIRLIK VE GÖREV VİDEOSU HAZIRLAMA KILAVUZU",
+          "dosyaAdi": "2026_LİSELER_ARASI_İHA_SERBEST_GÖREV_KATEGORİSİ_GÖREV_VİDEOSU_HAZIRLAMA_KI.pdf",
+          "tur": "diger",
+          "kategoriAdi": "LİSELER ARASI İNSANSIZ HAVA ARAÇLARI YARIŞMASI SERBEST GÖREV",
+          "uzanti": "pdf",
+          "kategori": "LİSELER ARASI İNSANSIZ HAVA ARAÇLARI YARIŞMASI SERBEST GÖREV",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_THK_E%C4%9E%C4%B0T%C4%B0M_ORGAN%C4%B0ZASYON_KILAVUZU_V04_YSsZ0.pdf",
+          "etiket": "2026 THK EĞİTİM ORGANİZASYON KILAVUZU",
+          "dosyaAdi": "2026_THK_EĞİTİM_ORGANİZASYON_KILAVUZU_V04_YSsZ0.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [
+        "Sabit-Döner Kanat",
+        "Serbest Görev"
+      ],
+      "asamalar": [],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "maden-teknolojileri-yarismasi",
+      "ad": "Maden Teknolojileri Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/maden-teknolojileri-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Maden_Teknolojileri_Yar%C4%B1smas%C4%B1_2026_ODR_Sablonu_2_RflR2_m6Pf5.docx",
+          "etiket": "2026 Maden Teknolojileri Yarışması Ön Değerlendirme Raporu Şablonu",
+          "dosyaAdi": "Maden_Teknolojileri_Yarısması_2026_ODR_Sablonu_2_RflR2_m6Pf5.docx",
+          "tur": "sablon",
+          "asama": "ÖDR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_MADEN_TEKNOLOJ%C4%B0LER%C4%B0_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_20_02_2026_vTarih_urMBc.pdf",
+          "etiket": "2026 MADEN TEKNOLOJİLERİ YARIŞMASI ŞARTNAMESİ 20 02 2026 vTarih urMBc",
+          "dosyaAdi": "2026_MADEN_TEKNOLOJİLERİ_YARIŞMASI_ŞARTNAMESİ_20_02_2026_vTarih_urMBc.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "ÖDR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "mavi-vatan-resim-yarismasi",
+      "ad": "Mavi Vatan Resim Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/mavi-vatan-resim-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Mavi_Vatan_Resim_%C5%9Eartnamesi_V2_xMI7u.pdf",
+          "etiket": "2026 Mavi Vatan Resim Şartnamesi V2 xMI7u",
+          "dosyaAdi": "2026_Mavi_Vatan_Resim_Şartnamesi_V2_xMI7u.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "model-uydu-yarismasi",
+      "ad": "Model Uydu Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/model-uydu-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Model_Uydu_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartnamesi_xu1ZC.pdf",
+          "etiket": "2026 Model Uydu Yarışması Şartnamesi xu1ZC",
+          "dosyaAdi": "2026_Model_Uydu_Yarışması_Şartnamesi_xu1ZC.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "nsosyal-inovasyon-yarismasi",
+      "ad": "NSOSYAL İnovasyon Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/nsosyal-inovasyon-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/NSosyal_Inovasyon_2026_-_Proje_Teknik_Raporu_1_u6IVb.docx",
+          "etiket": "NSOSYAL İnovasyon Yarışması Teknik Rapor Şablonu",
+          "dosyaAdi": "NSosyal_Inovasyon_2026_-_Proje_Teknik_Raporu_1_u6IVb.docx",
+          "tur": "sablon",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_NSOSYAL_YARISMASI_SARTNAMESI_TR_2026_07_24_v9_1_G92Gv_PpMLO.pdf",
+          "etiket": "2026 NSOSYAL YARISMASI SARTNAMESI TR 2026 07 24 v9 1 G92Gv PpMLO",
+          "dosyaAdi": "2026_NSOSYAL_YARISMASI_SARTNAMESI_TR_2026_07_24_v9_1_G92Gv_PpMLO.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "nukleer-enerji-teknolojileri-tasarim-yarismasi",
+      "ad": "Nükleer Enerji Teknolojileri Tasarım Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/nukleer-enerji-teknolojileri-tasarim-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-ALT_KATEGOR%C4%B0_%C5%9EABL.docx",
+          "etiket": "ALT KATEGORİLER SİSTEM GELİŞTİRME FİNAL DEĞERLENDİRME RAPORU",
+          "dosyaAdi": "2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-ALT_KATEGORİ_ŞABL.docx",
+          "tur": "sablon",
+          "kategoriAdi": "ALT",
+          "uzanti": "docx",
+          "ayirtEdici": "ALT SİSTEM GELİŞTİRME",
+          "kategori": "ALT SİSTEM GELİŞTİRME",
+          "kategoriKaynagi": "turetildi"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-DETAY_TASARIM_%C5%9EAB.docx",
+          "etiket": "DETAY TASARIM FİNAL DEĞERLENDİRME RAPORU",
+          "dosyaAdi": "2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-DETAY_TASARIM_ŞAB.docx",
+          "tur": "sablon",
+          "uzanti": "docx",
+          "ayirtEdici": "DETAY TASARIM",
+          "kategori": "DETAY TASARIM",
+          "kategoriKaynagi": "turetildi"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-KAVRAMSAL_TASARIM.docx",
+          "etiket": "KAVRAMSAL TASARIM FİNAL DEĞERLENDİRME RAPORU",
+          "dosyaAdi": "2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-KAVRAMSAL_TASARIM.docx",
+          "tur": "sablon",
+          "uzanti": "docx",
+          "ayirtEdici": "KAVRAMSAL TASARIM",
+          "kategori": "KAVRAMSAL TASARIM",
+          "kategoriKaynagi": "turetildi"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-UYGULAMA_KATEGOR%C4%B0.docx",
+          "etiket": "UYGULAMA KATEGORİSİ FİNAL DEĞERLENDİRME RAPORU",
+          "dosyaAdi": "2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-UYGULAMA_KATEGORİ.docx",
+          "tur": "sablon",
+          "kategoriAdi": "UYGULAMA",
+          "uzanti": "docx",
+          "kategori": "UYGULAMA",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Nukleer_Enerji_Teknolojilleri_Tasar%C4%B1m_Yar%C4%B1smas%C4%B1_Sartnamesi_TR_4kjmi.pdf",
+          "etiket": "2026 Nukleer Enerji Teknolojilleri Tasarım Yarısması Sartnamesi TR 4kjmi",
+          "dosyaAdi": "2026_Nukleer_Enerji_Teknolojilleri_Tasarım_Yarısması_Sartnamesi_TR_4kjmi.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [
+        "ALT SİSTEM GELİŞTİRME",
+        "DETAY TASARIM",
+        "KAVRAMSAL TASARIM",
+        "UYGULAMA"
+      ],
+      "asamalar": [],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "onkolojide-3t-yarismasi",
+      "ad": "Onkolojide 3T Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/onkolojide-3t-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Onkolojide_3T_Yar%C4%B1%C5%9Fmas%C4%B1_-_Yar%C4%B1_Final_Proje_Raporu_%C5%9Eablonu_-_TR_Li4T0.docx",
+          "etiket": "2026 Onkolojide 3T Yarışması - Yarı Final Proje Raporu Şablonu",
+          "dosyaAdi": "Onkolojide_3T_Yarışması_-_Yarı_Final_Proje_Raporu_Şablonu_-_TR_Li4T0.docx",
+          "tur": "sablon",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_TEKNOFEST_ONKOLOJ%C4%B0DE_3T_YARI%C5%9EMASI_%C5%9EARTNAME_TR_2nhKo.pdf",
+          "etiket": "2026 TEKNOFEST ONKOLOJİDE 3T YARIŞMASI ŞARTNAME TR 2nhKo",
+          "dosyaAdi": "2026_TEKNOFEST_ONKOLOJİDE_3T_YARIŞMASI_ŞARTNAME_TR_2nhKo.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "pardus-hata-yakalama-ve-oneri-yarismasi",
+      "ad": "Pardus Hata Yakalama ve Öneri Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/pardus-hata-yakalama-ve-oneri-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026-TR-PardusHataYakalamaOneriYarismasi-TeknikSartname_V1.3_IwHMa.pdf",
+          "etiket": "2026-TR-PardusHataYakalamaOneriYarismasi-TeknikSartname V1.3 IwHMa",
+          "dosyaAdi": "2026-TR-PardusHataYakalamaOneriYarismasi-TeknikSartname_V1.3_IwHMa.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "robotaksi-binek-otonom-arac-yarismasi",
+      "ad": "Robotaksi-Binek Otonom Araç Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/robotaksi-binek-otonom-arac-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Robotaksi_Hazir_KTR_2026_bdpoi.docx",
+          "etiket": "2026 Hazır Araç Kategorisi Kritik Tasarım Raporu Şablonu (KTR)",
+          "dosyaAdi": "Robotaksi_Hazir_KTR_2026_bdpoi.docx",
+          "tur": "sablon",
+          "asama": "KTR",
+          "kategoriAdi": "Hazır Araç",
+          "uzanti": "docx",
+          "kategori": "Hazır Araç",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Robotaksi-TYF-Hazir_Arac_QQApL.docx",
+          "etiket": "2026 Hazır Araç Kategorisi Teknik Yeterlilik Formu Şablonu (TYF)",
+          "dosyaAdi": "Robotaksi-TYF-Hazir_Arac_QQApL.docx",
+          "tur": "sablon",
+          "kategoriAdi": "Hazır Araç",
+          "uzanti": "docx",
+          "kategori": "Hazır Araç",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Robotaksi_Ozgun_KTR_2026_A0aSo.docx",
+          "etiket": "2026 Özgün Araç Kategorisi Kritik Tasarım Raporu Şablonu (KTR)",
+          "dosyaAdi": "Robotaksi_Ozgun_KTR_2026_A0aSo.docx",
+          "tur": "sablon",
+          "asama": "KTR",
+          "kategoriAdi": "Özgün Araç",
+          "uzanti": "docx",
+          "kategori": "Özgün Araç",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Robotaksi-TYF-Ozgun_Arac_woPlC.docx",
+          "etiket": "2026 Özgün Araç Kategorisi Teknik Yeterlilik Formu Şablonu (TYF)",
+          "dosyaAdi": "Robotaksi-TYF-Ozgun_Arac_woPlC.docx",
+          "tur": "sablon",
+          "kategoriAdi": "Özgün Araç",
+          "uzanti": "docx",
+          "kategori": "Özgün Araç",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Robotaksi_Sim%C3%BClasyon_%C5%9Eablon_rjtpc_bi9so.docx",
+          "etiket": "2026 Robotaksi Binek Otonom Araç Yarışması Simülasyon Raporu Şablonu",
+          "dosyaAdi": "Robotaksi_Simülasyon_Şablon_rjtpc_bi9so.docx",
+          "tur": "sablon",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Robotaksi_Binek_Otonom_Arac_Yar%C4%B1smas%C4%B1_Sartnamesi_SvtF2.pdf",
+          "etiket": "2026 Robotaksi Binek Otonom Arac Yarısması Sartnamesi SvtF2",
+          "dosyaAdi": "2026_Robotaksi_Binek_Otonom_Arac_Yarısması_Sartnamesi_SvtF2.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Robotaksi_Binek_Otonom_Ara%C3%A7_Yar%C4%B1%C5%9Fmas%C4%B1_Haz%C4%B1r_Ara%C3%A7_Genel_Bilgilendirme_.pdf",
+          "etiket": "2026 Robotaksi-Binek Otonom Araç Yarışması Hazır Araç Genel Bilgilendirme Dokümanı",
+          "dosyaAdi": "2026_Robotaksi_Binek_Otonom_Araç_Yarışması_Hazır_Araç_Genel_Bilgilendirme_.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Robotaksi_Binek_Otonom_Ara%C3%A7_Yar%C4%B1%C5%9Fmas%C4%B1_Haz%C4%B1r_Ara%C3%A7_Kullan%C4%B1c%C4%B1_Dok%C3%BCman%C4%B1_b.pdf",
+          "etiket": "2026 Robotaksi-Binek Otonom Araç Yarışması Hazır Araç Kullanıcı Dokümanı",
+          "dosyaAdi": "2026_Robotaksi_Binek_Otonom_Araç_Yarışması_Hazır_Araç_Kullanıcı_Dokümanı_b.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Robotaksi_Binek_Otonom_Ara%C3%A7_Yar%C4%B1%C5%9Fmas%C4%B1_Haz%C4%B1r_Ara%C3%A7_Mimari_Tan%C4%B1mlama_Dok.pdf",
+          "etiket": "2026 Robotaksi-Binek Otonom Araç Yarışması Hazır Araç Mimari Tanımlama Dokümanı",
+          "dosyaAdi": "2026_Robotaksi_Binek_Otonom_Araç_Yarışması_Hazır_Araç_Mimari_Tanımlama_Dok.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [
+        "Hazır Araç",
+        "Özgün Araç"
+      ],
+      "asamalar": [
+        "KTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "roket-yarismasi",
+      "ad": "Roket Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/roket-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2026_Roket_Yar%C4%B1%C5%9Fmas%C4%B1_A1_AHR_%C5%9Eablonu_xdcKS.docx",
+          "etiket": "2026 Roket Yarışması A1 - Lise Kategorisi Atışa Hazırlık Raporu (AHR) Şablonu",
+          "dosyaAdi": "TEKNOFEST-2026_Roket_Yarışması_A1_AHR_Şablonu_xdcKS.docx",
+          "tur": "sablon",
+          "kategoriAdi": "A1 - Lise",
+          "seviye": "Lise",
+          "uzanti": "docx",
+          "kategori": "A1 - Lise",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2026_Roket_Yar%C4%B1%C5%9Fmas%C4%B1_A2_A3_AHR_%C5%9Eablonu_HSAFb.docx",
+          "etiket": "2026 Roket Yarışması A2-A3 Kategorisi Atışa Hazırlık Raporu (AHR) Şablonu",
+          "dosyaAdi": "TEKNOFEST-2026_Roket_Yarışması_A2_A3_AHR_Şablonu_HSAFb.docx",
+          "tur": "sablon",
+          "kategoriAdi": "A2-A3",
+          "uzanti": "docx",
+          "kategori": "A2-A3",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2026_Rocket_Competition_A4_FRR_Template_d1t9m.docx",
+          "etiket": "2026 Roket Yarışması A4 - Uluslararası Kategori Atışa Hazırlık Raporu (AHR) Şablonu",
+          "dosyaAdi": "TEKNOFEST-2026_Rocket_Competition_A4_FRR_Template_d1t9m.docx",
+          "tur": "sablon",
+          "kategoriAdi": "A4 - Uluslararası",
+          "uzanti": "docx",
+          "kategori": "A4 - Uluslararası",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2026_Roket_Yar%C4%B1%C5%9Fmas%C4%B1_A5_AHR_%C5%9Eablonu_LBRry.docx",
+          "etiket": "2026 Roket Yarışması A5-Zorlu Görev Kategorisi Atışa Hazırlık Raporu (AHR) Şablonu",
+          "dosyaAdi": "TEKNOFEST-2026_Roket_Yarışması_A5_AHR_Şablonu_LBRry.docx",
+          "tur": "sablon",
+          "kategoriAdi": "A5-Zorlu Görev",
+          "uzanti": "docx",
+          "kategori": "A5-Zorlu Görev",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2026_Roket_Yar%C4%B1%C5%9Fmas%C4%B1_A6_AHR_%C5%9Eablonu_TBlpl.docx",
+          "etiket": "2026 Roket Yarışması A6-Özgün Hibrit Yakıt Motorlu Roket Kategorisi Atışa Hazırlık Raporu (AHR) Şablonu",
+          "dosyaAdi": "TEKNOFEST-2026_Roket_Yarışması_A6_AHR_Şablonu_TBlpl.docx",
+          "tur": "sablon",
+          "kategoriAdi": "A6-Özgün Hibrit Yakıt Motorlu Roket",
+          "uzanti": "docx",
+          "kategori": "A6-Özgün Hibrit Yakıt Motorlu Roket",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2026_Roket_Yar%C4%B1%C5%9Fmas%C4%B1_A7_AHR_%C5%9Eablonu_W8Zyo.docx",
+          "etiket": "2026 Roket Yarışması A7-Özgün Sıvı Yakıt Motorlu Roket Kategorisi Atışa Hazırlık Raporu (AHR) Şablonu",
+          "dosyaAdi": "TEKNOFEST-2026_Roket_Yarışması_A7_AHR_Şablonu_W8Zyo.docx",
+          "tur": "sablon",
+          "kategoriAdi": "A7-Özgün Sıvı Yakıt Motorlu Roket",
+          "uzanti": "docx",
+          "kategori": "A7-Özgün Sıvı Yakıt Motorlu Roket",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/B1_-_%C3%96TR_%C5%9Eablonu_2026_J6bPW.docx",
+          "etiket": "2026 Roket Yarışması Aktif Kontrol Sistemi Geliştirilmesi (B1) Ön Tasarım Raporu Şablonu",
+          "dosyaAdi": "B1_-_ÖTR_Şablonu_2026_J6bPW.docx",
+          "tur": "sablon",
+          "asama": "ÖTR",
+          "uzanti": "docx",
+          "ayirtEdici": "Aktif Kontrol Sistemi (B1)",
+          "kategori": "Aktif Kontrol Sistemi (B1)",
+          "kategoriKaynagi": "turetildi"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/B2_-_OTR_Sablonu_2026_9O6kM.docx",
+          "etiket": "2026 Roket Yarışması Hibrit Yakıtlı Roket Motoru Geliştirilmesi (B2) Ön Tasarım Raporu Şablonu",
+          "dosyaAdi": "B2_-_OTR_Sablonu_2026_9O6kM.docx",
+          "tur": "sablon",
+          "asama": "ÖTR",
+          "uzanti": "docx",
+          "ayirtEdici": "Hibrit Yakıtlı Motoru (B2)",
+          "kategori": "Hibrit Yakıtlı Motoru (B2)",
+          "kategoriKaynagi": "turetildi"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/B3_-_OTR_Sablonu_2026_RyyVQ.docx",
+          "etiket": "2026 Roket Yarışması Sıvı Yakıtlı Roket Motoru Geliştirilmesi (B3) Ön Tasarım Raporu Şablonu",
+          "dosyaAdi": "B3_-_OTR_Sablonu_2026_RyyVQ.docx",
+          "tur": "sablon",
+          "asama": "ÖTR",
+          "uzanti": "docx",
+          "ayirtEdici": "Sıvı Yakıtlı Motoru (B3)",
+          "kategori": "Sıvı Yakıtlı Motoru (B3)",
+          "kategoriKaynagi": "turetildi"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/B4_-_OTR_Sablonu_2026_UfTYT.docx",
+          "etiket": "2026 Roket Yarışması Uçuş Modelleme ve Simülasyon Yazılımı Geliştirilmesi (B4) Ön Tasarım Raporu Şablonu",
+          "dosyaAdi": "B4_-_OTR_Sablonu_2026_UfTYT.docx",
+          "tur": "sablon",
+          "asama": "ÖTR",
+          "uzanti": "docx",
+          "ayirtEdici": "Uçuş Modelleme ve Simülasyon Yazılımı (B4)",
+          "kategori": "Uçuş Modelleme ve Simülasyon Yazılımı (B4)",
+          "kategoriKaynagi": "turetildi"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2026_Roket_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartnamesi_ToMuI.pdf",
+          "etiket": "TEKNOFEST-2026 Roket Yarışması Şartnamesi ToMuI",
+          "dosyaAdi": "TEKNOFEST-2026_Roket_Yarışması_Şartnamesi_ToMuI.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2026_Roket_Yarismasi_Kutle_Butcesi_1_J8dIX.xlsx",
+          "etiket": "2026 Roket Yarışması Kütle Bütçesi",
+          "dosyaAdi": "TEKNOFEST-2026_Roket_Yarismasi_Kutle_Butcesi_1_J8dIX.xlsx",
+          "tur": "diger",
+          "uzanti": "xlsx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Aerotech_Motorlar%C4%B1na_%C4%B0li%C5%9Fkin_Teknik_Bilgiler_ve_OpenRocket_Dosyas%C4%B1_-_23.02.zip",
+          "etiket": "Aerotech Motorlarına İlişkin Teknik Bilgiler ve OpenRocket Dosyası (2026) - 23.02.2026",
+          "dosyaAdi": "Aerotech_Motorlarına_İlişkin_Teknik_Bilgiler_ve_OpenRocket_Dosyası_-_23.02.zip",
+          "tur": "diger",
+          "uzanti": "zip"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/EK-12_Kontrol_Listesi_%C3%96rne%C4%9Fi_obXsG_qWu33.docx",
+          "etiket": "Attachment - 12 Checklist Template (2026)",
+          "dosyaAdi": "EK-12_Kontrol_Listesi_Örneği_obXsG_qWu33.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Attachment_-13_Scientific_Payload_Evaluation_Form_ekinW.docx",
+          "etiket": "Attachment -13 Scientific Payload Evaluation Form",
+          "dosyaAdi": "Attachment_-13_Scientific_Payload_Evaluation_Form_ekinW.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Attachment_-14_Information_Poster_Requirements_Document_Bu56b.docx",
+          "etiket": "Attachment -14 Information Poster Requirements Document",
+          "dosyaAdi": "Attachment_-14_Information_Poster_Requirements_Document_Bu56b.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Attachment-1_Coordinate_Sysyem_of_Rockets_and_Transformations_of_Coordina.docx",
+          "etiket": "Attachment-1 Coordinate Sysyem of Rockets and Transformations of Coordinate System (2026)",
+          "dosyaAdi": "Attachment-1_Coordinate_Sysyem_of_Rockets_and_Transformations_of_Coordina.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Attachment-2_Referee_Altimeter_Specifications_Ttzq3.docx",
+          "etiket": "Attachment-2 Referee Altimeter Specifications (2026)",
+          "dosyaAdi": "Attachment-2_Referee_Altimeter_Specifications_Ttzq3.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Attachment-3_Launch_Pad_Specifications_f1bom.docx",
+          "etiket": "Attachment-3 Launch Pad Specifications (2026)",
+          "dosyaAdi": "Attachment-3_Launch_Pad_Specifications_f1bom.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Attachment-4_Hot_Gas_Generator_Specifications_bU3bs.docx",
+          "etiket": "Attachment-4 Hot Gas Generator Specifications (2026)",
+          "dosyaAdi": "Attachment-4_Hot_Gas_Generator_Specifications_bU3bs.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Attachment-5_Scientific_Payloads_Specifications_DTOnr.docx",
+          "etiket": "Attachment-5 Scientific Payloads Specifications (2026)",
+          "dosyaAdi": "Attachment-5_Scientific_Payloads_Specifications_DTOnr.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Attachment-6_COTS_Flight_Control_Computer_Specifications_jz73E.pdf",
+          "etiket": "Attachment-6 COTS Flight Control Computer Specifications (2026)",
+          "dosyaAdi": "Attachment-6_COTS_Flight_Control_Computer_Specifications_jz73E.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Attachment-7_Testing_Specifications_of_Indigenously_Developed_Flight_Cont.docx",
+          "etiket": "Attachment-7 Testing Specifications of Indigenously Developed Flight Control Computers (2026)",
+          "dosyaAdi": "Attachment-7_Testing_Specifications_of_Indigenously_Developed_Flight_Cont.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Attachment-8_Rules_To_Be_Followed_By_The_Competitiors_qLvUS.docx",
+          "etiket": "Attachment-8 Rules To Be Followed By The Competitiors (2026)",
+          "dosyaAdi": "Attachment-8_Rules_To_Be_Followed_By_The_Competitiors_qLvUS.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Attachment-9_Control_List_Sample_7VmKW.docx",
+          "etiket": "Attachment-9 Control List (Checklist) Sample (2026)",
+          "dosyaAdi": "Attachment-9_Control_List_Sample_7VmKW.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Ayd%C4%B1nlatma_Metni_DeOaY.pdf",
+          "etiket": "Aydınlatma Metni (2026)",
+          "dosyaAdi": "Aydınlatma_Metni_DeOaY.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Ek-1_Roketlerde_Eksen_Tan%C4%B1m%C4%B1_ve_D%C3%B6n%C3%BC%C5%9F%C3%BCm%C3%BC_7HxUE.docx",
+          "etiket": "EK-1 Roketlerde Eksen Tanımı ve Dönüşümü (2026)",
+          "dosyaAdi": "Ek-1_Roketlerde_Eksen_Tanımı_ve_Dönüşümü_7HxUE.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/EK-10_Hibrit_Yak%C4%B1tl%C4%B1_Roket_Motorda_Kullanacak_Standart_Sistemler_ve_Ara_Y.docx",
+          "etiket": "EK-10 Hibrit Yakıtlı Roket Motorda Kullanacak Standart Sistemler ve Ara Yüzler (2026)",
+          "dosyaAdi": "EK-10_Hibrit_Yakıtlı_Roket_Motorda_Kullanacak_Standart_Sistemler_ve_Ara_Y.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/EK-11_S%C4%B1v%C4%B1_Yak%C4%B1tl%C4%B1_Roket_Motorda_Kullanacak_Standart_Sistemler_ve_Ara_Y%C3%BCz.docx",
+          "etiket": "EK-11 Sıvı Yakıtlı Roket Motorda Kullanacak Standart Sistemler ve Ara Yüzler (2026)",
+          "dosyaAdi": "EK-11_Sıvı_Yakıtlı_Roket_Motorda_Kullanacak_Standart_Sistemler_ve_Ara_Yüz.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/EK-12_Kontrol_Listesi_%C3%96rne%C4%9Fi_obXsG.docx",
+          "etiket": "EK-12 Kontrol Listesi Örneği (2026)",
+          "dosyaAdi": "EK-12_Kontrol_Listesi_Örneği_obXsG.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/EK-13_Bilimsel_G%C3%B6rev_Y%C3%BCk%C3%BC_Bilgilendirme_Formu_sL1iG.docx",
+          "etiket": "EK-13 Bilimsel Görev Yükü Bilgilendirme Formu",
+          "dosyaAdi": "EK-13_Bilimsel_Görev_Yükü_Bilgilendirme_Formu_sL1iG.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/EK-14_Bilgi_Posteri_Gereksinim_Dok%C3%BCman%C4%B1_Tn7TT.docx",
+          "etiket": "EK-14 Bilgi Posteri Gereksinim Dokümanı",
+          "dosyaAdi": "EK-14_Bilgi_Posteri_Gereksinim_Dokümanı_Tn7TT.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/EK-2_Hakem_Altimetresi_5aNCk.docx",
+          "etiket": "EK-2 Hakem Altimetresi (2026)",
+          "dosyaAdi": "EK-2_Hakem_Altimetresi_5aNCk.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/EK-3_F%C4%B1rlatma_Rampas%C4%B1_%C3%96zellikleri_ve_F%C4%B1rlatma_K%C4%B1lavuz_Ray_Butonu_%C3%96zellikl.docx",
+          "etiket": "EK-3 Fırlatma Rampası Özellikleri ve Fırlatma Kılavuz Ray Butonu Özellikleri (2026)",
+          "dosyaAdi": "EK-3_Fırlatma_Rampası_Özellikleri_ve_Fırlatma_Kılavuz_Ray_Butonu_Özellikl.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/EK-4_S%C4%B1cak_Gaz_%C3%9Creteci_%C3%96zellikleri_rev1_UqwYa.docx",
+          "etiket": "EK-4 Sıcak Gaz Üreteci Özellikleri (2026)",
+          "dosyaAdi": "EK-4_Sıcak_Gaz_Üreteci_Özellikleri_rev1_UqwYa.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/EK-5_Bilimsel_G%C3%B6rev_Y%C3%BCkleri_kN6te.docx",
+          "etiket": "EK-5 Bilimsel Görev Yükleri (2026)",
+          "dosyaAdi": "EK-5_Bilimsel_Görev_Yükleri_kN6te.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/EK-6_Opsiyonel_Ticari_U%C3%A7u%C5%9F_Kontrol_Bilgisayarlar%C4%B1_ve_Sky_Logic_V2_Teknik_.docx",
+          "etiket": "EK-6 Opsiyonel Ticari Uçuş Kontrol Bilgisayarları ve Sky Logic V2 Teknik Özellikleri (2026)",
+          "dosyaAdi": "EK-6_Opsiyonel_Ticari_Uçuş_Kontrol_Bilgisayarları_ve_Sky_Logic_V2_Teknik_.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Ek-7_%C3%96zg%C3%BCn_U%C3%A7u%C5%9F_Kontrol_Bilgisayarlar%C4%B1n%C4%B1n_Tabi_Tutulaca%C4%9F%C4%B1_Testler_DtJW1.docx",
+          "etiket": "EK-7 Özgün Uçuş Kontrol Bilgisayarlarının Tabi Tutulacağı Testler (2026)",
+          "dosyaAdi": "Ek-7_Özgün_Uçuş_Kontrol_Bilgisayarlarının_Tabi_Tutulacağı_Testler_DtJW1.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/EK-8_Yar%C4%B1%C5%9Fma_Alan%C4%B1nda_Uyulmas%C4%B1_Gereken_Kurallar_2mjOZ.docx",
+          "etiket": "EK-8 Yarışma Alanında Uyulması Gereken Kurallar (2026)",
+          "dosyaAdi": "EK-8_Yarışma_Alanında_Uyulması_Gereken_Kurallar_2mjOZ.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/EK-9_Kademeli_Roketler_ve_Zorlu_G%C3%B6rev_Bilgilendirmesi_6kIBO.docx",
+          "etiket": "EK-9 Kademeli Roketler ve Zorlu Görev Bilgilendirmesi (2026)",
+          "dosyaAdi": "EK-9_Kademeli_Roketler_ve_Zorlu_Görev_Bilgilendirmesi_6kIBO.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2026_Rocket_Competition_A4_International_Category_Requirements_o.pdf",
+          "etiket": "TEKNOFEST-2026 Rocket Competition A4 International Category Requirements o",
+          "dosyaAdi": "TEKNOFEST-2026_Rocket_Competition_A4_International_Category_Requirements_o.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [
+        "A1 - Lise",
+        "A2-A3",
+        "A4 - Uluslararası",
+        "A5-Zorlu Görev",
+        "A6-Özgün Hibrit Yakıt Motorlu Roket",
+        "A7-Özgün Sıvı Yakıt Motorlu Roket",
+        "Aktif Kontrol Sistemi (B1)",
+        "Hibrit Yakıtlı Motoru (B2)",
+        "Sıvı Yakıtlı Motoru (B3)",
+        "Uçuş Modelleme ve Simülasyon Yazılımı (B4)"
+      ],
+      "asamalar": [
+        "ÖTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "saglikta-yapay-zeka-yarismasi",
+      "ad": "Sağlıkta Yapay Zeka Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/saglikta-yapay-zeka-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_PDR_%C5%9Eablon-Lise_v2_9eX0z.docx",
+          "etiket": "2026 Sağlıkta Yapay Zeka Yarışması Proje Detay Raporu Lise Seviyesi",
+          "dosyaAdi": "2026_PDR_Şablon-Lise_v2_9eX0z.docx",
+          "tur": "sablon",
+          "asama": "PDR",
+          "seviye": "Lise",
+          "uzanti": "docx",
+          "kategori": "Lise",
+          "kategoriKaynagi": "seviye"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_PDR_%C5%9Eablon_Universite_TR_bCw49.docx",
+          "etiket": "2026 Sağlıkta Yapay Zeka Yarışması Proje Detay Raporu Üniversite ve Üzeri Seviyesi",
+          "dosyaAdi": "2026_PDR_Şablon_Universite_TR_bCw49.docx",
+          "tur": "sablon",
+          "asama": "PDR",
+          "seviye": "Üniversite",
+          "uzanti": "docx",
+          "kategori": "Üniversite",
+          "kategoriKaynagi": "seviye"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Sa%C4%9Fl%C4%B1kta_Yapay_Zeka_PSR-Lise_Lp5aI.docx",
+          "etiket": "2026 Sağlıkta Yapay Zeka Yarışması Proje Sunuş Raporu Lise Seviyesi",
+          "dosyaAdi": "2026_Sağlıkta_Yapay_Zeka_PSR-Lise_Lp5aI.docx",
+          "tur": "sablon",
+          "seviye": "Lise",
+          "uzanti": "docx",
+          "kategori": "Lise",
+          "kategoriKaynagi": "seviye"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Sa%C4%9Fl%C4%B1kta_Yapay_Zeka_PSR-%C3%9Cniversite_ve_%C3%9Czeri_lt7Hv.docx",
+          "etiket": "2026 Sağlıkta Yapay Zeka Yarışması Proje Sunuş Raporu Üniversite ve Üzeri Seviyesi",
+          "dosyaAdi": "2026_Sağlıkta_Yapay_Zeka_PSR-Üniversite_ve_Üzeri_lt7Hv.docx",
+          "tur": "sablon",
+          "seviye": "Üniversite",
+          "uzanti": "docx",
+          "kategori": "Üniversite",
+          "kategoriKaynagi": "seviye"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026-_Sa%C4%9Fl%C4%B1kta_Yapay_Zeka_T%C3%BCrk%C3%A7e_%C5%9Eartname_v2_son_versiyon-2_DNTlA.pdf",
+          "etiket": "2026- Sağlıkta Yapay Zeka Türkçe Şartname v2 son versiyon-2 DNTlA",
+          "dosyaAdi": "2026-_Sağlıkta_Yapay_Zeka_Türkçe_Şartname_v2_son_versiyon-2_DNTlA.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [
+        "Lise",
+        "Üniversite"
+      ],
+      "asamalar": [
+        "PDR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "sanayide-robotik-uygulamalar-yarismasi",
+      "ad": "Sanayide Robotik Uygulamalar Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/sanayide-robotik-uygulamalar-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Sanayide_Robotik_Uygulamalar_Yar%C4%B1%C5%9Fmas%C4%B1_Proje_Detay_Raporu_%C5%9Eablonu_0L.docx",
+          "etiket": "2026 Sanayide Robotik Uygulamalar Yarışması Proje Detay Raporu Şablonu",
+          "dosyaAdi": "2026_Sanayide_Robotik_Uygulamalar_Yarışması_Proje_Detay_Raporu_Şablonu_0L.docx",
+          "tur": "sablon",
+          "asama": "PDR",
+          "uzanti": "docx",
+          "ayirtEdici": "Proje Detay"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_SDT_Teknik_Yeterlilik_Formu_RJCw5.docx",
+          "etiket": "2026 Sanayide Robotik Uygulamalar Yarışması Teknik Yeterlilik Formu Raporu Şablonu",
+          "dosyaAdi": "2026_SDT_Teknik_Yeterlilik_Formu_RJCw5.docx",
+          "tur": "sablon",
+          "uzanti": "docx",
+          "ayirtEdici": "Teknik Yeterlilik Formu"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_SRUY_TR_Hre2P.pdf",
+          "etiket": "2026 SRUY TR Hre2P",
+          "dosyaAdi": "2026_SRUY_TR_Hre2P.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "PDR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": false,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "savasan-iha-avci-drone-yarismasi",
+      "ad": "Savaşan İHA Avcı Drone Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/savasan-iha-avci-drone-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/AVCI_ATR_2026_TR_Z8I4P.docx",
+          "etiket": "2026 Savaşan İHA Avcı Drone Yarışması Algoritma Tasarım Raporu Şablonu",
+          "dosyaAdi": "AVCI_ATR_2026_TR_Z8I4P.docx",
+          "tur": "sablon",
+          "uzanti": "docx",
+          "ayirtEdici": "Algoritma Tasarım"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST26_Avci_Dron_TYF_iROGm.docx",
+          "etiket": "2026 Savaşan İHA Avcı Drone Yarışması Teknik Yeterlilik Formu Şablonu",
+          "dosyaAdi": "TEKNOFEST26_Avci_Dron_TYF_iROGm.docx",
+          "tur": "sablon",
+          "uzanti": "docx",
+          "ayirtEdici": "Teknik Yeterlilik Formu"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_SAVASAN_IHA_AVCI_DRON_YARISMA_SARTNAMES%C4%B0_TR_v1.2_kbXvo.pdf",
+          "etiket": "2026 SAVASAN IHA AVCI DRON YARISMA SARTNAMESİ TR v1.2 kbXvo",
+          "dosyaAdi": "2026_SAVASAN_IHA_AVCI_DRON_YARISMA_SARTNAMESİ_TR_v1.2_kbXvo.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/AVCI_DRONE_B%C4%B0LG%C4%B0LEND%C4%B0RME_DOK%C3%9CMANI_2026_TR_3I9S7.pdf",
+          "etiket": "2026 Savaşan İHA Avcı Drone Yarışması Bilgilendirme Dokümanı",
+          "dosyaAdi": "AVCI_DRONE_BİLGİLENDİRME_DOKÜMANI_2026_TR_3I9S7.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/AVCI_DRONE_S%C4%B0MULASYON_DOK%C3%9CMANI_2026_TR_V2_5szcc.pdf",
+          "etiket": "2026 Savaşan İHA Avcı Drone Yarışması Simülasyon Uçuş Kanıt Videosu ve Kaynak Kod Dokümanı",
+          "dosyaAdi": "AVCI_DRONE_SİMULASYON_DOKÜMANI_2026_TR_V2_5szcc.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "savasan-iha-yarismasi",
+      "ad": "Savaşan İHA Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/savasan-iha-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/SIHA_KTR_2026_TR_v2_KBa6W.docx",
+          "etiket": "2026 Savaşan İHA Kritik Tasarım Rapor Şablonu",
+          "dosyaAdi": "SIHA_KTR_2026_TR_v2_KBa6W.docx",
+          "tur": "sablon",
+          "asama": "KTR",
+          "uzanti": "docx",
+          "ayirtEdici": "Kritik Tasarım"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST26_Savasan_IHA_TYF_TR_zMqMG.docx",
+          "etiket": "2026 Savaşan İHA Teknik Yeterlilik Formu Şablonu",
+          "dosyaAdi": "TEKNOFEST26_Savasan_IHA_TYF_TR_zMqMG.docx",
+          "tur": "sablon",
+          "uzanti": "docx",
+          "ayirtEdici": "Teknik Yeterlilik Formu"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_SAVASAN_%C4%B0HA_YARISMA_SARTNAMES%C4%B0_TR_v1.4_Q373N.pdf",
+          "etiket": "2026 SAVASAN İHA YARISMA SARTNAMESİ TR v1.4 Q373N",
+          "dosyaAdi": "2026_SAVASAN_İHA_YARISMA_SARTNAMESİ_TR_v1.4_Q373N.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/SIHA_Haberlesme_Dokumani_2026_7Vnfu.pdf",
+          "etiket": "2026 Savaşan İHA Yarışması Haberleşme Dokümanı",
+          "dosyaAdi": "SIHA_Haberlesme_Dokumani_2026_7Vnfu.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "KTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "savasan-iha-yildizlar-yarismasi",
+      "ad": "Savaşan İHA Yıldızlar Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/savasan-iha-yildizlar-yarismasi/",
+      "adSeviyesi": "Yıldızlar",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Savasan_IHA_Y%C4%B1ld%C4%B1zlar_Sartnamesi_TR_V1.4_VHZwj.pdf",
+          "etiket": "2026 Savasan IHA Yıldızlar Sartnamesi TR V1.4 VHZwj",
+          "dosyaAdi": "2026_Savasan_IHA_Yıldızlar_Sartnamesi_TR_V1.4_VHZwj.pdf",
+          "tur": "sartname",
+          "seviye": "Yıldızlar",
+          "uzanti": "pdf",
+          "kategori": "Yıldızlar",
+          "kategoriKaynagi": "seviye"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/SIHA_Yildizlar_Haberlesme_Dokumani_2026_1hYFQ.pdf",
+          "etiket": "2026 Savaşan İHA Yıldızlar Yarışması Haberleşme Dokümanı",
+          "dosyaAdi": "SIHA_Yildizlar_Haberlesme_Dokumani_2026_1hYFQ.pdf",
+          "tur": "diger",
+          "seviye": "Yıldızlar",
+          "uzanti": "pdf",
+          "kategori": "Yıldızlar",
+          "kategoriKaynagi": "seviye"
+        }
+      ],
+      "kategoriler": [
+        "Yıldızlar"
+      ],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "sifir-atik-dongusel-ekonomi-yarismasi",
+      "ad": "Sıfır Atık & Döngüsel Ekonomi Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/sifir-atik-dongusel-ekonomi-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/s%C4%B1f%C4%B1r_at%C4%B1k_3_1_SH8EA.docx",
+          "etiket": "2026 Sıfır Atık & Döngüsel Ekonomi Yarışması Rapor Şablonu",
+          "dosyaAdi": "sıfır_atık_3_1_SH8EA.docx",
+          "tur": "sablon",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2026_YARISMA_TEKNIK_SARTNAME_11.05.2026_4_1gIHj.pdf",
+          "etiket": "TEKNOFEST-2026 YARISMA TEKNIK SARTNAME 11.05.2026 4 1gIHj",
+          "dosyaAdi": "TEKNOFEST-2026_YARISMA_TEKNIK_SARTNAME_11.05.2026_4_1gIHj.pdf",
+          "tur": "teknik_sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": true,
+      "sartnameVar": false,
+      "teknikSartnameVar": true
+    },
+    {
+      "slug": "su-alti-roket-yarismasi",
+      "ad": "Su Altı Roket Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/su-alti-roket-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Sualt%C4%B1_Roket_KTR_Sablon_73TXZ.docx",
+          "etiket": "2026 Su Altı Roket Yarışması KTR Şablonu",
+          "dosyaAdi": "2026_Sualtı_Roket_KTR_Sablon_73TXZ.docx",
+          "tur": "sablon",
+          "asama": "KTR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_SU_ALTI_ROKET_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_TR.V1.6_M7Rif.pdf",
+          "etiket": "2026 SU ALTI ROKET YARIŞMASI ŞARTNAMESİ TR.V1.6 M7Rif",
+          "dosyaAdi": "2026_SU_ALTI_ROKET_YARIŞMASI_ŞARTNAMESİ_TR.V1.6_M7Rif.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/SU_ALTI_ROKET_FIRLATMA_S%C4%B0STEM%C4%B0_B%C4%B0LG%C4%B0LEND%C4%B0RME_D%C3%96K%C3%9CMANI_005_0UOKX.pdf",
+          "etiket": "2026 Su Altı Roket Fırlatma Sistemi Bilgilendirme Dökümanı",
+          "dosyaAdi": "SU_ALTI_ROKET_FIRLATMA_SİSTEMİ_BİLGİLENDİRME_DÖKÜMANI_005_0UOKX.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "KTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "suru-iha-yarismasi",
+      "ad": "Sürü İHA Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/suru-iha-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_S%C3%BCr%C3%BC_%C4%B0ha_KTR_%C5%9Eablonu_l_ORree.docx",
+          "etiket": "2026 Sürü İHA Yarışması Kritik Tasarım Raporu Şablonu",
+          "dosyaAdi": "2026_Sürü_İha_KTR_Şablonu_l_ORree.docx",
+          "tur": "sablon",
+          "asama": "KTR",
+          "uzanti": "docx",
+          "ayirtEdici": "Kritik"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_S%C3%BCr%C3%BC_%C4%B0ha_%C3%96TR_%C5%9Eablonu_cWiUn.docx",
+          "etiket": "2026 Sürü İHA Yarışması Ön Tasarım Raporu Şablonu",
+          "dosyaAdi": "2026_Sürü_İha_ÖTR_Şablonu_cWiUn.docx",
+          "tur": "sablon",
+          "asama": "ÖTR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/S%C3%BCr%C3%BC_%C4%B0HA_Yar%C4%B1%C5%9Fma_%C5%9Eartnamesi_V2_-_TR_ZJlf8.pdf",
+          "etiket": "Sürü İHA Yarışma Şartnamesi V2 - TR ZJlf8",
+          "dosyaAdi": "Sürü_İHA_Yarışma_Şartnamesi_V2_-_TR_ZJlf8.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_SURU_IHA_YARISMASI_QR_ICER%C4%B0G%C4%B0_TR_1_4WY6S.pdf",
+          "etiket": "2026 Sürü İHA Yarışması Dinamik Sürü Kabiliyeti Görevi Qr Veri Formatı ve Örnek Görev Senaryosu",
+          "dosyaAdi": "2026_SURU_IHA_YARISMASI_QR_ICERİGİ_TR_1_4WY6S.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_S%C3%BCr%C3%BC_%C4%B0ha_%C3%96n_De%C4%9Ferlendirme_Sunum_%C5%9Eablonu_Uw1tH.pdf",
+          "etiket": "2026 Sürü İHA Yarışması Ön Değerlendirme Sunumu (Simülasyon) Videosu Yönergesi",
+          "dosyaAdi": "2026_Sürü_İha_Ön_Değerlendirme_Sunum_Şablonu_Uw1tH.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/S%C3%9CR%C3%9C_%C4%B0HA_YARI%C5%9EMASI_U%C3%87U%C5%9E_KANIT_ve_YAZILIM_V%C4%B0DEOSU_Y%C3%96NERGES%C4%B0_TR_5C0La.pdf",
+          "etiket": "2026 Sürü İha Yarışması Video Kanıt ve Yazılım Videosu Yönergesi",
+          "dosyaAdi": "SÜRÜ_İHA_YARIŞMASI_UÇUŞ_KANIT_ve_YAZILIM_VİDEOSU_YÖNERGESİ_TR_5C0La.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "KTR",
+        "ÖTR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "tarim-teknolojileri-yarismasi",
+      "ad": "Tarım Teknolojileri Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/tarim-teknolojileri-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_TARIM__TEKNOLOJ%C4%B0LER%C4%B0_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_TR_3sOUx.pdf",
+          "etiket": "2026 TARIM  TEKNOLOJİLERİ YARIŞMASI ŞARTNAMESİ TR 3sOUx",
+          "dosyaAdi": "2026_TARIM__TEKNOLOJİLERİ_YARIŞMASI_ŞARTNAMESİ_TR_3sOUx.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "teknofest-drone-sampiyonasi",
+      "ad": "TEKNOFEST Drone Şampiyonası",
+      "url": "https://www.teknofest.org/tr/yarismalar/teknofest-drone-sampiyonasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_-TEKNOFEST_Drone_%C5%9Eampiyonas%C4%B1_%C5%9Eartname_oVnim.pdf",
+          "etiket": "2026 -TEKNOFEST Drone Şampiyonası Şartname oVnim",
+          "dosyaAdi": "2026_-TEKNOFEST_Drone_Şampiyonası_Şartname_oVnim.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "teknofest-mesleki-yetenek-yarismasi",
+      "ad": "TEKNOFEST Mesleki Yetenek Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/teknofest-mesleki-yetenek-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/AKILLI_FABR%C4%B0KA_S%C4%B0STEMLER%C4%B0_PROGRAMLAMAYARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_Du4UI.pdf",
+          "etiket": "2026 MYY- AKILLI FABRİKA SİSTEMLERİ PROGRAMLAMA KATEGORİSİ ŞARTNAMESİ",
+          "dosyaAdi": "AKILLI_FABRİKA_SİSTEMLERİ_PROGRAMLAMAYARIŞMASI_ŞARTNAMESİ_Du4UI.pdf",
+          "tur": "sartname",
+          "kategoriAdi": "MYY- AKILLI FABRİKA SİSTEMLERİ PROGRAMLAMA",
+          "uzanti": "pdf",
+          "kategori": "MYY- AKILLI FABRİKA SİSTEMLERİ PROGRAMLAMA",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/MESLEK%C4%B0_YETENEK_YARI%C5%9EMASI_ELEKTR%C4%B0K_KUMANDA_PANOSU_TASARIMI_VE_UYGULAMA_KAT.pdf",
+          "etiket": "2026 MYY- ELEKTRİK KUMANDA PANOSU TASARIMI VE UYGULAMA KATEGORİSİ ŞARTNAMESİ",
+          "dosyaAdi": "MESLEKİ_YETENEK_YARIŞMASI_ELEKTRİK_KUMANDA_PANOSU_TASARIMI_VE_UYGULAMA_KAT.pdf",
+          "tur": "sartname",
+          "kategoriAdi": "MYY- ELEKTRİK KUMANDA PANOSU TASARIMI VE UYGULAMA",
+          "uzanti": "pdf",
+          "kategori": "MYY- ELEKTRİK KUMANDA PANOSU TASARIMI VE UYGULAMA",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/MYY_ELEKTR%C4%B0K_TES%C4%B0SATI_VE_PANO_MONTORL%C3%9C%C4%9E%C3%9C_KATEGOR%C4%B0S%C4%B0_%C5%9EARTNAMES%C4%B0__q7I7e.pdf",
+          "etiket": "2026 MYY- ELEKTRİK TESİSATI VE PANO MONTORLÜĞÜ KATEGORİSİ ŞARTNAMESİ",
+          "dosyaAdi": "MYY_ELEKTRİK_TESİSATI_VE_PANO_MONTORLÜĞÜ_KATEGORİSİ_ŞARTNAMESİ__q7I7e.pdf",
+          "tur": "sartname",
+          "kategoriAdi": "MYY- ELEKTRİK TESİSATI VE PANO MONTORLÜĞÜ",
+          "uzanti": "pdf",
+          "kategori": "MYY- ELEKTRİK TESİSATI VE PANO MONTORLÜĞÜ",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/MESLEK%C4%B0_YETENEK_YARI%C5%9EMASI_KAYNAK%C3%87ILIK_KATEGOR%C4%B0S%C4%B0_%C5%9EARTNAMES%C4%B0--_ZoZdb.pdf",
+          "etiket": "2026 MYY- KAYNAKÇILIK KATEGORİSİ ŞARTNAMESİ",
+          "dosyaAdi": "MESLEKİ_YETENEK_YARIŞMASI_KAYNAKÇILIK_KATEGORİSİ_ŞARTNAMESİ--_ZoZdb.pdf",
+          "tur": "sartname",
+          "kategoriAdi": "MYY- KAYNAKÇILIK",
+          "uzanti": "pdf",
+          "kategori": "MYY- KAYNAKÇILIK",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/MESLEKI_YETENEK_YARISMASI_MARANGOZLUK_KATEGORISI_SARTNAMESI_RqALw.pdf",
+          "etiket": "2026 MYY- MARANGOZLUK KATEGORİSİ ŞARTNAMESİ",
+          "dosyaAdi": "MESLEKI_YETENEK_YARISMASI_MARANGOZLUK_KATEGORISI_SARTNAMESI_RqALw.pdf",
+          "tur": "sartname",
+          "kategoriAdi": "MYY- MARANGOZLUK",
+          "uzanti": "pdf",
+          "kategori": "MYY- MARANGOZLUK",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/MESLEK%C4%B0_YETENEK_YARI%C5%9EMASI_MEKATRON%C4%B0K_TEKNOLOJ%C4%B0LER%C4%B0_KATEGOR%C4%B0S%C4%B0_%C5%9EARTNAMES%C4%B0_L.pdf",
+          "etiket": "2026 MYY- MEKATRONİK TEKNOLOJİLERİ KATEGORİSİ ŞARTNAMESİ",
+          "dosyaAdi": "MESLEKİ_YETENEK_YARIŞMASI_MEKATRONİK_TEKNOLOJİLERİ_KATEGORİSİ_ŞARTNAMESİ_L.pdf",
+          "tur": "sartname",
+          "kategoriAdi": "MYY- MEKATRONİK TEKNOLOJİLERİ",
+          "uzanti": "pdf",
+          "kategori": "MYY- MEKATRONİK TEKNOLOJİLERİ",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/MESLEK%C4%B0_YETENEK_YARI%C5%9EMASI_ORTA_GER%C4%B0L%C4%B0M_TEKNOLOJ%C4%B0LER%C4%B0_KATEGOR%C4%B0S%C4%B0_%C5%9EARTNAMES%C4%B0.pdf",
+          "etiket": "2026 MYY- ORTA GERİLİM TEKNOLOJİLERİ KATEGORİSİ ŞARTNAMESİ",
+          "dosyaAdi": "MESLEKİ_YETENEK_YARIŞMASI_ORTA_GERİLİM_TEKNOLOJİLERİ_KATEGORİSİ_ŞARTNAMESİ.pdf",
+          "tur": "sartname",
+          "kategoriAdi": "MYY- ORTA GERİLİM TEKNOLOJİLERİ",
+          "uzanti": "pdf",
+          "kategori": "MYY- ORTA GERİLİM TEKNOLOJİLERİ",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/MYY_PCB_MONTAJ_KATEGOR%C4%B0S%C4%B0_%C5%9EARTNAMES%C4%B0_nr64w.pdf",
+          "etiket": "2026 MYY- PCB MONTAJ KATEGORİSİ ŞARTNAMESİ",
+          "dosyaAdi": "MYY_PCB_MONTAJ_KATEGORİSİ_ŞARTNAMESİ_nr64w.pdf",
+          "tur": "sartname",
+          "kategoriAdi": "MYY- PCB MONTAJ",
+          "uzanti": "pdf",
+          "kategori": "MYY- PCB MONTAJ",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/MESLEK%C4%B0_YETENEK_YARI%C5%9EMASI_SU_TES%C4%B0SAT%C3%87ILI%C4%9EI_KATEGOR%C4%B0S%C4%B0_%C5%9EARTNAMES%C4%B0_M7ygZ.pdf",
+          "etiket": "2026 MYY- SU TESİSATÇILIĞI KATEGORİSİ ŞARTNAMESİ",
+          "dosyaAdi": "MESLEKİ_YETENEK_YARIŞMASI_SU_TESİSATÇILIĞI_KATEGORİSİ_ŞARTNAMESİ_M7ygZ.pdf",
+          "tur": "sartname",
+          "kategoriAdi": "MYY- SU TESİSATÇILIĞI",
+          "uzanti": "pdf",
+          "kategori": "MYY- SU TESİSATÇILIĞI",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Ak%C4%B1ll%C4%B1_Fabrika_Sistemleri_Programlama_Kategorisi_-_Yar%C4%B1_Final_Dok%C3%BCman%C4%B1_F1X.zip",
+          "etiket": "Akıllı Fabrika Sistemleri Programlama Kategorisi - Yarı Final Dokümanı",
+          "dosyaAdi": "Akıllı_Fabrika_Sistemleri_Programlama_Kategorisi_-_Yarı_Final_Dokümanı_F1X.zip",
+          "tur": "diger",
+          "kategoriAdi": "Akıllı Fabrika Sistemleri Programlama",
+          "uzanti": "zip",
+          "kategori": "Akıllı Fabrika Sistemleri Programlama",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Marangozluk_Kategorisi_Final_Dok%C3%BCman%C4%B1_22.08_KGuBV.docx",
+          "etiket": "Marangozluk Kategorisi Final Dokümanı",
+          "dosyaAdi": "Marangozluk_Kategorisi_Final_Dokümanı_22.08_KGuBV.docx",
+          "tur": "diger",
+          "kategoriAdi": "Marangozluk",
+          "uzanti": "docx",
+          "kategori": "Marangozluk",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Orta_Gerilim_Teknolojileri_Kategorisi_Yar%C4%B1_Final_Senaryosu_OCERI.pdf",
+          "etiket": "Orta Gerilim Teknolojileri Kategorisi Yarı Final Senaryosu",
+          "dosyaAdi": "Orta_Gerilim_Teknolojileri_Kategorisi_Yarı_Final_Senaryosu_OCERI.pdf",
+          "tur": "diger",
+          "kategoriAdi": "Orta Gerilim Teknolojileri",
+          "uzanti": "pdf",
+          "kategori": "Orta Gerilim Teknolojileri",
+          "kategoriKaynagi": "etiket"
+        }
+      ],
+      "kategoriler": [
+        "MYY- AKILLI FABRİKA SİSTEMLERİ PROGRAMLAMA",
+        "MYY- ELEKTRİK KUMANDA PANOSU TASARIMI VE UYGULAMA",
+        "MYY- ELEKTRİK TESİSATI VE PANO MONTORLÜĞÜ",
+        "MYY- KAYNAKÇILIK",
+        "MYY- MARANGOZLUK",
+        "MYY- MEKATRONİK TEKNOLOJİLERİ",
+        "MYY- ORTA GERİLİM TEKNOLOJİLERİ",
+        "MYY- PCB MONTAJ",
+        "MYY- SU TESİSATÇILIĞI"
+      ],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "teknofest-mimari-ve-gorsel-tasarim-yarismasi",
+      "ad": "TEKNOFEST Mimari ve Görsel Tasarım Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/teknofest-mimari-ve-gorsel-tasarim-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026-TEKNOFEST_Mimari_ve_G%C3%B6rsel_Tasar%C4%B1m_Yar%C4%B1%C5%9Fmas%C4%B1_T%C3%BCrk%C3%A7e_%C5%9Eartname_k1oIh.pdf",
+          "etiket": "2026-TEKNOFEST Mimari ve Görsel Tasarım Yarışması Türkçe Şartname k1oIh",
+          "dosyaAdi": "2026-TEKNOFEST_Mimari_ve_Görsel_Tasarım_Yarışması_Türkçe_Şartname_k1oIh.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "teknofest-robolig-yarismasi",
+      "ad": "TEKNOFEST Robolig Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/teknofest-robolig-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST_2026_robolig_ODR_rapor_%C5%9Fablon_21.02.26v1.0_TR_qYHzY.docx",
+          "etiket": "2026 TEKNOFEST Robolig Yarışması ÖDR Şablonu",
+          "dosyaAdi": "TEKNOFEST_2026_robolig_ODR_rapor_şablon_21.02.26v1.0_TR_qYHzY.docx",
+          "tur": "sablon",
+          "asama": "ÖDR",
+          "uzanti": "docx",
+          "ayirtEdici": "ÖDR"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST_2026_robolig_proje_rapor_%C5%9Fablon_K3wkU.docx",
+          "etiket": "2026 TEKNOFEST Robolig Yarışması PDR Şablonu",
+          "dosyaAdi": "TEKNOFEST_2026_robolig_proje_rapor_şablon_K3wkU.docx",
+          "tur": "sablon",
+          "asama": "PDR",
+          "uzanti": "docx",
+          "ayirtEdici": "PDR"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TR_TEKNOFEST_Robolig_2026_Sartname_v1.2_30.04.26_jIR9X.pdf",
+          "etiket": "TR TEKNOFEST Robolig 2026 Sartname v1.2 30.04.26 jIR9X",
+          "dosyaAdi": "TR_TEKNOFEST_Robolig_2026_Sartname_v1.2_30.04.26_jIR9X.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST_2026_video_k%C4%B1lavuz_TR_robolig_w8lkn.pdf",
+          "etiket": "2026 TEKNOFEST Robolig Yarışması Proje Tanıtım Video Yönergeleri",
+          "dosyaAdi": "TEKNOFEST_2026_video_kılavuz_TR_robolig_w8lkn.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "ÖDR",
+        "PDR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "teknofest-yapay-zeka-film-yarismasi",
+      "ad": "TEKNOFEST Yapay Zeka Film Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/teknofest-yapay-zeka-film-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST_YAPAY_ZEKA_FILM_YARISMASI_SENARYO_SABLONU_yQHtC_ithGe.docx",
+          "etiket": "2026 TEKNOFEST Yapay Zeka Film Yarışması Proje Öneri Raporu Şablonu",
+          "dosyaAdi": "TEKNOFEST_YAPAY_ZEKA_FILM_YARISMASI_SENARYO_SABLONU_yQHtC_ithGe.docx",
+          "tur": "sablon",
+          "asama": "ÖNR",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_YAPAY_ZEKA_F%C4%B0LM_YARI%C5%9EMASI_SARTNAMES%C4%B0_TR_ykE9M.pdf",
+          "etiket": "2026 YAPAY ZEKA FİLM YARIŞMASI SARTNAMESİ TR ykE9M",
+          "dosyaAdi": "2026_YAPAY_ZEKA_FİLM_YARIŞMASI_SARTNAMESİ_TR_ykE9M.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [
+        "ÖNR"
+      ],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "tuba-teknofest-doktora-bilim-odulleri",
+      "ad": "TÜBA-TEKNOFEST Doktora Bilim Ödülleri",
+      "url": "https://www.teknofest.org/tr/yarismalar/tuba-teknofest-doktora-bilim-odulleri/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TUBA-TEKNOFEST_Doktora_Bilim_Odulu_Esaslar%C4%B1_oOqfa_e4tfn.pdf",
+          "etiket": "TUBA-TEKNOFEST Doktora Bilim Odulu Esasları oOqfa e4tfn",
+          "dosyaAdi": "TUBA-TEKNOFEST_Doktora_Bilim_Odulu_Esasları_oOqfa_e4tfn.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": false,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "uluslararasi-elektrikli-arac-yarislari",
+      "ad": "Uluslararası Elektrikli Araç Yarışları",
+      "url": "https://www.teknofest.org/tr/yarismalar/uluslararasi-elektrikli-arac-yarislari/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_TTR_Rapor_%C5%9Eablonu_TR_OXmlL.docx",
+          "etiket": "2026 Uluslararası Elektrikli Araç Yarışması - Teknik Tasarım Raporu Şablonu",
+          "dosyaAdi": "2026_TTR_Rapor_Şablonu_TR_OXmlL.docx",
+          "tur": "sablon",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/B%C3%B6l%C3%BCm_1_TR_17.07_liRb5.pdf",
+          "etiket": "2026 Kurallar Kitapçığı Bölüm 1- İdari ve Mali Kurallar",
+          "dosyaAdi": "Bölüm_1_TR_17.07_liRb5.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/B%C3%B6l%C3%BCm_2_TR_17.07_rFNZB.pdf",
+          "etiket": "2026 Kurallar Kitapçığı Bölüm 2- Teknik Kurallar",
+          "dosyaAdi": "Bölüm_2_TR_17.07_rFNZB.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/B%C3%B6l%C3%BCm_3_TR_FRYi5.pdf",
+          "etiket": "2026 Kurallar Kitapçığı Bölüm 3- Teknik Tasarım Kuralları",
+          "dosyaAdi": "Bölüm_3_TR_FRYi5.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/B%C3%B6l%C3%BCm_4_TR_Jmdi2.pdf",
+          "etiket": "2026 Kurallar Kitapçığı Bölüm 4- Görsel Tasarım Ödül Kılavuzu",
+          "dosyaAdi": "Bölüm_4_TR_Jmdi2.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/B%C3%B6l%C3%BCm_5_TR__17.07_JIc6H.pdf",
+          "etiket": "2026 Kurallar Kitapçığı Bölüm 5 - Teknik Kontrol ve Final Etkinlik Kuralları",
+          "dosyaAdi": "Bölüm_5_TR__17.07_JIc6H.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/B%C3%B6l%C3%BCm_6_TR_HE1ZJ.pdf",
+          "etiket": "2026 Kurallar Kitapçığı Bölüm 6 - Rapor Yazım Kuralları",
+          "dosyaAdi": "Bölüm_6_TR_HE1ZJ.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/B%C3%B6l%C3%BCm_7_TR_17.07_D1aS1.pdf",
+          "etiket": "2026 Kurallar Kitapçığı Bölüm 7 - Yarış Haftası Programı",
+          "dosyaAdi": "Bölüm_7_TR_17.07_D1aS1.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/S%C3%BCr%C3%BCc%C3%BCler_%C4%B0%C3%A7in_Lisans_%C4%B0%C5%9Flemleri_0w2Ej.pdf",
+          "etiket": "2026 Sürücüler İçin Lisans İşlemleri",
+          "dosyaAdi": "Sürücüler_İçin_Lisans_İşlemleri_0w2Ej.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TENMAK_H-1000XP_Yak%C4%B1t_H%C3%BCcresi_Kullan%C4%B1c%C4%B1_K%C4%B1lavuzu_he705.pdf",
+          "etiket": "2026 TENMAK H-1000XP Yakıt Hücresi Kullanıcı Kılavuzu",
+          "dosyaAdi": "TENMAK_H-1000XP_Yakıt_Hücresi_Kullanıcı_Kılavuzu_he705.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/TENMAK_MyH2600_Yak%C4%B1t_Tank%C4%B1_Kullan%C4%B1c%C4%B1_K%C4%B1lavuzu_wduCu.pdf",
+          "etiket": "2026 TENMAK MyH2600 Yakıt Tankı Kullanıcı Kılavuzu",
+          "dosyaAdi": "TENMAK_MyH2600_Yakıt_Tankı_Kullanıcı_Kılavuzu_wduCu.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Geri_%C3%87ekilme_Dilek%C3%A7esi_B5IkV.pdf",
+          "etiket": "2026 Uluslararası Elektrikli Araç Yarışları Geri Çekilme Dilekçesi",
+          "dosyaAdi": "2026_Geri_Çekilme_Dilekçesi_B5IkV.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0leti%C5%9Fim_Sorumlusu_De%C4%9Fi%C5%9Fikli%C4%9Fi_Dilek%C3%A7esi_1KVwu.pdf",
+          "etiket": "2026 Uluslararası Elektrikli Araç Yarışları İletişim Sorumlusu Değişikliği Dilekçesi",
+          "dosyaAdi": "2026_İletişim_Sorumlusu_Değişikliği_Dilekçesi_1KVwu.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Lastik_ve_Kemer_Talep_Formu_cKaVJ.docx",
+          "etiket": "2026 Uluslararası Elektrikli Araç Yarışları Lastik ve Kemer Talep Formu",
+          "dosyaAdi": "Lastik_ve_Kemer_Talep_Formu_cKaVJ.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Muvafakatname_Belgesi_hmS47.pdf",
+          "etiket": "2026 Uluslararası Elektrikli Araç Yarışları Muvafakatname Belgesi",
+          "dosyaAdi": "2026_Muvafakatname_Belgesi_hmS47.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Taahh%C3%BCtname_Belgesi_18_ya%C5%9F_alt%C4%B1_Aw7C2.pdf",
+          "etiket": "2026 Uluslararası Elektrikli Araç Yarışları Taahhütname Belgesi (18 yaş altı)",
+          "dosyaAdi": "2026_Taahhütname_Belgesi_18_yaş_altı_Aw7C2.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Taahh%C3%BCtname_Belgesi_18_ya%C5%9F_ve_%C3%BCst%C3%BC_bNCOc.pdf",
+          "etiket": "2026 Uluslararası Elektrikli Araç Yarışları Taahhütname Belgesi (18 yaş ve üstü)",
+          "dosyaAdi": "2026_Taahhütname_Belgesi_18_yaş_ve_üstü_bNCOc.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Teslim_Tutana%C4%9F%C4%B1_BES39.docx",
+          "etiket": "2026 Uluslararası Elektrikli Araç Yarışları Teslim Tutunağı Belgesi",
+          "dosyaAdi": "2026_Teslim_Tutanağı_BES39.docx",
+          "tur": "diger",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Alan_Evraklar%C4%B1_2026_DERSZ.zip",
+          "etiket": "Alan Evrakları 2026",
+          "dosyaAdi": "Alan_Evrakları_2026_DERSZ.zip",
+          "tur": "diger",
+          "uzanti": "zip"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": true,
+      "sartnameVar": false,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "uluslararasi-insansiz-hava-araci-yarismasi",
+      "ad": "Uluslararası İnsansız Hava Aracı Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/uluslararasi-insansiz-hava-araci-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Uluslararas%C4%B1_%C4%B0HA_Sabit-D%C3%B6ner_PSR_%C5%9Eablonu_l4ORC.docx",
+          "etiket": "2026 Uluslararası İHA Sabit-Döner Kanat PSR Şablonu",
+          "dosyaAdi": "2026_Uluslararası_İHA_Sabit-Döner_PSR_Şablonu_l4ORC.docx",
+          "tur": "sablon",
+          "uzanti": "docx",
+          "ayirtEdici": "Sabit-Döner Kanat",
+          "kategori": "Sabit-Döner Kanat",
+          "kategoriKaynagi": "turetildi"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Uluslararas%C4%B1_%C4%B0HA_Serbest_G%C3%B6rev_PSR_%C5%9Eablonu_KbbQ9.docx",
+          "etiket": "2026 Uluslararası İHA Serbest Görev PSR Şablonu",
+          "dosyaAdi": "2026_Uluslararası_İHA_Serbest_Görev_PSR_Şablonu_KbbQ9.docx",
+          "tur": "sablon",
+          "uzanti": "docx",
+          "ayirtEdici": "Serbest Görev",
+          "kategori": "Serbest Görev",
+          "kategoriKaynagi": "turetildi"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0HA_Yar%C4%B1%C5%9Fmalar%C4%B1_%C5%9Eartnamesi_TR_v6_CJbHl.pdf",
+          "etiket": "2026 İHA Yarışmaları Şartnamesi TR v6 CJbHl",
+          "dosyaAdi": "2026_İHA_Yarışmaları_Şartnamesi_TR_v6_CJbHl.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_E%C4%9E%C4%B0T%C4%B0M_MUVAFAKATNAME_wynQ5.pdf",
+          "etiket": "2026 İHA YARIŞMALARI EĞİTİM MUVAFAKATNAMESİ",
+          "dosyaAdi": "2026_EĞİTİM_MUVAFAKATNAME_wynQ5.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_E%C4%9E%C4%B0T%C4%B0M_TAAHH%C3%9CTNAME_t60OE.pdf",
+          "etiket": "2026 İHA YARIŞMALARI EĞİTİM TAAHHÜTNAMESİ",
+          "dosyaAdi": "2026_EĞİTİM_TAAHHÜTNAME_t60OE.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0HA_YARI%C5%9EMALARI_MUVAFAKATNAME_1_fgyrY.pdf",
+          "etiket": "2026 İHA YARIŞMALARI MUVAFAKATNAME",
+          "dosyaAdi": "2026_İHA_YARIŞMALARI_MUVAFAKATNAME_1_fgyrY.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0HA_YARI%C5%9EMALARI_TAAHH%C3%9CTNAME_1_c2HPU.pdf",
+          "etiket": "2026 İHA YARIŞMALARI TAAHHÜTNAME",
+          "dosyaAdi": "2026_İHA_YARIŞMALARI_TAAHHÜTNAME_1_c2HPU.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_THK_E%C4%9E%C4%B0T%C4%B0M_ORGAN%C4%B0ZASYON_KILAVUZU_V04_YSsZ0.pdf",
+          "etiket": "2026 THK EĞİTİM ORGANİZASYON KILAVUZU",
+          "dosyaAdi": "2026_THK_EĞİTİM_ORGANİZASYON_KILAVUZU_V04_YSsZ0.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Uluslararas%C4%B1_%C4%B0HA_Sabit-D%C3%B6ner_PSR_Haz%C4%B1rlama_K%C4%B1lavuzu_tmYSO.pdf",
+          "etiket": "2026 Uluslararası İHA Sabit-Döner Kanat PSR Hazırlama Kılavuzu",
+          "dosyaAdi": "2026_Uluslararası_İHA_Sabit-Döner_PSR_Hazırlama_Kılavuzu_tmYSO.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Uluslararas%C4%B1_%C4%B0HA_Serbest_G%C3%B6rev_PSR_Haz%C4%B1rlama_K%C4%B1lavuzu_XvSNR.pdf",
+          "etiket": "2026 Uluslararası İHA Serbest Görev PSR Hazırlama Kılavuzu",
+          "dosyaAdi": "2026_Uluslararası_İHA_Serbest_Görev_PSR_Hazırlama_Kılavuzu_XvSNR.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_ULUSLARARASI_%C4%B0HA_SAB%C4%B0T_VE_D%C3%96NER_KANAT_HAZ._VE_G%C3%96REV_V%C4%B0DEOSU_HAZIRLAMA.pdf",
+          "etiket": "2026 ULUSLARARASI İNSANSIZ HAVA ARAÇLARI YARIŞMASI SABİT VE DÖNER KANAT KATEGORİLERİ HAZIRLIK VE GÖREV VİDEOSU HAZIRLAMA KILAVUZU",
+          "dosyaAdi": "2026_ULUSLARARASI_İHA_SABİT_VE_DÖNER_KANAT_HAZ._VE_GÖREV_VİDEOSU_HAZIRLAMA.pdf",
+          "tur": "diger",
+          "kategoriAdi": "ULUSLARARASI İNSANSIZ HAVA ARAÇLARI YARIŞMASI SABİT VE DÖNER KANAT",
+          "uzanti": "pdf",
+          "kategori": "ULUSLARARASI İNSANSIZ HAVA ARAÇLARI YARIŞMASI SABİT VE DÖNER KANAT",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_ULUSLARARASI_%C4%B0HA_SERBEST_G%C3%96REV_KATEGOR%C4%B0S%C4%B0_G%C3%96REV_V%C4%B0DEOSU_HAZIRLAMA_KIL.pdf",
+          "etiket": "2026 ULUSLARARASI İNSANSIZ HAVA ARAÇLARI YARIŞMASI SERBEST GÖREV KATEGORİSİ HAZIRLIK VE GÖREV VİDEOSU HAZIRLAMA KILAVUZU",
+          "dosyaAdi": "2026_ULUSLARARASI_İHA_SERBEST_GÖREV_KATEGORİSİ_GÖREV_VİDEOSU_HAZIRLAMA_KIL.pdf",
+          "tur": "diger",
+          "kategoriAdi": "ULUSLARARASI İNSANSIZ HAVA ARAÇLARI YARIŞMASI SERBEST GÖREV",
+          "uzanti": "pdf",
+          "kategori": "ULUSLARARASI İNSANSIZ HAVA ARAÇLARI YARIŞMASI SERBEST GÖREV",
+          "kategoriKaynagi": "etiket"
+        }
+      ],
+      "kategoriler": [
+        "Sabit-Döner Kanat",
+        "Serbest Görev"
+      ],
+      "asamalar": [],
+      "sablonVar": true,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "universite-ogrencileri-arastirma-proje-yarismalari",
+      "ad": "Üniversite Öğrencileri Araştırma Proje Yarışmaları",
+      "url": "https://www.teknofest.org/tr/yarismalar/universite-ogrencileri-arastirma-proje-yarismalari/",
+      "adSeviyesi": "Üniversite",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/Proje_Yazma_%C5%9Eablonu_2025-2026_Txk1u.docx",
+          "etiket": "2026 Proje Yazma Şablonu (2242)",
+          "dosyaAdi": "Proje_Yazma_Şablonu_2025-2026_Txk1u.docx",
+          "tur": "sablon",
+          "uzanti": "docx"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_2242_%C3%9Cniversite_%C3%96%C4%9Frencileri_Ara%C5%9Ft%C4%B1rma_Proje_Yar%C4%B1%C5%9Fmalar%C4%B1_v1_0_TR_ULmqu.pdf",
+          "etiket": "2026 2242 Üniversite Öğrencileri Araştırma Proje Yarışmaları v1 0 TR ULmqu",
+          "dosyaAdi": "2026_2242_Üniversite_Öğrencileri_Araştırma_Proje_Yarışmaları_v1_0_TR_ULmqu.pdf",
+          "tur": "diger",
+          "seviye": "Üniversite",
+          "uzanti": "pdf",
+          "kategori": "Üniversite",
+          "kategoriKaynagi": "seviye"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2242_%C3%BCniversite_proje_rehberi_2025-2026_OBW7i.pdf",
+          "etiket": "2026 Üniversite Öğrencileri Araştırma Proje Yarışmaları Proje Rehberi",
+          "dosyaAdi": "2242_üniversite_proje_rehberi_2025-2026_OBW7i.pdf",
+          "tur": "diger",
+          "seviye": "Üniversite",
+          "uzanti": "pdf",
+          "kategori": "Üniversite",
+          "kategoriKaynagi": "seviye"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": true,
+      "sartnameVar": false,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "world-drone-cup",
+      "ad": "World Drone Cup",
+      "url": "https://www.teknofest.org/tr/yarismalar/world-drone-cup/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_World_Drone_Cup_PrYxE.pdf",
+          "etiket": "2026 World Drone Cup PrYxE",
+          "dosyaAdi": "2026_World_Drone_Cup_PrYxE.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": false,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "yapay-zeka-destekli-havayolu-optimizasyonu-yarismasi",
+      "ad": "Yapay Zeka Destekli Havayolu Optimizasyonu Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/yapay-zeka-destekli-havayolu-optimizasyonu-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Yapay_Zeka_Destekli_Havayolu_Optimizasyonu_Yar%C4%B1%C5%9Fmas%C4%B1_%C5%9Eartname_s6aWG.pdf",
+          "etiket": "2026 Yapay Zeka Destekli Havayolu Optimizasyonu Yarışması Şartname s6aWG",
+          "dosyaAdi": "2026_Yapay_Zeka_Destekli_Havayolu_Optimizasyonu_Yarışması_Şartname_s6aWG.pdf",
+          "tur": "sartname",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": true,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "yapay-zeka-destekli-lojistik-anahat-optimizasyonu-yarismasi",
+      "ad": "Yapay Zeka Destekli Lojistik Anahat Optimizasyonu Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/yapay-zeka-destekli-lojistik-anahat-optimizasyonu-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/MAK%C4%B0NE_%C3%96%C4%9ERENMES%C4%B0_DESTEKL%C4%B0_LOJ%C4%B0ST%C4%B0K_ANAHAT_OPT%C4%B0M%C4%B0ZASYONU_YARI%C5%9EMASI_TR_Di37I.pdf",
+          "etiket": "MAKİNE ÖĞRENMESİ DESTEKLİ LOJİSTİK ANAHAT OPTİMİZASYONU YARIŞMASI TR Di37I",
+          "dosyaAdi": "MAKİNE_ÖĞRENMESİ_DESTEKLİ_LOJİSTİK_ANAHAT_OPTİMİZASYONU_YARIŞMASI_TR_Di37I.pdf",
+          "tur": "diger",
+          "uzanti": "pdf"
+        }
+      ],
+      "kategoriler": [],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": false,
+      "teknikSartnameVar": false
+    },
+    {
+      "slug": "yapay-zeka-dil-ajanlari-yarismasi",
+      "ad": "Yapay Zeka Dil Ajanları Yarışması",
+      "url": "https://www.teknofest.org/tr/yarismalar/yapay-zeka-dil-ajanlari-yarismasi/",
+      "belgeler": [
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_TYDA_SARTNAME_Ikinci_Senaryo_TR_1_1IAJb.pdf",
+          "etiket": "2026 Yapay Zeka Dil Ajanları Yarışması / Katılım Bankacılığı Finansal Metin Madenciliği, Bilgi Çıkarımı ve Akıllı Dashboard-Asistan Çözümleri Kategorisi",
+          "dosyaAdi": "2026_TYDA_SARTNAME_Ikinci_Senaryo_TR_1_1IAJb.pdf",
+          "tur": "sartname",
+          "kategoriAdi": "Katılım Bankacılığı Finansal Metin Madenciliği, Bilgi Çıkarımı ve Akıllı Dashboard-Asistan",
+          "uzanti": "pdf",
+          "kategori": "Katılım Bankacılığı Finansal Metin Madenciliği, Bilgi Çıkarımı ve Akıllı Dashboard-Asistan",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_TYDA_SARTNAME_Birinci_Senaryo_TR_1_A8mT1.pdf",
+          "etiket": "2026 Yapay Zeka Dil Ajanları Yarışması / Kamu Evrak ve Resmi Yazışma Süreçleri İçin Çok Ajanlı (Multi-Agent) Akıllı Destek Sistemi Kategorisi Teknik Şartnamesi",
+          "dosyaAdi": "2026_TYDA_SARTNAME_Birinci_Senaryo_TR_1_A8mT1.pdf",
+          "tur": "teknik_sartname",
+          "kategoriAdi": "Kamu Evrak ve Resmi Yazışma Süreçleri İçin Çok Ajanlı (Multi-Agent) Akıllı Destek Sistemi",
+          "uzanti": "pdf",
+          "kategori": "Kamu Evrak ve Resmi Yazışma Süreçleri İçin Çok Ajanlı (Multi-Agent) Akıllı Destek Sistemi",
+          "kategoriKaynagi": "etiket"
+        },
+        {
+          "url": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_TEKNOFEST_TYDA_SARTNAME_Ucuncu_Senaryo_TR_2_NoDue.pdf",
+          "etiket": "2026 Yapay Zeka Dil Ajanları Yarışması / Multimodal Yapay Zekâ Destekli Video Analiz ve Karar Sistemi Kategorisi Teknik Şartnamesi",
+          "dosyaAdi": "2026_TEKNOFEST_TYDA_SARTNAME_Ucuncu_Senaryo_TR_2_NoDue.pdf",
+          "tur": "teknik_sartname",
+          "kategoriAdi": "Multimodal Yapay Zekâ Destekli Video Analiz ve Karar Sistemi",
+          "uzanti": "pdf",
+          "kategori": "Multimodal Yapay Zekâ Destekli Video Analiz ve Karar Sistemi",
+          "kategoriKaynagi": "etiket"
+        }
+      ],
+      "kategoriler": [
+        "Kamu Evrak ve Resmi Yazışma Süreçleri İçin Çok Ajanlı (Multi-Agent) Akıllı Destek Sistemi",
+        "Katılım Bankacılığı Finansal Metin Madenciliği, Bilgi Çıkarımı ve Akıllı Dashboard-Asistan",
+        "Multimodal Yapay Zekâ Destekli Video Analiz ve Karar Sistemi"
+      ],
+      "asamalar": [],
+      "sablonVar": false,
+      "sartnameVar": true,
+      "teknikSartnameVar": true
+    }
+  ],
+  "uyarilar": [
+    "bagimliliklarla-mucadelede-teknolojik-uygulamalar-yarismasi: rapor şablonu bulunamadı.",
+    "e-ticaret-yarismasi: rapor şablonu bulunamadı.",
+    "hackmasters-guneydogu: rapor şablonu bulunamadı.",
+    "insanlik-yararina-teknolojiler-yarismasi-ortaokul-seviyesi: şablon var ama şartname bulunamadı.",
+    "insansiz-su-alti-sistemleri-yarismasi: şablon var ama şartname bulunamadı.",
+    "insansiz-su-alti-sistemleri-yildizlar-yarismasi: rapor şablonu bulunamadı.",
+    "kure-teknofest-mavi-vatan-madde-yazim-yarismasi: rapor şablonu bulunamadı.",
+    "lise-ogrencileri-iklim-degisikligi-arastirma-projeleri-yarismasi: şablon var ama şartname bulunamadı.",
+    "lise-ogrencileri-kutup-arastirma-projeleri-yarismasi: şablon var ama şartname bulunamadı.",
+    "mavi-vatan-resim-yarismasi: rapor şablonu bulunamadı.",
+    "model-uydu-yarismasi: rapor şablonu bulunamadı.",
+    "pardus-hata-yakalama-ve-oneri-yarismasi: rapor şablonu bulunamadı.",
+    "sanayide-robotik-uygulamalar-yarismasi: şablon var ama şartname bulunamadı.",
+    "savasan-iha-yildizlar-yarismasi: rapor şablonu bulunamadı.",
+    "tarim-teknolojileri-yarismasi: rapor şablonu bulunamadı.",
+    "teknofest-drone-sampiyonasi: rapor şablonu bulunamadı.",
+    "teknofest-mesleki-yetenek-yarismasi: rapor şablonu bulunamadı.",
+    "teknofest-mimari-ve-gorsel-tasarim-yarismasi: rapor şablonu bulunamadı.",
+    "tuba-teknofest-doktora-bilim-odulleri: rapor şablonu bulunamadı.",
+    "uluslararasi-elektrikli-arac-yarislari: şablon var ama şartname bulunamadı.",
+    "universite-ogrencileri-arastirma-proje-yarismalari: şablon var ama şartname bulunamadı.",
+    "world-drone-cup: rapor şablonu bulunamadı.",
+    "yapay-zeka-destekli-havayolu-optimizasyonu-yarismasi: rapor şablonu bulunamadı.",
+    "yapay-zeka-destekli-lojistik-anahat-optimizasyonu-yarismasi: rapor şablonu bulunamadı.",
+    "yapay-zeka-dil-ajanlari-yarismasi: rapor şablonu bulunamadı."
+  ]
+}

@@ -1,0 +1,671 @@
+{
+  "id": "bab35e47-2ac9-4b61-a40d-03c56ef344be",
+  "ad": "TEKNOFEST Robolig Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:58:38.897Z",
+  "kategoriler": [
+    {
+      "id": "b58265df-7d77-43ef-9a94-2e67930aa0f1",
+      "ad": "ÖDR",
+      "sablonDosyasi": "TEKNOFEST_2026_robolig_ODR_rapor_şablon_21.02.26v1.0_TR_qYHzY.docx",
+      "asama": "ÖDR",
+      "olusturuldu": "2026-08-23T13:58:37.830Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-b58265df",
+        "ad": "ÖDR",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 7,
+        "basliklar": [
+          {
+            "ad": "PROJE ÖZETİ (PROJE TANITIMI)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Proje özeti, robotun genel yapısı, görev organizasyonu ve mevcut durum değerlendirmesini içermelidir. Robotun parkur üzerindeki görevleri nasıl organize edeceği, izlenecek stratejiler ve sahada beklenen performans kısaca belirtilmelidir. Projenin öne çıkan yenilikçi yönleri ve test süreçlerinden elde edilen sonuçlar da özetle paylaşılmalıdır.}"
+            ]
+          },
+          {
+            "ad": "TAKIM ŞEMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda takım görev dağılımı ve ekip organizasyonu şema olarak gösterilir ve açıklama yapılarak verilir. Takım üyelerinin yetkinliklerinden bahsedilir.}"
+            ]
+          },
+          {
+            "ad": "ARAÇ ÖN TASARIMI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Deneyap Kart Kullanımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda aracın Deneyap kartı kullanımı açıklanır. Deneyap Kart’ın görevinden araç üzerindeki etkisinden bahsedilir. (Bu kısımda sadece internetten elde edilmiş bileşen bilgileri değil araca ait yapıdan söz edilmelidir.)}"
+            ]
+          },
+          {
+            "ad": "Sistem Ön Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda aracın ön tasarımını içeren bilgiler (kullanılan/kullanılacak malzemeler, mekanik tasarım, elektronik devreler vs. dahil) blok şema olarak verilir.}"
+            ]
+          },
+          {
+            "ad": "Mekanik Tasarım",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda aracın mekanik tasarım süreçleri anlatılır. Aracın tasarımına ait görsellere (render, teknik resim, prototip fotoğrafları vb.) yer verilir.}"
+            ]
+          },
+          {
+            "ad": "Elektronik Tasarım",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda aracın elektronik tasarım süreçleri anlatılır. Aracın elektronik tasarımına ait görsellere (Blok şema, teknik resim, prototip fotoğrafları vb.) yer verilir. Kullanılan malzemeler (Sensörler, kameralar, kablolar, anakart, motor sürücüler, güç kartları vb.) hakkında bilgi verilir. Bu kısımda sadece internetten elde edilmiş bileşen bilgileri değil araca ait yapıdan söz edilmelidir. Her bir bileşenin detayının internetten kopyala-yapıştır olarak sunulmasına gerek yoktur. Deneyap kart ve harici kart kullanımında Deneyap kart ile haberleşme sisteminden bahsedilmelidir.}"
+            ]
+          },
+          {
+            "ad": "Yazılım Tasarım",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda aracın kontrol/navigasyon/güdüm algoritmalarının yazılım süreçleri anlatılır. Saha görevlerini nasıl, hangi sıralamayla yapmayı planlıyorsunuz burada açıklanmalıdır. Görevler için akış diyagramı olmalıdır. Akış diyagramı blok şema halinde verilmelidir.}"
+            ]
+          },
+          {
+            "ad": "YÖNTEM",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda robotun görevleri yerine getirmesi için planlanan görev stratejisi açıklanmalıdır. Olası risk durumlarında kurtarma planlarından bahsedilmelidir.",
+              "Kontrol sistemi (kumanda, kontrol arayüzü) kullanılması durumunda haberleşme sisteminden de bahsedilmelidir.}"
+            ]
+          },
+          {
+            "ad": "TAHMİNİ MALİYET VE ZAMAN PLANLAMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda aracın tasarım, üretim ve test süreçlerini içeren bir zaman planlaması, nihai bütçe planlaması yapılır, tablo halinde verilmelidir.}"
+            ]
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu bölümde raporda kullanılan referanslar yer almalıdır.}",
+              "Rapor içerisinde kaynakçaya alıntı yapılmalıdır. Rapor, kaynakça kısmını içermelidir. Kaynaklar başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web sitesi adresi, Kitap Adı, Sayfa Numarası vb.)",
+              "Ön Tasarım Raporu puanlaması aşağıdaki şablona göre yapılacaktır.",
+              "3.1.Deneyap Kart Kullanımı (0-10 Puan)",
+              "3.2.Sistem Ön Tasarımı (0-8 Puan)",
+              "3.3.Mekanik Tasarım (0-7 Puan)",
+              "3.4.Elektronik Tasarım (0-7 Puan)",
+              "3.5. Yazılım Tasarım (0-7 Puan)",
+              "TAHMİNİ MALİYET VE ZAMAN PLANLAMASI"
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Ön Değerlendirme Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en fazla 7 sayfa olacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak ve İçindekiler” başlıkları için 2 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst-alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynısı ve tekrarı niteliğinde olmamalıdır.",
+          "Bu aşamada tanıtım videosu bulunmamaktadır.",
+          "Raporunda, web sitemizde yer alan geçmiş yıl raporlarından yararlanmış olan takımlar alıntı yaptığını ilgili sayfada belirtmesi gerekmektedir. Açıklamayı alıntı yapılan cümlenin ardından belirtmeniz gerekmektedir.",
+          "ALINTI FORMATI: \"Alıntı yapılan Cümle/ler\" (Yıl, Yarışma Adı, Kategori, Takım Adı)",
+          "ÖRNEK ALINTI: \"Enkazda depremzedenin nerede olduğunu tespit edilememesi, enkaz kaldırma ve deprem-zede arama çalışmalarını yavaşlatan en önemli sorundur.\" (2020, İnsanlık Yararına Teknoloji Yarışması, Afet Yönetimi, X Takımı)",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir.",
+          "Dijital Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Basılı Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası.",
+          "Rapor şablonuna uymayan Proje Raporları değerlendirilmeyecektir."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 7,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "proje-ozeti-proje-tanitimi",
+            "ad": "PROJE ÖZETİ (PROJE TANITIMI)",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Proje özeti, robotun genel yapısı, görev organizasyonu ve mevcut durum değerlendirmesini içermelidir. Robotun parkur üzerindeki görevleri nasıl organize edeceği, izlenecek stratejiler ve sahada beklenen performans kısaca belirtilmelidir. Projenin öne çıkan yenilikçi yönleri ve test süreçlerinden elde edilen sonuçlar da özetle paylaşılmalıdır.}"
+            ],
+            "bolumAdi": "PROJE ÖZETİ (PROJE TANITIMI)"
+          },
+          {
+            "kod": "takim-semasi",
+            "ad": "TAKIM ŞEMASI",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda takım görev dağılımı ve ekip organizasyonu şema olarak gösterilir ve açıklama yapılarak verilir. Takım üyelerinin yetkinliklerinden bahsedilir.}"
+            ],
+            "bolumAdi": "TAKIM ŞEMASI"
+          },
+          {
+            "kod": "arac-on-tasarimi",
+            "ad": "ARAÇ ÖN TASARIMI",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ARAÇ ÖN TASARIMI"
+          },
+          {
+            "kod": "deneyap-kart-kullanimi",
+            "ad": "Deneyap Kart Kullanımı",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda aracın Deneyap kartı kullanımı açıklanır. Deneyap Kart’ın görevinden araç üzerindeki etkisinden bahsedilir. (Bu kısımda sadece internetten elde edilmiş bileşen bilgileri değil araca ait yapıdan söz edilmelidir.)}"
+            ],
+            "bolumAdi": "Deneyap Kart Kullanımı"
+          },
+          {
+            "kod": "sistem-on-tasarimi",
+            "ad": "Sistem Ön Tasarımı",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda aracın ön tasarımını içeren bilgiler (kullanılan/kullanılacak malzemeler, mekanik tasarım, elektronik devreler vs. dahil) blok şema olarak verilir.}"
+            ],
+            "bolumAdi": "Sistem Ön Tasarımı"
+          },
+          {
+            "kod": "mekanik-tasarim",
+            "ad": "Mekanik Tasarım",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda aracın mekanik tasarım süreçleri anlatılır. Aracın tasarımına ait görsellere (render, teknik resim, prototip fotoğrafları vb.) yer verilir.}"
+            ],
+            "bolumAdi": "Mekanik Tasarım"
+          },
+          {
+            "kod": "elektronik-tasarim",
+            "ad": "Elektronik Tasarım",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda aracın elektronik tasarım süreçleri anlatılır. Aracın elektronik tasarımına ait görsellere (Blok şema, teknik resim, prototip fotoğrafları vb.) yer verilir. Kullanılan malzemeler (Sensörler, kameralar, kablolar, anakart, motor sürücüler, güç kartları vb.) hakkında bilgi verilir. Bu kısımda sadece internetten elde edilmiş bileşen bilgileri değil araca ait yapıdan söz edilmelidir. Her bir bileşenin detayının internetten kopyala-yapıştır olarak sunulmasına gerek yoktur. Deneyap kart ve harici kart kullanımında Deneyap kart ile haberleşme sisteminden bahsedilmelidir.}"
+            ],
+            "bolumAdi": "Elektronik Tasarım"
+          },
+          {
+            "kod": "yazilim-tasarim",
+            "ad": "Yazılım Tasarım",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda aracın kontrol/navigasyon/güdüm algoritmalarının yazılım süreçleri anlatılır. Saha görevlerini nasıl, hangi sıralamayla yapmayı planlıyorsunuz burada açıklanmalıdır. Görevler için akış diyagramı olmalıdır. Akış diyagramı blok şema halinde verilmelidir.}"
+            ],
+            "bolumAdi": "Yazılım Tasarım"
+          },
+          {
+            "kod": "yontem",
+            "ad": "YÖNTEM",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda robotun görevleri yerine getirmesi için planlanan görev stratejisi açıklanmalıdır. Olası risk durumlarında kurtarma planlarından bahsedilmelidir.",
+              "Kontrol sistemi (kumanda, kontrol arayüzü) kullanılması durumunda haberleşme sisteminden de bahsedilmelidir.}"
+            ],
+            "bolumAdi": "YÖNTEM"
+          },
+          {
+            "kod": "tahmini-maliyet-ve-zaman-planlamasi",
+            "ad": "TAHMİNİ MALİYET VE ZAMAN PLANLAMASI",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda aracın tasarım, üretim ve test süreçlerini içeren bir zaman planlaması, nihai bütçe planlaması yapılır, tablo halinde verilmelidir.}"
+            ],
+            "bolumAdi": "TAHMİNİ MALİYET VE ZAMAN PLANLAMASI"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde raporda kullanılan referanslar yer almalıdır.}",
+              "Rapor içerisinde kaynakçaya alıntı yapılmalıdır. Rapor, kaynakça kısmını içermelidir. Kaynaklar başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web sitesi adresi, Kitap Adı, Sayfa Numarası vb.)",
+              "Ön Tasarım Raporu puanlaması aşağıdaki şablona göre yapılacaktır.",
+              "3.1.Deneyap Kart Kullanımı (0-10 Puan)",
+              "3.2.Sistem Ön Tasarımı (0-8 Puan)",
+              "3.3.Mekanik Tasarım (0-7 Puan)",
+              "3.4.Elektronik Tasarım (0-7 Puan)",
+              "3.5. Yazılım Tasarım (0-7 Puan)",
+              "TAHMİNİ MALİYET VE ZAMAN PLANLAMASI"
+            ],
+            "bolumAdi": "KAYNAKÇA"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Şablonda puan ağırlığı yok; 11 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "TR_TEKNOFEST_Robolig_2026_Sartname_v1.2_30.04.26_jIR9X.pdf",
+        "yuklendi": "2026-08-23T20:16:47.105Z",
+        "sayfaSayisi": 34,
+        "kelimeSayisi": 6621,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "Danışman Yükümlülükleri, Saha",
+              "tarih": "2026-02-06"
+            },
+            {
+              "etiket": "Yarışma takvimi güncellendi.",
+              "tarih": "2026-04-30"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "ÖDR Sonuçlarının Açıklanması",
+              "tarih": "2026-04-24"
+            },
+            {
+              "etiket": "PDR Sonuçlarının ve Maddi Destek Almaya Hak Kazanan",
+              "tarih": "2026-06-24"
+            },
+            {
+              "etiket": "Finalist Takımların Açıklanması",
+              "tarih": "2026-08-11"
+            }
+          ],
+          "asamalar": [
+            "İletişim, Soru ve Cevap"
+          ],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": [
+            "lise",
+            "universite"
+          ],
+          "azamiSayfa": 7,
+          "azamiUye": 5
+        },
+        "catismalar": [],
+        "uyarilar": [],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/TR_TEKNOFEST_Robolig_2026_Sartname_v1.2_30.04.26_jIR9X.pdf"
+      }
+    },
+    {
+      "id": "72875ea4-ef52-408e-8353-c2796215f253",
+      "ad": "PDR",
+      "sablonDosyasi": "TEKNOFEST_2026_robolig_proje_rapor_şablon_K3wkU.docx",
+      "asama": "PDR",
+      "olusturuldu": "2026-08-23T13:58:38.896Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-72875ea4",
+        "ad": "PDR",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 7,
+        "basliklar": [
+          {
+            "ad": "Takım Seviyesi: (Ortaokul / Lise / Üniversite)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TEKNOFEST ROBOLİG YARIŞMASI PROJE DETAY RAPORU RAPOR ŞABLONU",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Takım Seviyesi: (Ortaokul / Lise / Üniversite)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "1.PROJE ÖZETİ (PROJE TANITIMI)2",
+              "3.1.Deneyap Kart Kullanımı2",
+              "3.2.Sistem Detay Tasarımı2",
+              "3.3.Aracın Mekanik Tasarımı2",
+              "3.3.1.Mekanik Tasarım Süreci2",
+              "3.3.2.Mekanik Tasarımda Kullanılan Malzemeler2",
+              "3.3.3.Fiziksel Özellikler2",
+              "3.4.Elektronik Tasarım ve Yazılım Tasarımı3",
+              "5.GÜNCEL MALİYET VE ÜRETİM PLANLAMASI3",
+              "{Bu kısımda rapor içeriğinde sunulan başlıklar (alt başlıklar ile birlikte) sayfa numaraları da belirtilerek sunulmalıdır.}",
+              "PROJE ÖZETİ (PROJE TANITIMI)",
+              "{Proje özeti, robotun genel yapısı, görev organizasyonu ve mevcut durum değerlendirmesini içermelidir. Robotun parkur üzerindeki görevleri nasıl organize edeceği, izlenecek stratejiler ve sahada beklenen performans kısaca belirtilmelidir. Projenin öne çıkan yenilikçi yönleri ve test süreçlerinden elde edilen sonuçlar da özetle paylaşılmalıdır.}",
+              "{Bu kısımda takım görev dağılımı ve ekip organizasyonu şema olarak gösterilir ve açıklama yapılarak verilir. Takım üyelerinin bilgileri ve yetkinliklerinden bahsedilir.}",
+              "{Bu kısımda aracın Deneyap kartı kullanımı açıklanır. Deneyap Kart’ın görevinden araç üzerindeki etkisinden açıkça bahsedilir. (Bu kısımda sadece internetten elde edilmiş bileşen bilgileri değil araca ait yapıdan söz edilmelidir.)}",
+              "{Bu kısımda aracın nihai sistem tasarımını içeren bilgiler (kullanılan malzemeler, mekanik tasarım, elektronik devreler vs. dahil) blok şema olarak verilir. ÖDR den farklı olarak yapılan çalışmalar belirtilmelidir.}",
+              "{Bu kısımda aracın mekanik tasarım süreçleri anlatılır. Aracın son tasarımına ait görsellere (render, teknik resim, prototip fotoğrafları vb.) yer verilir. Final tasarıma ait detaylar verilir. Aracın final tasarımının teknik resmi ve üretimi yapıldıysa üretim aşamalarına ait ve üretim sonrası fotoğraflarına yer verilir. Zipline hattına tutunma veya nesne taşıma gibi sahaya özel mekanizmaların nihai tasarım detaylarına yer verilmelidir.}",
+              "Mekanik Tasarımda Kullanılan Malzemeler",
+              "{Aracın tasarımında kullanılması planlanan malzemeler malzemelerin özellikleri ve neden seçildiği açıklanır. Hazır alınacak ve/veya geliştirilen/tasarlanan alt bileşenler belirtilir.}",
+              "{Aracın boyutları, ağırlığı, gibi özelliklerine yer verilir.}",
+              "Elektronik Tasarım ve Yazılım Tasarımı",
+              "{Bu kısımda aracın elektronik tasarım süreçleri anlatılır. Final tasarımın neden seçildiği açıklanır. Aracın elektronik tasarımına ait görsellere (Blok şema, teknik resim, prototip fotoğrafları vb.) yer verilir. Kullanılan malzemeler (Sensörler, kameralar, kablolar, anakart, motor sürücüler, güç kartları vb.) hakkında bilgi verilir. Bu kısımda sadece internetten elde edilmiş bileşen bilgileri değil araca ait yapıdan söz edilmelidir. Her bir bileşenin detayının internetten kopyala-yapıştır olarak sunulmasına gerek yoktur. Deneyap kart ve harici kart kullanımında Deneyap kart ile haberleşme sisteminden bahsedilir.}",
+              "{Bu kısımda aracın kontrol/navigasyon/güdüm algoritmalarının yazılım süreçleri anlatılır. Saha görevlerini nasıl, hangi sıralamayla yapmayı planlıyorsunuz burada açıklanmalıdır. Görevler için akış diyagramı olmalıdır. Akış diyagramı blok şema halinde verilmelidir.}",
+              "{Bu kısımda robotun görevleri yerine getirmesi için planlanan görev stratejisinden ve neden uygulandığı açıklanmalıdır. Olası risk durumlarında kurtarma planlarından bahsedilmelidir.",
+              "Kontrol sistemi (kumanda, kontrol arayüzü) kullanılması durumunda haberleşme sisteminden de bahsedilmelidir.}",
+              "GÜNCEL MALİYET VE ÜRETİM PLANLAMASI",
+              "{Bu kısımda aracın tasarım, üretim ve test süreçlerini içeren bir zaman planlaması, nihai bütçe planlaması yapılır, gerçekçi iki tablo olarak verilmelidir. Hem maliyet hem de iş zaman tablosu olmalıdır}",
+              "{Bu bölümde raporda kullanılan referanslar yer almalıdır.}",
+              "Rapor içerisinde kaynakçaya alıntı yapılmalıdır. Rapor, kaynakça kısmını içermelidir. Kaynaklar başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web sitesi adresi, Kitap Adı, Sayfa Numarası vb.)",
+              "Proje Raporu puanlaması aşağıdaki şablona göre yapılacaktır.",
+              "3.1.Deneyap Kart Kullanımı (0-10 Puan)",
+              "3.2.Sistem Detay Tasarımı (0-6 Puan)",
+              "3.3.Aracın Mekanik Tasarımı (0-19 Puan)",
+              "3.3.1.Mekanik Tasarım Süreci (0-10 Puan)",
+              "3.3.2.Mekanik Tasarımda Kullanılan Malzemeler (0-5 Puan)",
+              "3.3.3.Fiziksel Özellikler (0-4 Puan)",
+              "3.4.Elektronik Tasarım ve Yazılım Tasarımı (0-20 Puan)",
+              "3.4.1.Elektronik Tasarım (0-10 Puan)",
+              "3.4.2.Yazılım Tasarımı (0-10 Puan)",
+              "GÜNCEL MALİYET VE ÜRETİM PLANLAMASI"
+            ]
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Proje Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en fazla 11 sayfa olacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak ve İçindekiler” başlıkları için 2 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst-alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynısı ve tekrarı niteliğinde olmamalıdır.",
+          "Proje Tanıtım Videosu bu rapor aşamasından sonra başarılı olan takımlardan talep edilecektir.",
+          "Raporunda, web sitemizde yer alan geçmiş yıl raporlarından yararlanmış olan takımlar alıntı yaptığını ilgili sayfada belirtmesi gerekmektedir. Açıklamayı alıntı yapılan cümlenin ardından belirtmeniz gerekmektedir.",
+          "ALINTI FORMATI: \"Alıntı yapılan Cümle/ler\" (Yıl, Yarışma Adı, Kategori, Takım Adı)",
+          "ÖRNEK ALINTI: \"Enkazda depremzedenin nerede olduğunu tespit edilememesi, enkaz kaldırma ve depremzede arama çalışmalarını yavaşlatan en önemli sorundur.\" (2020, İnsanlık Yararına Teknoloji Yarışması, Afet Yönetimi, X Takımı)",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir.",
+          "Dijital Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Basılı Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası.",
+          "Rapor şablonuna uymayan Proje Raporları değerlendirilmeyecektir."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 11,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "takim-seviyesi-ortaokul-lise-universite",
+            "ad": "Takım Seviyesi: (Ortaokul / Lise / Üniversite)",
+            "puan": 34,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Takım Seviyesi: (Ortaokul / Lise / Üniversite)"
+          },
+          {
+            "kod": "teknofest-robolig-yarismasi-proje-detay-",
+            "ad": "TEKNOFEST ROBOLİG YARIŞMASI PROJE DETAY RAPORU RAPOR ŞABLONU",
+            "puan": 33,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEKNOFEST ROBOLİG YARIŞMASI PROJE DETAY RAPORU RAPOR ŞABLONU"
+          },
+          {
+            "kod": "takim-seviyesi-ortaokul-lise-universite",
+            "ad": "Takım Seviyesi: (Ortaokul / Lise / Üniversite)",
+            "puan": 33,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "1.PROJE ÖZETİ (PROJE TANITIMI)2",
+              "3.1.Deneyap Kart Kullanımı2",
+              "3.2.Sistem Detay Tasarımı2",
+              "3.3.Aracın Mekanik Tasarımı2",
+              "3.3.1.Mekanik Tasarım Süreci2",
+              "3.3.2.Mekanik Tasarımda Kullanılan Malzemeler2",
+              "3.3.3.Fiziksel Özellikler2",
+              "3.4.Elektronik Tasarım ve Yazılım Tasarımı3",
+              "5.GÜNCEL MALİYET VE ÜRETİM PLANLAMASI3",
+              "{Bu kısımda rapor içeriğinde sunulan başlıklar (alt başlıklar ile birlikte) sayfa numaraları da belirtilerek sunulmalıdır.}",
+              "PROJE ÖZETİ (PROJE TANITIMI)",
+              "{Proje özeti, robotun genel yapısı, görev organizasyonu ve mevcut durum değerlendirmesini içermelidir. Robotun parkur üzerindeki görevleri nasıl organize edeceği, izlenecek stratejiler ve sahada beklenen performans kısaca belirtilmelidir. Projenin öne çıkan yenilikçi yönleri ve test süreçlerinden elde edilen sonuçlar da özetle paylaşılmalıdır.}",
+              "{Bu kısımda takım görev dağılımı ve ekip organizasyonu şema olarak gösterilir ve açıklama yapılarak verilir. Takım üyelerinin bilgileri ve yetkinliklerinden bahsedilir.}",
+              "{Bu kısımda aracın Deneyap kartı kullanımı açıklanır. Deneyap Kart’ın görevinden araç üzerindeki etkisinden açıkça bahsedilir. (Bu kısımda sadece internetten elde edilmiş bileşen bilgileri değil araca ait yapıdan söz edilmelidir.)}",
+              "{Bu kısımda aracın nihai sistem tasarımını içeren bilgiler (kullanılan malzemeler, mekanik tasarım, elektronik devreler vs. dahil) blok şema olarak verilir. ÖDR den farklı olarak yapılan çalışmalar belirtilmelidir.}",
+              "{Bu kısımda aracın mekanik tasarım süreçleri anlatılır. Aracın son tasarımına ait görsellere (render, teknik resim, prototip fotoğrafları vb.) yer verilir. Final tasarıma ait detaylar verilir. Aracın final tasarımının teknik resmi ve üretimi yapıldıysa üretim aşamalarına ait ve üretim sonrası fotoğraflarına yer verilir. Zipline hattına tutunma veya nesne taşıma gibi sahaya özel mekanizmaların nihai tasarım detaylarına yer verilmelidir.}",
+              "Mekanik Tasarımda Kullanılan Malzemeler",
+              "{Aracın tasarımında kullanılması planlanan malzemeler malzemelerin özellikleri ve neden seçildiği açıklanır. Hazır alınacak ve/veya geliştirilen/tasarlanan alt bileşenler belirtilir.}",
+              "{Aracın boyutları, ağırlığı, gibi özelliklerine yer verilir.}",
+              "Elektronik Tasarım ve Yazılım Tasarımı",
+              "{Bu kısımda aracın elektronik tasarım süreçleri anlatılır. Final tasarımın neden seçildiği açıklanır. Aracın elektronik tasarımına ait görsellere (Blok şema, teknik resim, prototip fotoğrafları vb.) yer verilir. Kullanılan malzemeler (Sensörler, kameralar, kablolar, anakart, motor sürücüler, güç kartları vb.) hakkında bilgi verilir. Bu kısımda sadece internetten elde edilmiş bileşen bilgileri değil araca ait yapıdan söz edilmelidir. Her bir bileşenin detayının internetten kopyala-yapıştır olarak sunulmasına gerek yoktur. Deneyap kart ve harici kart kullanımında Deneyap kart ile haberleşme sisteminden bahsedilir.}",
+              "{Bu kısımda aracın kontrol/navigasyon/güdüm algoritmalarının yazılım süreçleri anlatılır. Saha görevlerini nasıl, hangi sıralamayla yapmayı planlıyorsunuz burada açıklanmalıdır. Görevler için akış diyagramı olmalıdır. Akış diyagramı blok şema halinde verilmelidir.}",
+              "{Bu kısımda robotun görevleri yerine getirmesi için planlanan görev stratejisinden ve neden uygulandığı açıklanmalıdır. Olası risk durumlarında kurtarma planlarından bahsedilmelidir.",
+              "Kontrol sistemi (kumanda, kontrol arayüzü) kullanılması durumunda haberleşme sisteminden de bahsedilmelidir.}",
+              "GÜNCEL MALİYET VE ÜRETİM PLANLAMASI",
+              "{Bu kısımda aracın tasarım, üretim ve test süreçlerini içeren bir zaman planlaması, nihai bütçe planlaması yapılır, gerçekçi iki tablo olarak verilmelidir. Hem maliyet hem de iş zaman tablosu olmalıdır}",
+              "{Bu bölümde raporda kullanılan referanslar yer almalıdır.}",
+              "Rapor içerisinde kaynakçaya alıntı yapılmalıdır. Rapor, kaynakça kısmını içermelidir. Kaynaklar başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web sitesi adresi, Kitap Adı, Sayfa Numarası vb.)",
+              "Proje Raporu puanlaması aşağıdaki şablona göre yapılacaktır.",
+              "3.1.Deneyap Kart Kullanımı (0-10 Puan)",
+              "3.2.Sistem Detay Tasarımı (0-6 Puan)",
+              "3.3.Aracın Mekanik Tasarımı (0-19 Puan)",
+              "3.3.1.Mekanik Tasarım Süreci (0-10 Puan)",
+              "3.3.2.Mekanik Tasarımda Kullanılan Malzemeler (0-5 Puan)",
+              "3.3.3.Fiziksel Özellikler (0-4 Puan)",
+              "3.4.Elektronik Tasarım ve Yazılım Tasarımı (0-20 Puan)",
+              "3.4.1.Elektronik Tasarım (0-10 Puan)",
+              "3.4.2.Yazılım Tasarımı (0-10 Puan)",
+              "GÜNCEL MALİYET VE ÜRETİM PLANLAMASI"
+            ],
+            "bolumAdi": "Takım Seviyesi: (Ortaokul / Lise / Üniversite)"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablonda Word başlık stili yok; başlıklar kalın biçimlendirmeden tahmin edildi. Bölüm listesini onaylamadan önce gözden geçirin.",
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Şablonda puan ağırlığı yok; 3 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "TR_TEKNOFEST_Robolig_2026_Sartname_v1.2_30.04.26_jIR9X.pdf",
+        "yuklendi": "2026-08-23T20:16:53.518Z",
+        "sayfaSayisi": 34,
+        "kelimeSayisi": 6621,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "Danışman Yükümlülükleri, Saha",
+              "tarih": "2026-02-06"
+            },
+            {
+              "etiket": "Yarışma takvimi güncellendi.",
+              "tarih": "2026-04-30"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "ÖDR Sonuçlarının Açıklanması",
+              "tarih": "2026-04-24"
+            },
+            {
+              "etiket": "PDR Sonuçlarının ve Maddi Destek Almaya Hak Kazanan",
+              "tarih": "2026-06-24"
+            },
+            {
+              "etiket": "Finalist Takımların Açıklanması",
+              "tarih": "2026-08-11"
+            }
+          ],
+          "asamalar": [
+            "İletişim, Soru ve Cevap"
+          ],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": [
+            "lise",
+            "universite"
+          ],
+          "azamiSayfa": 7,
+          "azamiUye": 5
+        },
+        "catismalar": [
+          "Azami sayfa sayısı çakışıyor: şablon 11, şartname 7. Şartname esas alındı."
+        ],
+        "uyarilar": [],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/TR_TEKNOFEST_Robolig_2026_Sartname_v1.2_30.04.26_jIR9X.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "teknofest-robolig-yarismasi"
+}

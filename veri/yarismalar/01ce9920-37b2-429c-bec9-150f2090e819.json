@@ -1,0 +1,954 @@
+{
+  "id": "01ce9920-37b2-429c-bec9-150f2090e819",
+  "ad": "Uluslararası Elektrikli Araç Yarışları",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:58:55.975Z",
+  "kategoriler": [
+    {
+      "id": "e97bfd95-3b58-4a8c-a34a-ba85476a2784",
+      "ad": "Uluslararası Elektrikli Araç Yarışları",
+      "sablonDosyasi": "2026_TTR_Rapor_Şablonu_TR_OXmlL.docx",
+      "olusturuldu": "2026-08-23T13:58:55.975Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-e97bfd95",
+        "ad": "Uluslararası Elektrikli Araç Yarışları",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "1. TAKIM BİLGİSİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Tablo 1. Takım Bilgi Tablosu",
+              "İletişim Sorumlusunun* Adı Soyadı",
+              "Tablo 2. Takım Üye Tablosu"
+            ]
+          },
+          {
+            "ad": "2. ARAÇ ÖZELLİKLERİ TABLOSU",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Tablo 2. Araç Özellikleri Tablosu",
+              "Hidrolik disk, ön, arka, el freni",
+              "Elektrik makinesi ağırlığı",
+              "Batarya paketi nominal gerilimi",
+              "Batarya paketi maksimum gerilimi",
+              "Hidrojen silindirleri sayısı*",
+              "Hidrojen silindir basıncı*",
+              "2025 yılında lastik alma durumu",
+              "2025 yılında kemer alma durumu"
+            ]
+          },
+          {
+            "ad": "3. MOTOR",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Tablo 3. Motor Özellikleri",
+              "Motor Test Yöntemi ve Sonuçları"
+            ]
+          },
+          {
+            "ad": "3.1. Motor için Beklentiler/İsteriler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "4. MOTOR SÜRÜCÜ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Tablo 4. Motor Sürücüsü Özellikleri",
+              "Gerilim reyting değeri (V)",
+              "Boyut (Uzunluk x Genişlik x Yükseklik)",
+              "Faz sargısı bağlantı kesme koruması"
+            ]
+          },
+          {
+            "ad": "5. BATARYA",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "6. BATARYA YÖNETİM SİSTEMİ (BYS)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Seri ve Paralel Hücre Sayısı",
+              "Dengeleme Yöntemi (aktif veya pasif)",
+              "BYS Devre Tipi (merkezi, modüler vs.)",
+              "BYS Entegresi Ürün Kodu (mevcutsa)"
+            ]
+          },
+          {
+            "ad": "7. BATARYA PAKETLENMESİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "7.1. Hücrelerin Özellikleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "7.2. Paketin Özellikleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "7.3. Paket Malzemesinin Özellikleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "7.4. Batarya Modülleri veya Paketinin Isıl Analizi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "7.5. Modüllerin ve Paketin Yerleşim ve İzolasyonu",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "7.6. Batarya Soğutma Sistemi Detayları",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "7.7. Batarya Paketi Kutusu Tasarımı ve Araç Gövdesine Güvenli Şekilde Montajı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "7.8. Batarya Paketine Güvenli Erişimin Uygun Şekilde Sağlanması",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "7.9. Preşarj Devresi Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Tablo 6. Batarya Paketleme Yapısının Özellikleri",
+              "Kullanılan Hücrelerin Kimyası",
+              "LiNiMnCo, LiFePO4, Li4Ti5O12, vb.",
+              "Kullanılan Hücrelerin Nominal Gerilimi",
+              "Kullanılan Hücrelerin Kapasitesi",
+              "Kullanılan Hücrenin Ağırlığı",
+              "Kullanılan Hücrelerin Kapasite Yoğunluğu",
+              "Kullanılan Hücrelerin Enerji Yoğunluğu",
+              "Batarya Paketi Nominal Gerilimi",
+              "Batarya Paketinin Toplam Ağırlığı",
+              "Batarya Paketi Toplam Hacmi",
+              "Batarya Paketi Toplam Enerjisi",
+              "Batarya Paketi Enerji Yoğunluğu (Kütle)",
+              "Batarya Paketi Güç Yoğunluğu (Kütle)",
+              "Batarya Paketi Enerji Yoğunluğu (Hacim)",
+              "Batarya Paketi Güç Yoğunluğu (Hacim)",
+              "Batarya Paketinin Araç İçerisindeki Konumu",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "8. YERLEŞİK ŞARJ BİRİMİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Tablo 7. Yerleşik Şarj Birimi Özellikleri",
+              "Koruma Devreleri / Elemanları"
+            ]
+          },
+          {
+            "ad": "9. ARAÇ KONTROL SİSTEMİ (AKS) VE TELEMETRİ SİSTEMİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "9.1 Araç Kontrol Sistemi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "9.1.1. Araç Kontrol Sistemi Ana Fonksiyonları",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "9.1.2. Yazılım Algoritması",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Tablo 8. AKS'nin Özellikleri",
+              "Baskı Devre Kartı Tasarımı"
+            ]
+          },
+          {
+            "ad": "9.2. Telemetri Sistemi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "10. İZOLASYON İZLEME CİHAZI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Tablo 9. İzolasyon İzleme Cihazının Özellikleri",
+              "50kΩ için Ölçüm Hassasiyeti",
+              "200kΩ için Ölçüm Hassasiyeti",
+              "1MΩ için Ölçüm Hassasiyeti",
+              "AKS ile Haberleşme İzole Şekilde Gerçekleştirilmiş midir? (E / H)",
+              "Sistemin İzolasyonu Bozulunca Nasıl Bir Uyarı Veriyor?",
+              "Sürüş Sırasında İzolasyonun Bozulması Durumunda Sürücünün Güvenliği İçin Herhangi Bir Önlem Alınmış mıdır?"
+            ]
+          },
+          {
+            "ad": "11. MEKANİK DETAYLAR",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "11.1. Araç Ölçüleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Şekil 1. Araç ölçüleri teknik resmi."
+            ]
+          },
+          {
+            "ad": "11.2. Araç Gövdesi ve Şasi",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "11.3. Roll Bar ve Roll Cage",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "11.4. Yolcu Koltuğu",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "11.5. Direksiyon Sistemi",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "11.6. Kapı Mekanizması",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "11.7. Fren Sistemi",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "12. MALİYET HESABI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "13. ENERJİ YÖNETİM SİSTEMİ (EYS)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Tablo 10. Enerji Yönetim Sisteminin Özellikleri",
+              "Yarıiletken Güç Anahtarları",
+              "Koruma Devreleri / Elemanları"
+            ]
+          },
+          {
+            "ad": "14. YAKIT HÜCRESİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "15 YAKIT HÜCRESİ KONTROL SİSTEMİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "16. HİDROJEN HATTI VE METAL HİDRÜR SİLİNDİRLER",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "17. ARAÇ ELEKTRİK ŞEMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "KAYNAKLAR",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "EKLER",
+            "zorunlu": true,
+            "yonergeMetni": []
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKLAR",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "1-takim-bilgisi",
+            "ad": "1. TAKIM BİLGİSİ",
+            "puan": 26,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Tablo 1. Takım Bilgi Tablosu",
+              "İletişim Sorumlusunun* Adı Soyadı",
+              "Tablo 2. Takım Üye Tablosu"
+            ],
+            "bolumAdi": "1. TAKIM BİLGİSİ"
+          },
+          {
+            "kod": "2-arac-ozellikleri-tablosu",
+            "ad": "2. ARAÇ ÖZELLİKLERİ TABLOSU",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Tablo 2. Araç Özellikleri Tablosu",
+              "Hidrolik disk, ön, arka, el freni",
+              "Elektrik makinesi ağırlığı",
+              "Batarya paketi nominal gerilimi",
+              "Batarya paketi maksimum gerilimi",
+              "Hidrojen silindirleri sayısı*",
+              "Hidrojen silindir basıncı*",
+              "2025 yılında lastik alma durumu",
+              "2025 yılında kemer alma durumu"
+            ],
+            "bolumAdi": "2. ARAÇ ÖZELLİKLERİ TABLOSU"
+          },
+          {
+            "kod": "3-motor",
+            "ad": "3. MOTOR",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Tablo 3. Motor Özellikleri",
+              "Motor Test Yöntemi ve Sonuçları"
+            ],
+            "bolumAdi": "3. MOTOR"
+          },
+          {
+            "kod": "3-1-motor-icin-beklentiler-isteriler",
+            "ad": "3.1. Motor için Beklentiler/İsteriler",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "3.1. Motor için Beklentiler/İsteriler"
+          },
+          {
+            "kod": "4-motor-surucu",
+            "ad": "4. MOTOR SÜRÜCÜ",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Tablo 4. Motor Sürücüsü Özellikleri",
+              "Gerilim reyting değeri (V)",
+              "Boyut (Uzunluk x Genişlik x Yükseklik)",
+              "Faz sargısı bağlantı kesme koruması"
+            ],
+            "bolumAdi": "4. MOTOR SÜRÜCÜ"
+          },
+          {
+            "kod": "5-batarya",
+            "ad": "5. BATARYA",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "5. BATARYA"
+          },
+          {
+            "kod": "6-batarya-yonetim-sistemi-bys",
+            "ad": "6. BATARYA YÖNETİM SİSTEMİ (BYS)",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Seri ve Paralel Hücre Sayısı",
+              "Dengeleme Yöntemi (aktif veya pasif)",
+              "BYS Devre Tipi (merkezi, modüler vs.)",
+              "BYS Entegresi Ürün Kodu (mevcutsa)"
+            ],
+            "bolumAdi": "6. BATARYA YÖNETİM SİSTEMİ (BYS)"
+          },
+          {
+            "kod": "7-batarya-paketlenmesi",
+            "ad": "7. BATARYA PAKETLENMESİ",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "7. BATARYA PAKETLENMESİ"
+          },
+          {
+            "kod": "7-1-hucrelerin-ozellikleri",
+            "ad": "7.1. Hücrelerin Özellikleri",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "7.1. Hücrelerin Özellikleri"
+          },
+          {
+            "kod": "7-2-paketin-ozellikleri",
+            "ad": "7.2. Paketin Özellikleri",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "7.2. Paketin Özellikleri"
+          },
+          {
+            "kod": "7-3-paket-malzemesinin-ozellikleri",
+            "ad": "7.3. Paket Malzemesinin Özellikleri",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "7.3. Paket Malzemesinin Özellikleri"
+          },
+          {
+            "kod": "7-4-batarya-modulleri-veya-paketinin-isi",
+            "ad": "7.4. Batarya Modülleri veya Paketinin Isıl Analizi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "7.4. Batarya Modülleri veya Paketinin Isıl Analizi"
+          },
+          {
+            "kod": "7-5-modullerin-ve-paketin-yerlesim-ve-iz",
+            "ad": "7.5. Modüllerin ve Paketin Yerleşim ve İzolasyonu",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "7.5. Modüllerin ve Paketin Yerleşim ve İzolasyonu"
+          },
+          {
+            "kod": "7-6-batarya-sogutma-sistemi-detaylari",
+            "ad": "7.6. Batarya Soğutma Sistemi Detayları",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "7.6. Batarya Soğutma Sistemi Detayları"
+          },
+          {
+            "kod": "7-7-batarya-paketi-kutusu-tasarimi-ve-ar",
+            "ad": "7.7. Batarya Paketi Kutusu Tasarımı ve Araç Gövdesine Güvenli Şekilde Montajı",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "7.7. Batarya Paketi Kutusu Tasarımı ve Araç Gövdesine Güvenli Şekilde Montajı"
+          },
+          {
+            "kod": "7-8-batarya-paketine-guvenli-erisimin-uy",
+            "ad": "7.8. Batarya Paketine Güvenli Erişimin Uygun Şekilde Sağlanması",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "7.8. Batarya Paketine Güvenli Erişimin Uygun Şekilde Sağlanması"
+          },
+          {
+            "kod": "7-9-presarj-devresi-tasarimi",
+            "ad": "7.9. Preşarj Devresi Tasarımı",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Tablo 6. Batarya Paketleme Yapısının Özellikleri",
+              "Kullanılan Hücrelerin Kimyası",
+              "LiNiMnCo, LiFePO4, Li4Ti5O12, vb.",
+              "Kullanılan Hücrelerin Nominal Gerilimi",
+              "Kullanılan Hücrelerin Kapasitesi",
+              "Kullanılan Hücrenin Ağırlığı",
+              "Kullanılan Hücrelerin Kapasite Yoğunluğu",
+              "Kullanılan Hücrelerin Enerji Yoğunluğu",
+              "Batarya Paketi Nominal Gerilimi",
+              "Batarya Paketinin Toplam Ağırlığı",
+              "Batarya Paketi Toplam Hacmi",
+              "Batarya Paketi Toplam Enerjisi",
+              "Batarya Paketi Enerji Yoğunluğu (Kütle)",
+              "Batarya Paketi Güç Yoğunluğu (Kütle)",
+              "Batarya Paketi Enerji Yoğunluğu (Hacim)",
+              "Batarya Paketi Güç Yoğunluğu (Hacim)",
+              "Batarya Paketinin Araç İçerisindeki Konumu",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "7.9. Preşarj Devresi Tasarımı"
+          },
+          {
+            "kod": "8-yerlesik-sarj-birimi",
+            "ad": "8. YERLEŞİK ŞARJ BİRİMİ",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Tablo 7. Yerleşik Şarj Birimi Özellikleri",
+              "Koruma Devreleri / Elemanları"
+            ],
+            "bolumAdi": "8. YERLEŞİK ŞARJ BİRİMİ"
+          },
+          {
+            "kod": "9-arac-kontrol-sistemi-aks-ve-telemetri-",
+            "ad": "9. ARAÇ KONTROL SİSTEMİ (AKS) VE TELEMETRİ SİSTEMİ",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "9. ARAÇ KONTROL SİSTEMİ (AKS) VE TELEMETRİ SİSTEMİ"
+          },
+          {
+            "kod": "9-1-arac-kontrol-sistemi",
+            "ad": "9.1 Araç Kontrol Sistemi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "9.1.1. Araç Kontrol Sistemi Ana Fonksiyonları",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "9.1.2. Yazılım Algoritması",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Tablo 8. AKS'nin Özellikleri",
+              "Baskı Devre Kartı Tasarımı"
+            ],
+            "bolumAdi": "9.1 Araç Kontrol Sistemi"
+          },
+          {
+            "kod": "9-2-telemetri-sistemi",
+            "ad": "9.2. Telemetri Sistemi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "9.2. Telemetri Sistemi"
+          },
+          {
+            "kod": "10-izolasyon-izleme-cihazi",
+            "ad": "10. İZOLASYON İZLEME CİHAZI",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Tablo 9. İzolasyon İzleme Cihazının Özellikleri",
+              "50kΩ için Ölçüm Hassasiyeti",
+              "200kΩ için Ölçüm Hassasiyeti",
+              "1MΩ için Ölçüm Hassasiyeti",
+              "AKS ile Haberleşme İzole Şekilde Gerçekleştirilmiş midir? (E / H)",
+              "Sistemin İzolasyonu Bozulunca Nasıl Bir Uyarı Veriyor?",
+              "Sürüş Sırasında İzolasyonun Bozulması Durumunda Sürücünün Güvenliği İçin Herhangi Bir Önlem Alınmış mıdır?"
+            ],
+            "bolumAdi": "10. İZOLASYON İZLEME CİHAZI"
+          },
+          {
+            "kod": "11-mekanik-detaylar",
+            "ad": "11. MEKANİK DETAYLAR",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "11. MEKANİK DETAYLAR"
+          },
+          {
+            "kod": "11-1-arac-olculeri",
+            "ad": "11.1. Araç Ölçüleri",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Şekil 1. Araç ölçüleri teknik resmi."
+            ],
+            "bolumAdi": "11.1. Araç Ölçüleri"
+          },
+          {
+            "kod": "11-2-arac-govdesi-ve-sasi",
+            "ad": "11.2. Araç Gövdesi ve Şasi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "11.2. Araç Gövdesi ve Şasi"
+          },
+          {
+            "kod": "11-3-roll-bar-ve-roll-cage",
+            "ad": "11.3. Roll Bar ve Roll Cage",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "11.3. Roll Bar ve Roll Cage"
+          },
+          {
+            "kod": "11-4-yolcu-koltugu",
+            "ad": "11.4. Yolcu Koltuğu",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "11.4. Yolcu Koltuğu"
+          },
+          {
+            "kod": "11-5-direksiyon-sistemi",
+            "ad": "11.5. Direksiyon Sistemi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "11.5. Direksiyon Sistemi"
+          },
+          {
+            "kod": "11-6-kapi-mekanizmasi",
+            "ad": "11.6. Kapı Mekanizması",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "11.6. Kapı Mekanizması"
+          },
+          {
+            "kod": "11-7-fren-sistemi",
+            "ad": "11.7. Fren Sistemi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "11.7. Fren Sistemi"
+          },
+          {
+            "kod": "12-maliyet-hesabi",
+            "ad": "12. MALİYET HESABI",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "12. MALİYET HESABI"
+          },
+          {
+            "kod": "13-enerji-yonetim-sistemi-eys",
+            "ad": "13. ENERJİ YÖNETİM SİSTEMİ (EYS)",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Tablo 10. Enerji Yönetim Sisteminin Özellikleri",
+              "Yarıiletken Güç Anahtarları",
+              "Koruma Devreleri / Elemanları"
+            ],
+            "bolumAdi": "13. ENERJİ YÖNETİM SİSTEMİ (EYS)"
+          },
+          {
+            "kod": "14-yakit-hucresi",
+            "ad": "14. YAKIT HÜCRESİ",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "14. YAKIT HÜCRESİ"
+          },
+          {
+            "kod": "15-yakit-hucresi-kontrol-sistemi",
+            "ad": "15 YAKIT HÜCRESİ KONTROL SİSTEMİ",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "15 YAKIT HÜCRESİ KONTROL SİSTEMİ"
+          },
+          {
+            "kod": "16-hidrojen-hatti-ve-metal-hidrur-silind",
+            "ad": "16. HİDROJEN HATTI VE METAL HİDRÜR SİLİNDİRLER",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "16. HİDROJEN HATTI VE METAL HİDRÜR SİLİNDİRLER"
+          },
+          {
+            "kod": "17-arac-elektrik-semasi",
+            "ad": "17. ARAÇ ELEKTRİK ŞEMASI",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "17. ARAÇ ELEKTRİK ŞEMASI"
+          },
+          {
+            "kod": "kaynaklar",
+            "ad": "KAYNAKLAR",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "KAYNAKLAR"
+          },
+          {
+            "kod": "ekler",
+            "ad": "EKLER",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "EKLER"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 38 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ]
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "uluslararasi-elektrikli-arac-yarislari"
+}

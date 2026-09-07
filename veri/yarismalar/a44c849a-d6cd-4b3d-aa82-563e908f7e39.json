@@ -1,0 +1,776 @@
+{
+  "id": "a44c849a-d6cd-4b3d-aa82-563e908f7e39",
+  "ad": "Savaşan İHA Avcı Drone Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:58:01.123Z",
+  "kategoriler": [
+    {
+      "id": "b696bb26-3280-4861-b281-8646620222a0",
+      "ad": "Algoritma Tasarım",
+      "sablonDosyasi": "AVCI_ATR_2026_TR_Z8I4P.docx",
+      "olusturuldu": "2026-08-23T13:58:00.335Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-b696bb26",
+        "ad": "Algoritma Tasarım",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 25,
+        "basliklar": [
+          {
+            "ad": "TEMEL SİSTEM ÖZETİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde, sistemin görev tanımı ve özellikleri kısaca açıklanır. Genel sistemi oluşturan bileşenlerin (Yer Kontrol İstasyonu, Yer Anteni, Kumanda, Hava Aracı vs.) de tanımları ve sistem içerisindeki görevlerinden bahsedilir. Yer İstasyonu üzerinde çalışacak olan sistemlerin ve donanımları akış üzerinden birbirleriyle çalışma yöntemleri ve çalışma akışı açıklanmalıdır. Bu bölümde anlatılan sistem; akış diyagramları, grafikler veya figürler ile desteklenebilir."
+            ]
+          },
+          {
+            "ad": "ORGANİZASYON ÖZETİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Takım Organizasyonu",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, takımın organizasyon şeması ve birimlerin görevlerinden kısaca bahsedilir."
+            ]
+          },
+          {
+            "ad": "Zaman Akış Çizelgesi ve Bütçe",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, planlanan zaman akış çizelgesi ile gerçekleşen akış çizelgesindeki farklar (gecikmeler, erken tamamlananlar vb.) ile benzer şekilde tahmini bütçe ve gerçekleşen bütçe farkları da yer almalıdır."
+            ]
+          },
+          {
+            "ad": "DETAYLI ALGORİTMA ÖZETİ",
+            "zorunlu": true,
+            "puan": 40,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Arama ve Tespit Görevi Algoritmaları",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, takımın sunucudan gelen verileri nasıl değerlendireceği ve hedef İHA’yı takip kararını nasıl karar vereceği detaylı olarak anlatılmalıdır.",
+              "Kullanılacak nesne tespit ve takip algoritmalarının nasıl seçildiği/geliştirildiği anlatılmalıdır. Bu açıklamanın yanı sıra alternatif yöntemler ile karşılaştırılıp avantaj/dezavantajlarından bahsedilmelidir.",
+              "Tasarlanan algoritmada hava aracının görüntüdeki hataya karşılık duruş (yatış, dikilme, yönelme) ve hız kontrolünü nasıl yapacağı gibi bilgiler verilmelidir. Bu açıklamanın yanı sıra alternatif yöntemler ile karşılaştırılıp avantaj/dezavantajları anlatılmalıdır.",
+              "Tasarlanan algoritmada bozuk GNSS verisini nasıl işleyecekleri, hedef bölgeye yaklaşma mantığı, tespit çıktısının nasıl doğrulanacağı ve drone’un kontrol edilmesi için drone’a gönderilecek olan komutların nasıl üretileceği gibi yöntemler anlatılmalıdır. Bu bölümde anlatılan algoritmalar; akış diyagramları, kontrolcü şemaları, grafikler veya figürler ile desteklenmelidir."
+            ]
+          },
+          {
+            "ad": "Vuruş Görevi Algoritmaları",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, İHA’nın Vuruş görevini nasıl gerçekleştireceği, takipten angajmana geçiş şartları, rastgele temas ile bilinçli angajmanın nasıl ayırt edileceği, hedefe yaklaşma (intikal), dalış ve pas geçme fazları detaylıca açıklanmalıdır (Ör: dalış açısı, hedefe dalış ve pas geçme irtifası, dalış sırasında ulaşılacak azami hız vb.).",
+              "Takip sırasında Hedef Vuruş Alanı içerisinde tutmak için kullanılacak mimari detayları olarak açıklanmalıdır.",
+              "Drone hedefin nasıl bir algoritma ile tespit edilip, elde edilen drone verisinin sunucuya nasıl aktarılacağı açıklanmalıdır. Görüntüde oluşabilecek bozulmaların önüne nasıl geçileceği, kullanılacak kameranın hedefi kaç metre irtifadan görebileceği açıklanmalıdır.",
+              "Bu bölümde anlatılan algoritmalar; akış diyagramları, kontrolcü şemaları, grafikler veya figürler ile desteklenebilir."
+            ]
+          },
+          {
+            "ad": "YASAKLI UÇUŞ BÖLGESİ VE ACİL DURUM",
+            "zorunlu": false,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu bölümde, uçuşa yasaklı alanlardan nasıl kaçınılacağı ve haberleşme kesintisi, alan dışına çıkma gibi durumlarda incelenecek olan acil durum yöntemleri detaylandırılmalıdır. Otonom kaçış veya rota planlama algoritmaları açıklanmalıdır.",
+              "Bu bölümde anlatılan algoritmalar; akış diyagramları, kontrolcü şemaları, grafikler veya figürler ile desteklenebilir."
+            ],
+            "raporda": false
+          },
+          {
+            "ad": "YER KONTROL İSTASYONU, HABERLEŞME VE KULLANICI ARAYÜZÜ",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "Bu bölümde takımın, yer kontrol istasyonunda çalıştıracağı yazılım ve donanım mimarisi ayrıntılı olarak açıklanmalıdır. Yarışma kapsamında tüm algılama, görüntü işleme, veri değerlendirme ve komut üretme süreçleri yer kontrol istasyonunda gerçekleştirileceğinden, sistemin uçtan uca çalışma yapısı açıkça sunulmalıdır. Yer kontrol istasyonu ile hava aracı arasındaki komut/veri akışı ile yer kontrol istasyonu ile yarışma sunucusu arasındaki haberleşme mimarisi diyagramlarla gösterilmelidir.",
+              "Takımlardan bu bölümde aşağıdaki bilgileri sunmaları beklenmektedir:",
+              "Kullanılacak Yer İstasyonu donanımının (CPU, GPU, RAM) tahmini kullanım kapasiteleri ve sistemin darboğaz (bottleneck) limitleri",
+              "Modüller arası veri akışı ve iç haberleşme yapısı",
+              "Hava aracına gönderilen komutların iletimi için kullanılacak haberleşme yapısı",
+              "Yarışma sunucusu ile kurulacak haberleşmenin yapısı",
+              "Telemetri, kilitlenme ve zaman bilgisi yönetimi",
+              "Gecikme, veri kaybı ve bağlantı kopmasına karşı alınan önlemler",
+              "Takım tarafından geliştirilen kullanıcı/operatör arayüzlerinin tasarımı",
+              "Analog kameradan alınan görüntünün Yer İstasyonuna ulaşması, işlenmesi, hedefin tespiti, güdüm kararının verilmesi ve komutun tekrar drona iletilmesi arasında geçen toplam süre",
+              "Şartnamede belirtilen anlık veri kayıpları veya haberleşme gecikmelerine karşı sistemin tolere edebileceği maksimum gecikme süresi",
+              "Arayüz üzerinde gösterilen canlı görüntü, sistem durumu, hedef bilgisi, kilitlenme bilgisi, haberleşme durumu, hata/uyarı alanları ve diğer operasyonel göstergeler",
+              "Sistem mimarisi, haberleşme yapısı ve kullanıcı arayüzünü gösteren diyagram ve görseller",
+              "Organizasyon tarafından sağlanacak zorunlu arayüz ve sistemlerden bağımsız olarak, takımların kendi operasyon akışlarında kullanacakları yazılım ekranlarını, izleme panellerini ve kontrol/teşhis arayüzlerini açıklamaları gerekmektedir."
+            ]
+          },
+          {
+            "ad": "TEST VE UÇUŞ KONTROLÜ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Alt Sistem Testleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, yarışma süresi boyunca yapılması planlanan testler yer alacaktır. Gerçekleştirilmesi planlanan tüm yazılımsal ve donanımsal testler bu bölümde alt başlık olarak yer almalıdır. Örneğin: 6.1.1 Görüntü Tespit Testi, 6.1.2 Angajman Tespiti, 6.1.3 Vuruş Testi…"
+            ]
+          },
+          {
+            "ad": "Uçuş Kontrol Listesi ve Uçuş Listesi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde uçuş öncesi sisteme ait ‘Uçuş Kontrol Listesi’ yer almalıdır.",
+              "Yarışma tarihine kadar simülasyon aşamasından sonra gerçekleştirilmesi hedeflenen uçuş testlerinin sayısı, test amaçları ve beklenen çıkarımlar verilmelidir (Ör: Azami uçuş süresi testi, Otonom iniş testi, vb.)."
+            ]
+          },
+          {
+            "ad": "GÜVENLİK",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde, karşılaşması muhtemel risklerin tespiti ve bu risklere karşı alınan önlemler anlatılmalıdır. Acil durumlarda takip edilecek acil durum kontrol adımlarından bahsedilmelidir. (Ör: Çalışma ortamında ilk yardım çantası bulunması, özel pil çantası kullanılması, vb.)"
+            ]
+          },
+          {
+            "ad": "REFERANSLAR",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu kısımda referanslar yer almalıdır."
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "REFERANSLAR",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+          "Tüm raporlar “İçindekiler” ve “Referanslar” içermelidir.",
+          "Her rapor bir kapak sayfası içermelidir.",
+          "Rapor sayfaları ardışık olarak numaralandırılmalıdır.",
+          "Kapak hariç sayfaların alt bilgisinde takım adı ve sayfa numarası yazılmalı, üst bilgisinde ise “Savaşan İHA Avcı Drone Yarışması 2026” yazılmalıdır.",
+          "Yazı tipi: Arial, Punto: 12, Satır Aralıkları: 1,15",
+          "Tüm metinler iki tarafa yaslı şekilde olması gerekmektedir.",
+          "Sayfa düzeni: A4 Tipi ve Kenar Boşlukları 2,5 cm",
+          "Rapor tüm sayfalar dahil 25 sayfayı geçmemelidir.",
+          "Raporunda, web sitemizde yer alan geçmiş yıl raporlarından yararlanmış olan takımlar alıntı yaptığını ilgili sayfada belirtmesi gerekmektedir. Açıklamayı alıntı yapılan cümlenin ardından belirtmeniz gerekmektedir.",
+          "ALINTI FORMATI: \"Alıntı yapılan Cümle/ler\" (Yıl, Yarışma Adı, Kategori, Takım Adı)",
+          "ÖRNEK ALINTI: \"Enkazda depremzedenin nerede olduğunu tespit edilememesi, enkaz kaldırma ve deprem-zede arama çalışmalarını yavaşlatan en önemli sorundur.\" (2022, İnsanlık Yararına Teknoloji Yarışması, Afet Yönetimi, X Takımı)",
+          "RAPOR TASLAKLARI İLE İLGİLİ NOT",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+          "Tüm raporlar “İçindekiler” ve “Referanslar” içermelidir.",
+          "Her rapor bir kapak sayfası içermelidir.",
+          "Rapor sayfaları ardışık olarak numaralandırılmalıdır.",
+          "Kapak hariç sayfaların alt bilgisinde takım adı ve sayfa numarası yazılmalı, üst bilgisinde ise “Savaşan İHA Avcı Drone Yarışması 2026” yazılmalıdır.",
+          "Yazı tipi: Arial, Punto: 12, Satır Aralıkları: 1,15",
+          "Tüm metinler iki tarafa yaslı şekilde olması gerekmektedir.",
+          "Sayfa düzeni: A4 Tipi ve Kenar Boşlukları 2,5 cm",
+          "Rapor tüm sayfalar dahil 25 sayfayı geçmemelidir.",
+          "Raporunda, web sitemizde yer alan geçmiş yıl raporlarından yararlanmış olan takımlar alıntı yaptığını ilgili sayfada belirtmesi gerekmektedir. Açıklamayı alıntı yapılan cümlenin ardından belirtmeniz gerekmektedir.",
+          "ALINTI FORMATI: \"Alıntı yapılan Cümle/ler\" (Yıl, Yarışma Adı, Kategori, Takım Adı)",
+          "ÖRNEK ALINTI: \"Enkazda depremzedenin nerede olduğunu tespit edilememesi, enkaz kaldırma ve deprem-zede arama çalışmalarını yavaşlatan en önemli sorundur.\" (2022, İnsanlık Yararına Teknoloji Yarışması, Afet Yönetimi, X Takımı)",
+          "Algoritma Tasarım Raporu puanlaması aşağıdaki şablona göre yapılacaktır.",
+          "Temel Sistem Özeti",
+          "Organizasyon Özeti",
+          "Detaylı Algoritma Özeti",
+          "Yasaklı Uçuş Bölgesi",
+          "Yer Kontrol İstasyonu, Haberleşme ve Kullanıcı Arayüzü",
+          "Test ve Uçuş Kontrolü"
+        ],
+        "eleyiciMi": false,
+        "azamiSayfa": 25,
+        "yaziTipi": "Arial",
+        "govdePunto": 12
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "temel-sistem-ozeti",
+            "ad": "TEMEL SİSTEM ÖZETİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, sistemin görev tanımı ve özellikleri kısaca açıklanır. Genel sistemi oluşturan bileşenlerin (Yer Kontrol İstasyonu, Yer Anteni, Kumanda, Hava Aracı vs.) de tanımları ve sistem içerisindeki görevlerinden bahsedilir. Yer İstasyonu üzerinde çalışacak olan sistemlerin ve donanımları akış üzerinden birbirleriyle çalışma yöntemleri ve çalışma akışı açıklanmalıdır. Bu bölümde anlatılan sistem; akış diyagramları, grafikler veya figürler ile desteklenebilir."
+            ],
+            "bolumAdi": "TEMEL SİSTEM ÖZETİ"
+          },
+          {
+            "kod": "organizasyon-ozeti",
+            "ad": "ORGANİZASYON ÖZETİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ORGANİZASYON ÖZETİ"
+          },
+          {
+            "kod": "detayli-algoritma-ozeti",
+            "ad": "DETAYLI ALGORİTMA ÖZETİ",
+            "puan": 40,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "DETAYLI ALGORİTMA ÖZETİ"
+          },
+          {
+            "kod": "yasakli-ucus-bolgesi-ve-acil-durum",
+            "ad": "YASAKLI UÇUŞ BÖLGESİ VE ACİL DURUM",
+            "puan": 10,
+            "bolumBekleniyor": false,
+            "olcut": [
+              "Bu bölümde, uçuşa yasaklı alanlardan nasıl kaçınılacağı ve haberleşme kesintisi, alan dışına çıkma gibi durumlarda incelenecek olan acil durum yöntemleri detaylandırılmalıdır. Otonom kaçış veya rota planlama algoritmaları açıklanmalıdır.",
+              "Bu bölümde anlatılan algoritmalar; akış diyagramları, kontrolcü şemaları, grafikler veya figürler ile desteklenebilir."
+            ],
+            "bolumAdi": "YASAKLI UÇUŞ BÖLGESİ VE ACİL DURUM"
+          },
+          {
+            "kod": "yer-kontrol-istasyonu-haberlesme-ve-kull",
+            "ad": "YER KONTROL İSTASYONU, HABERLEŞME VE KULLANICI ARAYÜZÜ",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde takımın, yer kontrol istasyonunda çalıştıracağı yazılım ve donanım mimarisi ayrıntılı olarak açıklanmalıdır. Yarışma kapsamında tüm algılama, görüntü işleme, veri değerlendirme ve komut üretme süreçleri yer kontrol istasyonunda gerçekleştirileceğinden, sistemin uçtan uca çalışma yapısı açıkça sunulmalıdır. Yer kontrol istasyonu ile hava aracı arasındaki komut/veri akışı ile yer kontrol istasyonu ile yarışma sunucusu arasındaki haberleşme mimarisi diyagramlarla gösterilmelidir.",
+              "Takımlardan bu bölümde aşağıdaki bilgileri sunmaları beklenmektedir:",
+              "Kullanılacak Yer İstasyonu donanımının (CPU, GPU, RAM) tahmini kullanım kapasiteleri ve sistemin darboğaz (bottleneck) limitleri",
+              "Modüller arası veri akışı ve iç haberleşme yapısı",
+              "Hava aracına gönderilen komutların iletimi için kullanılacak haberleşme yapısı",
+              "Yarışma sunucusu ile kurulacak haberleşmenin yapısı",
+              "Telemetri, kilitlenme ve zaman bilgisi yönetimi",
+              "Gecikme, veri kaybı ve bağlantı kopmasına karşı alınan önlemler",
+              "Takım tarafından geliştirilen kullanıcı/operatör arayüzlerinin tasarımı",
+              "Analog kameradan alınan görüntünün Yer İstasyonuna ulaşması, işlenmesi, hedefin tespiti, güdüm kararının verilmesi ve komutun tekrar drona iletilmesi arasında geçen toplam süre",
+              "Şartnamede belirtilen anlık veri kayıpları veya haberleşme gecikmelerine karşı sistemin tolere edebileceği maksimum gecikme süresi",
+              "Arayüz üzerinde gösterilen canlı görüntü, sistem durumu, hedef bilgisi, kilitlenme bilgisi, haberleşme durumu, hata/uyarı alanları ve diğer operasyonel göstergeler",
+              "Sistem mimarisi, haberleşme yapısı ve kullanıcı arayüzünü gösteren diyagram ve görseller",
+              "Organizasyon tarafından sağlanacak zorunlu arayüz ve sistemlerden bağımsız olarak, takımların kendi operasyon akışlarında kullanacakları yazılım ekranlarını, izleme panellerini ve kontrol/teşhis arayüzlerini açıklamaları gerekmektedir."
+            ],
+            "bolumAdi": "YER KONTROL İSTASYONU, HABERLEŞME VE KULLANICI ARAYÜZÜ"
+          },
+          {
+            "kod": "test-ve-ucus-kontrolu",
+            "ad": "TEST VE UÇUŞ KONTROLÜ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEST VE UÇUŞ KONTROLÜ"
+          },
+          {
+            "kod": "guvenlik",
+            "ad": "GÜVENLİK",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, karşılaşması muhtemel risklerin tespiti ve bu risklere karşı alınan önlemler anlatılmalıdır. Acil durumlarda takip edilecek acil durum kontrol adımlarından bahsedilmelidir. (Ör: Çalışma ortamında ilk yardım çantası bulunması, özel pil çantası kullanılması, vb.)"
+            ],
+            "bolumAdi": "GÜVENLİK"
+          }
+        ],
+        "toplamPuan": 95
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [],
+      "sartname": {
+        "dosyaAdi": "2026_SAVASAN_IHA_AVCI_DRON_YARISMA_SARTNAMESİ_TR_v1.2_kbXvo.pdf",
+        "yuklendi": "2026-08-23T20:15:59.369Z",
+        "sayfaSayisi": 27,
+        "kelimeSayisi": 5897,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "TEKNOFEST 2026 İlk Versiyon",
+              "tarih": "2026-03-05"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-03-18"
+            },
+            {
+              "etiket": "Takvim Güncellemesi",
+              "tarih": "2026-08-15"
+            }
+          ],
+          "asamalar": [
+            "Yarışma Takvimi",
+            "Teknik Yeterlilik Formu",
+            "Algoritma Tasarım Raporu",
+            "Simülasyon Uçuş Kanıt Videosu",
+            "Yarışmanın Puanlaması",
+            "Rapor ve Video Puanlaması (%30)",
+            "Görev Puanlaması (%70)",
+            "Toplam Puan"
+          ],
+          "eleyiciHukumler": [
+            "Birden fazla danışman bulunan takımların başvuruları geçersiz sayılacaktır.",
+            "Sunucu saati yazmayan ya da farklı bir saat yazan görüntüler değerlendirilmeyecektir."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 15
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_SAVASAN_IHA_AVCI_DRON_YARISMA_SARTNAMES%C4%B0_TR_v1.2_kbXvo.pdf"
+      }
+    },
+    {
+      "id": "3bc94af2-084d-4b89-a97c-1dd123bc60c7",
+      "ad": "Teknik Yeterlilik Formu",
+      "sablonDosyasi": "TEKNOFEST26_Avci_Dron_TYF_iROGm.docx",
+      "olusturuldu": "2026-08-23T13:58:01.123Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-3bc94af2",
+        "ad": "Teknik Yeterlilik Formu",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "TEKNİK YETERLİLİK FORMU ÖRNEK ŞABLONU",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu şablonda paylaşılan sorular ön başvuru sonrasında KYS platformunda açılacak olan Teknik Yeterlilik Formu üzerinde doldurulacaktır. Şablon sizlerin hazırlık yapabilmesi adına paylaşılmaktadır.",
+              "Bu form dosya olarak sisteme yüklenmeyecektir.",
+              "*** Form değerlendirmelerinin ardından puan açıklaması gerçekleştirilmeyecek olup, teknik yeterlilik olarak yapılan değerlendirmeler sonucunda başarılı / başarısız şeklinde sonuç açıklanacaktır."
+            ]
+          },
+          {
+            "ad": "TEKNİK YETERLİLİK FORMUNDA YER ALACAK SORULAR",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Sisteminizin genel mimarisini açıklayınız. (Yer istasyonu – FPV drone – yarışma sunucusu veri akışı) Paragraf (Max. 500 Karakter)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Algoritmaların hangi donanım üzerinde çalışacağını belirtiniz.a) Yer istasyonu bilgisayarıb) Harici GPUc) Edge cihazd) Diğer (Açıklayınız)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Analog görüntü yer istasyonuna nasıl aktarılacaktır? Paragraf (Max. 300 Karakter)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Hedef tespiti için kullanılacak yöntem:a) Klasik görüntü işlemeb) Derin öğrenme tabanlı nesne tespitic) Hibritd) Diğer (Açıklayınız)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Takip algoritması yaklaşımı:a) Kalman / EKF tabanlıb) Optical Flowc) Siamese / Trackerd) Çoklu yönteme) Diğer (Açıklayınız)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Analog görüntü parazitine karşı uygulanacak dayanıklılık yöntemleri nelerdir? Paragraf (Max. 500 Karakter)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Hedef hava aracına ait bozuk GNSS verisini nasıl değerlendireceksiniz?· Paragraf (Max. 500 Karakter)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "GNSS güvenilirlik analizi yapılacak mı?a) Evetb) Hayır",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "GNSS verisinin tamamen kaybolması durumunda sistem nasıl davranacaktır?· Paragraf (Max. 300 Karakter)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Hedefin ilk bulunması için kullanılacak arama stratejisi nedir? Arama aşamasında GNSS ve görüntü nasıl entegre edilecektir?· Paragraf (Max. 500 Karakter)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Hedefe yönelim nasıl üretilecektir?a) Görüntü merkez hatasıb) PID kontrolc) MPCd) Diğer",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Hedef ile aradaki göreli mesafe nasıl tahmin edilecektir?· Paragraf (Max. 300 Karakter)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Analog kopma durumunda takip nasıl sürdürülecektir?· Paragraf (Max. 300 Karakter)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Angajman kararını hangi parametrelere göre vereceksiniz?· Paragraf (Max. 300 Karakter)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Çarpışma öncesi kontrol stratejiniz nedir?· Paragraf (Max. 300 Karakter)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Yanlış hedefe angajmanı önlemek için alınacak önlemler nelerdir?· Paragraf (Max. 300 Karakter)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "teknik-yeterlilik-formu-ornek-sablonu",
+            "ad": "TEKNİK YETERLİLİK FORMU ÖRNEK ŞABLONU",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu şablonda paylaşılan sorular ön başvuru sonrasında KYS platformunda açılacak olan Teknik Yeterlilik Formu üzerinde doldurulacaktır. Şablon sizlerin hazırlık yapabilmesi adına paylaşılmaktadır.",
+              "Bu form dosya olarak sisteme yüklenmeyecektir.",
+              "*** Form değerlendirmelerinin ardından puan açıklaması gerçekleştirilmeyecek olup, teknik yeterlilik olarak yapılan değerlendirmeler sonucunda başarılı / başarısız şeklinde sonuç açıklanacaktır."
+            ],
+            "bolumAdi": "TEKNİK YETERLİLİK FORMU ÖRNEK ŞABLONU"
+          },
+          {
+            "kod": "teknik-yeterlilik-formunda-yer-alacak-so",
+            "ad": "TEKNİK YETERLİLİK FORMUNDA YER ALACAK SORULAR",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEKNİK YETERLİLİK FORMUNDA YER ALACAK SORULAR"
+          },
+          {
+            "kod": "sisteminizin-genel-mimarisini-aciklayini",
+            "ad": "Sisteminizin genel mimarisini açıklayınız. (Yer istasyonu – FPV drone – yarışma sunucusu veri akışı) Paragraf (Max. 500 Karakter)",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Sisteminizin genel mimarisini açıklayınız. (Yer istasyonu – FPV drone – yarışma sunucusu veri akışı) Paragraf (Max. 500 Karakter)"
+          },
+          {
+            "kod": "algoritmalarin-hangi-donanim-uzerinde-ca",
+            "ad": "Algoritmaların hangi donanım üzerinde çalışacağını belirtiniz.a) Yer istasyonu bilgisayarıb) Harici GPUc) Edge cihazd) Diğer (Açıklayınız)",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Algoritmaların hangi donanım üzerinde çalışacağını belirtiniz.a) Yer istasyonu bilgisayarıb) Harici GPUc) Edge cihazd) Diğer (Açıklayınız)"
+          },
+          {
+            "kod": "analog-goruntu-yer-istasyonuna-nasil-akt",
+            "ad": "Analog görüntü yer istasyonuna nasıl aktarılacaktır? Paragraf (Max. 300 Karakter)",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Analog görüntü yer istasyonuna nasıl aktarılacaktır? Paragraf (Max. 300 Karakter)"
+          },
+          {
+            "kod": "hedef-tespiti-icin-kullanilacak-yontem-a",
+            "ad": "Hedef tespiti için kullanılacak yöntem:a) Klasik görüntü işlemeb) Derin öğrenme tabanlı nesne tespitic) Hibritd) Diğer (Açıklayınız)",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Hedef tespiti için kullanılacak yöntem:a) Klasik görüntü işlemeb) Derin öğrenme tabanlı nesne tespitic) Hibritd) Diğer (Açıklayınız)"
+          },
+          {
+            "kod": "takip-algoritmasi-yaklasimi-a-kalman-ekf",
+            "ad": "Takip algoritması yaklaşımı:a) Kalman / EKF tabanlıb) Optical Flowc) Siamese / Trackerd) Çoklu yönteme) Diğer (Açıklayınız)",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Takip algoritması yaklaşımı:a) Kalman / EKF tabanlıb) Optical Flowc) Siamese / Trackerd) Çoklu yönteme) Diğer (Açıklayınız)"
+          },
+          {
+            "kod": "analog-goruntu-parazitine-karsi-uygulana",
+            "ad": "Analog görüntü parazitine karşı uygulanacak dayanıklılık yöntemleri nelerdir? Paragraf (Max. 500 Karakter)",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Analog görüntü parazitine karşı uygulanacak dayanıklılık yöntemleri nelerdir? Paragraf (Max. 500 Karakter)"
+          },
+          {
+            "kod": "hedef-hava-aracina-ait-bozuk-gnss-verisi",
+            "ad": "Hedef hava aracına ait bozuk GNSS verisini nasıl değerlendireceksiniz?· Paragraf (Max. 500 Karakter)",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Hedef hava aracına ait bozuk GNSS verisini nasıl değerlendireceksiniz?· Paragraf (Max. 500 Karakter)"
+          },
+          {
+            "kod": "gnss-guvenilirlik-analizi-yapilacak-mi-a",
+            "ad": "GNSS güvenilirlik analizi yapılacak mı?a) Evetb) Hayır",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "GNSS güvenilirlik analizi yapılacak mı?a) Evetb) Hayır"
+          },
+          {
+            "kod": "gnss-verisinin-tamamen-kaybolmasi-durumu",
+            "ad": "GNSS verisinin tamamen kaybolması durumunda sistem nasıl davranacaktır?· Paragraf (Max. 300 Karakter)",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "GNSS verisinin tamamen kaybolması durumunda sistem nasıl davranacaktır?· Paragraf (Max. 300 Karakter)"
+          },
+          {
+            "kod": "hedefin-ilk-bulunmasi-icin-kullanilacak-",
+            "ad": "Hedefin ilk bulunması için kullanılacak arama stratejisi nedir? Arama aşamasında GNSS ve görüntü nasıl entegre edilecektir?· Paragraf (Max. 500 Karakter)",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Hedefin ilk bulunması için kullanılacak arama stratejisi nedir? Arama aşamasında GNSS ve görüntü nasıl entegre edilecektir?· Paragraf (Max. 500 Karakter)"
+          },
+          {
+            "kod": "hedefe-yonelim-nasil-uretilecektir-a-gor",
+            "ad": "Hedefe yönelim nasıl üretilecektir?a) Görüntü merkez hatasıb) PID kontrolc) MPCd) Diğer",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Hedefe yönelim nasıl üretilecektir?a) Görüntü merkez hatasıb) PID kontrolc) MPCd) Diğer"
+          },
+          {
+            "kod": "hedef-ile-aradaki-goreli-mesafe-nasil-ta",
+            "ad": "Hedef ile aradaki göreli mesafe nasıl tahmin edilecektir?· Paragraf (Max. 300 Karakter)",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Hedef ile aradaki göreli mesafe nasıl tahmin edilecektir?· Paragraf (Max. 300 Karakter)"
+          },
+          {
+            "kod": "analog-kopma-durumunda-takip-nasil-surdu",
+            "ad": "Analog kopma durumunda takip nasıl sürdürülecektir?· Paragraf (Max. 300 Karakter)",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Analog kopma durumunda takip nasıl sürdürülecektir?· Paragraf (Max. 300 Karakter)"
+          },
+          {
+            "kod": "angajman-kararini-hangi-parametrelere-go",
+            "ad": "Angajman kararını hangi parametrelere göre vereceksiniz?· Paragraf (Max. 300 Karakter)",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Angajman kararını hangi parametrelere göre vereceksiniz?· Paragraf (Max. 300 Karakter)"
+          },
+          {
+            "kod": "carpisma-oncesi-kontrol-stratejiniz-nedi",
+            "ad": "Çarpışma öncesi kontrol stratejiniz nedir?· Paragraf (Max. 300 Karakter)",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Çarpışma öncesi kontrol stratejiniz nedir?· Paragraf (Max. 300 Karakter)"
+          },
+          {
+            "kod": "yanlis-hedefe-angajmani-onlemek-icin-ali",
+            "ad": "Yanlış hedefe angajmanı önlemek için alınacak önlemler nelerdir?· Paragraf (Max. 300 Karakter)",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Yanlış hedefe angajmanı önlemek için alınacak önlemler nelerdir?· Paragraf (Max. 300 Karakter)"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 18 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_SAVASAN_IHA_AVCI_DRON_YARISMA_SARTNAMESİ_TR_v1.2_kbXvo.pdf",
+        "yuklendi": "2026-08-23T20:16:03.999Z",
+        "sayfaSayisi": 27,
+        "kelimeSayisi": 5897,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "TEKNOFEST 2026 İlk Versiyon",
+              "tarih": "2026-03-05"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-03-18"
+            },
+            {
+              "etiket": "Takvim Güncellemesi",
+              "tarih": "2026-08-15"
+            }
+          ],
+          "asamalar": [
+            "Yarışma Takvimi",
+            "Teknik Yeterlilik Formu",
+            "Algoritma Tasarım Raporu",
+            "Simülasyon Uçuş Kanıt Videosu",
+            "Yarışmanın Puanlaması",
+            "Rapor ve Video Puanlaması (%30)",
+            "Görev Puanlaması (%70)",
+            "Toplam Puan"
+          ],
+          "eleyiciHukumler": [
+            "Birden fazla danışman bulunan takımların başvuruları geçersiz sayılacaktır.",
+            "Sunucu saati yazmayan ya da farklı bir saat yazan görüntüler değerlendirilmeyecektir."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 15
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_SAVASAN_IHA_AVCI_DRON_YARISMA_SARTNAMES%C4%B0_TR_v1.2_kbXvo.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "savasan-iha-avci-drone-yarismasi"
+}

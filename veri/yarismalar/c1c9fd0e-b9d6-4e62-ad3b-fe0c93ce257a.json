@@ -1,0 +1,639 @@
+{
+  "id": "c1c9fd0e-b9d6-4e62-ad3b-fe0c93ce257a",
+  "ad": "Dikey İnişli Roket Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:53:37.097Z",
+  "kategoriler": [
+    {
+      "id": "d2891f91-52a9-4fb0-87dd-ceee6cb3449f",
+      "ad": "Dikey İnişli Roket Yarışması",
+      "sablonDosyasi": "Dikey_İnişli_Roket-Kritik_Tasarım_Raporu_Formatı-2026_EkRapor_V02_ezCHz.docx",
+      "asama": "KTR",
+      "olusturuldu": "2026-08-23T13:53:37.097Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-d2891f91",
+        "ad": "Dikey İnişli Roket Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "1.6 Serbestlik Dereceli Uçuş Benzetimi ve Modeli",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "ÖTR kapsamında hazırlanan dinamik model ve matematiksel denklem setlerini (roket hareket denklemleri vb.) ve çözüm yöntemleri bu raporda kullanılmalıdır. Bu bölümde kapalı çevrim kontrollü (otopilot aktif) sistemin uçuş benzetimlerinin ve modellemelerinin hazırlandığı ve sunulduğu bir rapor hazırlanacaktır. Bu raporda oluşturulan benzetim ve modellemeyle ilgili çalışmalar ayrıntılı olarak açıklanacaktır. Yukarıdaki hedefleri sağlayacak şekilde detaylı bir rapor hazırlanmalıdır (Son matematiksel model oluşturulması, kullanılacak olan denklem setlerinin belirlenmesi, algoritmanın ve benzetim modelin detayı (Örnek: Eğer benzetim programı olarak Simulink kullanılıyorsa blok diyagramlarının gösterimi, tanıtımı ve benzetim sonuçları), kontrol sistemi tasarımı «detaylı matematik modeli» vb. gibi bilgiler verilmelidir."
+            ]
+          },
+          {
+            "ad": "2.Kütle Bütçesi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Kütle bütçesi Tablo 2’deki gibi verilmelidir.",
+              "Not: Gerekli görüldüğü takdirde bu tablo ayrı bir Excel dokümanı olarak paylaşılabilir."
+            ]
+          },
+          {
+            "ad": "3.Genel Kontrol",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Şartnamede istenen maddelerin karşılanıp karşılanmadığı tablo halinde verilmelidir.",
+              "Not: Gerekli görüldüğü takdirde bu tablo ayrı bir Excel dokümanı olarak paylaşılabilir.",
+              "Karşılama Durumu (Evet/Hayır)"
+            ]
+          },
+          {
+            "ad": "4.Hata Analizleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Hata Türleri ve Etkileri Analizi (HTEA, ing. FMEA) sistemin ömür devri boyunca karşılaşabileceği hata türlerini öngörüp bunlara yönelik etki analizi yapılmasını ve tasarımda önlemler alınmasını hedefleyen kritik bir mühendislik çalışmasıdır. Hem sistem hem de alt sistemler seviyesinde yapılan bu analiz ile daha güvenilir ve hataya toleranslı ürünler tasarlanması hedeflenmektedir.",
+              "TEKNOFEST Dikey İnişli Roket Yarışması kapsamında yarışmaya katılan takımların, roketlerinin ürün ağacını göz önünde bulundurarak bu analizi gerçekleştirmeleri beklenmektedir. Bu noktada aviyonik sistem, yapısal bileşenler, pnömatik sistem, güdüm kontrol sistemi ve uçuş algoritması özelinde hata türlerinin öngörülüp tasarımda bunlara karşı alınan önlemlerin detaylandırılması beklenmektedir."
+            ]
+          },
+          {
+            "ad": "4.1. HTEA Tablosu ve Kriterler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Öge/Fonksiyon: İncelenen öğe ve süreç adımı nedir? (Rokete ait ürün ağacı üzerinden giderek, kritik her kalem için meydana gelebilecek hatalar incelenmeli ve listelenmelidir.)",
+              "Fonksiyon Tanımı: Fonksiyonun gerçekleşmesi için gereken nedir? /Fonksiyon tanımı nedir?",
+              "Hata Türü: Tanımlanmış gereksinimin sağlanamama durumu nedir? (Hatanın ne olduğu tanımlanacaktır.)",
+              "Hata Nedeni: Hatanın oluşmasına sebep olan yetersizlikler/olaylar nelerdir? (Aynı hata türü farklı sebeplerden oluşabiliyor ise, farklı sebepler için ayrı satırlarda hatayı tek tek ele alınız.)",
+              "Hatanın gözlemlendiği ömür/ görev evresi nedir?",
+              "-Vince Yükleme ve Bırakma Hazırlık",
+              "(Aynı hata türü sistemin farklı ömür evrelerinde gözlenebiliyor ise, bu ömür evreleri için ayrı satırlarda tek tek ele alınız.)",
+              "•Yerel Etki: Hata türünün kendi üzerindeki etkisi",
+              "•Son Etki: Hata türünün görev başarımı ve Değerlendirme Komitesi beklentileri üzerindeki etkisi",
+              "Hata Tespit Yöntemi: Söz konusu görev evresinde hatanın tespiti ne şekilde olmaktadır? (Periyodik test, ölçüm, muayene, kullanıcıyı görsel ve/veya işitsel yollarla uyaran işaretler, kullanıcı ara yüzlerinde yer alan uyarı mesajları, gözle muayene vb.)",
+              "Mevcut Tasarım Kontrolleri",
+              "•Önleyici (P): Hata türünü ve/veya hata nedenini engelleyen mevcut kontroller nelerdir?",
+              "•Tespit Edici (D): Hatanın tespit edilmesini sağlayan mevcut kontroller nelerdir?",
+              "Alınan Tedbirler: Hata oluştuktan sonra hatanın etkisini ortadan kaldıran ya da azaltan tasarım tedbirleri nelerdir? (Yedekleme, başka bir sistemin devreye girmesi, algoritmada alınan önlemler vb.)",
+              "Şiddet Puanı (S): Görev başarımı ve Değerlendirme Komitesi beklentileri açısından bu etki ne derece önemlidir?",
+              "Olası hatalar şiddet seviyesine bağlı olarak puanlandırılacaktır. Puanlama kriterleri Tablo 4’te verilmiştir.",
+              "Not: Gerekli görüldüğü takdirde bu tablo ayrı bir Excel dokümanı olarak paylaşılabilir.",
+              "Potansiyel ciddi yaralanmalara, kalıcı bölgesel sakatlığa, yüksek maddi kayba, roketin kaybına veya geri döndürülemez, kanuna ve yönetmeliklere aykırı ciddi çevresel hasara neden olabilecek hata.",
+              "Atış öncesinde itki sisteminin tetiklenmesi, roketin vinçte patlaması, katılımcıların bulunduğu alana parça düşmesi",
+              "Yaralanmalara, önemli ekipman, tesis vb. mülkiyetin zarar görmesine neden olabilecek, roketin görevini başaramaması ile sonuçlanan hata.",
+              "İrtifa vs. gereksiniminin sağlanamaması, Vinçten ayrılma sonrası tetikleme sorunu, uçuş sırasında veri alınamaması, roketin yapısal bütünlüğünü yitirmesi",
+              "Hafif yaralanmalara, ufak çaplı mülkiyet zararına veya roketin hafif derecede zarar görmesine neden olabilecek ve roketin kullanılabilirliğini azaltan, görevini etkin bir şekilde yerine getirmemesine neden olan hata.",
+              "Görevin iptali, gereksinimler sağlanıyor olmasına rağmen optimizasyon gerektirecek eksiklikler görülmesi",
+              "Yaralanmaya, mülkiyet zararına veya roketin zarar görmesine neden olacak kadar ciddi olmayan, fakat planlanmamış bakım veya tamire neden olan hata.",
+              "Yarışma alanı içerisinde çözülebilecek sorunlar",
+              "Mevcut Tasarım Kontrolleri",
+              "\"İncelenen öge ve süreç adımı nedir?",
+              "(Rokete ait ürün ağacı üzerinden giderek, kritik her kalem için meydana gelebilecek hatalar incelenmeli ve listelenmelidir.)\"",
+              "Fonksiyonun gerçekleşmesi için gereken nedir? / Fonksiyon tanımı nedir?",
+              "\"Tanımlanmış gereksinimin sağlanamama durumu nedir?",
+              "(Hatanın ne olduğu tanımlanacaktır)\"",
+              "\"Hatanın oluşmasına sebep olan yetersizlikler/olaylar nelerdir?",
+              "(Aynı hata türü farklı sebeplerden oluşabiliyor ise, farklı sebepler için ayrı satırlarda hatayı tek tek ele alınız.)\"",
+              "Hatanın gözlemlendiği ömür/ görev evresi nedir? -Depolama ve Dolum-Taşıma-Vince Bağlama ve Tetikleme-Uçuş ve İniş(Aynı hata türü sistemin farklı ömür evrelerinde gözlenebiliyor ise, bu ömür evreleri için ayrı satırlarda tek tek ele alınız.)",
+              "Yerel Etki(Hata türünün kendi üzerindeki etkisi)",
+              "Son Etki(Hata türünün görev başarımı ve Değerlendirme Komitesi beklentileri üzerindeki etkisi)",
+              "\"Söz konusu görev evresinde hatanın tespiti ne şekilde olmakta?",
+              "(Periyodik test, ölçüm, muayene, kullanıcıyı görsel ve/veya işitsel yollarla uyaran işaretler, insan-kullanıcı arayüzlerinde yer alan uyarı mesajları, gözle muayene vb)\"",
+              "Hata türünü ve/veya hata nedenini engelleyen mevcut kontroller nelerdir?\"",
+              "Hatanın tespit edilmesini sağlayan mevcut kontroller nelerdir?\"",
+              "\"Hata oluştuktan sonra hatanın etkisini ortadan kaldıran ya da azaltan tasarım tedbirleri nelerdir?",
+              "(Yedekleme, başka bir sistemin devreye girmesi, algoritmada alınan önlemler vb.)\"",
+              "Görev başarımı ve Değerlendirme Komitesi beklentileri açısından bu etki ne derece önemlidir?",
+              "\"Hata etkisinin Şiddet puanının iyileştirilmesini sağlayacak faaliyetler nelerdir?",
+              "(Sorumlu ve termin tarihi de yazılmalıdır.)\""
+            ]
+          },
+          {
+            "ad": "5.Maliyet Bütçesi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Maliyet bütçesinin çıkarılması amacıyla aşağıdaki tablo doldurulmalıdır. Toplam maliyet, tablonun sonunda verilmelidir.",
+              "Toplam Maliyet x.xx TL’dir."
+            ]
+          },
+          {
+            "ad": "6.HAD Analizleri",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "6.1. Geometri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Kullanılan 3B tasarım dosyası şekil olarak verilmeli ve sınırlar belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "6.2. Çözüm Ağı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Çözüm ağı görüntüsü, metodu, eleman sayısı ve kalite özellikleri belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "6.3. Sınır Şartları ve Model",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Sınır şartları, kullanılan model ve modelin kullanılma gerekçeleri açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "6.4. Sonuçlar",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Sonuçlar analitik hesaplar ile kıyaslanmalıdır."
+            ]
+          },
+          {
+            "ad": "6.5. Yorumlar",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Elde edilen sonuçların tasarım gereksinimlerini karşılayıp karşılamadığı tartışılmalıdır."
+            ]
+          },
+          {
+            "ad": "7.Yapısal Analizler",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "7.1. Geometri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Kullanılan 3B tasarım dosyası şekil olarak verilmeli ve sınırlar belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "7.2. Çözüm Ağı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Çözüm ağı görüntüsü, metodu, eleman sayısı ve kalite özellikleri belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "7.3. Sınır Şartları ve Model",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Sınır şartları, kullanılan model ve modelin kullanılma gerekçeleri açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "7.4. Sonuçlar",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Sonuçlar analitik hesaplar ile kıyaslanmalıdır."
+            ]
+          },
+          {
+            "ad": "7.5. Yorumlar",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Elde edilen sonuçların tasarım gereksinimlerini karşılayıp karşılamadığı tartışılmalıdır."
+            ]
+          },
+          {
+            "ad": "8.Kaynakça",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "A. Ek İçerik",
+            "zorunlu": true,
+            "yonergeMetni": []
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "1-6-serbestlik-dereceli-ucus-benzetimi-v",
+            "ad": "1.6 Serbestlik Dereceli Uçuş Benzetimi ve Modeli",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "ÖTR kapsamında hazırlanan dinamik model ve matematiksel denklem setlerini (roket hareket denklemleri vb.) ve çözüm yöntemleri bu raporda kullanılmalıdır. Bu bölümde kapalı çevrim kontrollü (otopilot aktif) sistemin uçuş benzetimlerinin ve modellemelerinin hazırlandığı ve sunulduğu bir rapor hazırlanacaktır. Bu raporda oluşturulan benzetim ve modellemeyle ilgili çalışmalar ayrıntılı olarak açıklanacaktır. Yukarıdaki hedefleri sağlayacak şekilde detaylı bir rapor hazırlanmalıdır (Son matematiksel model oluşturulması, kullanılacak olan denklem setlerinin belirlenmesi, algoritmanın ve benzetim modelin detayı (Örnek: Eğer benzetim programı olarak Simulink kullanılıyorsa blok diyagramlarının gösterimi, tanıtımı ve benzetim sonuçları), kontrol sistemi tasarımı «detaylı matematik modeli» vb. gibi bilgiler verilmelidir."
+            ],
+            "bolumAdi": "1.6 Serbestlik Dereceli Uçuş Benzetimi ve Modeli"
+          },
+          {
+            "kod": "2-kutle-butcesi",
+            "ad": "2.Kütle Bütçesi",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Kütle bütçesi Tablo 2’deki gibi verilmelidir.",
+              "Not: Gerekli görüldüğü takdirde bu tablo ayrı bir Excel dokümanı olarak paylaşılabilir."
+            ],
+            "bolumAdi": "2.Kütle Bütçesi"
+          },
+          {
+            "kod": "3-genel-kontrol",
+            "ad": "3.Genel Kontrol",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Şartnamede istenen maddelerin karşılanıp karşılanmadığı tablo halinde verilmelidir.",
+              "Not: Gerekli görüldüğü takdirde bu tablo ayrı bir Excel dokümanı olarak paylaşılabilir.",
+              "Karşılama Durumu (Evet/Hayır)"
+            ],
+            "bolumAdi": "3.Genel Kontrol"
+          },
+          {
+            "kod": "4-hata-analizleri",
+            "ad": "4.Hata Analizleri",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Hata Türleri ve Etkileri Analizi (HTEA, ing. FMEA) sistemin ömür devri boyunca karşılaşabileceği hata türlerini öngörüp bunlara yönelik etki analizi yapılmasını ve tasarımda önlemler alınmasını hedefleyen kritik bir mühendislik çalışmasıdır. Hem sistem hem de alt sistemler seviyesinde yapılan bu analiz ile daha güvenilir ve hataya toleranslı ürünler tasarlanması hedeflenmektedir.",
+              "TEKNOFEST Dikey İnişli Roket Yarışması kapsamında yarışmaya katılan takımların, roketlerinin ürün ağacını göz önünde bulundurarak bu analizi gerçekleştirmeleri beklenmektedir. Bu noktada aviyonik sistem, yapısal bileşenler, pnömatik sistem, güdüm kontrol sistemi ve uçuş algoritması özelinde hata türlerinin öngörülüp tasarımda bunlara karşı alınan önlemlerin detaylandırılması beklenmektedir."
+            ],
+            "bolumAdi": "4.Hata Analizleri"
+          },
+          {
+            "kod": "4-1-htea-tablosu-ve-kriterler",
+            "ad": "4.1. HTEA Tablosu ve Kriterler",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Öge/Fonksiyon: İncelenen öğe ve süreç adımı nedir? (Rokete ait ürün ağacı üzerinden giderek, kritik her kalem için meydana gelebilecek hatalar incelenmeli ve listelenmelidir.)",
+              "Fonksiyon Tanımı: Fonksiyonun gerçekleşmesi için gereken nedir? /Fonksiyon tanımı nedir?",
+              "Hata Türü: Tanımlanmış gereksinimin sağlanamama durumu nedir? (Hatanın ne olduğu tanımlanacaktır.)",
+              "Hata Nedeni: Hatanın oluşmasına sebep olan yetersizlikler/olaylar nelerdir? (Aynı hata türü farklı sebeplerden oluşabiliyor ise, farklı sebepler için ayrı satırlarda hatayı tek tek ele alınız.)",
+              "Hatanın gözlemlendiği ömür/ görev evresi nedir?",
+              "-Vince Yükleme ve Bırakma Hazırlık",
+              "(Aynı hata türü sistemin farklı ömür evrelerinde gözlenebiliyor ise, bu ömür evreleri için ayrı satırlarda tek tek ele alınız.)",
+              "•Yerel Etki: Hata türünün kendi üzerindeki etkisi",
+              "•Son Etki: Hata türünün görev başarımı ve Değerlendirme Komitesi beklentileri üzerindeki etkisi",
+              "Hata Tespit Yöntemi: Söz konusu görev evresinde hatanın tespiti ne şekilde olmaktadır? (Periyodik test, ölçüm, muayene, kullanıcıyı görsel ve/veya işitsel yollarla uyaran işaretler, kullanıcı ara yüzlerinde yer alan uyarı mesajları, gözle muayene vb.)",
+              "Mevcut Tasarım Kontrolleri",
+              "•Önleyici (P): Hata türünü ve/veya hata nedenini engelleyen mevcut kontroller nelerdir?",
+              "•Tespit Edici (D): Hatanın tespit edilmesini sağlayan mevcut kontroller nelerdir?",
+              "Alınan Tedbirler: Hata oluştuktan sonra hatanın etkisini ortadan kaldıran ya da azaltan tasarım tedbirleri nelerdir? (Yedekleme, başka bir sistemin devreye girmesi, algoritmada alınan önlemler vb.)",
+              "Şiddet Puanı (S): Görev başarımı ve Değerlendirme Komitesi beklentileri açısından bu etki ne derece önemlidir?",
+              "Olası hatalar şiddet seviyesine bağlı olarak puanlandırılacaktır. Puanlama kriterleri Tablo 4’te verilmiştir.",
+              "Not: Gerekli görüldüğü takdirde bu tablo ayrı bir Excel dokümanı olarak paylaşılabilir.",
+              "Potansiyel ciddi yaralanmalara, kalıcı bölgesel sakatlığa, yüksek maddi kayba, roketin kaybına veya geri döndürülemez, kanuna ve yönetmeliklere aykırı ciddi çevresel hasara neden olabilecek hata.",
+              "Atış öncesinde itki sisteminin tetiklenmesi, roketin vinçte patlaması, katılımcıların bulunduğu alana parça düşmesi",
+              "Yaralanmalara, önemli ekipman, tesis vb. mülkiyetin zarar görmesine neden olabilecek, roketin görevini başaramaması ile sonuçlanan hata.",
+              "İrtifa vs. gereksiniminin sağlanamaması, Vinçten ayrılma sonrası tetikleme sorunu, uçuş sırasında veri alınamaması, roketin yapısal bütünlüğünü yitirmesi",
+              "Hafif yaralanmalara, ufak çaplı mülkiyet zararına veya roketin hafif derecede zarar görmesine neden olabilecek ve roketin kullanılabilirliğini azaltan, görevini etkin bir şekilde yerine getirmemesine neden olan hata.",
+              "Görevin iptali, gereksinimler sağlanıyor olmasına rağmen optimizasyon gerektirecek eksiklikler görülmesi",
+              "Yaralanmaya, mülkiyet zararına veya roketin zarar görmesine neden olacak kadar ciddi olmayan, fakat planlanmamış bakım veya tamire neden olan hata.",
+              "Yarışma alanı içerisinde çözülebilecek sorunlar",
+              "Mevcut Tasarım Kontrolleri",
+              "\"İncelenen öge ve süreç adımı nedir?",
+              "(Rokete ait ürün ağacı üzerinden giderek, kritik her kalem için meydana gelebilecek hatalar incelenmeli ve listelenmelidir.)\"",
+              "Fonksiyonun gerçekleşmesi için gereken nedir? / Fonksiyon tanımı nedir?",
+              "\"Tanımlanmış gereksinimin sağlanamama durumu nedir?",
+              "(Hatanın ne olduğu tanımlanacaktır)\"",
+              "\"Hatanın oluşmasına sebep olan yetersizlikler/olaylar nelerdir?",
+              "(Aynı hata türü farklı sebeplerden oluşabiliyor ise, farklı sebepler için ayrı satırlarda hatayı tek tek ele alınız.)\"",
+              "Hatanın gözlemlendiği ömür/ görev evresi nedir? -Depolama ve Dolum-Taşıma-Vince Bağlama ve Tetikleme-Uçuş ve İniş(Aynı hata türü sistemin farklı ömür evrelerinde gözlenebiliyor ise, bu ömür evreleri için ayrı satırlarda tek tek ele alınız.)",
+              "Yerel Etki(Hata türünün kendi üzerindeki etkisi)",
+              "Son Etki(Hata türünün görev başarımı ve Değerlendirme Komitesi beklentileri üzerindeki etkisi)",
+              "\"Söz konusu görev evresinde hatanın tespiti ne şekilde olmakta?",
+              "(Periyodik test, ölçüm, muayene, kullanıcıyı görsel ve/veya işitsel yollarla uyaran işaretler, insan-kullanıcı arayüzlerinde yer alan uyarı mesajları, gözle muayene vb)\"",
+              "Hata türünü ve/veya hata nedenini engelleyen mevcut kontroller nelerdir?\"",
+              "Hatanın tespit edilmesini sağlayan mevcut kontroller nelerdir?\"",
+              "\"Hata oluştuktan sonra hatanın etkisini ortadan kaldıran ya da azaltan tasarım tedbirleri nelerdir?",
+              "(Yedekleme, başka bir sistemin devreye girmesi, algoritmada alınan önlemler vb.)\"",
+              "Görev başarımı ve Değerlendirme Komitesi beklentileri açısından bu etki ne derece önemlidir?",
+              "\"Hata etkisinin Şiddet puanının iyileştirilmesini sağlayacak faaliyetler nelerdir?",
+              "(Sorumlu ve termin tarihi de yazılmalıdır.)\""
+            ],
+            "bolumAdi": "4.1. HTEA Tablosu ve Kriterler"
+          },
+          {
+            "kod": "5-maliyet-butcesi",
+            "ad": "5.Maliyet Bütçesi",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Maliyet bütçesinin çıkarılması amacıyla aşağıdaki tablo doldurulmalıdır. Toplam maliyet, tablonun sonunda verilmelidir.",
+              "Toplam Maliyet x.xx TL’dir."
+            ],
+            "bolumAdi": "5.Maliyet Bütçesi"
+          },
+          {
+            "kod": "6-had-analizleri",
+            "ad": "6.HAD Analizleri",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "6.HAD Analizleri"
+          },
+          {
+            "kod": "6-1-geometri",
+            "ad": "6.1. Geometri",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Kullanılan 3B tasarım dosyası şekil olarak verilmeli ve sınırlar belirtilmelidir."
+            ],
+            "bolumAdi": "6.1. Geometri"
+          },
+          {
+            "kod": "6-2-cozum-agi",
+            "ad": "6.2. Çözüm Ağı",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Çözüm ağı görüntüsü, metodu, eleman sayısı ve kalite özellikleri belirtilmelidir."
+            ],
+            "bolumAdi": "6.2. Çözüm Ağı"
+          },
+          {
+            "kod": "6-3-sinir-sartlari-ve-model",
+            "ad": "6.3. Sınır Şartları ve Model",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Sınır şartları, kullanılan model ve modelin kullanılma gerekçeleri açıklanmalıdır."
+            ],
+            "bolumAdi": "6.3. Sınır Şartları ve Model"
+          },
+          {
+            "kod": "6-4-sonuclar",
+            "ad": "6.4. Sonuçlar",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Sonuçlar analitik hesaplar ile kıyaslanmalıdır."
+            ],
+            "bolumAdi": "6.4. Sonuçlar"
+          },
+          {
+            "kod": "6-5-yorumlar",
+            "ad": "6.5. Yorumlar",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Elde edilen sonuçların tasarım gereksinimlerini karşılayıp karşılamadığı tartışılmalıdır."
+            ],
+            "bolumAdi": "6.5. Yorumlar"
+          },
+          {
+            "kod": "7-yapisal-analizler",
+            "ad": "7.Yapısal Analizler",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "7.Yapısal Analizler"
+          },
+          {
+            "kod": "7-1-geometri",
+            "ad": "7.1. Geometri",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Kullanılan 3B tasarım dosyası şekil olarak verilmeli ve sınırlar belirtilmelidir."
+            ],
+            "bolumAdi": "7.1. Geometri"
+          },
+          {
+            "kod": "7-2-cozum-agi",
+            "ad": "7.2. Çözüm Ağı",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Çözüm ağı görüntüsü, metodu, eleman sayısı ve kalite özellikleri belirtilmelidir."
+            ],
+            "bolumAdi": "7.2. Çözüm Ağı"
+          },
+          {
+            "kod": "7-3-sinir-sartlari-ve-model",
+            "ad": "7.3. Sınır Şartları ve Model",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Sınır şartları, kullanılan model ve modelin kullanılma gerekçeleri açıklanmalıdır."
+            ],
+            "bolumAdi": "7.3. Sınır Şartları ve Model"
+          },
+          {
+            "kod": "7-4-sonuclar",
+            "ad": "7.4. Sonuçlar",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Sonuçlar analitik hesaplar ile kıyaslanmalıdır."
+            ],
+            "bolumAdi": "7.4. Sonuçlar"
+          },
+          {
+            "kod": "7-5-yorumlar",
+            "ad": "7.5. Yorumlar",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Elde edilen sonuçların tasarım gereksinimlerini karşılayıp karşılamadığı tartışılmalıdır."
+            ],
+            "bolumAdi": "7.5. Yorumlar"
+          },
+          {
+            "kod": "8-kaynakca",
+            "ad": "8.Kaynakça",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "8.Kaynakça"
+          },
+          {
+            "kod": "a-ek-icerik",
+            "ad": "A. Ek İçerik",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "A. Ek İçerik"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 20 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "TÜBİTAK_SAGE_Dikey_Inisli_Roket_Yarısması_Sartnamesi_2026_Qu4ap.pdf",
+        "yuklendi": "2026-08-23T20:12:25.554Z",
+        "sayfaSayisi": 30,
+        "kelimeSayisi": 6438,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "YarışmaSonBaşvuruTarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "ÖnTasarım Raporu SonuçlarınınAçıklanması",
+              "tarih": "2026-04-03"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu SonuçlarınınAçıklanması",
+              "tarih": "2026-06-01"
+            },
+            {
+              "etiket": "AtışaHazırlıkRaporuSonuçlarınınAçıklanması",
+              "tarih": "2026-08-07"
+            },
+            {
+              "etiket": "DeğerlendirmelerininTamamlanması",
+              "tarih": "2026-08-17 → 2026-08-21"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Son başvuru tarihinden sonra yapılan başvurular değerlendirilmeyecektir.",
+            "Bu bölümde belirtilen şartları sağlamayan takımların başvuruları geçersiz sayılacaktır.",
+            "Aksi halde yarışmadan diskalifiye edilmiş sayılacaklardır."
+          ],
+          "katilimciSeviyeleri": []
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/T%C3%9CB%C4%B0TAK_SAGE_Dikey_Inisli_Roket_Yar%C4%B1smas%C4%B1_Sartnamesi_2026_Qu4ap.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "dikey-inisli-roket-yarismasi"
+}

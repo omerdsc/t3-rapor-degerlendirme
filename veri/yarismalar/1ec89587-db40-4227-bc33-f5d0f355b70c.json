@@ -1,0 +1,533 @@
+{
+  "id": "1ec89587-db40-4227-bc33-f5d0f355b70c",
+  "ad": "Elektronik Harp Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:53:42.557Z",
+  "kategoriler": [
+    {
+      "id": "d9e0ecb9-5ca4-4268-bb8e-1be42ebfdb39",
+      "ad": "KTR",
+      "sablonDosyasi": "260503_Teknofest26_ElektronikHarp_KTR_TR_v1_lqE5E.docx",
+      "asama": "KTR",
+      "olusturuldu": "2026-08-23T13:53:41.988Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-d9e0ecb9",
+        "ad": "KTR",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 25,
+        "basliklar": [
+          {
+            "ad": "TEMEL SİSTEM ÖZETİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "1.1 Sistem Tanımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, sistemin genel tanımı, hangi alt sistemlerden oluştuğu ve temel özellikleri özet şekilde açıklanır. Sistemi oluşturan alt sistemlerin/birimlerin tanımları ve sistem içerisindeki görevlerinden bahsedilir."
+            ]
+          },
+          {
+            "ad": "1.2 Sistem Nihai Performans Özellikleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, nihai sistem çözümüne ilişkin performans değerlerine yer verilmelidir. Burada yer alacak olan performans değerleri her bir alt sistem özelinde tablo şeklinde gösterilmelidir.",
+              "Örneğin, Elektronik Destek (ED) Sistemi özelinde,",
+              "Örneğin, Elektronik Taarruz (ET) Sistemi özelinde,",
+              "Not: Yukarıdaki başlıklar örnek olarak verilmiş olup, kendi sistem çözümünüz özelinde tablo satırlarında ekleme/çıkarma yaparak, karşılık gelecek kolonda nihai performans değerlerinize yer verebilirsiniz."
+            ]
+          },
+          {
+            "ad": "ORGANİZASYON ÖZETİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "2.1 Takım Organizasyonu",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, takımın organizasyon şeması ve ilgili alt birimlerin görevlerinden kısaca bahsedilir (Ekip üyelerinin isim ve fotoğrafı gibi kişisel bilgileri dâhil edilmemelidir.)."
+            ]
+          },
+          {
+            "ad": "2.2 Zaman Akış Çizelgesi ve Bütçe",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, planlanan zaman akış çizelgesine yer verilmeli; çalışmalara başlandı ise, planlanan ile gerçekleşen akış çizelgeleri arasındaki farklar (olası gecikmeler, erken veya zamanında tamamlananlar vb.) anlatılmalıdır. Benzer şekilde tahmini bütçeye de yer verilmeli; bütçe harcamaları da başladı ise, planlanan ve gerçekleşen bütçe farkları bu bölümde yer almalıdır."
+            ]
+          },
+          {
+            "ad": "DETAYLI TASARIM ÖZETİ",
+            "zorunlu": true,
+            "puan": 25,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "3.1 Nihai Sistem Mimarisi ve Alt Sistemlerin Özeti",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, Sistem Mimarisi’nin nihai haline detaylı bir şekilde yer verilmelidir. Sistem çözümünde kullanılacak olan Donanım Konfigürasyon Birimlerinin (DKB) marka/model bilgileri bulunmalıdır. Nihai ve detaylı blok şema yer almalı; DKB’ler arası bağlantılar açık bir şekilde gösterilmeli; sistem mimarisinde yer alan tüm güç ve haberleşme hatları belirtilmelidir. Sistem mimarisinin görsel olarak eklenmesi beklenmektedir.",
+              "Eklenen sistem mimarisine ek olarak; seçilen alt birimlerin detay teknik özellikleri; bu birimlerin birbirleri ile uyumları ve tümleştikleri alt sisteme olan katkıları açıklanmalıdır. Eğer ki aynı görev/işlev için araştırılan birden fazla seçenek varsa, nihai ürünün neden seçildiği de belirtilmelidir. Kullanılan RF cihazların frekans bandı ve teknik özelliklerine yönelik seçimlerinin nasıl yapıldığının bu bölümde açıklanması beklenmektedir."
+            ]
+          },
+          {
+            "ad": "3.2 Sistem ve Alt Sistemlerin Üç Boyutlu Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, sistem ve alt sistemlerin üç boyutlu tasarımlarına/mekanik çizimlerine yer verilmelidir. Mekanik çizimler, sistem ve alt sistem boyut bilgilerini; hem dış hem de iç yerleşim çalışmalarını içermelidir; çizimlerde detay seviyesi aranacaktır.",
+              "Sistemin operasyon/yarışma sırasındaki kullanım şekli de bu bölümde resmedilmelidir. Sistemin entegre olacağı platform (kişi üzerinde taşınma, sabit, İKA’ya entegre, kara aracına entegre, İHA’ya entegre vb.) bu bölümde net bir şekilde belirtilmeli, kullanım şekline (sabit, hareketli vb.) yer verilmeli ve sistem kullanım konsepti detaylı bir şekilde anlatılmalıdır.",
+              "Yarışma günü, teknik kontrolde, burada verilen görseller üzerinden, tasarlanan Sistem Çözümü ile yarışma alanına getirilen Sistem/Alt Sistemler karşılaştırılacaktır."
+            ]
+          },
+          {
+            "ad": "3.3 Sistem ve Alt Sistemlerin SWaP Bilgisi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, sistem ve alt sistemlerin SWaP (Size, Weight and Power) bilgilerine yer verilmelidir. Sistem çözümünde yer alacak olan her bir birimin bilgileri, ilgili alt sistem özelinde tablo şeklinde gösterilmelidir.",
+              "Yarışma sırasında, sistemlerin enerjilendirilmesinin nasıl sağlanmasının planlandığı (örneğin, bataryadan beslenme planlanıyor ise, sistemin bataryadan çalışma süreleri) ve (ihtiyaç duyulması halinde) sistemlerin yer değişimlerinin nasıl gerçeklenebileceği bu bölümde detaylı bir şekilde anlatılmalıdır."
+            ]
+          },
+          {
+            "ad": "ED GÖREVLERİ VE EKRAN GÖRSELLERİ",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "4.1 Sinyal Tespiti",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "RF spektrumdan sinyal tespiti, elektromanyetik ortamda gürültü tabanını aşan kararlı yayınların algılanarak varlıklarının ortaya konulmasıdır. Potansiyel tehdit unsurlarının elektromanyetik faaliyetlerine ilişkin ilk farkındalık aşamasıdır.",
+              "Bu bölümde, “Sinyal Tespiti” görevinin nasıl yapılacağı hakkında detaylı bilgi verilmesi beklenmektedir. Elde edilen verinin nasıl işleneceği ve kullanılması planlanan sinyal işleme algoritması detaylandırılmalıdır. Seçilen yöntemin aktarılmasının yanı sıra ilgili alternatif yöntemler ile karşılaştırılıp avantaj ve dezavantajlarından bahsedilmelidir.",
+              "Bu göreve yönelik, yapay zekâ uygulamasına yer verilecekse, detayları yazılmalıdır.",
+              "Göreve ilişkin akış şemalarına ve kullanıcı arayüz ekran görsellerine yer verilmeli ve söz konusu arayüzlerin hangi ortamda ve ne şekilde geliştirildiği anlatılmalıdır."
+            ]
+          },
+          {
+            "ad": "4.2 Parametre Çıkarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Teknik parametre çıkarımı, tespit edilen haberleşme sinyalinin tanımlama/sınıflandırma veya ET’ye servis verme amaçlı olarak ölçülebilir teknik özelliklerinin elde edilmesi ve kıymetlendirilmesi aşamasıdır.",
+              "Yarışma kapsamında, farklı frekans bantlarında sırasıyla RF yayın yapan, yarışma sahasına gizlenmiş olan yayın kaynaklarının en az aşağıda listelenmiş olan teknik parametrelerinin çıkartılabilmesi hedeflenecektir:",
+              "Bu bölümde, “Parametre Çıkarımı” görevinin nasıl yapılacağı hakkında detaylı bilgi verilmesi beklenmektedir. Elde edilen verinin nasıl işleneceği ve kullanılması planlanan sinyal işleme algoritması detaylandırılmalı; çıkarılması planlanan teknik parametreler listelenmelidir. Seçilen yöntemin aktarılmasının yanı sıra ilgili alternatif yöntemler ile karşılaştırılıp avantaj ve dezavantajlarından bahsedilmelidir.",
+              "Bu göreve yönelik, yapay zekâ uygulamasına yer verilecekse, detayları yazılmalıdır.",
+              "Göreve ilişkin akış şemalarına ve kullanıcı arayüz ekran görsellerine yer verilmeli ve söz konusu arayüzlerin hangi ortamda ve ne şekilde geliştirildiği anlatılmalıdır."
+            ]
+          },
+          {
+            "ad": "4.3 Sinyal İzleme/Dinleme",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Sinyal İzleme/Dinleme, tespit edilen ve parametreleri çıkartılan bir yayının sürekliliğinin takip edilmesi, zamansal ve frekanssal davranışlarının gözlenmesi; şifresiz olması/ çözülebilmesi halinde ise demodülasyon ve (varsa) kod çözümü ertesinde ses ve/veya veriye ulaşılması aşamasıdır.",
+              "Bu bölümde, “Sinyal İzleme/Dinleme” görevinin nasıl yapılacağı hakkında detaylı bilgi verilmesi beklenmektedir. Elde edilen verinin nasıl işleneceği ve kullanılması planlanan sinyal işleme algoritması detaylandırılmalı; söz konusu yeteneğin hem analog hem de sayısal sinyaller için sağlanabilmesi durumu açık bir şekilde belirtilmelidir. Seçilen yöntemin aktarılmasının yanı sıra ilgili alternatif yöntemler ile karşılaştırılıp avantaj ve dezavantajlarından bahsedilmelidir.",
+              "Bu göreve yönelik, yapay zekâ uygulamasına yer verilecekse, detayları yazılmalıdır.",
+              "Göreve ilişkin akış şemalarına ve kullanıcı arayüz ekran görsellerine yer verilmeli ve söz konusu arayüzlerin hangi ortamda ve ne şekilde geliştirildiği anlatılmalıdır."
+            ]
+          },
+          {
+            "ad": "4.4 Yön Bulma (DF)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Yön bulma, tespit edilen elektromanyetik yayılım kaynağının, sinyali algılayan sensöre göre yönünün ölçülmesi işlemidir. Bu bilgi daha sonra sinyalin yerinin belirlenmesi, ET sistemine servis amacıyla üretildi ise, yönlü ET anteninin yönlendirilmesi amacıyla ve/veya taktik karar destek sistemlerinde kullanılabilir.",
+              "Yön bulma işleminin doğruluğu, “Derece RMS” olarak ifade edilir. RMS (Root Mean Square), ölçülen yön değerleri ile gerçek yön arasındaki hataların karelerinin ortalamasının karekökü olarak tanımlanır; doğruluğu istatistiksel olarak ifade etmenin en yaygın yoludur. RMS, ortalama hata değil; hata dağılımı büyüklüğünü temsil eder.",
+              "Bir elektromanyetik yayılım kaynağının yerinin bulunabilmesi için farklı yöntemler kullanılabilmektedir; ilgili yöntemler artırılabilir olmakla birlikte yarışmacıların aşağıdaki üç yöntemden birini seçmeleri beklenmektedir:",
+              "“Genlik Tabanlı Yön Bulma” yönteminde, farklı yönlere bakan ve sırayla anahtarlanan antenlerin veya açısal olarak yönlendirilen yönlü bir antenin aldığı sinyal genlikleri karşılaştırılır. En yüksek genliğin alındığı yön, sinyalin geldiği yön olarak kabul edilir.",
+              "“Faz Karşılaştırmalı Yön Bulma” yönteminde, alınan sinyale göre antenler arasındaki faz farklı ölçülür; faz farkı, sinyalin geliş açısı ile ilişkilendirilir. Bu ölçümlerde, genlik bilgisi de kullanılabilir. Faz karşılaştırmalı yön bulma teknikleri, “faz-senkron” çalışan çoklu almaç kanallarına ihtiyaç duyarlar.",
+              "“Varış Zamanı Farkı Yöntemi” ile algılanan sinyalin farklı/dağıtık alıcılara ulaşma zamanlarındaki farklar ölçülür. Doğrudan yön değil, konum belirlemeye yöneliktir. Üretilen konumdan yön bilgisi çıkarılabilir. Dağıtık yerleştirilen çoklu alıcılar arasında, hassas zaman senkronizasyonu gerektirir.",
+              "Bu bölümde, “Yön Bulma” görevinin nasıl yapılacağı hakkında detaylı bilgi verilmesi beklenmektedir. Elde edilen verinin nasıl işleneceği ve kullanılması planlanan yön bulma (DF) algoritması detaylandırılmalı; öngörülen RMS yön doğruluğu belirtilmelidir. Seçilen yöntemin aktarılmasının yanı sıra ilgili alternatif yöntemler ile karşılaştırılıp avantaj ve dezavantajlarından bahsedilmelidir.",
+              "Bu göreve yönelik, yapay zekâ uygulamasına yer verilecekse, detayları yazılmalıdır.",
+              "Göreve ilişkin akış şemalarına ve kullanıcı arayüz ekran görsellerine yer verilmeli ve söz konusu arayüzlerin hangi ortamda ve ne şekilde geliştirildiği anlatılmalıdır."
+            ]
+          },
+          {
+            "ad": "4.5 Konum Belirleme",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Konum Belirleme, hareket halindeki bir adet alıcı veya dağıtık konumlardaki birden fazla sabit alıcı tarafından elde edilen yön (LOB: Line of Bearing), Varış Zaman Farkı (Time Difference of Arrival, TDOA), Varış Frekans Farkı (Frequency Difference of Arrival) vb. ölçümlerin birleştirilmesi ile ilgilenilen elektromanyetik yayın kaynağının iki veya üç boyutlu uzaydaki konumunun kestirilmesi aşamasıdır..",
+              "Bu bölümde, “Konum Belirleme” görevinin nasıl yapılacağı hakkında detaylı bilgi verilmesi beklenmektedir. Elde edilen verinin nasıl işleneceği ve kullanılması planlanan konum belirleme algoritması detaylandırılmalı; yetenek birden fazla sistem kullanımı ile gerçekleşecekse öngörülen sistem adedi ve yerleşimi açık bir şekilde belirtilmelidir. Seçilen yöntemin aktarılmasının yanı sıra ilgili alternatif yöntemler ile karşılaştırılıp avantaj ve dezavantajlarından bahsedilmelidir.",
+              "Bu göreve yönelik, yapay zekâ uygulamasına yer verilecekse, detayları yazılmalıdır.",
+              "Göreve ilişkin akış şemalarına ve kullanıcı arayüz ekran görsellerine yer verilmeli ve söz konusu arayüzlerin hangi ortamda ve ne şekilde geliştirildiği anlatılmalıdır.",
+              "Bu bölümde, öngörülen sistem yerleşimi bir görsel ile belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "ET GÖREVLERİ VE EKRAN GÖRSELLERİ",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "5.1 Sürekli Karıştırma",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Haberleşme ET kapsamında gerçekleştirilen “RF Karıştırma”, Tehdit Göndermeç ve Hedef Alıcı birimler arasında kurulan veya kurulması muhtemel olan haberleşmeyi kesmek, engellemek veya geciktirmek amacıyla uygulanan bir karşı-tedbir tekniğidir.",
+              "“Sürekli Karıştırma” kapsamında, karıştırma süresince herhangi bir almaç desteği beklenmemektedir. Karıştırmanın operatör kontrollü bir şekilde başlatılmasını takiben, kesintisiz şekilde sürdürülmesi ve görevin icrasını müteakip operatör kontrollü olarak veya süreli sonlandırılması yeterli olabilecektir.",
+              "Bu bölümde, “Sürekli Karıştırma” görevinin nasıl yapılacağı hakkında detaylı bilgi verilmesi beklenmektedir. Hedef sinyallere uygulanabilecek karıştırma tipleri (tekli, çoklu, baraj vb.) ve sınırlamaları (çoklu için toplam kaç hedefe kadar, baraj için toplam hangi bant genişliğine kadar vb.) detaylandırılmalıdır. Seçilen yöntemin aktarılmasının yanı sıra ilgili alternatif yöntemler ile karşılaştırılıp avantaj ve dezavantajlarından bahsedilmelidir.",
+              "Bu göreve yönelik, yapay zekâ uygulamasına yer verilecekse, detayları yazılmalıdır.",
+              "Göreve ilişkin akış şemalarına ve kullanıcı arayüz ekran görsellerine yer verilmeli ve söz konusu arayüzlerin hangi ortamda ve ne şekilde geliştirildiği anlatılmalıdır."
+            ]
+          },
+          {
+            "ad": "5.2 Arabakışlı Karıştırma",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "“Arabakışlı Karıştırma,” önceden belirlenmiş olan süre paylaşımı dâhilinde yürütülen tespit ve karıştırma fazlarından oluşur. Bu nedenle, RF Karıştırma Sistemi ile koordineli bir şekilde çalışan en az bir adet almaç kullanımını gerektirir. Ara-bakış, karıştırma kaynaklarının verimli kullanılmasına yönelik, göndermecin kısa süreliğine kapalı konuma getirilmesini takiben almaç kullanımı ile hedef sinyal varlığının tespitine yönelik spektrum ölçümünün gerçekleştirildiği bir uygulamadır. Bu uygulama, ilgili kanal(lar)da olası enerji kayıp ve kazançlarının ölçümü şeklinde özetlenebilir: Enerji kazancı ilgili kanalda sinyal varlığını, kaybı ise süregelen yayının sonlandığını gösterir.",
+              "Bu bölümde, “Arabakışlı Karıştırma” görevinin nasıl yapılacağı hakkında detaylı bilgi verilmesi beklenmektedir. Kullanılacak olan almacın özellikleri, tespit ve karıştırmaya ayrılan süreler, sinyal tespit/eşikleme yaklaşımı detaylandırılmalıdır. Seçilen yöntemin aktarılmasının yanı sıra ilgili alternatif yöntemler ile de karşılaştırılıp avantaj ve dezavantajlarından bahsedilmelidir.",
+              "Bu göreve yönelik, yapay zekâ uygulamasına yer verilecekse, detayları yazılmalıdır.",
+              "Göreve ilişkin akış şemalarına ve kullanıcı arayüz ekran görsellerine yer verilmeli ve söz konusu arayüzlerin hangi ortamda ve ne şekilde geliştirildiği anlatılmalıdır."
+            ]
+          },
+          {
+            "ad": "5.3 Analog Telsiz Aldatma",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Haberleşme ET kapsamında gerçekleştirilen “Aldatma,” hedef haberleşme sistemine ait sinyallerin taklit edilmesi, değiştirilmesi veya yeniden üretilmesi yoluyla, sistemin hatalı karar vermesine veya yanlış bilgi üretmesine neden olan bir elektronik taarruz tekniğidir. Hedef haberleşme sisteminin frekans, zamanlama ve “dalga şekli” olarak da tanımlanabilen modülasyon ve protokol özelliklerine uygun bir şekilde üretilen sahte veya değiştirilmiş sinyallerle, sistemin gerçek dışı yayınları geçerli kabul etmesinin sağlanmasıdır. RF Karıştırma ile hedef alıcının “hiç duymaması” hedeflenirken, RF Aldatma ile “yanlış duyması” hedeflenir.",
+              "Yarışma kapsamında, bu görev adımı sadece, ses ile haberleşen analog amatör telsizler için gerçekleştirilecektir.",
+              "Bu bölümde, “Analog Telsiz Aldatma” görevinin nasıl yapılacağı hakkında detaylı bilgi verilmesi beklenmektedir. Analog Telsiz Aldatma amaçlı kullanılacak teknikler ve altyapı (kayıt, ses üretme, ses şekillendirme vb.) detaylandırılmalıdır. Seçilen yöntemin aktarılmasının yanı sıra ilgili alternatif yöntemler ile de karşılaştırılıp avantaj ve dezavantajlarından bahsedilmelidir.",
+              "Bu göreve yönelik, yapay zekâ uygulamasına yer verilecekse, detayları yazılmalıdır.",
+              "Göreve ilişkin akış şemalarına ve kullanıcı arayüz ekran görsellerine yer verilmeli ve söz konusu arayüzlerin hangi ortamda ve ne şekilde geliştirildiği anlatılmalıdır."
+            ]
+          },
+          {
+            "ad": "5.4 GNSS Aldatma",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Yarışma kapsamında, Takımların en az “GPS L1” servisi için aldatma (Spoofing) sinyali üretmeleri beklenecektir. Aldatmanın karıştırma sinyali bir birlikte, sonrasında veya bağımsız iletilmesi Takımların tercihine bırakılacaktır.",
+              "İlave puan için GNSS aldatma sağlanabilecek servisler aşağıda listelenmiştir:",
+              "Bu bölümde, “GNSS Aldatma” görevinin nasıl yapılacağı hakkında detay bilgi verilmesi beklenmektedir. GNSS Aldatma amaçlı kullanılacak teknikler, aldatma sırasında olası karıştırma desteği, hangi GNSS servislerine aldatma uygulanabileceği ve ilgili altyapı detaylandırılmalıdır. Seçilen yöntemin aktarılmasının yanı sıra ilgili alternatif yöntemler ile karşılaştırılıp avantaj ve dezavantajlarından bahsedilmelidir.",
+              "Bu göreve yönelik, yapay zekâ uygulamasına yer verilecekse, detayları yazılmalıdır.",
+              "Göreve ilişkin akış şemalarına ve kullanıcı arayüz ekran görsellerine yer verilmeli ve söz konusu arayüzlerin hangi ortamda ve ne şekilde geliştirildiği anlatılmalıdır."
+            ]
+          },
+          {
+            "ad": "SİMÜLASYON VE TEST",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "6.1 Etkinlik Simülasyonları",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, ED Alt Sistem(ler)ine yönelik aşağıdaki analizlere yer verilmelidir.",
+              "Bu bölümde, ET Alt Sistem(ler)ine yönelik aşağıdaki analizlere yer verilmelidir."
+            ]
+          },
+          {
+            "ad": "6.2 Alt Sistem Geliştirme Testleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, Alt Sistem geliştirmesi sırasında yapılan veya (henüz başlanmadı ise) yapılması planlanan testlerin planlaması (zaman bilgisi ile birlikte) yer almalıdır. Öngörülen testlerin her birine, alt başlıklar halinde yer verilmeli ve mümkün mertebe bir düzenek ile öngörülen test şekli, ihtiyaç duyulan test ekipmanları, test yöntemi ve beklenen çıktılar detaylandırılmalıdır."
+            ]
+          },
+          {
+            "ad": "6.3 Görev Testleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, Bölüm 4 ve Bölüm 5’te yer verilen görevlere yönelik yapılan veya (henüz başlanmadı ise) yapılması planlanan testlerin planlaması (zaman bilgisi ile birlikte) yer almalıdır. Öngörülen testlerin her birine, alt başlıklar halinde yer verilmeli ve mümkün mertebe bir düzenek ile öngörülen test şekli, ihtiyaç duyulan test ekipmanları, test yöntemi ve beklenen çıktılar detaylandırılmalıdır.",
+              "Yarışmada kullanılması planlanan algoritmaların testlerinin gerçekleştirilebilmesi için simülasyon ortamlarından da destek alınmalıdır. Bahsi geçen testler, yazılım çevrimde (SITL) veya donanım çevrimde (HITL) şeklinde gerçeklenebilir. Çevresel RF ortamın matematiksel olarak simüle edilebilmesi için çeşitli benzetim ortamları kullanılabilir. Sistemler ortaya çıktığında ise, açık arazide, ölçeklendirilmiş senaryolar dahilinde saha testleri gerçekleştirilebilir. Yapılan testlerin yöntemleri, uygulama adımları ve sonuçları (mümkün olduğunca görsellerle desteklenerek) paylaşılmalıdır."
+            ]
+          },
+          {
+            "ad": "REFERANSLAR",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu kısımda referanslar yer almalıdır."
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "REFERANSLAR",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+          "Tüm raporlar “İçindekiler” ve “Referanslar” bölümlerini içermelidir.",
+          "Her rapor bir kapak sayfası içermelidir.",
+          "Rapor sayfaları ardışık olarak numaralandırılmalıdır.",
+          "Kapak hariç sayfaların alt bilgisinde takım adı ve sayfa numarası yazılmalı, üst bilgisinde ise",
+          "“ELEKTRONİK HARP YARIŞMASI 2026” yazılmalıdır.",
+          "Yazı tipi: Arial, Punto: 12, Satır Aralıkları: 1,15",
+          "Tüm metinler iki tarafa yaslı şekilde olması gerekmektedir.",
+          "Sayfa Düzeni: A4 Tipi ve Kenar Boşlukları 2,5 cm",
+          "Rapor tüm sayfalar dahil 25 sayfayı geçmemelidir.",
+          "Raporunda, web sitemizde yer alan geçmiş yıl raporlarından yararlanmış olan takımlar alıntı",
+          "yaptığını ilgili sayfada belirtmesi gerekmektedir. Açıklamayı alıntı yapılan cümlenin ardından",
+          "belirtmeniz gerekmektedir.",
+          "ALINTI FORMATI: \"Alıntı yapılan Cümle/ler\" (Yıl, Yarışma Adı, Kategori, Takım Adı)",
+          "ÖRNEK ALINTI: \"Enkazda depremzedenin nerede olduğunu tespit edilememesi, enkaz kaldırma ve depremzede arama çalışmalarını yavaşlatan en önemli sorundur.\" (2022, İnsanlık Yararına Teknoloji Yarışması, Afet Yönetimi, X Takımı)",
+          "KRİTİK TASARIM RAPORU puanlaması aşağıdaki şablona göre yapılacaktır:",
+          "Temel Sistem Özeti",
+          "Organizasyon Özeti",
+          "Detaylı Tasarım Özeti",
+          "ED Görevleri ve Ekran Görselleri",
+          "ET Görevleri ve Ekran Görselleri",
+          "Simülasyon ve Test"
+        ],
+        "eleyiciMi": false,
+        "azamiSayfa": 25,
+        "yaziTipi": "Arial",
+        "govdePunto": 12
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "temel-sistem-ozeti",
+            "ad": "TEMEL SİSTEM ÖZETİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEMEL SİSTEM ÖZETİ"
+          },
+          {
+            "kod": "organizasyon-ozeti",
+            "ad": "ORGANİZASYON ÖZETİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ORGANİZASYON ÖZETİ"
+          },
+          {
+            "kod": "detayli-tasarim-ozeti",
+            "ad": "DETAYLI TASARIM ÖZETİ",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "DETAYLI TASARIM ÖZETİ"
+          },
+          {
+            "kod": "ed-gorevleri-ve-ekran-gorselleri",
+            "ad": "ED GÖREVLERİ VE EKRAN GÖRSELLERİ",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ED GÖREVLERİ VE EKRAN GÖRSELLERİ"
+          },
+          {
+            "kod": "et-gorevleri-ve-ekran-gorselleri",
+            "ad": "ET GÖREVLERİ VE EKRAN GÖRSELLERİ",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ET GÖREVLERİ VE EKRAN GÖRSELLERİ"
+          },
+          {
+            "kod": "simulasyon-ve-test",
+            "ad": "SİMÜLASYON VE TEST",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "SİMÜLASYON VE TEST"
+          }
+        ],
+        "toplamPuan": 95
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [],
+      "sartname": {
+        "dosyaAdi": "2026_ELEKTRONIK_HARP_SARTNAMESI_TR_Güncel_jjwso.pdf",
+        "yuklendi": "2026-08-23T20:12:29.076Z",
+        "sayfaSayisi": 26,
+        "kelimeSayisi": 5098,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "Versiyon",
+              "tarih": "2026-02-14"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-03-10"
+            },
+            {
+              "etiket": "Teknik Yeterlilik Formu Son Teslim Tarihi",
+              "tarih": "2026-03-24"
+            },
+            {
+              "etiket": "Teknik Yeterlilik Formu Sonuçlarının Açıklanması",
+              "tarih": "2026-04-10"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu Son Teslim Tarihi",
+              "tarih": "2026-04-30"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu Sonuçlarının Açıklanması",
+              "tarih": "2026-07-13"
+            },
+            {
+              "etiket": "Finale Kalan (Finalist) Takımların Açıklanması",
+              "tarih": "2026-08-07"
+            }
+          ],
+          "asamalar": [
+            "YARIŞMA TAKVİMİ",
+            "KRİTİK TASARIM RAPORU",
+            "SİSTEM TANIMLAMA VİDEOSU",
+            "YARIŞMANIN PUANLAMASI"
+          ],
+          "eleyiciHukumler": [
+            "Birden fazla danışman bulunan takımların başvuruları geçersiz sayılacaktır."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 8
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_ELEKTRONIK_HARP_SARTNAMESI_TR_G%C3%BCncel_jjwso.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "elektronik-harp-yarismasi"
+}

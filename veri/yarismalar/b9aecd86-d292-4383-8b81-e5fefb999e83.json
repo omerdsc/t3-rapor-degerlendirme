@@ -1,0 +1,488 @@
+{
+  "id": "b9aecd86-d292-4383-8b81-e5fefb999e83",
+  "ad": "Sıfır Atık & Döngüsel Ekonomi Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:58:21.435Z",
+  "kategoriler": [
+    {
+      "id": "eb0f8f25-0629-42db-b7be-cebede188afc",
+      "ad": "Sıfır Atık & Döngüsel Ekonomi Yarışması",
+      "sablonDosyasi": "sıfır_atık_3_1_SH8EA.docx",
+      "olusturuldu": "2026-08-23T13:58:21.434Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-eb0f8f25",
+        "ad": "Sıfır Atık & Döngüsel Ekonomi Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "VERSİYONLAR",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "1. PROJENİN KISA ÖZETİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu kısımda projenin içeriğini en fazla 300 kelime ile anlatmalıdır."
+            ]
+          },
+          {
+            "ad": "2. ÇÖZÜLMESİ HEDEFLENEN PROBLEM",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu bölümde çözülmesi hedeflenen problem ayrıntılı olarak açıklanmalıdır. Problemin kimleri etkilediği, mevcut durumda yaşanan temel zorluklar ve neden böyle bir çözüme ihtiyaç duyulduğu belirtilmelidir. En fazla 500 kelime kullanılmalıdır."
+            ]
+          },
+          {
+            "ad": "3. ÇÖZÜM YAKLAŞIMI",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu bölümde geliştirilen çözümün nasıl çalıştığı anlatılmalıdır. Kullanıcının sistemi nasıl kullanacağı, sistem iş akışı, kullanılan girdiler, üretilen çıktılar ve çözümün genel çalışma mantığı açıklanmalıdır. En fazla 600 kelime kullanılmalıdır."
+            ]
+          },
+          {
+            "ad": "4. PROJENİN YENİLİKÇİ YÖNLERİ VE BENZERSİZ DEĞER ÖNERİSİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu bölümde projenin mevcut çözümlerden hangi yönleriyle ayrıldığı açıklanmalıdır. Yenilikçi özellikler, rekabet avantajı ve kullanıcıya sağlanan benzersiz değer belirtilmelidir. En fazla 500 kelime kullanılmalıdır."
+            ]
+          },
+          {
+            "ad": "5. KULLANILACAK TEKNOLOJİLER",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde projede kullanılan veya kullanılması planlanan teknolojiler açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "6. TEKNİK MİMARİ",
+            "zorunlu": true,
+            "puan": 8,
+            "yonergeMetni": [
+              "Bu bölümde sistemin teknik mimarisi açıklanmalıdır. Yazılım mimarisi, donanım bileşenleri, veri akışı, API kullanımı, dış sistem entegrasyonları ve temel teknik yapı özetlenmelidir. En fazla 500 kelime kullanılmalıdır."
+            ]
+          },
+          {
+            "ad": "7. PROJENİN GELİŞTİRME SEVİYESİ",
+            "zorunlu": true,
+            "puan": 8,
+            "yonergeMetni": [
+              "Bu bölümde projenin mevcut geliştirme durumu ayrıntılı olarak açıklanmalıdır. Bugüne kadar tamamlanan çalışmalar, geliştirilmiş bileşenler, varsa oluşturulan prototipler, gerçekleştirilen testler ve elde edilen sonuçlar belirtilmelidir. Ayrıca projenin hangi geliştirme aşamasında olduğu ve bundan sonraki süreçte tamamlanması planlanan çalışmalar özetlenmelidir.",
+              "Bu bölümde aşağıdaki hususlara değinilmesi önerilir:"
+            ]
+          },
+          {
+            "ad": "8. BUGÜNE KADAR NELER TAMAMLANDI?",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde projenizin fikir aşamasından şu anki başvuru tarihine kadar gerçekleştirdiğiniz somut adımları ve ulaştığınız aşamayı aktarmanız beklenmektedir. (3 Puan)"
+            ]
+          },
+          {
+            "ad": "9. GERÇEK HAYAT UYGULAMASI VE KULLANIM SENARYOLARI",
+            "zorunlu": true,
+            "puan": 8,
+            "yonergeMetni": [
+              "Bu bölümde projenizin fikir aşamasından çıkıp gerçek dünyada nasıl konumlanacağını aktarmanız beklenmektedir. Geliştirdiğiniz sıfır atık veya döngüsel ekonomi çözümünün günlük hayatta veya endüstriyel süreçlerde kimler tarafından, nerede ve tam olarak nasıl kullanılacağını somut bir senaryo üzerinden açıklanmalıdır. En fazla 500 kelime kullanılmalıdır."
+            ]
+          },
+          {
+            "ad": "10. BEKLENEN ETKİ",
+            "zorunlu": true,
+            "puan": 8,
+            "yonergeMetni": [
+              "Bu bölümde projenizin hayata geçmesi durumunda çevreye, ekonomiye ve topluma sağlayacağı somut faydaları açıklamanız beklenmektedir. Çözümünüzün sıfır atık hedeflerine ve döngüsel ekonomi prensiplerine nasıl hizmet ettiğini aşağıdaki temel kriterler üzerinden değerlendirerek anlatmalısınız.",
+              "(Değerlendirmelerinizi ölçülebilir metrikler ve nicel verilerle destekleyiniz.)"
+            ]
+          },
+          {
+            "ad": "11. ÖLÇEKLENEBİLİRLİK VE YAYGINLAŞTIRMA POTANSİYELİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde projenizin sadece yerel veya sınırlı bir alanda kalmayıp, daha geniş kitlelere ve farklı pazar koşullarına nasıl entegre edilebileceğini açıklamanız beklenmektedir. Çözümünüzün bölgesel, ulusal veya sektörel çapta nasıl büyütülebileceğine dair vizyonunuz ve teknik altyapınız açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "12. RİSKLER VE ÇÖZÜM YAKLAŞIMINIZ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde projenizin geliştirilme veya sahada uygulanma aşamalarında karşılaşabileceğiniz potansiyel zorlukları ve bu sorunları aşmak için kurguladığınız \"B Planlarını\" jüriye aktarmanız beklenmektedir."
+            ]
+          },
+          {
+            "ad": "13. TAKIM YETKİNLİĞİ",
+            "zorunlu": true,
+            "puan": 4,
+            "yonergeMetni": [
+              "Bu bölümde takım üyelerinizin okumuş olduğu okul ve bölümleri yazınız. Takım üyelerinin projeye tam olarak nasıl bir katkı sağlayacağını net bir şekilde belirtiniz."
+            ]
+          },
+          {
+            "ad": "14. PROJE TAKVİMİ",
+            "zorunlu": true,
+            "puan": 4,
+            "yonergeMetni": [
+              "Bu bölümde projenizi yarışma finaline kadar adım adım nasıl ilerleteceğinizi gösteren net bir yol haritası açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "15. EK AÇIKLAMALAR",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Eklemek istediğiniz ek bilgileri açıklayınız.",
+              "Basılı Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası.",
+              "• Rapor şablonuna uymayan Ön Değerlendirme Raporları değerlendirilmeyecektir."
+            ]
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "1-projenin-kisa-ozeti",
+            "ad": "1. PROJENİN KISA ÖZETİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda projenin içeriğini en fazla 300 kelime ile anlatmalıdır."
+            ],
+            "bolumAdi": "1. PROJENİN KISA ÖZETİ"
+          },
+          {
+            "kod": "2-cozulmesi-hedeflenen-problem",
+            "ad": "2. ÇÖZÜLMESİ HEDEFLENEN PROBLEM",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde çözülmesi hedeflenen problem ayrıntılı olarak açıklanmalıdır. Problemin kimleri etkilediği, mevcut durumda yaşanan temel zorluklar ve neden böyle bir çözüme ihtiyaç duyulduğu belirtilmelidir. En fazla 500 kelime kullanılmalıdır."
+            ],
+            "bolumAdi": "2. ÇÖZÜLMESİ HEDEFLENEN PROBLEM"
+          },
+          {
+            "kod": "3-cozum-yaklasimi",
+            "ad": "3. ÇÖZÜM YAKLAŞIMI",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde geliştirilen çözümün nasıl çalıştığı anlatılmalıdır. Kullanıcının sistemi nasıl kullanacağı, sistem iş akışı, kullanılan girdiler, üretilen çıktılar ve çözümün genel çalışma mantığı açıklanmalıdır. En fazla 600 kelime kullanılmalıdır."
+            ],
+            "bolumAdi": "3. ÇÖZÜM YAKLAŞIMI"
+          },
+          {
+            "kod": "4-projenin-yenilikci-yonleri-ve-benzersi",
+            "ad": "4. PROJENİN YENİLİKÇİ YÖNLERİ VE BENZERSİZ DEĞER ÖNERİSİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde projenin mevcut çözümlerden hangi yönleriyle ayrıldığı açıklanmalıdır. Yenilikçi özellikler, rekabet avantajı ve kullanıcıya sağlanan benzersiz değer belirtilmelidir. En fazla 500 kelime kullanılmalıdır."
+            ],
+            "bolumAdi": "4. PROJENİN YENİLİKÇİ YÖNLERİ VE BENZERSİZ DEĞER ÖNERİSİ"
+          },
+          {
+            "kod": "5-kullanilacak-teknolojiler",
+            "ad": "5. KULLANILACAK TEKNOLOJİLER",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde projede kullanılan veya kullanılması planlanan teknolojiler açıklanmalıdır."
+            ],
+            "bolumAdi": "5. KULLANILACAK TEKNOLOJİLER"
+          },
+          {
+            "kod": "6-teknik-mimari",
+            "ad": "6. TEKNİK MİMARİ",
+            "puan": 8,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde sistemin teknik mimarisi açıklanmalıdır. Yazılım mimarisi, donanım bileşenleri, veri akışı, API kullanımı, dış sistem entegrasyonları ve temel teknik yapı özetlenmelidir. En fazla 500 kelime kullanılmalıdır."
+            ],
+            "bolumAdi": "6. TEKNİK MİMARİ"
+          },
+          {
+            "kod": "7-projenin-gelistirme-seviyesi",
+            "ad": "7. PROJENİN GELİŞTİRME SEVİYESİ",
+            "puan": 8,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde projenin mevcut geliştirme durumu ayrıntılı olarak açıklanmalıdır. Bugüne kadar tamamlanan çalışmalar, geliştirilmiş bileşenler, varsa oluşturulan prototipler, gerçekleştirilen testler ve elde edilen sonuçlar belirtilmelidir. Ayrıca projenin hangi geliştirme aşamasında olduğu ve bundan sonraki süreçte tamamlanması planlanan çalışmalar özetlenmelidir.",
+              "Bu bölümde aşağıdaki hususlara değinilmesi önerilir:"
+            ],
+            "bolumAdi": "7. PROJENİN GELİŞTİRME SEVİYESİ"
+          },
+          {
+            "kod": "8-bugune-kadar-neler-tamamlandi",
+            "ad": "8. BUGÜNE KADAR NELER TAMAMLANDI?",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde projenizin fikir aşamasından şu anki başvuru tarihine kadar gerçekleştirdiğiniz somut adımları ve ulaştığınız aşamayı aktarmanız beklenmektedir. (3 Puan)"
+            ],
+            "bolumAdi": "8. BUGÜNE KADAR NELER TAMAMLANDI?"
+          },
+          {
+            "kod": "9-gercek-hayat-uygulamasi-ve-kullanim-se",
+            "ad": "9. GERÇEK HAYAT UYGULAMASI VE KULLANIM SENARYOLARI",
+            "puan": 8,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde projenizin fikir aşamasından çıkıp gerçek dünyada nasıl konumlanacağını aktarmanız beklenmektedir. Geliştirdiğiniz sıfır atık veya döngüsel ekonomi çözümünün günlük hayatta veya endüstriyel süreçlerde kimler tarafından, nerede ve tam olarak nasıl kullanılacağını somut bir senaryo üzerinden açıklanmalıdır. En fazla 500 kelime kullanılmalıdır."
+            ],
+            "bolumAdi": "9. GERÇEK HAYAT UYGULAMASI VE KULLANIM SENARYOLARI"
+          },
+          {
+            "kod": "10-beklenen-etki",
+            "ad": "10. BEKLENEN ETKİ",
+            "puan": 8,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde projenizin hayata geçmesi durumunda çevreye, ekonomiye ve topluma sağlayacağı somut faydaları açıklamanız beklenmektedir. Çözümünüzün sıfır atık hedeflerine ve döngüsel ekonomi prensiplerine nasıl hizmet ettiğini aşağıdaki temel kriterler üzerinden değerlendirerek anlatmalısınız.",
+              "(Değerlendirmelerinizi ölçülebilir metrikler ve nicel verilerle destekleyiniz.)"
+            ],
+            "bolumAdi": "10. BEKLENEN ETKİ"
+          },
+          {
+            "kod": "11-olceklenebilirlik-ve-yayginlastirma-p",
+            "ad": "11. ÖLÇEKLENEBİLİRLİK VE YAYGINLAŞTIRMA POTANSİYELİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde projenizin sadece yerel veya sınırlı bir alanda kalmayıp, daha geniş kitlelere ve farklı pazar koşullarına nasıl entegre edilebileceğini açıklamanız beklenmektedir. Çözümünüzün bölgesel, ulusal veya sektörel çapta nasıl büyütülebileceğine dair vizyonunuz ve teknik altyapınız açıklanmalıdır."
+            ],
+            "bolumAdi": "11. ÖLÇEKLENEBİLİRLİK VE YAYGINLAŞTIRMA POTANSİYELİ"
+          },
+          {
+            "kod": "12-riskler-ve-cozum-yaklasiminiz",
+            "ad": "12. RİSKLER VE ÇÖZÜM YAKLAŞIMINIZ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde projenizin geliştirilme veya sahada uygulanma aşamalarında karşılaşabileceğiniz potansiyel zorlukları ve bu sorunları aşmak için kurguladığınız \"B Planlarını\" jüriye aktarmanız beklenmektedir."
+            ],
+            "bolumAdi": "12. RİSKLER VE ÇÖZÜM YAKLAŞIMINIZ"
+          },
+          {
+            "kod": "13-takim-yetkinligi",
+            "ad": "13. TAKIM YETKİNLİĞİ",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde takım üyelerinizin okumuş olduğu okul ve bölümleri yazınız. Takım üyelerinin projeye tam olarak nasıl bir katkı sağlayacağını net bir şekilde belirtiniz."
+            ],
+            "bolumAdi": "13. TAKIM YETKİNLİĞİ"
+          },
+          {
+            "kod": "14-proje-takvimi",
+            "ad": "14. PROJE TAKVİMİ",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde projenizi yarışma finaline kadar adım adım nasıl ilerleteceğinizi gösteren net bir yol haritası açıklanmalıdır."
+            ],
+            "bolumAdi": "14. PROJE TAKVİMİ"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Sayfa sınırı kurallardan çıkarılamadı."
+      ],
+      "sartname": {
+        "dosyaAdi": "TEKNOFEST-2026_YARISMA_TEKNIK_SARTNAME_11.05.2026_4_1gIHj.pdf",
+        "yuklendi": "2026-08-23T20:16:41.699Z",
+        "sayfaSayisi": 17,
+        "kelimeSayisi": 3263,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-07-31"
+            },
+            {
+              "etiket": "Proje Ön Değerlendirme Formu Son Teslim Tarihi",
+              "tarih": "2026-08-14"
+            },
+            {
+              "etiket": "Proje Ön Değerlendirme Raporu Sonuçlarına Göre Ön Elemeyi",
+              "tarih": "2026-08-21"
+            },
+            {
+              "etiket": "Çevrimiçi Eğitim ve Mentorluk Süreci",
+              "tarih": "2026-08-26"
+            },
+            {
+              "etiket": "Proje Sunumu (Final)",
+              "tarih": "2026-09-09"
+            },
+            {
+              "etiket": "Finalistlerin Açıklanması",
+              "tarih": "2026-09-11"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Bakanlık, kurallara uymayan kişi ya da takımı yarışmadan diskalifiye etme hakkını saklı tutar."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 5
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST-2026_YARISMA_TEKNIK_SARTNAME_11.05.2026_4_1gIHj.pdf",
+        "teknikMi": true
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "sifir-atik-dongusel-ekonomi-yarismasi"
+}

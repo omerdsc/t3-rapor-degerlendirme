@@ -1,0 +1,370 @@
+{
+  "id": "e9d56886-18bf-4d20-b39e-f4ae80a5859b",
+  "ad": "İleri Otonom Sistemler Tasarım ve Operasyon Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:54:13.783Z",
+  "kategoriler": [
+    {
+      "id": "cf71fe05-9106-4501-ba0b-e63556f871bd",
+      "ad": "İleri Otonom Sistemler Tasarım ve Operasyon Yarışması",
+      "sablonDosyasi": "İleri_Otonom_Sistemler_Tsarım_ve_Operasyon_Yarışması_ÖDR_Şablonu_TR_13.04.docx",
+      "asama": "ÖDR",
+      "olusturuldu": "2026-08-23T13:54:13.782Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-cf71fe05",
+        "ad": "İleri Otonom Sistemler Tasarım ve Operasyon Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "Bölüm 1. Özet",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu bölüm kapsamında projenin teknik vizyonunu ve operasyonel kabiliyetini en fazla 500 kelime ile yansıtan stratejik bir özet verilmesi gerekmektedir. İHA ve İKA sistemlerinin görev icra verimliliğini artıran özgün sistem mimarileri ve inovatif yaklaşımlar (donanımsal veya yazılımsal) tanımlanmalı; seçilen platform konfigürasyonlarının gerekçeleri, sistemde kullanılan mühendislik teknikleri vurgulanmalıdır. Ayrıca tasarlanan sistemlerin belirlenen görev senaryolarına olan teknik uyumu, sınır şartları altındaki dayanımı ve değişken operasyonel koşullara karşı sunduğu görev esnekliği analiz edilmelidir. Son olarak geliştirilen tüm sistemlerin, yarışma kapsamındaki görev tanımlarına nasıl entegre edildiği ve bu sistemlerin operasyonel başarıya katkısı özetlenmelidir."
+            ]
+          },
+          {
+            "ad": "Bölüm 2. Organizasyonel Yapı",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Takımın organizasyonel yapılanması ve üyelerin/birimlerin icra yetkileri bu bölümde şematize edilmelidir. Raporun objektif değerlendirme kriterleri uyarınca, üyelerin kişisel verilerinden (isim, görsel vb.) arındırılmış, tamamen rol bazlı ve profesyonel bir anlatım tercih edilmelidir."
+            ]
+          },
+          {
+            "ad": "Bölüm 3. Proje Takvimi",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölüm kapsamında projenin kavramsal tasarım, detay tasarım gibi prototip geliştirme faaliyetleri ve proje alt iş paketlerinin sunulması beklenmektedir. Sistemin gelişim aşamaları ve termin planına uyumunu teyit eden teknik takvim, analitik bir yaklaşımla değerlendirilmelidir."
+            ]
+          },
+          {
+            "ad": "Bölüm 4. Bütçe Analizi",
+            "zorunlu": false,
+            "puan": 5,
+            "yonergeMetni": [
+              "Projenin hayata geçirilmesi için öngörülen maliyet kalemleri, tedarik planlaması ve bütçenin kalem bazlı dökümü bu başlık altında analitik bir dille sunulmalıdır. Her bir bileşenin teknik tanımları (marka, model vb.), nicelik ve maliyet verileriyle birlikte; söz konusu harcamanın İHA ya da İKA sistem mimarisindeki fonksiyonel gerekliliği ve kullanım amacı teknik bir perspektifle açıklanmalıdır."
+            ],
+            "raporda": false
+          },
+          {
+            "ad": "Bölüm 5. Kavramsal Tasarım Yaklaşımı",
+            "zorunlu": true,
+            "puan": 25,
+            "yonergeMetni": [
+              "Bu bölümde yarışmacı takımların yarışma kapsamında kullanacağı tüm sistemler için kurguladıkları tasarım felsefesini ortaya koymaları beklenmektedir. Takımların, yarışma görevlerini yerine getirmek amacıyla seçtikleri konfigürasyonları, bu konfigürasyonların avantajlarını ve disiplinler arası etkileşimlerini mühendislik temellerine dayandırarak açıklamaları esastır. İnsansız Hava Aracı (İHA) platformunun operasyonel görevleri icra edebilmesi için öngörülen tasarım detayları paylaşılmalıdır. İnsansız Kara Aracı (İKA) platformunun yer operasyonlarındaki etkinliğini belirleyecek temel parametrelerin tasarımı ele alınmalıdır. İHA’nın güvenli ve tekrarlanabilir bir şekilde kalkışını sağlamak üzere tasarlanacak fırlatma/mancınık sistemine dair esaslar belirtilmelidir. Takımlardan, tasarım sürecinde karşılaştıkları teknik ikilemleri nasıl yönettiklerini ve nihai tasarım kararlarına nasıl ulaştıklarını gösteren analitik bir yaklaşım sunmaları beklenmektedir."
+            ]
+          },
+          {
+            "ad": "Bölüm 6. Fayda Analizi Çalışmaları",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "Bu bölümde, tasarlanan sistemin yarışma görev senaryoları özelinde sunduğu operasyonel kazanımlar ve çözümün etkinliği analitik bir yaklaşımla ortaya konmalıdır. Tasarlanan İHA/İKA konfigürasyonlarının görevi yerine getirme süresi, enerji tüketimi ve doğruluk payı üzerindeki olası pozitif etkileri değerlendirilmelidir. Mevcut standart yaklaşımlara kıyasla sağlanabilecek iyileştirmeler vurgulanmalıdır. Projede kullanılacak bileşenlerin ve seçilecek yöntemlerin, hedeflenen performans çıktılarını en optimize maliyetle sağlama opsiyonları analiz edilmelidir. Yenilikçi çözümlerin, görev sırasında karşılaşılabilecek olası aksaklıkları (iletişim kaybı, çevresel engeller, donanımsal limitler) nasıl minimize edebileceği ve sistemin operasyonel güvenliğine nasıl katkı sağlayabileceği açıklanmalıdır. Bu bölüm kapsamında görevi gerçekleyecek tüm olası sistemler düşünülerek bir görev başarım matrisi oluşturulması beklenmektedir."
+            ]
+          },
+          {
+            "ad": "Bölüm 7. Üretim Planı",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu bölüm; tasarlanan İHA/İKA sistemlerinin üretim süreçlerini, kullanılacak imalat teknolojilerini ve montaj stratejilerini kapsamaktadır. Sistemlerin üretiminde kullanılacak yöntemler seçilme gerekçeleriyle birlikte açıklanmalıdır. Yarışma kapsamında üretilecek platformlar için Seçilen malzemelerin mekanik özellikleri, ağırlık/dayanım dengesi ve projenin sınır şartlarına uygunluğu belirtilmelidir. Bunun yanı sıra sistemlerin montaj süreçleri, kullanılan birleştirme yöntemleri ve alt sistemlerin yapısal bütünlüğe nasıl entegre edileceğine dair bilgilendirme yapılmalıdır."
+            ]
+          },
+          {
+            "ad": "Bölüm 8. Sistem Entegrasyonu ve Test Planı",
+            "zorunlu": false,
+            "puan": 20,
+            "yonergeMetni": [
+              "Bu bölümde yarışmacı takımlardan; kavramsal tasarımların fiziksel bir platforma dönüştürülme süreçlerini, alt sistemlerin bütünleşik çalışma prensiplerini ve sistemin operasyonel yetkinliğini kanıtlayacak test ya da doğrulama ve geçerli kılma stratejilerini sunmaları beklenmektedir. Takımlar bu başlık altında ana sistemlerde ile alt sistemlerin bir araya getirilme süreçlerini detaylanmalıdır. Bunun yanı sıra sistemin görev gereksinimlerini karşıladığının teknik olarak ispatlanması amacıyla, takımların kendi öngördükleri test faaliyetlerini açıklamaları; yapılacak her bir test ve doğrulama faaliyeti için takımların kendi başarı kriterlerini tanımlamaları gerekmektedir."
+            ],
+            "raporda": false
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "bolum-1-ozet",
+            "ad": "Bölüm 1. Özet",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölüm kapsamında projenin teknik vizyonunu ve operasyonel kabiliyetini en fazla 500 kelime ile yansıtan stratejik bir özet verilmesi gerekmektedir. İHA ve İKA sistemlerinin görev icra verimliliğini artıran özgün sistem mimarileri ve inovatif yaklaşımlar (donanımsal veya yazılımsal) tanımlanmalı; seçilen platform konfigürasyonlarının gerekçeleri, sistemde kullanılan mühendislik teknikleri vurgulanmalıdır. Ayrıca tasarlanan sistemlerin belirlenen görev senaryolarına olan teknik uyumu, sınır şartları altındaki dayanımı ve değişken operasyonel koşullara karşı sunduğu görev esnekliği analiz edilmelidir. Son olarak geliştirilen tüm sistemlerin, yarışma kapsamındaki görev tanımlarına nasıl entegre edildiği ve bu sistemlerin operasyonel başarıya katkısı özetlenmelidir."
+            ],
+            "bolumAdi": "Bölüm 1. Özet"
+          },
+          {
+            "kod": "bolum-2-organizasyonel-yapi",
+            "ad": "Bölüm 2. Organizasyonel Yapı",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Takımın organizasyonel yapılanması ve üyelerin/birimlerin icra yetkileri bu bölümde şematize edilmelidir. Raporun objektif değerlendirme kriterleri uyarınca, üyelerin kişisel verilerinden (isim, görsel vb.) arındırılmış, tamamen rol bazlı ve profesyonel bir anlatım tercih edilmelidir."
+            ],
+            "bolumAdi": "Bölüm 2. Organizasyonel Yapı"
+          },
+          {
+            "kod": "bolum-3-proje-takvimi",
+            "ad": "Bölüm 3. Proje Takvimi",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölüm kapsamında projenin kavramsal tasarım, detay tasarım gibi prototip geliştirme faaliyetleri ve proje alt iş paketlerinin sunulması beklenmektedir. Sistemin gelişim aşamaları ve termin planına uyumunu teyit eden teknik takvim, analitik bir yaklaşımla değerlendirilmelidir."
+            ],
+            "bolumAdi": "Bölüm 3. Proje Takvimi"
+          },
+          {
+            "kod": "bolum-4-butce-analizi",
+            "ad": "Bölüm 4. Bütçe Analizi",
+            "puan": 5,
+            "bolumBekleniyor": false,
+            "olcut": [
+              "Projenin hayata geçirilmesi için öngörülen maliyet kalemleri, tedarik planlaması ve bütçenin kalem bazlı dökümü bu başlık altında analitik bir dille sunulmalıdır. Her bir bileşenin teknik tanımları (marka, model vb.), nicelik ve maliyet verileriyle birlikte; söz konusu harcamanın İHA ya da İKA sistem mimarisindeki fonksiyonel gerekliliği ve kullanım amacı teknik bir perspektifle açıklanmalıdır."
+            ],
+            "bolumAdi": "Bölüm 4. Bütçe Analizi"
+          },
+          {
+            "kod": "bolum-5-kavramsal-tasarim-yaklasimi",
+            "ad": "Bölüm 5. Kavramsal Tasarım Yaklaşımı",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde yarışmacı takımların yarışma kapsamında kullanacağı tüm sistemler için kurguladıkları tasarım felsefesini ortaya koymaları beklenmektedir. Takımların, yarışma görevlerini yerine getirmek amacıyla seçtikleri konfigürasyonları, bu konfigürasyonların avantajlarını ve disiplinler arası etkileşimlerini mühendislik temellerine dayandırarak açıklamaları esastır. İnsansız Hava Aracı (İHA) platformunun operasyonel görevleri icra edebilmesi için öngörülen tasarım detayları paylaşılmalıdır. İnsansız Kara Aracı (İKA) platformunun yer operasyonlarındaki etkinliğini belirleyecek temel parametrelerin tasarımı ele alınmalıdır. İHA’nın güvenli ve tekrarlanabilir bir şekilde kalkışını sağlamak üzere tasarlanacak fırlatma/mancınık sistemine dair esaslar belirtilmelidir. Takımlardan, tasarım sürecinde karşılaştıkları teknik ikilemleri nasıl yönettiklerini ve nihai tasarım kararlarına nasıl ulaştıklarını gösteren analitik bir yaklaşım sunmaları beklenmektedir."
+            ],
+            "bolumAdi": "Bölüm 5. Kavramsal Tasarım Yaklaşımı"
+          },
+          {
+            "kod": "bolum-6-fayda-analizi-calismalari",
+            "ad": "Bölüm 6. Fayda Analizi Çalışmaları",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, tasarlanan sistemin yarışma görev senaryoları özelinde sunduğu operasyonel kazanımlar ve çözümün etkinliği analitik bir yaklaşımla ortaya konmalıdır. Tasarlanan İHA/İKA konfigürasyonlarının görevi yerine getirme süresi, enerji tüketimi ve doğruluk payı üzerindeki olası pozitif etkileri değerlendirilmelidir. Mevcut standart yaklaşımlara kıyasla sağlanabilecek iyileştirmeler vurgulanmalıdır. Projede kullanılacak bileşenlerin ve seçilecek yöntemlerin, hedeflenen performans çıktılarını en optimize maliyetle sağlama opsiyonları analiz edilmelidir. Yenilikçi çözümlerin, görev sırasında karşılaşılabilecek olası aksaklıkları (iletişim kaybı, çevresel engeller, donanımsal limitler) nasıl minimize edebileceği ve sistemin operasyonel güvenliğine nasıl katkı sağlayabileceği açıklanmalıdır. Bu bölüm kapsamında görevi gerçekleyecek tüm olası sistemler düşünülerek bir görev başarım matrisi oluşturulması beklenmektedir."
+            ],
+            "bolumAdi": "Bölüm 6. Fayda Analizi Çalışmaları"
+          },
+          {
+            "kod": "bolum-7-uretim-plani",
+            "ad": "Bölüm 7. Üretim Planı",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölüm; tasarlanan İHA/İKA sistemlerinin üretim süreçlerini, kullanılacak imalat teknolojilerini ve montaj stratejilerini kapsamaktadır. Sistemlerin üretiminde kullanılacak yöntemler seçilme gerekçeleriyle birlikte açıklanmalıdır. Yarışma kapsamında üretilecek platformlar için Seçilen malzemelerin mekanik özellikleri, ağırlık/dayanım dengesi ve projenin sınır şartlarına uygunluğu belirtilmelidir. Bunun yanı sıra sistemlerin montaj süreçleri, kullanılan birleştirme yöntemleri ve alt sistemlerin yapısal bütünlüğe nasıl entegre edileceğine dair bilgilendirme yapılmalıdır."
+            ],
+            "bolumAdi": "Bölüm 7. Üretim Planı"
+          },
+          {
+            "kod": "bolum-8-sistem-entegrasyonu-ve-test-plan",
+            "ad": "Bölüm 8. Sistem Entegrasyonu ve Test Planı",
+            "puan": 20,
+            "bolumBekleniyor": false,
+            "olcut": [
+              "Bu bölümde yarışmacı takımlardan; kavramsal tasarımların fiziksel bir platforma dönüştürülme süreçlerini, alt sistemlerin bütünleşik çalışma prensiplerini ve sistemin operasyonel yetkinliğini kanıtlayacak test ya da doğrulama ve geçerli kılma stratejilerini sunmaları beklenmektedir. Takımlar bu başlık altında ana sistemlerde ile alt sistemlerin bir araya getirilme süreçlerini detaylanmalıdır. Bunun yanı sıra sistemin görev gereksinimlerini karşıladığının teknik olarak ispatlanması amacıyla, takımların kendi öngördükleri test faaliyetlerini açıklamaları; yapılacak her bir test ve doğrulama faaliyeti için takımların kendi başarı kriterlerini tanımlamaları gerekmektedir."
+            ],
+            "bolumAdi": "Bölüm 8. Sistem Entegrasyonu ve Test Planı"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Sayfa sınırı kurallardan çıkarılamadı."
+      ],
+      "sartname": {
+        "dosyaAdi": "Ileri_Otonom_Sistemler_Tasarım_ve_Operasyon_Yarismasi_Sartname_TR_Ltktw.pdf",
+        "yuklendi": "2026-08-23T20:17:42.059Z",
+        "sayfaSayisi": 30,
+        "kelimeSayisi": 6262,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "Versiyon",
+              "tarih": "2026-03-02"
+            },
+            {
+              "etiket": "Teslim Tarihi",
+              "tarih": "2026-04-26"
+            },
+            {
+              "etiket": "Detay Değerlendirme Raporu (DDR) Son",
+              "tarih": "2026-05-04"
+            },
+            {
+              "etiket": "Final Değerlendirme Raporu (FDR) Son",
+              "tarih": "2026-07-29"
+            },
+            {
+              "etiket": "Hak Kazanan Takımların Açıklanması",
+              "tarih": "2026-10-04"
+            },
+            {
+              "etiket": "Son Teslim Tarihi",
+              "tarih": "2027-02-05"
+            },
+            {
+              "etiket": "Uçuşa Hazırlık Değerlendirme Raporu",
+              "tarih": "2027-02-19"
+            },
+            {
+              "etiket": "Uçuş Testleri",
+              "tarih": "2027-04-30"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 10
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/Ileri_Otonom_Sistemler_Tasar%C4%B1m_ve_Operasyon_Yarismasi_Sartname_TR_Ltktw.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "ileri-otonom-sistemler-tasarim-ve-operasyon-yarismasi"
+}

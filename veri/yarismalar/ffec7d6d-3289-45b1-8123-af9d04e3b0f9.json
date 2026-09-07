@@ -1,0 +1,301 @@
+{
+  "id": "ffec7d6d-3289-45b1-8123-af9d04e3b0f9",
+  "ad": "Kuantum Teknolojileri Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:54:39.975Z",
+  "kategoriler": [
+    {
+      "id": "b755cbed-aed9-4912-be91-7fd6238eb719",
+      "ad": "Donanım",
+      "sablonDosyasi": "2026-Kuantum_teknofest-On_Asama_Sablonu_C0RqB.docx",
+      "olusturuldu": "2026-08-23T13:54:39.975Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-b755cbed",
+        "ad": "Donanım",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "ŞEKİLLER",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Şekil tablosu öğesi bulunamadı."
+            ]
+          },
+          {
+            "ad": "TABLOLAR",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TANIMLAR",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, süperiletken kübit üretim sürecinin temel adımlarını içeren en fazla iki sayfa uzunluğunda doküman sunulacaktır.",
+              "Bu bölümde, seyreltili (dilusyon) soğutucu sisteminin çalışma mekanizmasını içeren en fazla iki sayfa uzunluğunda bir dokuman parçası sunulacaktır.",
+              "Bu bölümde, seyreltili soğutucu sistemde kübit ölçümleri için gerekli olan aktif ve pasif mikrodalga bileşen gereksinimlerini içeren en fazla iki sayfa uzunluğunda doküman sunulacaktır.",
+              "Bu bölümde, kübit kontrol/okuma elektroniğinin temel özelliklerini içeren en fazla iki sayfa uzunluğunda doküman sunulacaktır."
+            ]
+          }
+        ],
+        "azamiSayfa": 9
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "sekiller",
+            "ad": "ŞEKİLLER",
+            "puan": 34,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Şekil tablosu öğesi bulunamadı."
+            ],
+            "bolumAdi": "ŞEKİLLER"
+          },
+          {
+            "kod": "tablolar",
+            "ad": "TABLOLAR",
+            "puan": 33,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TABLOLAR"
+          },
+          {
+            "kod": "tanimlar",
+            "ad": "TANIMLAR",
+            "puan": 33,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, süperiletken kübit üretim sürecinin temel adımlarını içeren en fazla iki sayfa uzunluğunda doküman sunulacaktır.",
+              "Bu bölümde, seyreltili (dilusyon) soğutucu sisteminin çalışma mekanizmasını içeren en fazla iki sayfa uzunluğunda bir dokuman parçası sunulacaktır.",
+              "Bu bölümde, seyreltili soğutucu sistemde kübit ölçümleri için gerekli olan aktif ve pasif mikrodalga bileşen gereksinimlerini içeren en fazla iki sayfa uzunluğunda doküman sunulacaktır.",
+              "Bu bölümde, kübit kontrol/okuma elektroniğinin temel özelliklerini içeren en fazla iki sayfa uzunluğunda doküman sunulacaktır."
+            ],
+            "bolumAdi": "TANIMLAR"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 3 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_Kuantum_Teknolojileri_Yarısması_Donanım_Kategorisi_Sartnamesi_SQquS.pdf",
+        "yuklendi": "2026-08-23T20:13:02.375Z",
+        "sayfaSayisi": 16,
+        "kelimeSayisi": 2546,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk Versiyon",
+              "tarih": "2026-02-06"
+            },
+            {
+              "etiket": "Güncelleme",
+              "tarih": "2026-02-17"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-04-06"
+            },
+            {
+              "etiket": "Ön Aşama Rapor Teslimi",
+              "tarih": "2026-05-04"
+            },
+            {
+              "etiket": "Katılacak Takımların Açıklanması",
+              "tarih": "2026-05-18"
+            },
+            {
+              "etiket": "Eğitim ve İkinci Eleme Aşaması",
+              "tarih": "2026-07-08"
+            },
+            {
+              "etiket": "Sabah Kuantum Fiziği ve Kuantum Hesaplamanın Temelleri I",
+              "tarih": "2026-07-06"
+            },
+            {
+              "etiket": "Öğlen Kuantum Fiziği ve Kuantum Hesaplamanın Temelleri II",
+              "tarih": "2026-07-06"
+            },
+            {
+              "etiket": "Sabah Süper İletken İşlemciler",
+              "tarih": "2026-07-07"
+            },
+            {
+              "etiket": "Öğlen Mikrodalga Kontrol ve Okuma Teknikleri",
+              "tarih": "2026-07-07"
+            },
+            {
+              "etiket": "Sabah Süper İletken İşlemcilerle Demo",
+              "tarih": "2026-07-08"
+            },
+            {
+              "etiket": "Öğlen Kuantum Metroloji Laboratuvarı Gezisi",
+              "tarih": "2026-07-08"
+            },
+            {
+              "etiket": "TEKNOFEST Şanlıurfa Ödül Töreni",
+              "tarih": "2026-10-04"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Aksi durumda takım yarışmadan elenir."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiSayfa": 9,
+          "azamiUye": 5
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Kuantum_Teknolojileri_Yar%C4%B1smas%C4%B1_Donan%C4%B1m_Kategorisi_Sartnamesi_SQquS.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "kuantum-teknolojileri-yarismasi"
+}

@@ -1,0 +1,799 @@
+{
+  "id": "0108ef41-c4b0-4518-9978-776f76acfe6a",
+  "ad": "FPV Drone İzleme (Tracking) Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:53:48.433Z",
+  "kategoriler": [
+    {
+      "id": "e911c7ac-55b5-432a-97b5-9c9815ffb3c4",
+      "ad": "Kritik",
+      "sablonDosyasi": "2026.01.13-FPV_DRON_TAKIP_YARISMASI-KRITIK_TASARIM_RAPORU_SABLONU_003_1_n.docx",
+      "asama": "KTR",
+      "olusturuldu": "2026-08-23T13:53:48.188Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-e911c7ac",
+        "ad": "Kritik",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 30,
+        "basliklar": [
+          {
+            "ad": "TABLOLAR",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ŞEKİLLER",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Şekil tablosu öğesi bulunamadı."
+            ]
+          },
+          {
+            "ad": "1. TANIMLAR VE KISALTMALAR",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu kısımda rapor içindeki yabancı kelimeleri ve kullanılan kısaltmalar bu kısımda belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "2. PROJE ÖZETİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu kısımda proje kapsamında yürütülen faaliyetlerle ilgili olarak özet bilgi sunulur."
+            ]
+          },
+          {
+            "ad": "3. ORGANİZASYON ÖZETİ (Toplam 5 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "3.1. Takım Organizasyonu",
+            "zorunlu": true,
+            "puan": 2,
+            "yonergeMetni": [
+              "Bu kısımda görev isterlerine uygun ekip olduğu tablo olarak gösterilmeli, planlama ihtiyaçları karşılayan nitelikte, farklı disiplinlerde üyeler olmalıdır."
+            ]
+          },
+          {
+            "ad": "3.2. Zaman Akış Çizelgesi ve Bütçe ve Risk Planlaması",
+            "zorunlu": true,
+            "puan": 3,
+            "yonergeMetni": [
+              "Bu kısımda sistemin kritik tasarım, üretim ve test süreçlerini içeren bir zaman planlaması bu planlama içerisinde ön tasarımda planlanan ve uyulan diye paketlerin belirtilmesi beklenmektedir, nihai bütçe planlaması ve risk planlaması yapılır. Ön tasarımda planlanan bütçe ve son bütçe arasında karşılaştırma yapılır."
+            ]
+          },
+          {
+            "ad": "4. PROJE MEVCUT DURUM DEĞERLENDİRMESİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu kısımda Ön Tasarım Raporunun değerlendirmesi yapılır. Varsa ön tasarımdan sonra yapılan değişiklikler ve değişikliklerin neden yapıldığı açıklanır."
+            ]
+          },
+          {
+            "ad": "5. PROJE TASARIMI (Toplam 60 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "5.1. Mekanik Tasarım",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Sistemin boyutları, ağırlığı, moment tablosu, aerodinamik yapısı, stres testleri, dengesi ve taşıma hesaplamaları, yapısal özellikleri ve neden seçildikleri gibi fiziksel özellikleri detaylı (karşılaştırma yöntemine başvurularak) şekilde belirtilir."
+            ]
+          },
+          {
+            "ad": "5.1.1. Malzemeler",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Sistemin üretiminde kullanılan malzemeler, malzemelerin özellikleri ve neden seçildiği/değiştirildiği açıklanır. Hazır alınan ve/veya geliştirilen/tasarlanan alt bileşenler belirtilir. Malzeme seçimleri analizler ile karşılaştırılabilir. Ek olarak kullanılan tüm malzemelerin yerleşim planı görsel olarak verilmelidir."
+            ]
+          },
+          {
+            "ad": "5.1.2. 3D Tasarım ve Teknik Resim",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Tasarlanan aracın detaylı teknik resmi ve sol üst çaprazdan alınmış detaylı yerleştirilmiş bir render görseli bu başlıkta verilmelidir."
+            ]
+          },
+          {
+            "ad": "5.2. Elektronik Tasarım",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "Bu kısımda sistemin elektronik tasarım süreçleri anlatılır. Final tasarımın neden seçildiği açıklanır. Sistemin son tasarımına getirilene kadar yapılmış olan tasarımlara ait görsellere (Blok şema, teknik resim, prototip fotoğrafları vb.) yer verilir. Kullanılan malzemeler (Sensörler, kameralar, kablolar, anakart, motor sürücüler, güç kartları, haberleşme modülleri vb.) hakkında bilgi verilir ve neden seçildiği veya nasıl tasarlandığı açıklanır. Malzemelerin özellikleri ve neden seçildiği açıklanır. Bu kısımda sadece internetten elde edilmiş bileşen bilgileri değil araca ait yapıdan söz edilmelidir. Her bir bileşenin detayının internetten kopyala-yapıştır olarak sunulmasına gerek yoktur.",
+              "5.3. Algoritma ve Yazılım Tasarım"
+            ]
+          },
+          {
+            "ad": "5.3.1. Görüntü İşleme ve Takip Algoritmaları",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": [
+              "Bu kısımda sistemin görüntü işleme ve takip algoritmalarının uygulama yöntemleri, Görevi gerçekleştirme (kitlenme, takip, takip mesafesi koruma, kaybolan hedefi arama) süreçleri detaylıca akış diyagramı destekli bir şekilde anlatılır. Tüm bu yazılımların hangi programlama dillerinde programlanacağı ve bunların seçilme nedenleri belirtilir. İşlenen görüntünün hangi işlemlerden geçtiği ve uçuş kontrol kartına iletilecek nihai çıktının formatı, bu formatın iletim protokolü paket yapısı şeklinde açıklanır. Yapılan yazılımın test edilme aşamasından birkaç ekran görüntüsü bu başlığa eklenir."
+            ]
+          },
+          {
+            "ad": "5.3.2. Uçuş Kontrol Yazılımı",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu kısımda sistemin uçuş kontrolünün nasıl gerçekleştirildiğini detaylı şekilde anlatıldığı bölümdür. Hazır kontrol yazılımı kullanılıyorsa hangi yazılımın neden seçildiği, ayarların ve konfigürasyonların nasıl ve neden yapıldığı. PID ve diğer kontrol parametrelerini neye",
+              "göre belirlendiği. Görüntü işleyen yazılım ile nasıl ve ne formatta haberleştiği gibi bütün aracı kontrol eden sistemin yazılımı detaylı bir şekilde anlatılır."
+            ]
+          },
+          {
+            "ad": "6. TEST",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu kısımda sisteme (uygulandıysa) uygulanan test senaryoları ve sonuçları hakkında bilgi verilir. Yapılan testlerin sonuçları ile yapılan tasarımın ne kadar uyumlu olduğu karşılaştırılır. Test yapamayan takımlar burada ilerleyen zamanlarda yapılacak testler hakkında bilgi verebilir. Test ekipmanları ve planlanan süreçlerinizi burada belirtebilirsiniz."
+            ]
+          },
+          {
+            "ad": "7. GÜVENLİK",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu kısımda yarışma şartnamesinde belirtilen güvenlik ihtiyaçlarının karşılanması için alınan önlemler ve çözüm yöntemleri açıklanır. Seçilen malzeme, kullanılan donanım, yazılım belirtilebilir. Ek olarak şartnamede belirtilen yöntemin nasıl sağlandığında anlatılmalıdır."
+            ]
+          },
+          {
+            "ad": "8. TECRÜBE",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu kısım sistemin tasarım, üretim ve test aşamalarında karşılaşılan problemler, yaşanan kazalar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir."
+            ]
+          },
+          {
+            "ad": "9. KAYNAKÇA",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Rapor yazımında sayfa sınırlarına, akademik yazım kurallarına, kaynakça ve içindekiler yazımlarına dikkat edilmiş olmalıdır.",
+              "Kaynakça başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web Sitesi Adresi, Kitap Adı, Sayfa Numarası vb.)"
+            ]
+          },
+          {
+            "ad": "10. EKLER",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu kısımda varsa doküman içerisinde ek olarak belirtilen dokümanlar eklenebilir."
+            ]
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [
+          "Açıklama, Kapak, İçindekiler ve Görsel (Teknik Resim vs.) olmak üzere en fazla 30 sayfa olacaktır. 30 sayfayı geçen raporlar değerlendirmeye alınmayacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak” ve “İçindekiler” olacak şekilde iki ayrı sayfa içermelidir.",
+          "Yazı Tipi: Arial, Punto: 12, Satır Aralıkları: 1,15 , İki tarafa yaslı, Sayfa kenar boşlukları üst-alt-sağ-sol 2,5 cm olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynı ve tekrarı niteliğinde olmamalıdır.",
+          "Raporunda, web sitemizde yer alan geçmiş yıl raporlarından yararlanmış olan takımlar alıntı yaptığını ilgili sayfada belirtmesi gerekmektedir. Açıklamayı alıntı yapılan cümlenin ardından belirtmeniz gerekmektedir.",
+          "ALINTI FORMATI: \"Alıntı yapılan Cümle/ler\" (Yıl, Yarışma Adı, Kategori, Takım Adı)",
+          "ÖRNEK ALINTI: \"Enkazda depremzedenin nerede olduğunu tespit edilememesi, enkaz",
+          "kaldırma ve deprem-zede arama çalışmalarını yavaşlatan en önemli sorundur.\" (2020,",
+          "İnsanlık Yararına Teknoloji Yarışması, Afet Yönetimi, X Takımı)",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir.",
+          "Dijital Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Basılı Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası.",
+          "Rapor şablonuna uymayan Kritik Tasarım Raporları değerlendirilmeyecektir."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 30,
+        "yaziTipi": "Arial",
+        "govdePunto": 12
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "2-proje-ozeti",
+            "ad": "2. PROJE ÖZETİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda proje kapsamında yürütülen faaliyetlerle ilgili olarak özet bilgi sunulur."
+            ],
+            "bolumAdi": "2. PROJE ÖZETİ"
+          },
+          {
+            "kod": "3-1-takim-organizasyonu",
+            "ad": "3.1. Takım Organizasyonu",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda görev isterlerine uygun ekip olduğu tablo olarak gösterilmeli, planlama ihtiyaçları karşılayan nitelikte, farklı disiplinlerde üyeler olmalıdır."
+            ],
+            "bolumAdi": "3.1. Takım Organizasyonu"
+          },
+          {
+            "kod": "3-2-zaman-akis-cizelgesi-ve-butce-ve-ris",
+            "ad": "3.2. Zaman Akış Çizelgesi ve Bütçe ve Risk Planlaması",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda sistemin kritik tasarım, üretim ve test süreçlerini içeren bir zaman planlaması bu planlama içerisinde ön tasarımda planlanan ve uyulan diye paketlerin belirtilmesi beklenmektedir, nihai bütçe planlaması ve risk planlaması yapılır. Ön tasarımda planlanan bütçe ve son bütçe arasında karşılaştırma yapılır."
+            ],
+            "bolumAdi": "3.2. Zaman Akış Çizelgesi ve Bütçe ve Risk Planlaması"
+          },
+          {
+            "kod": "4-proje-mevcut-durum-degerlendirmesi",
+            "ad": "4. PROJE MEVCUT DURUM DEĞERLENDİRMESİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda Ön Tasarım Raporunun değerlendirmesi yapılır. Varsa ön tasarımdan sonra yapılan değişiklikler ve değişikliklerin neden yapıldığı açıklanır."
+            ],
+            "bolumAdi": "4. PROJE MEVCUT DURUM DEĞERLENDİRMESİ"
+          },
+          {
+            "kod": "5-1-mekanik-tasarim",
+            "ad": "5.1. Mekanik Tasarım",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Sistemin boyutları, ağırlığı, moment tablosu, aerodinamik yapısı, stres testleri, dengesi ve taşıma hesaplamaları, yapısal özellikleri ve neden seçildikleri gibi fiziksel özellikleri detaylı (karşılaştırma yöntemine başvurularak) şekilde belirtilir."
+            ],
+            "bolumAdi": "5.1. Mekanik Tasarım"
+          },
+          {
+            "kod": "5-1-1-malzemeler",
+            "ad": "5.1.1. Malzemeler",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Sistemin üretiminde kullanılan malzemeler, malzemelerin özellikleri ve neden seçildiği/değiştirildiği açıklanır. Hazır alınan ve/veya geliştirilen/tasarlanan alt bileşenler belirtilir. Malzeme seçimleri analizler ile karşılaştırılabilir. Ek olarak kullanılan tüm malzemelerin yerleşim planı görsel olarak verilmelidir."
+            ],
+            "bolumAdi": "5.1.1. Malzemeler"
+          },
+          {
+            "kod": "5-1-2-3d-tasarim-ve-teknik-resim",
+            "ad": "5.1.2. 3D Tasarım ve Teknik Resim",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Tasarlanan aracın detaylı teknik resmi ve sol üst çaprazdan alınmış detaylı yerleştirilmiş bir render görseli bu başlıkta verilmelidir."
+            ],
+            "bolumAdi": "5.1.2. 3D Tasarım ve Teknik Resim"
+          },
+          {
+            "kod": "5-2-elektronik-tasarim",
+            "ad": "5.2. Elektronik Tasarım",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda sistemin elektronik tasarım süreçleri anlatılır. Final tasarımın neden seçildiği açıklanır. Sistemin son tasarımına getirilene kadar yapılmış olan tasarımlara ait görsellere (Blok şema, teknik resim, prototip fotoğrafları vb.) yer verilir. Kullanılan malzemeler (Sensörler, kameralar, kablolar, anakart, motor sürücüler, güç kartları, haberleşme modülleri vb.) hakkında bilgi verilir ve neden seçildiği veya nasıl tasarlandığı açıklanır. Malzemelerin özellikleri ve neden seçildiği açıklanır. Bu kısımda sadece internetten elde edilmiş bileşen bilgileri değil araca ait yapıdan söz edilmelidir. Her bir bileşenin detayının internetten kopyala-yapıştır olarak sunulmasına gerek yoktur.",
+              "5.3. Algoritma ve Yazılım Tasarım"
+            ],
+            "bolumAdi": "5.2. Elektronik Tasarım"
+          },
+          {
+            "kod": "5-3-1-goruntu-isleme-ve-takip-algoritmal",
+            "ad": "5.3.1. Görüntü İşleme ve Takip Algoritmaları",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda sistemin görüntü işleme ve takip algoritmalarının uygulama yöntemleri, Görevi gerçekleştirme (kitlenme, takip, takip mesafesi koruma, kaybolan hedefi arama) süreçleri detaylıca akış diyagramı destekli bir şekilde anlatılır. Tüm bu yazılımların hangi programlama dillerinde programlanacağı ve bunların seçilme nedenleri belirtilir. İşlenen görüntünün hangi işlemlerden geçtiği ve uçuş kontrol kartına iletilecek nihai çıktının formatı, bu formatın iletim protokolü paket yapısı şeklinde açıklanır. Yapılan yazılımın test edilme aşamasından birkaç ekran görüntüsü bu başlığa eklenir."
+            ],
+            "bolumAdi": "5.3.1. Görüntü İşleme ve Takip Algoritmaları"
+          },
+          {
+            "kod": "5-3-2-ucus-kontrol-yazilimi",
+            "ad": "5.3.2. Uçuş Kontrol Yazılımı",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda sistemin uçuş kontrolünün nasıl gerçekleştirildiğini detaylı şekilde anlatıldığı bölümdür. Hazır kontrol yazılımı kullanılıyorsa hangi yazılımın neden seçildiği, ayarların ve konfigürasyonların nasıl ve neden yapıldığı. PID ve diğer kontrol parametrelerini neye",
+              "göre belirlendiği. Görüntü işleyen yazılım ile nasıl ve ne formatta haberleştiği gibi bütün aracı kontrol eden sistemin yazılımı detaylı bir şekilde anlatılır."
+            ],
+            "bolumAdi": "5.3.2. Uçuş Kontrol Yazılımı"
+          },
+          {
+            "kod": "6-test",
+            "ad": "6. TEST",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda sisteme (uygulandıysa) uygulanan test senaryoları ve sonuçları hakkında bilgi verilir. Yapılan testlerin sonuçları ile yapılan tasarımın ne kadar uyumlu olduğu karşılaştırılır. Test yapamayan takımlar burada ilerleyen zamanlarda yapılacak testler hakkında bilgi verebilir. Test ekipmanları ve planlanan süreçlerinizi burada belirtebilirsiniz."
+            ],
+            "bolumAdi": "6. TEST"
+          },
+          {
+            "kod": "7-guvenlik",
+            "ad": "7. GÜVENLİK",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda yarışma şartnamesinde belirtilen güvenlik ihtiyaçlarının karşılanması için alınan önlemler ve çözüm yöntemleri açıklanır. Seçilen malzeme, kullanılan donanım, yazılım belirtilebilir. Ek olarak şartnamede belirtilen yöntemin nasıl sağlandığında anlatılmalıdır."
+            ],
+            "bolumAdi": "7. GÜVENLİK"
+          },
+          {
+            "kod": "8-tecrube",
+            "ad": "8. TECRÜBE",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısım sistemin tasarım, üretim ve test aşamalarında karşılaşılan problemler, yaşanan kazalar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir."
+            ],
+            "bolumAdi": "8. TECRÜBE"
+          },
+          {
+            "kod": "9-kaynakca",
+            "ad": "9. KAYNAKÇA",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Rapor yazımında sayfa sınırlarına, akademik yazım kurallarına, kaynakça ve içindekiler yazımlarına dikkat edilmiş olmalıdır.",
+              "Kaynakça başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web Sitesi Adresi, Kitap Adı, Sayfa Numarası vb.)"
+            ],
+            "bolumAdi": "9. KAYNAKÇA"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [],
+      "sartname": {
+        "dosyaAdi": "TEKNOFEST_2026_TEKNIK_SARTNAMESI_FPV_DRONE_İZLEME_YARISMASI_son_versiyon_8.pdf",
+        "yuklendi": "2026-08-23T20:12:31.674Z",
+        "sayfaSayisi": 15,
+        "kelimeSayisi": 2877,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk Versiyon",
+              "tarih": "2026-02-23"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-03-18"
+            },
+            {
+              "etiket": "Puanlama Kriteri",
+              "tarih": "2026-05-21"
+            }
+          ],
+          "asamalar": [
+            "Yarışma Takvimi",
+            "Ön Tasarım Raporu",
+            "Kritik Tasarım Raporu",
+            "Metot Tanıtım ve Uçuş Kanıt Videosu",
+            "Yarışma Puanlaması",
+            "Rapor ve Video Puanlaması (%25)",
+            "Görev Puanlaması (%75)",
+            "Toplam Puan"
+          ],
+          "eleyiciHukumler": [
+            "Birden fazla danışman bulunan takımların başvuruları geçersiz sayılacaktır."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 10
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST_2026_TEKNIK_SARTNAMESI_FPV_DRONE_%C4%B0ZLEME_YARISMASI_son_versiyon_8.pdf",
+        "teknikMi": true
+      }
+    },
+    {
+      "id": "6952a49e-eb13-4d97-8592-e3274299ba22",
+      "ad": "FPV Drone İzleme (Tracking) Yarışması · ÖTR",
+      "sablonDosyasi": "FPV_DRONE_İZLEME_YARISMASI-ON_TASARIM_RAPORU_SABLONU_yQKqW.docx",
+      "asama": "ÖTR",
+      "olusturuldu": "2026-08-23T13:53:48.433Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-6952a49e",
+        "ad": "FPV Drone İzleme (Tracking) Yarışması · ÖTR",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 10,
+        "basliklar": [
+          {
+            "ad": "TABLOLAR",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ŞEKİLLER",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Şekil tablosu öğesi bulunamadı."
+            ]
+          },
+          {
+            "ad": "1. TANIMLAR VE KISALTMALAR",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu kısımda rapor içindeki yabancı kelimeleri ve kullanılan kısaltmalar bu kısımda belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "2. PROJE ÖZETİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu kısımda proje kapsamında yürütülen faaliyetlerle ilgili olarak özet bilgi sunulur."
+            ]
+          },
+          {
+            "ad": "3. ORGANİZASYON ÖZETİ (Toplam 5 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "3.1. Takım Organizasyonu",
+            "zorunlu": true,
+            "puan": 2,
+            "yonergeMetni": [
+              "Bu kısımda görev isterlerine uygun ekip olduğu tablo olarak gösterilmeli, planlama ihtiyaçları karşılayan nitelikte, farklı disiplinlerde üyeler olmalıdır."
+            ]
+          },
+          {
+            "ad": "3.2. Zaman Akış Çizelgesi ve Bütçe",
+            "zorunlu": true,
+            "puan": 3,
+            "yonergeMetni": [
+              "Bu kısımda sistemin tahmini üretim ve test süreçlerini içeren bir zaman planlaması, tahmini bütçe planlaması yapılır. Bu planlamalarda izlenecek yöntemin açıklanması beklenmektedir (Proje Takip Aracı seçimi/kullanımı)."
+            ]
+          },
+          {
+            "ad": "4. PROJE ÖN TASARIMI (Toplam 60 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "4.1. Elektronik Tasarım",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "Bu kısımda sistemde yer alacak donanım seviyesindeki alt bileşenler şematik üzerinde tanımlanacaktır. Bu tanımlama yapılırken bu alt bileşene ne için ihtiyaç duyulduğu, bu bileşenin özellikleri, seçiminde dikkat edilecek gereksinimler anlatılacaktır. Bu bileşenlerin varsa marka/tip bilgileri neden hazır kullanıldığı gerekçelendirilerek verilecektir."
+            ]
+          },
+          {
+            "ad": "4.2. Yazılım Tasarım",
+            "zorunlu": true,
+            "puan": 25,
+            "yonergeMetni": [
+              "Bu kısımda sistemde yer alacak yazılım bileşenleri tanımlanacaktır. Sistem kurgusunda yer alması gereken yazılımlar, birbirleri ile ara yüzleri anlatılacaktır. Bu yazılımlarda olması gereken temel gereksinimler belirtilecektir. Kod paylaşılmayacaktır, hazır mimarilerin tanıtılmasına ve detay bilgi paylaşılmasına gerek yoktur."
+            ]
+          },
+          {
+            "ad": "4.3. Mekanik Tasarım",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": [
+              "Bu kısımda tasarlanacak hava aracının tüm mekanik bileşenleri, tipi, malzemesi, üretim yöntemi vs. gerekçeleri ile anlatılacaktır. Tasarımın göreve uygunluğu için olması gereken temek gereksinimlerin karşılandığı belirtilecektir. Aracın ön tasarım görseli ve temel hesaplamalar bu kısımda verilmelidir. Hazır gövde kullanan takımlar ürün üzerinde testleri ve hesaplamaları ayrıca bu gövdenin kendi araçları için modellenmiş halini anlatmaları gerekmektedir."
+            ]
+          },
+          {
+            "ad": "5. YÖNTEM",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "Bu kısımda uygulayacağınız yöntemin probleminiz için en etkili ve verimli yöntem olduğuna nasıl karar verdiniz sorusunun cevabını içermelidir (sistemin görevleri yapabilmesi için planlamadan kısaca bahsedilir).",
+              "Aşamalardaki görevleri yerine getirirken sistemlerin çalışma kurguları için akış diyagramı (Kullanım Durumu Diyagramı) ile anlatılmalıdır."
+            ]
+          },
+          {
+            "ad": "6. KAYNAKÇA",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Rapor yazımında sayfa sınırlarına, akademik yazım kurallarına, kaynakça ve içindekiler yazımlarına dikkat edilmiş olmalıdır.",
+              "Kaynakça başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web Sitesi Adresi, Kitap Adı, Sayfa Numarası vb.)"
+            ]
+          },
+          {
+            "ad": "7. EKLER",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu kısımda varsa doküman içerisinde ek olarak belirtilen dokümanlar eklenebilir."
+            ]
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Ön Tasarım Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en az 3 en fazla 10 sayfa olacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak ve İçindekiler” başlıkları için 2 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst 2.8 alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynısı ve tekrarı niteliğinde olmamalıdır.",
+          "Raporda, Teknofest web sitesinde yer alan diğer yarışmaların geçmiş yıl raporlarından yararlanan takımlar alıntı yaptığını ilgili sayfada belirtmesi gerekmektedir. Açıklamanın alıntı yapılan cümlenin ardından belirtilmesi gerekmektedir.",
+          "ALINTI FORMATI: \"Alıntı yapılan Cümle/ler\" (Yıl, Yarışma Adı, Kategori, Takım Adı)",
+          "ÖRNEK ALINTI: \"Enkazda depremzedenin nerede olduğunun tespit edilememesi, enkaz kaldırma ve depremzede arama çalışmalarını yavaşlatan en önemli sorundur.\" (2020, İnsanlık Yararına Teknoloji Yarışması, Afet Yönetimi, X Takımı)",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir.",
+          "Dijital Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Basılı Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası.",
+          "Rapor şablonuna uymayan Ön Tasarım Raporları değerlendirilmeyecektir."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 10,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "2-proje-ozeti",
+            "ad": "2. PROJE ÖZETİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda proje kapsamında yürütülen faaliyetlerle ilgili olarak özet bilgi sunulur."
+            ],
+            "bolumAdi": "2. PROJE ÖZETİ"
+          },
+          {
+            "kod": "3-1-takim-organizasyonu",
+            "ad": "3.1. Takım Organizasyonu",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda görev isterlerine uygun ekip olduğu tablo olarak gösterilmeli, planlama ihtiyaçları karşılayan nitelikte, farklı disiplinlerde üyeler olmalıdır."
+            ],
+            "bolumAdi": "3.1. Takım Organizasyonu"
+          },
+          {
+            "kod": "3-2-zaman-akis-cizelgesi-ve-butce",
+            "ad": "3.2. Zaman Akış Çizelgesi ve Bütçe",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda sistemin tahmini üretim ve test süreçlerini içeren bir zaman planlaması, tahmini bütçe planlaması yapılır. Bu planlamalarda izlenecek yöntemin açıklanması beklenmektedir (Proje Takip Aracı seçimi/kullanımı)."
+            ],
+            "bolumAdi": "3.2. Zaman Akış Çizelgesi ve Bütçe"
+          },
+          {
+            "kod": "4-1-elektronik-tasarim",
+            "ad": "4.1. Elektronik Tasarım",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda sistemde yer alacak donanım seviyesindeki alt bileşenler şematik üzerinde tanımlanacaktır. Bu tanımlama yapılırken bu alt bileşene ne için ihtiyaç duyulduğu, bu bileşenin özellikleri, seçiminde dikkat edilecek gereksinimler anlatılacaktır. Bu bileşenlerin varsa marka/tip bilgileri neden hazır kullanıldığı gerekçelendirilerek verilecektir."
+            ],
+            "bolumAdi": "4.1. Elektronik Tasarım"
+          },
+          {
+            "kod": "4-2-yazilim-tasarim",
+            "ad": "4.2. Yazılım Tasarım",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda sistemde yer alacak yazılım bileşenleri tanımlanacaktır. Sistem kurgusunda yer alması gereken yazılımlar, birbirleri ile ara yüzleri anlatılacaktır. Bu yazılımlarda olması gereken temel gereksinimler belirtilecektir. Kod paylaşılmayacaktır, hazır mimarilerin tanıtılmasına ve detay bilgi paylaşılmasına gerek yoktur."
+            ],
+            "bolumAdi": "4.2. Yazılım Tasarım"
+          },
+          {
+            "kod": "4-3-mekanik-tasarim",
+            "ad": "4.3. Mekanik Tasarım",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda tasarlanacak hava aracının tüm mekanik bileşenleri, tipi, malzemesi, üretim yöntemi vs. gerekçeleri ile anlatılacaktır. Tasarımın göreve uygunluğu için olması gereken temek gereksinimlerin karşılandığı belirtilecektir. Aracın ön tasarım görseli ve temel hesaplamalar bu kısımda verilmelidir. Hazır gövde kullanan takımlar ürün üzerinde testleri ve hesaplamaları ayrıca bu gövdenin kendi araçları için modellenmiş halini anlatmaları gerekmektedir."
+            ],
+            "bolumAdi": "4.3. Mekanik Tasarım"
+          },
+          {
+            "kod": "5-yontem",
+            "ad": "5. YÖNTEM",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda uygulayacağınız yöntemin probleminiz için en etkili ve verimli yöntem olduğuna nasıl karar verdiniz sorusunun cevabını içermelidir (sistemin görevleri yapabilmesi için planlamadan kısaca bahsedilir).",
+              "Aşamalardaki görevleri yerine getirirken sistemlerin çalışma kurguları için akış diyagramı (Kullanım Durumu Diyagramı) ile anlatılmalıdır."
+            ],
+            "bolumAdi": "5. YÖNTEM"
+          },
+          {
+            "kod": "6-kaynakca",
+            "ad": "6. KAYNAKÇA",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Rapor yazımında sayfa sınırlarına, akademik yazım kurallarına, kaynakça ve içindekiler yazımlarına dikkat edilmiş olmalıdır.",
+              "Kaynakça başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web Sitesi Adresi, Kitap Adı, Sayfa Numarası vb.)"
+            ],
+            "bolumAdi": "6. KAYNAKÇA"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [],
+      "sartname": {
+        "dosyaAdi": "TEKNOFEST_2026_TEKNIK_SARTNAMESI_FPV_DRONE_İZLEME_YARISMASI_son_versiyon_8.pdf",
+        "yuklendi": "2026-08-23T20:12:33.934Z",
+        "sayfaSayisi": 15,
+        "kelimeSayisi": 2877,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk Versiyon",
+              "tarih": "2026-02-23"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-03-18"
+            },
+            {
+              "etiket": "Puanlama Kriteri",
+              "tarih": "2026-05-21"
+            }
+          ],
+          "asamalar": [
+            "Yarışma Takvimi",
+            "Ön Tasarım Raporu",
+            "Kritik Tasarım Raporu",
+            "Metot Tanıtım ve Uçuş Kanıt Videosu",
+            "Yarışma Puanlaması",
+            "Rapor ve Video Puanlaması (%25)",
+            "Görev Puanlaması (%75)",
+            "Toplam Puan"
+          ],
+          "eleyiciHukumler": [
+            "Birden fazla danışman bulunan takımların başvuruları geçersiz sayılacaktır."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 10
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/TEKNOFEST_2026_TEKNIK_SARTNAMESI_FPV_DRONE_%C4%B0ZLEME_YARISMASI_son_versiyon_8.pdf",
+        "teknikMi": true
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "fpv-drone-izleme-tracking-yarismasi"
+}

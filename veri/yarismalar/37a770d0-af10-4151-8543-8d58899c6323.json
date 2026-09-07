@@ -1,0 +1,1726 @@
+{
+  "id": "37a770d0-af10-4151-8543-8d58899c6323",
+  "ad": "Sağlıkta Yapay Zeka Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:57:48.650Z",
+  "kategoriler": [
+    {
+      "id": "10b8e2b0-136e-44a3-a31c-72211bd7bc74",
+      "ad": "Lise · PDR",
+      "sablonDosyasi": "2026_PDR_Şablon-Lise_v2_9eX0z.docx",
+      "asama": "PDR",
+      "olusturuldu": "2026-08-23T13:57:46.999Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-10b8e2b0",
+        "ad": "Lise · PDR",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 10,
+        "basliklar": [
+          {
+            "ad": "TAKIM ŞEMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu bölümde takımın organizasyonu ve iş bölümü, kişisel bilgi paylaşmadan net biçimde açıklanmalıdır. Hangi üyenin hangi teknik sorumluluğu üstlendiği (veri analizi, özellik işleme, modelleme, deney tasarımı, yazılım/MLops, raporlama vb.) ve ekip içi karar alma/kalite kontrol mekanizması (kod inceleme, deney kayıt standardı, sürümleme yaklaşımı) kısa ama somut ifadelerle yazılmalıdır. Takımın bu görevin gerektirdiği biyoinformatik, istatistik/ML ve yazılım geliştirme bileşenlerini nasıl karşıladığı görülür olmalıdır.}"
+            ]
+          },
+          {
+            "ad": "PROBLEME EN YAKIN ÇÖZÜM SUNAN ULUSLARARASI MAKALELERİN ÖZETİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "{Bu bölümde yarışmacılar, 12 derivasyonlu EKG’den Ritim Bozuklukları / İletim Bozuklukları / Normal üst sınıflarını ayırt etmeye en yakın 5–10 uluslararası çalışmayı seçip kısa biçimde özetlemelidir. Her çalışma için “ne yaptılar?”ı anlatmanın yanında, kendi çözümlerine bağ kuracak şekilde şu başlıklar kısaca yer almalıdır: çalışmanın hedefi (benzer sınıflandırma problemi), kullanılan veri türü/ölçeği (12-lead, kayıt sayısı gibi), yöntem türü (ör. CNN/RNN/Transformer veya zaman-frekans temsili + sınıflandırma), raporlanan temel metrikler (özellikle macro F1 ve/veya AUC) ve en az bir güçlü yön ile bir sınırlılık (ör. veri dengesizliği, gürültü, genelleme, açıklanabilirlik). Paragrafın sonunda yarışmacılar, bu literatürden kendi yaklaşımlarına yansıttıkları 2–3 tasarım kararını (ör. pencereleme stratejisi, ön işleme, dengesizlik yönetimi, açıklanabilirlik) “hangi tür bulgu nedeniyle” seçtiklerini 1–2 cümle ile belirtmeli ve kullandıkları kaynakları IEEE formatında referanslamalıdır.}"
+            ]
+          },
+          {
+            "ad": "VERİ VE YÖNTEM",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "{Bu bölümde yarışmacılar, model eğitiminde kullandıkları veri setlerini, veri hazırlama sürecini ve geliştirdikleri yöntemi açıklamalıdır. İkinci aşamada yarışmacılara sağlanan veri seti; AFIB, AFL, LBBB, RBBB ve Normal sınıflarını içeren 12 derivasyonlu EKG kayıtlarından oluşmaktadır. Yarışmacılar bu veri setini temel almalı; isterlerse ek olarak açık erişimli veri setlerini de kullanabilirler. Ek veri kullanılması durumunda veri kaynağı, kapsamı ve yarışma veri setiyle uyumu açıkça belirtilmelidir.",
+              "Bu bölümde ayrıca kullanılan algoritmalar, model mimarisi, ön işleme adımları, eğitim stratejisi ve bu tercihlerin gerekçeleri açıklanmalıdır.}"
+            ]
+          },
+          {
+            "ad": "3.1 Kullanılan Veri Seti ve Etiketler",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "{Bu bölümde yarışmacılar, yarışma kapsamında sağlanan veri setini ve varsa ek olarak kullandıkları açık veri setlerini tanıtmalıdır. Veri setlerinin kaynağı, toplam kayıt sayısı, sınıf dağılımı, örnekleme frekansı, dosya formatı ve kullanılan etiketler açıkça belirtilmelidir.",
+              "Problem tanımı ikinci aşamaya uygun biçimde ifade edilmeli; her EKG kaydı için AFIB, AFL, LBBB, RBBB veya Normal sınıflarından birine ait tahmin üretildiği netleştirilmelidir. Ek veri seti kullanılmışsa, bu verinin hangi amaçla kullanıldığı ve sınıf etiketleriyle nasıl eşleştirildiği kısaca açıklanmalıdır.}"
+            ]
+          },
+          {
+            "ad": "3.2 Etiket Güvenilirliği ve Veri Kalitesi Kontrolü",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "{Yarışmacılar, kullandıkları verilerde etiket güvenilirliği ve sinyal kalitesine yönelik yaptıkları kontrolleri özetlemelidir. Amaç klinik yeniden etiketleme yapmak değil; eksik kayıt, hatalı dosya, aşırı gürültü, kayıt süresi tutarsızlığı veya etiket–sinyal uyumsuzluğu gibi sorunlara karşı izlenen yaklaşımı açıklamaktır.",
+              "Varsa elenen, düzeltilen veya işaretlenen kayıt sayıları kısa biçimde belirtilmelidir. Ek veri seti kullanılmışsa, bu veri için yapılan kalite kontrolleri ayrıca açıklanmalıdır.}"
+            ]
+          },
+          {
+            "ad": "3.3 Veri Dengesizliği Nasıl Ele Alındı",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "{Bu bölümde her sınıfa ait kayıt sayıları raporlanmalı ve sınıf dengesizliğinin model başarısına etkisi kısaca tartışılmalıdır. Yarışmacılar, dengesizliği yönetmek için kullandıkları yöntemleri gerekçeleriyle açıklamalıdır.",
+              "Değerlendirmenin yalnızca genel doğruluk üzerinden değil, sınıflar arası performansı dikkate alan metriklerle yapılmasının önemi belirtilmelidir. Özellikle az örnekli sınıflarda modelin başarısını göstermek için sınıf bazlı sonuçların raporlanması beklenmektedir.}"
+            ]
+          },
+          {
+            "ad": "3.4 Veri Bölme ve Deney Protokolü",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "{Yarışmacılar, veriyi eğitim, doğrulama ve test kümelerine nasıl böldüklerini açıkça belirtmelidir. Bölme işleminin sınıf dağılımını koruyacak şekilde yapılması ve veri sızıntısının önlenmesi beklenmektedir.",
+              "Çapraz doğrulama kullanılmışsa fold sayısı ve deney süreci kısaca açıklanmalıdır. Ek veri seti kullanılması durumunda, bu verinin eğitim, doğrulama veya test sürecinde nasıl konumlandırıldığı ayrıca belirtilmelidir. Bu bölümün amacı, sonuçların tekrarlanabilir ve adil bir deney protokolüne dayandığını göstermektir.}"
+            ]
+          },
+          {
+            "ad": "DENEY TASARIMI, SONUÇLAR VE İNCELEME",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "{Bu kısımda geliştirilen sistemin yarışmacılar tarafından elde edilmiş sonuçları paylaşılır. Uygulanan test senaryoları açıklanır ve bu senaryolardan elde edilen sonuçlar, grafik ve tablolarla desteklenir. Test sonuçlarının uygulanan yöntemlerle uyumunun değerlendirilmesi istenir. Tüm aşamalarda yaşanan sorunlar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir.}"
+            ]
+          },
+          {
+            "ad": "4.1 Sinyal Bölgesi / Zaman Aralığı Seçimi",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "{Modelin karar üretirken hangi sinyal bölümünü kullandığı net olarak açıklanmalıdır: tüm kayıt mı işlendi, yoksa sabit uzunlukta pencereler mi çıkarıldı? Pencere uzunluğu, kaydırma/overlap yaklaşımı ve ön işleme adımları genel hatlarıyla belirtilmelidir.",
+              "Bu seçimlerin, AFIB, AFL, LBBB, RBBB ve Normal sınıflarını ayırt etmeye katkısı ve hesaplama maliyeti açısından neden uygun görüldüğü kısa bir gerekçeyle ifade edilmelidir.}"
+            ]
+          },
+          {
+            "ad": "4.2 Performans Metrikleri ve Hata Analizi",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "{Yarışmacılar, macro F1 başta olmak üzere raporladıkları metrikleri ve sonuçların hangi koşulda elde edildiğini özetlemelidir. Sınıf bazlı metrikler ve karışıklık matrisi üzerinden, en belirgin hata tipleri kısa biçimde yorumlanmalıdır.",
+              "Özellikle AFIB, AFL, LBBB, RBBB ve Normal sınıfları arasında hangi sınıfların daha çok karıştığı belirtilmelidir. Ayrıca öğrenme eğrileri veya temel eğitim logları üzerinden aşırı öğrenme/yetersiz öğrenme işaretleri varsa bunlar birkaç cümle ile açıklanmalı; gerekirse iyileştirme yönü belirtilmelidir.}"
+            ]
+          },
+          {
+            "ad": "4.3 “Model Neden Bu Kararı Verdi?” – Açıklanabilirlik Yaklaşımı",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "{Bu bölümde yarışmacıların, model kararını anlamlandırmaya yönelik en az bir açıklanabilirlik yaklaşımı sunması beklenir. Bu yaklaşım; zaman ekseninde önem haritası, attention ağırlıkları, gradyan/saliency tabanlı görselleştirme veya örnek-tabanlı benzerlik açıklaması gibi bir yöntem olabilir.",
+              "Amaç klinik tanı iddiası değil; modelin hangi sinyal bölgesi veya hangi örüntülerden etkilendiğini şeffaf biçimde göstermektir. Mümkünse en az bir örnek üzerinden kısa bir açıklama verilmeli ve modelin güçlü/zayıf taraflarıyla ilişkilendirilmelidir.}"
+            ]
+          },
+          {
+            "ad": "4.4 Yanlış Sınıflanan Örneklerin İncelenmesi",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "{Yarışmacılar, en az birkaç yanlış sınıflama örneğini seçerek kısa bir “vaka analizi” yapmalıdır. Bu analizde, hatanın olası nedenleri genel ifadelerle tartışılmalıdır.",
+              "Özellikle benzer ritim bozukluğu sınıfları veya benzer iletim bozukluğu sınıfları arasındaki karışmalar ayrıca değerlendirilmelidir. Varsa açıklanabilirlik çıktılarıyla desteklenmelidir. Bu bölüm, modelin sınırlarını görme ve geliştirme planını temellendirme açısından önemli kabul edilir.}"
+            ]
+          },
+          {
+            "ad": "YAKLAŞIMIN GEREKÇESİ, TEKNİK EVRİM VE KAYNAK KULLANIMI",
+            "zorunlu": true,
+            "puan": 40,
+            "yonergeMetni": [
+              "{Ekibin çözüm için geliştirdiği yöntemler, bu yöntemlerin seçilme gerekçeleri ve özgünlüğe katkıları açıklanmalıdır. Yarışmacıların, yalnızca nihai modeli değil, bu modele ulaşırken izledikleri teknik karar sürecini de ortaya koymaları beklenmektedir.}",
+              "5.1 Neden Bu Algoritma / Mimari? (8 puan)",
+              "{Yarışmacılar, seçtikleri algoritmanın AFIB, AFL, LBBB, RBBB ve Normal sınıflarını ayırt etmek için neden uygun olduğunu kısa ve somut gerekçelerle açıklamalıdır. Beklenen; EKG’nin zamansal yapısını, morfolojik özelliklerini ve derivasyonlar arası ilişkileri yakalama kapasitesi, gürültüye dayanıklılık ve uygulanabilir hesaplama maliyeti gibi kriterler üzerinden bir gerekçelendirmedir. Bu bölüm, model seçiminin rastgele değil, hedef probleme uygun teknik bir tercihe dayandığını göstermelidir.}",
+              "5.2 Alternatifler Neden Elendi? (8 puan)",
+              "{Bu bölümde en az iki alternatif yaklaşımın değerlendirildiği ve neden tercih edilmediği özetlenmelidir. Alternatiflerin elenme nedenleri; performans yetersizliği, aşırı karmaşıklık, aşırı öğrenme riski, eğitim süresi/maliyeti, özellik mühendisliğine aşırı bağımlılık veya açıklanabilirlik zorlukları gibi gerekçelerle ifade edilebilir. Amaç, nihai seçimin karşılaştırmalı bir değerlendirmeye dayandığını göstermektir.}"
+            ]
+          },
+          {
+            "ad": "5.3 Parametre Seçimi ve Deneysel Ayarlar",
+            "zorunlu": true,
+            "puan": 8,
+            "yonergeMetni": [
+              "{Yarışmacılar, temel hiperparametrelerin nasıl belirlendiğini genel bir seçim mantığıyla açıklamalıdır. Pencere uzunluğu, öğrenme oranı, batch boyutu, epoch sayısı, dropout, class weight ve benzeri ayarların doğrulama performansına göre nasıl seçildiği belirtilmelidir. Aşırı öğrenmeyi önlemek için kullanılan erken durdurma, düzenlileştirme veya veri artırma gibi önlemler kısa biçimde açıklanmalıdır.}"
+            ]
+          },
+          {
+            "ad": "5.4 Öğrenme Süreci ve Teknik Evrim",
+            "zorunlu": true,
+            "puan": 8,
+            "yonergeMetni": [
+              "{Yarışmacılardan, ilk denemelerde karşılaşılan sorunları ve modelin hangi adımlarla geliştirildiğini kısa bir gelişim süreci olarak özetlemeleri beklenir. Örneğin; ham sinyalle düşük başarı, sınıf dengesizliği nedeniyle belirli sınıflarda hata artışı, aşırı öğrenme veya bazı sınıfların karışması gibi sorunlara karşı yapılan müdahaleler açıklanmalıdır. Bu bölümde “sorun–müdahale–çıktı” ilişkisi kurulmalıdır.}"
+            ]
+          },
+          {
+            "ad": "5.5 Hesaplama Kaynakları ve Çalıştırılabilirlik",
+            "zorunlu": true,
+            "puan": 8,
+            "yonergeMetni": [
+              "{Yarışmacılar, eğitim ve çıkarım süreçlerinde kullandıkları hesaplama kaynaklarını raporlamalıdır. Kullanılan donanım, yazılım ortamı, framework sürümleri, eğitim süresi, batch boyutu ve bellek kullanımı gibi bilgiler verilmelidir. Ayrıca modelin gerçekçi kullanım senaryosunda çalıştırılabilirliğine dair kısa bir değerlendirme yapılmalıdır. Bu sayede model başarısı, hesaplama maliyeti ve uygulanabilirlik birlikte değerlendirilebilir.}"
+            ]
+          },
+          {
+            "ad": "REFERANSLAR",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Rapor içinde atıfta bulunulan kaynaklar, bu bölümde IEEE atıf stiline uygun olarak formatlanmalıdır. Rapor içinde alıntı yapılan metinler köşeli parantez içinde referans numarası [1] ile belirtilir.}",
+              "Not: 10 Puan genel rapor düzeninden verilecektir."
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "REFERANSLAR",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+          "Tüm raporlar “İçindekiler” ve “Kaynakça” içermelidir.",
+          "Her rapor bir kapak sayfası içermelidir.Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+          "Yazı tipi: Aptos, Punto: 12, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst 2.8 cm alt-sağ-sol 2.5 cm.",
+          "“Kapak” ve “İçindekiler” kısımları hariç, rapor 10 sayfayı geçmemelidir.",
+          "10 sayfayı geçen raporlar değerlendirmeye alınmayacaktır."
+        ],
+        "eleyiciMi": false,
+        "azamiSayfa": 10,
+        "yaziTipi": "Aptos",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "probleme-en-yakin-cozum-sunan-uluslarara",
+            "ad": "PROBLEME EN YAKIN ÇÖZÜM SUNAN ULUSLARARASI MAKALELERİN ÖZETİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde yarışmacılar, 12 derivasyonlu EKG’den Ritim Bozuklukları / İletim Bozuklukları / Normal üst sınıflarını ayırt etmeye en yakın 5–10 uluslararası çalışmayı seçip kısa biçimde özetlemelidir. Her çalışma için “ne yaptılar?”ı anlatmanın yanında, kendi çözümlerine bağ kuracak şekilde şu başlıklar kısaca yer almalıdır: çalışmanın hedefi (benzer sınıflandırma problemi), kullanılan veri türü/ölçeği (12-lead, kayıt sayısı gibi), yöntem türü (ör. CNN/RNN/Transformer veya zaman-frekans temsili + sınıflandırma), raporlanan temel metrikler (özellikle macro F1 ve/veya AUC) ve en az bir güçlü yön ile bir sınırlılık (ör. veri dengesizliği, gürültü, genelleme, açıklanabilirlik). Paragrafın sonunda yarışmacılar, bu literatürden kendi yaklaşımlarına yansıttıkları 2–3 tasarım kararını (ör. pencereleme stratejisi, ön işleme, dengesizlik yönetimi, açıklanabilirlik) “hangi tür bulgu nedeniyle” seçtiklerini 1–2 cümle ile belirtmeli ve kullandıkları kaynakları IEEE formatında referanslamalıdır.}"
+            ],
+            "bolumAdi": "PROBLEME EN YAKIN ÇÖZÜM SUNAN ULUSLARARASI MAKALELERİN ÖZETİ"
+          },
+          {
+            "kod": "veri-ve-yontem",
+            "ad": "VERİ VE YÖNTEM",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde yarışmacılar, model eğitiminde kullandıkları veri setlerini, veri hazırlama sürecini ve geliştirdikleri yöntemi açıklamalıdır. İkinci aşamada yarışmacılara sağlanan veri seti; AFIB, AFL, LBBB, RBBB ve Normal sınıflarını içeren 12 derivasyonlu EKG kayıtlarından oluşmaktadır. Yarışmacılar bu veri setini temel almalı; isterlerse ek olarak açık erişimli veri setlerini de kullanabilirler. Ek veri kullanılması durumunda veri kaynağı, kapsamı ve yarışma veri setiyle uyumu açıkça belirtilmelidir.",
+              "Bu bölümde ayrıca kullanılan algoritmalar, model mimarisi, ön işleme adımları, eğitim stratejisi ve bu tercihlerin gerekçeleri açıklanmalıdır.}"
+            ],
+            "bolumAdi": "VERİ VE YÖNTEM"
+          },
+          {
+            "kod": "3-1-kullanilan-veri-seti-ve-etiketler",
+            "ad": "3.1 Kullanılan Veri Seti ve Etiketler",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde yarışmacılar, yarışma kapsamında sağlanan veri setini ve varsa ek olarak kullandıkları açık veri setlerini tanıtmalıdır. Veri setlerinin kaynağı, toplam kayıt sayısı, sınıf dağılımı, örnekleme frekansı, dosya formatı ve kullanılan etiketler açıkça belirtilmelidir.",
+              "Problem tanımı ikinci aşamaya uygun biçimde ifade edilmeli; her EKG kaydı için AFIB, AFL, LBBB, RBBB veya Normal sınıflarından birine ait tahmin üretildiği netleştirilmelidir. Ek veri seti kullanılmışsa, bu verinin hangi amaçla kullanıldığı ve sınıf etiketleriyle nasıl eşleştirildiği kısaca açıklanmalıdır.}"
+            ],
+            "bolumAdi": "3.1 Kullanılan Veri Seti ve Etiketler"
+          },
+          {
+            "kod": "3-2-etiket-guvenilirligi-ve-veri-kalites",
+            "ad": "3.2 Etiket Güvenilirliği ve Veri Kalitesi Kontrolü",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Yarışmacılar, kullandıkları verilerde etiket güvenilirliği ve sinyal kalitesine yönelik yaptıkları kontrolleri özetlemelidir. Amaç klinik yeniden etiketleme yapmak değil; eksik kayıt, hatalı dosya, aşırı gürültü, kayıt süresi tutarsızlığı veya etiket–sinyal uyumsuzluğu gibi sorunlara karşı izlenen yaklaşımı açıklamaktır.",
+              "Varsa elenen, düzeltilen veya işaretlenen kayıt sayıları kısa biçimde belirtilmelidir. Ek veri seti kullanılmışsa, bu veri için yapılan kalite kontrolleri ayrıca açıklanmalıdır.}"
+            ],
+            "bolumAdi": "3.2 Etiket Güvenilirliği ve Veri Kalitesi Kontrolü"
+          },
+          {
+            "kod": "3-3-veri-dengesizligi-nasil-ele-alindi",
+            "ad": "3.3 Veri Dengesizliği Nasıl Ele Alındı",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde her sınıfa ait kayıt sayıları raporlanmalı ve sınıf dengesizliğinin model başarısına etkisi kısaca tartışılmalıdır. Yarışmacılar, dengesizliği yönetmek için kullandıkları yöntemleri gerekçeleriyle açıklamalıdır.",
+              "Değerlendirmenin yalnızca genel doğruluk üzerinden değil, sınıflar arası performansı dikkate alan metriklerle yapılmasının önemi belirtilmelidir. Özellikle az örnekli sınıflarda modelin başarısını göstermek için sınıf bazlı sonuçların raporlanması beklenmektedir.}"
+            ],
+            "bolumAdi": "3.3 Veri Dengesizliği Nasıl Ele Alındı"
+          },
+          {
+            "kod": "3-4-veri-bolme-ve-deney-protokolu",
+            "ad": "3.4 Veri Bölme ve Deney Protokolü",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Yarışmacılar, veriyi eğitim, doğrulama ve test kümelerine nasıl böldüklerini açıkça belirtmelidir. Bölme işleminin sınıf dağılımını koruyacak şekilde yapılması ve veri sızıntısının önlenmesi beklenmektedir.",
+              "Çapraz doğrulama kullanılmışsa fold sayısı ve deney süreci kısaca açıklanmalıdır. Ek veri seti kullanılması durumunda, bu verinin eğitim, doğrulama veya test sürecinde nasıl konumlandırıldığı ayrıca belirtilmelidir. Bu bölümün amacı, sonuçların tekrarlanabilir ve adil bir deney protokolüne dayandığını göstermektir.}"
+            ],
+            "bolumAdi": "3.4 Veri Bölme ve Deney Protokolü"
+          },
+          {
+            "kod": "deney-tasarimi-sonuclar-ve-inceleme",
+            "ad": "DENEY TASARIMI, SONUÇLAR VE İNCELEME",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda geliştirilen sistemin yarışmacılar tarafından elde edilmiş sonuçları paylaşılır. Uygulanan test senaryoları açıklanır ve bu senaryolardan elde edilen sonuçlar, grafik ve tablolarla desteklenir. Test sonuçlarının uygulanan yöntemlerle uyumunun değerlendirilmesi istenir. Tüm aşamalarda yaşanan sorunlar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir.}"
+            ],
+            "bolumAdi": "DENEY TASARIMI, SONUÇLAR VE İNCELEME"
+          },
+          {
+            "kod": "4-1-sinyal-bolgesi-zaman-araligi-secimi",
+            "ad": "4.1 Sinyal Bölgesi / Zaman Aralığı Seçimi",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Modelin karar üretirken hangi sinyal bölümünü kullandığı net olarak açıklanmalıdır: tüm kayıt mı işlendi, yoksa sabit uzunlukta pencereler mi çıkarıldı? Pencere uzunluğu, kaydırma/overlap yaklaşımı ve ön işleme adımları genel hatlarıyla belirtilmelidir.",
+              "Bu seçimlerin, AFIB, AFL, LBBB, RBBB ve Normal sınıflarını ayırt etmeye katkısı ve hesaplama maliyeti açısından neden uygun görüldüğü kısa bir gerekçeyle ifade edilmelidir.}"
+            ],
+            "bolumAdi": "4.1 Sinyal Bölgesi / Zaman Aralığı Seçimi"
+          },
+          {
+            "kod": "4-2-performans-metrikleri-ve-hata-analiz",
+            "ad": "4.2 Performans Metrikleri ve Hata Analizi",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Yarışmacılar, macro F1 başta olmak üzere raporladıkları metrikleri ve sonuçların hangi koşulda elde edildiğini özetlemelidir. Sınıf bazlı metrikler ve karışıklık matrisi üzerinden, en belirgin hata tipleri kısa biçimde yorumlanmalıdır.",
+              "Özellikle AFIB, AFL, LBBB, RBBB ve Normal sınıfları arasında hangi sınıfların daha çok karıştığı belirtilmelidir. Ayrıca öğrenme eğrileri veya temel eğitim logları üzerinden aşırı öğrenme/yetersiz öğrenme işaretleri varsa bunlar birkaç cümle ile açıklanmalı; gerekirse iyileştirme yönü belirtilmelidir.}"
+            ],
+            "bolumAdi": "4.2 Performans Metrikleri ve Hata Analizi"
+          },
+          {
+            "kod": "4-3-model-neden-bu-karari-verdi-aciklana",
+            "ad": "4.3 “Model Neden Bu Kararı Verdi?” – Açıklanabilirlik Yaklaşımı",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde yarışmacıların, model kararını anlamlandırmaya yönelik en az bir açıklanabilirlik yaklaşımı sunması beklenir. Bu yaklaşım; zaman ekseninde önem haritası, attention ağırlıkları, gradyan/saliency tabanlı görselleştirme veya örnek-tabanlı benzerlik açıklaması gibi bir yöntem olabilir.",
+              "Amaç klinik tanı iddiası değil; modelin hangi sinyal bölgesi veya hangi örüntülerden etkilendiğini şeffaf biçimde göstermektir. Mümkünse en az bir örnek üzerinden kısa bir açıklama verilmeli ve modelin güçlü/zayıf taraflarıyla ilişkilendirilmelidir.}"
+            ],
+            "bolumAdi": "4.3 “Model Neden Bu Kararı Verdi?” – Açıklanabilirlik Yaklaşımı"
+          },
+          {
+            "kod": "4-4-yanlis-siniflanan-orneklerin-incelen",
+            "ad": "4.4 Yanlış Sınıflanan Örneklerin İncelenmesi",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Yarışmacılar, en az birkaç yanlış sınıflama örneğini seçerek kısa bir “vaka analizi” yapmalıdır. Bu analizde, hatanın olası nedenleri genel ifadelerle tartışılmalıdır.",
+              "Özellikle benzer ritim bozukluğu sınıfları veya benzer iletim bozukluğu sınıfları arasındaki karışmalar ayrıca değerlendirilmelidir. Varsa açıklanabilirlik çıktılarıyla desteklenmelidir. Bu bölüm, modelin sınırlarını görme ve geliştirme planını temellendirme açısından önemli kabul edilir.}"
+            ],
+            "bolumAdi": "4.4 Yanlış Sınıflanan Örneklerin İncelenmesi"
+          },
+          {
+            "kod": "yaklasimin-gerekcesi-teknik-evrim-ve-kay",
+            "ad": "YAKLAŞIMIN GEREKÇESİ, TEKNİK EVRİM VE KAYNAK KULLANIMI",
+            "puan": 40,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Ekibin çözüm için geliştirdiği yöntemler, bu yöntemlerin seçilme gerekçeleri ve özgünlüğe katkıları açıklanmalıdır. Yarışmacıların, yalnızca nihai modeli değil, bu modele ulaşırken izledikleri teknik karar sürecini de ortaya koymaları beklenmektedir.}",
+              "5.1 Neden Bu Algoritma / Mimari? (8 puan)",
+              "{Yarışmacılar, seçtikleri algoritmanın AFIB, AFL, LBBB, RBBB ve Normal sınıflarını ayırt etmek için neden uygun olduğunu kısa ve somut gerekçelerle açıklamalıdır. Beklenen; EKG’nin zamansal yapısını, morfolojik özelliklerini ve derivasyonlar arası ilişkileri yakalama kapasitesi, gürültüye dayanıklılık ve uygulanabilir hesaplama maliyeti gibi kriterler üzerinden bir gerekçelendirmedir. Bu bölüm, model seçiminin rastgele değil, hedef probleme uygun teknik bir tercihe dayandığını göstermelidir.}",
+              "5.2 Alternatifler Neden Elendi? (8 puan)",
+              "{Bu bölümde en az iki alternatif yaklaşımın değerlendirildiği ve neden tercih edilmediği özetlenmelidir. Alternatiflerin elenme nedenleri; performans yetersizliği, aşırı karmaşıklık, aşırı öğrenme riski, eğitim süresi/maliyeti, özellik mühendisliğine aşırı bağımlılık veya açıklanabilirlik zorlukları gibi gerekçelerle ifade edilebilir. Amaç, nihai seçimin karşılaştırmalı bir değerlendirmeye dayandığını göstermektir.}"
+            ],
+            "bolumAdi": "YAKLAŞIMIN GEREKÇESİ, TEKNİK EVRİM VE KAYNAK KULLANIMI"
+          },
+          {
+            "kod": "5-3-parametre-secimi-ve-deneysel-ayarlar",
+            "ad": "5.3 Parametre Seçimi ve Deneysel Ayarlar",
+            "puan": 8,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Yarışmacılar, temel hiperparametrelerin nasıl belirlendiğini genel bir seçim mantığıyla açıklamalıdır. Pencere uzunluğu, öğrenme oranı, batch boyutu, epoch sayısı, dropout, class weight ve benzeri ayarların doğrulama performansına göre nasıl seçildiği belirtilmelidir. Aşırı öğrenmeyi önlemek için kullanılan erken durdurma, düzenlileştirme veya veri artırma gibi önlemler kısa biçimde açıklanmalıdır.}"
+            ],
+            "bolumAdi": "5.3 Parametre Seçimi ve Deneysel Ayarlar"
+          },
+          {
+            "kod": "5-4-ogrenme-sureci-ve-teknik-evrim",
+            "ad": "5.4 Öğrenme Süreci ve Teknik Evrim",
+            "puan": 8,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Yarışmacılardan, ilk denemelerde karşılaşılan sorunları ve modelin hangi adımlarla geliştirildiğini kısa bir gelişim süreci olarak özetlemeleri beklenir. Örneğin; ham sinyalle düşük başarı, sınıf dengesizliği nedeniyle belirli sınıflarda hata artışı, aşırı öğrenme veya bazı sınıfların karışması gibi sorunlara karşı yapılan müdahaleler açıklanmalıdır. Bu bölümde “sorun–müdahale–çıktı” ilişkisi kurulmalıdır.}"
+            ],
+            "bolumAdi": "5.4 Öğrenme Süreci ve Teknik Evrim"
+          },
+          {
+            "kod": "5-5-hesaplama-kaynaklari-ve-calistirilab",
+            "ad": "5.5 Hesaplama Kaynakları ve Çalıştırılabilirlik",
+            "puan": 8,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Yarışmacılar, eğitim ve çıkarım süreçlerinde kullandıkları hesaplama kaynaklarını raporlamalıdır. Kullanılan donanım, yazılım ortamı, framework sürümleri, eğitim süresi, batch boyutu ve bellek kullanımı gibi bilgiler verilmelidir. Ayrıca modelin gerçekçi kullanım senaryosunda çalıştırılabilirliğine dair kısa bir değerlendirme yapılmalıdır. Bu sayede model başarısı, hesaplama maliyeti ve uygulanabilirlik birlikte değerlendirilebilir.}"
+            ],
+            "bolumAdi": "5.5 Hesaplama Kaynakları ve Çalıştırılabilirlik"
+          }
+        ],
+        "toplamPuan": 154
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablonda Word başlık stili yok; başlıklar kalın biçimlendirmeden tahmin edildi. Bölüm listesini onaylamadan önce gözden geçirin.",
+        "Kapak bloğu sayıldığı için 6 açılış satırı bölüm listesinden çıkarıldı (SAĞLIKTA YAPAY ZEKA YARIŞMASI …).",
+        "Rubrik toplamı 154 puan. Ağırlıklar yöneticiye doğrulatılmalı."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026-_Sağlıkta_Yapay_Zeka_Türkçe_Şartname_v2_son_versiyon-2_DNTlA.pdf",
+        "yuklendi": "2026-08-23T20:16:17.736Z",
+        "sayfaSayisi": 19,
+        "kelimeSayisi": 4160,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk yayın",
+              "tarih": "2026-01-09"
+            },
+            {
+              "etiket": "Lise Seviyesi Yarışma Kapsamı",
+              "tarih": "2026-01-21"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "Soru-Cevap Toplantıları I (Lise ve Üniversite)",
+              "tarih": "2026-03-23"
+            },
+            {
+              "etiket": "Proje Sunuş Raporu Son Teslim Tarihi (Lise ve Üniversite)",
+              "tarih": "2026-03-25"
+            },
+            {
+              "etiket": "Takımların Açıklanması",
+              "tarih": "2026-04-14"
+            },
+            {
+              "etiket": "Verilerin Paylaşılması (Lise ve Üniversite Kategorisi)",
+              "tarih": "2026-05-05"
+            },
+            {
+              "etiket": "Soru-Cevap Toplantıları II (Lise ve Üniversite)",
+              "tarih": "2026-05-18"
+            },
+            {
+              "etiket": "Proje Detay Raporu Son Teslim Tarihi (Lise ve Üniversite)",
+              "tarih": "2026-06-29"
+            },
+            {
+              "etiket": "Açıklanması",
+              "tarih": "2026-07-20"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Proje sahibinin danışman olduğu saptandığında başvuru geçersiz sayılacaktır."
+          ],
+          "katilimciSeviyeleri": [
+            "universite"
+          ]
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026-_Sa%C4%9Fl%C4%B1kta_Yapay_Zeka_T%C3%BCrk%C3%A7e_%C5%9Eartname_v2_son_versiyon-2_DNTlA.pdf"
+      }
+    },
+    {
+      "id": "907afd76-d7bd-4a71-9a14-cd458329cf65",
+      "ad": "Üniversite · PDR",
+      "sablonDosyasi": "2026_PDR_Şablon_Universite_TR_bCw49.docx",
+      "asama": "PDR",
+      "olusturuldu": "2026-08-23T13:57:47.852Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-907afd76",
+        "ad": "Üniversite · PDR",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 10,
+        "basliklar": [
+          {
+            "ad": "1. GİRİŞ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu bölümde, *missense varyant patojenite tahmini* problemi açık ve anlaşılır bir şekilde tanımlanmalıdır. Problemin özellikle klinik ve genomik bağlamdaki önemi vurgulanmalı ve tablo türü veri yapılarında sıkça karşılaşılan sınıf dengesizliği probleminin model başarımı üzerindeki etkileri açıklanmalıdır. Ayrıca, konuya ilişkin güncel 5–10 uluslararası çalışma incelenmeli; bu çalışmalarda kullanılan yöntemler, veri kaynakları (Örneğin ClinVar ve gnomAD) ve raporlanan başarım ölçütleri özetlenmelidir."
+            ]
+          },
+          {
+            "ad": "2. YÖNTEM",
+            "zorunlu": true,
+            "puan": 25,
+            "yonergeMetni": [
+              "Bu bölümde, veri mühendisliği ve model geliştirme süreci bütüncül bir şekilde ele alınmalıdır. Yöntemsel kurguda ilgili literatüre atıf yapılmalı ve kaynakçada sunulmalıdır.",
+              "Bu bölümde veri işlemeyle ilgili olarak:",
+              "Ayrıca bu bölümde model geliştirme aşamasında kullanılan basamaklar belirtilmeli, özellikle:"
+            ]
+          },
+          {
+            "ad": "3. BULGULAR",
+            "zorunlu": true,
+            "puan": 30,
+            "yonergeMetni": [
+              "Bu bölümde sunulan yöntem sonucu elde edilen bulgular nesnel ve yorumsuz bir şekilde sunulmalıdır.",
+              "Bulgulara ulaşmada kullanılan her bir algoritma ve o algoritmayla kullanılan hiperparametre optimizasyon çalışmaları gerekli istatistiksel veriler ile sunulmalıdır.",
+              "Başarım ölçütü olarak en azından F1 skoru, Matthews korelasyon katsayısı ve kesinlik-duyarlılık eğrisi altında kalan alan ölçütleri raporlanmalıdır. Elde edilen bulgular karmaşıklık matrisi ve karşılaştırma grafikleri ile desteklenmelidir.",
+              "Modellerin başarımları yalnızca genel veri kümesi üzerinde ve ayrıca farklı alt gruplar (MASTER, KANSER, CFTR ve PAH) bazında ayrı ayrı raporlanmalıdır.",
+              "Farklı karar eşiklerinin test sonuçları ve en doğru eşik değerler verisi sağlanmalıdır."
+            ]
+          },
+          {
+            "ad": "4. SONUÇ",
+            "zorunlu": true,
+            "puan": 25,
+            "yonergeMetni": [
+              "Bu bölümde elde edilen bulgular yorumlanmalı ve çalışmanın genel katkısı ortaya konulmalıdır.",
+              "Aday modellerin hangi durumlarda başarılı olduğu ve hangi durumlarda yetersiz kaldığı analiz edilmeli, kullanılan yöntemlerin güçlü ve zayıf yönleri açık bir şekilde tartışılmalıdır.",
+              "Özellikle yanlış pozitif ve yanlış negatif sonuçlar ayrıntılı olarak incelenmeli, modelin hangi özellik gruplarında zorlandığı belirlenmeli ve bu hataların klinik veya biyolojik anlamı yorumlanmalıdır.",
+              "Genel değerlendirme kapsamında, çalışmanın literatürdeki yeri yeniden ele alınmalı ve elde edilen sonuçların uygulama açısından ne ifade ettiği açıklanmalıdır.",
+              "Son olarak, yarışmanın son basamağında karşılaşılabilecek zorluklar tartışılmalıdır."
+            ]
+          },
+          {
+            "ad": "5. KAYNAKÇA (ve RAPOR DÜZENİ 10 PUAN)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Raporun akademik yazım ve Türkçe dil kuralları ile belirtilen punto/sayfa sınırı kısıtlamalarına uyması; verilen bilgilerin grafik ve tablolar gibi görsel iletişim araçları ile yeterli, anlaşılabilir ve etkili sunulması ve referansların IEEE formatında doğru ve eksiksiz bir şekilde verilmesi."
+            ]
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+          "Tüm raporlar “İçindekiler” ve “Kaynakça” içermelidir.",
+          "Her rapor bir kapak sayfası içermelidir.",
+          "Her rapor bir “İçindekiler” sayfası içermelidir.",
+          "Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+          "Yazı tipi: Aptos, Punto: 12, Başlık Yazı Tipi: Aptos, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst 2.8 alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindekiler- “Kapak” ve “İçindekiler” kısmı hariç rapor 10 sayfayı geçmemelidir.",
+          "10 sayfayı geçen raporlar değerlendirmeye alınmayacaktır."
+        ],
+        "eleyiciMi": false,
+        "azamiSayfa": 10,
+        "yaziTipi": "Aptos",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "1-giris",
+            "ad": "1. GİRİŞ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, *missense varyant patojenite tahmini* problemi açık ve anlaşılır bir şekilde tanımlanmalıdır. Problemin özellikle klinik ve genomik bağlamdaki önemi vurgulanmalı ve tablo türü veri yapılarında sıkça karşılaşılan sınıf dengesizliği probleminin model başarımı üzerindeki etkileri açıklanmalıdır. Ayrıca, konuya ilişkin güncel 5–10 uluslararası çalışma incelenmeli; bu çalışmalarda kullanılan yöntemler, veri kaynakları (Örneğin ClinVar ve gnomAD) ve raporlanan başarım ölçütleri özetlenmelidir."
+            ],
+            "bolumAdi": "1. GİRİŞ"
+          },
+          {
+            "kod": "2-yontem",
+            "ad": "2. YÖNTEM",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, veri mühendisliği ve model geliştirme süreci bütüncül bir şekilde ele alınmalıdır. Yöntemsel kurguda ilgili literatüre atıf yapılmalı ve kaynakçada sunulmalıdır.",
+              "Bu bölümde veri işlemeyle ilgili olarak:",
+              "Ayrıca bu bölümde model geliştirme aşamasında kullanılan basamaklar belirtilmeli, özellikle:"
+            ],
+            "bolumAdi": "2. YÖNTEM"
+          },
+          {
+            "kod": "3-bulgular",
+            "ad": "3. BULGULAR",
+            "puan": 30,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde sunulan yöntem sonucu elde edilen bulgular nesnel ve yorumsuz bir şekilde sunulmalıdır.",
+              "Bulgulara ulaşmada kullanılan her bir algoritma ve o algoritmayla kullanılan hiperparametre optimizasyon çalışmaları gerekli istatistiksel veriler ile sunulmalıdır.",
+              "Başarım ölçütü olarak en azından F1 skoru, Matthews korelasyon katsayısı ve kesinlik-duyarlılık eğrisi altında kalan alan ölçütleri raporlanmalıdır. Elde edilen bulgular karmaşıklık matrisi ve karşılaştırma grafikleri ile desteklenmelidir.",
+              "Modellerin başarımları yalnızca genel veri kümesi üzerinde ve ayrıca farklı alt gruplar (MASTER, KANSER, CFTR ve PAH) bazında ayrı ayrı raporlanmalıdır.",
+              "Farklı karar eşiklerinin test sonuçları ve en doğru eşik değerler verisi sağlanmalıdır."
+            ],
+            "bolumAdi": "3. BULGULAR"
+          },
+          {
+            "kod": "4-sonuc",
+            "ad": "4. SONUÇ",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde elde edilen bulgular yorumlanmalı ve çalışmanın genel katkısı ortaya konulmalıdır.",
+              "Aday modellerin hangi durumlarda başarılı olduğu ve hangi durumlarda yetersiz kaldığı analiz edilmeli, kullanılan yöntemlerin güçlü ve zayıf yönleri açık bir şekilde tartışılmalıdır.",
+              "Özellikle yanlış pozitif ve yanlış negatif sonuçlar ayrıntılı olarak incelenmeli, modelin hangi özellik gruplarında zorlandığı belirlenmeli ve bu hataların klinik veya biyolojik anlamı yorumlanmalıdır.",
+              "Genel değerlendirme kapsamında, çalışmanın literatürdeki yeri yeniden ele alınmalı ve elde edilen sonuçların uygulama açısından ne ifade ettiği açıklanmalıdır.",
+              "Son olarak, yarışmanın son basamağında karşılaşılabilecek zorluklar tartışılmalıdır."
+            ],
+            "bolumAdi": "4. SONUÇ"
+          }
+        ],
+        "toplamPuan": 90
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [],
+      "sartname": {
+        "dosyaAdi": "2026-_Sağlıkta_Yapay_Zeka_Türkçe_Şartname_v2_son_versiyon-2_DNTlA.pdf",
+        "yuklendi": "2026-08-23T20:16:20.816Z",
+        "sayfaSayisi": 19,
+        "kelimeSayisi": 4160,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk yayın",
+              "tarih": "2026-01-09"
+            },
+            {
+              "etiket": "Lise Seviyesi Yarışma Kapsamı",
+              "tarih": "2026-01-21"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "Soru-Cevap Toplantıları I (Lise ve Üniversite)",
+              "tarih": "2026-03-23"
+            },
+            {
+              "etiket": "Proje Sunuş Raporu Son Teslim Tarihi (Lise ve Üniversite)",
+              "tarih": "2026-03-25"
+            },
+            {
+              "etiket": "Takımların Açıklanması",
+              "tarih": "2026-04-14"
+            },
+            {
+              "etiket": "Verilerin Paylaşılması (Lise ve Üniversite Kategorisi)",
+              "tarih": "2026-05-05"
+            },
+            {
+              "etiket": "Soru-Cevap Toplantıları II (Lise ve Üniversite)",
+              "tarih": "2026-05-18"
+            },
+            {
+              "etiket": "Proje Detay Raporu Son Teslim Tarihi (Lise ve Üniversite)",
+              "tarih": "2026-06-29"
+            },
+            {
+              "etiket": "Açıklanması",
+              "tarih": "2026-07-20"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Proje sahibinin danışman olduğu saptandığında başvuru geçersiz sayılacaktır."
+          ],
+          "katilimciSeviyeleri": [
+            "universite"
+          ]
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026-_Sa%C4%9Fl%C4%B1kta_Yapay_Zeka_T%C3%BCrk%C3%A7e_%C5%9Eartname_v2_son_versiyon-2_DNTlA.pdf"
+      }
+    },
+    {
+      "id": "1db04594-ce52-449f-9ef5-0d9c9913140c",
+      "ad": "Lise · Sunuş",
+      "sablonDosyasi": "2026_Sağlıkta_Yapay_Zeka_PSR-Lise_Lp5aI.docx",
+      "olusturuldu": "2026-08-23T13:57:48.408Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-1db04594",
+        "ad": "Lise · Sunuş",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 10,
+        "basliklar": [
+          {
+            "ad": "TAKIM ŞEMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu bölümde takımın organizasyonu ve iş bölümü, kişisel bilgi paylaşmadan net biçimde açıklanmalıdır. Hangi üyenin hangi teknik sorumluluğu üstlendiği (veri analizi, özellik işleme, modelleme, deney tasarımı, yazılım/MLops, raporlama vb.) ve ekip içi karar alma/kalite kontrol mekanizması (kod inceleme, deney kayıt standardı, sürümleme yaklaşımı) kısa ama somut ifadelerle yazılmalıdır. Takımın bu görevin gerektirdiği biyoinformatik, istatistik/ML ve yazılım geliştirme bileşenlerini nasıl karşıladığı görülür olmalıdır.}"
+            ]
+          },
+          {
+            "ad": "PROBLEME EN YAKIN ÇÖZÜM SUNAN ULUSLARARASI MAKALELERİN ÖZETİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "{Bu bölümde yarışmacılar, 12 derivasyonlu EKG’den Ritim Bozuklukları / İletim Bozuklukları / Normal üst sınıflarını ayırt etmeye en yakın 5–10 uluslararası çalışmayı seçip kısa biçimde özetlemelidir. Her çalışma için “ne yaptılar?”ı anlatmanın yanında, kendi çözümlerine bağ kuracak şekilde şu başlıklar kısaca yer almalıdır: çalışmanın hedefi (benzer sınıflandırma problemi), kullanılan veri türü/ölçeği (12-lead, kayıt sayısı gibi), yöntem türü (ör. CNN/RNN/Transformer veya zaman-frekans temsili + sınıflandırma), raporlanan temel metrikler (özellikle macro F1 ve/veya AUC) ve en az bir güçlü yön ile bir sınırlılık (ör. veri dengesizliği, gürültü, genelleme, açıklanabilirlik). Paragrafın sonunda yarışmacılar, bu literatürden kendi yaklaşımlarına yansıttıkları 2–3 tasarım kararını (ör. pencereleme stratejisi, ön işleme, dengesizlik yönetimi, açıklanabilirlik) “hangi tür bulgu nedeniyle” seçtiklerini 1–2 cümle ile belirtmeli ve kullandıkları kaynakları IEEE formatında referanslamalıdır.}"
+            ]
+          },
+          {
+            "ad": "VERİ VE YÖNTEM",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "{Bu kısımda modelin eğitiminde kullanılan veri setleri hakkında bilgi verilir ve veri setlerinin analizi gerçekleştirilir. Verilerin elde edildiği kaynak belirtilir ve halka açık olmayan veri setleri için gerekli izinler eklenir.",
+              "Ayrıca, bu kısımda, problemin çözümünde kullanılan algoritmalar ve bu algoritmaların tercih edilme nedenlerinin açıklanması beklenir. Proje geliştirme sürecinde yapılan çalışmalar detaylıca anlatılır.}"
+            ]
+          },
+          {
+            "ad": "3.1 Kullanılan Veri Seti ve Etiketler",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde yarışmacılar, kullandıkları veri setlerinin adını, kaynak bağlantısını, toplam kayıt sayısını, örnekleme frekansını, dosya formatını (örn. .mat/.hea) ve kullanılan etiket standardını açıkça belirtmelidir. Problem tanımı birinci aşamaya uygun biçimde ifade edilmeli; her kayıt için tek bir üst sınıf tahmini üretildiği (Ritim Bozuklukları / İletim Bozuklukları / Normal) netleştirilmelidir. Varsa ek veri seti kullanımı veya oluşturulan veri, kapsam ve gerekçe ile kısaca açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "3.2 Etiket Güvenilirliği ve Veri Kalitesi Kontrolü",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Yarışmacılar, etiketlerin güvenilirliğini ve veri kalitesini değerlendirmek için uyguladıkları kontrolleri özetlemelidir. Amaç klinik yeniden etiketleme yapmak değil; hatalı/eksik kayıtlar, aşırı gürültü, kayıt süresi tutarsızlığı veya etiket–sinyal uyumsuzluğu gibi risklere karşı izlenen kalite yaklaşımını raporlamaktır. Uygulanan kontrollerin (ör. aykırı değer taraması, rastgele örnek incelemesi, sorunlu örnekleri işaretleme) kapsamı ve varsa elenen/işaretlenen örneklerin sayısı kısa biçimde belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "3.3 Veri Dengesizliği Nasıl Ele Alındı",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde sınıf dağılımı raporlanmalı ve veri dengesizliğinin modele ve metriğe etkisi kısaca açıklanmalıdır. Yarışmacılar, dengesizliği yönetmek için kullandıkları yöntemleri (örn. sınıf ağırlıkları, stratified bölme, kontrollü veri artırma, yeniden örnekleme) gerekçeleriyle birlikte özetlemelidir. Değerlendirmenin macro F1 üzerinden yapılmasının nedeni ile seçilen stratejinin ilişkisi kurulmalı; yalnızca accuracy gibi metriklere dayanmanın neden yanıltıcı olabileceği belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "3.4 Veri Bölme ve Deney Protokolü",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Yarışmacılar, veriyi eğitim/doğrulama/test şeklinde nasıl böldüklerini ve bu bölmenin nasıl yapıldığını (örn. stratified, hasta-bazlı ayrım, veri sızıntısını önleme) açıkça yazmalıdır. Kullanılan çapraz doğrulama varsa fold sayısı, tekrar sayısı ve her fold’da izlenen süreç kısaca tanımlanmalıdır. Bu bölümün amacı, sonuçların tekrarlanabilir ve adil bir değerlendirme düzenine dayandığını göstermektir."
+            ]
+          },
+          {
+            "ad": "DENEY TASARIMI, SONUÇLAR VE İNCELEME",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "{Bu kısımda geliştirilen sistemin yarışmacılar tarafından elde edilmiş sonuçları paylaşılır. Uygulanan test senaryoları açıklanır ve bu senaryolardan elde edilen sonuçlar, grafik ve tablolarla desteklenir. Test sonuçlarının uygulanan yöntemlerle uyumunun değerlendirilmesi istenir. Tüm aşamalarda yaşanan sorunlar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir.}"
+            ]
+          },
+          {
+            "ad": "4.1 Sinyal Bölgesi / Zaman Aralığı Seçimi",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Modelin karar üretirken hangi sinyal bölümünü kullandığı net olarak açıklanmalıdır: tüm kayıt mı işlendi, yoksa sabit uzunlukta pencereler mi çıkarıldı? Pencere uzunluğu, kaydırma/overlap yaklaşımı ve ön işleme adımları (örn. filtreleme, baseline düzeltme, normalizasyon) genel hatlarıyla belirtilmelidir. Bu seçimlerin, EKG’de ayırt edici örüntüleri yakalama ve hesaplama maliyeti açısından neden uygun görüldüğü kısa bir gerekçeyle ifade edilmelidir."
+            ]
+          },
+          {
+            "ad": "4.2 Performans Metrikleri ve Hata Analizi",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Yarışmacılar, macro F1 başta olmak üzere raporladıkları metrikleri ve sonuçların hangi koşulda elde edildiğini özetlemelidir. Sınıf bazlı metrikler ve karışıklık matrisi üzerinden, en belirgin hata tipleri (hangi sınıfların daha çok karıştığı) kısa biçimde yorumlanmalıdır. Ayrıca öğrenme eğrileri veya temel eğitim logları üzerinden aşırı öğrenme/yetersiz öğrenme işaretleri varsa bunlar birkaç cümle ile belirtilmeli; gerekirse iyileştirme yönü işaret edilmelidir."
+            ]
+          },
+          {
+            "ad": "4.3 “Model Neden Bu Kararı Verdi?” – Açıklanabilirlik Yaklaşımı",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde yarışmacıların, model kararını anlamlandırmaya yönelik en az bir açıklanabilirlik yaklaşımı sunması beklenir. Bu yaklaşım; zaman ekseninde önem haritası, attention ağırlıkları, gradyan/saliency tabanlı görselleştirme veya örnek-tabanlı benzerlik açıklaması gibi bir yöntem olabilir. Amaç klinik tanı iddiası değil; modelin hangi sinyal bölgesi veya hangi örüntülerden etkilendiğini şeffaf biçimde göstermektir. Mümkünse en az bir örnek üzerinden kısa bir açıklama verilmeli ve modelin güçlü/zayıf taraflarıyla ilişkilendirilmelidir."
+            ]
+          },
+          {
+            "ad": "4.4 Yanlış Sınıflanan Örneklerin İncelenmesi",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Yarışmacılar, en az birkaç yanlış sınıflama örneğini seçerek kısa bir “vaka analizi” yapmalıdır. Bu analizde, hatanın olası nedenleri (gürültü, pencere seçimi, sınıf benzerliği, etiket belirsizliği) genel ifadelerle tartışılmalı; varsa açıklanabilirlik çıktılarıyla desteklenmelidir. Bu bölüm, modelin sınırlarını görme ve geliştirme planını temellendirme açısından önemli kabul edilir."
+            ]
+          },
+          {
+            "ad": "YAKLAŞIMIN GEREKÇESİ, TEKNİK EVRİM VE KAYNAK KULLANIMI",
+            "zorunlu": true,
+            "puan": 40,
+            "yonergeMetni": [
+              "{Ekibin çözüm için geliştirdiği yöntemler ve bu yöntemlerin özgünlüğe katkıları detaylı bir şekilde açıklanmalıdır.}"
+            ]
+          },
+          {
+            "ad": "5.1 Neden Bu Algoritma / Mimari?",
+            "zorunlu": true,
+            "puan": 8,
+            "yonergeMetni": [
+              "Yarışmacılar, seçtikleri algoritmanın bu problem için neden uygun olduğunu kısa ve somut gerekçelerle açıklamalıdır. Beklenen; EKG’nin zamansal yapısını ve derivasyonlar arası ilişkileri yakalama kapasitesi, gürültüye dayanıklılık ve uygulanabilir hesaplama maliyeti gibi kriterler üzerinden bir gerekçelendirmedir. Bu bölüm, seçimlerin “rastgele” değil, hedef odaklı olduğunu gösteren bir teknik çerçeve sunmalıdır."
+            ]
+          },
+          {
+            "ad": "5.2 Alternatifler Neden Elendi?",
+            "zorunlu": true,
+            "puan": 8,
+            "yonergeMetni": [
+              "Bu bölümde en az iki alternatif yaklaşımın değerlendirildiği ve neden tercih edilmediği özetlenmelidir. Alternatiflerin elenme nedenleri; performans yetersizliği, aşırı karmaşıklık, aşırı öğrenme riski, eğitim süresi/maliyet, özellik mühendisliğine aşırı bağımlılık veya açıklanabilirlik zorlukları gibi gerekçelerle ifade edilebilir. Amaç, nihai seçimin bir karşılaştırma mantığına dayandığını göstermek ve teknik olgunluğu yansıtmaktır."
+            ]
+          },
+          {
+            "ad": "5.3 Parametre Seçimi ve Deneysel Ayarlar",
+            "zorunlu": true,
+            "puan": 8,
+            "yonergeMetni": [
+              "Yarışmacılar, temel hiperparametrelerin (örn. pencere uzunluğu, öğrenme oranı, batch boyutu, epoch, dropout, class weight) nasıl belirlendiğini genel bir seçim mantığıyla açıklamalıdır. Parametrelerin doğrulama performansına göre seçildiği, deneme planının nasıl yürütüldüğü ve aşırı öğrenmeyi önlemek için hangi önlemlerin alındığı (örn. erken durdurma, düzenlileştirme) kısa biçimde yazılmalıdır. Bu bölüm, sonuçların “ayarlara bağlı tesadüfi” değil, yönetilen bir optimizasyon sürecinin çıktısı olduğunu göstermelidir."
+            ]
+          },
+          {
+            "ad": "5.4 Öğrenme Süreci ve Teknik Evrim",
+            "zorunlu": true,
+            "puan": 8,
+            "yonergeMetni": [
+              "Yarışmacılardan, ilk denemelerde karşılaşılan sorunları ve modelin hangi adımlarla olgunlaştığını kısa bir gelişim hikâyesi şeklinde özetlemeleri beklenir. Örneğin; ham sinyal ile zayıf performans → ön işleme revizyonu, dengesizlik nedeniyle hatalar → sınıf ağırlıkları/stratified split, overfitting → dropout/erken durdurma gibi “sorun–müdahale–çıktı” akışı kurulmalıdır. Bu bölüm, sadece nihai sonucu değil, sürecin mühendislik ve araştırma disiplinini de değerlendirilebilir hale getirir."
+            ]
+          },
+          {
+            "ad": "5.5 Hesaplama Kaynakları ve Çalıştırılabilirlik",
+            "zorunlu": true,
+            "puan": 8,
+            "yonergeMetni": [
+              "Yarışmacılar, eğitim ve çıkarım (inference) süreçlerinde kullandıkları hesaplama kaynaklarını ayrıntılı biçimde raporlamalıdır. Kullanılan donanım (CPU modeli, GPU modeli/VRAM, RAM miktarı), yazılım ortamı (işletim sistemi, framework sürümleri), eğitim süresi (toplam ve epoch başına), batch boyutu ve bellek kullanımı gibi bilgiler verilmelidir. Ayrıca modelin gerçekçi kullanım senaryosunda çalıştırılabilirliğine dair kısa bir değerlendirme (ör. tek kaydı kaç ms/sn’de sınıflıyor, donanım gereksinimi makul mü) eklenmelidir. Bu sayede performans sonuçlarının maliyeti ve uygulanabilirliği birlikte değerlendirilebilir."
+            ]
+          },
+          {
+            "ad": "REFERANSLAR",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Rapor içinde atıfta bulunulan kaynaklar, bu bölümde IEEE atıf stiline uygun olarak formatlanmalıdır. Rapor içinde alıntı yapılan metinler köşeli parantez içinde referans numarası [1] ile belirtilir.}",
+              "Not: 10 Puan genel rapor düzeninden verilecektir."
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "REFERANSLAR",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+          "Tüm raporlar “İçindekiler” ve “Kaynakça” içermelidir.",
+          "Her rapor bir kapak sayfası içermelidir.",
+          "Her rapor bir “İçindekiler” sayfası içermelidir.",
+          "Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+          "Yazı tipi: Aptos, Punto: 12, Başlık Yazı Tipi: Aptos, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst 2.8 alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindekiler- “Kapak” ve “İçindekiler” kısmı hariç rapor 10 sayfayı geçmemelidir.",
+          "10 sayfayı geçen raporlar değerlendirmeye alınmayacaktır."
+        ],
+        "eleyiciMi": false,
+        "azamiSayfa": 10,
+        "yaziTipi": "Aptos",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "probleme-en-yakin-cozum-sunan-uluslarara",
+            "ad": "PROBLEME EN YAKIN ÇÖZÜM SUNAN ULUSLARARASI MAKALELERİN ÖZETİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde yarışmacılar, 12 derivasyonlu EKG’den Ritim Bozuklukları / İletim Bozuklukları / Normal üst sınıflarını ayırt etmeye en yakın 5–10 uluslararası çalışmayı seçip kısa biçimde özetlemelidir. Her çalışma için “ne yaptılar?”ı anlatmanın yanında, kendi çözümlerine bağ kuracak şekilde şu başlıklar kısaca yer almalıdır: çalışmanın hedefi (benzer sınıflandırma problemi), kullanılan veri türü/ölçeği (12-lead, kayıt sayısı gibi), yöntem türü (ör. CNN/RNN/Transformer veya zaman-frekans temsili + sınıflandırma), raporlanan temel metrikler (özellikle macro F1 ve/veya AUC) ve en az bir güçlü yön ile bir sınırlılık (ör. veri dengesizliği, gürültü, genelleme, açıklanabilirlik). Paragrafın sonunda yarışmacılar, bu literatürden kendi yaklaşımlarına yansıttıkları 2–3 tasarım kararını (ör. pencereleme stratejisi, ön işleme, dengesizlik yönetimi, açıklanabilirlik) “hangi tür bulgu nedeniyle” seçtiklerini 1–2 cümle ile belirtmeli ve kullandıkları kaynakları IEEE formatında referanslamalıdır.}"
+            ],
+            "bolumAdi": "PROBLEME EN YAKIN ÇÖZÜM SUNAN ULUSLARARASI MAKALELERİN ÖZETİ"
+          },
+          {
+            "kod": "veri-ve-yontem",
+            "ad": "VERİ VE YÖNTEM",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda modelin eğitiminde kullanılan veri setleri hakkında bilgi verilir ve veri setlerinin analizi gerçekleştirilir. Verilerin elde edildiği kaynak belirtilir ve halka açık olmayan veri setleri için gerekli izinler eklenir.",
+              "Ayrıca, bu kısımda, problemin çözümünde kullanılan algoritmalar ve bu algoritmaların tercih edilme nedenlerinin açıklanması beklenir. Proje geliştirme sürecinde yapılan çalışmalar detaylıca anlatılır.}"
+            ],
+            "bolumAdi": "VERİ VE YÖNTEM"
+          },
+          {
+            "kod": "3-1-kullanilan-veri-seti-ve-etiketler",
+            "ad": "3.1 Kullanılan Veri Seti ve Etiketler",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde yarışmacılar, kullandıkları veri setlerinin adını, kaynak bağlantısını, toplam kayıt sayısını, örnekleme frekansını, dosya formatını (örn. .mat/.hea) ve kullanılan etiket standardını açıkça belirtmelidir. Problem tanımı birinci aşamaya uygun biçimde ifade edilmeli; her kayıt için tek bir üst sınıf tahmini üretildiği (Ritim Bozuklukları / İletim Bozuklukları / Normal) netleştirilmelidir. Varsa ek veri seti kullanımı veya oluşturulan veri, kapsam ve gerekçe ile kısaca açıklanmalıdır."
+            ],
+            "bolumAdi": "3.1 Kullanılan Veri Seti ve Etiketler"
+          },
+          {
+            "kod": "3-2-etiket-guvenilirligi-ve-veri-kalites",
+            "ad": "3.2 Etiket Güvenilirliği ve Veri Kalitesi Kontrolü",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışmacılar, etiketlerin güvenilirliğini ve veri kalitesini değerlendirmek için uyguladıkları kontrolleri özetlemelidir. Amaç klinik yeniden etiketleme yapmak değil; hatalı/eksik kayıtlar, aşırı gürültü, kayıt süresi tutarsızlığı veya etiket–sinyal uyumsuzluğu gibi risklere karşı izlenen kalite yaklaşımını raporlamaktır. Uygulanan kontrollerin (ör. aykırı değer taraması, rastgele örnek incelemesi, sorunlu örnekleri işaretleme) kapsamı ve varsa elenen/işaretlenen örneklerin sayısı kısa biçimde belirtilmelidir."
+            ],
+            "bolumAdi": "3.2 Etiket Güvenilirliği ve Veri Kalitesi Kontrolü"
+          },
+          {
+            "kod": "3-3-veri-dengesizligi-nasil-ele-alindi",
+            "ad": "3.3 Veri Dengesizliği Nasıl Ele Alındı",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde sınıf dağılımı raporlanmalı ve veri dengesizliğinin modele ve metriğe etkisi kısaca açıklanmalıdır. Yarışmacılar, dengesizliği yönetmek için kullandıkları yöntemleri (örn. sınıf ağırlıkları, stratified bölme, kontrollü veri artırma, yeniden örnekleme) gerekçeleriyle birlikte özetlemelidir. Değerlendirmenin macro F1 üzerinden yapılmasının nedeni ile seçilen stratejinin ilişkisi kurulmalı; yalnızca accuracy gibi metriklere dayanmanın neden yanıltıcı olabileceği belirtilmelidir."
+            ],
+            "bolumAdi": "3.3 Veri Dengesizliği Nasıl Ele Alındı"
+          },
+          {
+            "kod": "3-4-veri-bolme-ve-deney-protokolu",
+            "ad": "3.4 Veri Bölme ve Deney Protokolü",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışmacılar, veriyi eğitim/doğrulama/test şeklinde nasıl böldüklerini ve bu bölmenin nasıl yapıldığını (örn. stratified, hasta-bazlı ayrım, veri sızıntısını önleme) açıkça yazmalıdır. Kullanılan çapraz doğrulama varsa fold sayısı, tekrar sayısı ve her fold’da izlenen süreç kısaca tanımlanmalıdır. Bu bölümün amacı, sonuçların tekrarlanabilir ve adil bir değerlendirme düzenine dayandığını göstermektir."
+            ],
+            "bolumAdi": "3.4 Veri Bölme ve Deney Protokolü"
+          },
+          {
+            "kod": "deney-tasarimi-sonuclar-ve-inceleme",
+            "ad": "DENEY TASARIMI, SONUÇLAR VE İNCELEME",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda geliştirilen sistemin yarışmacılar tarafından elde edilmiş sonuçları paylaşılır. Uygulanan test senaryoları açıklanır ve bu senaryolardan elde edilen sonuçlar, grafik ve tablolarla desteklenir. Test sonuçlarının uygulanan yöntemlerle uyumunun değerlendirilmesi istenir. Tüm aşamalarda yaşanan sorunlar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir.}"
+            ],
+            "bolumAdi": "DENEY TASARIMI, SONUÇLAR VE İNCELEME"
+          },
+          {
+            "kod": "4-1-sinyal-bolgesi-zaman-araligi-secimi",
+            "ad": "4.1 Sinyal Bölgesi / Zaman Aralığı Seçimi",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modelin karar üretirken hangi sinyal bölümünü kullandığı net olarak açıklanmalıdır: tüm kayıt mı işlendi, yoksa sabit uzunlukta pencereler mi çıkarıldı? Pencere uzunluğu, kaydırma/overlap yaklaşımı ve ön işleme adımları (örn. filtreleme, baseline düzeltme, normalizasyon) genel hatlarıyla belirtilmelidir. Bu seçimlerin, EKG’de ayırt edici örüntüleri yakalama ve hesaplama maliyeti açısından neden uygun görüldüğü kısa bir gerekçeyle ifade edilmelidir."
+            ],
+            "bolumAdi": "4.1 Sinyal Bölgesi / Zaman Aralığı Seçimi"
+          },
+          {
+            "kod": "4-2-performans-metrikleri-ve-hata-analiz",
+            "ad": "4.2 Performans Metrikleri ve Hata Analizi",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışmacılar, macro F1 başta olmak üzere raporladıkları metrikleri ve sonuçların hangi koşulda elde edildiğini özetlemelidir. Sınıf bazlı metrikler ve karışıklık matrisi üzerinden, en belirgin hata tipleri (hangi sınıfların daha çok karıştığı) kısa biçimde yorumlanmalıdır. Ayrıca öğrenme eğrileri veya temel eğitim logları üzerinden aşırı öğrenme/yetersiz öğrenme işaretleri varsa bunlar birkaç cümle ile belirtilmeli; gerekirse iyileştirme yönü işaret edilmelidir."
+            ],
+            "bolumAdi": "4.2 Performans Metrikleri ve Hata Analizi"
+          },
+          {
+            "kod": "4-3-model-neden-bu-karari-verdi-aciklana",
+            "ad": "4.3 “Model Neden Bu Kararı Verdi?” – Açıklanabilirlik Yaklaşımı",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde yarışmacıların, model kararını anlamlandırmaya yönelik en az bir açıklanabilirlik yaklaşımı sunması beklenir. Bu yaklaşım; zaman ekseninde önem haritası, attention ağırlıkları, gradyan/saliency tabanlı görselleştirme veya örnek-tabanlı benzerlik açıklaması gibi bir yöntem olabilir. Amaç klinik tanı iddiası değil; modelin hangi sinyal bölgesi veya hangi örüntülerden etkilendiğini şeffaf biçimde göstermektir. Mümkünse en az bir örnek üzerinden kısa bir açıklama verilmeli ve modelin güçlü/zayıf taraflarıyla ilişkilendirilmelidir."
+            ],
+            "bolumAdi": "4.3 “Model Neden Bu Kararı Verdi?” – Açıklanabilirlik Yaklaşımı"
+          },
+          {
+            "kod": "4-4-yanlis-siniflanan-orneklerin-incelen",
+            "ad": "4.4 Yanlış Sınıflanan Örneklerin İncelenmesi",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışmacılar, en az birkaç yanlış sınıflama örneğini seçerek kısa bir “vaka analizi” yapmalıdır. Bu analizde, hatanın olası nedenleri (gürültü, pencere seçimi, sınıf benzerliği, etiket belirsizliği) genel ifadelerle tartışılmalı; varsa açıklanabilirlik çıktılarıyla desteklenmelidir. Bu bölüm, modelin sınırlarını görme ve geliştirme planını temellendirme açısından önemli kabul edilir."
+            ],
+            "bolumAdi": "4.4 Yanlış Sınıflanan Örneklerin İncelenmesi"
+          },
+          {
+            "kod": "yaklasimin-gerekcesi-teknik-evrim-ve-kay",
+            "ad": "YAKLAŞIMIN GEREKÇESİ, TEKNİK EVRİM VE KAYNAK KULLANIMI",
+            "puan": 40,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Ekibin çözüm için geliştirdiği yöntemler ve bu yöntemlerin özgünlüğe katkıları detaylı bir şekilde açıklanmalıdır.}"
+            ],
+            "bolumAdi": "YAKLAŞIMIN GEREKÇESİ, TEKNİK EVRİM VE KAYNAK KULLANIMI"
+          },
+          {
+            "kod": "5-1-neden-bu-algoritma-mimari",
+            "ad": "5.1 Neden Bu Algoritma / Mimari?",
+            "puan": 8,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışmacılar, seçtikleri algoritmanın bu problem için neden uygun olduğunu kısa ve somut gerekçelerle açıklamalıdır. Beklenen; EKG’nin zamansal yapısını ve derivasyonlar arası ilişkileri yakalama kapasitesi, gürültüye dayanıklılık ve uygulanabilir hesaplama maliyeti gibi kriterler üzerinden bir gerekçelendirmedir. Bu bölüm, seçimlerin “rastgele” değil, hedef odaklı olduğunu gösteren bir teknik çerçeve sunmalıdır."
+            ],
+            "bolumAdi": "5.1 Neden Bu Algoritma / Mimari?"
+          },
+          {
+            "kod": "5-2-alternatifler-neden-elendi",
+            "ad": "5.2 Alternatifler Neden Elendi?",
+            "puan": 8,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde en az iki alternatif yaklaşımın değerlendirildiği ve neden tercih edilmediği özetlenmelidir. Alternatiflerin elenme nedenleri; performans yetersizliği, aşırı karmaşıklık, aşırı öğrenme riski, eğitim süresi/maliyet, özellik mühendisliğine aşırı bağımlılık veya açıklanabilirlik zorlukları gibi gerekçelerle ifade edilebilir. Amaç, nihai seçimin bir karşılaştırma mantığına dayandığını göstermek ve teknik olgunluğu yansıtmaktır."
+            ],
+            "bolumAdi": "5.2 Alternatifler Neden Elendi?"
+          },
+          {
+            "kod": "5-3-parametre-secimi-ve-deneysel-ayarlar",
+            "ad": "5.3 Parametre Seçimi ve Deneysel Ayarlar",
+            "puan": 8,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışmacılar, temel hiperparametrelerin (örn. pencere uzunluğu, öğrenme oranı, batch boyutu, epoch, dropout, class weight) nasıl belirlendiğini genel bir seçim mantığıyla açıklamalıdır. Parametrelerin doğrulama performansına göre seçildiği, deneme planının nasıl yürütüldüğü ve aşırı öğrenmeyi önlemek için hangi önlemlerin alındığı (örn. erken durdurma, düzenlileştirme) kısa biçimde yazılmalıdır. Bu bölüm, sonuçların “ayarlara bağlı tesadüfi” değil, yönetilen bir optimizasyon sürecinin çıktısı olduğunu göstermelidir."
+            ],
+            "bolumAdi": "5.3 Parametre Seçimi ve Deneysel Ayarlar"
+          },
+          {
+            "kod": "5-4-ogrenme-sureci-ve-teknik-evrim",
+            "ad": "5.4 Öğrenme Süreci ve Teknik Evrim",
+            "puan": 8,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışmacılardan, ilk denemelerde karşılaşılan sorunları ve modelin hangi adımlarla olgunlaştığını kısa bir gelişim hikâyesi şeklinde özetlemeleri beklenir. Örneğin; ham sinyal ile zayıf performans → ön işleme revizyonu, dengesizlik nedeniyle hatalar → sınıf ağırlıkları/stratified split, overfitting → dropout/erken durdurma gibi “sorun–müdahale–çıktı” akışı kurulmalıdır. Bu bölüm, sadece nihai sonucu değil, sürecin mühendislik ve araştırma disiplinini de değerlendirilebilir hale getirir."
+            ],
+            "bolumAdi": "5.4 Öğrenme Süreci ve Teknik Evrim"
+          },
+          {
+            "kod": "5-5-hesaplama-kaynaklari-ve-calistirilab",
+            "ad": "5.5 Hesaplama Kaynakları ve Çalıştırılabilirlik",
+            "puan": 8,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışmacılar, eğitim ve çıkarım (inference) süreçlerinde kullandıkları hesaplama kaynaklarını ayrıntılı biçimde raporlamalıdır. Kullanılan donanım (CPU modeli, GPU modeli/VRAM, RAM miktarı), yazılım ortamı (işletim sistemi, framework sürümleri), eğitim süresi (toplam ve epoch başına), batch boyutu ve bellek kullanımı gibi bilgiler verilmelidir. Ayrıca modelin gerçekçi kullanım senaryosunda çalıştırılabilirliğine dair kısa bir değerlendirme (ör. tek kaydı kaç ms/sn’de sınıflıyor, donanım gereksinimi makul mü) eklenmelidir. Bu sayede performans sonuçlarının maliyeti ve uygulanabilirliği birlikte değerlendirilebilir."
+            ],
+            "bolumAdi": "5.5 Hesaplama Kaynakları ve Çalıştırılabilirlik"
+          }
+        ],
+        "toplamPuan": 170
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Rubrik toplamı 170 puan. Ağırlıklar yöneticiye doğrulatılmalı."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026-_Sağlıkta_Yapay_Zeka_Türkçe_Şartname_v2_son_versiyon-2_DNTlA.pdf",
+        "yuklendi": "2026-08-23T20:16:23.441Z",
+        "sayfaSayisi": 19,
+        "kelimeSayisi": 4160,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk yayın",
+              "tarih": "2026-01-09"
+            },
+            {
+              "etiket": "Lise Seviyesi Yarışma Kapsamı",
+              "tarih": "2026-01-21"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "Soru-Cevap Toplantıları I (Lise ve Üniversite)",
+              "tarih": "2026-03-23"
+            },
+            {
+              "etiket": "Proje Sunuş Raporu Son Teslim Tarihi (Lise ve Üniversite)",
+              "tarih": "2026-03-25"
+            },
+            {
+              "etiket": "Takımların Açıklanması",
+              "tarih": "2026-04-14"
+            },
+            {
+              "etiket": "Verilerin Paylaşılması (Lise ve Üniversite Kategorisi)",
+              "tarih": "2026-05-05"
+            },
+            {
+              "etiket": "Soru-Cevap Toplantıları II (Lise ve Üniversite)",
+              "tarih": "2026-05-18"
+            },
+            {
+              "etiket": "Proje Detay Raporu Son Teslim Tarihi (Lise ve Üniversite)",
+              "tarih": "2026-06-29"
+            },
+            {
+              "etiket": "Açıklanması",
+              "tarih": "2026-07-20"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Proje sahibinin danışman olduğu saptandığında başvuru geçersiz sayılacaktır."
+          ],
+          "katilimciSeviyeleri": [
+            "universite"
+          ]
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026-_Sa%C4%9Fl%C4%B1kta_Yapay_Zeka_T%C3%BCrk%C3%A7e_%C5%9Eartname_v2_son_versiyon-2_DNTlA.pdf"
+      }
+    },
+    {
+      "id": "464502a2-48e9-4fc8-af2a-f5208c51d01e",
+      "ad": "Üniversite · Sunuş",
+      "sablonDosyasi": "2026_Sağlıkta_Yapay_Zeka_PSR-Üniversite_ve_Üzeri_lt7Hv.docx",
+      "olusturuldu": "2026-08-23T13:57:48.650Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-464502a2",
+        "ad": "Üniversite · Sunuş",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 10,
+        "basliklar": [
+          {
+            "ad": "TAKIM ŞEMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{ Bu bölümde takımın organizasyonu ve iş bölümü, kişisel bilgi paylaşmadan net biçimde açıklanmalıdır. Hangi üyenin hangi teknik sorumluluğu üstlendiği (veri analizi, özellik işleme, modelleme, deney tasarımı, yazılım/MLops, raporlama vb.) ve ekip içi karar alma/kalite kontrol mekanizması (kod inceleme, deney kayıt standardı, sürümleme yaklaşımı) kısa ama somut ifadelerle yazılmalıdır. Takımın bu görevin gerektirdiği biyoinformatik, istatistik/ML ve yazılım geliştirme bileşenlerini nasıl karşıladığı görülür olmalıdır.}"
+            ]
+          },
+          {
+            "ad": "PROBLEME EN YAKIN ÇÖZÜM SUNAN ULUSLARARASI MAKALELERİN ÖZETİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "{Bu bölümde en güncel ve en ilgili 5–10 çalışma seçilmeli; her biri için (i) problem tanımı ve veri türü (missense varyant patojenite/benign), (ii) kullanılan yaklaşım (ör. gradient boosting, derin öğrenme, protein dil modelleri, ensemble, açıklanabilirlik), (iii) kullanılan veri kaynakları (ClinVar/gnomAD benzeri), (iv) raporlanan metrikler (AUC, F1, PR-AUC, calibration vb.) ve (v) sınırlılıklar kısa şekilde özetlenmelidir. Özetler “neden bu çalışmaları seçtik ve bizim yaklaşımımızı nasıl konumlandırıyor?” sorusuna hizmet etmeli; salt literatür listesi gibi kalmamalıdır.}"
+            ]
+          },
+          {
+            "ad": "VERİ VE YÖNTEM",
+            "zorunlu": true,
+            "puan": 30,
+            "yonergeMetni": [
+              "{Bu kısımda modelin eğitiminde kullanılan veri setleri hakkında bilgi verilir ve veri setlerinin analizi gerçekleştirilir. Verilerin elde edildiği kaynak belirtilir ve halka açık olmayan veri setleri için gerekli izinler eklenir.",
+              "Ayrıca, bu kısımda, problemin çözümünde kullanılan algoritmalar ve bu algoritmaların tercih edilme nedenlerinin açıklanması beklenir. Proje geliştirme sürecinde yapılan çalışmalar detaylıca anlatılır.}"
+            ]
+          },
+          {
+            "ad": "3.1 Kullanılan Veri Seti ve Etiketler",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde yarışmacılar, sağlanan veri setlerinin (Genel Veri Seti ve üç gen paneli: Herediter Kanser, PAH, CFTR) kapsamını ve her birinin eğitim/test ayrımını net biçimde açıklamalıdır. Patojenik ve Benign sınıfların hangi kaynaklardan ve hangi etiket mantığıyla oluşturulduğu (ACMG uyumlu etiketlerin ground truth kabul edilmesi; “Pathogenic + Likely Pathogenic” ve “Benign + Likely Benign” birleştirmeleri) genel düzeyde özetlenmelidir. Amaç, modelin hangi etiket tanımıyla öğrenildiğini ve sınıf tanımlarının sınırlarını şeffaflaştırmaktır."
+            ]
+          },
+          {
+            "ad": "3.2 Veri Kısıtları ve Etikete Doğrudan Erişimi Engelleme",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu yarışmada genomik adres bilgileri (kromozom/pozisyon) ve kolon isimleri gizlenerek, dış kaynaklardan etiketi doğrudan bulma olasılığı ortadan kaldırılmıştır. Yarışmacılar bu kısıtlamaya uyduklarını ve çözümün yalnızca sağlanan varyant profilleri üzerinden çalıştığını açıkça belirtmelidir. Ayrıca, model geliştirme sürecinde “dolaylı sızıntı” risklerinin (ör. aynı varyantın türevi örneklerin farklı bölümlere düşmesi veya panel kimliğinin etiketle ilişkili hale gelmesi) nasıl kontrol edildiği kısa bir paragrafla açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "3.3 Veri Ön İşleme ve Temsilleme Stratejisi",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde yarışmacılar, kolon isimleri olmaksızın sunulan çok boyutlu varyant profillerini nasıl işlediklerini açıklamalıdır. Eksik değer yönetimi, aykırı değer işlemleri, ölçekleme/normalizasyon, olası boyut indirgeme veya özellik seçimi gibi adımlar, “neden gerekli” olduğu ile birlikte kısa biçimde ifade edilmelidir. Beklenen, veri hazırlama sürecinin tekrarlanabilir ve yanlılığı artırmayacak şekilde tasarlanmış olmasıdır."
+            ]
+          },
+          {
+            "ad": "3.4 Etiket Güvenilirliği ve Veri Kalitesi Kontrolü",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Ground truth etiketleri güvenilir kaynaklardan derlense de, yarışmacıların veri kalitesine yönelik temel kontrolleri raporlaması beklenir. Amaç, etiketleri yeniden doğrulamak değil; veri kaynaklı gürültünün modele etkisini azaltacak sistematik bir yaklaşım göstermektir. Bu kapsamda; tekrar eden kayıt kontrolü, uç değer taraması, tutarsız profil örneklerinin işaretlenmesi veya eğitim sırasında anormal davranan örneklerin incelenmesi gibi kontroller kısa ve net biçimde özetlenmelidir."
+            ]
+          },
+          {
+            "ad": "3.5 Sınıf Dengesi ve Risk Perspektifi",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Veri setleri dengeli tasarlanmış olsa bile yarışmacılar, her alt veri seti için sınıf dağılımını raporlamalı ve küçük örneklemli panellerde oluşabilecek dengesizlik/oynaklık riskini belirtmelidir. Ayrıca patojenik–benign sınıflamasında yanlış negatif ve yanlış pozitif hatalarının farklı klinik sonuçlara yol açabileceği göz önüne alınarak, karar eşiği seçimi ve metrik yorumunun bu risk perspektifiyle nasıl ele alındığı genel ifadelerle açıklanmalıdır. Bu bölüm, performansın yalnız “yüksek skor” değil “anlamlı hata profili” ile değerlendirildiğini göstermelidir."
+            ]
+          },
+          {
+            "ad": "3.6 Seçilen Algoritmalar ve Gerekçe",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde kullanılan model(ler) ve seçilme gerekçeleri, veri yapısına uygunluk üzerinden anlatılmalıdır. Tabular profil verisinde yaygın kullanılan yöntemler (ör. GBDT ailesi, düzenlileştirilmiş modeller, tabular derin ağlar, ensemble) arasından seçim mantığı kısa ve teknik gerekçelerle kurulmalıdır. Dengesizlik yönetimi, regularizasyon/erken durdurma, olasılık kalibrasyonu ve panel bazlı genelleme ihtiyacı gibi unsurların seçilen yaklaşımda nasıl karşılandığı da bu bölümde özetlenmelidir."
+            ]
+          },
+          {
+            "ad": "DENEY TASARIMI, SONUÇLAR VE İNCELEME",
+            "zorunlu": true,
+            "puan": 25,
+            "yonergeMetni": [
+              "{Bu kısımda geliştirilen sistemin yarışmacılar tarafından elde edilmiş sonuçları paylaşılır. Uygulanan test senaryoları açıklanır ve bu senaryolardan elde edilen sonuçlar, grafik ve tablolarla desteklenir. Test sonuçlarının uygulanan yöntemlerle uyumunun değerlendirilmesi istenir. Tüm aşamalarda yaşanan sorunlar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir.}"
+            ]
+          },
+          {
+            "ad": "4.1 Deney Protokolü ve Veri Bölme",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Yarışmacılar, eğitim/doğrulama/test düzenini açıkça tanımlamalı; çapraz doğrulama kullanıldıysa protokolü (fold sayısı, stratification, tekrar) belirtmelidir. Özellikle panel veri setlerinde örnek sayısı düşük olabileceğinden, doğrulama yaklaşımının “rastlantısal iyi sonuç” riskini azaltacak şekilde tasarlanması beklenir. Hiperparametre seçimi ve model karşılaştırmasının hangi doğrulama düzeniyle yapıldığı kısa biçimde yazılmalıdır."
+            ]
+          },
+          {
+            "ad": "4.2 Performans Metrikleri ve Panel Bazlı Raporlama",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde sonuçlar yalnız genel veri seti için değil, her panel için ayrı raporlanmalıdır. Seçilen metrikler (örn. ROC-AUC, PR-AUC, F1, dengeli doğruluk, duyarlılık/özgüllük) ve neden seçildikleri kısa biçimde gerekçelendirilmelidir. Karar eşiğinin (threshold) performansa etkisi ve hangi eşik stratejisinin tercih edildiği (örn. F1 maksimize eden eşik, duyarlılık öncelikli eşik) net biçimde ifade edilmelidir."
+            ]
+          },
+          {
+            "ad": "4.3 Hata Analizi ve Model Davranışı",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Yarışmacılar, yanlış sınıflanan örneklerde ortak desenleri genel düzeyde analiz etmelidir. Hataların belirli popülasyon sıklığı aralıklarında, belirli in-silico skor kombinasyonlarında veya belirli biyokimyasal değişim türlerinde yoğunlaşıp yoğunlaşmadığı incelenmelidir. Amaç, modelin sınırlarını ve zorlandığı örnek tiplerini kısa ama teknik bir dille raporlamaktır."
+            ]
+          },
+          {
+            "ad": "4.4 “Model Neden Böyle Karar Verdi?” – Açıklanabilirlik Yaklaşımı",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde yarışmacılar, en az bir açıklanabilirlik yöntemi ile kararın hangi özellik grupları tarafından sürüklendiğini göstermelidir. Kolon isimleri paylaşılmadığı için açıklama dili, “özellik grupları” üzerinden kurulmalıdır (ör. evrimsel korunmuşluk, popülasyon frekansları, in-silico risk skorları, biyokimyasal/yapısal etkiler, yerel sekans bağlamı). Kullanılan yaklaşım (ör. SHAP, permütasyon önemi, feature importance) belirtilmeli ve en az bir örnek üzerinden kısa yorum yapılmalıdır."
+            ]
+          },
+          {
+            "ad": "4.5 Öğrenme Süreci ve Teknik Evrim",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Yarışmacılar, ilk denemelerde karşılaşılan sorunları ve yapılan teknik iyileştirmeleri kısa bir gelişim anlatısı şeklinde sunmalıdır. Örneğin; overfitting → regularizasyon/erken durdurma, panel bazlı performans düşüşü → validasyon stratejisi/ensemble, olasılık çıktılarında güvensizlik → kalibrasyon, eşik seçimiyle risk yönetimi gibi “sorun–müdahale–etki” akışı kurulması beklenir. Bu bölüm, çözümün yalnız son halini değil, geliştirme disiplinini de görünür kılar."
+            ]
+          },
+          {
+            "ad": "YAKLAŞIMIN GEREKÇESİ, KAYNAK KULLANIMI VE ÖZGÜNLÜK",
+            "zorunlu": true,
+            "puan": 25,
+            "yonergeMetni": [
+              "{Ekibin çözüm için geliştirdiği yöntemler ve bu yöntemlerin özgünlüğe katkıları detaylı bir şekilde açıklanmalıdır.}"
+            ]
+          },
+          {
+            "ad": "5.1 Neden Bu Algoritma / Mimari?",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde seçilen yaklaşımın, sağlanan varyant profil verisinin doğasına uygunluğu ve genelleme gücü üzerinden gerekçelendirilmesi beklenir. Modelin hem genel veri setinde hem panel bazında tutarlı çalışması, gürültüye dayanıklılığı ve tekrarlanabilir bir eğitim düzenine sahip olması vurgulanmalıdır. Gerekçeler kısa, teknik ve ölçülebilir hedeflerle ilişkilendirilmelidir."
+            ]
+          },
+          {
+            "ad": "5.2 Alternatifler Neden Elendi?",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Yarışmacılar, en az iki alternatif yaklaşımı ve elenme nedenlerini kısa biçimde yazmalıdır. Elenme nedenleri performans yetersizliği, aşırı karmaşıklık, panel bazında tutarsızlık, eğitim maliyeti veya açıklanabilirlik zorlukları gibi kriterlerle ifade edilebilir. Amaç, nihai seçimin karşılaştırmalı bir değerlendirme ile yapıldığını göstermektir."
+            ]
+          },
+          {
+            "ad": "5.3 Parametre Seçimi ve Model Ayarları",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde hiperparametrelerin nasıl seçildiği genel çerçevede anlatılmalıdır: arama stratejisi (grid/random/deneme planı), doğrulama metriği, early stopping ve düzenlileştirme gibi mekanizmalar belirtilmelidir. Karar eşiği seçimi ve gerekiyorsa olasılık kalibrasyonu, risk ve metrik dengesi açısından kısaca gerekçelendirilmelidir. Bu, sonuçların ayarlara bağlı rastlantısal değil yönetilen bir optimizasyon çıktısı olduğunu gösterir."
+            ]
+          },
+          {
+            "ad": "5.4 Hesaplama Kaynakları ve Çalıştırılabilirlik",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Yarışmacılar, eğitim ve çıkarım süreçlerinin hesaplama maliyetini ayrıntılı biçimde raporlamalıdır: CPU, GPU/VRAM, RAM, işletim sistemi, framework ve sürümler, eğitim süresi (toplam ve iterasyon/epoch başına), batch boyutu, bellek kullanımı, seed/deterministik ayarlar gibi bilgiler verilmelidir. Ayrıca tek örnek için çıkarım süresi ve toplu değerlendirme süresi gibi pratik çalıştırılabilirlik göstergeleri sunulmalı; yüksek performansın hangi maliyetle elde edildiği şeffaflaştırılmalıdır."
+            ]
+          },
+          {
+            "ad": "5.5 Özgünlük",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Özgünlük, genel ifadeler yerine somut teknik katkılar üzerinden yazılmalıdır. Kolon isimleri yokken özellik gruplarını anlamlandırma stratejisi, panel bazlı genelleme için geliştirilen değerlendirme düzeni, kalibrasyon/eşik tasarımıyla risk odaklı karar verme veya açıklanabilirlik analizlerinin raporlanması gibi unsurlar özgünlük kapsamında değerlendirilebilir. İddiaların mümkünse küçük ablation karşılaştırmaları veya kısa deneysel gözlemlerle desteklenmesi beklenir."
+            ]
+          },
+          {
+            "ad": "REFERANSLAR",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Rapor içinde atıfta bulunulan kaynaklar, bu bölümde IEEE atıf stiline uygun olarak formatlanmalıdır. Rapor içinde alıntı yapılan metinler köşeli parantez içinde referans numarası [1] ile belirtilir.}",
+              "Not: 10 Puan genel rapor düzeninden verilecektir."
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "REFERANSLAR",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+          "Tüm raporlar “İçindekiler” ve “Kaynakça” içermelidir.",
+          "Her rapor bir kapak sayfası içermelidir.",
+          "Her rapor bir “İçindekiler” sayfası içermelidir.",
+          "Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+          "Yazı tipi: Aptos, Punto: 12, Başlık Yazı Tipi: Aptos, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst 2.8 alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindekiler- “Kapak” ve “İçindekiler” kısmı hariç Rapor 10 sayfayı geçmemelidir.",
+          "10 sayfayı geçen raporlar değerlendirmeye alınmayacaktır."
+        ],
+        "eleyiciMi": false,
+        "azamiSayfa": 10,
+        "yaziTipi": "Aptos",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "probleme-en-yakin-cozum-sunan-uluslarara",
+            "ad": "PROBLEME EN YAKIN ÇÖZÜM SUNAN ULUSLARARASI MAKALELERİN ÖZETİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde en güncel ve en ilgili 5–10 çalışma seçilmeli; her biri için (i) problem tanımı ve veri türü (missense varyant patojenite/benign), (ii) kullanılan yaklaşım (ör. gradient boosting, derin öğrenme, protein dil modelleri, ensemble, açıklanabilirlik), (iii) kullanılan veri kaynakları (ClinVar/gnomAD benzeri), (iv) raporlanan metrikler (AUC, F1, PR-AUC, calibration vb.) ve (v) sınırlılıklar kısa şekilde özetlenmelidir. Özetler “neden bu çalışmaları seçtik ve bizim yaklaşımımızı nasıl konumlandırıyor?” sorusuna hizmet etmeli; salt literatür listesi gibi kalmamalıdır.}"
+            ],
+            "bolumAdi": "PROBLEME EN YAKIN ÇÖZÜM SUNAN ULUSLARARASI MAKALELERİN ÖZETİ"
+          },
+          {
+            "kod": "veri-ve-yontem",
+            "ad": "VERİ VE YÖNTEM",
+            "puan": 30,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda modelin eğitiminde kullanılan veri setleri hakkında bilgi verilir ve veri setlerinin analizi gerçekleştirilir. Verilerin elde edildiği kaynak belirtilir ve halka açık olmayan veri setleri için gerekli izinler eklenir.",
+              "Ayrıca, bu kısımda, problemin çözümünde kullanılan algoritmalar ve bu algoritmaların tercih edilme nedenlerinin açıklanması beklenir. Proje geliştirme sürecinde yapılan çalışmalar detaylıca anlatılır.}"
+            ],
+            "bolumAdi": "VERİ VE YÖNTEM"
+          },
+          {
+            "kod": "3-1-kullanilan-veri-seti-ve-etiketler",
+            "ad": "3.1 Kullanılan Veri Seti ve Etiketler",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde yarışmacılar, sağlanan veri setlerinin (Genel Veri Seti ve üç gen paneli: Herediter Kanser, PAH, CFTR) kapsamını ve her birinin eğitim/test ayrımını net biçimde açıklamalıdır. Patojenik ve Benign sınıfların hangi kaynaklardan ve hangi etiket mantığıyla oluşturulduğu (ACMG uyumlu etiketlerin ground truth kabul edilmesi; “Pathogenic + Likely Pathogenic” ve “Benign + Likely Benign” birleştirmeleri) genel düzeyde özetlenmelidir. Amaç, modelin hangi etiket tanımıyla öğrenildiğini ve sınıf tanımlarının sınırlarını şeffaflaştırmaktır."
+            ],
+            "bolumAdi": "3.1 Kullanılan Veri Seti ve Etiketler"
+          },
+          {
+            "kod": "3-2-veri-kisitlari-ve-etikete-dogrudan-e",
+            "ad": "3.2 Veri Kısıtları ve Etikete Doğrudan Erişimi Engelleme",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu yarışmada genomik adres bilgileri (kromozom/pozisyon) ve kolon isimleri gizlenerek, dış kaynaklardan etiketi doğrudan bulma olasılığı ortadan kaldırılmıştır. Yarışmacılar bu kısıtlamaya uyduklarını ve çözümün yalnızca sağlanan varyant profilleri üzerinden çalıştığını açıkça belirtmelidir. Ayrıca, model geliştirme sürecinde “dolaylı sızıntı” risklerinin (ör. aynı varyantın türevi örneklerin farklı bölümlere düşmesi veya panel kimliğinin etiketle ilişkili hale gelmesi) nasıl kontrol edildiği kısa bir paragrafla açıklanmalıdır."
+            ],
+            "bolumAdi": "3.2 Veri Kısıtları ve Etikete Doğrudan Erişimi Engelleme"
+          },
+          {
+            "kod": "3-3-veri-on-isleme-ve-temsilleme-stratej",
+            "ad": "3.3 Veri Ön İşleme ve Temsilleme Stratejisi",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde yarışmacılar, kolon isimleri olmaksızın sunulan çok boyutlu varyant profillerini nasıl işlediklerini açıklamalıdır. Eksik değer yönetimi, aykırı değer işlemleri, ölçekleme/normalizasyon, olası boyut indirgeme veya özellik seçimi gibi adımlar, “neden gerekli” olduğu ile birlikte kısa biçimde ifade edilmelidir. Beklenen, veri hazırlama sürecinin tekrarlanabilir ve yanlılığı artırmayacak şekilde tasarlanmış olmasıdır."
+            ],
+            "bolumAdi": "3.3 Veri Ön İşleme ve Temsilleme Stratejisi"
+          },
+          {
+            "kod": "3-4-etiket-guvenilirligi-ve-veri-kalites",
+            "ad": "3.4 Etiket Güvenilirliği ve Veri Kalitesi Kontrolü",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Ground truth etiketleri güvenilir kaynaklardan derlense de, yarışmacıların veri kalitesine yönelik temel kontrolleri raporlaması beklenir. Amaç, etiketleri yeniden doğrulamak değil; veri kaynaklı gürültünün modele etkisini azaltacak sistematik bir yaklaşım göstermektir. Bu kapsamda; tekrar eden kayıt kontrolü, uç değer taraması, tutarsız profil örneklerinin işaretlenmesi veya eğitim sırasında anormal davranan örneklerin incelenmesi gibi kontroller kısa ve net biçimde özetlenmelidir."
+            ],
+            "bolumAdi": "3.4 Etiket Güvenilirliği ve Veri Kalitesi Kontrolü"
+          },
+          {
+            "kod": "3-5-sinif-dengesi-ve-risk-perspektifi",
+            "ad": "3.5 Sınıf Dengesi ve Risk Perspektifi",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Veri setleri dengeli tasarlanmış olsa bile yarışmacılar, her alt veri seti için sınıf dağılımını raporlamalı ve küçük örneklemli panellerde oluşabilecek dengesizlik/oynaklık riskini belirtmelidir. Ayrıca patojenik–benign sınıflamasında yanlış negatif ve yanlış pozitif hatalarının farklı klinik sonuçlara yol açabileceği göz önüne alınarak, karar eşiği seçimi ve metrik yorumunun bu risk perspektifiyle nasıl ele alındığı genel ifadelerle açıklanmalıdır. Bu bölüm, performansın yalnız “yüksek skor” değil “anlamlı hata profili” ile değerlendirildiğini göstermelidir."
+            ],
+            "bolumAdi": "3.5 Sınıf Dengesi ve Risk Perspektifi"
+          },
+          {
+            "kod": "3-6-secilen-algoritmalar-ve-gerekce",
+            "ad": "3.6 Seçilen Algoritmalar ve Gerekçe",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde kullanılan model(ler) ve seçilme gerekçeleri, veri yapısına uygunluk üzerinden anlatılmalıdır. Tabular profil verisinde yaygın kullanılan yöntemler (ör. GBDT ailesi, düzenlileştirilmiş modeller, tabular derin ağlar, ensemble) arasından seçim mantığı kısa ve teknik gerekçelerle kurulmalıdır. Dengesizlik yönetimi, regularizasyon/erken durdurma, olasılık kalibrasyonu ve panel bazlı genelleme ihtiyacı gibi unsurların seçilen yaklaşımda nasıl karşılandığı da bu bölümde özetlenmelidir."
+            ],
+            "bolumAdi": "3.6 Seçilen Algoritmalar ve Gerekçe"
+          },
+          {
+            "kod": "deney-tasarimi-sonuclar-ve-inceleme",
+            "ad": "DENEY TASARIMI, SONUÇLAR VE İNCELEME",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda geliştirilen sistemin yarışmacılar tarafından elde edilmiş sonuçları paylaşılır. Uygulanan test senaryoları açıklanır ve bu senaryolardan elde edilen sonuçlar, grafik ve tablolarla desteklenir. Test sonuçlarının uygulanan yöntemlerle uyumunun değerlendirilmesi istenir. Tüm aşamalarda yaşanan sorunlar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir.}"
+            ],
+            "bolumAdi": "DENEY TASARIMI, SONUÇLAR VE İNCELEME"
+          },
+          {
+            "kod": "4-1-deney-protokolu-ve-veri-bolme",
+            "ad": "4.1 Deney Protokolü ve Veri Bölme",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışmacılar, eğitim/doğrulama/test düzenini açıkça tanımlamalı; çapraz doğrulama kullanıldıysa protokolü (fold sayısı, stratification, tekrar) belirtmelidir. Özellikle panel veri setlerinde örnek sayısı düşük olabileceğinden, doğrulama yaklaşımının “rastlantısal iyi sonuç” riskini azaltacak şekilde tasarlanması beklenir. Hiperparametre seçimi ve model karşılaştırmasının hangi doğrulama düzeniyle yapıldığı kısa biçimde yazılmalıdır."
+            ],
+            "bolumAdi": "4.1 Deney Protokolü ve Veri Bölme"
+          },
+          {
+            "kod": "4-2-performans-metrikleri-ve-panel-bazli",
+            "ad": "4.2 Performans Metrikleri ve Panel Bazlı Raporlama",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde sonuçlar yalnız genel veri seti için değil, her panel için ayrı raporlanmalıdır. Seçilen metrikler (örn. ROC-AUC, PR-AUC, F1, dengeli doğruluk, duyarlılık/özgüllük) ve neden seçildikleri kısa biçimde gerekçelendirilmelidir. Karar eşiğinin (threshold) performansa etkisi ve hangi eşik stratejisinin tercih edildiği (örn. F1 maksimize eden eşik, duyarlılık öncelikli eşik) net biçimde ifade edilmelidir."
+            ],
+            "bolumAdi": "4.2 Performans Metrikleri ve Panel Bazlı Raporlama"
+          },
+          {
+            "kod": "4-3-hata-analizi-ve-model-davranisi",
+            "ad": "4.3 Hata Analizi ve Model Davranışı",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışmacılar, yanlış sınıflanan örneklerde ortak desenleri genel düzeyde analiz etmelidir. Hataların belirli popülasyon sıklığı aralıklarında, belirli in-silico skor kombinasyonlarında veya belirli biyokimyasal değişim türlerinde yoğunlaşıp yoğunlaşmadığı incelenmelidir. Amaç, modelin sınırlarını ve zorlandığı örnek tiplerini kısa ama teknik bir dille raporlamaktır."
+            ],
+            "bolumAdi": "4.3 Hata Analizi ve Model Davranışı"
+          },
+          {
+            "kod": "4-4-model-neden-boyle-karar-verdi-acikla",
+            "ad": "4.4 “Model Neden Böyle Karar Verdi?” – Açıklanabilirlik Yaklaşımı",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde yarışmacılar, en az bir açıklanabilirlik yöntemi ile kararın hangi özellik grupları tarafından sürüklendiğini göstermelidir. Kolon isimleri paylaşılmadığı için açıklama dili, “özellik grupları” üzerinden kurulmalıdır (ör. evrimsel korunmuşluk, popülasyon frekansları, in-silico risk skorları, biyokimyasal/yapısal etkiler, yerel sekans bağlamı). Kullanılan yaklaşım (ör. SHAP, permütasyon önemi, feature importance) belirtilmeli ve en az bir örnek üzerinden kısa yorum yapılmalıdır."
+            ],
+            "bolumAdi": "4.4 “Model Neden Böyle Karar Verdi?” – Açıklanabilirlik Yaklaşımı"
+          },
+          {
+            "kod": "4-5-ogrenme-sureci-ve-teknik-evrim",
+            "ad": "4.5 Öğrenme Süreci ve Teknik Evrim",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışmacılar, ilk denemelerde karşılaşılan sorunları ve yapılan teknik iyileştirmeleri kısa bir gelişim anlatısı şeklinde sunmalıdır. Örneğin; overfitting → regularizasyon/erken durdurma, panel bazlı performans düşüşü → validasyon stratejisi/ensemble, olasılık çıktılarında güvensizlik → kalibrasyon, eşik seçimiyle risk yönetimi gibi “sorun–müdahale–etki” akışı kurulması beklenir. Bu bölüm, çözümün yalnız son halini değil, geliştirme disiplinini de görünür kılar."
+            ],
+            "bolumAdi": "4.5 Öğrenme Süreci ve Teknik Evrim"
+          },
+          {
+            "kod": "yaklasimin-gerekcesi-kaynak-kullanimi-ve",
+            "ad": "YAKLAŞIMIN GEREKÇESİ, KAYNAK KULLANIMI VE ÖZGÜNLÜK",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Ekibin çözüm için geliştirdiği yöntemler ve bu yöntemlerin özgünlüğe katkıları detaylı bir şekilde açıklanmalıdır.}"
+            ],
+            "bolumAdi": "YAKLAŞIMIN GEREKÇESİ, KAYNAK KULLANIMI VE ÖZGÜNLÜK"
+          },
+          {
+            "kod": "5-1-neden-bu-algoritma-mimari",
+            "ad": "5.1 Neden Bu Algoritma / Mimari?",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde seçilen yaklaşımın, sağlanan varyant profil verisinin doğasına uygunluğu ve genelleme gücü üzerinden gerekçelendirilmesi beklenir. Modelin hem genel veri setinde hem panel bazında tutarlı çalışması, gürültüye dayanıklılığı ve tekrarlanabilir bir eğitim düzenine sahip olması vurgulanmalıdır. Gerekçeler kısa, teknik ve ölçülebilir hedeflerle ilişkilendirilmelidir."
+            ],
+            "bolumAdi": "5.1 Neden Bu Algoritma / Mimari?"
+          },
+          {
+            "kod": "5-2-alternatifler-neden-elendi",
+            "ad": "5.2 Alternatifler Neden Elendi?",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışmacılar, en az iki alternatif yaklaşımı ve elenme nedenlerini kısa biçimde yazmalıdır. Elenme nedenleri performans yetersizliği, aşırı karmaşıklık, panel bazında tutarsızlık, eğitim maliyeti veya açıklanabilirlik zorlukları gibi kriterlerle ifade edilebilir. Amaç, nihai seçimin karşılaştırmalı bir değerlendirme ile yapıldığını göstermektir."
+            ],
+            "bolumAdi": "5.2 Alternatifler Neden Elendi?"
+          },
+          {
+            "kod": "5-3-parametre-secimi-ve-model-ayarlari",
+            "ad": "5.3 Parametre Seçimi ve Model Ayarları",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde hiperparametrelerin nasıl seçildiği genel çerçevede anlatılmalıdır: arama stratejisi (grid/random/deneme planı), doğrulama metriği, early stopping ve düzenlileştirme gibi mekanizmalar belirtilmelidir. Karar eşiği seçimi ve gerekiyorsa olasılık kalibrasyonu, risk ve metrik dengesi açısından kısaca gerekçelendirilmelidir. Bu, sonuçların ayarlara bağlı rastlantısal değil yönetilen bir optimizasyon çıktısı olduğunu gösterir."
+            ],
+            "bolumAdi": "5.3 Parametre Seçimi ve Model Ayarları"
+          },
+          {
+            "kod": "5-4-hesaplama-kaynaklari-ve-calistirilab",
+            "ad": "5.4 Hesaplama Kaynakları ve Çalıştırılabilirlik",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışmacılar, eğitim ve çıkarım süreçlerinin hesaplama maliyetini ayrıntılı biçimde raporlamalıdır: CPU, GPU/VRAM, RAM, işletim sistemi, framework ve sürümler, eğitim süresi (toplam ve iterasyon/epoch başına), batch boyutu, bellek kullanımı, seed/deterministik ayarlar gibi bilgiler verilmelidir. Ayrıca tek örnek için çıkarım süresi ve toplu değerlendirme süresi gibi pratik çalıştırılabilirlik göstergeleri sunulmalı; yüksek performansın hangi maliyetle elde edildiği şeffaflaştırılmalıdır."
+            ],
+            "bolumAdi": "5.4 Hesaplama Kaynakları ve Çalıştırılabilirlik"
+          },
+          {
+            "kod": "5-5-ozgunluk",
+            "ad": "5.5 Özgünlük",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Özgünlük, genel ifadeler yerine somut teknik katkılar üzerinden yazılmalıdır. Kolon isimleri yokken özellik gruplarını anlamlandırma stratejisi, panel bazlı genelleme için geliştirilen değerlendirme düzeni, kalibrasyon/eşik tasarımıyla risk odaklı karar verme veya açıklanabilirlik analizlerinin raporlanması gibi unsurlar özgünlük kapsamında değerlendirilebilir. İddiaların mümkünse küçük ablation karşılaştırmaları veya kısa deneysel gözlemlerle desteklenmesi beklenir."
+            ],
+            "bolumAdi": "5.5 Özgünlük"
+          }
+        ],
+        "toplamPuan": 170
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Rubrik toplamı 170 puan. Ağırlıklar yöneticiye doğrulatılmalı."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026-_Sağlıkta_Yapay_Zeka_Türkçe_Şartname_v2_son_versiyon-2_DNTlA.pdf",
+        "yuklendi": "2026-08-23T20:16:26.039Z",
+        "sayfaSayisi": 19,
+        "kelimeSayisi": 4160,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk yayın",
+              "tarih": "2026-01-09"
+            },
+            {
+              "etiket": "Lise Seviyesi Yarışma Kapsamı",
+              "tarih": "2026-01-21"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "Soru-Cevap Toplantıları I (Lise ve Üniversite)",
+              "tarih": "2026-03-23"
+            },
+            {
+              "etiket": "Proje Sunuş Raporu Son Teslim Tarihi (Lise ve Üniversite)",
+              "tarih": "2026-03-25"
+            },
+            {
+              "etiket": "Takımların Açıklanması",
+              "tarih": "2026-04-14"
+            },
+            {
+              "etiket": "Verilerin Paylaşılması (Lise ve Üniversite Kategorisi)",
+              "tarih": "2026-05-05"
+            },
+            {
+              "etiket": "Soru-Cevap Toplantıları II (Lise ve Üniversite)",
+              "tarih": "2026-05-18"
+            },
+            {
+              "etiket": "Proje Detay Raporu Son Teslim Tarihi (Lise ve Üniversite)",
+              "tarih": "2026-06-29"
+            },
+            {
+              "etiket": "Açıklanması",
+              "tarih": "2026-07-20"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Proje sahibinin danışman olduğu saptandığında başvuru geçersiz sayılacaktır."
+          ],
+          "katilimciSeviyeleri": [
+            "universite"
+          ]
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026-_Sa%C4%9Fl%C4%B1kta_Yapay_Zeka_T%C3%BCrk%C3%A7e_%C5%9Eartname_v2_son_versiyon-2_DNTlA.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "saglikta-yapay-zeka-yarismasi"
+}

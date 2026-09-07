@@ -1,11 +1,28 @@
 # TPRDS — TEKNOFEST Proje Raporları Değerlendirme Sistemi
 
-T3 Vakfı Bursiyer Yapay Zekâ Creathonu · **Problem 4**
+**T3 Vakfı Bursiyer Yapay Zekâ Creathonu 2026 · Problem 4**
+Takım: **TecHane**
+
 TEKNOFEST Yarışmalar Koordinatörlüğü için hakem karar destek sistemi.
+Proje raporu yüklendiğinde şablon uygunluğu, kaynakça gerçekliği ve kopya
+şüphesi otomatik denetleniyor; hakeme gerekçeli bir ön değerlendirme
+sunuluyor; puanı hakem veriyor.
 
 > **Yapay zekâ nihai karar verici değildir.** Sistem hakeme kontrol, analiz
 > ve ön değerlendirme sunar; puanı hakem verir. Bu bir slogan değil, kodda
 > uygulanan bir kısıt — hakem puanı girilmeden rapor tamamlanamaz.
+
+**Ne var burada:** üç ayrı portal (koordinasyon · hakem · yarışmacı),
+ücretsiz analiz katmanı, **iki AGENT** (kaynakça denetimi ve kopya
+soruşturması), 43 gerçek TEKNOFEST yarışmasının ölçütleriyle birlikte
+gelen kurulu veri, 223 birim testi.
+
+Yığın: Next.js 16 · React 19 · TypeScript · Tailwind v4 · `node:sqlite` ·
+Anthropic Claude (`claude-opus-5`)
+
+Bu bir yarışma projesidir; TEKNOFEST'in veya T3 Vakfı'nın resmî yazılımı
+değildir. Depodaki bütün örnek raporlar sentetiktir — gerçek yarışmacı
+belgesi içermez.
 
 ---
 
@@ -25,6 +42,12 @@ rapor yüklenir
   │                                              kaynakça, kaynak doğrulama,
   │                                              içerik uygunluğu, kopya
   │
+  ├─ AGENT'lar (isteğe bağlı, şüphe varsa)    → kaynakça denetimi:
+  │                                              her künyeyi araştırır
+  │                                            → kopya soruşturması:
+  │                                              kopya mı, ortak şablon mu
+  │                                              — attıkları adımlar ekranda
+  │
   ├─ KOORDİNASYON ön değerlendirmeyi başlatır → ölçüt bazında puan ÖNERİSİ,
   │  ($0,13 · isteğe bağlı)                      alıntı ve gerekçeyle
   │                                              — puan değil, öneri
@@ -34,7 +57,9 @@ rapor yüklenir
   │                                              kör puanlama
   └─ nihai puan = tamamlanmış hakem
      değerlendirmelerinin ORTALAMASI          → hakemler arası fark
-       └─ YARIŞMACI sonucunu görür               ayrıca bildiriliyor
+       │                                         ayrıca bildiriliyor
+       └─ YARIŞMACI sonucunu ve              → baraj puanını koordinasyon
+          BARAJ durumunu görür                  kategori bazında belirler
 ```
 
 **Puanı kim verir:** hakem. Koordinasyon ön değerlendirmeyi başlatır (ücretli
@@ -52,7 +77,13 @@ var ve aralarında gezinme bağlantısı yok.
 |---|---|---|---|
 | **Koordinasyon** | `/koordinasyon` | Yarışmalar Koordinatörlüğü | Yarışma kurulumu, hakem kaydı, atama, sonuçlar, kopya taraması. **Puan girmez** |
 | **Hakem** | `/hakem/<kod>` | Değerlendirici | **Yalnızca kendisine atanmış** raporlar. Takım adları rumuzlu; öteki hakemlerin puanı ve nihai puan görünmez |
-| **Yarışmacı** | `/sonuc` | Başvuru sahibi | Yalnızca kendi sonucu, hakem tamamladıysa. Yapay zekâ puanı hiç gösterilmez |
+| **Yarışmacı** | `/yarismaci` | Başvuru sahibi | Kendi hesabı: yarışmaya başvuru, takım kurma, rapor yükleme, sonuç ve **baraj durumu**. Yapay zekâ puanı hiç gösterilmez |
+
+Yarışmacı tarafı tek bir sonuç sorgusu değil, hesaplı bir portal: e-posta ve
+parolayla giriliyor (scrypt, `oturum` tablosunda oturum), yarışma seçiliyor,
+takım kuruluyor, rapor yükleniyor, sonuç aynı yerden izleniyor. Başvuru
+numarasıyla tek seferlik sonuç sorgusu (`/sonuc`) hesabı olmayanlar için
+duruyor.
 
 Kökteki `/` yalnızca geliştirme kolaylığı: tek uygulamada üç portalı ayrı
 alan adına koymak mümkün olmadığı için ayrım adres önekiyle yapıldı.
@@ -65,7 +96,7 @@ doğrulaması alır.
 |---|---|---|
 | Koordinasyon | `KOORDINASYON_ANAHTARI` — ortak anahtar, HttpOnly çerez | Bütün koordinasyon ekranları ve 17 API rotası |
 | Hakem | Kendi erişim kodu (`/hakem/<kod>`) | Yalnızca kendisine atanmış raporlar |
-| Yarışmacı | Başvuru numarası | Yalnızca kendi sonucu, hakem tamamladıysa |
+| Yarışmacı | E-posta + parola (scrypt), oturum çerezi | Yalnızca kendi başvuruları, takımı ve sonucu |
 
 Denetim **iki katmanda**: `proxy.ts` perimetre olarak yetkisiz kullanıcıyı
 giriş sayfasına yönlendiriyor, ama gerçek karar her rotanın içinde
@@ -101,14 +132,25 @@ cp .env.ornek .env.local        # ANTHROPIC_API_KEY (yalnızca AI adımı için)
 npm run dev                     # http://localhost:3000
 ```
 
-Yarışma listesini teknofest.org'dan çekmek için:
+`veri/` içinde 60 yarışmalık teknofest.org kataloğu ve **kurulmuş 43
+yarışma** depoyla birlikte geliyor. Bir kez SQLite'a taşıyın:
+
+```bash
+npm run db:gecis                # 43 yarışma, 80 kategori → SQLite
+```
+
+Bu adım **elle** çalıştırılıyor, açılışta kendiliğinden koşmuyor: JSON
+dosyaları göçten sonra da yerinde duruyor, geri dönüş mümkün kalsın diye.
+Sonrasında sistem boş değil — 79 kategori ölçütleriyle birlikte hazır.
+
+Katalog tazelenmek istenirse:
 
 ```bash
 npm run katalog                 # 60 yarışma, 260 belge — ücretsiz
 ```
 
-Sonra arayüzden **Yarışmalar → Kur** deyin. Şablon ve şartname indirilir,
-değerlendirme ölçütleri çıkarılır.
+Yeni bir yarışma eklemek için arayüzden **Yarışmalar → Kur** deyin. Şablon
+ve şartname indirilir, değerlendirme ölçütleri çıkarılır — kod yazılmaz.
 
 ---
 
@@ -120,13 +162,14 @@ değerlendirme ölçütleri çıkarılır.
 | Kurulu yarışma / kategori | **43 / 80** |
 | Şartnamesi bağlı kategori | **70** |
 | Şartnameden çıkarılan terim profili | **70** |
-| Şablondan rubrik çıkarılan kategori | **74 / 81** |
+| Rubriği çıkarılmış kategori | **79 / 80** |
 | Rapor başına yapay zekâ maliyeti | **$0,131** |
 | Otomatik kontrollerin maliyeti | **$0** |
-| Birim testi | **101** |
+| Birim testi | **223** (~2,6 sn) |
 | Uçtan uca vaka | **31** |
 | 3000 raporda liste ekranı | **179 ms** |
 | 6000 atama yazma | **0,90 sn** |
+| Çalışan AGENT | **2** — kaynakça denetimi, kopya soruşturması |
 
 Kanıt için: `npx tsx scripts/kanit-topla.ts` — bu tablonun kaynağı odur,
 elle yazılmaz.
@@ -173,6 +216,14 @@ gerekçe: kişisel veri ekranda tutulmuyor ve hakem "geçen yıl finale kalan
 ekip" bilgisinden etkilenmiyor. Arama gerçek veriyle **sunucuda** çalışıyor;
 gerçek adlar istemciye hiç inmiyor.
 
+Maskeleme **hakemler arasında da** geçerli: bir rapora birden çok hakem
+atandığında birbirlerini `Hakem C` gibi görüyorlar, mesajlaşmada da öyle
+(`gorunum/hakem-takma-ad.ts`). Takma ad alfabesinde I, Q, W, X yok — Türkçe
+küçültmede I/ı çifti karışıklık üretiyor. Aynı yerde bir sızıntı kapandı:
+"<hakem adı> tamamladı: 78/100" biçimindeki sistem mesajı hem kimliği hem de
+öteki hakemin puanını, o hakem daha puan vermeden sızdırıyordu. Metin artık
+kimlik ve puan taşımıyor; maskeleme okuma anında da uygulanıyor.
+
 ### Türetilmiş değerin tek yazıcısı olur
 Nihai puan türetilmiş bir değer: tamamlanmış hakem değerlendirmelerinin
 ortalaması. Rapor listeleri bunu her satır için hesaplayamayacağı (200 rapor
@@ -218,6 +269,63 @@ güncellemesi onayı sıfırlıyor — yeni ölçütler görülmedi çünkü.
 
 ---
 
+## İki AGENT
+
+Otomatik kontroller sabit adımlı: hep aynı işi, hep aynı sırayla yapıyorlar.
+Ama iki soru var ki kaç adım gerektiği **önceden bilinemiyor** — orada agent
+çalıştırıyoruz. Ajan çerçevesi `src/lib/ai/ajan.ts`; model alet çağırıyor,
+sonucu okuyor, bir sonraki adıma kendisi karar veriyor.
+
+### Kaynakça denetimi — `kaynakca-ajani.ts`
+
+Raporlar artık yapay zekâyla yazılıyor ve modeller kaynak uyduruyor. Ajan
+her künyeyi araştırıyor: DOI varsa Crossref'ten çözüyor, yoksa başlıkla
+arıyor, bulamazsa OpenAlex'e geçiyor, orada da yoksa derginin kendisinin var
+olup olmadığına bakıyor. Bir künye tek adımda kapanabilir, bir başkası dört
+adım sürebilir — bunu ajan belirliyor.
+
+Verdikleri karar beş değerden biri: `dogrulandi`, `kismen`, `indekslenemez`,
+`bulunamadi`, `uydurma_suphesi`. **`indekslenemez` ayrı bir değer olarak
+duruyor**, çünkü yerel bir yüksek lisans tezinin Crossref'te bulunamaması
+sahtelik değil; bunu `bulunamadi` ile aynı kefeye koymak haksız suçlama
+üretirdi.
+
+### Kopya soruşturması — `kopya-ajani.ts`
+
+Benzerlik taraması iki raporu eşleştirdiğinde asıl soru başlıyor: bu gerçek
+bir kopya mı, yoksa ikisi de aynı TEKNOFEST şablonunu kullandığı için mi
+benziyor? Ajan ortak cümleleri tek tek açıyor.
+
+Ayırt edici ölçü `cumle-yayginlik.ts`: **aynı cümle 2 raporda geçiyorsa
+kopya kanıtı, 12 raporda geçiyorsa şablon kalıbı.** Karar beş değerli:
+`kopya_suphesi_guclu`, `incelenmeli`, `devam_projesi`, `sablon_kalibi`,
+`zayif_iz`.
+
+### Çerçeve neden böyle
+
+**Bütçe tavanı her turda denetleniyor.** Ajan döngüsü kaç tur süreceğini
+baştan bilmediği için tavan sadece başlangıçta kontrol edilseydi anlamsız
+olurdu. Tavan aşılırsa `ButceAsimiHatasi` atılıyor ama **o ana kadarki iz
+geri dönüyor** — yarım kalan soruşturma da hakeme bilgi veriyor.
+
+**Alet hatası modele geri veriliyor, atılmıyor.** Crossref 503 dönerse ajan
+çöküyor değil; hatayı okuyup başka bir yoldan deniyor.
+
+**Döngü sahte istemciyle test ediliyor.** `ajan.ts` dar bir arayüze
+(`AjanIstemcisi.cagir()`) bağlı; testlerde yerine sahte istemci konuyor.
+Böylece 11 test **sıfır API maliyetiyle** koşuyor.
+
+**Her adım ekranda.** Ajanın nerede aradığı, ne bulduğu, hangi kararı hangi
+gerekçeyle verdiği hakem panelinde görünüyor. Gerekçesini gösteremeyen bir
+çıkarım hakeme yardım etmez.
+
+Örnek veride bilerek uydurma bir künye var (`scripts/ornek-rapor-metni.ts` —
+"International Journal of Warehouse Automation", 2024). Sistem onu
+`uydurma_suphesi` olarak işaretliyor; gerçek künyeler (Betz 1920, IEC
+61400-12-1, Macenski 2022) `dogrulandi` çıkıyor.
+
+---
+
 ## Öne çıkan çözümler
 
 **Kopya tespitinde Jaccard yetmiyor.** İki bölümü kopyalanmış bir raporda
@@ -239,6 +347,14 @@ cezalandırılmıyor; şekiller ayıklanıp modele ayrıca veriliyor. Örnek rap
 **Uydurma kaynak tespiti.** Kaynak başlıkları Crossref ve OpenAlex'te
 aranıyor. Yerel yayınların bulunamaması sahtelik sayılmıyor — güveni
 düşürülüp not ediliyor.
+
+**Baraj puanı ve eşitlik.** Koordinasyon her kategoriye geçme eşiği
+yazabiliyor; yarışmacı kendi sayfasında geçip geçmediğini görüyor. İki kural
+kodda sabit: karar **bütün hakemler tamamlamadan** verilmiyor (yarım
+ortalamayla eleme yapılmaz) ve karşılaştırma **ekrandaki yuvarlanmış puan**
+üzerinden — 69,96 ekranda 70,0 görünüyorsa barajı geçer. Kullanıcının gördüğü
+sayıyla sistemin kullandığı sayı ayrışırsa itiraz haklı olurdu.
+`gorunum/baraj.ts`, saf fonksiyon, 9 test.
 
 **Puan ağırlığı olmayan şablonlar.** 81 kategorinin 37'sinde şablon ağırlık
 vermiyor. Eşit ağırlıklı taslak üretilip **uyarıyla** bildiriliyor; uydurma
@@ -262,6 +378,7 @@ src/lib/analiz/     ücretsiz katman
   kategori.ts         içerik uygunluğu (TF-IDF)
   terim-cikar.ts      şartnameden terim profili
   benzerlik.ts        MinHash + kapsama + cümle eşleştirme
+  cumle-yayginlik.ts  cümle kaç raporda geçiyor — kopya mı şablon mu
   phash.ts            algısal görsel karşılaştırma
   kimlik.ts           rapor kapağından künye okuma
   sartname.ts         şartname çözümleme
@@ -271,6 +388,15 @@ src/lib/ai/         ücretli katman
   istemci.ts          önbellek + bütçe tavanı
   degerlendirme.ts    ölçüt bazlı ön değerlendirme
   sartname-ozeti.ts   şartname özeti (kategori başına bir kez)
+  ajan.ts             AGENT döngüsü — alet çağrısı, iz, bütçe · 11 test
+  kaynakca-ajani.ts   AGENT: künye araştırması, uydurma kaynak tespiti
+  kopya-ajani.ts      AGENT: kopya mı ortak şablon mu
+
+src/lib/gorunum/    saf görünüm mantığı — hepsi test kapsamında
+  baraj.ts            geçme eşiği kararı · 9 test
+  hakem-takma-ad.ts   hakem kimliğinin maskelenmesi · 11 test
+  kopya-yorumu.ts     benzerlik oranının okunabilir karşılığı
+  maliyet.ts          maliyet biçimlendirme
 
 src/lib/katalog/    teknofest.org kataloğu
 
@@ -287,7 +413,8 @@ src/app/
   page.tsx          portal seçimi (geliştirme kolaylığı)
   koordinasyon/     Panel · Raporlar · Kopya Kontrolü · Hakemler · Yarışmalar
   hakem/[kod]/      hakemin kendi paneli — yalnızca atanmış raporlar
-  sonuc/            yarışmacı portalı
+  yarismaci/        yarışmacı portalı: giriş, yarışmalar, takım, başvuru
+  sonuc/            başvuru numarasıyla tek seferlik sonuç sorgusu
 ```
 
 ---
@@ -295,7 +422,7 @@ src/app/
 ## Doğrulama
 
 ```bash
-npm test                 # 101 birim testi, ~0,8 sn
+npm test                 # 223 birim testi, ~2,6 sn
 npm run duman            # 31 uçtan uca vaka — bütün ekranlar ve yetki sınırları
 npm run db:kontrol       # 11 veri tutarlılığı sorgusu
 npm run denetim          # yarışmacı sayfası sızıntı denetimi

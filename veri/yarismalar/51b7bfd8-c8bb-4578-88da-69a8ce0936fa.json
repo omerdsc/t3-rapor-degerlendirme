@@ -1,0 +1,394 @@
+{
+  "id": "51b7bfd8-c8bb-4578-88da-69a8ce0936fa",
+  "ad": "İnsanlık Yararına Teknolojiler Yarışması - Ortaokul Seviyesi",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:54:24.971Z",
+  "kategoriler": [
+    {
+      "id": "6c1c5acd-b883-4473-9d5f-a7bd3d6083ee",
+      "ad": "Ortaokul",
+      "sablonDosyasi": "InsanlıkYararınaTeknolojilerYarısması_ODR_TR_1_Ortaokul_mOhHp_2_JtCzq.docx",
+      "asama": "ÖDR",
+      "olusturuldu": "2026-08-23T13:54:24.971Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-6c1c5acd",
+        "ad": "Ortaokul",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "1. PROJE ÖZETİ",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [],
+            "grupMu": true
+          },
+          {
+            "ad": "1.1. Proje Özeti ve Proje Kapsamı",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Proje özeti 150-250 kelime arasında olmalıdır hazırlanmalıdır. Bu özet; projenin amacı, ele aldığı problem, hedeflediği etki ve benimsediği temel yaklaşım dikkate alınarak özlü, tutarlı ve ortaokul düzeyine pedagojik olarak uygun bir anlatımla sunulmalıdır. Kullanılan dil; açık, anlaşılır ve öğrencilerin ifade düzeyiyle uyumlu olmalı, aşırı teknik veya akademik ayrıntılardan kaçınmalıdır.",
+              "Bu bölümde aşağıdaki bilgilere yer verilmelidir:"
+            ],
+            "asgariKelime": 150,
+            "azamiKelime": 250
+          },
+          {
+            "ad": "1.2. Proje Amacı ve Toplumsal Faydası",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu bölümde, projenin hangi gerekçeyle geliştirildiği ve hangi temel sorunu çözmeyi amaçladığı açık bir biçimde ortaya konulmalıdır."
+            ]
+          },
+          {
+            "ad": "2. PROBLEMİN TANIMI VE ÇÖZÜM ÖNERİSİ",
+            "zorunlu": true,
+            "puan": 35,
+            "yonergeMetni": [],
+            "grupMu": true
+          },
+          {
+            "ad": "2.1. Problemin Tanımı ve Önemi",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": [
+              "Bu bölümde, projede ele alınan problem açık ve tutarlı bir dil kullanılarak tanımlanmalıdır. Yapılan açıklamalar, problemin önemi ve hangi alanları etkilediğini ortaya koymalıdır.",
+              "Problemle ilgili daha önce bilinen çözümler, gözlemler veya örnek uygulamalar kısa ve açıklayıcı biçimde belirtilebilir."
+            ]
+          },
+          {
+            "ad": "2.2. Çözüm Önerisi",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "Bu bölümde, tanımlanan probleme yönelik geliştirilen çözüm önerisi sade, anlaşılır ve ortaokul düzeyine uygun bir anlatımla açıklanmalıdır. Sunulan açıklama, çözümün problemle olan ilişkisini ve temel işleyiş mantığını ortaya koymalıdır."
+            ]
+          },
+          {
+            "ad": "3. ÖZGÜN DEĞER, UYGULANABİLİRLİK VE SÜRDÜRÜLEBİLİRLİK",
+            "zorunlu": true,
+            "puan": 24,
+            "yonergeMetni": [],
+            "grupMu": true
+          },
+          {
+            "ad": "3.1. Özgün Değer",
+            "zorunlu": false,
+            "puan": 12,
+            "yonergeMetni": [
+              "Bu başlık altında, projenin öğrenciler tarafından geliştirilen özgün değer boyutu değerlendirilir. Özgün değer; projenin tamamen yeni bir bilimsel veya teknolojik buluş niteliği taşıması şeklinde değil, öğrencinin ele aldığı problemi algılama, yorumlama ve çözüm geliştirme biçimi üzerinden ele alınır.",
+              "Bu kapsamda değerlendirmede aşağıdaki unsurlar dikkate alınır:",
+              "Bilimsel, teknik veya ileri düzey teknolojik yenilik zorunlu değildir. Bu başlık altında yapılan değerlendirme, öğrencinin yaş düzeyi ve eğitim seviyesiyle uyumlu düşünsel özgünlüğü esas alır."
+            ],
+            "raporda": false
+          },
+          {
+            "ad": "3.2. Uygulanabilirlik ve Sürdürülebilirlik",
+            "zorunlu": true,
+            "puan": 12,
+            "yonergeMetni": [
+              "Bu bölümde, projenin gerçek yaşam koşullarında uygulanabilirliği ve ilerleyen aşamalarda geliştirilebilir potansiyeli değerlendirilir. Değerlendirme, projenin kapsamı ve ortaokul seviyesi dikkate alınarak yapılır."
+            ]
+          },
+          {
+            "ad": "4. PROJENİN HAZIRLANIŞ SÜRECİ VE ÇALIŞMA YÖNTEMİ",
+            "zorunlu": true,
+            "puan": 12,
+            "yonergeMetni": [
+              "Bu bölümde, projenin hangi süreç izlenerek geliştirildiği ve çözümün ortaya çıkarılmasında nasıl bir yaklaşım benimsendiği açıklanmalıdır. Yapılan açıklama, projenin öğrenciler tarafından planlandığını ve yürütüldüğünü gösterecek nitelikte olmalıdır.",
+              "açık, tutarlı ve ortaokul seviyesine uygun bir anlatımla ifade edilmelidir."
+            ]
+          },
+          {
+            "ad": "5. PROJE TAKIMI",
+            "zorunlu": true,
+            "puan": 3,
+            "yonergeMetni": [
+              "Aşağıdaki hususlara dikkat edilmelidir:",
+              "Not: Proje takımı en fazla 6 öğrenciden oluşmalıdır. (Danışman bu sayıya dâhil değildir.)"
+            ]
+          },
+          {
+            "ad": "6. KAYNAKLAR",
+            "zorunlu": true,
+            "puan": 3,
+            "yonergeMetni": [
+              "Bu bölümde, proje hazırlanırken yararlanılan bilgi kaynaklarının şeffaf ve düzenli biçimde sunulması amaçlanır. Kaynak listesi, projenin bilgiye dayalı olarak geliştirildiğini ve etik kullanım bilincinin gözetildiğini gösterecek nitelikte olmalıdır."
+            ]
+          },
+          {
+            "ad": "7. PROJE RAPOR DÜZENİ VE ŞABLONA UYUM",
+            "zorunlu": false,
+            "puan": 3,
+            "yonergeMetni": [
+              "Bu bölüm, raporun okunabilirliğini, anlaşılabilirliğini ve değerlendirmeye uygunluğunu esas alır. Amaç, standartlara uygun ve değerlendirilebilir bir sunum sağlanıp sağlanmadığını tespit etmektir.",
+              "RAPOR ŞABLONLARI İLE İLGİLİ NOT:"
+            ],
+            "raporda": false
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "1-1-proje-ozeti-ve-proje-kapsami",
+            "ad": "1.1. Proje Özeti ve Proje Kapsamı",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Proje özeti 150-250 kelime arasında olmalıdır hazırlanmalıdır. Bu özet; projenin amacı, ele aldığı problem, hedeflediği etki ve benimsediği temel yaklaşım dikkate alınarak özlü, tutarlı ve ortaokul düzeyine pedagojik olarak uygun bir anlatımla sunulmalıdır. Kullanılan dil; açık, anlaşılır ve öğrencilerin ifade düzeyiyle uyumlu olmalı, aşırı teknik veya akademik ayrıntılardan kaçınmalıdır.",
+              "Bu bölümde aşağıdaki bilgilere yer verilmelidir:"
+            ],
+            "bolumAdi": "1.1. Proje Özeti ve Proje Kapsamı"
+          },
+          {
+            "kod": "1-2-proje-amaci-ve-toplumsal-faydasi",
+            "ad": "1.2. Proje Amacı ve Toplumsal Faydası",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, projenin hangi gerekçeyle geliştirildiği ve hangi temel sorunu çözmeyi amaçladığı açık bir biçimde ortaya konulmalıdır."
+            ],
+            "bolumAdi": "1.2. Proje Amacı ve Toplumsal Faydası"
+          },
+          {
+            "kod": "2-1-problemin-tanimi-ve-onemi",
+            "ad": "2.1. Problemin Tanımı ve Önemi",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, projede ele alınan problem açık ve tutarlı bir dil kullanılarak tanımlanmalıdır. Yapılan açıklamalar, problemin önemi ve hangi alanları etkilediğini ortaya koymalıdır.",
+              "Problemle ilgili daha önce bilinen çözümler, gözlemler veya örnek uygulamalar kısa ve açıklayıcı biçimde belirtilebilir."
+            ],
+            "bolumAdi": "2.1. Problemin Tanımı ve Önemi"
+          },
+          {
+            "kod": "2-2-cozum-onerisi",
+            "ad": "2.2. Çözüm Önerisi",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, tanımlanan probleme yönelik geliştirilen çözüm önerisi sade, anlaşılır ve ortaokul düzeyine uygun bir anlatımla açıklanmalıdır. Sunulan açıklama, çözümün problemle olan ilişkisini ve temel işleyiş mantığını ortaya koymalıdır."
+            ],
+            "bolumAdi": "2.2. Çözüm Önerisi"
+          },
+          {
+            "kod": "3-1-ozgun-deger",
+            "ad": "3.1. Özgün Değer",
+            "puan": 12,
+            "bolumBekleniyor": false,
+            "olcut": [
+              "Bu başlık altında, projenin öğrenciler tarafından geliştirilen özgün değer boyutu değerlendirilir. Özgün değer; projenin tamamen yeni bir bilimsel veya teknolojik buluş niteliği taşıması şeklinde değil, öğrencinin ele aldığı problemi algılama, yorumlama ve çözüm geliştirme biçimi üzerinden ele alınır.",
+              "Bu kapsamda değerlendirmede aşağıdaki unsurlar dikkate alınır:",
+              "Bilimsel, teknik veya ileri düzey teknolojik yenilik zorunlu değildir. Bu başlık altında yapılan değerlendirme, öğrencinin yaş düzeyi ve eğitim seviyesiyle uyumlu düşünsel özgünlüğü esas alır."
+            ],
+            "bolumAdi": "3.1. Özgün Değer"
+          },
+          {
+            "kod": "3-2-uygulanabilirlik-ve-surdurulebilirli",
+            "ad": "3.2. Uygulanabilirlik ve Sürdürülebilirlik",
+            "puan": 12,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, projenin gerçek yaşam koşullarında uygulanabilirliği ve ilerleyen aşamalarda geliştirilebilir potansiyeli değerlendirilir. Değerlendirme, projenin kapsamı ve ortaokul seviyesi dikkate alınarak yapılır."
+            ],
+            "bolumAdi": "3.2. Uygulanabilirlik ve Sürdürülebilirlik"
+          },
+          {
+            "kod": "4-projenin-hazirlanis-sureci-ve-calisma-",
+            "ad": "4. PROJENİN HAZIRLANIŞ SÜRECİ VE ÇALIŞMA YÖNTEMİ",
+            "puan": 12,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, projenin hangi süreç izlenerek geliştirildiği ve çözümün ortaya çıkarılmasında nasıl bir yaklaşım benimsendiği açıklanmalıdır. Yapılan açıklama, projenin öğrenciler tarafından planlandığını ve yürütüldüğünü gösterecek nitelikte olmalıdır.",
+              "açık, tutarlı ve ortaokul seviyesine uygun bir anlatımla ifade edilmelidir."
+            ],
+            "bolumAdi": "4. PROJENİN HAZIRLANIŞ SÜRECİ VE ÇALIŞMA YÖNTEMİ"
+          },
+          {
+            "kod": "5-proje-takimi",
+            "ad": "5. PROJE TAKIMI",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Aşağıdaki hususlara dikkat edilmelidir:",
+              "Not: Proje takımı en fazla 6 öğrenciden oluşmalıdır. (Danışman bu sayıya dâhil değildir.)"
+            ],
+            "bolumAdi": "5. PROJE TAKIMI"
+          },
+          {
+            "kod": "6-kaynaklar",
+            "ad": "6. KAYNAKLAR",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, proje hazırlanırken yararlanılan bilgi kaynaklarının şeffaf ve düzenli biçimde sunulması amaçlanır. Kaynak listesi, projenin bilgiye dayalı olarak geliştirildiğini ve etik kullanım bilincinin gözetildiğini gösterecek nitelikte olmalıdır."
+            ],
+            "bolumAdi": "6. KAYNAKLAR"
+          },
+          {
+            "kod": "7-proje-rapor-duzeni-ve-sablona-uyum",
+            "ad": "7. PROJE RAPOR DÜZENİ VE ŞABLONA UYUM",
+            "puan": 3,
+            "bolumBekleniyor": false,
+            "olcut": [
+              "Bu bölüm, raporun okunabilirliğini, anlaşılabilirliğini ve değerlendirmeye uygunluğunu esas alır. Amaç, standartlara uygun ve değerlendirilebilir bir sunum sağlanıp sağlanmadığını tespit etmektir.",
+              "RAPOR ŞABLONLARI İLE İLGİLİ NOT:"
+            ],
+            "bolumAdi": "7. PROJE RAPOR DÜZENİ VE ŞABLONA UYUM"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "\"1. PROJE ÖZETİ\" üst başlık olarak işaretlendi: 20 puanı alt başlıklarına dağıtılmış (2 alt başlık).",
+        "\"2. PROBLEMİN TANIMI VE ÇÖZÜM ÖNERİSİ\" üst başlık olarak işaretlendi: 35 puanı alt başlıklarına dağıtılmış (2 alt başlık).",
+        "\"3. ÖZGÜN DEĞER, UYGULANABİLİRLİK VE SÜRDÜRÜLEBİLİRLİK\" üst başlık olarak işaretlendi: 24 puanı alt başlıklarına dağıtılmış (2 alt başlık).",
+        "Sayfa sınırı kurallardan çıkarılamadı."
+      ]
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "insanlik-yararina-teknolojiler-yarismasi-ortaokul-seviyesi"
+}

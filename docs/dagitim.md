@@ -157,6 +157,50 @@ cd ~/tprds && tar -czf ~/yedek-$(date +%F).tgz dagitim/veri
 
 ---
 
+## Sunucuyu tamamen kaldırma
+
+Yarışma bittiğinde ya da kredi tükenmeden önce. Sıra önemli: **önce veri,
+sonra makine.**
+
+```bash
+ssh -i ~/.ssh/tprds root@DROPLET-IP
+
+# 1 — Yedek istiyorsanız ÖNCE alın (yoksa bu adımı atlayın)
+cd ~/tprds && tar -czf ~/yedek-$(date +%F).tgz dagitim/veri
+#    ve yerelden indirin:  scp -i ~/.ssh/tprds root@DROPLET-IP:~/yedek-*.tgz .
+
+# 2 — Kapsayıcıları, ağı ve adlandırılmış hacimleri sil
+cd ~/tprds && docker compose down -v
+
+# 3 — Veri dizinini sil.  BU ADIM ATLANAMAZ.
+#     `down -v` yalnızca adlandırılmış hacimleri (caddy_veri,
+#     caddy_yapilandirma) siler. Yarışmacı belgeleri ve veritabanı
+#     `./dagitim/veri` BIND MOUNT'unda, yani sunucunun diskinde duruyor;
+#     Docker ona dokunmaz.
+rm -rf ~/tprds ~/tprds-sunucu.tgz
+
+# 4 — İmajlar ve kalan katmanlar
+docker system prune -a --volumes -f
+
+# 5 — Doğrulama: üçü de boş dönmeli
+docker ps -a ; docker volume ls ; ls ~/tprds 2>/dev/null || echo "temiz"
+```
+
+Sonra **droplet'i silin** — ücretlendirmeyi durduran adım budur:
+DigitalOcean paneli → *Droplets* → makine → *Destroy* → **Destroy this
+Droplet**. Kapatmak (*Power off*) yetmiyor; kapalı droplet de
+ücretlendiriliyor.
+
+Son olarak alt alan adını bırakın: [duckdns.org](https://duckdns.org) →
+`tprds` satırı → *delete*. Bırakılmazsa adı başkası alamaz ve IP'si artık
+size ait olmayan bir makineye işaret eder.
+
+> Disk imajını (snapshot) aldıysanız onu da silin — droplet gitse bile
+> snapshot ayrıca ücretlendirilir ve veriyi içinde taşır:
+> *Images → Snapshots → Destroy*.
+
+---
+
 ## Bilinen sınırlar
 
 | Sınır | Durum |

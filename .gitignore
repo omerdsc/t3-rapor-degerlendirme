@@ -32,6 +32,10 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+# Örnek dosyalar istisna: yalnızca yer tutucu taşıyorlar ve kurulum
+# adımı (`cp .env.ornek .env.local`) onlarsız çalışmıyor.
+!.env.ornek
+!.env.sunucu.ornek
 
 # vercel
 .vercel
@@ -41,20 +45,28 @@ yarn-error.log*
 next-env.d.ts
 .onbellek/
 
-# Çalışma zamanı verisi: yüklenen raporlar, hakem puanları, aktarılmış
-# yarışmalar. Kaynak değil, durum — ve yüklenen raporlar gerçek yarışmacı
-# belgesi olabilir; depoya girmemeli.
-veri/
-# Katalog istisna: teknofest.org taramasının sonucu. Sürümlenmesi işe yarar,
-# yoksa her dağıtımda 60 sayfa yeniden çekilmek zorunda kalır.
+# Çalışma zamanı verisi: yüklenen raporlar, hakem puanları, veritabanı.
+# Kaynak değil, durum — ve yüklenen raporlar gerçek yarışmacı belgesi
+# olabilir; depoya girmemeli.
+#
+# `veri/` yerine `veri/*`: dizinin kendisi dışlanırsa git içine hiç inmez
+# ve aşağıdaki istisnalar sessizce çalışmaz.
+veri/*
+# İstisnalar — hepsi teknofest.org'un açık verisinden üretiliyor, kişisel
+# veri taşımıyor. Depoda durmaları klonlayanın sistemi kurabilmesi için
+# şart: yoksa 60 sayfa yeniden taranmak ve 43 şablon yeniden çözümlenmek
+# zorunda kalır.
 !veri/katalog.json
+!veri/katalog-dogrulama.json
+!veri/terim-profilleri.json
+!veri/yarismalar/
 .dev.log
-# SQLite çalışma dosyaları — WAL ve shared-memory
-veri/*.db-wal
-veri/*.db-shm
 
 # Dağıtım için hazırlanan temiz veri kümesi — üretiliyor, kaynak değil.
 # Sentetik rapor taşıyor ama yine de depoya girmesin: `npm run dagitim:veri`
 # ile her an yeniden üretilebiliyor.
 dagitim/
-test-verisi/
+
+# `test-verisi/` bilerek burada DEĞİL. İçindeki PDF'ler sentetik ve
+# sürümlenmiş: analiz betikleri ve kanıt toplama onlara dayanıyor, klonun
+# ilk anda çalışması için depoda durmaları gerekiyor.

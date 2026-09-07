@@ -1,0 +1,1252 @@
+{
+  "id": "8f8d328e-259f-4b85-9915-d9e259ff1933",
+  "ad": "Robotaksi-Binek Otonom Araç Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:55:59.822Z",
+  "kategoriler": [
+    {
+      "id": "4702d70c-425c-463b-a2e7-1812023dbb29",
+      "ad": "Hazır Araç · KTR",
+      "sablonDosyasi": "Robotaksi_Hazir_KTR_2026_bdpoi.docx",
+      "asama": "KTR",
+      "olusturuldu": "2026-08-23T13:55:58.389Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-4702d70c",
+        "ad": "Hazır Araç · KTR",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "GİRİŞ",
+            "zorunlu": true,
+            "puan": 3,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TAKIM ORGANİZASYONU",
+            "zorunlu": true,
+            "puan": 2,
+            "yonergeMetni": [
+              "Bu bölümde takım üyeleri ile ilgili herhangi bir kişisel bilginin paylaşılmaması gerekmektedir. (Ad-Soyad, Okul vb.) {Takım üyeleri için üye-1, üye-2, kaptan, danışman ifadeleri kullanılabilir."
+            ]
+          },
+          {
+            "ad": "ZAMAN AKIŞ ÇİZELGESİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "HAZIR ARAÇ ÖZELLİKLERİ VE ANALİZİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "TEKNOFEST Komitesi tarafından yarışmada sağlanacak tam donanımlı elektrikli araç platformunun teknik özelliklerinden ve yarışma kapsamında nasıl kullanılacağından bahsedilmelidir. Tam donanımlı araçta kullanılacak sensörler ile ilgili olarak gömülü sistem tasarımı, kontrol sistemi ve sistem entegrasyonun nasıl sağlanacağı kısaca belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "ALGORİTMİK TASARIM VE YAZILIM MİMARİSİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu kısımda, yazılım mimarisi, kullanılan algoritmalar, özgünlük ve mevcut teknolojilere uyum gibi konular detaylıca ele alınmalıdır.",
+              "• Algoritma Açıklamaları, Blok ve Akış Diyagramları",
+              "• Yapay Zekâ / Makine Öğrenimi Yaklaşımları",
+              "• Örnek Karar Senaryoları (Şartnamede belirtilen senaryoları kapsamalı)"
+            ]
+          },
+          {
+            "ad": "VERİ VE MODEL YÖNETİMİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Kullanılan modellemeler, sensör, araç dinamiği ve gerekli veri yapıları burada açıklanmalıdır.",
+              "• Model Eğitimi İçin Kullanılan Veri Setleri",
+              "• Sensör Verilerinin Doğrulama ve Güvenilirlik Kontrolleri"
+            ]
+          },
+          {
+            "ad": "OTONOM SÜRÜŞ ALGORİTMALARI",
+            "zorunlu": true,
+            "puan": 45,
+            "yonergeMetni": [
+              "Otonom sürüş için gerekli olan ve kullanılan algoritmaların detayları ve referansları burada açıklanmalıdır. Algoritmik tasarım ve yazılım mimarisinden farklı olarak burada, çalışmaların özgünlüğü ve mevcut çalışmalarla karşılaştırmaları gösterilmeli. Literatüre katkı ve uygulanabilirlik gibi konular burada aıklanmalıdır.",
+              "• Algılama (Perception) (10 Puan)",
+              "• Konumlandırma (Localization) ve Haritalama (Mapping) (10 Puan)",
+              "• Araç Hız, Direksiyon ve Fren Kontrolü (10 Puan)",
+              "• Planlama (Rota, Davranış vb.) (5 Puan)",
+              "• Karar Verme (Decision Making) ve Örnek Karar Senaryoları (Şartnamede belirtilen senaryoları kapsamalı) (10 Puan)"
+            ]
+          },
+          {
+            "ad": "GÜVENLİK",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Hata Senaryoları ve Aksiyon Planları"
+            ]
+          },
+          {
+            "ad": "SİSTEM ENTEGRASYONU",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "REFERANSLAR VE RAPOR DÜZENİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Makale, tez, araştırma raporu, internet sitesi, TEKNOFEST Robotaksi Raporları, yararlandığınız diğer kaynaklar, github ya da benzeri sitelerden açık kaynaklı kodların vb link uzantıları akademik referans formatlarına uygun olarak eklenmelidir."
+            ]
+          },
+          {
+            "ad": "İlave Notlar:",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Kritik Tasarım Raporu puanlaması aşağıdaki şablona göre yapılacaktır.",
+              "Hazır Araç Özellikleri ve Analizi",
+              "Algoritmik Tasarım ve Yazılım Mimarisi",
+              "Otonom Sürüş Algoritmaları",
+              "Rapor Düzeni ve Referanslar"
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "REFERANSLAR VE RAPOR DÜZENİ",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "giris",
+            "ad": "GİRİŞ",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "GİRİŞ"
+          },
+          {
+            "kod": "takim-organizasyonu",
+            "ad": "TAKIM ORGANİZASYONU",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde takım üyeleri ile ilgili herhangi bir kişisel bilginin paylaşılmaması gerekmektedir. (Ad-Soyad, Okul vb.) {Takım üyeleri için üye-1, üye-2, kaptan, danışman ifadeleri kullanılabilir."
+            ],
+            "bolumAdi": "TAKIM ORGANİZASYONU"
+          },
+          {
+            "kod": "zaman-akis-cizelgesi",
+            "ad": "ZAMAN AKIŞ ÇİZELGESİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ZAMAN AKIŞ ÇİZELGESİ"
+          },
+          {
+            "kod": "hazir-arac-ozellikleri-ve-analizi",
+            "ad": "HAZIR ARAÇ ÖZELLİKLERİ VE ANALİZİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "TEKNOFEST Komitesi tarafından yarışmada sağlanacak tam donanımlı elektrikli araç platformunun teknik özelliklerinden ve yarışma kapsamında nasıl kullanılacağından bahsedilmelidir. Tam donanımlı araçta kullanılacak sensörler ile ilgili olarak gömülü sistem tasarımı, kontrol sistemi ve sistem entegrasyonun nasıl sağlanacağı kısaca belirtilmelidir."
+            ],
+            "bolumAdi": "HAZIR ARAÇ ÖZELLİKLERİ VE ANALİZİ"
+          },
+          {
+            "kod": "algoritmik-tasarim-ve-yazilim-mimarisi",
+            "ad": "ALGORİTMİK TASARIM VE YAZILIM MİMARİSİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda, yazılım mimarisi, kullanılan algoritmalar, özgünlük ve mevcut teknolojilere uyum gibi konular detaylıca ele alınmalıdır.",
+              "• Algoritma Açıklamaları, Blok ve Akış Diyagramları",
+              "• Yapay Zekâ / Makine Öğrenimi Yaklaşımları",
+              "• Örnek Karar Senaryoları (Şartnamede belirtilen senaryoları kapsamalı)"
+            ],
+            "bolumAdi": "ALGORİTMİK TASARIM VE YAZILIM MİMARİSİ"
+          },
+          {
+            "kod": "veri-ve-model-yonetimi",
+            "ad": "VERİ VE MODEL YÖNETİMİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Kullanılan modellemeler, sensör, araç dinamiği ve gerekli veri yapıları burada açıklanmalıdır.",
+              "• Model Eğitimi İçin Kullanılan Veri Setleri",
+              "• Sensör Verilerinin Doğrulama ve Güvenilirlik Kontrolleri"
+            ],
+            "bolumAdi": "VERİ VE MODEL YÖNETİMİ"
+          },
+          {
+            "kod": "otonom-surus-algoritmalari",
+            "ad": "OTONOM SÜRÜŞ ALGORİTMALARI",
+            "puan": 45,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Otonom sürüş için gerekli olan ve kullanılan algoritmaların detayları ve referansları burada açıklanmalıdır. Algoritmik tasarım ve yazılım mimarisinden farklı olarak burada, çalışmaların özgünlüğü ve mevcut çalışmalarla karşılaştırmaları gösterilmeli. Literatüre katkı ve uygulanabilirlik gibi konular burada aıklanmalıdır.",
+              "• Algılama (Perception) (10 Puan)",
+              "• Konumlandırma (Localization) ve Haritalama (Mapping) (10 Puan)",
+              "• Araç Hız, Direksiyon ve Fren Kontrolü (10 Puan)",
+              "• Planlama (Rota, Davranış vb.) (5 Puan)",
+              "• Karar Verme (Decision Making) ve Örnek Karar Senaryoları (Şartnamede belirtilen senaryoları kapsamalı) (10 Puan)"
+            ],
+            "bolumAdi": "OTONOM SÜRÜŞ ALGORİTMALARI"
+          },
+          {
+            "kod": "guvenlik",
+            "ad": "GÜVENLİK",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Hata Senaryoları ve Aksiyon Planları"
+            ],
+            "bolumAdi": "GÜVENLİK"
+          },
+          {
+            "kod": "sistem-entegrasyonu",
+            "ad": "SİSTEM ENTEGRASYONU",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "SİSTEM ENTEGRASYONU"
+          },
+          {
+            "kod": "referanslar-ve-rapor-duzeni",
+            "ad": "REFERANSLAR VE RAPOR DÜZENİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Makale, tez, araştırma raporu, internet sitesi, TEKNOFEST Robotaksi Raporları, yararlandığınız diğer kaynaklar, github ya da benzeri sitelerden açık kaynaklı kodların vb link uzantıları akademik referans formatlarına uygun olarak eklenmelidir."
+            ],
+            "bolumAdi": "REFERANSLAR VE RAPOR DÜZENİ"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Sayfa sınırı kurallardan çıkarılamadı."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_Robotaksi_Binek_Otonom_Arac_Yarısması_Sartnamesi_SvtF2.pdf",
+        "yuklendi": "2026-08-23T20:14:16.494Z",
+        "sayfaSayisi": 38,
+        "kelimeSayisi": 7011,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk Versiyon",
+              "tarih": "2026-01-02"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Teknik Yeterlilik Formu Son Teslim Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "KTR Son Teslim Tarihi",
+              "tarih": "2026-04-08"
+            },
+            {
+              "etiket": "Araç Test Video Son Teslim Tarihi",
+              "tarih": "2026-06-04"
+            },
+            {
+              "etiket": "Test Dönemi AĞUSTOS 2026",
+              "tarih": "2026-07-23"
+            },
+            {
+              "etiket": "Simülasyon Videolarının Yüklenmesi",
+              "tarih": "2026-06-04"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Yukarıdaki şartları sağlamayan takımların başvuruları geçersiz sayılacaktır.",
+            "Eğer araç, yeni bir şeritte kurallara uygun hareket ediyorsa, ihlal kabul edilmeyecektir."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 25,
+          "danismanZorunlu": true
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Robotaksi_Binek_Otonom_Arac_Yar%C4%B1smas%C4%B1_Sartnamesi_SvtF2.pdf"
+      }
+    },
+    {
+      "id": "d75235c6-ea67-4b3e-ab71-8c13a6ea2656",
+      "ad": "Hazır Araç · Teknik Yeterlilik Formu TYF",
+      "sablonDosyasi": "Robotaksi-TYF-Hazir_Arac_QQApL.docx",
+      "olusturuldu": "2026-08-23T13:55:59.099Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-d75235c6",
+        "ad": "Hazır Araç · Teknik Yeterlilik Formu TYF",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "(HAZIR ARAÇ)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "TEKNİK YETERLİLİK FORMU DOLDURULURKEN DİKKAT EDİLMESİ GEREKEN HUSUSLAR:"
+            ]
+          },
+          {
+            "ad": "ALGORİTMA TİPİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde araç üzerinde kullanılacak algoritmaları (otonom sürüş algoritmaları, araç kontrol sistemi vb.) ve kullanılma sebebi tabloda belirtilen verilen doğrultusunda açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "GÖREV",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Trafik İşaretleri Tanınması",
+              "Şerit Takibi / Şeritte Kalma",
+              "Bu bölümde yarışma kapsamındaki görevlerin nasıl gerçekleştirilmesi planlandığına dair bilgi verilmelidir."
+            ]
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "hazir-arac",
+            "ad": "(HAZIR ARAÇ)",
+            "puan": 34,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "TEKNİK YETERLİLİK FORMU DOLDURULURKEN DİKKAT EDİLMESİ GEREKEN HUSUSLAR:"
+            ],
+            "bolumAdi": "(HAZIR ARAÇ)"
+          },
+          {
+            "kod": "algoritma-tipi",
+            "ad": "ALGORİTMA TİPİ",
+            "puan": 33,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde araç üzerinde kullanılacak algoritmaları (otonom sürüş algoritmaları, araç kontrol sistemi vb.) ve kullanılma sebebi tabloda belirtilen verilen doğrultusunda açıklanmalıdır."
+            ],
+            "bolumAdi": "ALGORİTMA TİPİ"
+          },
+          {
+            "kod": "gorev",
+            "ad": "GÖREV",
+            "puan": 33,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Trafik İşaretleri Tanınması",
+              "Şerit Takibi / Şeritte Kalma",
+              "Bu bölümde yarışma kapsamındaki görevlerin nasıl gerçekleştirilmesi planlandığına dair bilgi verilmelidir."
+            ],
+            "bolumAdi": "GÖREV"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablonda Word başlık stili yok; başlıklar kalın biçimlendirmeden tahmin edildi. Bölüm listesini onaylamadan önce gözden geçirin.",
+        "Kapak bloğu sayıldığı için 7 açılış satırı bölüm listesinden çıkarıldı (ROBOTAKSİ-BİNEK OTONOM…).",
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 3 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_Robotaksi_Binek_Otonom_Arac_Yarısması_Sartnamesi_SvtF2.pdf",
+        "yuklendi": "2026-08-23T20:14:20.038Z",
+        "sayfaSayisi": 38,
+        "kelimeSayisi": 7011,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk Versiyon",
+              "tarih": "2026-01-02"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Teknik Yeterlilik Formu Son Teslim Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "KTR Son Teslim Tarihi",
+              "tarih": "2026-04-08"
+            },
+            {
+              "etiket": "Araç Test Video Son Teslim Tarihi",
+              "tarih": "2026-06-04"
+            },
+            {
+              "etiket": "Test Dönemi AĞUSTOS 2026",
+              "tarih": "2026-07-23"
+            },
+            {
+              "etiket": "Simülasyon Videolarının Yüklenmesi",
+              "tarih": "2026-06-04"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Yukarıdaki şartları sağlamayan takımların başvuruları geçersiz sayılacaktır.",
+            "Eğer araç, yeni bir şeritte kurallara uygun hareket ediyorsa, ihlal kabul edilmeyecektir."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 25,
+          "danismanZorunlu": true
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Robotaksi_Binek_Otonom_Arac_Yar%C4%B1smas%C4%B1_Sartnamesi_SvtF2.pdf"
+      }
+    },
+    {
+      "id": "080fe647-6326-4234-827c-b0af7030aa25",
+      "ad": "Özgün Araç · KTR",
+      "sablonDosyasi": "Robotaksi_Ozgun_KTR_2026_A0aSo.docx",
+      "asama": "KTR",
+      "olusturuldu": "2026-08-23T13:55:59.355Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-080fe647",
+        "ad": "Özgün Araç · KTR",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "GİRİŞ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Bu kısımda proje hakkında genel bilgiler verilmelidir.",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TAKIM ORGANİZASYONU",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu kısımda takım görev dağılımı ve ekip organizasyonu şema olarak gösterilir ve açıklama yapılarak sunulmalıdır. Takım üyelerinin yetkinliklerinden behsedilmelidir. Ekibin geçmiş deneyimleri yine bu başlıkta ele alınmalıdır.} Bu bölümde takım üyeleri ile ilgili herhangi bir kişisel bilginin paylaşılmaması gerekmektedir. (Ad-Soyad, Okul vb.) {Takım üyeleri için üye-1, üye-2, kaptan, danışman ifadeleri kullanılabilir."
+            ]
+          },
+          {
+            "ad": "ZAMAN AKIŞ ÇİZELGESİ VE BÜTÇE",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu kısımda Teknik Yeterlilik Formunun ve sonrasında yürütülen çalışmaların değerlendirmesi yapılmalıdır. Varsa ön tasarım(lar)dan sonra yapılan değişiklikler ve değişikliklerin neden yapıldığı açıklanmalıdır. Projenin zaman akış çizelgesi bu bölümde yer almalı ve detayları açıklanmalıdır. TYF’de planlanan bütçe ve son bütçe arasında karşılaştırma yapılır.}",
+              "Bu kısımda aşağıda yer alan tablo istenilen bilgilere göre doldurulmalıdır.",
+              "Ön Tekerlekler Arası Açıklık",
+              "Arka Tekerlekler Arası Açıklık",
+              "Araçta Aşırı Akım Koruması"
+            ]
+          },
+          {
+            "ad": "ARACIN MEKANİK ÖZELLİKLERİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Yarışma kapsamında, otonom sürüş arayüzlerine sahip bir araç kullanılacaktır. En önemlisi, bu araç, elektronik direksiyon (steer-by-wire), elektronik gaz pedalı (pedal-by-wire) ve elektronik fren (brake-by-wire) işlevselliğini desteklemelidir. Raporun bu bölümünde, otonom sürüş arayüzlerine odaklanarak kullanılacak araç hakkında ayrıntılı bilgi verilmelidir. Araç özellikleri teknik resim, fotoğraf, vb. gibi görsellerle birlikte anlatılmalıdır.",
+              "Bu kapsamda otonom araç ile ilgili aşağıdaki bilgilerin paylaşılması beklenmektedir:"
+            ]
+          },
+          {
+            "ad": "DONANIM MİMARİSİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde aracın kontrolcüsü, yapay zeka bilgisayarı, sensörleri, kablosuz haberleşme sistemi, batarya yönetim sistemi gibi donanım bileşenlerinin detayları hakkında bilgi verilmelidir.",
+              "Kullanılan tüm sensörler ve sistemler için bağlantı şeması, elektriksel, kablo bağlantıları gösteren Harness Diyagramı gösterilmelidir. (Harness Diyagramı, araçta kullanılan donanım ve bileşenler temsil edecek şekilde soyut veya basitleştirilmiş şekilde şekiller ve çizgiler kullanılarak yapılabilir.)"
+            ]
+          },
+          {
+            "ad": "YAZILIM MİMARİSİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde trafik işaretlerinin tanınması, şerit takibi gibi araçta kullanılan otonom sürüş algoritmaları, model eğitimi için kullanılan veri setleri ve yazılım süreçleri hakkında bilgi verilmelidir. Yarışma kapsamında görevlerin nasıl gerçekleştirileceği bu bölümde açıklanmalıdır. (Şerit Takibi-Tabela Tanıma-Trafik Işıkları-Park-Durak-Engelden Kaçış-Slalom vb.)",
+              "Ayrıca araçtaki haberleşme hatları vasıtasıyla tüm sensörlerden (GPS/ IMU, LIDAR, Radar, Kamera, Ultrasonic, Odometri vb.) gelen bilgilerin mantıksal kontrolleri alınarak bu bilgilerin anlık izlenmesi sağlanmalıdır. Veri gelmemesi veya mantık sınırları içerisinde olmayan veri gelmesi durumunda aracın alacağı aksiyon planları hazırlanmalıdır.",
+              "Haritalama teknolojisi kullanan takımların bu kısımda haritalama sistemi ile ilgili detaylı bilgi vermesi gerekmektedir."
+            ]
+          },
+          {
+            "ad": "ÖZGÜN BİLEŞENLER",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde aracın tasarım ve/veya yazılım bakımından özgün yönleri belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "GÜVENLİK",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde araçta acil durumlar için tasarlanacak donanımsal/yazılımsal güvenlik önlemlerinden bahsedilmelidir.",
+              "Bu kısımda yapılan veya yapılacak donanımsal/yazılımsal geliştirme testlerinden bahsedilerek, detayları verilmelidir.",
+              "Aracın yapısal ve akışkan analizleri, (varsa) prototip testlerinden bahsedilmelidir.",
+              "Yapılan test sonuçlarının bu bölümde açıklaması gerçekleştirilmelidir.",
+              "Testin neden yapıldığı ve hangi sorunlara odaklandığı açıklanmalıdır. Testlerin hangi özellikleri/bileşenleri (hız, güvenlik, sürüş, yazılım/donanım mimarisi) nasıl test ettiği performans sonuçları verilerek sunulmalıdır. Testlerden elde edilen bulgulara dayanarak yapılan iyileştirmeler varsa verilmelidir. Testlere göre aracın hangi alanlarda geliştirilebileceği veya iyileştirme önerileri varsa sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "REFERANSLAR",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Makale, tez, araştırma raporu, internet sitesi, TEKNOFEST Robotaksi Raporları, yararlandığınız diğer kaynaklar, github ya da benzeri sitelerden açık kaynaklı kodların vb link uzantıları akademik referans formatlarına uygun olarak eklenmelidir."
+            ]
+          },
+          {
+            "ad": "İlave Notlar:",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Kritik Tasarım Raporu puanlaması aşağıdaki şablona göre yapılacaktır.",
+              "Zaman Akış Çizelgesi ve Bütçe"
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "REFERANSLAR",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "giris",
+            "ad": "GİRİŞ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "GİRİŞ"
+          },
+          {
+            "kod": "bu-kisimda-proje-hakkinda-genel-bilgiler",
+            "ad": "Bu kısımda proje hakkında genel bilgiler verilmelidir.",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Bu kısımda proje hakkında genel bilgiler verilmelidir."
+          },
+          {
+            "kod": "takim-organizasyonu",
+            "ad": "TAKIM ORGANİZASYONU",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda takım görev dağılımı ve ekip organizasyonu şema olarak gösterilir ve açıklama yapılarak sunulmalıdır. Takım üyelerinin yetkinliklerinden behsedilmelidir. Ekibin geçmiş deneyimleri yine bu başlıkta ele alınmalıdır.} Bu bölümde takım üyeleri ile ilgili herhangi bir kişisel bilginin paylaşılmaması gerekmektedir. (Ad-Soyad, Okul vb.) {Takım üyeleri için üye-1, üye-2, kaptan, danışman ifadeleri kullanılabilir."
+            ],
+            "bolumAdi": "TAKIM ORGANİZASYONU"
+          },
+          {
+            "kod": "zaman-akis-cizelgesi-ve-butce",
+            "ad": "ZAMAN AKIŞ ÇİZELGESİ VE BÜTÇE",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda Teknik Yeterlilik Formunun ve sonrasında yürütülen çalışmaların değerlendirmesi yapılmalıdır. Varsa ön tasarım(lar)dan sonra yapılan değişiklikler ve değişikliklerin neden yapıldığı açıklanmalıdır. Projenin zaman akış çizelgesi bu bölümde yer almalı ve detayları açıklanmalıdır. TYF’de planlanan bütçe ve son bütçe arasında karşılaştırma yapılır.}",
+              "Bu kısımda aşağıda yer alan tablo istenilen bilgilere göre doldurulmalıdır.",
+              "Ön Tekerlekler Arası Açıklık",
+              "Arka Tekerlekler Arası Açıklık",
+              "Araçta Aşırı Akım Koruması"
+            ],
+            "bolumAdi": "ZAMAN AKIŞ ÇİZELGESİ VE BÜTÇE"
+          },
+          {
+            "kod": "aracin-mekanik-ozellikleri",
+            "ad": "ARACIN MEKANİK ÖZELLİKLERİ",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışma kapsamında, otonom sürüş arayüzlerine sahip bir araç kullanılacaktır. En önemlisi, bu araç, elektronik direksiyon (steer-by-wire), elektronik gaz pedalı (pedal-by-wire) ve elektronik fren (brake-by-wire) işlevselliğini desteklemelidir. Raporun bu bölümünde, otonom sürüş arayüzlerine odaklanarak kullanılacak araç hakkında ayrıntılı bilgi verilmelidir. Araç özellikleri teknik resim, fotoğraf, vb. gibi görsellerle birlikte anlatılmalıdır.",
+              "Bu kapsamda otonom araç ile ilgili aşağıdaki bilgilerin paylaşılması beklenmektedir:"
+            ],
+            "bolumAdi": "ARACIN MEKANİK ÖZELLİKLERİ"
+          },
+          {
+            "kod": "donanim-mimarisi",
+            "ad": "DONANIM MİMARİSİ",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde aracın kontrolcüsü, yapay zeka bilgisayarı, sensörleri, kablosuz haberleşme sistemi, batarya yönetim sistemi gibi donanım bileşenlerinin detayları hakkında bilgi verilmelidir.",
+              "Kullanılan tüm sensörler ve sistemler için bağlantı şeması, elektriksel, kablo bağlantıları gösteren Harness Diyagramı gösterilmelidir. (Harness Diyagramı, araçta kullanılan donanım ve bileşenler temsil edecek şekilde soyut veya basitleştirilmiş şekilde şekiller ve çizgiler kullanılarak yapılabilir.)"
+            ],
+            "bolumAdi": "DONANIM MİMARİSİ"
+          },
+          {
+            "kod": "yazilim-mimarisi",
+            "ad": "YAZILIM MİMARİSİ",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde trafik işaretlerinin tanınması, şerit takibi gibi araçta kullanılan otonom sürüş algoritmaları, model eğitimi için kullanılan veri setleri ve yazılım süreçleri hakkında bilgi verilmelidir. Yarışma kapsamında görevlerin nasıl gerçekleştirileceği bu bölümde açıklanmalıdır. (Şerit Takibi-Tabela Tanıma-Trafik Işıkları-Park-Durak-Engelden Kaçış-Slalom vb.)",
+              "Ayrıca araçtaki haberleşme hatları vasıtasıyla tüm sensörlerden (GPS/ IMU, LIDAR, Radar, Kamera, Ultrasonic, Odometri vb.) gelen bilgilerin mantıksal kontrolleri alınarak bu bilgilerin anlık izlenmesi sağlanmalıdır. Veri gelmemesi veya mantık sınırları içerisinde olmayan veri gelmesi durumunda aracın alacağı aksiyon planları hazırlanmalıdır.",
+              "Haritalama teknolojisi kullanan takımların bu kısımda haritalama sistemi ile ilgili detaylı bilgi vermesi gerekmektedir."
+            ],
+            "bolumAdi": "YAZILIM MİMARİSİ"
+          },
+          {
+            "kod": "ozgun-bilesenler",
+            "ad": "ÖZGÜN BİLEŞENLER",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde aracın tasarım ve/veya yazılım bakımından özgün yönleri belirtilmelidir."
+            ],
+            "bolumAdi": "ÖZGÜN BİLEŞENLER"
+          },
+          {
+            "kod": "guvenlik",
+            "ad": "GÜVENLİK",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde araçta acil durumlar için tasarlanacak donanımsal/yazılımsal güvenlik önlemlerinden bahsedilmelidir.",
+              "Bu kısımda yapılan veya yapılacak donanımsal/yazılımsal geliştirme testlerinden bahsedilerek, detayları verilmelidir.",
+              "Aracın yapısal ve akışkan analizleri, (varsa) prototip testlerinden bahsedilmelidir.",
+              "Yapılan test sonuçlarının bu bölümde açıklaması gerçekleştirilmelidir.",
+              "Testin neden yapıldığı ve hangi sorunlara odaklandığı açıklanmalıdır. Testlerin hangi özellikleri/bileşenleri (hız, güvenlik, sürüş, yazılım/donanım mimarisi) nasıl test ettiği performans sonuçları verilerek sunulmalıdır. Testlerden elde edilen bulgulara dayanarak yapılan iyileştirmeler varsa verilmelidir. Testlere göre aracın hangi alanlarda geliştirilebileceği veya iyileştirme önerileri varsa sunulmalıdır."
+            ],
+            "bolumAdi": "GÜVENLİK"
+          },
+          {
+            "kod": "referanslar",
+            "ad": "REFERANSLAR",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Makale, tez, araştırma raporu, internet sitesi, TEKNOFEST Robotaksi Raporları, yararlandığınız diğer kaynaklar, github ya da benzeri sitelerden açık kaynaklı kodların vb link uzantıları akademik referans formatlarına uygun olarak eklenmelidir."
+            ],
+            "bolumAdi": "REFERANSLAR"
+          },
+          {
+            "kod": "ilave-notlar",
+            "ad": "İlave Notlar:",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Kritik Tasarım Raporu puanlaması aşağıdaki şablona göre yapılacaktır.",
+              "Zaman Akış Çizelgesi ve Bütçe"
+            ],
+            "bolumAdi": "İlave Notlar:"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 11 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_Robotaksi_Binek_Otonom_Arac_Yarısması_Sartnamesi_SvtF2.pdf",
+        "yuklendi": "2026-08-23T20:14:23.854Z",
+        "sayfaSayisi": 38,
+        "kelimeSayisi": 7011,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk Versiyon",
+              "tarih": "2026-01-02"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Teknik Yeterlilik Formu Son Teslim Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "KTR Son Teslim Tarihi",
+              "tarih": "2026-04-08"
+            },
+            {
+              "etiket": "Araç Test Video Son Teslim Tarihi",
+              "tarih": "2026-06-04"
+            },
+            {
+              "etiket": "Test Dönemi AĞUSTOS 2026",
+              "tarih": "2026-07-23"
+            },
+            {
+              "etiket": "Simülasyon Videolarının Yüklenmesi",
+              "tarih": "2026-06-04"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Yukarıdaki şartları sağlamayan takımların başvuruları geçersiz sayılacaktır.",
+            "Eğer araç, yeni bir şeritte kurallara uygun hareket ediyorsa, ihlal kabul edilmeyecektir."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 25,
+          "danismanZorunlu": true
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Robotaksi_Binek_Otonom_Arac_Yar%C4%B1smas%C4%B1_Sartnamesi_SvtF2.pdf"
+      }
+    },
+    {
+      "id": "e9743f28-402e-4c4b-b8e8-40597ffc5cab",
+      "ad": "Özgün Araç · Teknik Yeterlilik Formu TYF",
+      "sablonDosyasi": "Robotaksi-TYF-Ozgun_Arac_woPlC.docx",
+      "olusturuldu": "2026-08-23T13:55:59.610Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-e9743f28",
+        "ad": "Özgün Araç · Teknik Yeterlilik Formu TYF",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "(ÖZGÜN ARAÇ)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "TEKNİK YETERLİLİK FORMU DOLDURULURKEN DİKKAT EDİLMESİ GEREKEN HUSUSLAR:"
+            ]
+          },
+          {
+            "ad": "ÖZELLİK",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Ön Tekerlekler Arası Açıklık",
+              "Arka Tekerlekler Arası Açıklık"
+            ]
+          },
+          {
+            "ad": "BİLEŞENLER",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde araç üzerinde kullanılacak mekanik parçalar ve özellikleri tabloda belirtilen verilen doğrultusunda açıklanmalıdır.",
+              "Yarışmaya uygun olarak kullanmayı planladığınız mekanik tasarım görselini (tercihen ön izometrik görünüş) buraya ekleyiniz. Sadece 1(bir) adet görsel konulması gerekmektedir.",
+              "Üç boyutlu (3D) görsel (render, prototip fotoğrafı vb.) olması gerekmektedir. Eklenen görselin nihai tasarımı yansıtma zorunluluğu yoktur. Planlanan, hayal edilen tasarımla ilgili görsel de (3 boyutlu olmak kaydıyla) eklenebilir."
+            ]
+          },
+          {
+            "ad": "BİLEŞENLER",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde araç üzerinde kullanılacak elektronik parçalar ve özellikleri tabloda belirtilen verilen doğrultusunda açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "BİLEŞENLER",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde araç üzerinde kullanılacak sensörler ve özellikleri tabloda belirtilen verilen doğrultusunda açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "ALGORİTMA TİPİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde araç üzerinde kullanılacak algoritmaları (otonom sürüş algoritmaları, araç kontrol sistemi vb.) ve kullanılma sebebi tabloda belirtilen verilen doğrultusunda açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "BİLEŞEN",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde araç üzerinde kullanılacak özgün bileşenleri (yazılım, malzeme) ve özelliklerini tabloda belirtilen verilen doğrultusunda açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "GÖREV",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Trafik İşaretleri Tanınması",
+              "Bu bölümde yarışma kapsamındaki görevlerin nasıl gerçekleştirilmesi planlandığına dair bilgi verilmelidir."
+            ]
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "ozgun-arac",
+            "ad": "(ÖZGÜN ARAÇ)",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "TEKNİK YETERLİLİK FORMU DOLDURULURKEN DİKKAT EDİLMESİ GEREKEN HUSUSLAR:"
+            ],
+            "bolumAdi": "(ÖZGÜN ARAÇ)"
+          },
+          {
+            "kod": "ozellik",
+            "ad": "ÖZELLİK",
+            "puan": 12,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Ön Tekerlekler Arası Açıklık",
+              "Arka Tekerlekler Arası Açıklık"
+            ],
+            "bolumAdi": "ÖZELLİK"
+          },
+          {
+            "kod": "bilesenler",
+            "ad": "BİLEŞENLER",
+            "puan": 12,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde araç üzerinde kullanılacak mekanik parçalar ve özellikleri tabloda belirtilen verilen doğrultusunda açıklanmalıdır.",
+              "Yarışmaya uygun olarak kullanmayı planladığınız mekanik tasarım görselini (tercihen ön izometrik görünüş) buraya ekleyiniz. Sadece 1(bir) adet görsel konulması gerekmektedir.",
+              "Üç boyutlu (3D) görsel (render, prototip fotoğrafı vb.) olması gerekmektedir. Eklenen görselin nihai tasarımı yansıtma zorunluluğu yoktur. Planlanan, hayal edilen tasarımla ilgili görsel de (3 boyutlu olmak kaydıyla) eklenebilir."
+            ],
+            "bolumAdi": "BİLEŞENLER"
+          },
+          {
+            "kod": "bilesenler",
+            "ad": "BİLEŞENLER",
+            "puan": 12,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde araç üzerinde kullanılacak elektronik parçalar ve özellikleri tabloda belirtilen verilen doğrultusunda açıklanmalıdır."
+            ],
+            "bolumAdi": "BİLEŞENLER"
+          },
+          {
+            "kod": "bilesenler",
+            "ad": "BİLEŞENLER",
+            "puan": 12,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde araç üzerinde kullanılacak sensörler ve özellikleri tabloda belirtilen verilen doğrultusunda açıklanmalıdır."
+            ],
+            "bolumAdi": "BİLEŞENLER"
+          },
+          {
+            "kod": "algoritma-tipi",
+            "ad": "ALGORİTMA TİPİ",
+            "puan": 12,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde araç üzerinde kullanılacak algoritmaları (otonom sürüş algoritmaları, araç kontrol sistemi vb.) ve kullanılma sebebi tabloda belirtilen verilen doğrultusunda açıklanmalıdır."
+            ],
+            "bolumAdi": "ALGORİTMA TİPİ"
+          },
+          {
+            "kod": "bilesen",
+            "ad": "BİLEŞEN",
+            "puan": 12,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde araç üzerinde kullanılacak özgün bileşenleri (yazılım, malzeme) ve özelliklerini tabloda belirtilen verilen doğrultusunda açıklanmalıdır."
+            ],
+            "bolumAdi": "BİLEŞEN"
+          },
+          {
+            "kod": "gorev",
+            "ad": "GÖREV",
+            "puan": 12,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Trafik İşaretleri Tanınması",
+              "Bu bölümde yarışma kapsamındaki görevlerin nasıl gerçekleştirilmesi planlandığına dair bilgi verilmelidir."
+            ],
+            "bolumAdi": "GÖREV"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablonda Word başlık stili yok; başlıklar kalın biçimlendirmeden tahmin edildi. Bölüm listesini onaylamadan önce gözden geçirin.",
+        "Kapak bloğu sayıldığı için 7 açılış satırı bölüm listesinden çıkarıldı (ROBOTAKSİ-BİNEK OTONOM…).",
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 8 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_Robotaksi_Binek_Otonom_Arac_Yarısması_Sartnamesi_SvtF2.pdf",
+        "yuklendi": "2026-08-23T20:14:27.365Z",
+        "sayfaSayisi": 38,
+        "kelimeSayisi": 7011,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk Versiyon",
+              "tarih": "2026-01-02"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Teknik Yeterlilik Formu Son Teslim Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "KTR Son Teslim Tarihi",
+              "tarih": "2026-04-08"
+            },
+            {
+              "etiket": "Araç Test Video Son Teslim Tarihi",
+              "tarih": "2026-06-04"
+            },
+            {
+              "etiket": "Test Dönemi AĞUSTOS 2026",
+              "tarih": "2026-07-23"
+            },
+            {
+              "etiket": "Simülasyon Videolarının Yüklenmesi",
+              "tarih": "2026-06-04"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Yukarıdaki şartları sağlamayan takımların başvuruları geçersiz sayılacaktır.",
+            "Eğer araç, yeni bir şeritte kurallara uygun hareket ediyorsa, ihlal kabul edilmeyecektir."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 25,
+          "danismanZorunlu": true
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Robotaksi_Binek_Otonom_Arac_Yar%C4%B1smas%C4%B1_Sartnamesi_SvtF2.pdf"
+      }
+    },
+    {
+      "id": "a94b1884-d73c-4d8f-bd53-fe830c199a50",
+      "ad": "Robotaksi-Binek Otonom Araç Yarışması",
+      "sablonDosyasi": "Robotaksi_Simülasyon_Şablon_rjtpc_bi9so.docx",
+      "olusturuldu": "2026-08-23T13:55:59.822Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-a94b1884",
+        "ad": "Robotaksi-Binek Otonom Araç Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "SİMÜLASYON RAPORU ŞABLONU",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Rapor Başlığı (örn. “TEKNOFEST Robotaksi – Simülasyon Raporu”)",
+              "Takım Adı, Takım ID, Takım Logosu (varsa)",
+              "2. İçindekiler ve Tablo Listesi",
+              "İçindekiler: Bölümlerin numaralandırılmış listesi",
+              "Şekil / Tablolar Listesi: Rapor boyunca kullanılan tüm şekil ve tabloların isim ve sayfa numaraları",
+              "Amaç: Raporun amacı ve simülasyon çalışmalarının hedefi",
+              "Bağlam (Yarışma Çerçevesi): TEKNOFEST Robotaksi Yarışması’nın genel hedefleri, hangi görevlerin simüle edileceği",
+              "Kapsam: Raporun ana konuları (araç modeli, sensörler, algoritmalar vb.)",
+              "4. Simülasyon Ortamı ve Yazılım Altyapısı",
+              "Seçilen Simülasyon Platformu: (Gazebo, Unity, Unreal Engine, LGSVL, Matlab vb.)",
+              "Neden Bu Platform? Seçim kriterleri (gerçekçilik, algoritma entegrasyonu, vb.)",
+              "Sistem Konfigürasyonu: Kullanılan bilgisayar donanımı, işletim sistemi, yazılım çerçeveleri (örn. ROS sürümü)",
+              "5. Araç Modeli ve Sensörler",
+              "Fiziksel Parametreler: Boyutlar, kütle, tekerlek konfigürasyonu",
+              "Dinamik Model: Araç ivmelenme, direksiyon ve frenleme parametreleri",
+              "5.2. Sensör Konfigürasyonu",
+              "Sensör Tipleri ve Montaj Konumları: LIDAR, Kamera, RADAR, GPS, IMU vb.",
+              "Simülasyonda Kullanılan Parametreler: Menzil, çözünürlük, gürültü vb.",
+              "Kritik Tasarım Raporu Uyumu: Raporla tutarlılık (fazladan sensör olmamalı)",
+              "6. Görev Tanımı ve Senaryolar",
+              "Robotaksi Yarışması Görevleri: Şerit takibi, dur/kalk, trafik ışığına uyum, engel algılama, park vb.",
+              "Dinamik/Statik engellerin türü",
+              "Yol geometrisi (dönemeçler, tünel, park alanları)",
+              "Varyasyonlar: Hız limiti, hava koşulları (yağmur, sis vb.), gündüz/gece test senaryoları",
+              "7. Algoritma ve Yazılım Mimarisinin Uygulanması",
+              "Bu bölümde, otonom araç yığınınızın (software stack) ayrıntılı mimarisini açıklayın. Her alt başlık altında, hangi yöntemleri kullandığınızı ve simülasyonda nasıl uyguladığınızı belirtin.",
+              "7.1. Algılama (Perception)",
+              "Nesne Tanıma: Trafik ışığı, tabela, yaya veya araç algılama yöntemleri",
+              "Şerit Tespiti: Görüntü işleme, LIDAR tabanlı yol kenarı algılama vb.",
+              "Sensör Füzyonu: Kamera + LIDAR + RADAR çıktılarının birleştirilmesi",
+              "7.2. Konumlandırma (Localization)",
+              "Haritalama (Mapping): SLAM veya önceden hazırlanan haritanın kullanımı",
+              "Konum Tahmini: GPS, IMU, LIDAR odometresi vb.",
+              "Rota Planlama (Path Planning): Global planlama (örn. A* / Dijkstra / RRT)",
+              "Yerel Planlama (Trajectory Planning): Engel sakınma, hız profili belirleme",
+              "7.4. Karar Verme (Decision Making)",
+              "Mantık ve Kurallar: Aracın trafik ışıkları, dur/kal, sollama, şerit değiştirme gibi durumlarda neye göre karar aldığı",
+              "Durum Makinesi (State Machine): Aracın “Durma, Kalkma, Engel Sakınma, Işıkta Bekleme, Park Etme” gibi durumları nasıl yönettiği",
+              "Yapay Zekâ / Makine Öğrenimi Yaklaşımları (Opsiyonel): Eğer aracınız “araç ilerleme, hız kontrolü veya engel sakınma” kararlarını yapay zekâ teknikleriyle veriyorsa, bu bölümü açıklayın.",
+              "Trafik Işığı Kararı: Kırmızı/Yeşil/Işıksız durumda yol izleme mantığı",
+              "Park Kararı: Park alanına giriş, uygun konum arama, park stratejisi",
+              "Engel Sakınma Kararı: Statik/dinamik engel belirdiğinde hız azaltma veya durma vb.",
+              "Kontrolcü Tasarımı: PID, MPC vb. hangi kontrol yöntemleri kullanıldı",
+              "Gerçek Araç Entegrasyonu: Kontrol çıktılarının direksiyon, fren ve gaz üzerinde uygulanabilirliği (simülasyon-gerçek tutarlılığı)",
+              "8. Simülasyon Testleri ve Sonuçları",
+              "Test Senaryosu Adımları: Senaryonun başlangıç/kalkış, engel ekleme, trafik ışığı değişimi vb.",
+              "Başarı Kriterleri: Yol tutma, ışıkta durma mesafesi, çarpışmasız ilerleme vb.",
+              "8.2. Test Sonuçları (Tablo ve Grafikler)",
+              "Tablo: Görev türü, Başlangıç Koşulları, Sonuç (Başarılı/Başarısız/Kısmen), Süre vb.",
+              "Grafikler: Yörünge, hız profili, yönelim hatası, engel algılama doğruluk oranı vb.",
+              "Veri Kayıtları (Logs): Kısa özet (zaman damgası, sensör verisi, karar verme aşamaları)",
+              "9. Karşılaştırma ve Analiz",
+              "Gerçek Araç Verileri ile Karşılaştırma (Varsa): Simülasyon vs. gerçek test sonuçları",
+              "Performans Değerlendirmesi: Karar verme mekanizmasının hangi koşullarda daha iyi/başarısız olduğunu gözlemleyin",
+              "İyileştirmeler: Hangi noktalar geliştirilebilir (ör. daha gelişmiş karar verme stratejileri, yeni sensör ekleme)",
+              "10. Sonuç ve Gelecek Çalışmalar",
+              "Özet: Simülasyonda hangi hedeflere ulaşıldı, en önemli bulgular neler?",
+              "Gerçek araçta uygulama planı",
+              "Farklı senaryoların (çevrimiçi güncellenen trafik veya kalabalık yaya vb.) eklenmesi",
+              "Yarışma Hazırlığı: Takımın yarışmaya yönelik eksiklerini ve sonraki adımlarını belirtin",
+              "Ek A: Detaylı Parametre Listesi (Sensör, kontrol, karar parametreleri vb.)",
+              "Ek B: Kod Parçacıkları (Uzun veya kritik kod blokları)",
+              "Ek C: Simülasyon Kurulum Notları (Platform, bağımlılıklar, sürüm bilgileri)",
+              "Kaynaklar: Yarışma şartnamesi, ROS dökümanları, makaleler vb.",
+              "Bağlantılar: Takımın repo adresi (GitHub, GitLab vb.), veri setleri, kullanılan kütüphane linkleri"
+            ]
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [],
+        "toplamPuan": 0
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablonda Word başlık stili yok; başlıklar kalın biçimlendirmeden tahmin edildi. Bölüm listesini onaylamadan önce gözden geçirin.",
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_Robotaksi_Binek_Otonom_Arac_Yarısması_Sartnamesi_SvtF2.pdf",
+        "yuklendi": "2026-08-23T20:14:30.859Z",
+        "sayfaSayisi": 38,
+        "kelimeSayisi": 7011,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk Versiyon",
+              "tarih": "2026-01-02"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Teknik Yeterlilik Formu Son Teslim Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "KTR Son Teslim Tarihi",
+              "tarih": "2026-04-08"
+            },
+            {
+              "etiket": "Araç Test Video Son Teslim Tarihi",
+              "tarih": "2026-06-04"
+            },
+            {
+              "etiket": "Test Dönemi AĞUSTOS 2026",
+              "tarih": "2026-07-23"
+            },
+            {
+              "etiket": "Simülasyon Videolarının Yüklenmesi",
+              "tarih": "2026-06-04"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Yukarıdaki şartları sağlamayan takımların başvuruları geçersiz sayılacaktır.",
+            "Eğer araç, yeni bir şeritte kurallara uygun hareket ediyorsa, ihlal kabul edilmeyecektir."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 25,
+          "danismanZorunlu": true
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Robotaksi_Binek_Otonom_Arac_Yar%C4%B1smas%C4%B1_Sartnamesi_SvtF2.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "robotaksi-binek-otonom-arac-yarismasi"
+}

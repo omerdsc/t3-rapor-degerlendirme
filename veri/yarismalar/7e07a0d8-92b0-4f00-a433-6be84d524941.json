@@ -1,0 +1,498 @@
+{
+  "id": "7e07a0d8-92b0-4f00-a433-6be84d524941",
+  "ad": "İnsansız Kara Aracı Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:54:32.284Z",
+  "kategoriler": [
+    {
+      "id": "2604c6b0-0a27-448f-996c-526531153f32",
+      "ad": "İnsansız Kara Aracı Yarışması",
+      "sablonDosyasi": "TEKNOFEST_2026_İKA_KTR_ŞABLONU_xi1fe.docx",
+      "asama": "KTR",
+      "olusturuldu": "2026-08-23T13:54:32.284Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-2604c6b0",
+        "ad": "İnsansız Kara Aracı Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "Takım Organizasyonu",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Takım Organizasyonu bölümünde takım görev dağılımı ve ekip organizasyonu aşağıdaki tablo üzerinde gösterilir ve takımda alınan görevler ve yetkinlikler rol başına 30 kelimeyi geçmeyecek şekilde açıklama yapılarak verilir. Tablo haricinde farklı bir girdide bulunulmaz.",
+              "Takımda Alınan Görevler Ve Yetkinlikler",
+              "Üye−1 (Örneğin Mekanik Tasarım Sorumlusu, Elektronik Kart Tasarımcısı, Algoritma Ekip Lideri, Yazılım Geliştirici, Endüstriyel Tasarımcı, Malzeme Mühendisliği Ekibi Üyesi gibi)",
+              "Örnek: “İnsansız Kara Aracı sisteminin mekanik parçalarının tasarımı ve tasarlanan parçaların üretimlerinin takibinden sorumludur.” gibi."
+            ]
+          },
+          {
+            "ad": "Proje Mevcut Durum Kıyaslaması",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Proje Mevcut Durum Kıyaslaması bölümünde Teknik Yeterlik Formu Genel Özellikler bölümündeki tablo ile kıyaslama yoluyla geliştirme faaliyetlerindeki güncel durum değerlendirilmesi gerçekleştirilir. Varsa Teknik Yeterlik Formu teslimi sonrası yapılan değişikliklerin hangi sebeplerden gerçekleştirildiği özet olarak, toplamda 100 kelimeyi geçmeyecek şekilde tablonun hemen altında açıklanır.",
+              "En Yüksek Batarya Gerilimi",
+              "* 100 kelimelik değişiklik açıklaması ─eğer değişiklik mevcutsa─ bu kısma eklenmelidir. *"
+            ]
+          },
+          {
+            "ad": "Sistem Tasarımı",
+            "zorunlu": true,
+            "puan": 6,
+            "yonergeMetni": [
+              "Sistem Tasarım ana başlığı altında İnsansız Kara Aracı yarışması çerçevesinde geliştirmekte olduğunuz İnsansız Kara Aracı sisteminin ana alt donanımları blok şemada verilir (3 puan). Blok şemanın yanı sıra, KTR teslimi itibarıyla bir bütün olarak ortaya konan İKA sisteminin 3-boyutlu tasarım programı çıktısı (üzerinde elektrik ve elektronik bileşenler ile sensörlerin temsili modelleri kullanılabilir) yine bu ana başlık altında sunulmalıdır (3 puan). Sunulacak sistem modelinde Yapay Zekâ araçlarıyla oluşturulmuş herhangi bir tasarım ve görselden faydalanılmaması gerekmektedir."
+            ]
+          },
+          {
+            "ad": "3.1. Mekanik Tasarım",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Mekanik Tasarım ana başlığı altında sistemin mekanik tasarım süreçleri adım adım anlatılır. Tasarımlara ait görseller, teknik resimler, prototip fotoğrafları ise ilgili alt başlıklarda paylaşılır. Final tasarıma ait detaylar da alt başlıklarda verilir."
+            ]
+          },
+          {
+            "ad": "3.1.1. Komponent Mühendislik Hesaplamaları",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "İnsansız Kara Aracı üzerindeki hazır temin edilen mekanik parçalardan kritik 3 tanesinin seçim kriterleri ya da hesaplamaları, takım tarafından tasarlanan mekanik parçalardan da yine 3 tanesinin mühendislik hesapları bu bölüme dahil edilmelidir."
+            ]
+          },
+          {
+            "ad": "3.1.2. Malzemeler",
+            "zorunlu": true,
+            "puan": 2,
+            "yonergeMetni": [
+              "Sistemin üretiminde kullanılan malzemeler, malzemelerin özellikleri, neden seçildiği ya da değiştirildiği açıklanır. Hazır alınan, geliştirilen ve tasarlanan alt bileşenler belirtilir."
+            ]
+          },
+          {
+            "ad": "3.1.3. Üretim Yöntemleri",
+            "zorunlu": true,
+            "puan": 4,
+            "yonergeMetni": [
+              "Sistemin üretiminde kullanılan yöntemler ve bu yöntemlerin neden seçildiği açıklanır."
+            ]
+          },
+          {
+            "ad": "3.1.4. Fiziksel Özellikler",
+            "zorunlu": true,
+            "puan": 2,
+            "yonergeMetni": [
+              "Sistemin boyutları, ağırlığı, hacmi gibi fiziksel özellikleri belirtilir."
+            ]
+          },
+          {
+            "ad": "3.1.5. Platform Mühendislik Hesaplamaları",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Araç platformu tasarım aşamasında, yarışma görev gereksinimlerini karşılayabilmek (Dik Eğim, Yan Eğim, Dik Engel vb.) için yapılmış olan hesaplamalara yer verilir."
+            ]
+          },
+          {
+            "ad": "3.2. Elektronik Tasarım",
+            "zorunlu": true,
+            "puan": 18,
+            "yonergeMetni": [
+              "Bu kısımda sistemin elektronik tasarım süreçleri anlatılır. Final tasarımın nasıl belirlendiği açıklanır. Elektronik alt sistemlerin son tasarımına getirilene kadar yapılmış olan tasarımlara ait görsellere (blok şema, şematikler, prototip fotoğrafları gibi) yer verilir. Kullanılan malzemeler (sensörler, kameralar, kablolar, anakart, motor sürücüler, güç kartları, anahtarlar, modemler, antenler gibi) hakkında bilgi verilir, nasıl belirlendiği ya da nasıl tasarlandığı açıklanır. Malzemelerin özellikleri ve neden seçildiği açıklanır. Bu kısımda sadece internetten elde edilmiş bileşen bilgileri değil araca ait yapıyı ilgilendiren ayrıntılardan söz edilmelidir. Her bir bileşenin detayının internetten kopyala-yapıştır olarak sunulmasına gerek yoktur."
+            ]
+          },
+          {
+            "ad": "3.3. Yazılım Geliştirme, Algoritma Tasarımı Ve Haberleşme",
+            "zorunlu": true,
+            "puan": 18,
+            "yonergeMetni": [
+              "Yazılım Geliştirme, Algoritma Tasarımı Ve Haberleşme bölümünde kısımda sistemin kullanıcı arayüz yazılımları, algoritmaların uygulama yöntemleri, atış kontrol yazılımı (hedef tespit, hedefe yönlenme, lazer işaretleme) süreçleri anlatılır. Tüm bu yazılımların hangi programlama dillerinde programlanacağı ve programlama araçlarının seçilme nedenleri belirtilir.",
+              "Otonomi algoritmalarının akış mimarisi verilmelidir. Akış Mimarisi algoritmalar arası bağlantı şemasını ve algoritmalar arası mesaj tipleri içermelidir. Yarışma Parkuru’nun her bir adımı için otonomi algoritmasında üretilen çözüm açıklanmalı ve ilgili sensörler belirtilmelidir. Parkur belirtme tabelalarının algılanma yöntemi, Dik Engel, Taşlı Çakıllı Yol, Yan Eğim, Hızlanma, Sudan Geçiş kısımlarında alınan aksiyonlar, trafik konilerinin arasından geçiş için kullanılan planlama algoritması, Engebeli Arazi ve Dik Eğim kısmında kullanılan ek algoritmalar açıklanmalıdır. Literatürden bulunan algoritmalar kullanılmış ise bu algoritmaların isimleri ve çalışma yöntemi, kullandığı sensörler detaylandırılmalıdır.",
+              "Araç ve kullanıcı konsolu arasındaki haberleşme yazılımları mimarisi, haberleşme çözümleri ve mesaj arayüzlerinin bu bölümde yukarıdakilere ek olarak aktarılması gerekmektedir."
+            ]
+          },
+          {
+            "ad": "Test",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Test bölümünde birim seviyesi, entegrasyon seviyesi ve sistem seviyesi olmak üzere test planlarının sunulması beklenmektedir. Test planları uygulanacak test adımlarını, test takvimini ve kullanılacak test ekipmanları bilgilerini içermelidir.",
+              "Test planlarına ek olarak KTR aşamasına kadar takımların yapmış oldukları testlerin sonuçları, görselleri, kanıtları bu bölümde sunulacaktır."
+            ]
+          },
+          {
+            "ad": "Güvenlik Ve Emniyet",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Güvenlik Ve Emniyet bölümünde yarışma şartnamesinde belirtilen araç, canlı ve çevre güvenliğinin ve emniyetinin karşılanması için alınan önlemler ve çözüm yöntemleri açıklanır. Batarya Yönetim Sistemi, aşırı akım ve sigorta korumaları, haberleşmenin etkin olmama durumu, acil durdurma butonlarının yerleşimi ve butonların etkin olma durumu, emniyet işlevlerini denetleyen donanım ile araç donanımlarının ayrıklığı, kabloların yalıtılması gibi hususlarda alınan önlemler, seçilen bileşenler, kullanılan donanımlar, geliştirilen yazılımlar bu bölümde belirtilir."
+            ]
+          },
+          {
+            "ad": "Öğrenilmiş Dersler",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Öğrenilmiş Dersler bölümünde sistemin tasarım, üretim, bütünleştirme ve test aşamalarında karşılaşılan problemler, yaşanan kazalar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında kısaca bilgi verilir."
+            ]
+          },
+          {
+            "ad": "Zaman, Bütçe Ve Risk Planlaması",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu kısımda sistemin ön tasarım (Teknik Yeterlik Formu ile sunulan taslak, kavramsal tasarım), kritik tasarım (Kritik Tasarım Raporu ile sunulan, mümkün mertebe nihai ve ayrıntılı sisteme ulaşılması beklenen tasarım), üretim, montaj, test ve final yarışmasına katılım adımlarını içeren bir bütüncül bir zaman planlaması, KTR’nin sunulduğu tarih itibarıyla bütçe planlaması ve risk planlaması (muhtelif risk planı yöntemlerinden uygun görüleni kullanılabilir) yapılır. Kısa bir şekilde ön tasarımda planlanan bütçe ve son bütçe arasında karşılaştırma gerçekleştirilir."
+            ]
+          },
+          {
+            "ad": "Kaynakça",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Kaynakça bölümde raporda kullanılan kaynaklar ve alıntılar uygun bilimsel bir format (MLA, APA, Chicago ya da benzerleri) ile yer almalıdır. Rapor içerisinde çeşitli internet sitelerden elde edilen, özellikle elektronik bileşenlere ait kaynak bildirimi yapılmalıdır. Kaynakçada verilen tüm referanslar, rapor metninde kullanılmalıdır.",
+              "Kritik Tasarım Raporu Şablonu Beklentileri:"
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "Kaynakça",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        },
+        "azamiSayfa": 25
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "proje-mevcut-durum-kiyaslamasi",
+            "ad": "Proje Mevcut Durum Kıyaslaması",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Proje Mevcut Durum Kıyaslaması bölümünde Teknik Yeterlik Formu Genel Özellikler bölümündeki tablo ile kıyaslama yoluyla geliştirme faaliyetlerindeki güncel durum değerlendirilmesi gerçekleştirilir. Varsa Teknik Yeterlik Formu teslimi sonrası yapılan değişikliklerin hangi sebeplerden gerçekleştirildiği özet olarak, toplamda 100 kelimeyi geçmeyecek şekilde tablonun hemen altında açıklanır.",
+              "En Yüksek Batarya Gerilimi",
+              "* 100 kelimelik değişiklik açıklaması ─eğer değişiklik mevcutsa─ bu kısma eklenmelidir. *"
+            ],
+            "bolumAdi": "Proje Mevcut Durum Kıyaslaması"
+          },
+          {
+            "kod": "sistem-tasarimi",
+            "ad": "Sistem Tasarımı",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Sistem Tasarım ana başlığı altında İnsansız Kara Aracı yarışması çerçevesinde geliştirmekte olduğunuz İnsansız Kara Aracı sisteminin ana alt donanımları blok şemada verilir (3 puan). Blok şemanın yanı sıra, KTR teslimi itibarıyla bir bütün olarak ortaya konan İKA sisteminin 3-boyutlu tasarım programı çıktısı (üzerinde elektrik ve elektronik bileşenler ile sensörlerin temsili modelleri kullanılabilir) yine bu ana başlık altında sunulmalıdır (3 puan). Sunulacak sistem modelinde Yapay Zekâ araçlarıyla oluşturulmuş herhangi bir tasarım ve görselden faydalanılmaması gerekmektedir."
+            ],
+            "bolumAdi": "Sistem Tasarımı"
+          },
+          {
+            "kod": "3-1-1-komponent-muhendislik-hesaplamalar",
+            "ad": "3.1.1. Komponent Mühendislik Hesaplamaları",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "İnsansız Kara Aracı üzerindeki hazır temin edilen mekanik parçalardan kritik 3 tanesinin seçim kriterleri ya da hesaplamaları, takım tarafından tasarlanan mekanik parçalardan da yine 3 tanesinin mühendislik hesapları bu bölüme dahil edilmelidir."
+            ],
+            "bolumAdi": "3.1.1. Komponent Mühendislik Hesaplamaları"
+          },
+          {
+            "kod": "3-1-2-malzemeler",
+            "ad": "3.1.2. Malzemeler",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Sistemin üretiminde kullanılan malzemeler, malzemelerin özellikleri, neden seçildiği ya da değiştirildiği açıklanır. Hazır alınan, geliştirilen ve tasarlanan alt bileşenler belirtilir."
+            ],
+            "bolumAdi": "3.1.2. Malzemeler"
+          },
+          {
+            "kod": "3-1-3-uretim-yontemleri",
+            "ad": "3.1.3. Üretim Yöntemleri",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Sistemin üretiminde kullanılan yöntemler ve bu yöntemlerin neden seçildiği açıklanır."
+            ],
+            "bolumAdi": "3.1.3. Üretim Yöntemleri"
+          },
+          {
+            "kod": "3-1-4-fiziksel-ozellikler",
+            "ad": "3.1.4. Fiziksel Özellikler",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Sistemin boyutları, ağırlığı, hacmi gibi fiziksel özellikleri belirtilir."
+            ],
+            "bolumAdi": "3.1.4. Fiziksel Özellikler"
+          },
+          {
+            "kod": "3-1-5-platform-muhendislik-hesaplamalari",
+            "ad": "3.1.5. Platform Mühendislik Hesaplamaları",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Araç platformu tasarım aşamasında, yarışma görev gereksinimlerini karşılayabilmek (Dik Eğim, Yan Eğim, Dik Engel vb.) için yapılmış olan hesaplamalara yer verilir."
+            ],
+            "bolumAdi": "3.1.5. Platform Mühendislik Hesaplamaları"
+          },
+          {
+            "kod": "3-2-elektronik-tasarim",
+            "ad": "3.2. Elektronik Tasarım",
+            "puan": 18,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda sistemin elektronik tasarım süreçleri anlatılır. Final tasarımın nasıl belirlendiği açıklanır. Elektronik alt sistemlerin son tasarımına getirilene kadar yapılmış olan tasarımlara ait görsellere (blok şema, şematikler, prototip fotoğrafları gibi) yer verilir. Kullanılan malzemeler (sensörler, kameralar, kablolar, anakart, motor sürücüler, güç kartları, anahtarlar, modemler, antenler gibi) hakkında bilgi verilir, nasıl belirlendiği ya da nasıl tasarlandığı açıklanır. Malzemelerin özellikleri ve neden seçildiği açıklanır. Bu kısımda sadece internetten elde edilmiş bileşen bilgileri değil araca ait yapıyı ilgilendiren ayrıntılardan söz edilmelidir. Her bir bileşenin detayının internetten kopyala-yapıştır olarak sunulmasına gerek yoktur."
+            ],
+            "bolumAdi": "3.2. Elektronik Tasarım"
+          },
+          {
+            "kod": "3-3-yazilim-gelistirme-algoritma-tasarim",
+            "ad": "3.3. Yazılım Geliştirme, Algoritma Tasarımı Ve Haberleşme",
+            "puan": 18,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yazılım Geliştirme, Algoritma Tasarımı Ve Haberleşme bölümünde kısımda sistemin kullanıcı arayüz yazılımları, algoritmaların uygulama yöntemleri, atış kontrol yazılımı (hedef tespit, hedefe yönlenme, lazer işaretleme) süreçleri anlatılır. Tüm bu yazılımların hangi programlama dillerinde programlanacağı ve programlama araçlarının seçilme nedenleri belirtilir.",
+              "Otonomi algoritmalarının akış mimarisi verilmelidir. Akış Mimarisi algoritmalar arası bağlantı şemasını ve algoritmalar arası mesaj tipleri içermelidir. Yarışma Parkuru’nun her bir adımı için otonomi algoritmasında üretilen çözüm açıklanmalı ve ilgili sensörler belirtilmelidir. Parkur belirtme tabelalarının algılanma yöntemi, Dik Engel, Taşlı Çakıllı Yol, Yan Eğim, Hızlanma, Sudan Geçiş kısımlarında alınan aksiyonlar, trafik konilerinin arasından geçiş için kullanılan planlama algoritması, Engebeli Arazi ve Dik Eğim kısmında kullanılan ek algoritmalar açıklanmalıdır. Literatürden bulunan algoritmalar kullanılmış ise bu algoritmaların isimleri ve çalışma yöntemi, kullandığı sensörler detaylandırılmalıdır.",
+              "Araç ve kullanıcı konsolu arasındaki haberleşme yazılımları mimarisi, haberleşme çözümleri ve mesaj arayüzlerinin bu bölümde yukarıdakilere ek olarak aktarılması gerekmektedir."
+            ],
+            "bolumAdi": "3.3. Yazılım Geliştirme, Algoritma Tasarımı Ve Haberleşme"
+          },
+          {
+            "kod": "test",
+            "ad": "Test",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Test bölümünde birim seviyesi, entegrasyon seviyesi ve sistem seviyesi olmak üzere test planlarının sunulması beklenmektedir. Test planları uygulanacak test adımlarını, test takvimini ve kullanılacak test ekipmanları bilgilerini içermelidir.",
+              "Test planlarına ek olarak KTR aşamasına kadar takımların yapmış oldukları testlerin sonuçları, görselleri, kanıtları bu bölümde sunulacaktır."
+            ],
+            "bolumAdi": "Test"
+          },
+          {
+            "kod": "guvenlik-ve-emniyet",
+            "ad": "Güvenlik Ve Emniyet",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Güvenlik Ve Emniyet bölümünde yarışma şartnamesinde belirtilen araç, canlı ve çevre güvenliğinin ve emniyetinin karşılanması için alınan önlemler ve çözüm yöntemleri açıklanır. Batarya Yönetim Sistemi, aşırı akım ve sigorta korumaları, haberleşmenin etkin olmama durumu, acil durdurma butonlarının yerleşimi ve butonların etkin olma durumu, emniyet işlevlerini denetleyen donanım ile araç donanımlarının ayrıklığı, kabloların yalıtılması gibi hususlarda alınan önlemler, seçilen bileşenler, kullanılan donanımlar, geliştirilen yazılımlar bu bölümde belirtilir."
+            ],
+            "bolumAdi": "Güvenlik Ve Emniyet"
+          },
+          {
+            "kod": "ogrenilmis-dersler",
+            "ad": "Öğrenilmiş Dersler",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Öğrenilmiş Dersler bölümünde sistemin tasarım, üretim, bütünleştirme ve test aşamalarında karşılaşılan problemler, yaşanan kazalar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında kısaca bilgi verilir."
+            ],
+            "bolumAdi": "Öğrenilmiş Dersler"
+          },
+          {
+            "kod": "zaman-butce-ve-risk-planlamasi",
+            "ad": "Zaman, Bütçe Ve Risk Planlaması",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda sistemin ön tasarım (Teknik Yeterlik Formu ile sunulan taslak, kavramsal tasarım), kritik tasarım (Kritik Tasarım Raporu ile sunulan, mümkün mertebe nihai ve ayrıntılı sisteme ulaşılması beklenen tasarım), üretim, montaj, test ve final yarışmasına katılım adımlarını içeren bir bütüncül bir zaman planlaması, KTR’nin sunulduğu tarih itibarıyla bütçe planlaması ve risk planlaması (muhtelif risk planı yöntemlerinden uygun görüleni kullanılabilir) yapılır. Kısa bir şekilde ön tasarımda planlanan bütçe ve son bütçe arasında karşılaştırma gerçekleştirilir."
+            ],
+            "bolumAdi": "Zaman, Bütçe Ve Risk Planlaması"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "Kaynakça",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Kaynakça bölümde raporda kullanılan kaynaklar ve alıntılar uygun bilimsel bir format (MLA, APA, Chicago ya da benzerleri) ile yer almalıdır. Rapor içerisinde çeşitli internet sitelerden elde edilen, özellikle elektronik bileşenlere ait kaynak bildirimi yapılmalıdır. Kaynakçada verilen tüm referanslar, rapor metninde kullanılmalıdır.",
+              "Kritik Tasarım Raporu Şablonu Beklentileri:"
+            ],
+            "bolumAdi": "Kaynakça"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Sayfa sınırı kurallardan çıkarılamadı."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_İnsansız_Kara_Aracı_Türkçe_Şartname_2awot.pdf",
+        "yuklendi": "2026-08-23T20:18:02.823Z",
+        "sayfaSayisi": 27,
+        "kelimeSayisi": 4720,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "TEKNOFEST 2026 İlk Versiyon",
+              "tarih": "2026-01-29"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-02-20"
+            }
+          ],
+          "asamalar": [
+            "İletişim, Soru ve Cevap",
+            "İletişim",
+            "Soru ve Cevap"
+          ],
+          "eleyiciHukumler": [
+            "Diğer platformlara yüklenen videolar kabul edilmeyecektir."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiSayfa": 25,
+          "azamiUye": 15,
+          "danismanZorunlu": true
+        },
+        "catismalar": [],
+        "uyarilar": [],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0nsans%C4%B1z_Kara_Arac%C4%B1_T%C3%BCrk%C3%A7e_%C5%9Eartname_2awot.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "insansiz-kara-araci-yarismasi"
+}

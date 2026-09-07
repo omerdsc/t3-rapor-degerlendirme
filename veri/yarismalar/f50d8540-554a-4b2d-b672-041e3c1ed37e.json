@@ -1,0 +1,2269 @@
+{
+  "id": "f50d8540-554a-4b2d-b672-041e3c1ed37e",
+  "ad": "Nükleer Enerji Teknolojileri Tasarım Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:55:10.304Z",
+  "kategoriler": [
+    {
+      "id": "4e0640b2-2c64-4237-be72-95cb59b1124d",
+      "ad": "ALT SİSTEM GELİŞTİRME",
+      "sablonDosyasi": "2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-ALT_KATEGORİ_ŞABL.docx",
+      "olusturuldu": "2026-08-23T13:55:08.961Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-4e0640b2",
+        "ad": "ALT SİSTEM GELİŞTİRME",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 100,
+        "basliklar": [
+          {
+            "ad": "ALT KATEGORİLER SİSTEM GELİŞTİRME",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "(SADECE BİR TANESİ İŞARETLENMELİDİR)"
+            ]
+          },
+          {
+            "ad": "Reaktör Kor Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Nükleer Yakıt ve Atık Yönetimi",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Enerji Çevrimi Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Pasif Güvenlik Sistemi Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Nükleer Enstrümantasyon ve Kontrol Sistemi Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Profesyonel Takım",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Lisans Takımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "FDR ŞABLONU KULLANILARAK RAPOR HAZIRLANMALIDIR. BU FORMAT DIŞINDA RAPOR HAZIRLANMAMASI GEREKMEKTEDİR."
+            ]
+          },
+          {
+            "ad": "TABLOLAR",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ŞEKİLLER",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "1. PROJE ÖZETİ / PROJE KONU KAPSAMI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Proje kapsamında, “Nükleer Enerji Teknolojileri Tasarım Yarışma Şartnamesi 2026” belgesinin “Bölüm 4.3 Alt Kategoriler Sistem Geliştirme” kısmında tanımlanan ve teknik gereksinimleri verilen 5 adet alt kategoriden bir tanesine yönelik çalışmaları içermelidir.",
+              "Her alt kategori ile yarışmacıların belirli konularda yenilikçi ve özgün projeler geliştirmeleri amaçlanmaktadır. Tasarımların yenilikçi ve özgün yönleri ön plana çıkartılmalıdır.",
+              "Yarışma için birden fazla alt kategoriye yönelik çalışma yapılması durumunda her bir alt kategori için ayrı rapor hazırlanması ve sunulması gerekmektedir.",
+              "1.1.Proje Özeti: Proje fikrini kısaca özetleyiniz, varsa görsel ekleyebilirsiniz. Özet kısmında, belge içeriği ve proje içeriği konularına ayrıntılı olarak değinilmelidir.",
+              "1.2.Proje Konu Kapsamı: Projenizin; başvurmuş olduğunuz yarışmanın (kategorinin) yarışma şartnamesinde bulunan konu kapsamına uygunluğunu belirtmeniz gerekmektedir."
+            ]
+          },
+          {
+            "ad": "2. TAKIM TANITIMI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Proje ekibinin tanıtımı yapılmalıdır. Takım içinde görev dağılımları şematik olarak verilmelidir. Ekip üyelerinin kişisel bilgileri (ad, soyad, fotoğraf, üniversite/kurum/kuruluş vb. gibi) kesinlikle verilmeden bilgi paylaşımı yapılmalıdır."
+            ]
+          },
+          {
+            "ad": "3. LİTERATÜR TARAMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Literatür taraması sonucu ilgili proje konusunda daha önce yapılmış olan çalışmalarından bahsedilmelidir. Daha önce yapılmış çalışmalar atıflarıyla verilmelidir. Yapılan çalışma en az 3 atıfla araştırılmış olmalıdır. Her atıf ayrı paragrafta verilmelidir."
+            ]
+          },
+          {
+            "ad": "4. YÖNTEM VE UYGULANABİLİRLİK",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "4.1.Yöntem: Projede kullanılacak olan yöntem açık ve detaylı olarak açıklanmalıdır. Yöntemin hangi bilimsel ilkeler ve teknolojik uygulamalar üzerine kurgulandığı belirtilmelidir.",
+              "4.2.Uygulanabilirlik: Proje fikrinin hayata nasıl geçirileceği ve mevcut şartlar altında tasarlanan projenin uygulanabilir olup olmadığı hakkında bilgi verilmelidir."
+            ]
+          },
+          {
+            "ad": "5. ÖZGÜNLÜK, YENİLİKÇİLİK VE YERLİLİK TARAFI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "5.1. Özgünlük / Yenilikçi (İnovatif) Yönü: Proje tasarım fikrinin veya yönteminin mevcut tasarımlardan farklılığı ortaya konulmalıdır. Proje kapsamındaki tasarımın mevcut bir soruna çözüm ürettiği, yenilikçi bir yaklaşım sunduğu veya yerlileştirmeye dair özgünlüğü belirtilmelidir. Yarışmada, yenilikçi, sürdürülebilir ve uygulanabilir çözümler önceliklidir.",
+              "5.2. Yerlilik: Projenin yerlilik oranı ve yerli kaynakların (teknolojinin, altyapının vb.) kullanımı hakkında bilgiler verilmelidir."
+            ]
+          },
+          {
+            "ad": "6. PROJE İŞ ZAMAN PLANLAMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Yarışma kapsamındaki tasarımın proje başlangıcından Final Değerlendirme Raporu’nun (FDR) sisteme yüklenmesine kadar olan süreçlere ait İş paketleri ve bunların alt faaliyetleri içerikleriyle (yapılacak analizler, kullanılacak bilgisayar kodları, geliştirilen prototip ürün/yazılım üretim aşamaları gibi) birlikte açıkça ifade edilmeli ve haftalık/aylık zaman planlaması ile birlikte Tablo halinde verilmelidir."
+            ]
+          },
+          {
+            "ad": "7. PROJENİN YAYGIN ETKİSİ ve HEDEF KİTLESİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "7.1. Yaygın Etki: Proje tasarım Projedeki tasarımın hayata geçirilmesiyle birlikte ulusal ekonomiye, toplumsal refaha ve bilimsel bilgi birikimine sağlanabilecek katkılar ele alınmalı ve beklenen sonuçlardan kimlerin, hangi şekilde fayda sağlayabileceği açıklanmalıdır.",
+              "7.2. Hedef Kitlesi: Proje tasarımının hedef kitlesi açık bir dille ifade edilmiş ve geliştirilen proje tasarımı ile uyumlu olmalıdır."
+            ]
+          },
+          {
+            "ad": "8. TASARIM HAZIRLIK AŞAMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "“Nükleer Enerji Teknolojileri Tasarım Yarışma Şartnamesi 2026” belgesinin ilgili bölümlerinde 5 adet alt kategoriye ait konu başlıkları ve gereksinimleri belirtilmiştir. Bu kapsamda gerçekleştirilecek alt kategori proje çalışmalarının, sektörün ihtiyaçlarına yönelik olarak; mevcut bir soruna çözüm üretilmesi, yenilikçi bir yaklaşım oluşturulması veya yerlileştirme özgünlüğü ile bu kısımda açıklanmalıdır.",
+              "Bu açıklamalarla bağlantılı olarak alt kategori tasarım veya yenilikçi çözüm geliştirme çalışmaları kapsamındaki teknik hazırlık aşamasına ilişkin aşağıda detayları verilen bilgiler ve belgeler bu bölümde alt başlıklar halinde açıkça sunulmalıdır:",
+              "Elektrik Üretim Dışı Uygulamalar",
+              "Hidrojen üretimi, deniz suyu arıtma, bölgesel ısıtma, endüstriler için proses ısısı tesisleri vb. gibi",
+              "Seramik, metalik, katı, sıvı gibi",
+              "Kontrol çubukları, yanabilir soğurucu, yanabilir zehir gibi",
+              "Kıyaslama gerektiren diğer parametreler eklenmelidir.",
+              "Nükleer güvenliğin tasarım, çözüm geliştirme veya robotik sistem üretimi projesine entegre edildiğinin standart bir yaklaşım ile gösterilmesi için uygulama kategorisi çalışmaları esnasında dikkate alınan nükleer güvenliğe ilişkin ilgili olabilecek gereksinimleri içeren ulusal ve/veya uluslararası düzenleyici belgeler listesi sunulmalıdır. (IAEA Safety Standarts gibi)",
+              "Tasarım, analiz ve hesaplama süreçlerinde kullanılan her kod için bir adet örnek girdi (input) dosyası bu raporun Ekler bölümünde tarif edildiği şekliyle rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde DİJİTAL EK olarak sisteme yüklenmelidir. Ayrıca bu DİJİTAL EK ile örnek girdi (input) dosyasının hangi durum için ne tür yaklaşımlarla oluşturulduğu ve çıktı (output) dosyasından hangi sonucun elde edildiğine dair açıklamalar yer almalıdır. Aynı DİJİTAL EK ile kodların doğruluğuna ve özellikle doğru kullanıldığına dair tekrarlanabilirlik, karşılaştırma (benchmarking) ve tekrar üretilebilirliğe dair çalışma sonuçları da verilmelidir. Bu doğrulama sürecinde Uluslararası Atom Enerjisi Ajansı (IAEA) ve OECD/NEA gibi güvenilir kaynaklardan elde edilen verilerin kullanıldığı gösterilmelidir."
+            ]
+          },
+          {
+            "ad": "9. ALT KATEGORİ TASARIM AŞAMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Yarışma alt kategori tasarım veya çözüm geliştirme sürecine yönelik gerçekleştirilen tüm çalışmalar bu bölümde sunulmalıdır.",
+              "Çalışmanın mevcut bir soruna çözüm üretimi, yenilikçi bir yaklaşım sunumu veya yerlileştirmeye dair özgünlüğünü belirten ispat ve kazanımlara dair analiz, sonuç, yorumlar ve ilgili görülen diğer bilgiler bu kısımda alt başlıklar olarak belirtilmelidir.",
+              "Yenilikçi ve özgün alt kategori proje çalışmalarının içeriği Teknik Şartname Bölüm 4.3’de ilgili alt kategori başlığı için belirtilen yarışma amacı ve tasarım hedeflerini karşılamalıdır.",
+              "Ayrıca, Şartname 7.2.2’de ilgili alt kategori başlığı için belirtilen minimum başarı kriterleri sağlanmalıdır."
+            ]
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Rapor, kaynakça kısmını içermelidir. Kaynaklar başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web sitesi adresi, Kitap Adı, Sayfa Numarası vb."
+            ]
+          },
+          {
+            "ad": "EKLER",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Tasarıma yönelik ek belgeler, bilgiler, teknik raporlar, çizimler vb. raporun bütünlüğünü bozmayacak şekilde ayrı başlıklar halinde bu kısma konulabilir. Ekler kısmı sayfa sınırlamasına dâhil değildir.",
+              "DİJİTAL EKLER: Dijital veriler (örnek input/output dosyaları, yazılım geliştirmeye yönelik kaynak kodlar, 3 boyutlu teknik çizimler gibi) bu rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde sisteme yüklenmelidir.",
+              "Dijital Eklerin içerik listesi bu raporun (FDR) ekler kısımda verilmelidir."
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Final Değerlendirme Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları hariç olmak üzere en fazla 100 sayfa olacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak, İçindekiler ve Kaynakça” başlıkları için 3 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst-alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynısı ve tekrarı niteliğinde olmamalıdır.",
+          "Şablonda bulunan açıklamalar silinmeli, takımlar belirtilen içerik doğrultusunda raporunu hazırlamalıdır. Alt başlıklar kullanılarak hazırlanmalıdır. Örn. Proje Özeti / Proje Konu Kapsamı.",
+          "Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+          "Rapor içerisinde genel ifadelere yer verilmemeli, sunulan bilgiler kaynak/atıflarla desteklenmelidir.",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir.",
+          "Dijital Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Basılı Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası.",
+          "Rapor şablonuna uymayan Final Değerlendirme Raporları (FDR) değerlendirilmeyecektir."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 100,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "alt-kategoriler-sistem-gelistirme",
+            "ad": "ALT KATEGORİLER SİSTEM GELİŞTİRME",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "(SADECE BİR TANESİ İŞARETLENMELİDİR)"
+            ],
+            "bolumAdi": "ALT KATEGORİLER SİSTEM GELİŞTİRME"
+          },
+          {
+            "kod": "reaktor-kor-tasarimi",
+            "ad": "Reaktör Kor Tasarımı",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Reaktör Kor Tasarımı"
+          },
+          {
+            "kod": "nukleer-yakit-ve-atik-yonetimi",
+            "ad": "Nükleer Yakıt ve Atık Yönetimi",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Nükleer Yakıt ve Atık Yönetimi"
+          },
+          {
+            "kod": "enerji-cevrimi-tasarimi",
+            "ad": "Enerji Çevrimi Tasarımı",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Enerji Çevrimi Tasarımı"
+          },
+          {
+            "kod": "pasif-guvenlik-sistemi-tasarimi",
+            "ad": "Pasif Güvenlik Sistemi Tasarımı",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Pasif Güvenlik Sistemi Tasarımı"
+          },
+          {
+            "kod": "nukleer-enstrumantasyon-ve-kontrol-siste",
+            "ad": "Nükleer Enstrümantasyon ve Kontrol Sistemi Tasarımı",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Nükleer Enstrümantasyon ve Kontrol Sistemi Tasarımı"
+          },
+          {
+            "kod": "profesyonel-takim",
+            "ad": "Profesyonel Takım",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Profesyonel Takım"
+          },
+          {
+            "kod": "lisans-takimi",
+            "ad": "Lisans Takımı",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "FDR ŞABLONU KULLANILARAK RAPOR HAZIRLANMALIDIR. BU FORMAT DIŞINDA RAPOR HAZIRLANMAMASI GEREKMEKTEDİR."
+            ],
+            "bolumAdi": "Lisans Takımı"
+          },
+          {
+            "kod": "tablolar",
+            "ad": "TABLOLAR",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TABLOLAR"
+          },
+          {
+            "kod": "sekiller",
+            "ad": "ŞEKİLLER",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ŞEKİLLER"
+          },
+          {
+            "kod": "1-proje-ozeti-proje-konu-kapsami",
+            "ad": "1. PROJE ÖZETİ / PROJE KONU KAPSAMI",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Proje kapsamında, “Nükleer Enerji Teknolojileri Tasarım Yarışma Şartnamesi 2026” belgesinin “Bölüm 4.3 Alt Kategoriler Sistem Geliştirme” kısmında tanımlanan ve teknik gereksinimleri verilen 5 adet alt kategoriden bir tanesine yönelik çalışmaları içermelidir.",
+              "Her alt kategori ile yarışmacıların belirli konularda yenilikçi ve özgün projeler geliştirmeleri amaçlanmaktadır. Tasarımların yenilikçi ve özgün yönleri ön plana çıkartılmalıdır.",
+              "Yarışma için birden fazla alt kategoriye yönelik çalışma yapılması durumunda her bir alt kategori için ayrı rapor hazırlanması ve sunulması gerekmektedir.",
+              "1.1.Proje Özeti: Proje fikrini kısaca özetleyiniz, varsa görsel ekleyebilirsiniz. Özet kısmında, belge içeriği ve proje içeriği konularına ayrıntılı olarak değinilmelidir.",
+              "1.2.Proje Konu Kapsamı: Projenizin; başvurmuş olduğunuz yarışmanın (kategorinin) yarışma şartnamesinde bulunan konu kapsamına uygunluğunu belirtmeniz gerekmektedir."
+            ],
+            "bolumAdi": "1. PROJE ÖZETİ / PROJE KONU KAPSAMI"
+          },
+          {
+            "kod": "2-takim-tanitimi",
+            "ad": "2. TAKIM TANITIMI",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Proje ekibinin tanıtımı yapılmalıdır. Takım içinde görev dağılımları şematik olarak verilmelidir. Ekip üyelerinin kişisel bilgileri (ad, soyad, fotoğraf, üniversite/kurum/kuruluş vb. gibi) kesinlikle verilmeden bilgi paylaşımı yapılmalıdır."
+            ],
+            "bolumAdi": "2. TAKIM TANITIMI"
+          },
+          {
+            "kod": "3-literatur-taramasi",
+            "ad": "3. LİTERATÜR TARAMASI",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Literatür taraması sonucu ilgili proje konusunda daha önce yapılmış olan çalışmalarından bahsedilmelidir. Daha önce yapılmış çalışmalar atıflarıyla verilmelidir. Yapılan çalışma en az 3 atıfla araştırılmış olmalıdır. Her atıf ayrı paragrafta verilmelidir."
+            ],
+            "bolumAdi": "3. LİTERATÜR TARAMASI"
+          },
+          {
+            "kod": "4-yontem-ve-uygulanabilirlik",
+            "ad": "4. YÖNTEM VE UYGULANABİLİRLİK",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "4.1.Yöntem: Projede kullanılacak olan yöntem açık ve detaylı olarak açıklanmalıdır. Yöntemin hangi bilimsel ilkeler ve teknolojik uygulamalar üzerine kurgulandığı belirtilmelidir.",
+              "4.2.Uygulanabilirlik: Proje fikrinin hayata nasıl geçirileceği ve mevcut şartlar altında tasarlanan projenin uygulanabilir olup olmadığı hakkında bilgi verilmelidir."
+            ],
+            "bolumAdi": "4. YÖNTEM VE UYGULANABİLİRLİK"
+          },
+          {
+            "kod": "5-ozgunluk-yenilikcilik-ve-yerlilik-tara",
+            "ad": "5. ÖZGÜNLÜK, YENİLİKÇİLİK VE YERLİLİK TARAFI",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "5.1. Özgünlük / Yenilikçi (İnovatif) Yönü: Proje tasarım fikrinin veya yönteminin mevcut tasarımlardan farklılığı ortaya konulmalıdır. Proje kapsamındaki tasarımın mevcut bir soruna çözüm ürettiği, yenilikçi bir yaklaşım sunduğu veya yerlileştirmeye dair özgünlüğü belirtilmelidir. Yarışmada, yenilikçi, sürdürülebilir ve uygulanabilir çözümler önceliklidir.",
+              "5.2. Yerlilik: Projenin yerlilik oranı ve yerli kaynakların (teknolojinin, altyapının vb.) kullanımı hakkında bilgiler verilmelidir."
+            ],
+            "bolumAdi": "5. ÖZGÜNLÜK, YENİLİKÇİLİK VE YERLİLİK TARAFI"
+          },
+          {
+            "kod": "6-proje-is-zaman-planlamasi",
+            "ad": "6. PROJE İŞ ZAMAN PLANLAMASI",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışma kapsamındaki tasarımın proje başlangıcından Final Değerlendirme Raporu’nun (FDR) sisteme yüklenmesine kadar olan süreçlere ait İş paketleri ve bunların alt faaliyetleri içerikleriyle (yapılacak analizler, kullanılacak bilgisayar kodları, geliştirilen prototip ürün/yazılım üretim aşamaları gibi) birlikte açıkça ifade edilmeli ve haftalık/aylık zaman planlaması ile birlikte Tablo halinde verilmelidir."
+            ],
+            "bolumAdi": "6. PROJE İŞ ZAMAN PLANLAMASI"
+          },
+          {
+            "kod": "7-projenin-yaygin-etkisi-ve-hedef-kitles",
+            "ad": "7. PROJENİN YAYGIN ETKİSİ ve HEDEF KİTLESİ",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "7.1. Yaygın Etki: Proje tasarım Projedeki tasarımın hayata geçirilmesiyle birlikte ulusal ekonomiye, toplumsal refaha ve bilimsel bilgi birikimine sağlanabilecek katkılar ele alınmalı ve beklenen sonuçlardan kimlerin, hangi şekilde fayda sağlayabileceği açıklanmalıdır.",
+              "7.2. Hedef Kitlesi: Proje tasarımının hedef kitlesi açık bir dille ifade edilmiş ve geliştirilen proje tasarımı ile uyumlu olmalıdır."
+            ],
+            "bolumAdi": "7. PROJENİN YAYGIN ETKİSİ ve HEDEF KİTLESİ"
+          },
+          {
+            "kod": "8-tasarim-hazirlik-asamasi",
+            "ad": "8. TASARIM HAZIRLIK AŞAMASI",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "“Nükleer Enerji Teknolojileri Tasarım Yarışma Şartnamesi 2026” belgesinin ilgili bölümlerinde 5 adet alt kategoriye ait konu başlıkları ve gereksinimleri belirtilmiştir. Bu kapsamda gerçekleştirilecek alt kategori proje çalışmalarının, sektörün ihtiyaçlarına yönelik olarak; mevcut bir soruna çözüm üretilmesi, yenilikçi bir yaklaşım oluşturulması veya yerlileştirme özgünlüğü ile bu kısımda açıklanmalıdır.",
+              "Bu açıklamalarla bağlantılı olarak alt kategori tasarım veya yenilikçi çözüm geliştirme çalışmaları kapsamındaki teknik hazırlık aşamasına ilişkin aşağıda detayları verilen bilgiler ve belgeler bu bölümde alt başlıklar halinde açıkça sunulmalıdır:",
+              "Elektrik Üretim Dışı Uygulamalar",
+              "Hidrojen üretimi, deniz suyu arıtma, bölgesel ısıtma, endüstriler için proses ısısı tesisleri vb. gibi",
+              "Seramik, metalik, katı, sıvı gibi",
+              "Kontrol çubukları, yanabilir soğurucu, yanabilir zehir gibi",
+              "Kıyaslama gerektiren diğer parametreler eklenmelidir.",
+              "Nükleer güvenliğin tasarım, çözüm geliştirme veya robotik sistem üretimi projesine entegre edildiğinin standart bir yaklaşım ile gösterilmesi için uygulama kategorisi çalışmaları esnasında dikkate alınan nükleer güvenliğe ilişkin ilgili olabilecek gereksinimleri içeren ulusal ve/veya uluslararası düzenleyici belgeler listesi sunulmalıdır. (IAEA Safety Standarts gibi)",
+              "Tasarım, analiz ve hesaplama süreçlerinde kullanılan her kod için bir adet örnek girdi (input) dosyası bu raporun Ekler bölümünde tarif edildiği şekliyle rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde DİJİTAL EK olarak sisteme yüklenmelidir. Ayrıca bu DİJİTAL EK ile örnek girdi (input) dosyasının hangi durum için ne tür yaklaşımlarla oluşturulduğu ve çıktı (output) dosyasından hangi sonucun elde edildiğine dair açıklamalar yer almalıdır. Aynı DİJİTAL EK ile kodların doğruluğuna ve özellikle doğru kullanıldığına dair tekrarlanabilirlik, karşılaştırma (benchmarking) ve tekrar üretilebilirliğe dair çalışma sonuçları da verilmelidir. Bu doğrulama sürecinde Uluslararası Atom Enerjisi Ajansı (IAEA) ve OECD/NEA gibi güvenilir kaynaklardan elde edilen verilerin kullanıldığı gösterilmelidir."
+            ],
+            "bolumAdi": "8. TASARIM HAZIRLIK AŞAMASI"
+          },
+          {
+            "kod": "9-alt-kategori-tasarim-asamasi",
+            "ad": "9. ALT KATEGORİ TASARIM AŞAMASI",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışma alt kategori tasarım veya çözüm geliştirme sürecine yönelik gerçekleştirilen tüm çalışmalar bu bölümde sunulmalıdır.",
+              "Çalışmanın mevcut bir soruna çözüm üretimi, yenilikçi bir yaklaşım sunumu veya yerlileştirmeye dair özgünlüğünü belirten ispat ve kazanımlara dair analiz, sonuç, yorumlar ve ilgili görülen diğer bilgiler bu kısımda alt başlıklar olarak belirtilmelidir.",
+              "Yenilikçi ve özgün alt kategori proje çalışmalarının içeriği Teknik Şartname Bölüm 4.3’de ilgili alt kategori başlığı için belirtilen yarışma amacı ve tasarım hedeflerini karşılamalıdır.",
+              "Ayrıca, Şartname 7.2.2’de ilgili alt kategori başlığı için belirtilen minimum başarı kriterleri sağlanmalıdır."
+            ],
+            "bolumAdi": "9. ALT KATEGORİ TASARIM AŞAMASI"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Rapor, kaynakça kısmını içermelidir. Kaynaklar başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web sitesi adresi, Kitap Adı, Sayfa Numarası vb."
+            ],
+            "bolumAdi": "KAYNAKÇA"
+          },
+          {
+            "kod": "ekler",
+            "ad": "EKLER",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Tasarıma yönelik ek belgeler, bilgiler, teknik raporlar, çizimler vb. raporun bütünlüğünü bozmayacak şekilde ayrı başlıklar halinde bu kısma konulabilir. Ekler kısmı sayfa sınırlamasına dâhil değildir.",
+              "DİJİTAL EKLER: Dijital veriler (örnek input/output dosyaları, yazılım geliştirmeye yönelik kaynak kodlar, 3 boyutlu teknik çizimler gibi) bu rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde sisteme yüklenmelidir.",
+              "Dijital Eklerin içerik listesi bu raporun (FDR) ekler kısımda verilmelidir."
+            ],
+            "bolumAdi": "EKLER"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Şablonda puan ağırlığı yok; 21 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_Nukleer_Enerji_Teknolojilleri_Tasarım_Yarısması_Sartnamesi_TR_4kjmi.pdf",
+        "yuklendi": "2026-08-23T20:13:37.038Z",
+        "sayfaSayisi": 44,
+        "kelimeSayisi": 11763,
+        "kurallar": {
+          "tarihler": [],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Bu kural ihlal edilirse ilgili yarışmacı ve takımı diskalifiye edilebilir."
+          ],
+          "katilimciSeviyeleri": [
+            "profesyonel"
+          ],
+          "azamiUye": 25
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden tarih çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Nukleer_Enerji_Teknolojilleri_Tasar%C4%B1m_Yar%C4%B1smas%C4%B1_Sartnamesi_TR_4kjmi.pdf"
+      }
+    },
+    {
+      "id": "0b165b1f-a22e-45a0-9471-22e69c005e7d",
+      "ad": "DETAY TASARIM",
+      "sablonDosyasi": "2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-DETAY_TASARIM_ŞAB.docx",
+      "olusturuldu": "2026-08-23T13:55:09.425Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-0b165b1f",
+        "ad": "DETAY TASARIM",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 120,
+        "basliklar": [
+          {
+            "ad": "TEMEL KATEGORİ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Detay Tasarım - 40 MWe Modüler PWR",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Profesyonel Takım",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Okul Takımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "FDR ŞABLONU KULLANILARAK RAPOR HAZIRLANMALIDIR. BU FORMAT DIŞINDA RAPOR HAZIRLANMAMASI GEREKMEKTEDİR."
+            ]
+          },
+          {
+            "ad": "TABLOLAR",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ŞEKİLLER",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "1. PROJE ÖZETİ / PROJE KONU KAPSAMI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "1.1.Proje Özeti: Proje fikrini kısaca özetleyiniz, varsa görsel ekleyebilirsiniz. Özet kısmında, belge içeriği ve proje içeriği konularına ayrıntılı olarak değinilmelidir.",
+              "1.2.Proje Konu Kapsamı: Projenizin; başvurmuş olduğunuz yarışmanın (kategorinin) yarışma şartnamesinde bulunan konu kapsamına uygunluğunu belirtmeniz gerekmektedir."
+            ]
+          },
+          {
+            "ad": "2. TAKIM TANITIMI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Proje ekibinin tanıtımı yapılmalıdır. Takım içinde görev dağılımları şematik olarak verilmelidir. Ekip üyelerinin kişisel bilgileri (ad, soyad, fotoğraf, üniversite/kurum/kuruluş vb. gibi) kesinlikle verilmeden bilgi paylaşımı yapılmalıdır."
+            ]
+          },
+          {
+            "ad": "3. LİTERATÜR TARAMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Literatür taraması sonucu ilgili proje konusunda daha önce yapılmış olan çalışmalarından bahsedilmelidir. Daha önce yapılmış çalışmalar atıflarıyla verilmelidir. Yapılan çalışma en az 3 atıfla araştırılmış olmalıdır. Her atıf ayrı paragrafta verilmelidir."
+            ]
+          },
+          {
+            "ad": "4. YÖNTEM VE UYGULANABİLİRLİK",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "4.1.Yöntem: Projede kullanılan yöntem açık ve detaylı olarak açıklanmalıdır. Yöntemin hangi bilimsel ilkeler ve teknolojik uygulamalar üzerine kurgulandığı belirtilmelidir.",
+              "4.2.Uygulanabilirlik: Proje fikrinin hayata nasıl geçirildiği ve mevcut şartlar altında projenin bir ürüne dönüştürülebilir olup olmadığı hakkında bilgi verilmelidir."
+            ]
+          },
+          {
+            "ad": "5. ÖZGÜNLÜK, YENİLİKÇİLİK VE YERLİLİK TARAFI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "5.1. Özgünlük / Yenilikçi (İnovatif) Yönü: Proje tasarım fikrinin veya yönteminin mevcut tasarımlardan farklılığı ortaya konulmalıdır. Proje kapsamındaki tasarımın mevcut bir soruna çözüm ürettiği, yenilikçi bir yaklaşım sunduğu veya yerlileştirmeye dair özgünlüğü belirtilmelidir. Yarışmada, yenilikçi, sürdürülebilir ve uygulanabilir çözümler önceliklidir.",
+              "5.2. Yerlilik: Projenin yerlilik oranı ve yerli kaynakların (teknolojinin, altyapının vb.) kullanımı hakkında bilgiler verilmelidir."
+            ]
+          },
+          {
+            "ad": "6. PROJE İŞ ZAMAN PLANLAMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Yarışma kapsamındaki tasarımın proje başlangıcından Final Değerlendirme Raporu’nun (FDR) sisteme yüklenmesine kadar olan süreçlere ait İş paketleri ve bunların alt faaliyetleri içerikleriyle (yapılacak analizler ve kullanılacak bilgisayar kodları gibi) birlikte açıkça ifade edilmeli ve haftalık/aylık zaman planlaması ile birlikte Tablo halinde verilmelidir."
+            ]
+          },
+          {
+            "ad": "7. PROJENİN YAYGIN ETKİSİ ve HEDEF KİTLESİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "7.1. Yaygın Etki: Proje tasarım Projedeki tasarımın hayata geçirilmesiyle birlikte ulusal ekonomiye, toplumsal refaha ve bilimsel bilgi birikimine sağlanabilecek katkılar ele alınmalı ve beklenen sonuçlardan kimlerin, hangi şekilde fayda sağlayabileceği açıklanmalıdır.",
+              "7.2. Hedef Kitlesi: Proje tasarımının hedef kitlesi açık bir dille ifade edilmiş ve geliştirilen proje tasarımı ile uyumlu olmalıdır."
+            ]
+          },
+          {
+            "ad": "8. PROJE ANA KONU BAŞLIKLARI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Detay Tasarım kategorisi için belirlenen modüler reaktör türü 40 MWe Basınçlı Su Reaktörü (PWR) olacaktır. Yarışmacılardan, bu reaktör türüne uygun bir tasarım geliştirerek kapsamlı bir rapor hazırlamaları beklenmektedir. Hazırlanan raporun, tüm teknik hesaplamaları, analizleri ve reaktörün bileşenlerine ilişkin detaylı açıklamaları içermesi gerekmektedir.",
+              "Tasarım sürecinde reaktör koru, soğutma sistemi, enerji çevrimi ve yakıt döngüsü gibi temel bileşenlere yönelik mühendislik çözümleri sunulmalı ve bu süreçler ulusal ve uluslararası standartlara uygun şekilde detaylandırılmalıdır. Katılımcılar, projelerinde güvenlik, sürdürülebilirlik ve ekonomik uygulanabilirlik gibi temel kriterlere öncelik vermelidir. Detay tasarım sürecinin genel hatlarıyla değerlendirilebilmesi için, aşağıda belirtilen konu başlıklarında çalışmalar sunulmalıdır.",
+              "Her konu başlığında yer alan temel bileşen ve sistemlere ait teknik şartnameler veya teknik şartnamelere esas oluşturacak tüm bilgileri içeren (miktar, malzeme, boyut, istenen standartlar… gibi) tablolar o konu başlığı altında sunulmalıdır.",
+              "Analiz ve hesaplamalarda kullanılan her kod için bir adet örnek girdi (input) dosyası bu raporun Ekler bölümünde tarif edildiği şekliyle rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde DİJİTAL EK olarak sisteme yüklenmelidir. Ayrıca bu DİJİTAL EK ile örnek girdi (input) dosyasının hangi durum için ne tür yaklaşımlarla oluşturulduğu ve çıktı (output) dosyasından hangi sonucun elde edildiğine dair açıklamalar yer almalıdır. Aynı DİJİTAL EK ile kodların doğruluğuna ve özellikle doğru kullanıldığına dair tekrarlanabilirlik, karşılaştırma (benchmarking) ve tekrar üretilebilirliğe dair çalışma sonuçları da verilmelidir. Bu doğrulama sürecinde Uluslararası Atom Enerjisi Ajansı (IAEA) ve OECD/NEA gibi güvenilir kaynaklardan elde edilen verilerin kullanıldığı gösterilmelidir."
+            ]
+          },
+          {
+            "ad": "8.1. Tasarım Hazırlık Aşaması ve Tesisin Genel Tanımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler reaktörün detay tasarım öncesi hazırlık aşamasına ait bilgiler ve belgeler bu bölümde sunulmalıdır.",
+              "12 ayda 15 gün (yakıt yükleme)",
+              "120 ayda 30 gün (türbin denetimi ve reaktör kabı ile içindekiler üzerinde denetim)",
+              "Periyot (ay olarak) ve devreden çıkarma süresi (gün olarak)",
+              "Elektrik şebekesine bağlı güç /Termal Güç",
+              "MWe (şebekeye verilen net)",
+              "Acil Durum planlama Bölgesi",
+              "g (Güvenli kapatma depremi)",
+              "Buhar üretim sistemi çalışma basıncı",
+              "Birincil devre soğutucu miktarı",
+              "Kor giriş/çıkış sıcaklıkları",
+              "Proses ısısı olarak mevcut sıcaklık",
+              "Koruma kabı tasarım basıncı",
+              "Yakıt Zenginliği (ortalama/azami)",
+              "Hidrolik acil durum kapatma sistemi, elektrikle sürülen kontrol çubukları, birbirini yedekleyen üç hat",
+              "Acil durum kor soğutma sistemi",
+              "Üç adet (yedekli, pasif) % 100",
+              "Üç pasif hat, sürekli serviste",
+              "Sadece tesis koruma için, reaktör güvenliği için gerekli değildir.",
+              "Bütük Salım Frekansı (LRF)",
+              "İnşa süresi (n’inci ünite için)",
+              "İlk beton dökümünden kritikliğe kadar"
+            ]
+          },
+          {
+            "ad": "8.2. Kor Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler reaktörün kor yapısı ve bu yapının tüm teknik detayları bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.3. Yakıt ve Malzeme Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler reaktörde kullanılan yakıt ve reaktör yapı malzemelerinin tasarımı ve buna ait teknik bilgiler bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.4. Soğutma Devresi Sistem Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Reaktör korunun güvenli ve yüksek performanslı biçimde soğutulması için kullanılan tüm soğutma sistemleri ve bunlar üzerinde bulunan tüm bileşenlerin ayrıntılı bilgileri ile soğutma devrelerinin kapasitesini gösterir analizler bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.5. Güvenlik Kriterleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Reaktörün güvenlik kriterlerine dair bilgiler bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.6. Reaktör Güvenlik Sistemleri Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler reaktörü güvenli bir biçimde kapatmak, kapatma durumunda onu korumak ve radyoaktif madde salınımını önlemek için kullanılan reaktör güvenlik sistemleri bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.7. Enstrümantasyon ve Kontrol Sistem Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler reaktörlerde normal koşullarda ve kaza durumlarında yeterli güvenliği sağlamak için gerekli olan süreçleri yönetebilecek fonksiyonları içeren Nükleer Enstrümantasyon ve Kontrol (E&K) sistemi tasarımına ilişkin bilgiler bu bölümde sunulmalıdır. Bu fonksiyonlar, anormal işletme durumlarının hafifletilmesi ve arıza tespiti, tasarım sınırları içinde kalan kazaların ve sonuçlarının engellenmesi veya hafifletilmesi, şiddetli kazaların önlenmesi veya sonuçlarının hafifletilmesi, kazanın gerçekleşmesi durumunda, çevreye olan radyolojik sonuçlarının hafifletilmesi görevlerini yapacak sistemlerin devreye sokulması için gerekli veri ve tetiklemeleri içermektedir."
+            ]
+          },
+          {
+            "ad": "8.8. Yardımcı Sistemlerin Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler reaktöre ait yardımcı sistemlere (havalandırma sistemi, elektrik sistemi, yangın güvenliği sistemi, radyasyondan korunma sistemi gibi) ilişkin teknik bilgiler bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.9. Enerji Çevrimi ve Entegre Sistemler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler reaktörün elektrik üretimi ve elektrik üretim dışındaki uygulamaları içeren enerji çevrimine ilişkin teknik bilgiler bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.10. Tesisin Yerleşim Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler reaktörün inşa edilebilirlik, ekonomik verimlilik, güvenlik ve operasyonlar gibi faktörleri dikkate alınarak optimum bir genel yerleşim düzenlemesi bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.11. Nükleer Atık Yönetimi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Yenilikçi nükleer yakıt çevirimi tasarımı ile modüler reaktörden çıkan nükleer atık miktarı ve radyoaktivitesi azaltılmasına yönelik çalışmalar bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.12. Ekonomik Değerlendirme",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Tasarımın getirdiği ekonomik avantajlar referans/benzer reaktörlerle kıyaslama yapılarak tartışılmalı ve yatırım, işletme, üretim maliyetlerine yönelik hesaplamalar verilmelidir."
+            ]
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Rapor, kaynakça kısmını içermelidir.",
+              "Kaynaklar başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web sitesi adresi, Kitap Adı, Sayfa Numarası vb.)"
+            ]
+          },
+          {
+            "ad": "EKLER",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Tasarıma yönelik ek belgeler, bilgiler, raporlar, teknik şartnameler, çizimler vb. raporun bütünlüğünü bozmayacak şekilde ayrı başlıklar halinde bu kısma konulabilir. Ekler kısmı sayfa sınırlamasına dâhil değildir.",
+              "DİJİTAL EKLER: Dijital veriler (örnek input/output dosyaları, yazılım geliştirmeye yönelik kaynak kodlar, 3 boyutlu teknik çizimler gibi) bu rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde sisteme yüklenmelidir.",
+              "Dijital Eklerin içerik listesi bu raporun (FDR) ekler kısımda verilmelidir.",
+              "Bu bölüme eklenecek tüm kısımlar için, ana rapor içerisinde çapraz referans (cross reference) ile bağlantı (link) verilmelidir."
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Final Değerlendirme Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları hariç olmak üzere en fazla 120 sayfa olacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak, İçindekiler ve Kaynakça” başlıkları için 3 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst-alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynısı ve tekrarı niteliğinde olmamalıdır.",
+          "Şablonda bulunan açıklamalar silinmeli, takımlar belirtilen içerik doğrultusunda raporunu hazırlamalıdır. Alt başlıklar kullanılarak hazırlanmalıdır. Örn. Proje Özeti / Proje Konu Kapsamı.",
+          "Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+          "Rapor içerisinde genel ifadelere yer verilmemeli, sunulan bilgiler kaynak/atıflarla desteklenmelidir.",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir.",
+          "Dijital Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Basılı Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası.",
+          "Rapor şablonuna uymayan Final Değerlendirme Raporları (FDR) değerlendirilmeyecektir."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 120,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "temel-kategori",
+            "ad": "TEMEL KATEGORİ",
+            "puan": 19,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEMEL KATEGORİ"
+          },
+          {
+            "kod": "detay-tasarim-40-mwe-moduler-pwr",
+            "ad": "Detay Tasarım - 40 MWe Modüler PWR",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Detay Tasarım - 40 MWe Modüler PWR"
+          },
+          {
+            "kod": "profesyonel-takim",
+            "ad": "Profesyonel Takım",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Profesyonel Takım"
+          },
+          {
+            "kod": "okul-takimi",
+            "ad": "Okul Takımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "FDR ŞABLONU KULLANILARAK RAPOR HAZIRLANMALIDIR. BU FORMAT DIŞINDA RAPOR HAZIRLANMAMASI GEREKMEKTEDİR."
+            ],
+            "bolumAdi": "Okul Takımı"
+          },
+          {
+            "kod": "tablolar",
+            "ad": "TABLOLAR",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TABLOLAR"
+          },
+          {
+            "kod": "sekiller",
+            "ad": "ŞEKİLLER",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ŞEKİLLER"
+          },
+          {
+            "kod": "1-proje-ozeti-proje-konu-kapsami",
+            "ad": "1. PROJE ÖZETİ / PROJE KONU KAPSAMI",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "1.1.Proje Özeti: Proje fikrini kısaca özetleyiniz, varsa görsel ekleyebilirsiniz. Özet kısmında, belge içeriği ve proje içeriği konularına ayrıntılı olarak değinilmelidir.",
+              "1.2.Proje Konu Kapsamı: Projenizin; başvurmuş olduğunuz yarışmanın (kategorinin) yarışma şartnamesinde bulunan konu kapsamına uygunluğunu belirtmeniz gerekmektedir."
+            ],
+            "bolumAdi": "1. PROJE ÖZETİ / PROJE KONU KAPSAMI"
+          },
+          {
+            "kod": "2-takim-tanitimi",
+            "ad": "2. TAKIM TANITIMI",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Proje ekibinin tanıtımı yapılmalıdır. Takım içinde görev dağılımları şematik olarak verilmelidir. Ekip üyelerinin kişisel bilgileri (ad, soyad, fotoğraf, üniversite/kurum/kuruluş vb. gibi) kesinlikle verilmeden bilgi paylaşımı yapılmalıdır."
+            ],
+            "bolumAdi": "2. TAKIM TANITIMI"
+          },
+          {
+            "kod": "3-literatur-taramasi",
+            "ad": "3. LİTERATÜR TARAMASI",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Literatür taraması sonucu ilgili proje konusunda daha önce yapılmış olan çalışmalarından bahsedilmelidir. Daha önce yapılmış çalışmalar atıflarıyla verilmelidir. Yapılan çalışma en az 3 atıfla araştırılmış olmalıdır. Her atıf ayrı paragrafta verilmelidir."
+            ],
+            "bolumAdi": "3. LİTERATÜR TARAMASI"
+          },
+          {
+            "kod": "4-yontem-ve-uygulanabilirlik",
+            "ad": "4. YÖNTEM VE UYGULANABİLİRLİK",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "4.1.Yöntem: Projede kullanılan yöntem açık ve detaylı olarak açıklanmalıdır. Yöntemin hangi bilimsel ilkeler ve teknolojik uygulamalar üzerine kurgulandığı belirtilmelidir.",
+              "4.2.Uygulanabilirlik: Proje fikrinin hayata nasıl geçirildiği ve mevcut şartlar altında projenin bir ürüne dönüştürülebilir olup olmadığı hakkında bilgi verilmelidir."
+            ],
+            "bolumAdi": "4. YÖNTEM VE UYGULANABİLİRLİK"
+          },
+          {
+            "kod": "5-ozgunluk-yenilikcilik-ve-yerlilik-tara",
+            "ad": "5. ÖZGÜNLÜK, YENİLİKÇİLİK VE YERLİLİK TARAFI",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "5.1. Özgünlük / Yenilikçi (İnovatif) Yönü: Proje tasarım fikrinin veya yönteminin mevcut tasarımlardan farklılığı ortaya konulmalıdır. Proje kapsamındaki tasarımın mevcut bir soruna çözüm ürettiği, yenilikçi bir yaklaşım sunduğu veya yerlileştirmeye dair özgünlüğü belirtilmelidir. Yarışmada, yenilikçi, sürdürülebilir ve uygulanabilir çözümler önceliklidir.",
+              "5.2. Yerlilik: Projenin yerlilik oranı ve yerli kaynakların (teknolojinin, altyapının vb.) kullanımı hakkında bilgiler verilmelidir."
+            ],
+            "bolumAdi": "5. ÖZGÜNLÜK, YENİLİKÇİLİK VE YERLİLİK TARAFI"
+          },
+          {
+            "kod": "6-proje-is-zaman-planlamasi",
+            "ad": "6. PROJE İŞ ZAMAN PLANLAMASI",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışma kapsamındaki tasarımın proje başlangıcından Final Değerlendirme Raporu’nun (FDR) sisteme yüklenmesine kadar olan süreçlere ait İş paketleri ve bunların alt faaliyetleri içerikleriyle (yapılacak analizler ve kullanılacak bilgisayar kodları gibi) birlikte açıkça ifade edilmeli ve haftalık/aylık zaman planlaması ile birlikte Tablo halinde verilmelidir."
+            ],
+            "bolumAdi": "6. PROJE İŞ ZAMAN PLANLAMASI"
+          },
+          {
+            "kod": "7-projenin-yaygin-etkisi-ve-hedef-kitles",
+            "ad": "7. PROJENİN YAYGIN ETKİSİ ve HEDEF KİTLESİ",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "7.1. Yaygın Etki: Proje tasarım Projedeki tasarımın hayata geçirilmesiyle birlikte ulusal ekonomiye, toplumsal refaha ve bilimsel bilgi birikimine sağlanabilecek katkılar ele alınmalı ve beklenen sonuçlardan kimlerin, hangi şekilde fayda sağlayabileceği açıklanmalıdır.",
+              "7.2. Hedef Kitlesi: Proje tasarımının hedef kitlesi açık bir dille ifade edilmiş ve geliştirilen proje tasarımı ile uyumlu olmalıdır."
+            ],
+            "bolumAdi": "7. PROJENİN YAYGIN ETKİSİ ve HEDEF KİTLESİ"
+          },
+          {
+            "kod": "8-proje-ana-konu-basliklari",
+            "ad": "8. PROJE ANA KONU BAŞLIKLARI",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Detay Tasarım kategorisi için belirlenen modüler reaktör türü 40 MWe Basınçlı Su Reaktörü (PWR) olacaktır. Yarışmacılardan, bu reaktör türüne uygun bir tasarım geliştirerek kapsamlı bir rapor hazırlamaları beklenmektedir. Hazırlanan raporun, tüm teknik hesaplamaları, analizleri ve reaktörün bileşenlerine ilişkin detaylı açıklamaları içermesi gerekmektedir.",
+              "Tasarım sürecinde reaktör koru, soğutma sistemi, enerji çevrimi ve yakıt döngüsü gibi temel bileşenlere yönelik mühendislik çözümleri sunulmalı ve bu süreçler ulusal ve uluslararası standartlara uygun şekilde detaylandırılmalıdır. Katılımcılar, projelerinde güvenlik, sürdürülebilirlik ve ekonomik uygulanabilirlik gibi temel kriterlere öncelik vermelidir. Detay tasarım sürecinin genel hatlarıyla değerlendirilebilmesi için, aşağıda belirtilen konu başlıklarında çalışmalar sunulmalıdır.",
+              "Her konu başlığında yer alan temel bileşen ve sistemlere ait teknik şartnameler veya teknik şartnamelere esas oluşturacak tüm bilgileri içeren (miktar, malzeme, boyut, istenen standartlar… gibi) tablolar o konu başlığı altında sunulmalıdır.",
+              "Analiz ve hesaplamalarda kullanılan her kod için bir adet örnek girdi (input) dosyası bu raporun Ekler bölümünde tarif edildiği şekliyle rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde DİJİTAL EK olarak sisteme yüklenmelidir. Ayrıca bu DİJİTAL EK ile örnek girdi (input) dosyasının hangi durum için ne tür yaklaşımlarla oluşturulduğu ve çıktı (output) dosyasından hangi sonucun elde edildiğine dair açıklamalar yer almalıdır. Aynı DİJİTAL EK ile kodların doğruluğuna ve özellikle doğru kullanıldığına dair tekrarlanabilirlik, karşılaştırma (benchmarking) ve tekrar üretilebilirliğe dair çalışma sonuçları da verilmelidir. Bu doğrulama sürecinde Uluslararası Atom Enerjisi Ajansı (IAEA) ve OECD/NEA gibi güvenilir kaynaklardan elde edilen verilerin kullanıldığı gösterilmelidir."
+            ],
+            "bolumAdi": "8. PROJE ANA KONU BAŞLIKLARI"
+          },
+          {
+            "kod": "8-1-tasarim-hazirlik-asamasi-ve-tesisin-",
+            "ad": "8.1. Tasarım Hazırlık Aşaması ve Tesisin Genel Tanımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler reaktörün detay tasarım öncesi hazırlık aşamasına ait bilgiler ve belgeler bu bölümde sunulmalıdır.",
+              "12 ayda 15 gün (yakıt yükleme)",
+              "120 ayda 30 gün (türbin denetimi ve reaktör kabı ile içindekiler üzerinde denetim)",
+              "Periyot (ay olarak) ve devreden çıkarma süresi (gün olarak)",
+              "Elektrik şebekesine bağlı güç /Termal Güç",
+              "MWe (şebekeye verilen net)",
+              "Acil Durum planlama Bölgesi",
+              "g (Güvenli kapatma depremi)",
+              "Buhar üretim sistemi çalışma basıncı",
+              "Birincil devre soğutucu miktarı",
+              "Kor giriş/çıkış sıcaklıkları",
+              "Proses ısısı olarak mevcut sıcaklık",
+              "Koruma kabı tasarım basıncı",
+              "Yakıt Zenginliği (ortalama/azami)",
+              "Hidrolik acil durum kapatma sistemi, elektrikle sürülen kontrol çubukları, birbirini yedekleyen üç hat",
+              "Acil durum kor soğutma sistemi",
+              "Üç adet (yedekli, pasif) % 100",
+              "Üç pasif hat, sürekli serviste",
+              "Sadece tesis koruma için, reaktör güvenliği için gerekli değildir.",
+              "Bütük Salım Frekansı (LRF)",
+              "İnşa süresi (n’inci ünite için)",
+              "İlk beton dökümünden kritikliğe kadar"
+            ],
+            "bolumAdi": "8.1. Tasarım Hazırlık Aşaması ve Tesisin Genel Tanımı"
+          },
+          {
+            "kod": "8-2-kor-tasarimi",
+            "ad": "8.2. Kor Tasarımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler reaktörün kor yapısı ve bu yapının tüm teknik detayları bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.2. Kor Tasarımı"
+          },
+          {
+            "kod": "8-3-yakit-ve-malzeme-tasarimi",
+            "ad": "8.3. Yakıt ve Malzeme Tasarımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler reaktörde kullanılan yakıt ve reaktör yapı malzemelerinin tasarımı ve buna ait teknik bilgiler bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.3. Yakıt ve Malzeme Tasarımı"
+          },
+          {
+            "kod": "8-4-sogutma-devresi-sistem-tasarimi",
+            "ad": "8.4. Soğutma Devresi Sistem Tasarımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Reaktör korunun güvenli ve yüksek performanslı biçimde soğutulması için kullanılan tüm soğutma sistemleri ve bunlar üzerinde bulunan tüm bileşenlerin ayrıntılı bilgileri ile soğutma devrelerinin kapasitesini gösterir analizler bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.4. Soğutma Devresi Sistem Tasarımı"
+          },
+          {
+            "kod": "8-5-guvenlik-kriterleri",
+            "ad": "8.5. Güvenlik Kriterleri",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Reaktörün güvenlik kriterlerine dair bilgiler bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.5. Güvenlik Kriterleri"
+          },
+          {
+            "kod": "8-6-reaktor-guvenlik-sistemleri-tasarimi",
+            "ad": "8.6. Reaktör Güvenlik Sistemleri Tasarımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler reaktörü güvenli bir biçimde kapatmak, kapatma durumunda onu korumak ve radyoaktif madde salınımını önlemek için kullanılan reaktör güvenlik sistemleri bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.6. Reaktör Güvenlik Sistemleri Tasarımı"
+          },
+          {
+            "kod": "8-7-enstrumantasyon-ve-kontrol-sistem-ta",
+            "ad": "8.7. Enstrümantasyon ve Kontrol Sistem Tasarımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler reaktörlerde normal koşullarda ve kaza durumlarında yeterli güvenliği sağlamak için gerekli olan süreçleri yönetebilecek fonksiyonları içeren Nükleer Enstrümantasyon ve Kontrol (E&K) sistemi tasarımına ilişkin bilgiler bu bölümde sunulmalıdır. Bu fonksiyonlar, anormal işletme durumlarının hafifletilmesi ve arıza tespiti, tasarım sınırları içinde kalan kazaların ve sonuçlarının engellenmesi veya hafifletilmesi, şiddetli kazaların önlenmesi veya sonuçlarının hafifletilmesi, kazanın gerçekleşmesi durumunda, çevreye olan radyolojik sonuçlarının hafifletilmesi görevlerini yapacak sistemlerin devreye sokulması için gerekli veri ve tetiklemeleri içermektedir."
+            ],
+            "bolumAdi": "8.7. Enstrümantasyon ve Kontrol Sistem Tasarımı"
+          },
+          {
+            "kod": "8-8-yardimci-sistemlerin-tasarimi",
+            "ad": "8.8. Yardımcı Sistemlerin Tasarımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler reaktöre ait yardımcı sistemlere (havalandırma sistemi, elektrik sistemi, yangın güvenliği sistemi, radyasyondan korunma sistemi gibi) ilişkin teknik bilgiler bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.8. Yardımcı Sistemlerin Tasarımı"
+          },
+          {
+            "kod": "8-9-enerji-cevrimi-ve-entegre-sistemler",
+            "ad": "8.9. Enerji Çevrimi ve Entegre Sistemler",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler reaktörün elektrik üretimi ve elektrik üretim dışındaki uygulamaları içeren enerji çevrimine ilişkin teknik bilgiler bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.9. Enerji Çevrimi ve Entegre Sistemler"
+          },
+          {
+            "kod": "8-10-tesisin-yerlesim-tasarimi",
+            "ad": "8.10. Tesisin Yerleşim Tasarımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler reaktörün inşa edilebilirlik, ekonomik verimlilik, güvenlik ve operasyonlar gibi faktörleri dikkate alınarak optimum bir genel yerleşim düzenlemesi bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.10. Tesisin Yerleşim Tasarımı"
+          },
+          {
+            "kod": "8-11-nukleer-atik-yonetimi",
+            "ad": "8.11. Nükleer Atık Yönetimi",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yenilikçi nükleer yakıt çevirimi tasarımı ile modüler reaktörden çıkan nükleer atık miktarı ve radyoaktivitesi azaltılmasına yönelik çalışmalar bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.11. Nükleer Atık Yönetimi"
+          },
+          {
+            "kod": "8-12-ekonomik-degerlendirme",
+            "ad": "8.12. Ekonomik Değerlendirme",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Tasarımın getirdiği ekonomik avantajlar referans/benzer reaktörlerle kıyaslama yapılarak tartışılmalı ve yatırım, işletme, üretim maliyetlerine yönelik hesaplamalar verilmelidir."
+            ],
+            "bolumAdi": "8.12. Ekonomik Değerlendirme"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Rapor, kaynakça kısmını içermelidir.",
+              "Kaynaklar başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web sitesi adresi, Kitap Adı, Sayfa Numarası vb.)"
+            ],
+            "bolumAdi": "KAYNAKÇA"
+          },
+          {
+            "kod": "ekler",
+            "ad": "EKLER",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Tasarıma yönelik ek belgeler, bilgiler, raporlar, teknik şartnameler, çizimler vb. raporun bütünlüğünü bozmayacak şekilde ayrı başlıklar halinde bu kısma konulabilir. Ekler kısmı sayfa sınırlamasına dâhil değildir.",
+              "DİJİTAL EKLER: Dijital veriler (örnek input/output dosyaları, yazılım geliştirmeye yönelik kaynak kodlar, 3 boyutlu teknik çizimler gibi) bu rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde sisteme yüklenmelidir.",
+              "Dijital Eklerin içerik listesi bu raporun (FDR) ekler kısımda verilmelidir.",
+              "Bu bölüme eklenecek tüm kısımlar için, ana rapor içerisinde çapraz referans (cross reference) ile bağlantı (link) verilmelidir."
+            ],
+            "bolumAdi": "EKLER"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Şablonda puan ağırlığı yok; 28 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_Nukleer_Enerji_Teknolojilleri_Tasarım_Yarısması_Sartnamesi_TR_4kjmi.pdf",
+        "yuklendi": "2026-08-23T20:13:46.809Z",
+        "sayfaSayisi": 44,
+        "kelimeSayisi": 11763,
+        "kurallar": {
+          "tarihler": [],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Bu kural ihlal edilirse ilgili yarışmacı ve takımı diskalifiye edilebilir."
+          ],
+          "katilimciSeviyeleri": [
+            "profesyonel"
+          ],
+          "azamiUye": 25
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden tarih çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Nukleer_Enerji_Teknolojilleri_Tasar%C4%B1m_Yar%C4%B1smas%C4%B1_Sartnamesi_TR_4kjmi.pdf"
+      }
+    },
+    {
+      "id": "a41a8149-63b2-4188-a8bb-8757c83adef2",
+      "ad": "KAVRAMSAL TASARIM",
+      "sablonDosyasi": "2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-KAVRAMSAL_TASARIM.docx",
+      "olusturuldu": "2026-08-23T13:55:09.874Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-a41a8149",
+        "ad": "KAVRAMSAL TASARIM",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 120,
+        "basliklar": [
+          {
+            "ad": "TEMEL KATEGORİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "(SADECE BİR TANESİ İŞARETLENMELİDİR)"
+            ]
+          },
+          {
+            "ad": "Kavramsal Tasarım – Modüler Reaktör (SMR/MMR)",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Kavramsal Tasarım – Araştırma Reaktörü",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Profesyonel Takım",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Okul Takımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "FDR ŞABLONU KULLANILARAK RAPOR HAZIRLANMALIDIR. BU FORMAT DIŞINDA RAPOR HAZIRLANMAMASI GEREKMEKTEDİR."
+            ]
+          },
+          {
+            "ad": "TABLOLAR",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ŞEKİLLER",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "1. PROJE ÖZETİ / PROJE KONU KAPSAMI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "1.1.Proje Özeti: Proje fikrini kısaca özetleyiniz, varsa görsel ekleyebilirsiniz. Özet kısmında, belge içeriği ve proje içeriği konularına ayrıntılı olarak değinilmelidir.",
+              "1.2.Proje Konu Kapsamı: Projenizin; başvurmuş olduğunuz yarışmanın (kategorinin) yarışma şartnamesinde bulunan konu kapsamına uygunluğunu belirtmeniz gerekmektedir."
+            ]
+          },
+          {
+            "ad": "2. TAKIM TANITIMI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Proje ekibinin tanıtımı yapılmalıdır. Takım içinde görev dağılımları şematik olarak verilmelidir. Ekip üyelerinin kişisel bilgileri (ad, soyad, fotoğraf, üniversite/kurum/kuruluş vb. gibi) kesinlikle verilmeden bilgi paylaşımı yapılmalıdır."
+            ]
+          },
+          {
+            "ad": "3. LİTERATÜR TARAMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Literatür taraması sonucu ilgili proje konusunda daha önce yapılmış olan çalışmalarından bahsedilmelidir. Daha önce yapılmış çalışmalar atıflarıyla verilmelidir. Yapılan çalışma en az 3 atıfla araştırılmış olmalıdır. Her atıf ayrı paragrafta verilmelidir."
+            ]
+          },
+          {
+            "ad": "4. YÖNTEM VE UYGULANABİLİRLİK",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "4.1.Yöntem: Projede kullanılan yöntem açık ve detaylı olarak açıklanmalıdır. Yöntemin hangi bilimsel ilkeler ve teknolojik uygulamalar üzerine kurgulandığı belirtilmelidir.",
+              "4.2.Uygulanabilirlik: Proje fikrinin hayata nasıl geçirildiği ve mevcut şartlar altında projenin bir ürüne dönüştürülebilir olup olmadığı hakkında bilgi verilmelidir."
+            ]
+          },
+          {
+            "ad": "5. ÖZGÜNLÜK, YENİLİKÇİLİK VE YERLİLİK TARAFI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "5.1. Özgünlük / Yenilikçi (İnovatif) Yönü: Proje tasarım fikrinin veya yönteminin mevcut tasarımlardan farklılığı ortaya konulmalıdır. Proje kapsamındaki tasarımın mevcut bir soruna çözüm ürettiği, yenilikçi bir yaklaşım sunduğu veya yerlileştirmeye dair özgünlüğü belirtilmelidir. Yarışmada, yenilikçi, sürdürülebilir ve uygulanabilir çözümler önceliklidir.",
+              "5.2. Yerlilik: Projenin yerlilik oranı ve yerli kaynakların (teknolojinin, altyapının vb.) kullanımı hakkında bilgiler verilmelidir."
+            ]
+          },
+          {
+            "ad": "6. PROJE İŞ ZAMAN PLANLAMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Yarışma kapsamındaki tasarımın proje başlangıcından Final Değerlendirme Raporu’nun (FDR) sisteme yüklenmesine kadar olan süreçlere ait İş paketleri ve bunların alt faaliyetleri içerikleriyle (yapılacak analizler ve kullanılacak bilgisayar kodları gibi) birlikte açıkça ifade edilmeli ve haftalık/aylık zaman planlaması ile birlikte Tablo halinde verilmelidir."
+            ]
+          },
+          {
+            "ad": "7. PROJENİN YAYGIN ETKİSİ ve HEDEF KİTLESİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "7.1. Yaygın Etki: Proje tasarım Projedeki tasarımın hayata geçirilmesiyle birlikte ulusal ekonomiye, toplumsal refaha ve bilimsel bilgi birikimine sağlanabilecek katkılar ele alınmalı ve beklenen sonuçlardan kimlerin, hangi şekilde fayda sağlayabileceği açıklanmalıdır.",
+              "7.2. Hedef Kitlesi: Proje tasarımının hedef kitlesi açık bir dille ifade edilmiş ve geliştirilen proje tasarımı ile uyumlu olmalıdır."
+            ]
+          },
+          {
+            "ad": "8. PROJE ANA KONU BAŞLIKLARI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler Reaktörün (SMR/MMR) veya çok amaçlı kullanıma uygun Araştırma Reaktörünün kavramsal tasarım sürecinin genel hatlarıyla değerlendirilebilmesi için, “Nükleer Enerji Teknolojileri Tasarım Yarışma Şartnamesi 2026” teknik şartnamesinin",
+              "ilgili kısımları dikkate alınarak çalışmalar yapılmalı ve sunulmalıdır.",
+              "Analiz ve hesaplamalarda kullanılan her kod için bir adet örnek girdi (input) dosyası bu raporun Ekler bölümünde tarif edildiği şekliyle rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde DİJİTAL EK olarak sisteme yüklenmelidir. Ayrıca bu DİJİTAL EK ile örnek girdi (input) dosyasının hangi durum için ne tür yaklaşımlarla oluşturulduğu ve çıktı (output) dosyasından hangi sonucun elde edildiğine dair açıklamalar yer almalıdır. Aynı DİJİTAL EK ile kodların doğruluğuna ve özellikle doğru kullanıldığına dair tekrarlanabilirlik, karşılaştırma (benchmarking) ve tekrar üretilebilirliğe dair çalışma sonuçları da verilmelidir. Bu doğrulama sürecinde Uluslararası Atom Enerjisi Ajansı (IAEA) ve OECD/NEA gibi güvenilir kaynaklardan elde edilen verilerin kullanıldığı gösterilmelidir.",
+              "Rapor hazırlanırken aşağıda belirtilen konu başlıklarında çalışmalar sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.1. Tasarım Hazırlık Aşaması",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler reaktörün/araştırma reaktörünün kavramsal tasarım öncesi hazırlık aşamasına ait bilgiler ve belgeler bu bölümde sunulmalıdır.",
+              "Termal Güç /Elektrik Gücü veya Nötron Akısı",
+              "SMR için 100 MWth / 30 MWe gibi",
+              "AR için 30 MWth / 3.0x1014 gibi",
+              "Elektrik Üretim Dışı Uygulamalar",
+              "SMR için hidrojen üretimi, deniz suyu arıtma, bölgesel ısıtma,",
+              "AR için malzeme testleri, radyoizotop üretimi, NAA gibi",
+              "Seramik, metalik, katı, sıvı gibi",
+              "Kontrol çubukları, yanabilir soğurucu, yanabilir zehir gibi",
+              "Toryum, ATF, Hidrojen üretimi gibi",
+              "Kıyaslama gerektiren diğer parametreler eklenmelidir."
+            ]
+          },
+          {
+            "ad": "8.2. Kor Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler reaktörün/araştırma reaktörünün kor yapısı ve bu yapının tüm teknik detayları bu bölümde sunulmalıdır.",
+              "Araştırma Reaktörü için Teknik Şartnamenin “Tablo 2. Çok Amaçlı Araştırma Reaktörü Teknik Gereksinimleri ve Kullanım Amaçları” dikkate alınarak, Tabloda belirtilen teknik gereksinimlere (güç, akı, yakıt tipi, moderatör/soğutucu/yansıtıcı gibi) uygun bir kor tasarımı yapılmalıdır."
+            ]
+          },
+          {
+            "ad": "8.3. Yakıt ve Malzeme Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler reaktörde/araştırma reaktöründe kullanılan yakıt ve reaktör yapı malzemelerinin tasarımı ve buna ait teknik bilgiler bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.4. Soğutma Devresi Sistem Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Reaktör korunun güvenli ve yüksek performanslı biçimde soğutulması için kullanılan tüm soğutma sistemleri ve bunlar üzerinde bulunan tüm bileşenlerin ayrıntılı bilgileri ile soğutma devrelerinin kapasitesini gösterir analizler bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.5. Güvenlik Kriterleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Reaktörün güvenlik kriterlerine dair bilgiler bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.6. Reaktör Güvenlik Sistemleri Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler reaktörü/araştırma reaktörünü güvenli bir biçimde kapatmak, kapatma durumunda onu korumak ve radyoaktif madde salınımını önlemek için kullanılan reaktör güvenlik sistemleri bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.7. Enstrümantasyon ve Kontrol Sistem Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler reaktörlerde/araştırma reaktörlerinde normal koşullarda ve kaza durumlarında yeterli güvenliği sağlamak için gerekli olan süreçleri yönetebilecek fonksiyonları içeren Nükleer Enstrümantasyon ve Kontrol (E&K) sistemi tasarımına ilişkin bilgiler bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.8. Yardımcı Sistemler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler reaktöre/araştırma reaktörüne ait yardımcı sistemler (havalandırma sistemi, elektrik sistemi, yangın güvenliği sistemi, radyasyondan korunma sistemi) ilişkin teknik bilgiler bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.9. Enerji Çevrimi ve Entegre Uygulamalı Sistemler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Sadece Modüler reaktörün elektrik üretimi ve elektrik üretim dışındaki uygulamaları içeren enerji çevrimine ilişkin teknik bilgiler bu bölümde sunulmalıdır.",
+              "Sadece Araştırma Reaktörü için Teknik Şartnamenin “Tablo 2. Çok Amaçlı Araştırma Reaktörü Teknik Gereksinimleri ve Kullanım Amaçları” dikkate alınarak, Tabloda belirtilen kullanım amacına yönelik uygulamalar (ışınlama test düzenekleri, radyoizotop üretim sistemleri, deneysel nötron ışınlama sistemleri gibi) detaylı olarak tasarlanmalı ve bu kısımda sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.10. Tesisin Genel Tanımı ve Yerleşim Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Modüler reaktörün/araştırma reaktörünün inşa edilebilirlik, ekonomik verimlilik, güvenlik ve operasyonlar gibi faktörleri dikkate alarak optimum bir genel yerleşim düzenlemesi bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.11. Nükleer Atık Yönetimi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Yenilikçi nükleer yakıt çevirimi tasarımı ile modüler reaktörden/araştırma reaktöründen çıkan nükleer atık miktarı ve radyoaktivitesi azaltılmasına yönelik çalışmalar bu bölümde sunulmalıdır."
+            ]
+          },
+          {
+            "ad": "8.12. Modüler Reaktör için Çalışma Bonusları*",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Yarışmacılar, seçtikleri modüler reaktör teknolojisi için aşağıda belirtilen konu başlıklarından bir tanesini içerecek şekilde kavramsal tasarımlarını yapabilirler. Bu durumu teknik analizler ile göstermeleri durumunda final raporu değerlendirmelerinde ekstra puan kazanabileceklerdir.",
+              "*BU BÖLÜM SADECE MODÜLER REAKTÖR TASARIMI İÇİN OLUŞTURULMALIDIR. ARAŞTIRMA REAKTÖRÜ TASARIMI İÇİN GEÇERLİ DEĞİLDİR."
+            ]
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Rapor, kaynakça kısmını içermelidir.",
+              "Kaynaklar başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web sitesi adresi, Kitap Adı, Sayfa Numarası vb.)"
+            ]
+          },
+          {
+            "ad": "EKLER",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Tasarıma yönelik ek belgeler, bilgiler, raporlar, teknik şartnameler, çizimler vb. raporun bütünlüğünü bozmayacak şekilde ayrı başlıklar halinde bu kısma konulabilir. Ekler kısmı sayfa sınırlamasına dâhil değildir.",
+              "DİJİTAL EKLER: Dijital veriler (örnek input/output dosyaları, yazılım geliştirmeye yönelik kaynak kodlar, 3 boyutlu teknik çizimler gibi) bu rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde sisteme yüklenmelidir.",
+              "Dijital Eklerin içerik listesi bu raporun (FDR) ekler kısımda verilmelidir.",
+              "Bu bölüme eklenecek tüm kısımlar için, ana rapor içerisinde çapraz referans (cross reference) ile bağlantı (link) verilmelidir."
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Final Değerlendirme Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları hariç olmak üzere en fazla 120 sayfa olacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak, İçindekiler ve Kaynakça” başlıkları için 3 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst-alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynısı ve tekrarı niteliğinde olmamalıdır.",
+          "Şablonda bulunan açıklamalar silinmeli, takımlar belirtilen içerik doğrultusunda raporunu hazırlamalıdır. Alt başlıklar kullanılarak hazırlanmalıdır. Örn. Proje Özeti / Proje Konu Kapsamı.",
+          "Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+          "Rapor içerisinde genel ifadelere yer verilmemeli, sunulan bilgiler kaynak/atıflarla desteklenmelidir.",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir.",
+          "Dijital Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Basılı Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası.",
+          "Rapor şablonuna uymayan Final Değerlendirme Raporları (FDR) değerlendirilmeyecektir."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 120,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "temel-kategori",
+            "ad": "TEMEL KATEGORİ",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "(SADECE BİR TANESİ İŞARETLENMELİDİR)"
+            ],
+            "bolumAdi": "TEMEL KATEGORİ"
+          },
+          {
+            "kod": "kavramsal-tasarim-moduler-reaktor-smr-mm",
+            "ad": "Kavramsal Tasarım – Modüler Reaktör (SMR/MMR)",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Kavramsal Tasarım – Modüler Reaktör (SMR/MMR)"
+          },
+          {
+            "kod": "kavramsal-tasarim-arastirma-reaktoru",
+            "ad": "Kavramsal Tasarım – Araştırma Reaktörü",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Kavramsal Tasarım – Araştırma Reaktörü"
+          },
+          {
+            "kod": "profesyonel-takim",
+            "ad": "Profesyonel Takım",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Profesyonel Takım"
+          },
+          {
+            "kod": "okul-takimi",
+            "ad": "Okul Takımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "FDR ŞABLONU KULLANILARAK RAPOR HAZIRLANMALIDIR. BU FORMAT DIŞINDA RAPOR HAZIRLANMAMASI GEREKMEKTEDİR."
+            ],
+            "bolumAdi": "Okul Takımı"
+          },
+          {
+            "kod": "tablolar",
+            "ad": "TABLOLAR",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TABLOLAR"
+          },
+          {
+            "kod": "sekiller",
+            "ad": "ŞEKİLLER",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ŞEKİLLER"
+          },
+          {
+            "kod": "1-proje-ozeti-proje-konu-kapsami",
+            "ad": "1. PROJE ÖZETİ / PROJE KONU KAPSAMI",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "1.1.Proje Özeti: Proje fikrini kısaca özetleyiniz, varsa görsel ekleyebilirsiniz. Özet kısmında, belge içeriği ve proje içeriği konularına ayrıntılı olarak değinilmelidir.",
+              "1.2.Proje Konu Kapsamı: Projenizin; başvurmuş olduğunuz yarışmanın (kategorinin) yarışma şartnamesinde bulunan konu kapsamına uygunluğunu belirtmeniz gerekmektedir."
+            ],
+            "bolumAdi": "1. PROJE ÖZETİ / PROJE KONU KAPSAMI"
+          },
+          {
+            "kod": "2-takim-tanitimi",
+            "ad": "2. TAKIM TANITIMI",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Proje ekibinin tanıtımı yapılmalıdır. Takım içinde görev dağılımları şematik olarak verilmelidir. Ekip üyelerinin kişisel bilgileri (ad, soyad, fotoğraf, üniversite/kurum/kuruluş vb. gibi) kesinlikle verilmeden bilgi paylaşımı yapılmalıdır."
+            ],
+            "bolumAdi": "2. TAKIM TANITIMI"
+          },
+          {
+            "kod": "3-literatur-taramasi",
+            "ad": "3. LİTERATÜR TARAMASI",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Literatür taraması sonucu ilgili proje konusunda daha önce yapılmış olan çalışmalarından bahsedilmelidir. Daha önce yapılmış çalışmalar atıflarıyla verilmelidir. Yapılan çalışma en az 3 atıfla araştırılmış olmalıdır. Her atıf ayrı paragrafta verilmelidir."
+            ],
+            "bolumAdi": "3. LİTERATÜR TARAMASI"
+          },
+          {
+            "kod": "4-yontem-ve-uygulanabilirlik",
+            "ad": "4. YÖNTEM VE UYGULANABİLİRLİK",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "4.1.Yöntem: Projede kullanılan yöntem açık ve detaylı olarak açıklanmalıdır. Yöntemin hangi bilimsel ilkeler ve teknolojik uygulamalar üzerine kurgulandığı belirtilmelidir.",
+              "4.2.Uygulanabilirlik: Proje fikrinin hayata nasıl geçirildiği ve mevcut şartlar altında projenin bir ürüne dönüştürülebilir olup olmadığı hakkında bilgi verilmelidir."
+            ],
+            "bolumAdi": "4. YÖNTEM VE UYGULANABİLİRLİK"
+          },
+          {
+            "kod": "5-ozgunluk-yenilikcilik-ve-yerlilik-tara",
+            "ad": "5. ÖZGÜNLÜK, YENİLİKÇİLİK VE YERLİLİK TARAFI",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "5.1. Özgünlük / Yenilikçi (İnovatif) Yönü: Proje tasarım fikrinin veya yönteminin mevcut tasarımlardan farklılığı ortaya konulmalıdır. Proje kapsamındaki tasarımın mevcut bir soruna çözüm ürettiği, yenilikçi bir yaklaşım sunduğu veya yerlileştirmeye dair özgünlüğü belirtilmelidir. Yarışmada, yenilikçi, sürdürülebilir ve uygulanabilir çözümler önceliklidir.",
+              "5.2. Yerlilik: Projenin yerlilik oranı ve yerli kaynakların (teknolojinin, altyapının vb.) kullanımı hakkında bilgiler verilmelidir."
+            ],
+            "bolumAdi": "5. ÖZGÜNLÜK, YENİLİKÇİLİK VE YERLİLİK TARAFI"
+          },
+          {
+            "kod": "6-proje-is-zaman-planlamasi",
+            "ad": "6. PROJE İŞ ZAMAN PLANLAMASI",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışma kapsamındaki tasarımın proje başlangıcından Final Değerlendirme Raporu’nun (FDR) sisteme yüklenmesine kadar olan süreçlere ait İş paketleri ve bunların alt faaliyetleri içerikleriyle (yapılacak analizler ve kullanılacak bilgisayar kodları gibi) birlikte açıkça ifade edilmeli ve haftalık/aylık zaman planlaması ile birlikte Tablo halinde verilmelidir."
+            ],
+            "bolumAdi": "6. PROJE İŞ ZAMAN PLANLAMASI"
+          },
+          {
+            "kod": "7-projenin-yaygin-etkisi-ve-hedef-kitles",
+            "ad": "7. PROJENİN YAYGIN ETKİSİ ve HEDEF KİTLESİ",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "7.1. Yaygın Etki: Proje tasarım Projedeki tasarımın hayata geçirilmesiyle birlikte ulusal ekonomiye, toplumsal refaha ve bilimsel bilgi birikimine sağlanabilecek katkılar ele alınmalı ve beklenen sonuçlardan kimlerin, hangi şekilde fayda sağlayabileceği açıklanmalıdır.",
+              "7.2. Hedef Kitlesi: Proje tasarımının hedef kitlesi açık bir dille ifade edilmiş ve geliştirilen proje tasarımı ile uyumlu olmalıdır."
+            ],
+            "bolumAdi": "7. PROJENİN YAYGIN ETKİSİ ve HEDEF KİTLESİ"
+          },
+          {
+            "kod": "8-proje-ana-konu-basliklari",
+            "ad": "8. PROJE ANA KONU BAŞLIKLARI",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler Reaktörün (SMR/MMR) veya çok amaçlı kullanıma uygun Araştırma Reaktörünün kavramsal tasarım sürecinin genel hatlarıyla değerlendirilebilmesi için, “Nükleer Enerji Teknolojileri Tasarım Yarışma Şartnamesi 2026” teknik şartnamesinin",
+              "ilgili kısımları dikkate alınarak çalışmalar yapılmalı ve sunulmalıdır.",
+              "Analiz ve hesaplamalarda kullanılan her kod için bir adet örnek girdi (input) dosyası bu raporun Ekler bölümünde tarif edildiği şekliyle rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde DİJİTAL EK olarak sisteme yüklenmelidir. Ayrıca bu DİJİTAL EK ile örnek girdi (input) dosyasının hangi durum için ne tür yaklaşımlarla oluşturulduğu ve çıktı (output) dosyasından hangi sonucun elde edildiğine dair açıklamalar yer almalıdır. Aynı DİJİTAL EK ile kodların doğruluğuna ve özellikle doğru kullanıldığına dair tekrarlanabilirlik, karşılaştırma (benchmarking) ve tekrar üretilebilirliğe dair çalışma sonuçları da verilmelidir. Bu doğrulama sürecinde Uluslararası Atom Enerjisi Ajansı (IAEA) ve OECD/NEA gibi güvenilir kaynaklardan elde edilen verilerin kullanıldığı gösterilmelidir.",
+              "Rapor hazırlanırken aşağıda belirtilen konu başlıklarında çalışmalar sunulmalıdır."
+            ],
+            "bolumAdi": "8. PROJE ANA KONU BAŞLIKLARI"
+          },
+          {
+            "kod": "8-1-tasarim-hazirlik-asamasi",
+            "ad": "8.1. Tasarım Hazırlık Aşaması",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler reaktörün/araştırma reaktörünün kavramsal tasarım öncesi hazırlık aşamasına ait bilgiler ve belgeler bu bölümde sunulmalıdır.",
+              "Termal Güç /Elektrik Gücü veya Nötron Akısı",
+              "SMR için 100 MWth / 30 MWe gibi",
+              "AR için 30 MWth / 3.0x1014 gibi",
+              "Elektrik Üretim Dışı Uygulamalar",
+              "SMR için hidrojen üretimi, deniz suyu arıtma, bölgesel ısıtma,",
+              "AR için malzeme testleri, radyoizotop üretimi, NAA gibi",
+              "Seramik, metalik, katı, sıvı gibi",
+              "Kontrol çubukları, yanabilir soğurucu, yanabilir zehir gibi",
+              "Toryum, ATF, Hidrojen üretimi gibi",
+              "Kıyaslama gerektiren diğer parametreler eklenmelidir."
+            ],
+            "bolumAdi": "8.1. Tasarım Hazırlık Aşaması"
+          },
+          {
+            "kod": "8-2-kor-tasarimi",
+            "ad": "8.2. Kor Tasarımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler reaktörün/araştırma reaktörünün kor yapısı ve bu yapının tüm teknik detayları bu bölümde sunulmalıdır.",
+              "Araştırma Reaktörü için Teknik Şartnamenin “Tablo 2. Çok Amaçlı Araştırma Reaktörü Teknik Gereksinimleri ve Kullanım Amaçları” dikkate alınarak, Tabloda belirtilen teknik gereksinimlere (güç, akı, yakıt tipi, moderatör/soğutucu/yansıtıcı gibi) uygun bir kor tasarımı yapılmalıdır."
+            ],
+            "bolumAdi": "8.2. Kor Tasarımı"
+          },
+          {
+            "kod": "8-3-yakit-ve-malzeme-tasarimi",
+            "ad": "8.3. Yakıt ve Malzeme Tasarımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler reaktörde/araştırma reaktöründe kullanılan yakıt ve reaktör yapı malzemelerinin tasarımı ve buna ait teknik bilgiler bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.3. Yakıt ve Malzeme Tasarımı"
+          },
+          {
+            "kod": "8-4-sogutma-devresi-sistem-tasarimi",
+            "ad": "8.4. Soğutma Devresi Sistem Tasarımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Reaktör korunun güvenli ve yüksek performanslı biçimde soğutulması için kullanılan tüm soğutma sistemleri ve bunlar üzerinde bulunan tüm bileşenlerin ayrıntılı bilgileri ile soğutma devrelerinin kapasitesini gösterir analizler bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.4. Soğutma Devresi Sistem Tasarımı"
+          },
+          {
+            "kod": "8-5-guvenlik-kriterleri",
+            "ad": "8.5. Güvenlik Kriterleri",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Reaktörün güvenlik kriterlerine dair bilgiler bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.5. Güvenlik Kriterleri"
+          },
+          {
+            "kod": "8-6-reaktor-guvenlik-sistemleri-tasarimi",
+            "ad": "8.6. Reaktör Güvenlik Sistemleri Tasarımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler reaktörü/araştırma reaktörünü güvenli bir biçimde kapatmak, kapatma durumunda onu korumak ve radyoaktif madde salınımını önlemek için kullanılan reaktör güvenlik sistemleri bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.6. Reaktör Güvenlik Sistemleri Tasarımı"
+          },
+          {
+            "kod": "8-7-enstrumantasyon-ve-kontrol-sistem-ta",
+            "ad": "8.7. Enstrümantasyon ve Kontrol Sistem Tasarımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler reaktörlerde/araştırma reaktörlerinde normal koşullarda ve kaza durumlarında yeterli güvenliği sağlamak için gerekli olan süreçleri yönetebilecek fonksiyonları içeren Nükleer Enstrümantasyon ve Kontrol (E&K) sistemi tasarımına ilişkin bilgiler bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.7. Enstrümantasyon ve Kontrol Sistem Tasarımı"
+          },
+          {
+            "kod": "8-8-yardimci-sistemler",
+            "ad": "8.8. Yardımcı Sistemler",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler reaktöre/araştırma reaktörüne ait yardımcı sistemler (havalandırma sistemi, elektrik sistemi, yangın güvenliği sistemi, radyasyondan korunma sistemi) ilişkin teknik bilgiler bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.8. Yardımcı Sistemler"
+          },
+          {
+            "kod": "8-9-enerji-cevrimi-ve-entegre-uygulamali",
+            "ad": "8.9. Enerji Çevrimi ve Entegre Uygulamalı Sistemler",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Sadece Modüler reaktörün elektrik üretimi ve elektrik üretim dışındaki uygulamaları içeren enerji çevrimine ilişkin teknik bilgiler bu bölümde sunulmalıdır.",
+              "Sadece Araştırma Reaktörü için Teknik Şartnamenin “Tablo 2. Çok Amaçlı Araştırma Reaktörü Teknik Gereksinimleri ve Kullanım Amaçları” dikkate alınarak, Tabloda belirtilen kullanım amacına yönelik uygulamalar (ışınlama test düzenekleri, radyoizotop üretim sistemleri, deneysel nötron ışınlama sistemleri gibi) detaylı olarak tasarlanmalı ve bu kısımda sunulmalıdır."
+            ],
+            "bolumAdi": "8.9. Enerji Çevrimi ve Entegre Uygulamalı Sistemler"
+          },
+          {
+            "kod": "8-10-tesisin-genel-tanimi-ve-yerlesim-ta",
+            "ad": "8.10. Tesisin Genel Tanımı ve Yerleşim Tasarımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Modüler reaktörün/araştırma reaktörünün inşa edilebilirlik, ekonomik verimlilik, güvenlik ve operasyonlar gibi faktörleri dikkate alarak optimum bir genel yerleşim düzenlemesi bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.10. Tesisin Genel Tanımı ve Yerleşim Tasarımı"
+          },
+          {
+            "kod": "8-11-nukleer-atik-yonetimi",
+            "ad": "8.11. Nükleer Atık Yönetimi",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yenilikçi nükleer yakıt çevirimi tasarımı ile modüler reaktörden/araştırma reaktöründen çıkan nükleer atık miktarı ve radyoaktivitesi azaltılmasına yönelik çalışmalar bu bölümde sunulmalıdır."
+            ],
+            "bolumAdi": "8.11. Nükleer Atık Yönetimi"
+          },
+          {
+            "kod": "8-12-moduler-reaktor-icin-calisma-bonusl",
+            "ad": "8.12. Modüler Reaktör için Çalışma Bonusları*",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışmacılar, seçtikleri modüler reaktör teknolojisi için aşağıda belirtilen konu başlıklarından bir tanesini içerecek şekilde kavramsal tasarımlarını yapabilirler. Bu durumu teknik analizler ile göstermeleri durumunda final raporu değerlendirmelerinde ekstra puan kazanabileceklerdir.",
+              "*BU BÖLÜM SADECE MODÜLER REAKTÖR TASARIMI İÇİN OLUŞTURULMALIDIR. ARAŞTIRMA REAKTÖRÜ TASARIMI İÇİN GEÇERLİ DEĞİLDİR."
+            ],
+            "bolumAdi": "8.12. Modüler Reaktör için Çalışma Bonusları*"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Rapor, kaynakça kısmını içermelidir.",
+              "Kaynaklar başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web sitesi adresi, Kitap Adı, Sayfa Numarası vb.)"
+            ],
+            "bolumAdi": "KAYNAKÇA"
+          },
+          {
+            "kod": "ekler",
+            "ad": "EKLER",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Tasarıma yönelik ek belgeler, bilgiler, raporlar, teknik şartnameler, çizimler vb. raporun bütünlüğünü bozmayacak şekilde ayrı başlıklar halinde bu kısma konulabilir. Ekler kısmı sayfa sınırlamasına dâhil değildir.",
+              "DİJİTAL EKLER: Dijital veriler (örnek input/output dosyaları, yazılım geliştirmeye yönelik kaynak kodlar, 3 boyutlu teknik çizimler gibi) bu rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde sisteme yüklenmelidir.",
+              "Dijital Eklerin içerik listesi bu raporun (FDR) ekler kısımda verilmelidir.",
+              "Bu bölüme eklenecek tüm kısımlar için, ana rapor içerisinde çapraz referans (cross reference) ile bağlantı (link) verilmelidir."
+            ],
+            "bolumAdi": "EKLER"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Şablonda puan ağırlığı yok; 29 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_Nukleer_Enerji_Teknolojilleri_Tasarım_Yarısması_Sartnamesi_TR_4kjmi.pdf",
+        "yuklendi": "2026-08-23T20:13:56.901Z",
+        "sayfaSayisi": 44,
+        "kelimeSayisi": 11763,
+        "kurallar": {
+          "tarihler": [],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Bu kural ihlal edilirse ilgili yarışmacı ve takımı diskalifiye edilebilir."
+          ],
+          "katilimciSeviyeleri": [
+            "profesyonel"
+          ],
+          "azamiUye": 25
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden tarih çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Nukleer_Enerji_Teknolojilleri_Tasar%C4%B1m_Yar%C4%B1smas%C4%B1_Sartnamesi_TR_4kjmi.pdf"
+      }
+    },
+    {
+      "id": "72f1d7cd-d52c-404c-b823-9be18a384fc1",
+      "ad": "UYGULAMA",
+      "sablonDosyasi": "2026_NUKLEER_ENERJI_TEKNOLOJILERI_TASARIM_YARISMASI_FDR-UYGULAMA_KATEGORİ.docx",
+      "olusturuldu": "2026-08-23T13:55:10.304Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-72f1d7cd",
+        "ad": "UYGULAMA",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 100,
+        "basliklar": [
+          {
+            "ad": "YAZILIM GELİŞTİRME*",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "(SADECE BİR KOD SİSTEMİ İŞARETLENMELİDİR)"
+            ]
+          },
+          {
+            "ad": "Nötronik ve/veya Isıl-hidrolik kod yazılımı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Yakıt performansı ve güvenliği analizi kod yazılımı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Atmosferik dağılım ve radyolojik doz analiz kod yazılımı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ÖNEMLİ NOT: Yazılım Geliştirme kategorisinden başvuran takımlar, Teknik Şartnamenin 4.4.1 Yazılım Geliştirme – Simülasyon Kod Sistemi kısmında belirtildiği üzere bu kategoride üç farklı kod sistemi yazılımından bir tanesini gerçekleştirebilir. Bu nedenle üstte yer alan yazılım türünden birisini işaretlenmesi ve buna göre FDR hazırlanması gerekmektedir. ÖDR değerlendirmelerinde önerildiği üzere, farklı bir yazılım türü üzerine proje hazırlayan takımlar değerlendirme dışında kalabilirler.",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ROBOTİK SİSTEM TASARIMI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Robotik Sistem Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Profesyonel Takım",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Lisans Takımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "FDR ŞABLONU KULLANILARAK RAPOR HAZIRLANMALIDIR. BU FORMAT DIŞINDA RAPOR HAZIRLANMAMASI GEREKMEKTEDİR."
+            ]
+          },
+          {
+            "ad": "TABLOLAR",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ŞEKİLLER",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "1. PROJE ÖZETİ / PROJE KONU KAPSAMI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Proje kapsamında, “Nükleer Enerji Teknolojileri Tasarım Yarışma Şartnamesi 2026” belgesinin “Bölüm 4.4 Uygulama Kategorisi” kısmında tanımlanan ve teknik gereksinimleri verilen 2 adet uygulama kategorisinden bir tanesine yönelik çalışmaları içermelidir.",
+              "Her alt kategori ile yarışmacıların belirli konularda yenilikçi ve özgün projeler geliştirmeleri amaçlanmaktadır. Tasarımların yenilikçi ve özgün yönleri ön plana çıkartılmalıdır.",
+              "Yarışma için birden fazla alt kategoriye yönelik çalışma yapılması durumunda her bir alt kategori için ayrı rapor hazırlanması ve sunulması gerekmektedir.",
+              "1.1.Proje Özeti: Proje fikrini kısaca özetleyiniz, varsa görsel ekleyebilirsiniz. Özet kısmında, belge içeriği ve proje içeriği konularına ayrıntılı olarak değinilmelidir.",
+              "1.2.Proje Konu Kapsamı: Projenizin; başvurmuş olduğunuz yarışmanın (kategorinin) yarışma şartnamesinde bulunan konu kapsamına uygunluğunu belirtmeniz gerekmektedir."
+            ]
+          },
+          {
+            "ad": "2. TAKIM TANITIMI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Proje ekibinin tanıtımı yapılmalıdır. Takım içinde görev dağılımları şematik olarak verilmelidir. Ekip üyelerinin kişisel bilgileri (ad, soyad, fotoğraf, üniversite/kurum/kuruluş vb. gibi) kesinlikle verilmeden bilgi paylaşımı yapılmalıdır."
+            ]
+          },
+          {
+            "ad": "3. LİTERATÜR TARAMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Literatür taraması sonucu ilgili proje konusunda daha önce yapılmış olan çalışmalarından bahsedilmelidir. Daha önce yapılmış çalışmalar atıflarıyla verilmelidir. Yapılan çalışma en az 3 atıfla araştırılmış olmalıdır. Her atıf ayrı paragrafta verilmelidir."
+            ]
+          },
+          {
+            "ad": "4. YÖNTEM VE UYGULANABİLİRLİK",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "4.1.Yöntem: Projede kullanılacak olan yöntem açık ve detaylı olarak açıklanmalıdır. Yöntemin hangi bilimsel ilkeler ve teknolojik uygulamalar üzerine kurgulandığı belirtilmelidir.",
+              "4.2.Uygulanabilirlik: Geliştirilen prototip robotik sistemin/yazılımın teknik şartnamede ve rapor şablonlarında belirtilen kriterleri doğru ve etkin bir şekilde gerçekleştirdiği final raporları ve final sunumları aşamasında jüri üyelerine gösterilmelidir."
+            ]
+          },
+          {
+            "ad": "5. ÖZGÜNLÜK, YENİLİKÇİLİK VE YERLİLİK TARAFI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "5.1. Özgünlük / Yenilikçi (İnovatif) Yönü: Proje tasarım fikrinin veya yönteminin mevcut tasarımlardan farklılığı ortaya konulmalıdır. Proje kapsamındaki tasarımın mevcut bir soruna çözüm ürettiği, yenilikçi bir yaklaşım sunduğu veya yerlileştirmeye dair özgünlüğü belirtilmelidir. Yarışmada, yenilikçi, sürdürülebilir ve uygulanabilir çözümler önceliklidir.",
+              "5.2. Yerlilik: Projenin yerlilik oranı ve yerli kaynakların (teknolojinin, altyapının vb.) kullanımı hakkında bilgiler verilmelidir."
+            ]
+          },
+          {
+            "ad": "6. PROJE İŞ ZAMAN PLANLAMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Yarışma kapsamındaki tasarımın proje başlangıcından Final Değerlendirme Raporu’nun (FDR) sisteme yüklenmesine kadar olan süreçlere ait İş paketleri ve bunların alt faaliyetleri içerikleriyle (yapılacak analizler, kullanılacak bilgisayar kodları, geliştirilen prototip ürün/yazılım üretim aşamaları gibi) birlikte açıkça ifade edilmeli ve haftalık/aylık zaman planlaması ile birlikte Tablo halinde verilmelidir."
+            ]
+          },
+          {
+            "ad": "7. PROJENİN YAYGIN ETKİSİ ve HEDEF KİTLESİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "7.1. Yaygın Etki: Proje tasarım Projedeki tasarımın hayata geçirilmesiyle birlikte ulusal ekonomiye, toplumsal refaha ve bilimsel bilgi birikimine sağlanabilecek katkılar ele alınmalı ve beklenen sonuçlardan kimlerin, hangi şekilde fayda sağlayabileceği açıklanmalıdır.",
+              "7.2. Hedef Kitlesi: Proje tasarımının hedef kitlesi açık bir dille ifade edilmiş ve geliştirilen proje tasarımı ile uyumlu olmalıdır."
+            ]
+          },
+          {
+            "ad": "8. TASARIM HAZIRLIK AŞAMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "“Nükleer Enerji Teknolojileri Tasarım Yarışma Şartnamesi 2026” belgesinin ilgili bölümlerinde 2 adet uygulama kategorisine ait konu başlıkları ve gereksinimleri belirtilmiştir. Bu kapsamda gerçekleştirilecek alt kategori proje çalışmalarının, sektörün ihtiyaçlarına yönelik olarak; mevcut bir soruna çözüm üretilmesi, yenilikçi bir yaklaşım oluşturulması veya yerlileştirme özgünlüğü ile bu kısımda açıklanmalıdır.",
+              "Bu açıklamalarla bağlantılı olarak uygulama kategorisi tasarım/geliştirme veya yenilikçi çözüm üretme çalışmaları kapsamındaki teknik hazırlık aşamasına ilişkin aşağıda detayları verilen bilgiler ve belgeler bu bölümde alt başlıklar halinde açıkça sunulmalıdır:",
+              "Uygulama kategorisinde tasarlanıp geliştirilen prototip ürüne/yazılıma referans olarak alınan uygulama projesine ait gerekli tüm teknik tanımlamalar açıkça yapılmadır.",
+              "Geliştirilen prototip ürünün/yazılımın, referans ürün/yazılım ile kıyaslaması yapılarak farklılıkları, üstünlükleri ve avantajları açıkça belirtilmelidir.",
+              "Referans alınan değerler tablo, şekil ve çizimler halinde açıkça belirtilerek verilmelidir. Örnek olarak Tablo.1 incelenebilir (Tabloda yazılan parametreler örnektir, yarışmacılar kendi tasarımlarına göre uygun parametreleri vermelidir).",
+              "SMR için 100 MWth / 30 MWe gibi",
+              "Elektrik Üretim Dışı Uygulamalar",
+              "SMR için hidrojen üretimi, deniz suyu arıtma, bölgesel ısıtma, endüstriler için proses ısısı tesisleri vb. gibi",
+              "Seramik, metalik, katı, sıvı gibi",
+              "Kontrol çubukları, yanabilir soğurucu, yanabilir zehir gibi",
+              "Nötronik-Isıl-hidrolik, Yakıt performansı ve güvenliği, Atmosferik dağılım gibi",
+              "Referans reaktörde bakım-onarım, servis, acil durum gibi",
+              "Kıyaslama gerektiren diğer parametreler eklenmelidir.",
+              "Nükleer güvenliğin tasarım, çözüm geliştirme veya robotik sistem üretimi projesine entegre edildiğinin standart bir yaklaşım ile gösterilmesi için uygulama kategorisi çalışmaları esnasında dikkate alınan nükleer güvenliğe ilişkin ilgili olabilecek gereksinimleri içeren ulusal ve/veya uluslararası düzenleyici belgeler listesi sunulmalıdır. (IAEA Safety Standarts gibi)",
+              "Uygulama kategorisinde tasarımlarda kullanılan ulusal ve/veya uluslararası kodlar ve standartlar (TSE, ISO, CE, ASME gibi) hakkında bilgiler verilmelidir.",
+              "Uygulama Kategorisinde, tasarım, analiz, hesaplama, prototip ürün geliştirme gibi süreçlerde kullanılan bilgisayar kodları ve yazılımları hakkında bilgiler verilmelidir.",
+              "Tasarım, analizi hesaplamalar ve ürün geliştirme süreçlerinde kullanılan her kod için bir adet örnek girdi (input) dosyası bu raporun Ekler bölümünde tarif edildiği şekliyle rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde DİJİTAL EK olarak sisteme yüklenmelidir. Ayrıca bu DİJİTAL EK ile örnek girdi (input) dosyasının hangi durum için ne tür yaklaşımlarla oluşturulduğu ve çıktı (output) dosyasından hangi sonucun elde edildiğine dair açıklamalar yer almalıdır. Aynı DİJİTAL EK ile kodların doğruluğuna ve özellikle doğru kullanıldığına dair tekrarlanabilirlik, karşılaştırma (benchmarking) ve tekrar üretilebilirliğe dair çalışma sonuçları da verilmelidir. Bu doğrulama sürecinde Uluslararası Atom Enerjisi Ajansı (IAEA) ve OECD/NEA gibi güvenilir kaynaklardan elde edilen verilerin kullanıldığı gösterilmelidir."
+            ]
+          },
+          {
+            "ad": "9. UYGULAMA KATEGORİSİ TASARIM AŞAMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Yarışma uygulama kategorisi tasarım, çözüm geliştirme veya prototip ürün üretim sürecine yönelik gerçekleştirilen tüm çalışmalar bu bölümde sunulmalıdır:"
+            ]
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Rapor, kaynakça kısmını içermelidir. Kaynaklar başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web sitesi adresi, Kitap Adı, Sayfa Numarası vb.)"
+            ]
+          },
+          {
+            "ad": "EKLER",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Prototip ürüne/yazılıma yönelik ek belgeler, bilgiler, teknik raporlar, çizimler, görseller, videolar vb. raporun bütünlüğünü bozmayacak şekilde ayrı başlıklar halinde bu kısma konulabilir. Ekler kısmı sayfa sınırlamasına dâhil değildir.",
+              "DİJİTAL EKLER: Dijital veriler (örnek input/output dosyaları, yazılım geliştirmeye yönelik kaynak kodlar, 3 boyutlu teknik çizimler, tanımlı görev senaryoları, prototip ürün görsel/videoları gibi) bu rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde sisteme yüklenmelidir.",
+              "Dijital Eklerin içerik listesi bu raporun (FDR) ekler kısımda verilmelidir."
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Final Değerlendirme Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları hariç olmak üzere en fazla 100 sayfa olacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak, İçindekiler ve Kaynakça” başlıkları için 3 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst-alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynısı ve tekrarı niteliğinde olmamalıdır.",
+          "Şablonda bulunan açıklamalar silinmeli, takımlar belirtilen içerik doğrultusunda raporunu hazırlamalıdır. Alt başlıklar kullanılarak hazırlanmalıdır. Örn. Proje Özeti / Proje Konu Kapsamı.",
+          "Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+          "Rapor içerisinde genel ifadelere yer verilmemeli, sunulan bilgiler kaynak/atıflarla desteklenmelidir.",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir.",
+          "Dijital Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Basılı Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası.",
+          "Rapor şablonuna uymayan Final Değerlendirme Raporları (FDR) değerlendirilmeyecektir."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 100,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "yazilim-gelistirme",
+            "ad": "YAZILIM GELİŞTİRME*",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "(SADECE BİR KOD SİSTEMİ İŞARETLENMELİDİR)"
+            ],
+            "bolumAdi": "YAZILIM GELİŞTİRME*"
+          },
+          {
+            "kod": "notronik-ve-veya-isil-hidrolik-kod-yazil",
+            "ad": "Nötronik ve/veya Isıl-hidrolik kod yazılımı",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Nötronik ve/veya Isıl-hidrolik kod yazılımı"
+          },
+          {
+            "kod": "yakit-performansi-ve-guvenligi-analizi-k",
+            "ad": "Yakıt performansı ve güvenliği analizi kod yazılımı",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Yakıt performansı ve güvenliği analizi kod yazılımı"
+          },
+          {
+            "kod": "atmosferik-dagilim-ve-radyolojik-doz-ana",
+            "ad": "Atmosferik dağılım ve radyolojik doz analiz kod yazılımı",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Atmosferik dağılım ve radyolojik doz analiz kod yazılımı"
+          },
+          {
+            "kod": "onemli-not-yazilim-gelistirme-kategorisi",
+            "ad": "ÖNEMLİ NOT: Yazılım Geliştirme kategorisinden başvuran takımlar, Teknik Şartnamenin 4.4.1 Yazılım Geliştirme – Simülasyon Kod Sistemi kısmında belirtildiği üzere bu kategoride üç farklı kod sistemi yazılımından bir tanesini gerçekleştirebilir. Bu nedenle üstte yer alan yazılım türünden birisini işaretlenmesi ve buna göre FDR hazırlanması gerekmektedir. ÖDR değerlendirmelerinde önerildiği üzere, farklı bir yazılım türü üzerine proje hazırlayan takımlar değerlendirme dışında kalabilirler.",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ÖNEMLİ NOT: Yazılım Geliştirme kategorisinden başvuran takımlar, Teknik Şartnamenin 4.4.1 Yazılım Geliştirme – Simülasyon Kod Sistemi kısmında belirtildiği üzere bu kategoride üç farklı kod sistemi yazılımından bir tanesini gerçekleştirebilir. Bu nedenle üstte yer alan yazılım türünden birisini işaretlenmesi ve buna göre FDR hazırlanması gerekmektedir. ÖDR değerlendirmelerinde önerildiği üzere, farklı bir yazılım türü üzerine proje hazırlayan takımlar değerlendirme dışında kalabilirler."
+          },
+          {
+            "kod": "robotik-sistem-tasarimi",
+            "ad": "ROBOTİK SİSTEM TASARIMI",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ROBOTİK SİSTEM TASARIMI"
+          },
+          {
+            "kod": "robotik-sistem-tasarimi",
+            "ad": "Robotik Sistem Tasarımı",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Robotik Sistem Tasarımı"
+          },
+          {
+            "kod": "profesyonel-takim",
+            "ad": "Profesyonel Takım",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Profesyonel Takım"
+          },
+          {
+            "kod": "lisans-takimi",
+            "ad": "Lisans Takımı",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "FDR ŞABLONU KULLANILARAK RAPOR HAZIRLANMALIDIR. BU FORMAT DIŞINDA RAPOR HAZIRLANMAMASI GEREKMEKTEDİR."
+            ],
+            "bolumAdi": "Lisans Takımı"
+          },
+          {
+            "kod": "tablolar",
+            "ad": "TABLOLAR",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TABLOLAR"
+          },
+          {
+            "kod": "sekiller",
+            "ad": "ŞEKİLLER",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ŞEKİLLER"
+          },
+          {
+            "kod": "1-proje-ozeti-proje-konu-kapsami",
+            "ad": "1. PROJE ÖZETİ / PROJE KONU KAPSAMI",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Proje kapsamında, “Nükleer Enerji Teknolojileri Tasarım Yarışma Şartnamesi 2026” belgesinin “Bölüm 4.4 Uygulama Kategorisi” kısmında tanımlanan ve teknik gereksinimleri verilen 2 adet uygulama kategorisinden bir tanesine yönelik çalışmaları içermelidir.",
+              "Her alt kategori ile yarışmacıların belirli konularda yenilikçi ve özgün projeler geliştirmeleri amaçlanmaktadır. Tasarımların yenilikçi ve özgün yönleri ön plana çıkartılmalıdır.",
+              "Yarışma için birden fazla alt kategoriye yönelik çalışma yapılması durumunda her bir alt kategori için ayrı rapor hazırlanması ve sunulması gerekmektedir.",
+              "1.1.Proje Özeti: Proje fikrini kısaca özetleyiniz, varsa görsel ekleyebilirsiniz. Özet kısmında, belge içeriği ve proje içeriği konularına ayrıntılı olarak değinilmelidir.",
+              "1.2.Proje Konu Kapsamı: Projenizin; başvurmuş olduğunuz yarışmanın (kategorinin) yarışma şartnamesinde bulunan konu kapsamına uygunluğunu belirtmeniz gerekmektedir."
+            ],
+            "bolumAdi": "1. PROJE ÖZETİ / PROJE KONU KAPSAMI"
+          },
+          {
+            "kod": "2-takim-tanitimi",
+            "ad": "2. TAKIM TANITIMI",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Proje ekibinin tanıtımı yapılmalıdır. Takım içinde görev dağılımları şematik olarak verilmelidir. Ekip üyelerinin kişisel bilgileri (ad, soyad, fotoğraf, üniversite/kurum/kuruluş vb. gibi) kesinlikle verilmeden bilgi paylaşımı yapılmalıdır."
+            ],
+            "bolumAdi": "2. TAKIM TANITIMI"
+          },
+          {
+            "kod": "3-literatur-taramasi",
+            "ad": "3. LİTERATÜR TARAMASI",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Literatür taraması sonucu ilgili proje konusunda daha önce yapılmış olan çalışmalarından bahsedilmelidir. Daha önce yapılmış çalışmalar atıflarıyla verilmelidir. Yapılan çalışma en az 3 atıfla araştırılmış olmalıdır. Her atıf ayrı paragrafta verilmelidir."
+            ],
+            "bolumAdi": "3. LİTERATÜR TARAMASI"
+          },
+          {
+            "kod": "4-yontem-ve-uygulanabilirlik",
+            "ad": "4. YÖNTEM VE UYGULANABİLİRLİK",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "4.1.Yöntem: Projede kullanılacak olan yöntem açık ve detaylı olarak açıklanmalıdır. Yöntemin hangi bilimsel ilkeler ve teknolojik uygulamalar üzerine kurgulandığı belirtilmelidir.",
+              "4.2.Uygulanabilirlik: Geliştirilen prototip robotik sistemin/yazılımın teknik şartnamede ve rapor şablonlarında belirtilen kriterleri doğru ve etkin bir şekilde gerçekleştirdiği final raporları ve final sunumları aşamasında jüri üyelerine gösterilmelidir."
+            ],
+            "bolumAdi": "4. YÖNTEM VE UYGULANABİLİRLİK"
+          },
+          {
+            "kod": "5-ozgunluk-yenilikcilik-ve-yerlilik-tara",
+            "ad": "5. ÖZGÜNLÜK, YENİLİKÇİLİK VE YERLİLİK TARAFI",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "5.1. Özgünlük / Yenilikçi (İnovatif) Yönü: Proje tasarım fikrinin veya yönteminin mevcut tasarımlardan farklılığı ortaya konulmalıdır. Proje kapsamındaki tasarımın mevcut bir soruna çözüm ürettiği, yenilikçi bir yaklaşım sunduğu veya yerlileştirmeye dair özgünlüğü belirtilmelidir. Yarışmada, yenilikçi, sürdürülebilir ve uygulanabilir çözümler önceliklidir.",
+              "5.2. Yerlilik: Projenin yerlilik oranı ve yerli kaynakların (teknolojinin, altyapının vb.) kullanımı hakkında bilgiler verilmelidir."
+            ],
+            "bolumAdi": "5. ÖZGÜNLÜK, YENİLİKÇİLİK VE YERLİLİK TARAFI"
+          },
+          {
+            "kod": "6-proje-is-zaman-planlamasi",
+            "ad": "6. PROJE İŞ ZAMAN PLANLAMASI",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışma kapsamındaki tasarımın proje başlangıcından Final Değerlendirme Raporu’nun (FDR) sisteme yüklenmesine kadar olan süreçlere ait İş paketleri ve bunların alt faaliyetleri içerikleriyle (yapılacak analizler, kullanılacak bilgisayar kodları, geliştirilen prototip ürün/yazılım üretim aşamaları gibi) birlikte açıkça ifade edilmeli ve haftalık/aylık zaman planlaması ile birlikte Tablo halinde verilmelidir."
+            ],
+            "bolumAdi": "6. PROJE İŞ ZAMAN PLANLAMASI"
+          },
+          {
+            "kod": "7-projenin-yaygin-etkisi-ve-hedef-kitles",
+            "ad": "7. PROJENİN YAYGIN ETKİSİ ve HEDEF KİTLESİ",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "7.1. Yaygın Etki: Proje tasarım Projedeki tasarımın hayata geçirilmesiyle birlikte ulusal ekonomiye, toplumsal refaha ve bilimsel bilgi birikimine sağlanabilecek katkılar ele alınmalı ve beklenen sonuçlardan kimlerin, hangi şekilde fayda sağlayabileceği açıklanmalıdır.",
+              "7.2. Hedef Kitlesi: Proje tasarımının hedef kitlesi açık bir dille ifade edilmiş ve geliştirilen proje tasarımı ile uyumlu olmalıdır."
+            ],
+            "bolumAdi": "7. PROJENİN YAYGIN ETKİSİ ve HEDEF KİTLESİ"
+          },
+          {
+            "kod": "8-tasarim-hazirlik-asamasi",
+            "ad": "8. TASARIM HAZIRLIK AŞAMASI",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "“Nükleer Enerji Teknolojileri Tasarım Yarışma Şartnamesi 2026” belgesinin ilgili bölümlerinde 2 adet uygulama kategorisine ait konu başlıkları ve gereksinimleri belirtilmiştir. Bu kapsamda gerçekleştirilecek alt kategori proje çalışmalarının, sektörün ihtiyaçlarına yönelik olarak; mevcut bir soruna çözüm üretilmesi, yenilikçi bir yaklaşım oluşturulması veya yerlileştirme özgünlüğü ile bu kısımda açıklanmalıdır.",
+              "Bu açıklamalarla bağlantılı olarak uygulama kategorisi tasarım/geliştirme veya yenilikçi çözüm üretme çalışmaları kapsamındaki teknik hazırlık aşamasına ilişkin aşağıda detayları verilen bilgiler ve belgeler bu bölümde alt başlıklar halinde açıkça sunulmalıdır:",
+              "Uygulama kategorisinde tasarlanıp geliştirilen prototip ürüne/yazılıma referans olarak alınan uygulama projesine ait gerekli tüm teknik tanımlamalar açıkça yapılmadır.",
+              "Geliştirilen prototip ürünün/yazılımın, referans ürün/yazılım ile kıyaslaması yapılarak farklılıkları, üstünlükleri ve avantajları açıkça belirtilmelidir.",
+              "Referans alınan değerler tablo, şekil ve çizimler halinde açıkça belirtilerek verilmelidir. Örnek olarak Tablo.1 incelenebilir (Tabloda yazılan parametreler örnektir, yarışmacılar kendi tasarımlarına göre uygun parametreleri vermelidir).",
+              "SMR için 100 MWth / 30 MWe gibi",
+              "Elektrik Üretim Dışı Uygulamalar",
+              "SMR için hidrojen üretimi, deniz suyu arıtma, bölgesel ısıtma, endüstriler için proses ısısı tesisleri vb. gibi",
+              "Seramik, metalik, katı, sıvı gibi",
+              "Kontrol çubukları, yanabilir soğurucu, yanabilir zehir gibi",
+              "Nötronik-Isıl-hidrolik, Yakıt performansı ve güvenliği, Atmosferik dağılım gibi",
+              "Referans reaktörde bakım-onarım, servis, acil durum gibi",
+              "Kıyaslama gerektiren diğer parametreler eklenmelidir.",
+              "Nükleer güvenliğin tasarım, çözüm geliştirme veya robotik sistem üretimi projesine entegre edildiğinin standart bir yaklaşım ile gösterilmesi için uygulama kategorisi çalışmaları esnasında dikkate alınan nükleer güvenliğe ilişkin ilgili olabilecek gereksinimleri içeren ulusal ve/veya uluslararası düzenleyici belgeler listesi sunulmalıdır. (IAEA Safety Standarts gibi)",
+              "Uygulama kategorisinde tasarımlarda kullanılan ulusal ve/veya uluslararası kodlar ve standartlar (TSE, ISO, CE, ASME gibi) hakkında bilgiler verilmelidir.",
+              "Uygulama Kategorisinde, tasarım, analiz, hesaplama, prototip ürün geliştirme gibi süreçlerde kullanılan bilgisayar kodları ve yazılımları hakkında bilgiler verilmelidir.",
+              "Tasarım, analizi hesaplamalar ve ürün geliştirme süreçlerinde kullanılan her kod için bir adet örnek girdi (input) dosyası bu raporun Ekler bölümünde tarif edildiği şekliyle rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde DİJİTAL EK olarak sisteme yüklenmelidir. Ayrıca bu DİJİTAL EK ile örnek girdi (input) dosyasının hangi durum için ne tür yaklaşımlarla oluşturulduğu ve çıktı (output) dosyasından hangi sonucun elde edildiğine dair açıklamalar yer almalıdır. Aynı DİJİTAL EK ile kodların doğruluğuna ve özellikle doğru kullanıldığına dair tekrarlanabilirlik, karşılaştırma (benchmarking) ve tekrar üretilebilirliğe dair çalışma sonuçları da verilmelidir. Bu doğrulama sürecinde Uluslararası Atom Enerjisi Ajansı (IAEA) ve OECD/NEA gibi güvenilir kaynaklardan elde edilen verilerin kullanıldığı gösterilmelidir."
+            ],
+            "bolumAdi": "8. TASARIM HAZIRLIK AŞAMASI"
+          },
+          {
+            "kod": "9-uygulama-kategorisi-tasarim-asamasi",
+            "ad": "9. UYGULAMA KATEGORİSİ TASARIM AŞAMASI",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışma uygulama kategorisi tasarım, çözüm geliştirme veya prototip ürün üretim sürecine yönelik gerçekleştirilen tüm çalışmalar bu bölümde sunulmalıdır:"
+            ],
+            "bolumAdi": "9. UYGULAMA KATEGORİSİ TASARIM AŞAMASI"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Rapor, kaynakça kısmını içermelidir. Kaynaklar başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web sitesi adresi, Kitap Adı, Sayfa Numarası vb.)"
+            ],
+            "bolumAdi": "KAYNAKÇA"
+          },
+          {
+            "kod": "ekler",
+            "ad": "EKLER",
+            "puan": 4,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Prototip ürüne/yazılıma yönelik ek belgeler, bilgiler, teknik raporlar, çizimler, görseller, videolar vb. raporun bütünlüğünü bozmayacak şekilde ayrı başlıklar halinde bu kısma konulabilir. Ekler kısmı sayfa sınırlamasına dâhil değildir.",
+              "DİJİTAL EKLER: Dijital veriler (örnek input/output dosyaları, yazılım geliştirmeye yönelik kaynak kodlar, 3 boyutlu teknik çizimler, tanımlı görev senaryoları, prototip ürün görsel/videoları gibi) bu rapordan ayrı olarak sıkıştırılmış zip/rar dosyası şeklinde sisteme yüklenmelidir.",
+              "Dijital Eklerin içerik listesi bu raporun (FDR) ekler kısımda verilmelidir."
+            ],
+            "bolumAdi": "EKLER"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Şablonda puan ağırlığı yok; 22 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_Nukleer_Enerji_Teknolojilleri_Tasarım_Yarısması_Sartnamesi_TR_4kjmi.pdf",
+        "yuklendi": "2026-08-23T20:14:06.889Z",
+        "sayfaSayisi": 44,
+        "kelimeSayisi": 11763,
+        "kurallar": {
+          "tarihler": [],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Bu kural ihlal edilirse ilgili yarışmacı ve takımı diskalifiye edilebilir."
+          ],
+          "katilimciSeviyeleri": [
+            "profesyonel"
+          ],
+          "azamiUye": 25
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden tarih çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_Nukleer_Enerji_Teknolojilleri_Tasar%C4%B1m_Yar%C4%B1smas%C4%B1_Sartnamesi_TR_4kjmi.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "nukleer-enerji-teknolojileri-tasarim-yarismasi"
+}

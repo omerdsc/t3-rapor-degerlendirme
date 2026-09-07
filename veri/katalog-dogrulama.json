@@ -1,0 +1,123 @@
+[
+  {
+    "yarisma": "Finansal Teknolojiler Yarışması",
+    "kategori": "Finansal Teknolojiler Yarışması",
+    "dosya": "Finansal_Teknolojiler_Türkçe_ÖDR_Şablon_6Wfrb.docx",
+    "uzanti": "docx",
+    "durum": "tamam",
+    "toplamPuan": 100,
+    "kriterSayisi": 4,
+    "bolumSayisi": 4
+  },
+  {
+    "yarisma": "Liseler Arası İnsansız Hava Araçları Yarışması",
+    "kategori": "Sabit-Döner Kanat",
+    "dosya": "2026_Liseler_Arası_İHA_Sabit-Döner_PSR_Şablonu_3WC6z.docx",
+    "uzanti": "docx",
+    "durum": "tamam",
+    "toplamPuan": 90,
+    "kriterSayisi": 9,
+    "bolumSayisi": 11
+  },
+  {
+    "yarisma": "Liseler Arası İnsansız Hava Araçları Yarışması",
+    "kategori": "Serbest Görev",
+    "dosya": "2026_Liseler_Arası_İHA_Serbest_Görev_PSR_Şablonu_lZW0f.docx",
+    "uzanti": "docx",
+    "durum": "tamam",
+    "toplamPuan": 90,
+    "kriterSayisi": 8,
+    "bolumSayisi": 11
+  },
+  {
+    "yarisma": "Robotaksi-Binek Otonom Araç Yarışması",
+    "kategori": "Hazır Araç · KTR",
+    "dosya": "Robotaksi_Hazir_KTR_2026_bdpoi.docx",
+    "uzanti": "docx",
+    "durum": "tamam",
+    "toplamPuan": 100,
+    "kriterSayisi": 10,
+    "bolumSayisi": 11
+  },
+  {
+    "yarisma": "Robotaksi-Binek Otonom Araç Yarışması",
+    "kategori": "Hazır Araç · Teknik Yeterlilik Formu TYF",
+    "dosya": "Robotaksi-TYF-Hazir_Arac_QQApL.docx",
+    "uzanti": "docx",
+    "durum": "tamam",
+    "toplamPuan": 100,
+    "kriterSayisi": 3,
+    "bolumSayisi": 3
+  },
+  {
+    "yarisma": "Robotaksi-Binek Otonom Araç Yarışması",
+    "kategori": "Özgün Araç · KTR",
+    "dosya": "Robotaksi_Ozgun_KTR_2026_A0aSo.docx",
+    "uzanti": "docx",
+    "durum": "tamam",
+    "toplamPuan": 100,
+    "kriterSayisi": 11,
+    "bolumSayisi": 11
+  },
+  {
+    "yarisma": "Robotaksi-Binek Otonom Araç Yarışması",
+    "kategori": "Özgün Araç · Teknik Yeterlilik Formu TYF",
+    "dosya": "Robotaksi-TYF-Ozgun_Arac_woPlC.docx",
+    "uzanti": "docx",
+    "durum": "tamam",
+    "toplamPuan": 100,
+    "kriterSayisi": 8,
+    "bolumSayisi": 8
+  },
+  {
+    "yarisma": "Robotaksi-Binek Otonom Araç Yarışması",
+    "kategori": "Robotaksi-Binek Otonom Araç Yarışması",
+    "dosya": "Robotaksi_Simülasyon_Şablon_rjtpc_bi9so.docx",
+    "uzanti": "docx",
+    "durum": "zayif",
+    "toplamPuan": 0,
+    "kriterSayisi": 0,
+    "bolumSayisi": 1,
+    "neden": "yalnızca 0 kriter çıktı"
+  },
+  {
+    "yarisma": "Sanayide Robotik Uygulamalar Yarışması",
+    "kategori": "Proje Detay",
+    "dosya": "2026_Sanayide_Robotik_Uygulamalar_Yarışması_Proje_Detay_Raporu_Şablonu_0L.docx",
+    "uzanti": "docx",
+    "durum": "tamam",
+    "toplamPuan": 115,
+    "kriterSayisi": 17,
+    "bolumSayisi": 21
+  },
+  {
+    "yarisma": "Sanayide Robotik Uygulamalar Yarışması",
+    "kategori": "Teknik Yeterlilik Formu",
+    "dosya": "2026_SDT_Teknik_Yeterlilik_Formu_RJCw5.docx",
+    "uzanti": "docx",
+    "durum": "tamam",
+    "toplamPuan": 100,
+    "kriterSayisi": 4,
+    "bolumSayisi": 4
+  },
+  {
+    "yarisma": "TEKNOFEST Robolig Yarışması",
+    "kategori": "ÖDR",
+    "dosya": "TEKNOFEST_2026_robolig_ODR_rapor_şablon_21.02.26v1.0_TR_qYHzY.docx",
+    "uzanti": "docx",
+    "durum": "tamam",
+    "toplamPuan": 100,
+    "kriterSayisi": 11,
+    "bolumSayisi": 11
+  },
+  {
+    "yarisma": "TEKNOFEST Robolig Yarışması",
+    "kategori": "PDR",
+    "dosya": "TEKNOFEST_2026_robolig_proje_rapor_şablon_K3wkU.docx",
+    "uzanti": "docx",
+    "durum": "tamam",
+    "toplamPuan": 100,
+    "kriterSayisi": 3,
+    "bolumSayisi": 3
+  }
+]

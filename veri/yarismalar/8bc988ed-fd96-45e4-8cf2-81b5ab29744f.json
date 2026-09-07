@@ -1,0 +1,600 @@
+{
+  "id": "8bc988ed-fd96-45e4-8cf2-81b5ab29744f",
+  "ad": "TEKNOFEST 2026",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T12:32:48.170Z",
+  "kategoriler": [
+    {
+      "id": "11bcba96-a45b-41f7-ae71-3274ca251352",
+      "ad": "Havacılıkta Yapay Zeka",
+      "sablonDosyasi": "2026_HYZ_OTR_Sablon_TR_RKgye (4).docx",
+      "olusturuldu": "2026-08-23T12:32:48.170Z",
+      "duzenlendi": true,
+      "sablon": {
+        "kod": "kategori-11bcba96",
+        "ad": "Havacılıkta Yapay Zeka",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "asgariSayfa": 6,
+        "azamiSayfa": 15,
+        "basliklar": [
+          {
+            "ad": "TAKIM ŞEMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu kısımda takım üyelerinin görev dağılımı ve ekip organizasyonu hakkında bilgi verilir. Takım şemasında takım üyelerinin kişisel bilgilerine (İsim, Soyisim vb.) yer verilmemelidir. Takım şeması Üye 1, Üye 2, Kaptan vs. şeklinde oluşturulabilir. Üyelerin takımdaki görevleri belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Bu kısımda projenin değerlendirmesi yapılır. Şu ana kadar yapılan çalışmalar özet halinde ifade edilir."
+            ]
+          },
+          {
+            "ad": "ALGORİTMALAR VE SİSTEM MİMARİSİ",
+            "zorunlu": true,
+            "puan": 30,
+            "yonergeMetni": [],
+            "grupMu": true
+          },
+          {
+            "ad": "Veri Setleri",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Kullanılacak veri setleri açıklanacaktır. Kullanılan veri setlerinin hangi sebeplerden dolayı seçildiği anlatılır. Kullanılacak veri setlerinin eğitilen model üzerindeki farklılıkları açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "Algoritmalar",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": [
+              "Problemin çözümünde kullanılacak algoritmalar açıklanır. Kullanılan algoritmaların hangi sebeplerden dolayı seçildiği anlatılır. Algoritmalar üzerindeki farklılıklardan bahsedilmelidir."
+            ]
+          },
+          {
+            "ad": "Akış Şeması",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu kısımda yarışma görevini gerçekleştirmek için geliştirilen tüm sistemin akış şeması ile ifade edilmesi gerekmektedir."
+            ]
+          },
+          {
+            "ad": "ÖZGÜNLÜK",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Ekibin, veri setleri, algoritma ve yazılım mimarisi açısından geliştirdiği yöntemlerin özgünlüğü ve literatüre katkısı açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "PROJE TAKVİMİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Projedeki kilometre taşlarının açıklanması ve tarihlerinin belirtilmesi gerekmektedir."
+            ]
+          },
+          {
+            "ad": "SONUÇLAR VE İNCELEME",
+            "zorunlu": true,
+            "puan": 30,
+            "yonergeMetni": [
+              "Bu kısımda geliştirilen sistemin yarışmacılar tarafından elde edilmiş sonuçları paylaşılır ve bu sonuçlar üzerine sistemin performansı üzerine inceleme sunulur. Uygulanan test senaryoları ve sonuçları hakkında bilgi verilir. Yapılan testlerin sonuçları ile uygulanan yöntemlerin ne kadar uyumlu olduğu karşılaştırılır. Tüm aşamalarında yaşanan sorunlar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir."
+            ]
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu bölümde raporda kullanılan kaynaklara yer verilir."
+            ]
+          },
+          {
+            "ad": "GENEL RAPOR DÜZENİ",
+            "zorunlu": false,
+            "puan": 5,
+            "yonergeMetni": [
+              "Raporun genel düzeni, takım şeması, tablolar ve yazım kuralları bu başlık altında incelenecektir."
+            ],
+            "raporda": false
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Tüm raporlar Ön Tasarım Raporu Standartlarına uygun olarak yazılmalıdır.",
+          "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+          "Tüm raporlar “İçindekiler” ve “Kaynakça” içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst-alt-sağ-sol 2.5 olmalıdır.",
+          "Her rapor bir kapak sayfası içermelidir.",
+          "Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+          "“Kapak”, “İçindekiler”, “Şekil Listesi”, “Tablo Listesi” ve “Kısaltmalar” kısmı hariç Rapor 10 sayfayı geçmemelidir.",
+          "Toplam sayfa sayısı en az 6 sayfa en fazla 15 sayfa olmalıdır.",
+          "Rapor şablonunda verilen başlıkların aynı sayfada olması sorun teşkil etmemektedir. Raporda verilen sıralamayı değiştirmeyiniz."
+        ],
+        "eleyiciMi": false,
+        "asgariSayfa": 6,
+        "azamiSayfa": 15,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "proje-mevcut-durum-degerlendirmesi",
+            "ad": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda projenin değerlendirmesi yapılır. Şu ana kadar yapılan çalışmalar özet halinde ifade edilir."
+            ],
+            "bolumAdi": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ"
+          },
+          {
+            "kod": "veri-setleri",
+            "ad": "Veri Setleri",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Kullanılacak veri setleri açıklanacaktır. Kullanılan veri setlerinin hangi sebeplerden dolayı seçildiği anlatılır. Kullanılacak veri setlerinin eğitilen model üzerindeki farklılıkları açıklanmalıdır."
+            ],
+            "bolumAdi": "Veri Setleri"
+          },
+          {
+            "kod": "algoritmalar",
+            "ad": "Algoritmalar",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Problemin çözümünde kullanılacak algoritmalar açıklanır. Kullanılan algoritmaların hangi sebeplerden dolayı seçildiği anlatılır. Algoritmalar üzerindeki farklılıklardan bahsedilmelidir."
+            ],
+            "bolumAdi": "Algoritmalar"
+          },
+          {
+            "kod": "akis-semasi",
+            "ad": "Akış Şeması",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda yarışma görevini gerçekleştirmek için geliştirilen tüm sistemin akış şeması ile ifade edilmesi gerekmektedir."
+            ],
+            "bolumAdi": "Akış Şeması"
+          },
+          {
+            "kod": "ozgunluk",
+            "ad": "ÖZGÜNLÜK",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Ekibin, veri setleri, algoritma ve yazılım mimarisi açısından geliştirdiği yöntemlerin özgünlüğü ve literatüre katkısı açıklanmalıdır."
+            ],
+            "bolumAdi": "ÖZGÜNLÜK"
+          },
+          {
+            "kod": "proje-takvimi",
+            "ad": "PROJE TAKVİMİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Projedeki kilometre taşlarının açıklanması ve tarihlerinin belirtilmesi gerekmektedir."
+            ],
+            "bolumAdi": "PROJE TAKVİMİ"
+          },
+          {
+            "kod": "sonuclar-ve-inceleme",
+            "ad": "SONUÇLAR VE İNCELEME",
+            "puan": 30,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda geliştirilen sistemin yarışmacılar tarafından elde edilmiş sonuçları paylaşılır ve bu sonuçlar üzerine sistemin performansı üzerine inceleme sunulur. Uygulanan test senaryoları ve sonuçları hakkında bilgi verilir. Yapılan testlerin sonuçları ile uygulanan yöntemlerin ne kadar uyumlu olduğu karşılaştırılır. Tüm aşamalarında yaşanan sorunlar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir."
+            ],
+            "bolumAdi": "SONUÇLAR VE İNCELEME"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde raporda kullanılan kaynaklara yer verilir."
+            ],
+            "bolumAdi": "KAYNAKÇA"
+          },
+          {
+            "kod": "genel-rapor-duzeni",
+            "ad": "GENEL RAPOR DÜZENİ",
+            "puan": 5,
+            "bolumBekleniyor": false,
+            "olcut": [
+              "Raporun genel düzeni, takım şeması, tablolar ve yazım kuralları bu başlık altında incelenecektir."
+            ],
+            "bolumAdi": "GENEL RAPOR DÜZENİ"
+          },
+          {
+            "kod": "etik-beyan",
+            "ad": "Etik Beyan",
+            "puan": 5,
+            "bolumBekleniyor": false,
+            "olcut": [
+              "Etik kurul onayi belirtilmis mi?",
+              "Kisisel veri kullanimi aciklanmis mi?"
+            ],
+            "bolumAdi": "Etik Beyan"
+          }
+        ],
+        "toplamPuan": 105
+      },
+      "ornekKaynaklar": [
+        "D. Kasparov, «Why Chess?,» Journal of Chess, pp. 215-269, 2012.",
+        "V. Anderson, Aerodynamics, Ottawa: Helenova Publishing, 1999."
+      ],
+      "uyarilar": [
+        "\"ALGORİTMALAR VE SİSTEM MİMARİSİ\" üst başlık olarak işaretlendi: 30 puanı alt başlıklarına dağıtılmış (3 alt başlık)."
+      ]
+    },
+    {
+      "id": "fdf588d9-1193-4463-94ba-c0df1a9cc58e",
+      "ad": "Maden Teknolojileri",
+      "sablonDosyasi": "Maden_Teknolojileri_Yarısması_2026_ODR_Sablonu_2_RflR2_m6Pf5.docx",
+      "olusturuldu": "2026-08-23T12:32:48.237Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-fdf588d9",
+        "ad": "Maden Teknolojileri",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 10,
+        "basliklar": [
+          {
+            "ad": "PROJE ÖZETİ",
+            "zorunlu": true,
+            "puan": 18,
+            "yonergeMetni": [
+              "Proje özeti 150-250 kelime arasında olmalıdır hazırlanmalıdır. Bu özet; projenin amacı, ele aldığı problem, hedeflediği etki ve benimsediği temel yaklaşım dikkate alınarak özlü ve tutarlı ve bir anlatımla sunulmalıdır. Kullanılan dil; açık, anlaşılır ve teknik olmalıdır. Okuyucunun projenin hangi teknolojik alanı (örneğin; otonom araçlar, cevher zenginleştirme, iş sağlığı ve güvenliği, arama teknikleri vb.) kapsadığını hemen anlamasını sağlanmalıdır.",
+              "Bu bölümde, sınırlı kalmamakla birlikte aşağıdaki bilgilere yer verilmelidir:"
+            ],
+            "asgariKelime": 150,
+            "azamiKelime": 250
+          },
+          {
+            "ad": "SORUNUN TANIMI VE ÇÖZÜM ÖNERİSİ",
+            "zorunlu": true,
+            "puan": 35,
+            "yonergeMetni": [
+              "Bu bölümde, projenin; hangi soruna çözüm sağlayacağı/hangi süreçleri geliştireceği detaylandırılmalı ve çözümün süreçleri nasıl etkileyeceği detaylı ve teknik bir biçimde ortaya konulmalıdır."
+            ]
+          },
+          {
+            "ad": "YENİLİKÇİLİK VEYA YERLİLEŞTİRME HAMLESİ",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "UYGULANABİLİRLİK VE SÜRDÜRÜLEBİLİRLİK",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": [
+              "Projenin teknik ve ekonomik olarak sahada uygulanabilirliği, madenlerin zorlu çalışma koşullarına uyumu ve çevresel/sosyal sürdürülebilirlik ilkelerine katkısı açıklanmalıdır. Projenin uzun vadede nasıl ayakta kalacağı ve kaynakları ne kadar verimli kullanacağı detaylandırılmalıdır.",
+              "Önerilen teknolojinin mevcut madencilik altyapısına kolayca entegre edilebilirliği teknik bir şekilde aktarılmalıdır.",
+              "Projenin, finansal (ekonomik olarak maliyetlere etkisi, uzun süre uygulanabilirliği, vb.), çevresel (karbon ayak izine, enerji verimliliğine, vb. etkisi) ve sosyal (iş sağlığı ve güvenliğini, yerel istihdamı artırma, vb.) sürdürülebilirlik ilkelerine uygun düşen yönleri detaylıca anlatılmalıdır.",
+              "Projenin değişen koşullara uyum sağlama kapasitesi açıklanmalıdır.",
+              "Projenin mevcut şartlarda ticari bir ürüne dönüştürülebilirliği değerlendirilmelidir."
+            ]
+          },
+          {
+            "ad": "PROJENİN HAZIRLANIŞ SÜRECİ VE ÇALIŞMA YÖNTEMİ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [
+              "Proje fikrinin ortaya çıkışından projenin gerçekleşmesine kadar geçen ve geçecek olan süreç planlı, kronolojik ve metodolojik bir sırayla anlatılmalıdır. Süreç içinde (kullanılacaksa) hangi bilimsel yöntemlerin, mühendislik prensiplerinin veya tasarım süreçlerinin kullanılacağı belirtilmelidir. Projenin hangi teknik aşamalardan (literatür taraması, tasarım, simülasyon, prototipleme, test, vb.) geçeceği iş paketleri halinde açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "PROJE TAKIMI",
+            "zorunlu": true,
+            "puan": 2,
+            "yonergeMetni": [
+              "Sınıf/Sektörde Geçirdiği Yıl Sayısı",
+              "Not: Proje takımı en fazla 6 öğrenciden oluşmalıdır. (Danışman bu sayıya dâhil değildir.)"
+            ]
+          },
+          {
+            "ad": "KAYNAKLAR",
+            "zorunlu": true,
+            "puan": 3,
+            "yonergeMetni": [
+              "Bu bölümde, proje hazırlanırken yararlanılan bilgi kaynakları şeffaf ve düzenli biçimde sunulmalıdır. Kaynak listesi, projenin bilgiye dayalı olarak geliştirildiğini ve etik kullanım bilincinin gözetildiğini gösterecek nitelikte olmalıdır."
+            ]
+          },
+          {
+            "ad": "PROJE RAPOR DÜZENİ VE ŞABLONA UYUM",
+            "zorunlu": false,
+            "puan": 2,
+            "yonergeMetni": [
+              "Bu bölüm, raporun okunabilirliğini, anlaşılabilirliğini ve değerlendirmeye uygunluğunu esas alır. Amaç, standartlara uygun ve değerlendirilebilir bir sunum sağlanıp sağlanmadığını tespit etmektir."
+            ],
+            "raporda": false
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKLAR",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Ön Değerlendirme Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en fazla 10 sayfa olacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak, İçindekiler ve Kaynakça” başlıkları için 3 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst-alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynısı ve tekrarı niteliğinde olmamalıdır.",
+          "Bu aşamada proje tanıtım videosu bulunmamaktadır.",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir. Kullanılan kaynaklar metin içerisinde gösterilmelidir. Metin içi gösterimde köşeli parantez kullanımı tavsiye edilmektedir. (Örn: [1], [4,7,21], [5-11])",
+          "Dijital/Web Kaynak Gösterimi: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Akademik Kaynak Gösterimi: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası, DOI.",
+          "Rapor şablonuna uymayan Ön Değerlendirme Raporları değerlendirilmeyecektir."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 10,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14,
+        "atifBicimi": "koseli-parantez"
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "proje-ozeti",
+            "ad": "PROJE ÖZETİ",
+            "puan": 18,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Proje özeti 150-250 kelime arasında olmalıdır hazırlanmalıdır. Bu özet; projenin amacı, ele aldığı problem, hedeflediği etki ve benimsediği temel yaklaşım dikkate alınarak özlü ve tutarlı ve bir anlatımla sunulmalıdır. Kullanılan dil; açık, anlaşılır ve teknik olmalıdır. Okuyucunun projenin hangi teknolojik alanı (örneğin; otonom araçlar, cevher zenginleştirme, iş sağlığı ve güvenliği, arama teknikleri vb.) kapsadığını hemen anlamasını sağlanmalıdır.",
+              "Bu bölümde, sınırlı kalmamakla birlikte aşağıdaki bilgilere yer verilmelidir:"
+            ],
+            "bolumAdi": "PROJE ÖZETİ"
+          },
+          {
+            "kod": "sorunun-tanimi-ve-cozum-onerisi",
+            "ad": "SORUNUN TANIMI VE ÇÖZÜM ÖNERİSİ",
+            "puan": 35,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, projenin; hangi soruna çözüm sağlayacağı/hangi süreçleri geliştireceği detaylandırılmalı ve çözümün süreçleri nasıl etkileyeceği detaylı ve teknik bir biçimde ortaya konulmalıdır."
+            ],
+            "bolumAdi": "SORUNUN TANIMI VE ÇÖZÜM ÖNERİSİ"
+          },
+          {
+            "kod": "yenilikcilik-veya-yerlilestirme-hamlesi",
+            "ad": "YENİLİKÇİLİK VEYA YERLİLEŞTİRME HAMLESİ",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "YENİLİKÇİLİK VEYA YERLİLEŞTİRME HAMLESİ"
+          },
+          {
+            "kod": "uygulanabilirlik-ve-surdurulebilirlik",
+            "ad": "UYGULANABİLİRLİK VE SÜRDÜRÜLEBİLİRLİK",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Projenin teknik ve ekonomik olarak sahada uygulanabilirliği, madenlerin zorlu çalışma koşullarına uyumu ve çevresel/sosyal sürdürülebilirlik ilkelerine katkısı açıklanmalıdır. Projenin uzun vadede nasıl ayakta kalacağı ve kaynakları ne kadar verimli kullanacağı detaylandırılmalıdır.",
+              "Önerilen teknolojinin mevcut madencilik altyapısına kolayca entegre edilebilirliği teknik bir şekilde aktarılmalıdır.",
+              "Projenin, finansal (ekonomik olarak maliyetlere etkisi, uzun süre uygulanabilirliği, vb.), çevresel (karbon ayak izine, enerji verimliliğine, vb. etkisi) ve sosyal (iş sağlığı ve güvenliğini, yerel istihdamı artırma, vb.) sürdürülebilirlik ilkelerine uygun düşen yönleri detaylıca anlatılmalıdır.",
+              "Projenin değişen koşullara uyum sağlama kapasitesi açıklanmalıdır.",
+              "Projenin mevcut şartlarda ticari bir ürüne dönüştürülebilirliği değerlendirilmelidir."
+            ],
+            "bolumAdi": "UYGULANABİLİRLİK VE SÜRDÜRÜLEBİLİRLİK"
+          },
+          {
+            "kod": "projenin-hazirlanis-sureci-ve-calisma-yo",
+            "ad": "PROJENİN HAZIRLANIŞ SÜRECİ VE ÇALIŞMA YÖNTEMİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Proje fikrinin ortaya çıkışından projenin gerçekleşmesine kadar geçen ve geçecek olan süreç planlı, kronolojik ve metodolojik bir sırayla anlatılmalıdır. Süreç içinde (kullanılacaksa) hangi bilimsel yöntemlerin, mühendislik prensiplerinin veya tasarım süreçlerinin kullanılacağı belirtilmelidir. Projenin hangi teknik aşamalardan (literatür taraması, tasarım, simülasyon, prototipleme, test, vb.) geçeceği iş paketleri halinde açıklanmalıdır."
+            ],
+            "bolumAdi": "PROJENİN HAZIRLANIŞ SÜRECİ VE ÇALIŞMA YÖNTEMİ"
+          },
+          {
+            "kod": "proje-takimi",
+            "ad": "PROJE TAKIMI",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Sınıf/Sektörde Geçirdiği Yıl Sayısı",
+              "Not: Proje takımı en fazla 6 öğrenciden oluşmalıdır. (Danışman bu sayıya dâhil değildir.)"
+            ],
+            "bolumAdi": "PROJE TAKIMI"
+          },
+          {
+            "kod": "kaynaklar",
+            "ad": "KAYNAKLAR",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, proje hazırlanırken yararlanılan bilgi kaynakları şeffaf ve düzenli biçimde sunulmalıdır. Kaynak listesi, projenin bilgiye dayalı olarak geliştirildiğini ve etik kullanım bilincinin gözetildiğini gösterecek nitelikte olmalıdır."
+            ],
+            "bolumAdi": "KAYNAKLAR"
+          },
+          {
+            "kod": "proje-rapor-duzeni-ve-sablona-uyum",
+            "ad": "PROJE RAPOR DÜZENİ VE ŞABLONA UYUM",
+            "puan": 2,
+            "bolumBekleniyor": false,
+            "olcut": [
+              "Bu bölüm, raporun okunabilirliğini, anlaşılabilirliğini ve değerlendirmeye uygunluğunu esas alır. Amaç, standartlara uygun ve değerlendirilebilir bir sunum sağlanıp sağlanmadığını tespit etmektir."
+            ],
+            "bolumAdi": "PROJE RAPOR DÜZENİ VE ŞABLONA UYUM"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": []
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ]
+}

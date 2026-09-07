@@ -1,0 +1,365 @@
+{
+  "id": "7e051bc6-a9c6-4dcf-a9bc-fd6e46fa844c",
+  "ad": "Lise Öğrencileri İklim Değişikliği Araştırma Projeleri Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:54:42.429Z",
+  "kategoriler": [
+    {
+      "id": "6db920af-02d5-4cb0-9e8c-60a8b4b7161d",
+      "ad": "Lise Öğrencileri İklim Değişikliği Araştırma Projeleri Yarışması",
+      "sablonDosyasi": "proje_yazma_sablonu_2025-2026_web_tLwbQ.docx",
+      "olusturuldu": "2026-08-23T13:54:42.429Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-6db920af",
+        "ad": "Lise Öğrencileri İklim Değişikliği Araştırma Projeleri Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "Özet",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Özetin tamamı 150-250 kelime arasında olmalıdır. Proje özetinde, çalışmanın ayrıntılarından, yorumlardan ve kaynaklardan bahsedilmez. Özette projenin amacı, kullanılan yöntem, yapılan gözlem ve elde edilen temel bulgular ve sonuçlardan birkaç cümle ile bahsedilir. İdeal olan başlarken taslak bir özet oluşturup, çalışma bittiğinde proje raporunun içeriğine uygun bir şekilde özeti güncellemektir.",
+              "Anahtar Kelimeler: Proje özetinin altına, proje konusunu genel olarak yansıtan en fazla beş kelimeden oluşan anahtar kelimeler verilmelidir."
+            ],
+            "asgariKelime": 150,
+            "azamiKelime": 250
+          },
+          {
+            "ad": "Amaç",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde doğrudan projenin amacına, somut hedeflerine ve Ar-Ge içeriğine odaklanılmalıdır. Önerilen proje konusunun çözülmesi gereken ya da önceden çalışılmış aydınlatılması gereken bir problem olup olmadığı, hangi eksikliği nasıl gidereceği veya hangi sorunlara çözüm getireceği açıklanmalıdır. Hazırlanan projenin ilgili olduğu alanlarda uzman kişilere sunulacağı dikkate alınarak değerlendirmeye hiçbir katkı sağlamayacak genel konu ve tarihçe anlatımlarından kaçınılmalıdır."
+            ]
+          },
+          {
+            "ad": "Giriş",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Giriş, araştırma konusu hakkında yapılmış araştırmaların sonuçlarının ve bu alanda cevapsız olan soruların bilimsel makalelere dayandırılarak anlatıldığı (kaynak taraması) bölümdür."
+            ]
+          },
+          {
+            "ad": "Yöntem",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Araştırma yönteminin, veri toplama araçlarının, deney ve gözlem düzeneklerinin ve verilerin analiz yönteminin verildiği bölümdür."
+            ]
+          },
+          {
+            "ad": "Proje İş-Zaman Çizelgesi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Projenin iş-zaman çizelgesine sahip olması çok önemlidir. İlk haftadan itibaren araştırma projenizin süresi boyunca ulaşmanız gereken hedefleri ve zamanlarını belirten aşağıda verilene benzer bir iş-zaman çizelgenizin olması gerekir",
+              "Verilerin Toplanması ve Analizi"
+            ]
+          },
+          {
+            "ad": "Bulgular",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Çalışmada toplanan veriler ve verilere ait analiz sonuçları verilir."
+            ]
+          },
+          {
+            "ad": "Sonuç ve Tartışma",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde proje çalışması ile elde edilen bulgular araştırma sorusuna veya problemine uygun olarak yorumlanır."
+            ]
+          },
+          {
+            "ad": "Öneriler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde benzer çalışmalar yapacak olanlara yol göstermesi bakımından öneriler varsa belirtilir."
+            ]
+          },
+          {
+            "ad": "Kaynaklar",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, proje sürecinde yararlanılan ve proje raporu içerisinde atıf yapılan tüm kaynaklar listelenir. Kaynaklar APA yazım kuralları ve kaynak gösterme biçimine göre listelenir."
+            ]
+          },
+          {
+            "ad": "Ekler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Varsa konuyu dağıtacağı düşünülen veya çok uzun metinlerden oluşan, çeşitli araştırma bulgularına dayalı çok uzun tablolar, formüller, ayrıntılı deney verileri, bilgisayar programları, anketler vb. EKLER bölümünde verilebilir. Araştırmayı yapmak için alınan yasal izinler, yazışmalar, gerekirse e-posta örnekleri de burada verilmelidir. Eklerin her biri için uygun bir başlık seçilerek metin içerisinde geçiş sıralarına göre \"Ek 1., Ek 2...\" şeklinde, ayrı bir sayfadan başlayacak şekilde yer almalıdır.",
+              "Eklerin proje raporunun sayfa sınırı olan 20 sayfaya sığmaması durumunda başvuru sisteminde EK BELGELER kısmına yüklenmesi gerekmektedir. Bu durumda proje raporunda EK BELGELER kısmına dosya yüklendiği belirtilmeli ve eklenen belgeler liste halinde yazılmalıdır.",
+              "NOT: Kırmızı ile yazılı kısımlar bilgi amaçlıdır, proje raporunuzdan bu kısımları silmeniz ve projenize ait metinleri uygun başlık altına siyah renkte yazmanız gerekmektedir."
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "Kaynaklar",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "ozet",
+            "ad": "Özet",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Özetin tamamı 150-250 kelime arasında olmalıdır. Proje özetinde, çalışmanın ayrıntılarından, yorumlardan ve kaynaklardan bahsedilmez. Özette projenin amacı, kullanılan yöntem, yapılan gözlem ve elde edilen temel bulgular ve sonuçlardan birkaç cümle ile bahsedilir. İdeal olan başlarken taslak bir özet oluşturup, çalışma bittiğinde proje raporunun içeriğine uygun bir şekilde özeti güncellemektir.",
+              "Anahtar Kelimeler: Proje özetinin altına, proje konusunu genel olarak yansıtan en fazla beş kelimeden oluşan anahtar kelimeler verilmelidir."
+            ],
+            "bolumAdi": "Özet"
+          },
+          {
+            "kod": "amac",
+            "ad": "Amaç",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde doğrudan projenin amacına, somut hedeflerine ve Ar-Ge içeriğine odaklanılmalıdır. Önerilen proje konusunun çözülmesi gereken ya da önceden çalışılmış aydınlatılması gereken bir problem olup olmadığı, hangi eksikliği nasıl gidereceği veya hangi sorunlara çözüm getireceği açıklanmalıdır. Hazırlanan projenin ilgili olduğu alanlarda uzman kişilere sunulacağı dikkate alınarak değerlendirmeye hiçbir katkı sağlamayacak genel konu ve tarihçe anlatımlarından kaçınılmalıdır."
+            ],
+            "bolumAdi": "Amaç"
+          },
+          {
+            "kod": "giris",
+            "ad": "Giriş",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Giriş, araştırma konusu hakkında yapılmış araştırmaların sonuçlarının ve bu alanda cevapsız olan soruların bilimsel makalelere dayandırılarak anlatıldığı (kaynak taraması) bölümdür."
+            ],
+            "bolumAdi": "Giriş"
+          },
+          {
+            "kod": "yontem",
+            "ad": "Yöntem",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Araştırma yönteminin, veri toplama araçlarının, deney ve gözlem düzeneklerinin ve verilerin analiz yönteminin verildiği bölümdür."
+            ],
+            "bolumAdi": "Yöntem"
+          },
+          {
+            "kod": "proje-is-zaman-cizelgesi",
+            "ad": "Proje İş-Zaman Çizelgesi",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Projenin iş-zaman çizelgesine sahip olması çok önemlidir. İlk haftadan itibaren araştırma projenizin süresi boyunca ulaşmanız gereken hedefleri ve zamanlarını belirten aşağıda verilene benzer bir iş-zaman çizelgenizin olması gerekir",
+              "Verilerin Toplanması ve Analizi"
+            ],
+            "bolumAdi": "Proje İş-Zaman Çizelgesi"
+          },
+          {
+            "kod": "bulgular",
+            "ad": "Bulgular",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Çalışmada toplanan veriler ve verilere ait analiz sonuçları verilir."
+            ],
+            "bolumAdi": "Bulgular"
+          },
+          {
+            "kod": "sonuc-ve-tartisma",
+            "ad": "Sonuç ve Tartışma",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde proje çalışması ile elde edilen bulgular araştırma sorusuna veya problemine uygun olarak yorumlanır."
+            ],
+            "bolumAdi": "Sonuç ve Tartışma"
+          },
+          {
+            "kod": "oneriler",
+            "ad": "Öneriler",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde benzer çalışmalar yapacak olanlara yol göstermesi bakımından öneriler varsa belirtilir."
+            ],
+            "bolumAdi": "Öneriler"
+          },
+          {
+            "kod": "kaynaklar",
+            "ad": "Kaynaklar",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, proje sürecinde yararlanılan ve proje raporu içerisinde atıf yapılan tüm kaynaklar listelenir. Kaynaklar APA yazım kuralları ve kaynak gösterme biçimine göre listelenir."
+            ],
+            "bolumAdi": "Kaynaklar"
+          },
+          {
+            "kod": "ekler",
+            "ad": "Ekler",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Varsa konuyu dağıtacağı düşünülen veya çok uzun metinlerden oluşan, çeşitli araştırma bulgularına dayalı çok uzun tablolar, formüller, ayrıntılı deney verileri, bilgisayar programları, anketler vb. EKLER bölümünde verilebilir. Araştırmayı yapmak için alınan yasal izinler, yazışmalar, gerekirse e-posta örnekleri de burada verilmelidir. Eklerin her biri için uygun bir başlık seçilerek metin içerisinde geçiş sıralarına göre \"Ek 1., Ek 2...\" şeklinde, ayrı bir sayfadan başlayacak şekilde yer almalıdır.",
+              "Eklerin proje raporunun sayfa sınırı olan 20 sayfaya sığmaması durumunda başvuru sisteminde EK BELGELER kısmına yüklenmesi gerekmektedir. Bu durumda proje raporunda EK BELGELER kısmına dosya yüklendiği belirtilmeli ve eklenen belgeler liste halinde yazılmalıdır.",
+              "NOT: Kırmızı ile yazılı kısımlar bilgi amaçlıdır, proje raporunuzdan bu kısımları silmeniz ve projenize ait metinleri uygun başlık altına siyah renkte yazmanız gerekmektedir."
+            ],
+            "bolumAdi": "Ekler"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablonda Word başlık stili yok; başlıklar kalın biçimlendirmeden tahmin edildi. Bölüm listesini onaylamadan önce gözden geçirin.",
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 10 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ]
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "lise-ogrencileri-iklim-degisikligi-arastirma-projeleri-yarismasi"
+}

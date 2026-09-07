@@ -1,0 +1,853 @@
+{
+  "id": "78bc2055-3261-4ebe-8855-b10d1bc6b910",
+  "ad": "Su Altı Roket Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:58:24.656Z",
+  "kategoriler": [
+    {
+      "id": "31cbf256-6856-44fb-9493-ac4502b7fd54",
+      "ad": "Su Altı Roket Yarışması",
+      "sablonDosyasi": "2026_Sualtı_Roket_KTR_Sablon_73TXZ.docx",
+      "asama": "KTR",
+      "olusturuldu": "2026-08-23T13:58:24.656Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-31cbf256",
+        "ad": "Su Altı Roket Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "TEKNOFEST Su Altı Roket Yarışması Kritik Tasarım Raporu",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Yarışma Kategorisi ve Takım Kimliği",
+              "Özet bölümü makalenizin başında yer almalıdır. Bir paragraf uzunluğunda olmalı ve toplam 1.500 karakteri geçmemelidir, aksi halde bu bölüm değerlendirmeye alınmayacaktır. Referans numarası yer almamalıdır. Makalede ele alınan konular ve raporun amaç(lar)ı genel olarak belirtilmelidir. Makalede sistem mimarisi, analiz ve yeni gözlemlenen bulgulara ilişkin özet sonuçlar belirtilmelidir; Okuyucuların sistemle ilgili temel ve vazgeçilmez özellikleri anlaması için makaleyi tamamıyla okumak yerine gerektiğinde özetle ulaşmalıdır. Özet, kalın karakterlerle yazılmalıdır."
+            ]
+          },
+          {
+            "ad": "Terimler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Tüm sembolleri birimleriyle tanımlayan bir terimler listesi oluşturulmalıdır Bu bölümde, makalede kullanılan tüm semboller veya kısaltmalar yer almalıdır. Eğer bir terim Havacılık ve Uzay Mühendisliği alanında yaygın olarak tanınmıyorsa, o terim “Terimler” bölümünde değil metinde geçtiği ilk yerde tanımlanmalıdır. Örnek terimler aşağıda sunulmuştur;",
+              "Cx=x doğrultusundaki kuvvet katsayısı",
+              "Cy=y doğrultusundaki kuvvet katsayısı",
+              "Fx=araç üzerinde etkiyen toplam basıncın X bileşeni",
+              "Fy=araç üzerinde etkiyen toplam basıncın Y bileşeni",
+              "i=seyir için zaman indeksi"
+            ]
+          },
+          {
+            "ad": "Giriş",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Operasyonel Görev Konsepti",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Görev yükünün hangi aşamada roketten nasıl ayrılacağı hem görsel grafikte hem de görev profili tablosunda belirtilmelidir.",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Sistem Mimarisi ve Analizi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde önce genel sistem mimarisi daha sonra ilgili alt başlıklar altında alt sistem ve bileşenlerine ilişkin tanıtım ve analizler sunulacaktır."
+            ]
+          },
+          {
+            "ad": "Genel Sistem Mimarisi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Takımlar tasarladıkları sistemi genel olarak tanıtacaklardır. Tanıtıma ilave olarak sistem içindeki alt sistemleri gösteren şekil/grafiklerin bu bölümde etkin olarak kullanılması beklenmektedir.",
+              "Kullanılacak görselde statik marjin, su altı roketin fonksiyonel her bölümünün boy ve uzunluk bilgileri yer almalıdır. CAD tasarımı yapılmış olan su altı roketin ölçeksiz (birebir boyutta) olması gerekmektedir.",
+              "Tasarımı yapılan su altı roketle ilgili kriterler aşağıdaki tablo örnek alınarak sunulacaktır. Tablo doldurulurken birimlere dikkat edilmeli, birimsiz kriterler doğru bir şekilde paylaşılmalıdır;",
+              "Su Altı Roketin Kuru Ağırlığı (gram)",
+              "Toplam Kalkış Ağırlığı (gram)"
+            ]
+          },
+          {
+            "ad": "*Net Sephiye = Kaldırma kuvveti – Torpido kütlesi",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Sistem Analizi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Genel sistem tanıtımı sonrasında sistemi oluşturan alt sistemlerin birbiriyle bağlantıları ve fonksiyonel ilişkileri bu bölümde tanıtılacaktır. Bu analizi desteklemek için uygun şekil ve grafiklerin de etkin olarak kullanılması beklenmektedir.",
+              "Bu bölüm azami 5.000 karakteri geçmemelidir, aksi halde bu bölüm değerlendirmeye alınmayacaktır."
+            ]
+          },
+          {
+            "ad": "Yapısal",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Her bir alt sistem için üç boyutlu CAD çizimleri ve iki boyutlu teknik ölçüler birlikte sunulmalıdır. Paylaşılacak iki boyutlu görseller imalat teknik resimi olarak paylaşılmamalıdır. Sistemlerin önden ve yan görünüşten ölçüleri verilmelidir. İki görünüş ile detaylarıın aktarılması mümkün olmayan parçalar için ek olarak bir görünüş daha verilebilir. İlgili görsellerde bütün ölçüler milimetre cinsinden verilmelidir. İki boyutlu ölçüleri verilen her bir alt sistemin yanında izometrik görünümde üç boyutlu CAD çizimleri paylaşılmalıdır.",
+              "Yapısal bölümünde bulunan her bir alt sistem için seçilen malzemenin özellikleri, kullanılacak imalat yöntemleri, özel bir geometri içeriyorsa geometri seçim sebepleri ilgili başlığın altında açıklanmalıdır. Sistemde kullanılacak sızdırmazlık elemanlarının ölçüleri,malzeme özellikleri ve gireceği yuvanın ölçüleri verilmelidir. İlgili açıklamalar yapılırken özet tablolar kullanılmalı, sonuçlar yorumlanmalıdır."
+            ]
+          },
+          {
+            "ad": "Burun Bölümü",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Dümenler",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Gövde",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Gövde İçi Yapısal Parçalar",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Su Altı Roket Montaj Stratejisi",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Yapısal Analizler",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Hidrodinamik Tasarım ve Performans",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Hidrodinamik Tasarım ve Analizleri",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Sistem Kararlılığı ve Manevra Kabiliyeti",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "İtki Sistemi Tasarım ve Analizleri",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Aviyonik",
+            "zorunlu": false,
+            "yonergeMetni": [
+              "Bu bölümün girişinde aviyonik sistem mimarisinin detay şeması verilerek sistem mimarisi tanıtımı yapılmalıdır. Aviyonik sistem mimarisine tahrik sistemi ve güç dağıtım sistemi de dahil edilmelidir. Sistemin gücünü kesmek için kullanılacak kontrol yapısının şeması verilmelidir. Eğer tek bir şema üzerinde vermek karışıklığa sebep oluyor ise haberleşme yapısının şeması ayrı verilmelidir. Şemalar oluşturulurken düzene ve anlaşılabilirliğe önem verilmelidir.",
+              "Ticari GKB’ye ek olarak özgün tasarımlı GKB’nin de platformda bulunup aktif olarak kullanılacağı durumda, özgün GKB’li aviyonik mimarinin ayrıca gösterilmelidir. Özgün ve ticari GKB’ler platformdan ayrılabilir olmalıdır. Göreve başlamadan önce hangi GKB’nin kullanılacağı hakem heyetine bildirilecek ve kullanılmayacak olan GKB platformdan çıkarılacaktır.",
+              "Görev Kontrol Bilgisayarı (GKB) olarak kullanılacak ticari veya özgün sistem(ler) genel olarak tanıtılmalıdır. GKB’nin, platformda aktif olarak kullanılan kabiliyetleri(güç dönüştürücü, basınç sensörü vb.) tanıtılmalıdır. GKB açıklanırken mümkün olduğunca diyagram ve görseller kullanılmalı, karmaşık ve uzun cümlelerden kaçınılmalıdır. GKB olarak özgün veya ticari sistem kullanılabilir ancak platformda birden fazla bilgisayar bulunsa da GKB olarak değerlendirilecek olan bileşen, sensör füzyonunu yaparak platformu kontrol eden ve ateşleme sinyali üreten bileşendir.",
+              "Rapor boyunca ticari sistemlerden “ticari” GKB olarak bahsedilmeli, özgün sistemlerden ise “özgün” GKB olarak bahsedilmelidir."
+            ],
+            "raporda": false
+          },
+          {
+            "ad": "Aviyonik Sistem GKB Yapısı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Ticari ve özgün GKB’lerin benzerlikleri ve farklılıkları özet bir tablo ile sunulmalıdır (GKB’ler tarafından aktif olarak kullanılan her sensör dahili veya harici olarak belirtilmeli ve haberleşme protokolü belirtilmelidir. Güç dönüşümü yapma durumu, sinyal çıkışları ve karakteristiği vb. bilgiler verilmelidir. Tablonun formatı ve içeriği takım tarafından oluşturulmalı ve GKB’ler arası farklar ilk bakışta anlaşılmalıdır.)."
+            ]
+          },
+          {
+            "ad": "Ticari GKB Yapısı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Ticari GKB kullanılırken yapılacak ayarlar açıklanmalıdır. Ticari sistemler kendi algoritmaları ile geldikleri için ticari sistemlerin algoritmaları ve veri filtreleme sistemleri takımlar tarafından açıklanmamalıdır."
+            ]
+          },
+          {
+            "ad": "Özgün GKB Yapısı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Özgün GKB’lerdeki alt sistem/bileşenlerin ürün adı, ürün kodu/ürün türü, kurtarma algoritmasında verileri kullanılıp kullanılmadığı ve kurtarma algoritmasında kullanılan verilerin işlevi vb. bilgi sunulmalıdır. Örnek tablo aşağıda sunulmuştur;",
+              "KURTARMA ALGORİTMASININ İŞLETİMİ",
+              "KULLANILAN VERİLERİN İŞLEVİ",
+              "İşlemci için boş bırakılacaktır"
+            ]
+          },
+          {
+            "ad": "Güç Sistemi",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Kontrol Sistemi",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "İtki Sistemi",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Algoritma ve Yazılım Sistemi",
+            "zorunlu": false,
+            "yonergeMetni": [
+              "Bu bölümde araçta kullanılacak olan güdüm, otopilot ve navigasyon algoritmaları hakkında bilgi verilecektir. Bu üç başlık ayrı ayrı incelenecek olup yazılım mimarisi, kullanılan matematiksel/deneysel yöntemler, yazılım dili, geliştirilen algoritmalar gibi bilgiler paylaşılmalıdır."
+            ],
+            "raporda": false
+          },
+          {
+            "ad": "Güdüm Algoritmaları",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu kısımda aracın nasıl yönlendirileceği açıklanmalıdır. Görev bazlı olarak araca nasıl komutlar verileceği, bu komutların hangi şartlarda gerçekleşeceği gibi bilgiler paylaşılmalıdır. Ayrıca bu komut setinin girdileri (konum, yönelim, zaman vb.) ve çıktıları (hız, yönelim, açısal hız vb.) verilmelidir. Araca verilecek komutlar aşağıdaki örneklerde paylaşılmıştır ancak formatın sadece bu şekilde olması zorunlu değildir. Özgün güdüm tasarımı istenilen formatta verilebilir."
+            ]
+          },
+          {
+            "ad": "Navigasyon Algoritmaları",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu kısımda aracın nasıl durum (konum, hız, açısal hız, ivme, yönelim vb.) hesabı yapacağı açıklanmalıdır. Bu hesaplamaların hangi sensörlerden ve ölçümlerden yararlanacağı belirtilmelidir. Bu hesaplamaları yapan bir donanım varsa yazılmalı ve/veya özgün bir tasarım varsa açıklanmalıdır. Navigasyon algoritmasının girdileri (ölçüm, sensör vb.) ve çıktıları tek tek tablo, şema, liste veya herhangi bir görselleme yöntemi ile belirtilmelidir. Algoritmanın içerisindeki hesaplamalar, matematiksel modeller ve filtreler ayrıca açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "Otopilot Algoritmaları",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu kısımda aracın nasıl kontrol edileceğine dair algoritmalar açıklanmalıdır. Kullanılacak kontrol algoritmasının mimarisi verilmelidir. Hangi kontrol algoritmasının seçildiği, neden seçildiği ve parametrelerinin nasıl belirlendiği anlatılmalıdır.",
+              "Otopilot algoritmasının için hazır donanım, hazır yazılım ve/veya kütüphane kullanılabilir. Ancak tasarlanan araca uygun hale getirilebilmesi için özgün bir kısım bulunmalıdır. Özgün tasarım kısmı tamamen en baştan bir otopilot tasarımı olabileceği gibi hazır donanım/yazılım veya kütüphane üzerine yerleştirilmiş bir tasarım da olabilir. Kullanılacak sistemin parametrelerinin araca uygun tasarlanmış olması gerekmektedir.",
+              "Hazır donanım/yazılım veya kütüphane kullanan takımlar, hem bu hazır kısmı hem de özgün tasarımlarını açık bir şekilde açıklamalı ve arkasındaki modeli anlatmalıdır."
+            ]
+          },
+          {
+            "ad": "Burun Ayırma Sistemi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölümde, model roketin burun ayrılma sistemi genelden özele doğru tanıtılacaktır.",
+              "Burun ayırma sisteminin su altı roketin içindeki konumu ve mekanizması su altı roketin üç boyutlu çizim/grafiğinde (CAD) ilgili bölüm şeffaflaştırılarak paylaşılmalıdır. Kullanılmasına karar verilen kurtarma sisteminin tüm tasarım ve üretim bilgileri paylaşılmalıdır",
+              "Piroteknik malzeme kullanarak burun ayırmasını gerçekleştirmek isteyen takımlar tarafından tablo (aşağıda yer almaktadır) doldurulacak olup, piroteknik malzeme kullanmayan ekipler bu sayfada piroteknik malzeme kullanmadıklarını açıkça belirtmelidir. Bu tablonun eksikliği diskalifiye nedenidir.",
+              "BASINÇLANDIRILACAK HACİM ÇAPI (mm)",
+              "BASINÇLANDIRILACAK HACİM (m3)"
+            ]
+          },
+          {
+            "ad": "Değişiklik Takibi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Ön Tasarım Raporunda (ÖTR) sunulan ancak KTR aşamasında değişen içerikler aşağıdaki tablo kullanılarak belirtilmelidir (değişenlerin ÖTR’de hangi sayfada olduğu belirtilmelidir);"
+            ]
+          },
+          {
+            "ad": "Testler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Tüm testler için yazılan rapor aşağıdaki sorulara cevap verecek nitelikte bilgiler içermelidir;"
+            ]
+          },
+          {
+            "ad": "Aviyonik Testleri",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Algoritma Testleri",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Burun Ayırma Sistemi Testleri",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Algoritma ve Yazılım Testleri",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Sonuç ve Değerlendirmeler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Sonuç bölümü makalenin ana noktalarını gözden geçirse de özet bölümünde yer alanları sonuç bölümüne kopyalamayınız. Bir sonuç, çalışmanın önemini detaylandırabilir veya önerilerde bulunabilir. Sonuç bölümünün makalenin numaralandırılması gereken son bölümü olduğunu unutmayın. Ekler (varsa), teşekkür ve referanslar numarasız olarak listelenmelidir.",
+              "Sponsorluk bilgileri ve finansman verileri burada yer almalıdır. Teşekkür, araştırma sırasında yardım sağlayan (tasarım, üretim, rapor hazırlama vb.) bireylere ve/veya kuruluşlara, olabildiğince kısa ve öz bir şekilde belirtilmelidir.",
+              "Dipnotlar, belirtildekileri sayfanın altındaki 1” boşluk üstüne yerleştirilmelidir. Şablona dipnot eklemek için, gerekli olduğunda word programındaki ana menüden Ekle>Dipnot özelliğini kullanın.",
+              "Tüm referansları raporun sonunda listeyin ve numaralandırın. Metin içinde referansları alıntılamak için karşılık gelen köşeli numaralar kullanılmalıdır [1]. Birden fazla alıntı için, referans numaralarını virgülle ayırın [4, 5], veya bir aralığı göstermek için tire kullanın [6-8]. Metin içindeki referans alıntıları numaralı sırayla olmalıdır.",
+              "Referans listesinde, tüm yazarların adlarını verin; 10'dan fazla yazar varsa \"vd.\" kullanın. Yayımlanmamış çalışmalar \"yayımlanmamış\" olarak, yayımlanmak üzere gönderilmiş veya kabul edilmiş çalışmalar \"yayımlanmak üzere gönderildi\" olarak alıntılanmalıdır. Özel olarak alınan bilgiler ve kişisel web siteleri, referans listesinde değil, dipnot olarak belirtilmelidir.",
+              "Referanslar, standart yayın referans stiline göre alıntılanmalıdır. Yayıncıların adları ve konumları listelenmeli; raporlar ve makaleler için ay ve yıl eklenmelidir. Çeviri dergilerinde yayımlanan makaleler için, lütfen önce İngilizce alıntıyı, ardından orijinal yabancı dil alıntısını verin.",
+              "Örnek referans formatı aşağıdaki gibidir;",
+              "7. Shearer, D. A., Shearer Vogt and Associates, LLC, & Vogt, G. L. (2020). Rocket’s Educator Guide. NASA. https://www.nasa.gov/sites/default/files/atoms/files/rockets-educator-guide-20.pdf",
+              "•Kritik Tasarım Raporu görseller ve referanslar bölümleri dahil en fazla 50 sayfa (kapak dahil değil) olacaktır. Sayfa sınırına uymayan raporlar değerlendirmeye alınmayacaktır.",
+              "•Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+              "•Rapor şablonuna uymayan Kritik Tasarım Raporları değerlendirilmeyecektir."
+            ]
+          }
+        ],
+        "azamiSayfa": 50
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "teknofest-su-alti-roket-yarismasi-kritik",
+            "ad": "TEKNOFEST Su Altı Roket Yarışması Kritik Tasarım Raporu",
+            "puan": 28,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yarışma Kategorisi ve Takım Kimliği",
+              "Özet bölümü makalenizin başında yer almalıdır. Bir paragraf uzunluğunda olmalı ve toplam 1.500 karakteri geçmemelidir, aksi halde bu bölüm değerlendirmeye alınmayacaktır. Referans numarası yer almamalıdır. Makalede ele alınan konular ve raporun amaç(lar)ı genel olarak belirtilmelidir. Makalede sistem mimarisi, analiz ve yeni gözlemlenen bulgulara ilişkin özet sonuçlar belirtilmelidir; Okuyucuların sistemle ilgili temel ve vazgeçilmez özellikleri anlaması için makaleyi tamamıyla okumak yerine gerektiğinde özetle ulaşmalıdır. Özet, kalın karakterlerle yazılmalıdır."
+            ],
+            "bolumAdi": "TEKNOFEST Su Altı Roket Yarışması Kritik Tasarım Raporu"
+          },
+          {
+            "kod": "terimler",
+            "ad": "Terimler",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Tüm sembolleri birimleriyle tanımlayan bir terimler listesi oluşturulmalıdır Bu bölümde, makalede kullanılan tüm semboller veya kısaltmalar yer almalıdır. Eğer bir terim Havacılık ve Uzay Mühendisliği alanında yaygın olarak tanınmıyorsa, o terim “Terimler” bölümünde değil metinde geçtiği ilk yerde tanımlanmalıdır. Örnek terimler aşağıda sunulmuştur;",
+              "Cx=x doğrultusundaki kuvvet katsayısı",
+              "Cy=y doğrultusundaki kuvvet katsayısı",
+              "Fx=araç üzerinde etkiyen toplam basıncın X bileşeni",
+              "Fy=araç üzerinde etkiyen toplam basıncın Y bileşeni",
+              "i=seyir için zaman indeksi"
+            ],
+            "bolumAdi": "Terimler"
+          },
+          {
+            "kod": "giris",
+            "ad": "Giriş",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Giriş"
+          },
+          {
+            "kod": "operasyonel-gorev-konsepti",
+            "ad": "Operasyonel Görev Konsepti",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Operasyonel Görev Konsepti"
+          },
+          {
+            "kod": "gorev-yukunun-hangi-asamada-roketten-nas",
+            "ad": "Görev yükünün hangi aşamada roketten nasıl ayrılacağı hem görsel grafikte hem de görev profili tablosunda belirtilmelidir.",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Görev yükünün hangi aşamada roketten nasıl ayrılacağı hem görsel grafikte hem de görev profili tablosunda belirtilmelidir."
+          },
+          {
+            "kod": "sistem-mimarisi-ve-analizi",
+            "ad": "Sistem Mimarisi ve Analizi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde önce genel sistem mimarisi daha sonra ilgili alt başlıklar altında alt sistem ve bileşenlerine ilişkin tanıtım ve analizler sunulacaktır."
+            ],
+            "bolumAdi": "Sistem Mimarisi ve Analizi"
+          },
+          {
+            "kod": "genel-sistem-mimarisi",
+            "ad": "Genel Sistem Mimarisi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Takımlar tasarladıkları sistemi genel olarak tanıtacaklardır. Tanıtıma ilave olarak sistem içindeki alt sistemleri gösteren şekil/grafiklerin bu bölümde etkin olarak kullanılması beklenmektedir.",
+              "Kullanılacak görselde statik marjin, su altı roketin fonksiyonel her bölümünün boy ve uzunluk bilgileri yer almalıdır. CAD tasarımı yapılmış olan su altı roketin ölçeksiz (birebir boyutta) olması gerekmektedir.",
+              "Tasarımı yapılan su altı roketle ilgili kriterler aşağıdaki tablo örnek alınarak sunulacaktır. Tablo doldurulurken birimlere dikkat edilmeli, birimsiz kriterler doğru bir şekilde paylaşılmalıdır;",
+              "Su Altı Roketin Kuru Ağırlığı (gram)",
+              "Toplam Kalkış Ağırlığı (gram)"
+            ],
+            "bolumAdi": "Genel Sistem Mimarisi"
+          },
+          {
+            "kod": "net-sephiye-kaldirma-kuvveti-torpido-kut",
+            "ad": "*Net Sephiye = Kaldırma kuvveti – Torpido kütlesi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "*Net Sephiye = Kaldırma kuvveti – Torpido kütlesi"
+          },
+          {
+            "kod": "sistem-analizi",
+            "ad": "Sistem Analizi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Genel sistem tanıtımı sonrasında sistemi oluşturan alt sistemlerin birbiriyle bağlantıları ve fonksiyonel ilişkileri bu bölümde tanıtılacaktır. Bu analizi desteklemek için uygun şekil ve grafiklerin de etkin olarak kullanılması beklenmektedir.",
+              "Bu bölüm azami 5.000 karakteri geçmemelidir, aksi halde bu bölüm değerlendirmeye alınmayacaktır."
+            ],
+            "bolumAdi": "Sistem Analizi"
+          },
+          {
+            "kod": "yapisal",
+            "ad": "Yapısal",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Her bir alt sistem için üç boyutlu CAD çizimleri ve iki boyutlu teknik ölçüler birlikte sunulmalıdır. Paylaşılacak iki boyutlu görseller imalat teknik resimi olarak paylaşılmamalıdır. Sistemlerin önden ve yan görünüşten ölçüleri verilmelidir. İki görünüş ile detaylarıın aktarılması mümkün olmayan parçalar için ek olarak bir görünüş daha verilebilir. İlgili görsellerde bütün ölçüler milimetre cinsinden verilmelidir. İki boyutlu ölçüleri verilen her bir alt sistemin yanında izometrik görünümde üç boyutlu CAD çizimleri paylaşılmalıdır.",
+              "Yapısal bölümünde bulunan her bir alt sistem için seçilen malzemenin özellikleri, kullanılacak imalat yöntemleri, özel bir geometri içeriyorsa geometri seçim sebepleri ilgili başlığın altında açıklanmalıdır. Sistemde kullanılacak sızdırmazlık elemanlarının ölçüleri,malzeme özellikleri ve gireceği yuvanın ölçüleri verilmelidir. İlgili açıklamalar yapılırken özet tablolar kullanılmalı, sonuçlar yorumlanmalıdır."
+            ],
+            "bolumAdi": "Yapısal"
+          },
+          {
+            "kod": "burun-bolumu",
+            "ad": "Burun Bölümü",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Burun Bölümü"
+          },
+          {
+            "kod": "dumenler",
+            "ad": "Dümenler",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Dümenler"
+          },
+          {
+            "kod": "govde",
+            "ad": "Gövde",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Gövde"
+          },
+          {
+            "kod": "govde-ici-yapisal-parcalar",
+            "ad": "Gövde İçi Yapısal Parçalar",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Gövde İçi Yapısal Parçalar"
+          },
+          {
+            "kod": "su-alti-roket-montaj-stratejisi",
+            "ad": "Su Altı Roket Montaj Stratejisi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Su Altı Roket Montaj Stratejisi"
+          },
+          {
+            "kod": "yapisal-analizler",
+            "ad": "Yapısal Analizler",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Yapısal Analizler"
+          },
+          {
+            "kod": "hidrodinamik-tasarim-ve-performans",
+            "ad": "Hidrodinamik Tasarım ve Performans",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Hidrodinamik Tasarım ve Performans"
+          },
+          {
+            "kod": "hidrodinamik-tasarim-ve-analizleri",
+            "ad": "Hidrodinamik Tasarım ve Analizleri",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Hidrodinamik Tasarım ve Analizleri"
+          },
+          {
+            "kod": "sistem-kararliligi-ve-manevra-kabiliyeti",
+            "ad": "Sistem Kararlılığı ve Manevra Kabiliyeti",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Sistem Kararlılığı ve Manevra Kabiliyeti"
+          },
+          {
+            "kod": "itki-sistemi-tasarim-ve-analizleri",
+            "ad": "İtki Sistemi Tasarım ve Analizleri",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "İtki Sistemi Tasarım ve Analizleri"
+          },
+          {
+            "kod": "aviyonik-sistem-gkb-yapisi",
+            "ad": "Aviyonik Sistem GKB Yapısı",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Ticari ve özgün GKB’lerin benzerlikleri ve farklılıkları özet bir tablo ile sunulmalıdır (GKB’ler tarafından aktif olarak kullanılan her sensör dahili veya harici olarak belirtilmeli ve haberleşme protokolü belirtilmelidir. Güç dönüşümü yapma durumu, sinyal çıkışları ve karakteristiği vb. bilgiler verilmelidir. Tablonun formatı ve içeriği takım tarafından oluşturulmalı ve GKB’ler arası farklar ilk bakışta anlaşılmalıdır.)."
+            ],
+            "bolumAdi": "Aviyonik Sistem GKB Yapısı"
+          },
+          {
+            "kod": "ticari-gkb-yapisi",
+            "ad": "Ticari GKB Yapısı",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Ticari GKB kullanılırken yapılacak ayarlar açıklanmalıdır. Ticari sistemler kendi algoritmaları ile geldikleri için ticari sistemlerin algoritmaları ve veri filtreleme sistemleri takımlar tarafından açıklanmamalıdır."
+            ],
+            "bolumAdi": "Ticari GKB Yapısı"
+          },
+          {
+            "kod": "ozgun-gkb-yapisi",
+            "ad": "Özgün GKB Yapısı",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Özgün GKB’lerdeki alt sistem/bileşenlerin ürün adı, ürün kodu/ürün türü, kurtarma algoritmasında verileri kullanılıp kullanılmadığı ve kurtarma algoritmasında kullanılan verilerin işlevi vb. bilgi sunulmalıdır. Örnek tablo aşağıda sunulmuştur;",
+              "KURTARMA ALGORİTMASININ İŞLETİMİ",
+              "KULLANILAN VERİLERİN İŞLEVİ",
+              "İşlemci için boş bırakılacaktır"
+            ],
+            "bolumAdi": "Özgün GKB Yapısı"
+          },
+          {
+            "kod": "guc-sistemi",
+            "ad": "Güç Sistemi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Güç Sistemi"
+          },
+          {
+            "kod": "kontrol-sistemi",
+            "ad": "Kontrol Sistemi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Kontrol Sistemi"
+          },
+          {
+            "kod": "itki-sistemi",
+            "ad": "İtki Sistemi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "İtki Sistemi"
+          },
+          {
+            "kod": "gudum-algoritmalari",
+            "ad": "Güdüm Algoritmaları",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda aracın nasıl yönlendirileceği açıklanmalıdır. Görev bazlı olarak araca nasıl komutlar verileceği, bu komutların hangi şartlarda gerçekleşeceği gibi bilgiler paylaşılmalıdır. Ayrıca bu komut setinin girdileri (konum, yönelim, zaman vb.) ve çıktıları (hız, yönelim, açısal hız vb.) verilmelidir. Araca verilecek komutlar aşağıdaki örneklerde paylaşılmıştır ancak formatın sadece bu şekilde olması zorunlu değildir. Özgün güdüm tasarımı istenilen formatta verilebilir."
+            ],
+            "bolumAdi": "Güdüm Algoritmaları"
+          },
+          {
+            "kod": "navigasyon-algoritmalari",
+            "ad": "Navigasyon Algoritmaları",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda aracın nasıl durum (konum, hız, açısal hız, ivme, yönelim vb.) hesabı yapacağı açıklanmalıdır. Bu hesaplamaların hangi sensörlerden ve ölçümlerden yararlanacağı belirtilmelidir. Bu hesaplamaları yapan bir donanım varsa yazılmalı ve/veya özgün bir tasarım varsa açıklanmalıdır. Navigasyon algoritmasının girdileri (ölçüm, sensör vb.) ve çıktıları tek tek tablo, şema, liste veya herhangi bir görselleme yöntemi ile belirtilmelidir. Algoritmanın içerisindeki hesaplamalar, matematiksel modeller ve filtreler ayrıca açıklanmalıdır."
+            ],
+            "bolumAdi": "Navigasyon Algoritmaları"
+          },
+          {
+            "kod": "otopilot-algoritmalari",
+            "ad": "Otopilot Algoritmaları",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda aracın nasıl kontrol edileceğine dair algoritmalar açıklanmalıdır. Kullanılacak kontrol algoritmasının mimarisi verilmelidir. Hangi kontrol algoritmasının seçildiği, neden seçildiği ve parametrelerinin nasıl belirlendiği anlatılmalıdır.",
+              "Otopilot algoritmasının için hazır donanım, hazır yazılım ve/veya kütüphane kullanılabilir. Ancak tasarlanan araca uygun hale getirilebilmesi için özgün bir kısım bulunmalıdır. Özgün tasarım kısmı tamamen en baştan bir otopilot tasarımı olabileceği gibi hazır donanım/yazılım veya kütüphane üzerine yerleştirilmiş bir tasarım da olabilir. Kullanılacak sistemin parametrelerinin araca uygun tasarlanmış olması gerekmektedir.",
+              "Hazır donanım/yazılım veya kütüphane kullanan takımlar, hem bu hazır kısmı hem de özgün tasarımlarını açık bir şekilde açıklamalı ve arkasındaki modeli anlatmalıdır."
+            ],
+            "bolumAdi": "Otopilot Algoritmaları"
+          },
+          {
+            "kod": "burun-ayirma-sistemi",
+            "ad": "Burun Ayırma Sistemi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölümde, model roketin burun ayrılma sistemi genelden özele doğru tanıtılacaktır.",
+              "Burun ayırma sisteminin su altı roketin içindeki konumu ve mekanizması su altı roketin üç boyutlu çizim/grafiğinde (CAD) ilgili bölüm şeffaflaştırılarak paylaşılmalıdır. Kullanılmasına karar verilen kurtarma sisteminin tüm tasarım ve üretim bilgileri paylaşılmalıdır",
+              "Piroteknik malzeme kullanarak burun ayırmasını gerçekleştirmek isteyen takımlar tarafından tablo (aşağıda yer almaktadır) doldurulacak olup, piroteknik malzeme kullanmayan ekipler bu sayfada piroteknik malzeme kullanmadıklarını açıkça belirtmelidir. Bu tablonun eksikliği diskalifiye nedenidir.",
+              "BASINÇLANDIRILACAK HACİM ÇAPI (mm)",
+              "BASINÇLANDIRILACAK HACİM (m3)"
+            ],
+            "bolumAdi": "Burun Ayırma Sistemi"
+          },
+          {
+            "kod": "degisiklik-takibi",
+            "ad": "Değişiklik Takibi",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Ön Tasarım Raporunda (ÖTR) sunulan ancak KTR aşamasında değişen içerikler aşağıdaki tablo kullanılarak belirtilmelidir (değişenlerin ÖTR’de hangi sayfada olduğu belirtilmelidir);"
+            ],
+            "bolumAdi": "Değişiklik Takibi"
+          },
+          {
+            "kod": "testler",
+            "ad": "Testler",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Tüm testler için yazılan rapor aşağıdaki sorulara cevap verecek nitelikte bilgiler içermelidir;"
+            ],
+            "bolumAdi": "Testler"
+          },
+          {
+            "kod": "aviyonik-testleri",
+            "ad": "Aviyonik Testleri",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Aviyonik Testleri"
+          },
+          {
+            "kod": "algoritma-testleri",
+            "ad": "Algoritma Testleri",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Algoritma Testleri"
+          },
+          {
+            "kod": "burun-ayirma-sistemi-testleri",
+            "ad": "Burun Ayırma Sistemi Testleri",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Burun Ayırma Sistemi Testleri"
+          },
+          {
+            "kod": "algoritma-ve-yazilim-testleri",
+            "ad": "Algoritma ve Yazılım Testleri",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Algoritma ve Yazılım Testleri"
+          },
+          {
+            "kod": "sonuc-ve-degerlendirmeler",
+            "ad": "Sonuç ve Değerlendirmeler",
+            "puan": 2,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Sonuç bölümü makalenin ana noktalarını gözden geçirse de özet bölümünde yer alanları sonuç bölümüne kopyalamayınız. Bir sonuç, çalışmanın önemini detaylandırabilir veya önerilerde bulunabilir. Sonuç bölümünün makalenin numaralandırılması gereken son bölümü olduğunu unutmayın. Ekler (varsa), teşekkür ve referanslar numarasız olarak listelenmelidir.",
+              "Sponsorluk bilgileri ve finansman verileri burada yer almalıdır. Teşekkür, araştırma sırasında yardım sağlayan (tasarım, üretim, rapor hazırlama vb.) bireylere ve/veya kuruluşlara, olabildiğince kısa ve öz bir şekilde belirtilmelidir.",
+              "Dipnotlar, belirtildekileri sayfanın altındaki 1” boşluk üstüne yerleştirilmelidir. Şablona dipnot eklemek için, gerekli olduğunda word programındaki ana menüden Ekle>Dipnot özelliğini kullanın.",
+              "Tüm referansları raporun sonunda listeyin ve numaralandırın. Metin içinde referansları alıntılamak için karşılık gelen köşeli numaralar kullanılmalıdır [1]. Birden fazla alıntı için, referans numaralarını virgülle ayırın [4, 5], veya bir aralığı göstermek için tire kullanın [6-8]. Metin içindeki referans alıntıları numaralı sırayla olmalıdır.",
+              "Referans listesinde, tüm yazarların adlarını verin; 10'dan fazla yazar varsa \"vd.\" kullanın. Yayımlanmamış çalışmalar \"yayımlanmamış\" olarak, yayımlanmak üzere gönderilmiş veya kabul edilmiş çalışmalar \"yayımlanmak üzere gönderildi\" olarak alıntılanmalıdır. Özel olarak alınan bilgiler ve kişisel web siteleri, referans listesinde değil, dipnot olarak belirtilmelidir.",
+              "Referanslar, standart yayın referans stiline göre alıntılanmalıdır. Yayıncıların adları ve konumları listelenmeli; raporlar ve makaleler için ay ve yıl eklenmelidir. Çeviri dergilerinde yayımlanan makaleler için, lütfen önce İngilizce alıntıyı, ardından orijinal yabancı dil alıntısını verin.",
+              "Örnek referans formatı aşağıdaki gibidir;",
+              "7. Shearer, D. A., Shearer Vogt and Associates, LLC, & Vogt, G. L. (2020). Rocket’s Educator Guide. NASA. https://www.nasa.gov/sites/default/files/atoms/files/rockets-educator-guide-20.pdf",
+              "•Kritik Tasarım Raporu görseller ve referanslar bölümleri dahil en fazla 50 sayfa (kapak dahil değil) olacaktır. Sayfa sınırına uymayan raporlar değerlendirmeye alınmayacaktır.",
+              "•Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+              "•Rapor şablonuna uymayan Kritik Tasarım Raporları değerlendirilmeyecektir."
+            ],
+            "bolumAdi": "Sonuç ve Değerlendirmeler"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 37 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_SU_ALTI_ROKET_YARIŞMASI_ŞARTNAMESİ_TR.V1.6_M7Rif.pdf",
+        "yuklendi": "2026-08-23T20:16:29.278Z",
+        "sayfaSayisi": 25,
+        "kelimeSayisi": 5831,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk Versiyon",
+              "tarih": "2026-01-02"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "Ön Tasarım Raporu Son Teslim Tarihi",
+              "tarih": "2026-03-25"
+            },
+            {
+              "etiket": "Ön Tasarım Raporu Sonuçlarının Açıklanması",
+              "tarih": "2026-04-13"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu Son Teslim Tarihi",
+              "tarih": "2026-06-15"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu Sonuçlarının Açıklanması",
+              "tarih": "2026-07-01"
+            },
+            {
+              "etiket": "Su Altı Roket Araçlarının Sızdırmazlık ve Hareket",
+              "tarih": "2026-08-02"
+            },
+            {
+              "etiket": "Finale Kalan (Finalist) Takımların Açıklanması",
+              "tarih": "2026-08-06"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": [],
+          "azamiSayfa": 50,
+          "azamiUye": 15
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_SU_ALTI_ROKET_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_TR.V1.6_M7Rif.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "su-alti-roket-yarismasi"
+}

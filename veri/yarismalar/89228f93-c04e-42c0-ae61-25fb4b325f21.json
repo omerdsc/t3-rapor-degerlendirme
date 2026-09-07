@@ -1,0 +1,692 @@
+{
+  "id": "89228f93-c04e-42c0-ae61-25fb4b325f21",
+  "ad": "NSOSYAL İnovasyon Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:55:05.645Z",
+  "kategoriler": [
+    {
+      "id": "f09deb63-fe17-4ef4-ba7e-0342053c1e97",
+      "ad": "NSOSYAL İnovasyon Yarışması",
+      "sablonDosyasi": "NSosyal_Inovasyon_2026_-_Proje_Teknik_Raporu_1_u6IVb.docx",
+      "olusturuldu": "2026-08-23T13:55:05.645Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-f09deb63",
+        "ad": "NSOSYAL İnovasyon Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 30,
+        "basliklar": [
+          {
+            "ad": "İÇİNDEKİLER(Raporun tüm ana başlıkları ve sayfa numaraları eksiksiz olarak listelenecektir.)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "2. KATMA DEĞER VE YENİLİKÇİLİK3"
+            ]
+          },
+          {
+            "ad": "PROJE ÖZETİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "1.1. Proje Konusu ve amacı",
+              "Projenin konusu, sosyal medya ekosisteminde odaklandığı temel problem ve ulaşılmak istenen nihai amaç net bir dille ifade edilir. Projenin İçerik Ekonomisi, Sosyal Yapay Zeka veya Kullanıcı Katılımı & Arayüz/Kullanıcı Deneyimi (UI/UX) temalarından hangisine/hangilerine hitap ettiği açıkça belirtilir.",
+              "1.2. Proje Kapsamı ve Yöntemi",
+              "Projenin sınırları ile izlenecek teknik ve akademik yol detaylandırılır. Çalışmanın seçilen tematik alan (İçerik Ekonomisi / Sosyal Yapay Zeka / Kullanıcı Katılımı ve arayüz) ile doğrudan ilişkisi kurulur ve gelecekte yeni çalışmalara zemin hazırlama potansiyeli vurgulanır. Projenin yalnızca fikir düzeyinde kalmayıp çalışan bir prototip ile destekleneceği altyapı bu bölümde belirtilir."
+            ]
+          },
+          {
+            "ad": "KATMA DEĞER VE YENİLİKÇİLİK",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "2.1. Problem Tanımı ve Mevcut Çözümler",
+              "Sosyal medya ekosistemindeki gerçek bir sorun nesnel bir şekilde tanımlanır. Problemin büyüklüğünü kanıtlayan resmi kaynaklar, istatistikler ve akademik veriler ile piyasadaki alternatif çözümler ele alınarak bu çözümlerin neden yetersiz kaldığı ortaya konur.",
+              "2.2. Çözüm Fikri, Özgünlük ve Yerlilik",
+              "Geliştirilen özgün çözüm fikri; güçlü yönleri, yenilikçi yaklaşımı ve mevcut çözümlere kıyasla sağladığı net üstünlükler ile birlikte açıklanır. Çözümün piyasada uygulanabilir ve problem durumuna tam uyumlu olduğu; kullanılan/geliştirilen özgün mimari ve algoritmalar ile varsa en az bir yerli bileşen veya yerli teknoloji vurgulanır. İddia edilen yenilikler somut piyasa kıyaslarıyla desteklenir."
+            ]
+          },
+          {
+            "ad": "TEKNOLOJİ KULLANIMI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "3.1. İzlenecek Yöntem, altyapı ve Sürüm Kontrolü",
+              "Kullanılacak yazılım dilleri, yapay zeka modelleri, veri setleri, analizler ve teknik altyapı eksiksiz bir dille ifade edilir.",
+              "Kod Reposu ve Teslim Şartı: Projenin yazılım geliştirme süreçlerinde versiyon kontrol sistemleri aktif olarak kullanılacaktır. Kaynak kodlar GitHub veya Bitbucket üzerinden",
+              "güvenli bir depoda saklanacak, geliştirme adımları commit geçmişleriyle takip edilecek ve depo bağlantısı jüri incelemesi için bu bölümde paylaşılacaktır.",
+              "3.2. Model ve Veri Doğrulama",
+              "Projede yapay zeka veya veri analitiği bileşeni bulunuyorsa veri ön işleme, model eğitimi, aşırı öğrenme (overfitting) önlemleri ve performans metrikleri detaylandırılır.",
+              "3.3. Kullanıcı Deneyimi (UI/UX) Tasarımı",
+              "Kullanıcı akışları, arayüz tasarım kararları, erişilebilirlik yaklaşımı ve varsa kullanılabilirlik testi sonuçları bu bölümde sunulur. arayüzün hedef kitlenin ihtiyaçlarına uygunluğu ve kullanıcı etkileşimini nasıl artırdığı somut örneklerle açıklanır."
+            ]
+          },
+          {
+            "ad": "UYGULANABİLİRLİK",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "4.1. Verimlilik ve Etkinlik",
+              "Geliştirilen sistemin sosyal medya platformlarına, içerik üreticilerine veya kullanıcılara sağlayacağı verimlilik artışı somut argümanlarla açıklanır.",
+              "Projenin hitap ettiği geniş hedef kitle açıkça tanımlanır ve geliştirilen ürünün bu kitleyle olan uyumu kanıtlanır.",
+              "4.3. Teknolojik Yenilik ve Uygulanabilirlik",
+              "Ürünün içerdiği teknolojik yeniliğin düzeyi teknik detaylarıyla ortaya konur; projenin teknik olarak hayata geçirilebilir, gerçek kullanıcılar tarafından kullanılabilir bir ürüne dönüşebilme potansiyeli taşıdığı ve ölçeklenebilir bir yapıya sahip olduğu gösterilir."
+            ]
+          },
+          {
+            "ad": "YAYGIN ETKİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "5.1. Toplumsal Fayda ve Erişim Potansiyeli",
+              "Projenin geniş kullanıcı kitlelerine ulaşabilme potansiyeli, sosyal medya ekosistemine sağlayacağı katkı, toplumsal fayda oluşturma kapasitesi ve dijital yaşam kalitesine olumlu etkisi somut argümanlarla açıklanır."
+            ]
+          },
+          {
+            "ad": "SÜRDÜRÜLEBİLİRLİK",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "6.1. Ticarileştirme Potansiyeli ve İş Modeli",
+              "Ürünün sektöre ve ülke ekonomisine sağlayacağı katma değer, sürdürülebilir iş modeli ve gelecekte kurabileceği stratejik iş ortaklıkları açıklanır. Ürünün mevcut pazar şartlarında üretilebilirliği gerçekçi bir temele oturtulur.",
+              "6.2. Finansal, Teknik ve Sosyal Sürdürülebilirlik",
+              "Projenin finansal, teknik ve sosyal açıdan sürdürülebilir bir yapıda planlanması; uzun vadede gelişime açık olması ve değişen kullanıcı ihtiyaçlarına uyum sağlayabilmesi açıklanır."
+            ]
+          },
+          {
+            "ad": "PROJE TAKVİMİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "7.1. İş Paketleri ve Zamanlama",
+              "Projenin başlangıcından bitişine kadar geçecek süreç iş paketleri, alt faaliyetler ve kilometre taşları şeklinde detaylandırılır. Bu planlama, jürinin kolayca inceleyebileceği düzenli bir zaman çizelgesi veya tablo ile görselleştirilir. Not: Yarışma takvimindeki (Teknik Rapor Teslimi: 24 ağustos 2026, Mentörlük Süreci: 2-7 Eylül 2026, Final Sunumları: 14 Eylül 2026) tarihlerle çelişmeyecek şekilde planlanmalıdır."
+            ]
+          },
+          {
+            "ad": "TAKIM YAPISI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "8.1. Takım Organizasyonu ve Roller",
+              "Ekip üyelerinin görev dağılımı tabulaştırılır. Farklı disiplinlerden (yazılım geliştirme, yapay zeka, veri bilimi, siber güvenlik, ürün yönetimi, UI/UX, tasarım, girişimcilik vb.) gelen üyelerin projeye katkısı vurgulanır.",
+              "Değerlendirme esasları gereği takım üyelerinin isim ve fotoğraf gibi kişisel bilgilerine yer verilmemelidir;"
+            ]
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Yararlanılan tüm bilimsel makaleler, web siteleri ve teknik raporlar eksiksiz listelenmelidir. Metin içi gösterimde köşeli parantez kullanımı tavsiye edilir (Örn: [1], [4,7,21], [5-11]).",
+              "Dijital/Web Kaynak: Yazarların Soyadı, adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim adresi.",
+              "akademik Kaynak: Yazarların Soyadı, adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Derginin adı, (Varsa) Sayısı, Sayfa numarası, DOI.",
+              "Önceki yarışma/rapor alıntıları metin içinde şu formatta belirtilir: (Yıl, Yarışma adı, Kategori, Takım adı)."
+            ]
+          },
+          {
+            "ad": "PUANLAMA VE DEĞERLENDİRME ESASLARI(Bu sayfaya raporlarda yer verilmeyecektir.)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "1.1. Proje Konusu ve amacı (0-7 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Proje konusu, sosyal medya ekosistemiyle ilişkili ve net biçimde tanımlanmış.",
+              "Proje amacı açık bir dille ifade edilmiş.",
+              "Hangi inovasyon dikeyine (tema) hitap ettiği açıkça belirtilmiş.",
+              "amaç, yarışmanın Bölüm 1'de tanımlanan genel hedefleriyle tutarlı.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "1.2. Proje Kapsamı ve Yöntemi (0-8 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Projenin kapsamı/sınırları net biçimde tanımlanmış.",
+              "İzlenecek teknik ve akademik yöntem açıklanmış.",
+              "Seçilen tema (İçerik Ekonomisi / Sosyal YZ / Kullanıcı Katılımı-UX) ile doğrudan ilişki kurulmuş.",
+              "Fikrin çalışan bir prototip ile destekleneceği belirtilmiş.",
+              "Projenin yeni çalışmalara zemin hazırlama potansiyeli vurgulanmış.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "2.1. Problem Tanımı ve Mevcut Çözümler (0-7 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Gerçek ve nesnel bir problem tanımlanmış.",
+              "Problemin büyüklüğünü gösteren istatistik/veri sunulmuş.",
+              "En az bir resmî kaynak veya akademik veriyle desteklenmiş.",
+              "Piyasadaki mevcut alternatif çözümler ele alınmış.",
+              "Mevcut çözümlerin eksik/yetersiz yönleri açıkça belirtilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "2.2. Çözüm Fikri, Özgünlük ve Yerlilik (0-8 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Çözüm fikri probleme/amaca uygun ve net biçimde ifade edilmiş.",
+              "Çözümün güçlü ve yenilikçi yönleri belirtilmiş.",
+              "Mevcut çözümlerden farkı somut piyasa kıyaslarıyla gösterilmiş.",
+              "Çözümün pazarda uygulanabilir olduğu gösterilmiş.",
+              "En az bir yerli bileşen/teknoloji kullanıldığı/geliştirildiği belirtilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "3.1. İzlenecek Yöntem, altyapı ve Sürüm Kontrolü (0-7 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Kullanılacak yazılım dilleri/teknolojiler belirtilmiş.",
+              "Veri setleri ve analiz yöntemleri açıklanmış.",
+              "Teknik altyapı eksiksiz tanımlanmış.",
+              "GitHub/Bitbucket repo bağlantısı paylaşılmış.",
+              "Commit geçmişiyle takip edilebilir bir geliştirme süreci belirtilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "3.2. Model ve Veri Doğrulama (0-6 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Veri ön işleme süreci açıklanmış.",
+              "Model eğitimi süreci açıklanmış.",
+              "aşırı öğrenme (overfitting) önlemleri belirtilmiş.",
+              "Performans metrikleri (doğruluk, F1, vb.) sunulmuş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "Not (3.2): Projede yapay zeka/veri bileşeni yoksa bu alt kriter değerlendirme dışı bırakılır ve 6 puanı, 3.a ve 3.c alt kriterlerine orantılı olarak dağıtmalıdır.",
+              "3.3. Kullanıcı Deneyimi (UI/UX) (0-7 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Kullanıcı akışları (user flows) sunulmuş.",
+              "arayüz tasarım kararları gerekçelendirilmiş.",
+              "Erişilebilirlik yaklaşımı belirtilmiş.",
+              "Kullanılabilirlik testi sonucu/özeti paylaşılmış.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "4.1. Verimlilik ve Etkinlik (0-5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Verimlilik artışı somut argümanlarla gösterilmiş.",
+              "Etkinlik ölçülebilir biçimde ifade edilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "4.2. Hedef Kitle (0-5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Hedef kitle açıkça tanımlanmış.",
+              "Hedef kitlenin genişliği/büyüklüğü belirtilmiş.",
+              "Ürünün hedef kitleyle uyumu kanıtlanmış.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "4.3. Teknolojik Yenilik ve Uygulanabilirlik (0-5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Teknolojik yenilik düzeyi teknik detaylarla ortaya konmuş.",
+              "Fikrin teknik olarak hayata geçirilebilir olduğu gösterilmiş.",
+              "Ölçeklenebilir bir yapı belirtilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "5.1. Toplumsal Fayda ve Erişim Potansiyeli (0-10 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Geniş kullanıcı kitlelerine ulaşma potansiyeli gösterilmiş.",
+              "Sosyal medya ekosistemine sağlayacağı katkı açıklanmış.",
+              "Toplumsal fayda oluşturma kapasitesi somut örneklerle gösterilmiş.",
+              "Dijital yaşam kalitesine olumlu etkisi belirtilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "6.1. Ticarileştirme Potansiyeli ve İş Modeli (0-5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Gelir/iş modeli net biçimde tanımlanmış.",
+              "Sektöre/ülke ekonomisine katma değer potansiyeli gösterilmiş.",
+              "Yeni iş ortaklıkları/işbirlikleri kurma potansiyeli belirtilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "6.2. Finansal, Teknik ve Sosyal Sürdürülebilirlik (0-5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Finansal sürdürülebilirlik açıklanmış.",
+              "Teknik sürdürülebilirlik (bakım, ölçeklenme) açıklanmış.",
+              "Değişen kullanıcı ihtiyaçlarına uyum sağlama yaklaşımı belirtilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "7.1. İş Paketleri ve Zamanlama (0-5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "İş paketleri ve alt faaliyetler detaylandırılmış.",
+              "Kilometre taşları belirlenmiş.",
+              "Görsel bir şema/tablo ile sunulmuş.",
+              "Takvim gerçekçi ve yarışma takvimiyle (Ek: 24 ağu / 2-7 Eyl / 14 Eyl 2026) uyumlu.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "8.1. Takım Organizasyonu ve Roller (0-5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Görev dağılımı tablolaştırılmış.",
+              "Farklı disiplinlerden üyelerin projeye katkısı belirtilmiş.",
+              "Ekip büyüklüğü/yapısı (2-5 kişi) proje ihtiyaçlarını karşılıyor.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "9. Kaynakça — Formata Uygunluk (0- 5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Kaynakça eksiksiz listelenmiş.",
+              "Dijital/Web ve akademik Kaynak formatı kurallarına uyulmuş.",
+              "Metin içi atıflar (köşeli parantez) doğru kullanılmış.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "Kullanıcı Katılımı ve arayüz",
+              "Teknik Yeterlilik ve Uygulanabilirlik",
+              "Kullanıcı Deneyimi (UI/UX)",
+              "Sunum ve Prototip Kalitesi",
+              "İş Modeli ve Sürdürülebilirlik",
+              "Yeşil vurgulu hücreler: orijinal şartnamede %0 olan, bu düzeltmede asgari %5'e çekilen alanlardır."
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "GENEL FORMAT KURALLARI (Raporda yer verilmeyecek)",
+          "Ön Değerlendirme Raporu; kapak, içindekiler, kaynakça ve (varsa) ekler dahil en fazla 30 sayfa olacaktır.",
+          "Kapak, İçindekiler ve Kaynakça için 3 ayrı sayfa ayrılmalıdır.",
+          "Yazı tipi: Arial, 12 punto; Başlık: arial Black, 14 punto; Satır aralığı: 1.15; İki tarafa yaslı; Kenar boşlukları: üst-alt-sağ-sol 2.5 cm.",
+          "Cümleler birbirinin tekrarı niteliğinde olmamalıdır.",
+          "Bu aşamada proje tanıtım videosu istenmemektedir (video, Final Sunumları aşamasının teslimatları arasındadır).",
+          "Rapor, KYS üzerinden, 24 ağustos 2026 saat 17.00 (TSİ)'ye kadar yüklenmelidir; şablona uymayan/eksik/geç raporlar değerlendirmeye alınmaz."
+        ],
+        "eleyiciMi": false,
+        "azamiSayfa": 30,
+        "yaziTipi": "Arial"
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "icindekiler-raporun-tum-ana-basliklari-v",
+            "ad": "İÇİNDEKİLER(Raporun tüm ana başlıkları ve sayfa numaraları eksiksiz olarak listelenecektir.)",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "2. KATMA DEĞER VE YENİLİKÇİLİK3"
+            ],
+            "bolumAdi": "İÇİNDEKİLER(Raporun tüm ana başlıkları ve sayfa numaraları eksiksiz olarak listelenecektir.)"
+          },
+          {
+            "kod": "proje-ozeti",
+            "ad": "PROJE ÖZETİ",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "1.1. Proje Konusu ve amacı",
+              "Projenin konusu, sosyal medya ekosisteminde odaklandığı temel problem ve ulaşılmak istenen nihai amaç net bir dille ifade edilir. Projenin İçerik Ekonomisi, Sosyal Yapay Zeka veya Kullanıcı Katılımı & Arayüz/Kullanıcı Deneyimi (UI/UX) temalarından hangisine/hangilerine hitap ettiği açıkça belirtilir.",
+              "1.2. Proje Kapsamı ve Yöntemi",
+              "Projenin sınırları ile izlenecek teknik ve akademik yol detaylandırılır. Çalışmanın seçilen tematik alan (İçerik Ekonomisi / Sosyal Yapay Zeka / Kullanıcı Katılımı ve arayüz) ile doğrudan ilişkisi kurulur ve gelecekte yeni çalışmalara zemin hazırlama potansiyeli vurgulanır. Projenin yalnızca fikir düzeyinde kalmayıp çalışan bir prototip ile destekleneceği altyapı bu bölümde belirtilir."
+            ],
+            "bolumAdi": "PROJE ÖZETİ"
+          },
+          {
+            "kod": "katma-deger-ve-yenilikcilik",
+            "ad": "KATMA DEĞER VE YENİLİKÇİLİK",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "2.1. Problem Tanımı ve Mevcut Çözümler",
+              "Sosyal medya ekosistemindeki gerçek bir sorun nesnel bir şekilde tanımlanır. Problemin büyüklüğünü kanıtlayan resmi kaynaklar, istatistikler ve akademik veriler ile piyasadaki alternatif çözümler ele alınarak bu çözümlerin neden yetersiz kaldığı ortaya konur.",
+              "2.2. Çözüm Fikri, Özgünlük ve Yerlilik",
+              "Geliştirilen özgün çözüm fikri; güçlü yönleri, yenilikçi yaklaşımı ve mevcut çözümlere kıyasla sağladığı net üstünlükler ile birlikte açıklanır. Çözümün piyasada uygulanabilir ve problem durumuna tam uyumlu olduğu; kullanılan/geliştirilen özgün mimari ve algoritmalar ile varsa en az bir yerli bileşen veya yerli teknoloji vurgulanır. İddia edilen yenilikler somut piyasa kıyaslarıyla desteklenir."
+            ],
+            "bolumAdi": "KATMA DEĞER VE YENİLİKÇİLİK"
+          },
+          {
+            "kod": "teknoloji-kullanimi",
+            "ad": "TEKNOLOJİ KULLANIMI",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "3.1. İzlenecek Yöntem, altyapı ve Sürüm Kontrolü",
+              "Kullanılacak yazılım dilleri, yapay zeka modelleri, veri setleri, analizler ve teknik altyapı eksiksiz bir dille ifade edilir.",
+              "Kod Reposu ve Teslim Şartı: Projenin yazılım geliştirme süreçlerinde versiyon kontrol sistemleri aktif olarak kullanılacaktır. Kaynak kodlar GitHub veya Bitbucket üzerinden",
+              "güvenli bir depoda saklanacak, geliştirme adımları commit geçmişleriyle takip edilecek ve depo bağlantısı jüri incelemesi için bu bölümde paylaşılacaktır.",
+              "3.2. Model ve Veri Doğrulama",
+              "Projede yapay zeka veya veri analitiği bileşeni bulunuyorsa veri ön işleme, model eğitimi, aşırı öğrenme (overfitting) önlemleri ve performans metrikleri detaylandırılır.",
+              "3.3. Kullanıcı Deneyimi (UI/UX) Tasarımı",
+              "Kullanıcı akışları, arayüz tasarım kararları, erişilebilirlik yaklaşımı ve varsa kullanılabilirlik testi sonuçları bu bölümde sunulur. arayüzün hedef kitlenin ihtiyaçlarına uygunluğu ve kullanıcı etkileşimini nasıl artırdığı somut örneklerle açıklanır."
+            ],
+            "bolumAdi": "TEKNOLOJİ KULLANIMI"
+          },
+          {
+            "kod": "uygulanabilirlik",
+            "ad": "UYGULANABİLİRLİK",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "4.1. Verimlilik ve Etkinlik",
+              "Geliştirilen sistemin sosyal medya platformlarına, içerik üreticilerine veya kullanıcılara sağlayacağı verimlilik artışı somut argümanlarla açıklanır.",
+              "Projenin hitap ettiği geniş hedef kitle açıkça tanımlanır ve geliştirilen ürünün bu kitleyle olan uyumu kanıtlanır.",
+              "4.3. Teknolojik Yenilik ve Uygulanabilirlik",
+              "Ürünün içerdiği teknolojik yeniliğin düzeyi teknik detaylarıyla ortaya konur; projenin teknik olarak hayata geçirilebilir, gerçek kullanıcılar tarafından kullanılabilir bir ürüne dönüşebilme potansiyeli taşıdığı ve ölçeklenebilir bir yapıya sahip olduğu gösterilir."
+            ],
+            "bolumAdi": "UYGULANABİLİRLİK"
+          },
+          {
+            "kod": "yaygin-etki",
+            "ad": "YAYGIN ETKİ",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "5.1. Toplumsal Fayda ve Erişim Potansiyeli",
+              "Projenin geniş kullanıcı kitlelerine ulaşabilme potansiyeli, sosyal medya ekosistemine sağlayacağı katkı, toplumsal fayda oluşturma kapasitesi ve dijital yaşam kalitesine olumlu etkisi somut argümanlarla açıklanır."
+            ],
+            "bolumAdi": "YAYGIN ETKİ"
+          },
+          {
+            "kod": "surdurulebilirlik",
+            "ad": "SÜRDÜRÜLEBİLİRLİK",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "6.1. Ticarileştirme Potansiyeli ve İş Modeli",
+              "Ürünün sektöre ve ülke ekonomisine sağlayacağı katma değer, sürdürülebilir iş modeli ve gelecekte kurabileceği stratejik iş ortaklıkları açıklanır. Ürünün mevcut pazar şartlarında üretilebilirliği gerçekçi bir temele oturtulur.",
+              "6.2. Finansal, Teknik ve Sosyal Sürdürülebilirlik",
+              "Projenin finansal, teknik ve sosyal açıdan sürdürülebilir bir yapıda planlanması; uzun vadede gelişime açık olması ve değişen kullanıcı ihtiyaçlarına uyum sağlayabilmesi açıklanır."
+            ],
+            "bolumAdi": "SÜRDÜRÜLEBİLİRLİK"
+          },
+          {
+            "kod": "proje-takvimi",
+            "ad": "PROJE TAKVİMİ",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "7.1. İş Paketleri ve Zamanlama",
+              "Projenin başlangıcından bitişine kadar geçecek süreç iş paketleri, alt faaliyetler ve kilometre taşları şeklinde detaylandırılır. Bu planlama, jürinin kolayca inceleyebileceği düzenli bir zaman çizelgesi veya tablo ile görselleştirilir. Not: Yarışma takvimindeki (Teknik Rapor Teslimi: 24 ağustos 2026, Mentörlük Süreci: 2-7 Eylül 2026, Final Sunumları: 14 Eylül 2026) tarihlerle çelişmeyecek şekilde planlanmalıdır."
+            ],
+            "bolumAdi": "PROJE TAKVİMİ"
+          },
+          {
+            "kod": "takim-yapisi",
+            "ad": "TAKIM YAPISI",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "8.1. Takım Organizasyonu ve Roller",
+              "Ekip üyelerinin görev dağılımı tabulaştırılır. Farklı disiplinlerden (yazılım geliştirme, yapay zeka, veri bilimi, siber güvenlik, ürün yönetimi, UI/UX, tasarım, girişimcilik vb.) gelen üyelerin projeye katkısı vurgulanır.",
+              "Değerlendirme esasları gereği takım üyelerinin isim ve fotoğraf gibi kişisel bilgilerine yer verilmemelidir;"
+            ],
+            "bolumAdi": "TAKIM YAPISI"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yararlanılan tüm bilimsel makaleler, web siteleri ve teknik raporlar eksiksiz listelenmelidir. Metin içi gösterimde köşeli parantez kullanımı tavsiye edilir (Örn: [1], [4,7,21], [5-11]).",
+              "Dijital/Web Kaynak: Yazarların Soyadı, adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim adresi.",
+              "akademik Kaynak: Yazarların Soyadı, adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Derginin adı, (Varsa) Sayısı, Sayfa numarası, DOI.",
+              "Önceki yarışma/rapor alıntıları metin içinde şu formatta belirtilir: (Yıl, Yarışma adı, Kategori, Takım adı)."
+            ],
+            "bolumAdi": "KAYNAKÇA"
+          },
+          {
+            "kod": "puanlama-ve-degerlendirme-esaslari-bu-sa",
+            "ad": "PUANLAMA VE DEĞERLENDİRME ESASLARI(Bu sayfaya raporlarda yer verilmeyecektir.)",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "1.1. Proje Konusu ve amacı (0-7 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Proje konusu, sosyal medya ekosistemiyle ilişkili ve net biçimde tanımlanmış.",
+              "Proje amacı açık bir dille ifade edilmiş.",
+              "Hangi inovasyon dikeyine (tema) hitap ettiği açıkça belirtilmiş.",
+              "amaç, yarışmanın Bölüm 1'de tanımlanan genel hedefleriyle tutarlı.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "1.2. Proje Kapsamı ve Yöntemi (0-8 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Projenin kapsamı/sınırları net biçimde tanımlanmış.",
+              "İzlenecek teknik ve akademik yöntem açıklanmış.",
+              "Seçilen tema (İçerik Ekonomisi / Sosyal YZ / Kullanıcı Katılımı-UX) ile doğrudan ilişki kurulmuş.",
+              "Fikrin çalışan bir prototip ile destekleneceği belirtilmiş.",
+              "Projenin yeni çalışmalara zemin hazırlama potansiyeli vurgulanmış.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "2.1. Problem Tanımı ve Mevcut Çözümler (0-7 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Gerçek ve nesnel bir problem tanımlanmış.",
+              "Problemin büyüklüğünü gösteren istatistik/veri sunulmuş.",
+              "En az bir resmî kaynak veya akademik veriyle desteklenmiş.",
+              "Piyasadaki mevcut alternatif çözümler ele alınmış.",
+              "Mevcut çözümlerin eksik/yetersiz yönleri açıkça belirtilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "2.2. Çözüm Fikri, Özgünlük ve Yerlilik (0-8 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Çözüm fikri probleme/amaca uygun ve net biçimde ifade edilmiş.",
+              "Çözümün güçlü ve yenilikçi yönleri belirtilmiş.",
+              "Mevcut çözümlerden farkı somut piyasa kıyaslarıyla gösterilmiş.",
+              "Çözümün pazarda uygulanabilir olduğu gösterilmiş.",
+              "En az bir yerli bileşen/teknoloji kullanıldığı/geliştirildiği belirtilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "3.1. İzlenecek Yöntem, altyapı ve Sürüm Kontrolü (0-7 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Kullanılacak yazılım dilleri/teknolojiler belirtilmiş.",
+              "Veri setleri ve analiz yöntemleri açıklanmış.",
+              "Teknik altyapı eksiksiz tanımlanmış.",
+              "GitHub/Bitbucket repo bağlantısı paylaşılmış.",
+              "Commit geçmişiyle takip edilebilir bir geliştirme süreci belirtilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "3.2. Model ve Veri Doğrulama (0-6 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Veri ön işleme süreci açıklanmış.",
+              "Model eğitimi süreci açıklanmış.",
+              "aşırı öğrenme (overfitting) önlemleri belirtilmiş.",
+              "Performans metrikleri (doğruluk, F1, vb.) sunulmuş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "Not (3.2): Projede yapay zeka/veri bileşeni yoksa bu alt kriter değerlendirme dışı bırakılır ve 6 puanı, 3.a ve 3.c alt kriterlerine orantılı olarak dağıtmalıdır.",
+              "3.3. Kullanıcı Deneyimi (UI/UX) (0-7 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Kullanıcı akışları (user flows) sunulmuş.",
+              "arayüz tasarım kararları gerekçelendirilmiş.",
+              "Erişilebilirlik yaklaşımı belirtilmiş.",
+              "Kullanılabilirlik testi sonucu/özeti paylaşılmış.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "4.1. Verimlilik ve Etkinlik (0-5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Verimlilik artışı somut argümanlarla gösterilmiş.",
+              "Etkinlik ölçülebilir biçimde ifade edilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "4.2. Hedef Kitle (0-5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Hedef kitle açıkça tanımlanmış.",
+              "Hedef kitlenin genişliği/büyüklüğü belirtilmiş.",
+              "Ürünün hedef kitleyle uyumu kanıtlanmış.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "4.3. Teknolojik Yenilik ve Uygulanabilirlik (0-5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Teknolojik yenilik düzeyi teknik detaylarla ortaya konmuş.",
+              "Fikrin teknik olarak hayata geçirilebilir olduğu gösterilmiş.",
+              "Ölçeklenebilir bir yapı belirtilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "5.1. Toplumsal Fayda ve Erişim Potansiyeli (0-10 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Geniş kullanıcı kitlelerine ulaşma potansiyeli gösterilmiş.",
+              "Sosyal medya ekosistemine sağlayacağı katkı açıklanmış.",
+              "Toplumsal fayda oluşturma kapasitesi somut örneklerle gösterilmiş.",
+              "Dijital yaşam kalitesine olumlu etkisi belirtilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "6.1. Ticarileştirme Potansiyeli ve İş Modeli (0-5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Gelir/iş modeli net biçimde tanımlanmış.",
+              "Sektöre/ülke ekonomisine katma değer potansiyeli gösterilmiş.",
+              "Yeni iş ortaklıkları/işbirlikleri kurma potansiyeli belirtilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "6.2. Finansal, Teknik ve Sosyal Sürdürülebilirlik (0-5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Finansal sürdürülebilirlik açıklanmış.",
+              "Teknik sürdürülebilirlik (bakım, ölçeklenme) açıklanmış.",
+              "Değişen kullanıcı ihtiyaçlarına uyum sağlama yaklaşımı belirtilmiş.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "7.1. İş Paketleri ve Zamanlama (0-5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "İş paketleri ve alt faaliyetler detaylandırılmış.",
+              "Kilometre taşları belirlenmiş.",
+              "Görsel bir şema/tablo ile sunulmuş.",
+              "Takvim gerçekçi ve yarışma takvimiyle (Ek: 24 ağu / 2-7 Eyl / 14 Eyl 2026) uyumlu.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "8.1. Takım Organizasyonu ve Roller (0-5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Görev dağılımı tablolaştırılmış.",
+              "Farklı disiplinlerden üyelerin projeye katkısı belirtilmiş.",
+              "Ekip büyüklüğü/yapısı (2-5 kişi) proje ihtiyaçlarını karşılıyor.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "9. Kaynakça — Formata Uygunluk (0- 5 Puan)",
+              "Kontrol Maddesi (Karşılanma Durumuna Göre Puanlanır)",
+              "Kaynakça eksiksiz listelenmiş.",
+              "Dijital/Web ve akademik Kaynak formatı kurallarına uyulmuş.",
+              "Metin içi atıflar (köşeli parantez) doğru kullanılmış.",
+              "TOPLAM (alt maddeler kısmi/tam karşılanma oranına göre puanlanıp toplanır)",
+              "Kullanıcı Katılımı ve arayüz",
+              "Teknik Yeterlilik ve Uygulanabilirlik",
+              "Kullanıcı Deneyimi (UI/UX)",
+              "Sunum ve Prototip Kalitesi",
+              "İş Modeli ve Sürdürülebilirlik",
+              "Yeşil vurgulu hücreler: orijinal şartnamede %0 olan, bu düzeltmede asgari %5'e çekilen alanlardır."
+            ],
+            "bolumAdi": "PUANLAMA VE DEĞERLENDİRME ESASLARI(Bu sayfaya raporlarda yer verilmeyecektir.)"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Şablonda puan ağırlığı yok; 11 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_NSOSYAL_YARISMASI_SARTNAMESI_TR_2026_07_24_v9_1_G92Gv_PpMLO.pdf",
+        "yuklendi": "2026-08-23T20:13:27.399Z",
+        "sayfaSayisi": 16,
+        "kelimeSayisi": 2604,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk Versiyon",
+              "tarih": "2026-07-01"
+            },
+            {
+              "etiket": "İkinci Versiyon",
+              "tarih": "2026-07-27"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 5
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_NSOSYAL_YARISMASI_SARTNAMESI_TR_2026_07_24_v9_1_G92Gv_PpMLO.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "nsosyal-inovasyon-yarismasi"
+}

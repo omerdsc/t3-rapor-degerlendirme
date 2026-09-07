@@ -1,0 +1,408 @@
+{
+  "id": "d7ed828d-85b0-4f9c-bd18-9a772133abfe",
+  "ad": "İnsansız Su Altı Sistemleri Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:54:36.048Z",
+  "kategoriler": [
+    {
+      "id": "ebacfa3a-2f73-4c22-91fd-f8b2226fedae",
+      "ad": "İnsansız Su Altı Sistemleri Yarışması",
+      "sablonDosyasi": "İnsansız_Su_Alti_Sistemleri_Yarışması_KTR_2026_pz6Io.docx",
+      "asama": "KTR",
+      "olusturuldu": "2026-08-23T13:54:36.048Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-ebacfa3a",
+        "ad": "İnsansız Su Altı Sistemleri Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "RAPOR ÖZETİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda proje kapsamında yürütülen faaliyetlerle ilgili olarak özet bilgi sunulur. Takım ve su altı araçları tarihçesi verilmemelidir. TYF’den farklı olarak yapılan çalışmalar belirtilmelidir ve kopyala yapıştır yapılmamalıdır.}"
+            ]
+          },
+          {
+            "ad": "TAKIM ŞEMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda takım görev dağılımı ve ekip organizasyonu şema olarak gösterilir ve açıklama yapılarak verilir. Takım üyelerinin yetkinliklerinden bahsedilir. (İsim, soy isim, okul, numara, fotoğraf vs gibi kişisel bilgiler yazmayınız ve eklemeyiniz.)}"
+            ]
+          },
+          {
+            "ad": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda Teknik Yeterlilik Formunun ve sonrasında yapılan çalışmaların değerlendirmesi yapılır. Varsa ön tasarım(lar)dan sonra yapılan değişiklikler ve değişikliklerin neden yapıldığı açıklanır. TYF’de planlanan bütçe ve son bütçe arasında karşılaştırma yapılır.}"
+            ]
+          },
+          {
+            "ad": "Sistem Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu bölümde sistem seviyesindeki tasarım kararları yer alır. Bu kararlarla birlikte aracın nihai tasarımını içeren (sigortalar, varsa su üstü kontrol istasyonu vb. dahil) blok şema detaylı olarak verilir.}"
+            ]
+          },
+          {
+            "ad": "Aracın Mekanik Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda aracın mekanik tasarım süreçleri adım adım anlatılır. Aracın son tasarımına gelinene kadar yapılmış olan tasarımlara ait görsellere (render, teknik resim, prototip fotoğrafları vb.) yer verilir. Final tasarımın neden seçildiği açıklanır. Final tasarıma ait detaylar verilir. Aracın final tasarımının teknik resmi ve üretim sonrası fotoğraflarına yer verilir.}",
+              "{Aracın üretiminde kullanılan malzemeler (motorlar, aracın iskeleti, yüzdürücüler vb.), malzemelerin özellikleri ve neden seçildiği açıklanır. Hazır alınan ve/veya geliştirilen/tasarlanan alt bileşenler belirtilir.}",
+              "{Aracın üretiminde kullanılan yöntemler ve bu yöntemlerin neden seçildiği açıklanır.}",
+              "{Aracın boyutları, ağırlığı, hacmi, yüzerliği gibi özelliklerine yer verilir.}"
+            ]
+          },
+          {
+            "ad": "Elektronik Tasarım, Algoritma ve Yazılım Tasarımı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda aracın elektronik tasarım süreçleri anlatılır. Final tasarımın neden seçildiği açıklanır. Aracın son tasarımına gelinene kadar yapılmış olan tasarımlara ait görsellere (Blok şema, teknik resim, prototip fotoğrafları vb.) yer verilir. Kullanılan malzemeler (Sensörler, kameralar, kablolar, anakart, motor sürücüler, güç kartları vb.) hakkında bilgi verilir ve neden seçildiği veya nasıl tasarlandığı açıklanır. Malzemelerin özellikleri ve neden seçildiği açıklanır. Bu kısımda sadece internetten elde edilmiş bileşen bilgileri değil araca ait yapıdan söz edilmelidir. Her bir bileşenin detayının internetten kopyala-yapıştır olarak sunulmasına gerek yoktur.}",
+              "{Bu kısımda araç üzerinde kullanılan bütün algoritma (görüntü işleme, yapay zeka, güdüm/navigasyon/kontrol vb.) süreçleri anlatılır. Final tasarımın neden seçildiği açıklanır. Final tasarıma yönelik algoritma akış diyagramları verilir.}",
+              "{Bu kısımda araç üzerinde kullanılan bütün algoritmaların (görüntü işleme, yapay zeka, güdüm/navigasyon/kontrol vb.) yazılım süreçleri anlatılır. Algoritmaların hangi programlama dillerinde programlanacağı ve bunların seçilme nedenleri belirtilir.}"
+            ]
+          },
+          {
+            "ad": "Dış Arayüzler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Aracın dış arayüzleri, bu arayüzlerde kullanılan alt bileşenler ve mesaj arayüzleri anlatılır. Aracın kontrolünde kullanılan (varsa) su üstü kontrol istasyonunun arayüzü, görüntü ve veri aktarımı gibi yerlerde kullanılan yazılımlar ve seçilen yazılım dilleri hakkında bilgi verilir.",
+              "Önemli Not: Arayüz kavramı sadece kullanıcı arayüzü ile kısıtlı olarak düşünülmemesi gerekmektedir. Aracın dışa açılan bütün arayüzleri (mekanik, elektronik, yazılım vb.) dış arayüz olarak nitelendirilmektedir. (Varsa) Bataryanın araç üzerinden şarj edilmesinden, bilgisayarınızda tasarladığınız yazılımın araç içerisine yüklenme yöntemleri gibi aracın dışarı ile oluşturduğu bütün arayüzlere bu bölümde yer verilmesi gerekmektedir.}",
+              "{Bu kısımda yarışma şartnamesinde belirtilen güvenlik ihtiyaçlarının karşılanması için alınan önlemler ve çözüm yöntemleri açıklanır. Güvenlik önlemlerine kullanılan malzemeler belirtilir.}",
+              "{Bu kısımda araca (uygulandıysa) uygulanan test senaryoları ve sonuçları hakkında bilgi verilir. Yapılan testlerin sonuçları ile yapılan tasarımın ne kadar uyumlu olduğu karşılaştırılır. Test yapamayan takımlar burada ilerleyen zamanlarda yapılacak testler hakkında bilgi verebilir. Test ekipmanları ve planlanan süreçlerinizi burada belirtebilirsiniz.}",
+              "{Bu kısımda aracın tasarım, üretim ve test aşamalarında yaşanan kazalar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir.}"
+            ]
+          },
+          {
+            "ad": "ZAMAN, BÜTÇE VE RİSK PLANLAMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu kısımda aracın kritik tasarım, üretim ve test süreçlerini içeren bir zaman planlaması, nihai bütçe planlaması ve risk planlaması yapılır.}"
+            ]
+          },
+          {
+            "ad": "ÖZGÜNLÜK",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu bölümde projenin/aracın özgün tarafları anlatılmalıdır. Takım ismi, aracın tüm üretiminin (örneğin; internetten hazır olarak bulunan tasarımın takım tarafından yapılması vb. bilgiler aracın özgünlüğüne işaret etmemektedir. Özgünlük araç üzerinde kullanılan bütün alt sistemler (mekanik, elektronik, yazılım) için yazılabilir.}"
+            ]
+          },
+          {
+            "ad": "YERLİLİK",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu bölümde projenin/aracın yerli tarafları anlatılmalıdır.}"
+            ]
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu bölümde raporda kullanılan kaynaklar uygun bir format ile yer almalıdır. Rapor içerisinde çeşitli sitelerden elde edilen, özellikle elektronik bileşenlere ait kaynak bildirimi yapılmalıdır.}",
+              "RAPOR TASLAKLARI İLE İLGİLİ DİKKAT EDİLMESİ GEREKENLER",
+              "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır. Verilen kritik bilgiler ulusal, uluslararası kabul görmüş dergilere veya akademik geçerliliği olan makalelere atıf yapılmalıdır.",
+              "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+              "Tüm raporlar “İçindekiler” ve “Kaynakça” içermelidir.",
+              "Her rapor bir kapak sayfası içermelidir.",
+              "Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+              "Yazı tipi: Times New Roman, Punto: 12, Satır Aralıkları: Tek, İki tarafa yaslı, Sayfa kenar boşlukları: üst-alt-sağ-sol 2,5 cm olmalıdır.",
+              "Rapor içindeki cümleler birbirinin aynı ve tekrarı niteliğinde olmamalıdır.",
+              "Raporun maksimum sayfa sayısı (kapak, içindekiler ve referanslar dahil) 30’dur. 30 sayfanın üzerinde gönderilen raporlar geçersiz sayılacaktır."
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "rapor-ozeti",
+            "ad": "RAPOR ÖZETİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda proje kapsamında yürütülen faaliyetlerle ilgili olarak özet bilgi sunulur. Takım ve su altı araçları tarihçesi verilmemelidir. TYF’den farklı olarak yapılan çalışmalar belirtilmelidir ve kopyala yapıştır yapılmamalıdır.}"
+            ],
+            "bolumAdi": "RAPOR ÖZETİ"
+          },
+          {
+            "kod": "takim-semasi",
+            "ad": "TAKIM ŞEMASI",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda takım görev dağılımı ve ekip organizasyonu şema olarak gösterilir ve açıklama yapılarak verilir. Takım üyelerinin yetkinliklerinden bahsedilir. (İsim, soy isim, okul, numara, fotoğraf vs gibi kişisel bilgiler yazmayınız ve eklemeyiniz.)}"
+            ],
+            "bolumAdi": "TAKIM ŞEMASI"
+          },
+          {
+            "kod": "proje-mevcut-durum-degerlendirmesi",
+            "ad": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda Teknik Yeterlilik Formunun ve sonrasında yapılan çalışmaların değerlendirmesi yapılır. Varsa ön tasarım(lar)dan sonra yapılan değişiklikler ve değişikliklerin neden yapıldığı açıklanır. TYF’de planlanan bütçe ve son bütçe arasında karşılaştırma yapılır.}"
+            ],
+            "bolumAdi": "PROJE MEVCUT DURUM DEĞERLENDİRMESİ"
+          },
+          {
+            "kod": "sistem-tasarimi",
+            "ad": "Sistem Tasarımı",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde sistem seviyesindeki tasarım kararları yer alır. Bu kararlarla birlikte aracın nihai tasarımını içeren (sigortalar, varsa su üstü kontrol istasyonu vb. dahil) blok şema detaylı olarak verilir.}"
+            ],
+            "bolumAdi": "Sistem Tasarımı"
+          },
+          {
+            "kod": "aracin-mekanik-tasarimi",
+            "ad": "Aracın Mekanik Tasarımı",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda aracın mekanik tasarım süreçleri adım adım anlatılır. Aracın son tasarımına gelinene kadar yapılmış olan tasarımlara ait görsellere (render, teknik resim, prototip fotoğrafları vb.) yer verilir. Final tasarımın neden seçildiği açıklanır. Final tasarıma ait detaylar verilir. Aracın final tasarımının teknik resmi ve üretim sonrası fotoğraflarına yer verilir.}",
+              "{Aracın üretiminde kullanılan malzemeler (motorlar, aracın iskeleti, yüzdürücüler vb.), malzemelerin özellikleri ve neden seçildiği açıklanır. Hazır alınan ve/veya geliştirilen/tasarlanan alt bileşenler belirtilir.}",
+              "{Aracın üretiminde kullanılan yöntemler ve bu yöntemlerin neden seçildiği açıklanır.}",
+              "{Aracın boyutları, ağırlığı, hacmi, yüzerliği gibi özelliklerine yer verilir.}"
+            ],
+            "bolumAdi": "Aracın Mekanik Tasarımı"
+          },
+          {
+            "kod": "elektronik-tasarim-algoritma-ve-yazilim-",
+            "ad": "Elektronik Tasarım, Algoritma ve Yazılım Tasarımı",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda aracın elektronik tasarım süreçleri anlatılır. Final tasarımın neden seçildiği açıklanır. Aracın son tasarımına gelinene kadar yapılmış olan tasarımlara ait görsellere (Blok şema, teknik resim, prototip fotoğrafları vb.) yer verilir. Kullanılan malzemeler (Sensörler, kameralar, kablolar, anakart, motor sürücüler, güç kartları vb.) hakkında bilgi verilir ve neden seçildiği veya nasıl tasarlandığı açıklanır. Malzemelerin özellikleri ve neden seçildiği açıklanır. Bu kısımda sadece internetten elde edilmiş bileşen bilgileri değil araca ait yapıdan söz edilmelidir. Her bir bileşenin detayının internetten kopyala-yapıştır olarak sunulmasına gerek yoktur.}",
+              "{Bu kısımda araç üzerinde kullanılan bütün algoritma (görüntü işleme, yapay zeka, güdüm/navigasyon/kontrol vb.) süreçleri anlatılır. Final tasarımın neden seçildiği açıklanır. Final tasarıma yönelik algoritma akış diyagramları verilir.}",
+              "{Bu kısımda araç üzerinde kullanılan bütün algoritmaların (görüntü işleme, yapay zeka, güdüm/navigasyon/kontrol vb.) yazılım süreçleri anlatılır. Algoritmaların hangi programlama dillerinde programlanacağı ve bunların seçilme nedenleri belirtilir.}"
+            ],
+            "bolumAdi": "Elektronik Tasarım, Algoritma ve Yazılım Tasarımı"
+          },
+          {
+            "kod": "dis-arayuzler",
+            "ad": "Dış Arayüzler",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Aracın dış arayüzleri, bu arayüzlerde kullanılan alt bileşenler ve mesaj arayüzleri anlatılır. Aracın kontrolünde kullanılan (varsa) su üstü kontrol istasyonunun arayüzü, görüntü ve veri aktarımı gibi yerlerde kullanılan yazılımlar ve seçilen yazılım dilleri hakkında bilgi verilir.",
+              "Önemli Not: Arayüz kavramı sadece kullanıcı arayüzü ile kısıtlı olarak düşünülmemesi gerekmektedir. Aracın dışa açılan bütün arayüzleri (mekanik, elektronik, yazılım vb.) dış arayüz olarak nitelendirilmektedir. (Varsa) Bataryanın araç üzerinden şarj edilmesinden, bilgisayarınızda tasarladığınız yazılımın araç içerisine yüklenme yöntemleri gibi aracın dışarı ile oluşturduğu bütün arayüzlere bu bölümde yer verilmesi gerekmektedir.}",
+              "{Bu kısımda yarışma şartnamesinde belirtilen güvenlik ihtiyaçlarının karşılanması için alınan önlemler ve çözüm yöntemleri açıklanır. Güvenlik önlemlerine kullanılan malzemeler belirtilir.}",
+              "{Bu kısımda araca (uygulandıysa) uygulanan test senaryoları ve sonuçları hakkında bilgi verilir. Yapılan testlerin sonuçları ile yapılan tasarımın ne kadar uyumlu olduğu karşılaştırılır. Test yapamayan takımlar burada ilerleyen zamanlarda yapılacak testler hakkında bilgi verebilir. Test ekipmanları ve planlanan süreçlerinizi burada belirtebilirsiniz.}",
+              "{Bu kısımda aracın tasarım, üretim ve test aşamalarında yaşanan kazalar, yapılan hatalar ve bunların üstesinden nasıl gelindiği, edinilen tecrübeler hakkında bilgi verilir.}"
+            ],
+            "bolumAdi": "Dış Arayüzler"
+          },
+          {
+            "kod": "zaman-butce-ve-risk-planlamasi",
+            "ad": "ZAMAN, BÜTÇE VE RİSK PLANLAMASI",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu kısımda aracın kritik tasarım, üretim ve test süreçlerini içeren bir zaman planlaması, nihai bütçe planlaması ve risk planlaması yapılır.}"
+            ],
+            "bolumAdi": "ZAMAN, BÜTÇE VE RİSK PLANLAMASI"
+          },
+          {
+            "kod": "ozgunluk",
+            "ad": "ÖZGÜNLÜK",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde projenin/aracın özgün tarafları anlatılmalıdır. Takım ismi, aracın tüm üretiminin (örneğin; internetten hazır olarak bulunan tasarımın takım tarafından yapılması vb. bilgiler aracın özgünlüğüne işaret etmemektedir. Özgünlük araç üzerinde kullanılan bütün alt sistemler (mekanik, elektronik, yazılım) için yazılabilir.}"
+            ],
+            "bolumAdi": "ÖZGÜNLÜK"
+          },
+          {
+            "kod": "yerlilik",
+            "ad": "YERLİLİK",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde projenin/aracın yerli tarafları anlatılmalıdır.}"
+            ],
+            "bolumAdi": "YERLİLİK"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde raporda kullanılan kaynaklar uygun bir format ile yer almalıdır. Rapor içerisinde çeşitli sitelerden elde edilen, özellikle elektronik bileşenlere ait kaynak bildirimi yapılmalıdır.}",
+              "RAPOR TASLAKLARI İLE İLGİLİ DİKKAT EDİLMESİ GEREKENLER",
+              "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır. Verilen kritik bilgiler ulusal, uluslararası kabul görmüş dergilere veya akademik geçerliliği olan makalelere atıf yapılmalıdır.",
+              "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+              "Tüm raporlar “İçindekiler” ve “Kaynakça” içermelidir.",
+              "Her rapor bir kapak sayfası içermelidir.",
+              "Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+              "Yazı tipi: Times New Roman, Punto: 12, Satır Aralıkları: Tek, İki tarafa yaslı, Sayfa kenar boşlukları: üst-alt-sağ-sol 2,5 cm olmalıdır.",
+              "Rapor içindeki cümleler birbirinin aynı ve tekrarı niteliğinde olmamalıdır.",
+              "Raporun maksimum sayfa sayısı (kapak, içindekiler ve referanslar dahil) 30’dur. 30 sayfanın üzerinde gönderilen raporlar geçersiz sayılacaktır."
+            ],
+            "bolumAdi": "KAYNAKÇA"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 11 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ]
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "insansiz-su-alti-sistemleri-yarismasi"
+}

@@ -1,0 +1,630 @@
+{
+  "id": "8fd89d4a-12a8-4a96-99e1-41c5f1f797b9",
+  "ad": "İnsansız Deniz Aracı Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:54:25.485Z",
+  "kategoriler": [
+    {
+      "id": "a72c78e4-1cd8-44de-ad9a-d108dff0aad3",
+      "ad": "Kritik Tasarım",
+      "sablonDosyasi": "2026_Insansız_Deniz_Araci_KTR_Sablonu_iedLX.docx",
+      "asama": "KTR",
+      "olusturuldu": "2026-08-23T13:54:25.252Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-a72c78e4",
+        "ad": "Kritik Tasarım",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 30,
+        "basliklar": [
+          {
+            "ad": "PROJE ÖZETİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "İDA PLATFORM TASARIMI",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "SİSTEM MİMARİSİ",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "Bu kısımda, görevleri yerine getirirken İHA sistemlerini kullanacak/kullanmayı planlayan takımlar tarafından İHA ile ilgili sistem mimarisinin verilmesi beklenmektedir. İHA sistemlerini kullanmayacak takımların sadece İDA sistem mimarisini vermesi beklenmektedir."
+            ]
+          },
+          {
+            "ad": "UÇTAN UCA SİSTEM AKIŞI",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ALGORİTMA TASARIMLARI",
+            "zorunlu": true,
+            "puan": 25,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "HABERLEŞME ÇÖZÜMÜ",
+            "zorunlu": true,
+            "puan": 10,
+            "yonergeMetni": [],
+            "grupMu": true
+          },
+          {
+            "ad": "TAKIM YAPISI",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "PROJE RAPOR DÜZENİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "yonergeMetni": []
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Kritik Tasarım Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en fazla 30 sayfa olacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak ve İçindekiler” başlıkları için 2 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst 2.8 alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynısı ve tekrarı niteliğinde olmamalıdır.",
+          "Raporda, web sitemizde yer alan geçmiş yıl raporlarından yararlanmış olan takımlar alıntı yaptığını ilgili sayfada belirtmesi gerekmektedir. Açıklamayı alıntı yapılan cümlenin ardından belirtmeniz gerekmektedir.",
+          "ALINTI FORMATI: \"Alıntı yapılan Cümle/ler\" (Yıl, Yarışma Adı, Kategori, Takım Adı)",
+          "ÖRNEK ALINTI: \"Enkazda depremzedenin nerede olduğunu tespit edilememesi, enkaz kaldırma ve deprem-zede arama çalışmalarını yavaşlatan en önemli sorundur.\" (2020, İnsanlık Yararına Teknoloji Yarışması, Afet Yönetimi, X Takımı)",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir.",
+          "Dijital Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Basılı Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası.",
+          "Rapor şablonuna uymayan Kritik Tasarım Raporları değerlendirilmeyecektir."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 30,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "proje-ozeti",
+            "ad": "PROJE ÖZETİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "PROJE ÖZETİ"
+          },
+          {
+            "kod": "ida-platform-tasarimi",
+            "ad": "İDA PLATFORM TASARIMI",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "İDA PLATFORM TASARIMI"
+          },
+          {
+            "kod": "sistem-mimarisi",
+            "ad": "SİSTEM MİMARİSİ",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda, görevleri yerine getirirken İHA sistemlerini kullanacak/kullanmayı planlayan takımlar tarafından İHA ile ilgili sistem mimarisinin verilmesi beklenmektedir. İHA sistemlerini kullanmayacak takımların sadece İDA sistem mimarisini vermesi beklenmektedir."
+            ],
+            "bolumAdi": "SİSTEM MİMARİSİ"
+          },
+          {
+            "kod": "uctan-uca-sistem-akisi",
+            "ad": "UÇTAN UCA SİSTEM AKIŞI",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "UÇTAN UCA SİSTEM AKIŞI"
+          },
+          {
+            "kod": "algoritma-tasarimlari",
+            "ad": "ALGORİTMA TASARIMLARI",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ALGORİTMA TASARIMLARI"
+          },
+          {
+            "kod": "takim-yapisi",
+            "ad": "TAKIM YAPISI",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TAKIM YAPISI"
+          },
+          {
+            "kod": "proje-rapor-duzeni",
+            "ad": "PROJE RAPOR DÜZENİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "PROJE RAPOR DÜZENİ"
+          }
+        ],
+        "toplamPuan": 90
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "\"HABERLEŞME ÇÖZÜMÜ\" üst başlık olarak işaretlendi: 10 puanı alt başlıklarına dağıtılmış (2 alt başlık)."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_İnsansız_Deniz_Araci_Şartnamesi_TR_18_05___QqiGV.pdf",
+        "yuklendi": "2026-08-23T20:17:54.638Z",
+        "sayfaSayisi": 29,
+        "kelimeSayisi": 5720,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "TEKNOFEST 2026 İlk Versiyon",
+              "tarih": "2026-01-09"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Teknik Yeterlilik Raporu Son Teslim Tarihi",
+              "tarih": "2026-03-24"
+            },
+            {
+              "etiket": "Teknik Yeterlilik Raporu Sonuçlarının Açıklanması",
+              "tarih": "2026-03-31"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu Son Teslim Tarihi",
+              "tarih": "2026-05-20"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu Sonuçlarının Açıklanması",
+              "tarih": "2026-06-08"
+            },
+            {
+              "etiket": "Sistem Kabiliyeti Videolarının Son Teslim Tarihi",
+              "tarih": "2026-07-21"
+            },
+            {
+              "etiket": "Finale Kalan (Finalist) Takımların Açıklanması",
+              "tarih": "2026-07-27"
+            },
+            {
+              "etiket": "Yarışma Final Tarihi ve Lokasyonu",
+              "tarih": "2026-08-23"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Diğer platformlara yüklenen videolar kabul edilmeyecektir."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiSayfa": 30,
+          "azamiUye": 15,
+          "danismanZorunlu": true
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0nsans%C4%B1z_Deniz_Araci_%C5%9Eartnamesi_TR_18_05___QqiGV.pdf"
+      }
+    },
+    {
+      "id": "28402bb9-d7eb-4b33-a522-0037add7bd63",
+      "ad": "Teknik Yeterlilik",
+      "sablonDosyasi": "2026_Insansız_Deniz_Araci_TYR_Sablonu_TR_KLBrN.docx",
+      "olusturuldu": "2026-08-23T13:54:25.485Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-28402bb9",
+        "ad": "Teknik Yeterlilik",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 30,
+        "basliklar": [
+          {
+            "ad": "PROJE ÖZETİ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "İDA PLATFORM TASARIMI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "İDA GENEL MİMARİSİ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "İHA GENEL MİMARİSİ",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Bu bölüm, görevleri yerine getirirken İHA sistemlerini kullanacak takımlar tarafından doldurulmalıdır. İHA sistemlerini kullanmayacak takımların bu bölümü doldurmasına gerek yoktur."
+            ]
+          },
+          {
+            "ad": "UÇTAN UCA SİSTEM AKIŞI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ALGORİTMA TASARIMLARI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "HABERLEŞME ÇÖZÜMÜ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TAKIM YAPISI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "PROJE RAPOR DÜZENİ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "yonergeMetni": []
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Teknik Yeterlilik Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en fazla 12 sayfa olacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak ve İçindekiler” başlıkları için 2 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst 2.8 alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynısı ve tekrarı niteliğinde olmamalıdır.",
+          "Raporda, web sitemizde yer alan geçmiş yıl raporlarından yararlanmış olan takımlar alıntı yaptığını ilgili sayfada belirtmesi gerekmektedir. Açıklamayı alıntı yapılan cümlenin ardından belirtmeniz gerekmektedir.",
+          "ALINTI FORMATI: \"Alıntı yapılan Cümle/ler\" (Yıl, Yarışma Adı, Kategori, Takım Adı)",
+          "ÖRNEK ALINTI: \"Enkazda depremzedenin nerede olduğunu tespit edilememesi, enkaz kaldırma ve deprem-zede arama çalışmalarını yavaşlatan en önemli sorundur.\" (2020, İnsanlık Yararına Teknoloji Yarışması, Afet Yönetimi, X Takımı)",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir.",
+          "Dijital Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Basılı Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası.",
+          "Rapor şablonuna uymayan Teknik Yeterlilik Raporları değerlendirilmeyecektir.",
+          "*** Rapor değerlendirmelerinin ardından puan açıklaması gerçekleştirilmeyecek olup, teknik yeterlilik olarak yapılan değerlendirmeler sonucunda başarılı / başarısız şeklinde sonuç açıklanacaktır."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 12,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "proje-ozeti",
+            "ad": "PROJE ÖZETİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "PROJE ÖZETİ"
+          },
+          {
+            "kod": "ida-platform-tasarimi",
+            "ad": "İDA PLATFORM TASARIMI",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "İDA PLATFORM TASARIMI"
+          },
+          {
+            "kod": "ida-genel-mimarisi",
+            "ad": "İDA GENEL MİMARİSİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "İDA GENEL MİMARİSİ"
+          },
+          {
+            "kod": "iha-genel-mimarisi",
+            "ad": "İHA GENEL MİMARİSİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu bölüm, görevleri yerine getirirken İHA sistemlerini kullanacak takımlar tarafından doldurulmalıdır. İHA sistemlerini kullanmayacak takımların bu bölümü doldurmasına gerek yoktur."
+            ],
+            "bolumAdi": "İHA GENEL MİMARİSİ"
+          },
+          {
+            "kod": "uctan-uca-sistem-akisi",
+            "ad": "UÇTAN UCA SİSTEM AKIŞI",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "UÇTAN UCA SİSTEM AKIŞI"
+          },
+          {
+            "kod": "algoritma-tasarimlari",
+            "ad": "ALGORİTMA TASARIMLARI",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ALGORİTMA TASARIMLARI"
+          },
+          {
+            "kod": "haberlesme-cozumu",
+            "ad": "HABERLEŞME ÇÖZÜMÜ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "HABERLEŞME ÇÖZÜMÜ"
+          },
+          {
+            "kod": "takim-yapisi",
+            "ad": "TAKIM YAPISI",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TAKIM YAPISI"
+          },
+          {
+            "kod": "proje-rapor-duzeni",
+            "ad": "PROJE RAPOR DÜZENİ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "PROJE RAPOR DÜZENİ"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "KAYNAKÇA"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Şablonda puan ağırlığı yok; 10 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_İnsansız_Deniz_Araci_Şartnamesi_TR_18_05___QqiGV.pdf",
+        "yuklendi": "2026-08-23T20:17:58.652Z",
+        "sayfaSayisi": 29,
+        "kelimeSayisi": 5720,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "TEKNOFEST 2026 İlk Versiyon",
+              "tarih": "2026-01-09"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Teknik Yeterlilik Raporu Son Teslim Tarihi",
+              "tarih": "2026-03-24"
+            },
+            {
+              "etiket": "Teknik Yeterlilik Raporu Sonuçlarının Açıklanması",
+              "tarih": "2026-03-31"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu Son Teslim Tarihi",
+              "tarih": "2026-05-20"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu Sonuçlarının Açıklanması",
+              "tarih": "2026-06-08"
+            },
+            {
+              "etiket": "Sistem Kabiliyeti Videolarının Son Teslim Tarihi",
+              "tarih": "2026-07-21"
+            },
+            {
+              "etiket": "Finale Kalan (Finalist) Takımların Açıklanması",
+              "tarih": "2026-07-27"
+            },
+            {
+              "etiket": "Yarışma Final Tarihi ve Lokasyonu",
+              "tarih": "2026-08-23"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Diğer platformlara yüklenen videolar kabul edilmeyecektir."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiSayfa": 30,
+          "azamiUye": 15,
+          "danismanZorunlu": true
+        },
+        "catismalar": [
+          "Azami sayfa sayısı çakışıyor: şablon 12, şartname 30. Şartname esas alındı."
+        ],
+        "uyarilar": [
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_%C4%B0nsans%C4%B1z_Deniz_Araci_%C5%9Eartnamesi_TR_18_05___QqiGV.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "insansiz-deniz-araci-yarismasi"
+}

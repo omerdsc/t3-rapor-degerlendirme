@@ -1,0 +1,700 @@
+{
+  "id": "5a21b20d-9e05-49eb-bcf8-bdc29f3270ae",
+  "ad": "5G & Yapay Zeka ile Akıllı Yol Güvenliği Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:53:21.068Z",
+  "kategoriler": [
+    {
+      "id": "8d2fb8c7-e6fb-463f-bc0a-655f74cb665e",
+      "ad": "Final",
+      "sablonDosyasi": "2026_5G_Yapay_Zeka_ile_Akıllı_Yol_Güvenliği_FTR_şablon_TR_1_e4PVw.docx",
+      "olusturuldu": "2026-08-23T13:53:20.358Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-8d2fb8c7",
+        "ad": "Final",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 10,
+        "basliklar": [
+          {
+            "ad": "5G & YAPAY ZEKÂ İLE AKILLI YOL GÜVENLİĞİ YARIŞMASI FİNAL TASARIM RAPORU",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "5G & YAPAY ZEKÂ İLE AKILLI YOL GÜVENLİĞİ YARIŞMASI FİNAL TASARIM RAPORU",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "PROJE ÖZETİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu kısımda proje kapsamında yürütülen faaliyetlerle ilgili olarak özet bilgi sunulur."
+            ]
+          },
+          {
+            "ad": "VERİSETİ OLUŞTURULMASI",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "Bu kısımda, model eğitimi ve testi için verilerin nasıl toplandığı, nasıl etiketlendiği ve dengelendiği (data balancing) detaylıca açıklanmalıdır. Veri artırma (data augmentation) teknikleri kullanıldıysa belirtilmeli, eğitim, doğrulama ve test setlerinin dağılım oranları gerekçeleriyle sunulmalıdır. Yararlanılan açık kaynaklı veri setleri kaynakçada da ayrıca belirtilmelidir."
+            ]
+          },
+          {
+            "ad": "YAPAY ZEKÂ ÇÖZÜMÜ",
+            "zorunlu": true,
+            "puan": 50,
+            "yonergeMetni": [],
+            "grupMu": true
+          },
+          {
+            "ad": "3.1.Problemin Analizi",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": [
+              "Video üzerinden araç, plaka, hız veya riskli durum tespiti yaparken karşılaşılan temel problemler (örneğin ışık değişimleri, hareket bulanıklığı, oklüzyon) nelerdir? İzlenen çözüm yolu nedir ve bu yol neden tercih edilmiştir?"
+            ]
+          },
+          {
+            "ad": "3.2.Çözüm Mimarisi",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": [
+              "Geliştirilen yapay zekâ sisteminin kuşbakışı görünümü sunulmalıdır. Ham videonun sisteme girişinden, etiketlenmiş çıktıların üretilmesine kadar olan süreç mimari diyagramlar, bileşenler ve arayüz özetleri kullanılarak görselleştirilmeli ve açıklanmalıdır."
+            ]
+          },
+          {
+            "ad": "3.3.Çözüm Detayları",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "Çözüme dair tüm teknik detaylar bu başlıkta verilmelidir. Kullanılan derin öğrenme algoritmaları, sinir ağı mimarileri (ör. YOLO, Faster R-CNN vb.), ön işleme/son işleme adımları ve donanım/yazılım altyapısı (çerçeveler, kütüphaneler) teknik bir dille aktarılmalıdır."
+            ]
+          },
+          {
+            "ad": "ÇÖZÜMÜN SINANMASI",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "Hazırlanan veri seti ile modelin nasıl test edildiği kanıtlarıyla sunulmalıdır. Doğruluk (Accuracy), Hassasiyet (Precision), Duyarlılık (Recall), F1-Score, FPS (Saniyedeki Kare Sayısı) gibi metrikler tablolar ve grafikler halinde verilmelidir. \"Çözümümüze neden güveniyoruz?\" sorusunun somut, verilere dayalı yanıtı bu bölümde yer almalıdır."
+            ]
+          },
+          {
+            "ad": "KAYNAKÇA",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Yararlanılan tüm akademik ve teknik kaynaklar (GitHub repoları, makaleler, dokümanlar) detaylıca listelenmelidir. Projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web Sitesi Adresi, Kitap Adı, Sayfa Numarası vb.)"
+            ]
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKÇA",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Final Tasarım Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en az 3 en fazla 10 sayfa olacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak ve İçindekiler” başlıkları için 2 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst 2.8 alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynısı ve tekrarı niteliğinde olmamalıdır.",
+          "Raporda, web sitemizde yer alan geçmiş yıl raporlarından yararlanmış olan takımlar alıntı yaptığını ilgili sayfada belirtmesi gerekmektedir. Açıklamayı alıntı yapılan cümlenin ardından belirtmeniz gerekmektedir.",
+          "ALINTI FORMATI: \"Alıntı yapılan Cümle/ler\" (Yıl, Yarışma Adı, Kategori, Takım Adı)",
+          "ÖRNEK ALINTI: \"Enkazda depremzedenin nerede olduğunu tespit edilememesi, enkaz kaldırma ve deprem-zede arama çalışmalarını yavaşlatan en önemli sorundur.\" (2020, İnsanlık Yararına Teknoloji Yarışması, Afet Yönetimi, X Takımı)",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir.",
+          "Dijital Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Basılı Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası.",
+          "Rapor şablonuna uymayan Final Tasarım Raporları değerlendirilmeyecektir."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 10,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "proje-ozeti",
+            "ad": "PROJE ÖZETİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda proje kapsamında yürütülen faaliyetlerle ilgili olarak özet bilgi sunulur."
+            ],
+            "bolumAdi": "PROJE ÖZETİ"
+          },
+          {
+            "kod": "veriseti-olusturulmasi",
+            "ad": "VERİSETİ OLUŞTURULMASI",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda, model eğitimi ve testi için verilerin nasıl toplandığı, nasıl etiketlendiği ve dengelendiği (data balancing) detaylıca açıklanmalıdır. Veri artırma (data augmentation) teknikleri kullanıldıysa belirtilmeli, eğitim, doğrulama ve test setlerinin dağılım oranları gerekçeleriyle sunulmalıdır. Yararlanılan açık kaynaklı veri setleri kaynakçada da ayrıca belirtilmelidir."
+            ],
+            "bolumAdi": "VERİSETİ OLUŞTURULMASI"
+          },
+          {
+            "kod": "3-1-problemin-analizi",
+            "ad": "3.1.Problemin Analizi",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Video üzerinden araç, plaka, hız veya riskli durum tespiti yaparken karşılaşılan temel problemler (örneğin ışık değişimleri, hareket bulanıklığı, oklüzyon) nelerdir? İzlenen çözüm yolu nedir ve bu yol neden tercih edilmiştir?"
+            ],
+            "bolumAdi": "3.1.Problemin Analizi"
+          },
+          {
+            "kod": "3-2-cozum-mimarisi",
+            "ad": "3.2.Çözüm Mimarisi",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Geliştirilen yapay zekâ sisteminin kuşbakışı görünümü sunulmalıdır. Ham videonun sisteme girişinden, etiketlenmiş çıktıların üretilmesine kadar olan süreç mimari diyagramlar, bileşenler ve arayüz özetleri kullanılarak görselleştirilmeli ve açıklanmalıdır."
+            ],
+            "bolumAdi": "3.2.Çözüm Mimarisi"
+          },
+          {
+            "kod": "3-3-cozum-detaylari",
+            "ad": "3.3.Çözüm Detayları",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Çözüme dair tüm teknik detaylar bu başlıkta verilmelidir. Kullanılan derin öğrenme algoritmaları, sinir ağı mimarileri (ör. YOLO, Faster R-CNN vb.), ön işleme/son işleme adımları ve donanım/yazılım altyapısı (çerçeveler, kütüphaneler) teknik bir dille aktarılmalıdır."
+            ],
+            "bolumAdi": "3.3.Çözüm Detayları"
+          },
+          {
+            "kod": "cozumun-sinanmasi",
+            "ad": "ÇÖZÜMÜN SINANMASI",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Hazırlanan veri seti ile modelin nasıl test edildiği kanıtlarıyla sunulmalıdır. Doğruluk (Accuracy), Hassasiyet (Precision), Duyarlılık (Recall), F1-Score, FPS (Saniyedeki Kare Sayısı) gibi metrikler tablolar ve grafikler halinde verilmelidir. \"Çözümümüze neden güveniyoruz?\" sorusunun somut, verilere dayalı yanıtı bu bölümde yer almalıdır."
+            ],
+            "bolumAdi": "ÇÖZÜMÜN SINANMASI"
+          },
+          {
+            "kod": "kaynakca",
+            "ad": "KAYNAKÇA",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Yararlanılan tüm akademik ve teknik kaynaklar (GitHub repoları, makaleler, dokümanlar) detaylıca listelenmelidir. Projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web Sitesi Adresi, Kitap Adı, Sayfa Numarası vb.)"
+            ],
+            "bolumAdi": "KAYNAKÇA"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "\"YAPAY ZEKÂ ÇÖZÜMÜ\" üst başlık olarak işaretlendi: 50 puanı alt başlıklarına dağıtılmış (3 alt başlık)."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_5G_YAPAY_ZEKA_İLE_AKILLI_YOL_GÜVENLİĞİ_YARISMASI_SARTNAMESI_2_PORZ6.pdf",
+        "yuklendi": "2026-08-23T20:12:10.963Z",
+        "sayfaSayisi": 14,
+        "kelimeSayisi": 3131,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "Test Veri Setinin Takımlarla Paylaşımı",
+              "tarih": "2026-03-27"
+            },
+            {
+              "etiket": "Bilgilendirme ve Soru-Cevap Seansı",
+              "tarih": "2026-04-10"
+            },
+            {
+              "etiket": "Ön Tasarım Raporunun Son Teslim Tarihi",
+              "tarih": "2026-04-24"
+            },
+            {
+              "etiket": "Ön Tasarım Raporu Değerlendirme Sonuçlarının Açıklanması",
+              "tarih": "2026-06-01"
+            },
+            {
+              "etiket": "Takımlarla Soru-Cevap ve Geribildirim Toplantısı",
+              "tarih": "2026-06-09"
+            },
+            {
+              "etiket": "Final Tasarım Raporunun Son Teslim Tarihi",
+              "tarih": "2026-06-14"
+            },
+            {
+              "etiket": "Final Yarışmaya Katılacak Takımların Açıklanması",
+              "tarih": "2026-07-31"
+            }
+          ],
+          "asamalar": [
+            "Final Tasarım Raporlarının Değerlendirilmesi ve Final Yarışma Takımlarının",
+            "Başvuru",
+            "Bilgilendirme Seansı",
+            "Ön Tasarım Raporu",
+            "Ön Tasarım Raporunun Değerlendirilmesi, Sonuçların Duyurulması",
+            "Takımlarla Soru-Cevap ve Geribildirim Toplantısı",
+            "Final Tasarım Raporlarının Değerlendirilmesi ve Final Yarışma Takımlarının",
+            "Final Yarışma",
+            "TEKNOFEST Şanlıurfa"
+          ],
+          "eleyiciHukumler": [
+            "Birden fazla danışman bulunan takımların başvuruları geçersiz sayılacaktır."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 5
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_5G_YAPAY_ZEKA_%C4%B0LE_AKILLI_YOL_G%C3%9CVENL%C4%B0%C4%9E%C4%B0_YARISMASI_SARTNAMESI_2_PORZ6.pdf"
+      }
+    },
+    {
+      "id": "b7717cc5-eb11-42c2-8a77-1911f7d5348e",
+      "ad": "5G & Yapay Zeka ile Akıllı Yol Güvenliği Yarışması",
+      "sablonDosyasi": "2026_5G_Yapay_Zeka_ile_Akıllı_Yol_Güvenliği_ÖTR_şablon_TR_rYLTN.docx",
+      "asama": "ÖTR",
+      "olusturuldu": "2026-08-23T13:53:21.068Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-b7717cc5",
+        "ad": "5G & Yapay Zeka ile Akıllı Yol Güvenliği Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 10,
+        "basliklar": [
+          {
+            "ad": "5G & YAPAY ZEKA İLE AKILLI YOL GÜVENLİĞİ YARIŞMASI ÖN TASARIM RAPORU ŞABLONU",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "5G & YAPAY ZEKA İLE AKILLI YOL GÜVENLİĞİ YARIŞMASI ÖN TASARIM RAPORU ŞABLONU",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "PROJE ÖZETİ",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu kısımda proje kapsamında yürütülen faaliyetlerle ilgili olarak özet bilgi sunulur."
+            ]
+          },
+          {
+            "ad": "TAKIM ŞEMASI",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Görev isterlerine uygun ekip olduğu tablo olarak gösterilmeli, planlama ihtiyaçları karşılayan nitelikte, farklı disiplinlerde üyeler olmalıdır. Bu tabloya kişisel veriler (isim, soy isim, T.C. kimlik numarası, iletişim bilgileri vb.) eklenmemelidir. Yalnızca takımın genel yapısı ve rolleri hakkında bilgi verilmelidir. Kişisel veri içeren tablolar değerlendirme dışı bırakılacaktır."
+            ]
+          },
+          {
+            "ad": "SİSTEM ÖN TASARIMI",
+            "zorunlu": true,
+            "puan": 55,
+            "yonergeMetni": [
+              "Bu kısımda yalnızca araştırma ve tasarım yapılması beklenilmektedir. 2. aşamaya geçen takımlar, buradaki tasarımlarını geliştirip gerçekleyecektir."
+            ]
+          },
+          {
+            "ad": "3.1.Genel Sistem Mimarisi ve Veri Akış Şeması",
+            "zorunlu": true,
+            "puan": 15,
+            "yonergeMetni": [
+              "Bu kısımda mobil uygulama, sunucu, yapay zeka modeli ve dış API'lerin iletişimini gösteren kapsamlı bir sistem blok şeması verilecektir. Şemada; canlı video verisinin sunucuya nasıl iletildiği, YZ modeli ile nasıl işlendiği ve sonuçların kullanıcı arayüzüne hangi hız/protokol ile geri döndürüldüğü net bir şekilde gösterilmelidir. Sistemin darboğaz yaratmadan çalışabileceğine dair mantıksal bir veri akışı sunulması beklenmektedir."
+            ]
+          },
+          {
+            "ad": "3.2.Yapay Zeka Modeli ve Çıkarım Tasarımı",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "Bu kısımda, canlı video akışı üzerinden çıkarım yapacak YZ mimarisi açıklanacaktır. Seçilen temel (foundational) modelin probleme uygunluğu, nasıl ince ayardan (fine-tuning) geçirileceği veya mevcut görüntü işleme teknikleriyle nasıl birleştirileceği anlatılacaktır. Canlı bir sistem tasarlandığı için modelin doğruluk ve gecikme dengesinin nasıl sağlanacağı ile çıkarım süresini optimize etmeye yönelik yaklaşımlar (örn. quantizasyon) belirtilmelidir. Uçtan uca nasıl bir çıkarım (inference) iş hattı oluşturulacağı mimari olarak gösterilmelidir. Kullanılacak YZ ve görüntü işleme bileşenlerini (framework, temel model, görevler, veri kümeleri vb.) özetlemek için tablo formatı kullanabilirsiniz."
+            ]
+          },
+          {
+            "ad": "3.3.Yazılım Mimari Tasarımı",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "Bu kısımda sistemde yer alacak mobil uygulama (ön yüz) ve sunucu (arka yüz) yazılım bileşenleri tanımlanacaktır. Seçilen yazılım çatılarının canlı video aktarımı ve YZ entegrasyonu gereksinimlerine uygunluğu, kullanıcı arayüzünün işlevselliği ve sunucunun eşzamanlı istekleri nasıl yöneteceği açıklanacaktır. Tasarlanacak ekranlar için basit arayüz taslakları (wireframe) sunulabilir ancak kod paylaşılmamalıdır. Sistemde kullanılacak donanım ve yazılım bileşenlerini (teknoloji, dil, çatı, versiyon, temel görev vb.) net bir şekilde sunmak için tablo kullanımından faydalanabilirsiniz."
+            ]
+          },
+          {
+            "ad": "YÖNTEM",
+            "zorunlu": true,
+            "puan": 20,
+            "yonergeMetni": [
+              "Bu kısımda şartnamede tanımlı aşamalardaki görevler yerine getirilirken çalışma kurgularının akış diyagramı ile anlatılması beklenmektedir. Yarışmanın her aşaması ayrı ayrı ele alınmalıdır."
+            ]
+          },
+          {
+            "ad": "ÖZGÜNLÜK",
+            "zorunlu": false,
+            "puan": 10,
+            "yonergeMetni": [
+              "Tasarımın özgünlüğü, uçtan uca mimarinin herhangi bir noktasında mevcut piyasa çözümlerine ve literatüre kıyasla ne tür bir yenilik getirildiği üzerinden değerlendirilecektir. Sistemin verimliliğini veya işlevselliğini artırmak amacıyla sunulan mimari yaklaşımların yanı sıra, yarışmada kurulan bu teknoloji altyapısı kullanılarak gelecekte geliştirilebilecek alternatif ve yenilikçi ürün fikirleriniz de yaratıcılık kapsamında ele alınacaktır."
+            ],
+            "raporda": false
+          },
+          {
+            "ad": "ZAMAN PLANLAMASI",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Bu kısımda sistemin tahmini geliştirme ve test süreçlerini içeren bir zaman planlaması, yapılır. Bu planlamalarda izlenecek yöntemin açıklanması beklenmektedir (Proje Takip Aracı seçimi/kullanımı)."
+            ]
+          },
+          {
+            "ad": "PROJE RAPOR DÜZENİ VE KAYNAKÇA",
+            "zorunlu": true,
+            "puan": 5,
+            "yonergeMetni": [
+              "Rapor yazımında sayfa sınırlarına, akademik yazım kurallarına, kaynakça ve içindekiler yazımlarına dikkat edilmiş olmalıdır.",
+              "Kaynakça başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web Sitesi Adresi, Kitap Adı, Sayfa Numarası vb.)"
+            ]
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [
+          "(Bu sayfaya raporlarda yer verilmeyecektir.)",
+          "Ön Değerlendirme Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en az 3 en fazla 10 sayfa olacaktır.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Her rapor “Kapak ve İçindekiler” başlıkları için 2 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 12, Başlık Yazı Tipi: Arial Black, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst 2.8 alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindeki cümleler birbirinin aynısı ve tekrarı niteliğinde olmamalıdır.",
+          "Raporda, web sitemizde yer alan geçmiş yıl raporlarından yararlanmış olan takımlar alıntı yaptığını ilgili sayfada belirtmesi gerekmektedir. Açıklamayı alıntı yapılan cümlenin ardından belirtmeniz gerekmektedir.",
+          "ALINTI FORMATI: \"Alıntı yapılan Cümle/ler\" (Yıl, Yarışma Adı, Kategori, Takım Adı)",
+          "ÖRNEK ALINTI: \"Enkazda depremzedenin nerede olduğunu tespit edilememesi, enkaz kaldırma ve deprem-zede arama çalışmalarını yavaşlatan en önemli sorundur.\" (2020, İnsanlık Yararına Teknoloji Yarışması, Afet Yönetimi, X Takımı)",
+          "Kaynakçada referanslar aşağıdaki şekilde belirtilebilir.",
+          "Dijital Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., Yazının Başlığı, Yazının Tarihi, Erişim Tarihi, Erişim Adresi.",
+          "Basılı Kaynak: Yazarların Soyadı, Adlarının Baş Harfi., (Basım Tarihi) Yazının Başlığı, (Varsa) Yayınlandığı Derginin Adı, (Varsa) Derginin Sayısı, Sayfa numarası.",
+          "Rapor şablonuna uymayan Ön Değerlendirme Raporları değerlendirilmeyecektir."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 10,
+        "yaziTipi": "Arial",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "proje-ozeti",
+            "ad": "PROJE ÖZETİ",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda proje kapsamında yürütülen faaliyetlerle ilgili olarak özet bilgi sunulur."
+            ],
+            "bolumAdi": "PROJE ÖZETİ"
+          },
+          {
+            "kod": "sistem-on-tasarimi",
+            "ad": "SİSTEM ÖN TASARIMI",
+            "puan": 55,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda yalnızca araştırma ve tasarım yapılması beklenilmektedir. 2. aşamaya geçen takımlar, buradaki tasarımlarını geliştirip gerçekleyecektir."
+            ],
+            "bolumAdi": "SİSTEM ÖN TASARIMI"
+          },
+          {
+            "kod": "3-1-genel-sistem-mimarisi-ve-veri-akis-s",
+            "ad": "3.1.Genel Sistem Mimarisi ve Veri Akış Şeması",
+            "puan": 15,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda mobil uygulama, sunucu, yapay zeka modeli ve dış API'lerin iletişimini gösteren kapsamlı bir sistem blok şeması verilecektir. Şemada; canlı video verisinin sunucuya nasıl iletildiği, YZ modeli ile nasıl işlendiği ve sonuçların kullanıcı arayüzüne hangi hız/protokol ile geri döndürüldüğü net bir şekilde gösterilmelidir. Sistemin darboğaz yaratmadan çalışabileceğine dair mantıksal bir veri akışı sunulması beklenmektedir."
+            ],
+            "bolumAdi": "3.1.Genel Sistem Mimarisi ve Veri Akış Şeması"
+          },
+          {
+            "kod": "3-2-yapay-zeka-modeli-ve-cikarim-tasarim",
+            "ad": "3.2.Yapay Zeka Modeli ve Çıkarım Tasarımı",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda, canlı video akışı üzerinden çıkarım yapacak YZ mimarisi açıklanacaktır. Seçilen temel (foundational) modelin probleme uygunluğu, nasıl ince ayardan (fine-tuning) geçirileceği veya mevcut görüntü işleme teknikleriyle nasıl birleştirileceği anlatılacaktır. Canlı bir sistem tasarlandığı için modelin doğruluk ve gecikme dengesinin nasıl sağlanacağı ile çıkarım süresini optimize etmeye yönelik yaklaşımlar (örn. quantizasyon) belirtilmelidir. Uçtan uca nasıl bir çıkarım (inference) iş hattı oluşturulacağı mimari olarak gösterilmelidir. Kullanılacak YZ ve görüntü işleme bileşenlerini (framework, temel model, görevler, veri kümeleri vb.) özetlemek için tablo formatı kullanabilirsiniz."
+            ],
+            "bolumAdi": "3.2.Yapay Zeka Modeli ve Çıkarım Tasarımı"
+          },
+          {
+            "kod": "3-3-yazilim-mimari-tasarimi",
+            "ad": "3.3.Yazılım Mimari Tasarımı",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda sistemde yer alacak mobil uygulama (ön yüz) ve sunucu (arka yüz) yazılım bileşenleri tanımlanacaktır. Seçilen yazılım çatılarının canlı video aktarımı ve YZ entegrasyonu gereksinimlerine uygunluğu, kullanıcı arayüzünün işlevselliği ve sunucunun eşzamanlı istekleri nasıl yöneteceği açıklanacaktır. Tasarlanacak ekranlar için basit arayüz taslakları (wireframe) sunulabilir ancak kod paylaşılmamalıdır. Sistemde kullanılacak donanım ve yazılım bileşenlerini (teknoloji, dil, çatı, versiyon, temel görev vb.) net bir şekilde sunmak için tablo kullanımından faydalanabilirsiniz."
+            ],
+            "bolumAdi": "3.3.Yazılım Mimari Tasarımı"
+          },
+          {
+            "kod": "yontem",
+            "ad": "YÖNTEM",
+            "puan": 20,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda şartnamede tanımlı aşamalardaki görevler yerine getirilirken çalışma kurgularının akış diyagramı ile anlatılması beklenmektedir. Yarışmanın her aşaması ayrı ayrı ele alınmalıdır."
+            ],
+            "bolumAdi": "YÖNTEM"
+          },
+          {
+            "kod": "ozgunluk",
+            "ad": "ÖZGÜNLÜK",
+            "puan": 10,
+            "bolumBekleniyor": false,
+            "olcut": [
+              "Tasarımın özgünlüğü, uçtan uca mimarinin herhangi bir noktasında mevcut piyasa çözümlerine ve literatüre kıyasla ne tür bir yenilik getirildiği üzerinden değerlendirilecektir. Sistemin verimliliğini veya işlevselliğini artırmak amacıyla sunulan mimari yaklaşımların yanı sıra, yarışmada kurulan bu teknoloji altyapısı kullanılarak gelecekte geliştirilebilecek alternatif ve yenilikçi ürün fikirleriniz de yaratıcılık kapsamında ele alınacaktır."
+            ],
+            "bolumAdi": "ÖZGÜNLÜK"
+          },
+          {
+            "kod": "zaman-planlamasi",
+            "ad": "ZAMAN PLANLAMASI",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Bu kısımda sistemin tahmini geliştirme ve test süreçlerini içeren bir zaman planlaması, yapılır. Bu planlamalarda izlenecek yöntemin açıklanması beklenmektedir (Proje Takip Aracı seçimi/kullanımı)."
+            ],
+            "bolumAdi": "ZAMAN PLANLAMASI"
+          },
+          {
+            "kod": "proje-rapor-duzeni-ve-kaynakca",
+            "ad": "PROJE RAPOR DÜZENİ VE KAYNAKÇA",
+            "puan": 5,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Rapor yazımında sayfa sınırlarına, akademik yazım kurallarına, kaynakça ve içindekiler yazımlarına dikkat edilmiş olmalıdır.",
+              "Kaynakça başlığında projenizi yapmak için kullandığınız tüm kaynakların detaylı bilgisi verilmelidir. (Web Sitesi Adresi, Kitap Adı, Sayfa Numarası vb.)"
+            ],
+            "bolumAdi": "PROJE RAPOR DÜZENİ VE KAYNAKÇA"
+          }
+        ],
+        "toplamPuan": 155
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Rubrik toplamı 155 puan. Ağırlıklar yöneticiye doğrulatılmalı."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_5G_YAPAY_ZEKA_İLE_AKILLI_YOL_GÜVENLİĞİ_YARISMASI_SARTNAMESI_2_PORZ6.pdf",
+        "yuklendi": "2026-08-23T20:12:13.427Z",
+        "sayfaSayisi": 14,
+        "kelimeSayisi": 3131,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "Test Veri Setinin Takımlarla Paylaşımı",
+              "tarih": "2026-03-27"
+            },
+            {
+              "etiket": "Bilgilendirme ve Soru-Cevap Seansı",
+              "tarih": "2026-04-10"
+            },
+            {
+              "etiket": "Ön Tasarım Raporunun Son Teslim Tarihi",
+              "tarih": "2026-04-24"
+            },
+            {
+              "etiket": "Ön Tasarım Raporu Değerlendirme Sonuçlarının Açıklanması",
+              "tarih": "2026-06-01"
+            },
+            {
+              "etiket": "Takımlarla Soru-Cevap ve Geribildirim Toplantısı",
+              "tarih": "2026-06-09"
+            },
+            {
+              "etiket": "Final Tasarım Raporunun Son Teslim Tarihi",
+              "tarih": "2026-06-14"
+            },
+            {
+              "etiket": "Final Yarışmaya Katılacak Takımların Açıklanması",
+              "tarih": "2026-07-31"
+            }
+          ],
+          "asamalar": [
+            "Final Tasarım Raporlarının Değerlendirilmesi ve Final Yarışma Takımlarının",
+            "Başvuru",
+            "Bilgilendirme Seansı",
+            "Ön Tasarım Raporu",
+            "Ön Tasarım Raporunun Değerlendirilmesi, Sonuçların Duyurulması",
+            "Takımlarla Soru-Cevap ve Geribildirim Toplantısı",
+            "Final Tasarım Raporlarının Değerlendirilmesi ve Final Yarışma Takımlarının",
+            "Final Yarışma",
+            "TEKNOFEST Şanlıurfa"
+          ],
+          "eleyiciHukumler": [
+            "Birden fazla danışman bulunan takımların başvuruları geçersiz sayılacaktır."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 5
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_5G_YAPAY_ZEKA_%C4%B0LE_AKILLI_YOL_G%C3%9CVENL%C4%B0%C4%9E%C4%B0_YARISMASI_SARTNAMESI_2_PORZ6.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "5g-yapay-zeka-ile-akilli-yol-guvenligi-yarismasi"
+}

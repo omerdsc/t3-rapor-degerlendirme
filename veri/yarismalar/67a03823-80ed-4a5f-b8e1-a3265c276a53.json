@@ -1,0 +1,665 @@
+{
+  "id": "67a03823-80ed-4a5f-b8e1-a3265c276a53",
+  "ad": "Sürü İHA Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:58:28.880Z",
+  "kategoriler": [
+    {
+      "id": "ae6955f2-c293-4f82-b31c-ad9f3978e095",
+      "ad": "Kritik",
+      "sablonDosyasi": "2026_Sürü_İha_KTR_Şablonu_l_ORree.docx",
+      "asama": "KTR",
+      "olusturuldu": "2026-08-23T13:58:28.531Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-ae6955f2",
+        "ad": "Kritik",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 22,
+        "basliklar": [
+          {
+            "ad": "YÖNETİCİ ÖZETİ (0-1 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{ Proje raporunun özeti en fazla 300 kelime kullanılarak ifade edilmelidir.}"
+            ]
+          },
+          {
+            "ad": "PROJE YÖNETİMİ (0-2 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Takım üyelerini de içeren proje organizasyonu verilmelidir. Her takım üyesi hakkında bilgi sunulmalıdır. Proje takvimi sunulmalıdır.}"
+            ]
+          },
+          {
+            "ad": "PROJE GEREKSİNİMLERİ (0-4 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Yarışmacı takımlar şartnamede belirlenen hususların tamamını kapsayacak şekilde gereksinimler oluşturacaktır. Yarışma içeriğinin doğru anlaşıldığının bu bölümde ifade edilmesi gereklidir.}"
+            ]
+          },
+          {
+            "ad": "İHA PLATFORM TASARIMI (0-25 Puan):",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu bölümde takımlar, yarışmada kullanacakları İHA platformunun kritik tasarım aşamasındaki nihai halini açıklamalıdır. Sistem artık ön tasarım seviyesinden çıkmış olmalı; mekanik, elektronik ve haberleşme altyapısı teknik olarak sunulmalıdır.Üretimi tamamlanan hava araçlarına ait gerçek sistem fotoğrafları veya üretimi tamamlanmamış sistemler için nihai 3B CAD modelleri raporda yer almalıdır. Ayrıca sistemin yarışma görevlerine uygunluğu ve gerçekleştirilen geliştirmeler açıklanmalıdır.",
+              "Takımlar, gerçekleştirilen test çalışmalarını ve elde edilen sonuçları sunmalıdır. Bu kapsamda;",
+              "Haberleşme(İHA–YKİ ve İHA–İHA )menzil ve kararlılık testleri",
+              "RC haberleşme ve failsafe testleri",
+              "gibi çalışmalar grafikler ve tablolar ile desteklenmelidir. Test ortamı, ölçülen değerler ve temel sonuçlar açık şekilde belirtilmelidir.İHA–YKİ ve İHA–İHA haberleşme yapısının nihai hali açıklanmalı; kullanılan haberleşme modülleri, çalışma frekansları, mesh ağ desteği, kanal/frekans değiştirme yetenekleri ve gerçek haberleşme menzili belirtilmelidir.",
+              "Sisteme ait güncel mimari şeması raporda sunulmalı; itki, güç, aviyonik, otonomi, kamera ve haberleşme sistemleri ile bunlar arasındaki veri ve güç bağlantıları gösterilmelidir.",
+              "Ayrıca sistemde kullanılan temel bileşenlere ait maliyet tablosu ve toplam tahmini bütçe raporda yer almalıdır.}"
+            ]
+          },
+          {
+            "ad": "5. SÜRÜ MİMARİSİ, GÖREV YÖNETİMİ VE YAZILIM TASARIMI (0-30 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu bölümde takımlar, yarışmada kullanılacak nihai sürü mimarisini ve yazılım altyapısını açıklamalıdır. Kullanılan sürü mimarisi (merkezi, dağıtık, lider–takipçi, hibrit vb.) ve bu mimarinin yarışma görevlerine uygunluğu teknik olarak ifade edilmelidir.",
+              "Ön tasarım raporundan farklı olarak bu aşamada teorik karşılaştırmalardan ziyade, geliştirilen nihai sistemin çalışma yapısı, kullanılan algoritmalar ve gerçek sistem davranışları açıklanmalıdır.",
+              "Sürü formasyonu, görev paylaşımı, sürü koordinasyonu, navigasyon, çarpışmadan kaçınma, QR çözümleme, renk algılama ve görev yönetimi için kullanılan nihai algoritmalar detaylı şekilde sunulmalıdır. Kullanılan algoritmaların hangi görevlerde nasıl kullanıldığı, sisteme nasıl uyarlandığı ve görev gereksinimlerini nasıl karşıladığı açıklanmalıdır.",
+              "Bu bölümde anlatılan algoritmalar; Akış diyagramları, kontrolcü şemaları, durum diyagramları, matematiksel ifadeler, psödo kod örnekleri ile desteklenebilir.",
+              "Görev senaryoları için ayrı akış diyagramları, durum makineleri, kontrolcü yapıları veya psödo kod örnekleri verilmelidir. Görev başlatma, karar verme, sürü koordinasyonu, görev geçişleri, hata yönetimi ve görev sonlandırma süreçleri detaylandırılmalıdır.",
+              "Sürü yönetim ve formasyon algoritmalarının jenerik ve dinamik yapıda olması beklenmektedir. Sistem mimarisi belirli bir İHA sayısına bağımlı olmamalıdır. Bu yapı; akış şemaları, durum diyagramları veya psödo kod örnekleri ile gösterilmelidir.",
+              "Yer kontrol istasyonu bağlantısının kesilmesi, İHA arızası, haberleşme kaybı, sensör hataları veya beklenmedik görev durumları gibi senaryolarda sistemin nasıl davrandığı açıklanmalıdır. Kullanılan failsafe mekanizmaları, hata tolerans yöntemleri ve alternatif çözümler detaylandırılmalıdır.",
+              "Ayrıca sistemin gerçek zamanlı görev yönetimi, sürü içi haberleşme yapısı, karar verme mekanizması ve görev dağıtım yöntemleri açıklanmalı; yazılım mimarisi uygun görseller ile desteklenmelidir.}"
+            ]
+          },
+          {
+            "ad": "6. GÖREV DOĞRULAMA, SİMÜLASYON VE DEĞERLENDİRME (0-35 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu bölümde, geliştirilen nihai görev algoritmalarının ve sistem tasarımının simülasyon ortamında veya gerçek dünya testlerinde doğrulanması beklenmektedir. Sunulan çalışmaların, yarışma görevlerinin gerçekleştirilebildiğini teknik olarak göstermesi gerekmektedir.",
+              "Kullanılan simülasyon, doğrulama ve test altyapısı açıklanmalıdır. Bu kapsamda kullanılan simülasyon ortamları, SITL/HITL yapıları, görev senaryoları, sensör modelleri ve test altyapısı görseller ile desteklenmelidir.",
+              "Görev algoritmalarına ait çıktı, performans ve doğrulama testleri sunulmalıdır. Bu kapsamda sürü koordinasyonu, görev yönetimi, navigasyon, çarpışmadan kaçınma, haberleşme ve görev başarımı gibi kriterler değerlendirilmelidir. Test sonuçları; grafikler, tablolar, simülasyon çıktıları veya gerçek sistem görselleri ile desteklenmelidir.",
+              "QR kod algılama, renk tespiti, tespit mesafesi, haberleşme performansı, görev tamamlama süresi ve benzeri görev odaklı testlerin sonuçları sunulmalıdır.",
+              "Simülasyon ve test sonuçları yalnızca görsel olarak değil; algoritmaların davranışları, sistem performansı, karşılaşılan eksikler ve planlanan geliştirme çalışmaları teknik olarak değerlendirilmelidir.",
+              "Bu bölümde uçuş öncesi sisteme ait “Uçuş Kontrol Listesi” yer almalıdır.",
+              "Ayrıca gerçekleştirilen gerçek uçuş testlerine ait görseller ve elde edilen temel sonuçlar derlenmiş şekilde sunulmalıdır. Henüz gerçekleştirilmemiş testler için ise yarışma tarihine kadar planlanan testler, test amaçları ve beklenen kazanımlar açıklanmalıdır.}"
+            ]
+          },
+          {
+            "ad": "7. FORMAT VE KAYNAKÇA (0-3 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Rapor formatına uyum, yazım ve dilbilgisi kurallarına uyum, akıcı ve anlaşılabilir dil kullanılması gerekmektedir. Kaynakçalar, kaynakça formatına uygun bir şekilde dokümanda belirtilmelidir.}"
+            ]
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [
+          "Kullanılan görseller metinlerde bahsedilen yerlerin sonunda belirtilmelidir.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır. Verilen kritik bilgiler ulusal, uluslararası kabul görmüş dergilere veya akademik geçerliliği olan makalelere atıf yapılmalıdır.",
+          "Her rapor “Kapak ve İçindekiler” başlıkları için 2 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 10, Satır Aralıkları: 1,15. İki tarafa yaslı, Sayfa kenar boşlukları üst-alt-sağ-sol 2,5 cm olmalıdır.",
+          "Ön Değerlendirme Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en fazla 22 sayfa olacaktır.",
+          "Ana başlıklar altında alt başlık oluşturulmasına yönelik bir kısıtlama yoktur.",
+          "Raporlar, Kurumsal Yönetim Sisteminde (KYS) belirtilen forma pdf formatında yüklenecektir.",
+          "Rapor içindeki cümleler birbirinin aynı ve tekrarı niteliğinde olmamalıdır."
+        ],
+        "eleyiciMi": false,
+        "azamiSayfa": 22,
+        "yaziTipi": "Arial",
+        "govdePunto": 10
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "yonetici-ozeti-0-1-puan",
+            "ad": "YÖNETİCİ ÖZETİ (0-1 Puan)",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{ Proje raporunun özeti en fazla 300 kelime kullanılarak ifade edilmelidir.}"
+            ],
+            "bolumAdi": "YÖNETİCİ ÖZETİ (0-1 Puan)"
+          },
+          {
+            "kod": "proje-yonetimi-0-2-puan",
+            "ad": "PROJE YÖNETİMİ (0-2 Puan)",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Takım üyelerini de içeren proje organizasyonu verilmelidir. Her takım üyesi hakkında bilgi sunulmalıdır. Proje takvimi sunulmalıdır.}"
+            ],
+            "bolumAdi": "PROJE YÖNETİMİ (0-2 Puan)"
+          },
+          {
+            "kod": "proje-gereksinimleri-0-4-puan",
+            "ad": "PROJE GEREKSİNİMLERİ (0-4 Puan)",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Yarışmacı takımlar şartnamede belirlenen hususların tamamını kapsayacak şekilde gereksinimler oluşturacaktır. Yarışma içeriğinin doğru anlaşıldığının bu bölümde ifade edilmesi gereklidir.}"
+            ],
+            "bolumAdi": "PROJE GEREKSİNİMLERİ (0-4 Puan)"
+          },
+          {
+            "kod": "iha-platform-tasarimi-0-25-puan",
+            "ad": "İHA PLATFORM TASARIMI (0-25 Puan):",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde takımlar, yarışmada kullanacakları İHA platformunun kritik tasarım aşamasındaki nihai halini açıklamalıdır. Sistem artık ön tasarım seviyesinden çıkmış olmalı; mekanik, elektronik ve haberleşme altyapısı teknik olarak sunulmalıdır.Üretimi tamamlanan hava araçlarına ait gerçek sistem fotoğrafları veya üretimi tamamlanmamış sistemler için nihai 3B CAD modelleri raporda yer almalıdır. Ayrıca sistemin yarışma görevlerine uygunluğu ve gerçekleştirilen geliştirmeler açıklanmalıdır.",
+              "Takımlar, gerçekleştirilen test çalışmalarını ve elde edilen sonuçları sunmalıdır. Bu kapsamda;",
+              "Haberleşme(İHA–YKİ ve İHA–İHA )menzil ve kararlılık testleri",
+              "RC haberleşme ve failsafe testleri",
+              "gibi çalışmalar grafikler ve tablolar ile desteklenmelidir. Test ortamı, ölçülen değerler ve temel sonuçlar açık şekilde belirtilmelidir.İHA–YKİ ve İHA–İHA haberleşme yapısının nihai hali açıklanmalı; kullanılan haberleşme modülleri, çalışma frekansları, mesh ağ desteği, kanal/frekans değiştirme yetenekleri ve gerçek haberleşme menzili belirtilmelidir.",
+              "Sisteme ait güncel mimari şeması raporda sunulmalı; itki, güç, aviyonik, otonomi, kamera ve haberleşme sistemleri ile bunlar arasındaki veri ve güç bağlantıları gösterilmelidir.",
+              "Ayrıca sistemde kullanılan temel bileşenlere ait maliyet tablosu ve toplam tahmini bütçe raporda yer almalıdır.}"
+            ],
+            "bolumAdi": "İHA PLATFORM TASARIMI (0-25 Puan):"
+          },
+          {
+            "kod": "5-suru-mimarisi-gorev-yonetimi-ve-yazili",
+            "ad": "5. SÜRÜ MİMARİSİ, GÖREV YÖNETİMİ VE YAZILIM TASARIMI (0-30 Puan)",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde takımlar, yarışmada kullanılacak nihai sürü mimarisini ve yazılım altyapısını açıklamalıdır. Kullanılan sürü mimarisi (merkezi, dağıtık, lider–takipçi, hibrit vb.) ve bu mimarinin yarışma görevlerine uygunluğu teknik olarak ifade edilmelidir.",
+              "Ön tasarım raporundan farklı olarak bu aşamada teorik karşılaştırmalardan ziyade, geliştirilen nihai sistemin çalışma yapısı, kullanılan algoritmalar ve gerçek sistem davranışları açıklanmalıdır.",
+              "Sürü formasyonu, görev paylaşımı, sürü koordinasyonu, navigasyon, çarpışmadan kaçınma, QR çözümleme, renk algılama ve görev yönetimi için kullanılan nihai algoritmalar detaylı şekilde sunulmalıdır. Kullanılan algoritmaların hangi görevlerde nasıl kullanıldığı, sisteme nasıl uyarlandığı ve görev gereksinimlerini nasıl karşıladığı açıklanmalıdır.",
+              "Bu bölümde anlatılan algoritmalar; Akış diyagramları, kontrolcü şemaları, durum diyagramları, matematiksel ifadeler, psödo kod örnekleri ile desteklenebilir.",
+              "Görev senaryoları için ayrı akış diyagramları, durum makineleri, kontrolcü yapıları veya psödo kod örnekleri verilmelidir. Görev başlatma, karar verme, sürü koordinasyonu, görev geçişleri, hata yönetimi ve görev sonlandırma süreçleri detaylandırılmalıdır.",
+              "Sürü yönetim ve formasyon algoritmalarının jenerik ve dinamik yapıda olması beklenmektedir. Sistem mimarisi belirli bir İHA sayısına bağımlı olmamalıdır. Bu yapı; akış şemaları, durum diyagramları veya psödo kod örnekleri ile gösterilmelidir.",
+              "Yer kontrol istasyonu bağlantısının kesilmesi, İHA arızası, haberleşme kaybı, sensör hataları veya beklenmedik görev durumları gibi senaryolarda sistemin nasıl davrandığı açıklanmalıdır. Kullanılan failsafe mekanizmaları, hata tolerans yöntemleri ve alternatif çözümler detaylandırılmalıdır.",
+              "Ayrıca sistemin gerçek zamanlı görev yönetimi, sürü içi haberleşme yapısı, karar verme mekanizması ve görev dağıtım yöntemleri açıklanmalı; yazılım mimarisi uygun görseller ile desteklenmelidir.}"
+            ],
+            "bolumAdi": "5. SÜRÜ MİMARİSİ, GÖREV YÖNETİMİ VE YAZILIM TASARIMI (0-30 Puan)"
+          },
+          {
+            "kod": "6-gorev-dogrulama-simulasyon-ve-degerlen",
+            "ad": "6. GÖREV DOĞRULAMA, SİMÜLASYON VE DEĞERLENDİRME (0-35 Puan)",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde, geliştirilen nihai görev algoritmalarının ve sistem tasarımının simülasyon ortamında veya gerçek dünya testlerinde doğrulanması beklenmektedir. Sunulan çalışmaların, yarışma görevlerinin gerçekleştirilebildiğini teknik olarak göstermesi gerekmektedir.",
+              "Kullanılan simülasyon, doğrulama ve test altyapısı açıklanmalıdır. Bu kapsamda kullanılan simülasyon ortamları, SITL/HITL yapıları, görev senaryoları, sensör modelleri ve test altyapısı görseller ile desteklenmelidir.",
+              "Görev algoritmalarına ait çıktı, performans ve doğrulama testleri sunulmalıdır. Bu kapsamda sürü koordinasyonu, görev yönetimi, navigasyon, çarpışmadan kaçınma, haberleşme ve görev başarımı gibi kriterler değerlendirilmelidir. Test sonuçları; grafikler, tablolar, simülasyon çıktıları veya gerçek sistem görselleri ile desteklenmelidir.",
+              "QR kod algılama, renk tespiti, tespit mesafesi, haberleşme performansı, görev tamamlama süresi ve benzeri görev odaklı testlerin sonuçları sunulmalıdır.",
+              "Simülasyon ve test sonuçları yalnızca görsel olarak değil; algoritmaların davranışları, sistem performansı, karşılaşılan eksikler ve planlanan geliştirme çalışmaları teknik olarak değerlendirilmelidir.",
+              "Bu bölümde uçuş öncesi sisteme ait “Uçuş Kontrol Listesi” yer almalıdır.",
+              "Ayrıca gerçekleştirilen gerçek uçuş testlerine ait görseller ve elde edilen temel sonuçlar derlenmiş şekilde sunulmalıdır. Henüz gerçekleştirilmemiş testler için ise yarışma tarihine kadar planlanan testler, test amaçları ve beklenen kazanımlar açıklanmalıdır.}"
+            ],
+            "bolumAdi": "6. GÖREV DOĞRULAMA, SİMÜLASYON VE DEĞERLENDİRME (0-35 Puan)"
+          },
+          {
+            "kod": "7-format-ve-kaynakca-0-3-puan",
+            "ad": "7. FORMAT VE KAYNAKÇA (0-3 Puan)",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Rapor formatına uyum, yazım ve dilbilgisi kurallarına uyum, akıcı ve anlaşılabilir dil kullanılması gerekmektedir. Kaynakçalar, kaynakça formatına uygun bir şekilde dokümanda belirtilmelidir.}"
+            ],
+            "bolumAdi": "7. FORMAT VE KAYNAKÇA (0-3 Puan)"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Şablonda puan ağırlığı yok; 7 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "Sürü_İHA_Yarışma_Şartnamesi_V2_-_TR_ZJlf8.pdf",
+        "yuklendi": "2026-08-23T20:16:33.566Z",
+        "sayfaSayisi": 29,
+        "kelimeSayisi": 6853,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Kural Güncellemeleri",
+              "tarih": "2026-06-15"
+            },
+            {
+              "etiket": "Ön Tasarım Raporu (ÖTR) Son Teslim Tarihi",
+              "tarih": "2026-03-27"
+            },
+            {
+              "etiket": "Açıklanması",
+              "tarih": "2026-04-01 → 2026-04-04"
+            },
+            {
+              "etiket": "Soru Cevap Toplantısı",
+              "tarih": "2026-04-10"
+            },
+            {
+              "etiket": "Ön Değerlendirme Sunumu (Simülasyon)",
+              "tarih": "2026-04-20 → 2026-04-21"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu (KTR) Son Teslim Tarihi",
+              "tarih": "2026-06-19"
+            },
+            {
+              "etiket": "KTR Sonuçlarının Açıklanması",
+              "tarih": "2026-07-06 → 2026-07-10"
+            },
+            {
+              "etiket": "Uçuş Kanıt ve Yazılım Mimarisi Videosu Son Teslim Tarihi",
+              "tarih": "2026-08-02"
+            },
+            {
+              "etiket": "Videolarının Sonuçlarının-Finalistlerin Açıklanma Tarihi",
+              "tarih": "2026-08-07"
+            },
+            {
+              "etiket": "GAZİANTEP YARIŞMA TARİHİ- YERİ",
+              "tarih": "2026-09-07 → 2026-09-11"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Birden fazla danışman bulunan takımların başvuruları geçersiz sayılacaktır."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 10,
+          "danismanZorunlu": true
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/S%C3%BCr%C3%BC_%C4%B0HA_Yar%C4%B1%C5%9Fma_%C5%9Eartnamesi_V2_-_TR_ZJlf8.pdf"
+      }
+    },
+    {
+      "id": "8009ccb4-660e-4e97-9ccd-0b6006271120",
+      "ad": "Sürü İHA Yarışması · ÖTR",
+      "sablonDosyasi": "2026_Sürü_İha_ÖTR_Şablonu_cWiUn.docx",
+      "asama": "ÖTR",
+      "olusturuldu": "2026-08-23T13:58:28.880Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-8009ccb4",
+        "ad": "Sürü İHA Yarışması · ÖTR",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 15,
+        "basliklar": [
+          {
+            "ad": "YÖNETİCİ ÖZETİ (0-5 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{ Proje raporunun özeti en fazla 300 kelime kullanılarak ifade edilmelidir.}"
+            ]
+          },
+          {
+            "ad": "PROJE YÖNETİMİ (0-5 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Takım üyelerini de içeren proje organizasyonu verilmelidir. Her takım üyesi hakkında bilgi sunulmalıdır. Proje takvimi sunulmalıdır.}"
+            ]
+          },
+          {
+            "ad": "PROJE GEREKSİNİMLERİ (0-10 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Yarışmacı takımlar şartnamede belirlenen hususların tamamını kapsayacak şekilde gereksinimler oluşturacaktır. Yarışma içeriğinin doğru anlaşıldığının bu bölümde ifade edilmesi gereklidir.}"
+            ]
+          },
+          {
+            "ad": "İHA PLATFORM TASARIMI (0-20 Puan):",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu bölümde takımlar, yarışma kapsamında kullanmayı planladıkları İHA platformunun ön tasarımını açıklamalıdır. Platformun genel tasarım yaklaşımı ve yarışma görevlerine uygunluğu anlaşılır şekilde ifade edilmelidir. Yarışmada kullanılması planlanan mekanik tasarıma ait en az iki (2) adet üç boyutlu (3D) görsel sunulmalıdır.",
+              "Kullanılması planlanan haberleşme yapısı; İHA–Yer Kontrol İstasyonu (YKİ) ve İHA–İHA haberleşmesi olacak şekilde açıklanmalıdır. Bu kapsamda aktarılacak temel veriler ve kullanım amaçları belirtilmeli; haberleşme modülünün çalışma frekans bandı, frekans/kanal değiştirme yetenekleri ve mesh ağ desteği açıkça ifade edilmelidir.",
+              "Sistemde yer alan tüm alt sistem ve bileşenlerin mimari bağlantılarını içeren genel bir sistem mimari şeması sunulmalıdır. Bu şemada itki, elektrik/güç, otonomi, aviyonik, kamera ve haberleşme sistemlerine ait bileşenler ile güç ve veri aktarım hatları görsel olarak gösterilmelidir.",
+              "Hava aracında kullanılan otopilot sistemi için tercih edilen donanım ve yazılım çözümleri; kullanılan otopilot kartı, temel sensörler ve uçuş yazılımının otonom görev, failsafe ve haberleşme entegrasyonu yetenekleri kapsamında açıklanmalıdır.",
+              "Özgün tasarım değerlendirmesi kapsamında takımlar, platformlarında özgünlük ve işlevsellik açısından öne çıkan tasarım unsurlarını kısaca açıklamalıdır. Mevcut sistemlerden farklı olarak yaptıkları veya yapmayı planladıkları yaklaşımların platformun işlevselliğine katkısı belirtilmelidir. }"
+            ]
+          },
+          {
+            "ad": "5. SÜRÜ MİMARİSİ, GÖREV YÖNETİMİ VE YAZILIM TASARIMI (0-35 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu bölümde yarışmacı takımlar, sürü İHA sistemi için tercih ettikleri sürü mimarisini (merkezi, dağıtık, lider–takipçi vb.) açıkça belirtmeli ve bu mimarinin yarışma görev isterlerini karşılama yeterliliğini gerekçelendirmelidir. Seçilen mimarinin görev başarımına, sistem güvenilirliğine ve operasyonel esnekliğe olan etkileri açıklanmalıdır.",
+              "Takımlar, tercih ettikleri sürü mimarisini belirlerken dikkate aldıkları kriterleri (ölçeklenebilirlik, hata toleransı, iletişim yükü, gerçek zamanlılık, görev karmaşıklığı vb.) ifade etmeli; mimarinin avantaj ve dezavantajlarını literatürdeki benzer sürü İHA çalışmalarıyla karşılaştırmalı olarak sunmalıdır. Bu kapsamda güncel akademik veya teknik kaynaklara atıf yapılması beklenmektedir.",
+              "Sürü formasyonu, sürü halinde navigasyon, çarpışmadan kaçınma ve sürü koordinasyonu gibi temel sürü yetenekleri için kullanılması planlanan algoritmalar açıklanmalı; bu algoritmaların yarışma görevleriyle nasıl ilişkilendirildiği ve görev gereksinimlerini nasıl karşıladığı ortaya konulmalıdır.",
+              "Yarışma görev isterlerinin yerine getirilebilmesi için kullanılan veya planlanan genel algoritmik yaklaşımın akış diyagramı sunulmalıdır. Akış diyagramında görev başlatma, karar verme, sürü koordinasyonu ve görev sonlandırma adımlarının detaylandırılarak gösterilmesi beklenmektedir.",
+              "Yer kontrol istasyonu ile bağlantının kesilmesi durumunda sistemin nasıl davranacağı açıklanmalıdır. Bu kapsamda, bağlantı kaybının görev başarımını nasıl etkilediği ve seçilen sürü mimarisinin bu durumu nasıl tolere ettiği veya etkisiz hale getirdiği belirtilmelidir.",
+              "Failsafe senaryolarının (haberleşme kaybı, İHA arızası, sensör hatası vb.) yazılımsal olarak nasıl yönetildiği açıklanmalıdır. Ayrıca, olası donanımsal veya algoritmik kısıtlar karşısında planlanan alternatif veya uyarlanabilir çözümlere kısaca değinilmelidir.}"
+            ]
+          },
+          {
+            "ad": "6. GÖREV DOĞRULAMA, SİMÜLASYON VE DEĞERLENDİRME (0-20 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Bu bölümde, önceki bölümlerde teorik olarak açıklanan tasarım çözümünün ve geliştirilen algoritmaların, yarışma görevlerini yerine getirebildiğinin simülasyon ortamında doğrulanması beklenmektedir. Sürü İHA algoritmaları için yapılan simülasyon çalışmaları; tutarlı, mantıklı ve değerlendirilebilir sonuçlar ile sunulmalıdır.",
+              "Sürü İHA simülasyonu herhangi bir programlama dili veya simülasyon ortamı kullanılarak gerçekleştirilebilir. Kullanılan simülasyon ortamı ile temel varsayımlar ve kısıtlar kısaca açıklanmalıdır.",
+              "Simülasyonda, yarışmanın ilk görevi görev ortamı ile birlikte modellenmeli; İHA(lar)a ait kamera entegrasyonu, görev alanı temsili ve görev kapsamında kullanılan işaretler (örneğin QR kodlar) simülasyon ortamında yer almalıdır.",
+              "Sürü görevleri kapsamında en az üç (3) farklı sürü formasyonuna ait görsel veya simülasyon çıktıları sunulmalıdır.",
+              "Simülasyon sonuçları yalnızca görsel olarak sunulmamalı; algoritmaların davranışı, görev başarımı ve geliştirme sürecinde yapılan iyileştirmeler üzerinden kısaca yorumlanmalıdır. Karşılaşılan sınırlamalar veya başarısız senaryolar ve bunlara yönelik planlanan geliştirme adımlarına değinilmesi beklenmektedir.}"
+            ]
+          },
+          {
+            "ad": "7. FORMAT VE KAYNAKÇA (0-5 Puan)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "{Rapor formatına uyum, yazım ve dilbilgisi kurallarına uyum, akıcı ve anlaşılabilir dil kullanılması gerekmektedir. Kaynakçalar, kaynakça formatına uygun bir şekilde dokümanda belirtilmelidir.}"
+            ]
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [
+          "Kullanılan görseller metinlerde bahsedilen yerlerin sonunda belirtilmelidir.",
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır. Verilen kritik bilgiler ulusal, uluslararası kabul görmüş dergilere veya akademik geçerliliği olan makalelere atıf yapılmalıdır.",
+          "Her rapor “Kapak ve İçindekiler” başlıkları için 2 ayrı sayfa içermelidir.",
+          "Yazı tipi: Arial, Punto: 10, Satır Aralıkları: 1,15. İki tarafa yaslı, Sayfa kenar boşlukları üst-alt-sağ-sol 2,5 cm olmalıdır.",
+          "Ön Değerlendirme Raporu Kapak, İçindekiler, Kaynakça ve (varsa) Ekler sayfaları dahil olmak üzere en fazla 15 sayfa olacaktır.",
+          "Ana başlıklar altında alt başlık oluşturulmasına yönelik bir kısıtlama yoktur.",
+          "Raporlar, Kurumsal Yönetim Sisteminde (KYS) belirtilen forma pdf formatında yüklenecektir.",
+          "Rapor içindeki cümleler birbirinin aynı ve tekrarı niteliğinde olmamalıdır."
+        ],
+        "eleyiciMi": false,
+        "azamiSayfa": 15,
+        "yaziTipi": "Arial",
+        "govdePunto": 10
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "yonetici-ozeti-0-5-puan",
+            "ad": "YÖNETİCİ ÖZETİ (0-5 Puan)",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{ Proje raporunun özeti en fazla 300 kelime kullanılarak ifade edilmelidir.}"
+            ],
+            "bolumAdi": "YÖNETİCİ ÖZETİ (0-5 Puan)"
+          },
+          {
+            "kod": "proje-yonetimi-0-5-puan",
+            "ad": "PROJE YÖNETİMİ (0-5 Puan)",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Takım üyelerini de içeren proje organizasyonu verilmelidir. Her takım üyesi hakkında bilgi sunulmalıdır. Proje takvimi sunulmalıdır.}"
+            ],
+            "bolumAdi": "PROJE YÖNETİMİ (0-5 Puan)"
+          },
+          {
+            "kod": "proje-gereksinimleri-0-10-puan",
+            "ad": "PROJE GEREKSİNİMLERİ (0-10 Puan)",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Yarışmacı takımlar şartnamede belirlenen hususların tamamını kapsayacak şekilde gereksinimler oluşturacaktır. Yarışma içeriğinin doğru anlaşıldığının bu bölümde ifade edilmesi gereklidir.}"
+            ],
+            "bolumAdi": "PROJE GEREKSİNİMLERİ (0-10 Puan)"
+          },
+          {
+            "kod": "iha-platform-tasarimi-0-20-puan",
+            "ad": "İHA PLATFORM TASARIMI (0-20 Puan):",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde takımlar, yarışma kapsamında kullanmayı planladıkları İHA platformunun ön tasarımını açıklamalıdır. Platformun genel tasarım yaklaşımı ve yarışma görevlerine uygunluğu anlaşılır şekilde ifade edilmelidir. Yarışmada kullanılması planlanan mekanik tasarıma ait en az iki (2) adet üç boyutlu (3D) görsel sunulmalıdır.",
+              "Kullanılması planlanan haberleşme yapısı; İHA–Yer Kontrol İstasyonu (YKİ) ve İHA–İHA haberleşmesi olacak şekilde açıklanmalıdır. Bu kapsamda aktarılacak temel veriler ve kullanım amaçları belirtilmeli; haberleşme modülünün çalışma frekans bandı, frekans/kanal değiştirme yetenekleri ve mesh ağ desteği açıkça ifade edilmelidir.",
+              "Sistemde yer alan tüm alt sistem ve bileşenlerin mimari bağlantılarını içeren genel bir sistem mimari şeması sunulmalıdır. Bu şemada itki, elektrik/güç, otonomi, aviyonik, kamera ve haberleşme sistemlerine ait bileşenler ile güç ve veri aktarım hatları görsel olarak gösterilmelidir.",
+              "Hava aracında kullanılan otopilot sistemi için tercih edilen donanım ve yazılım çözümleri; kullanılan otopilot kartı, temel sensörler ve uçuş yazılımının otonom görev, failsafe ve haberleşme entegrasyonu yetenekleri kapsamında açıklanmalıdır.",
+              "Özgün tasarım değerlendirmesi kapsamında takımlar, platformlarında özgünlük ve işlevsellik açısından öne çıkan tasarım unsurlarını kısaca açıklamalıdır. Mevcut sistemlerden farklı olarak yaptıkları veya yapmayı planladıkları yaklaşımların platformun işlevselliğine katkısı belirtilmelidir. }"
+            ],
+            "bolumAdi": "İHA PLATFORM TASARIMI (0-20 Puan):"
+          },
+          {
+            "kod": "5-suru-mimarisi-gorev-yonetimi-ve-yazili",
+            "ad": "5. SÜRÜ MİMARİSİ, GÖREV YÖNETİMİ VE YAZILIM TASARIMI (0-35 Puan)",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde yarışmacı takımlar, sürü İHA sistemi için tercih ettikleri sürü mimarisini (merkezi, dağıtık, lider–takipçi vb.) açıkça belirtmeli ve bu mimarinin yarışma görev isterlerini karşılama yeterliliğini gerekçelendirmelidir. Seçilen mimarinin görev başarımına, sistem güvenilirliğine ve operasyonel esnekliğe olan etkileri açıklanmalıdır.",
+              "Takımlar, tercih ettikleri sürü mimarisini belirlerken dikkate aldıkları kriterleri (ölçeklenebilirlik, hata toleransı, iletişim yükü, gerçek zamanlılık, görev karmaşıklığı vb.) ifade etmeli; mimarinin avantaj ve dezavantajlarını literatürdeki benzer sürü İHA çalışmalarıyla karşılaştırmalı olarak sunmalıdır. Bu kapsamda güncel akademik veya teknik kaynaklara atıf yapılması beklenmektedir.",
+              "Sürü formasyonu, sürü halinde navigasyon, çarpışmadan kaçınma ve sürü koordinasyonu gibi temel sürü yetenekleri için kullanılması planlanan algoritmalar açıklanmalı; bu algoritmaların yarışma görevleriyle nasıl ilişkilendirildiği ve görev gereksinimlerini nasıl karşıladığı ortaya konulmalıdır.",
+              "Yarışma görev isterlerinin yerine getirilebilmesi için kullanılan veya planlanan genel algoritmik yaklaşımın akış diyagramı sunulmalıdır. Akış diyagramında görev başlatma, karar verme, sürü koordinasyonu ve görev sonlandırma adımlarının detaylandırılarak gösterilmesi beklenmektedir.",
+              "Yer kontrol istasyonu ile bağlantının kesilmesi durumunda sistemin nasıl davranacağı açıklanmalıdır. Bu kapsamda, bağlantı kaybının görev başarımını nasıl etkilediği ve seçilen sürü mimarisinin bu durumu nasıl tolere ettiği veya etkisiz hale getirdiği belirtilmelidir.",
+              "Failsafe senaryolarının (haberleşme kaybı, İHA arızası, sensör hatası vb.) yazılımsal olarak nasıl yönetildiği açıklanmalıdır. Ayrıca, olası donanımsal veya algoritmik kısıtlar karşısında planlanan alternatif veya uyarlanabilir çözümlere kısaca değinilmelidir.}"
+            ],
+            "bolumAdi": "5. SÜRÜ MİMARİSİ, GÖREV YÖNETİMİ VE YAZILIM TASARIMI (0-35 Puan)"
+          },
+          {
+            "kod": "6-gorev-dogrulama-simulasyon-ve-degerlen",
+            "ad": "6. GÖREV DOĞRULAMA, SİMÜLASYON VE DEĞERLENDİRME (0-20 Puan)",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Bu bölümde, önceki bölümlerde teorik olarak açıklanan tasarım çözümünün ve geliştirilen algoritmaların, yarışma görevlerini yerine getirebildiğinin simülasyon ortamında doğrulanması beklenmektedir. Sürü İHA algoritmaları için yapılan simülasyon çalışmaları; tutarlı, mantıklı ve değerlendirilebilir sonuçlar ile sunulmalıdır.",
+              "Sürü İHA simülasyonu herhangi bir programlama dili veya simülasyon ortamı kullanılarak gerçekleştirilebilir. Kullanılan simülasyon ortamı ile temel varsayımlar ve kısıtlar kısaca açıklanmalıdır.",
+              "Simülasyonda, yarışmanın ilk görevi görev ortamı ile birlikte modellenmeli; İHA(lar)a ait kamera entegrasyonu, görev alanı temsili ve görev kapsamında kullanılan işaretler (örneğin QR kodlar) simülasyon ortamında yer almalıdır.",
+              "Sürü görevleri kapsamında en az üç (3) farklı sürü formasyonuna ait görsel veya simülasyon çıktıları sunulmalıdır.",
+              "Simülasyon sonuçları yalnızca görsel olarak sunulmamalı; algoritmaların davranışı, görev başarımı ve geliştirme sürecinde yapılan iyileştirmeler üzerinden kısaca yorumlanmalıdır. Karşılaşılan sınırlamalar veya başarısız senaryolar ve bunlara yönelik planlanan geliştirme adımlarına değinilmesi beklenmektedir.}"
+            ],
+            "bolumAdi": "6. GÖREV DOĞRULAMA, SİMÜLASYON VE DEĞERLENDİRME (0-20 Puan)"
+          },
+          {
+            "kod": "7-format-ve-kaynakca-0-5-puan",
+            "ad": "7. FORMAT VE KAYNAKÇA (0-5 Puan)",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "{Rapor formatına uyum, yazım ve dilbilgisi kurallarına uyum, akıcı ve anlaşılabilir dil kullanılması gerekmektedir. Kaynakçalar, kaynakça formatına uygun bir şekilde dokümanda belirtilmelidir.}"
+            ],
+            "bolumAdi": "7. FORMAT VE KAYNAKÇA (0-5 Puan)"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Şablonda puan ağırlığı yok; 7 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "Sürü_İHA_Yarışma_Şartnamesi_V2_-_TR_ZJlf8.pdf",
+        "yuklendi": "2026-08-23T20:16:37.989Z",
+        "sayfaSayisi": 29,
+        "kelimeSayisi": 6853,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Kural Güncellemeleri",
+              "tarih": "2026-06-15"
+            },
+            {
+              "etiket": "Ön Tasarım Raporu (ÖTR) Son Teslim Tarihi",
+              "tarih": "2026-03-27"
+            },
+            {
+              "etiket": "Açıklanması",
+              "tarih": "2026-04-01 → 2026-04-04"
+            },
+            {
+              "etiket": "Soru Cevap Toplantısı",
+              "tarih": "2026-04-10"
+            },
+            {
+              "etiket": "Ön Değerlendirme Sunumu (Simülasyon)",
+              "tarih": "2026-04-20 → 2026-04-21"
+            },
+            {
+              "etiket": "Kritik Tasarım Raporu (KTR) Son Teslim Tarihi",
+              "tarih": "2026-06-19"
+            },
+            {
+              "etiket": "KTR Sonuçlarının Açıklanması",
+              "tarih": "2026-07-06 → 2026-07-10"
+            },
+            {
+              "etiket": "Uçuş Kanıt ve Yazılım Mimarisi Videosu Son Teslim Tarihi",
+              "tarih": "2026-08-02"
+            },
+            {
+              "etiket": "Videolarının Sonuçlarının-Finalistlerin Açıklanma Tarihi",
+              "tarih": "2026-08-07"
+            },
+            {
+              "etiket": "GAZİANTEP YARIŞMA TARİHİ- YERİ",
+              "tarih": "2026-09-07 → 2026-09-11"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Birden fazla danışman bulunan takımların başvuruları geçersiz sayılacaktır."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 10,
+          "danismanZorunlu": true
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/S%C3%BCr%C3%BC_%C4%B0HA_Yar%C4%B1%C5%9Fma_%C5%9Eartnamesi_V2_-_TR_ZJlf8.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "suru-iha-yarismasi"
+}

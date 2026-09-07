@@ -1,0 +1,1225 @@
+{
+  "id": "4fdbb540-1b12-49bc-8c4b-81ab6562e836",
+  "ad": "Hyperloop Geliştirme Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:54:04.650Z",
+  "kategoriler": [
+    {
+      "id": "d8d52a9c-8c27-4165-9c12-756b3f1277d7",
+      "ad": "Tanımlı Problem Çözümü",
+      "sablonDosyasi": "TPÇK_Raporu_Şablonu_TR_V2_kZt8e.docx",
+      "olusturuldu": "2026-08-23T13:54:03.824Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-d8d52a9c",
+        "ad": "Tanımlı Problem Çözümü",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "HYPERLOOP GELİŞTİRME YARIŞMASI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TANIMLI PROBLEM ÇÖZÜMÜ RAPORU",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Takım Kaptanının Üniversitesinin Adı",
+              "Başvurulan Kategori Başlığı"
+            ]
+          },
+          {
+            "ad": "Sayfa",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Sayfa",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Şekil tablosu öğesi bulunamadı."
+            ]
+          },
+          {
+            "ad": "Sayfa",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Şekil tablosu öğesi bulunamadı.",
+              "Danışma ve Değerlendirme Kurulu",
+              "Hyperloop Geliştirme Yarışması",
+              "Türkiye Cumhuriyeti Devlet Demiryolları",
+              "Türkiye Bilimsel ve Teknolojik Araştırma Kurumu",
+              "Raylı Ulaşım Teknolojileri Enstitüsü",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Tablo 1 xxxxxxxxxxxxxxxxxx.",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "GİRİŞ VE PROBLEMİN TANIMI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "RİSK VE GÜVENLİK ANALİZİ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "SİSTEM MİMARİSİ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "KARAR MEKANİZMASI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "SENARYO VE SİMÜLASYON",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "DOĞRULAMA VE GÜVENLİK SEVİYESİ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TARTIŞMALAR VE SONUÇ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "KAYNAKLAR",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "EKLER",
+            "zorunlu": true,
+            "yonergeMetni": []
+          }
+        ],
+        "kaynakca": {
+          "zorunlu": true,
+          "adlar": [
+            "KAYNAKLAR",
+            "Kaynakça",
+            "Kaynaklar",
+            "References"
+          ],
+          "asgariKaynak": 3,
+          "atifBekleniyor": true
+        }
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "hyperloop-gelistirme-yarismasi",
+            "ad": "HYPERLOOP GELİŞTİRME YARIŞMASI",
+            "puan": 9,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "HYPERLOOP GELİŞTİRME YARIŞMASI"
+          },
+          {
+            "kod": "tanimli-problem-cozumu-raporu",
+            "ad": "TANIMLI PROBLEM ÇÖZÜMÜ RAPORU",
+            "puan": 7,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Takım Kaptanının Üniversitesinin Adı",
+              "Başvurulan Kategori Başlığı"
+            ],
+            "bolumAdi": "TANIMLI PROBLEM ÇÖZÜMÜ RAPORU"
+          },
+          {
+            "kod": "sayfa",
+            "ad": "Sayfa",
+            "puan": 7,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Sayfa"
+          },
+          {
+            "kod": "sayfa",
+            "ad": "Sayfa",
+            "puan": 7,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Şekil tablosu öğesi bulunamadı."
+            ],
+            "bolumAdi": "Sayfa"
+          },
+          {
+            "kod": "sayfa",
+            "ad": "Sayfa",
+            "puan": 7,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Şekil tablosu öğesi bulunamadı.",
+              "Danışma ve Değerlendirme Kurulu",
+              "Hyperloop Geliştirme Yarışması",
+              "Türkiye Cumhuriyeti Devlet Demiryolları",
+              "Türkiye Bilimsel ve Teknolojik Araştırma Kurumu",
+              "Raylı Ulaşım Teknolojileri Enstitüsü",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Tablo 1 xxxxxxxxxxxxxxxxxx.",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "Sayfa"
+          },
+          {
+            "kod": "giris-ve-problemin-tanimi",
+            "ad": "GİRİŞ VE PROBLEMİN TANIMI",
+            "puan": 7,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "GİRİŞ VE PROBLEMİN TANIMI"
+          },
+          {
+            "kod": "risk-ve-guvenlik-analizi",
+            "ad": "RİSK VE GÜVENLİK ANALİZİ",
+            "puan": 7,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "RİSK VE GÜVENLİK ANALİZİ"
+          },
+          {
+            "kod": "sistem-mimarisi",
+            "ad": "SİSTEM MİMARİSİ",
+            "puan": 7,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "SİSTEM MİMARİSİ"
+          },
+          {
+            "kod": "karar-mekanizmasi",
+            "ad": "KARAR MEKANİZMASI",
+            "puan": 7,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "KARAR MEKANİZMASI"
+          },
+          {
+            "kod": "senaryo-ve-simulasyon",
+            "ad": "SENARYO VE SİMÜLASYON",
+            "puan": 7,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "SENARYO VE SİMÜLASYON"
+          },
+          {
+            "kod": "dogrulama-ve-guvenlik-seviyesi",
+            "ad": "DOĞRULAMA VE GÜVENLİK SEVİYESİ",
+            "puan": 7,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "DOĞRULAMA VE GÜVENLİK SEVİYESİ"
+          },
+          {
+            "kod": "tartismalar-ve-sonuc",
+            "ad": "TARTIŞMALAR VE SONUÇ",
+            "puan": 7,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TARTIŞMALAR VE SONUÇ"
+          },
+          {
+            "kod": "kaynaklar",
+            "ad": "KAYNAKLAR",
+            "puan": 7,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "KAYNAKLAR"
+          },
+          {
+            "kod": "ekler",
+            "ad": "EKLER",
+            "puan": 7,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "EKLER"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablonda Word başlık stili yok; başlıklar kalın biçimlendirmeden tahmin edildi. Bölüm listesini onaylamadan önce gözden geçirin.",
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 14 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_4_TR_V1_z4YQs.pdf",
+        "yuklendi": "2026-08-23T20:12:48.848Z",
+        "sayfaSayisi": 12,
+        "kelimeSayisi": 1105,
+        "kurallar": {
+          "tarihler": [],
+          "asamalar": [],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": []
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden tarih çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_4_TR_V1_z4YQs.pdf"
+      }
+    },
+    {
+      "id": "be2d2052-18b7-4db8-a8a5-f2e7547249cd",
+      "ad": "Hyperloop Geliştirme Yarışması",
+      "sablonDosyasi": "Teknik_Tasarım_Rapor_Sablonu_UAgsr.docx",
+      "olusturuldu": "2026-08-23T13:54:04.275Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-be2d2052",
+        "ad": "Hyperloop Geliştirme Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "Kapsül Detaylı Tasarım Özeti",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "Kapsül Boyutları",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "Kapsülün Diğer Kısıtları",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "Kapsül Ağırlığı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "Kapsül Malzemeleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "Yapısal ve Akışkan Analizler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "Isıl Analizler",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "Vakum İvmelenme ve Dayanım Analizi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "Üretim Aşamaları",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Tablo 2.1. Tablo açıklamasını sayfaya ortalı olarak buraya yazınız.",
+              "Konstantan (Cu-Ni karışımı)"
+            ]
+          },
+          {
+            "ad": "Batarya Paketinin Fiziksel Özellikleri",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Batarya Paketinin Elektriksel Özellikleri",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Güvenlik",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "Batarya Yönetim Sistemi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "Termal Yönetim",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "Fail-Safe Senaryolar",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "Sistem Tanımı ve Çalışma Prensibi",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Standart Komponent Tanımı ve Teknik Özellikleri",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Özel Tasarımlar ve Süreçleri",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Fonksiyon Tanımı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Frenleme Senaryosu ve Hesaplaması",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Senaryo Tanımı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Kabuller, Formüller ve Frenleme Hesabı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Frenlemeye Ait İvme/Zaman, Hız/Zaman ve Mesafe/Zaman Grafikleri",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Acil Durum Frenleme Senaryosu ve Hesaplaması",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Senaryo Tanımı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Frenleme Hesabı",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "Frenlemeye Ait İvme/Zaman, Hız/Zaman ve Mesafe/Zaman Grafikleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Şekil 6.1. Şekil açıklamasını sayfaya ortalı olarak buraya yazınız.",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "Bütçe Tablosu",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "İş Plan Takvimi",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "İş Paketleri Başarı Ölçütleri",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          },
+          {
+            "ad": "İş Paketleri Risk Planı",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "kapsul-detayli-tasarim-ozeti",
+            "ad": "Kapsül Detaylı Tasarım Özeti",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "Kapsül Detaylı Tasarım Özeti"
+          },
+          {
+            "kod": "kapsul-boyutlari",
+            "ad": "Kapsül Boyutları",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "Kapsül Boyutları"
+          },
+          {
+            "kod": "kapsulun-diger-kisitlari",
+            "ad": "Kapsülün Diğer Kısıtları",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "Kapsülün Diğer Kısıtları"
+          },
+          {
+            "kod": "kapsul-agirligi",
+            "ad": "Kapsül Ağırlığı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "Kapsül Ağırlığı"
+          },
+          {
+            "kod": "kapsul-malzemeleri",
+            "ad": "Kapsül Malzemeleri",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "Kapsül Malzemeleri"
+          },
+          {
+            "kod": "yapisal-ve-akiskan-analizler",
+            "ad": "Yapısal ve Akışkan Analizler",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "Yapısal ve Akışkan Analizler"
+          },
+          {
+            "kod": "isil-analizler",
+            "ad": "Isıl Analizler",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "Isıl Analizler"
+          },
+          {
+            "kod": "vakum-ivmelenme-ve-dayanim-analizi",
+            "ad": "Vakum İvmelenme ve Dayanım Analizi",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "Vakum İvmelenme ve Dayanım Analizi"
+          },
+          {
+            "kod": "uretim-asamalari",
+            "ad": "Üretim Aşamaları",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Tablo 2.1. Tablo açıklamasını sayfaya ortalı olarak buraya yazınız.",
+              "Konstantan (Cu-Ni karışımı)"
+            ],
+            "bolumAdi": "Üretim Aşamaları"
+          },
+          {
+            "kod": "batarya-paketinin-fiziksel-ozellikleri",
+            "ad": "Batarya Paketinin Fiziksel Özellikleri",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Batarya Paketinin Fiziksel Özellikleri"
+          },
+          {
+            "kod": "batarya-paketinin-elektriksel-ozellikler",
+            "ad": "Batarya Paketinin Elektriksel Özellikleri",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Batarya Paketinin Elektriksel Özellikleri"
+          },
+          {
+            "kod": "guvenlik",
+            "ad": "Güvenlik",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "Güvenlik"
+          },
+          {
+            "kod": "batarya-yonetim-sistemi",
+            "ad": "Batarya Yönetim Sistemi",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "Batarya Yönetim Sistemi"
+          },
+          {
+            "kod": "termal-yonetim",
+            "ad": "Termal Yönetim",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "Termal Yönetim"
+          },
+          {
+            "kod": "fail-safe-senaryolar",
+            "ad": "Fail-Safe Senaryolar",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "Fail-Safe Senaryolar"
+          },
+          {
+            "kod": "sistem-tanimi-ve-calisma-prensibi",
+            "ad": "Sistem Tanımı ve Çalışma Prensibi",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Sistem Tanımı ve Çalışma Prensibi"
+          },
+          {
+            "kod": "standart-komponent-tanimi-ve-teknik-ozel",
+            "ad": "Standart Komponent Tanımı ve Teknik Özellikleri",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Standart Komponent Tanımı ve Teknik Özellikleri"
+          },
+          {
+            "kod": "ozel-tasarimlar-ve-surecleri",
+            "ad": "Özel Tasarımlar ve Süreçleri",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Özel Tasarımlar ve Süreçleri"
+          },
+          {
+            "kod": "fonksiyon-tanimi",
+            "ad": "Fonksiyon Tanımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Fonksiyon Tanımı"
+          },
+          {
+            "kod": "frenleme-senaryosu-ve-hesaplamasi",
+            "ad": "Frenleme Senaryosu ve Hesaplaması",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Frenleme Senaryosu ve Hesaplaması"
+          },
+          {
+            "kod": "senaryo-tanimi",
+            "ad": "Senaryo Tanımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Senaryo Tanımı"
+          },
+          {
+            "kod": "kabuller-formuller-ve-frenleme-hesabi",
+            "ad": "Kabuller, Formüller ve Frenleme Hesabı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Kabuller, Formüller ve Frenleme Hesabı"
+          },
+          {
+            "kod": "frenlemeye-ait-ivme-zaman-hiz-zaman-ve-m",
+            "ad": "Frenlemeye Ait İvme/Zaman, Hız/Zaman ve Mesafe/Zaman Grafikleri",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Frenlemeye Ait İvme/Zaman, Hız/Zaman ve Mesafe/Zaman Grafikleri"
+          },
+          {
+            "kod": "acil-durum-frenleme-senaryosu-ve-hesapla",
+            "ad": "Acil Durum Frenleme Senaryosu ve Hesaplaması",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Acil Durum Frenleme Senaryosu ve Hesaplaması"
+          },
+          {
+            "kod": "senaryo-tanimi",
+            "ad": "Senaryo Tanımı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Senaryo Tanımı"
+          },
+          {
+            "kod": "frenleme-hesabi",
+            "ad": "Frenleme Hesabı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "Frenleme Hesabı"
+          },
+          {
+            "kod": "frenlemeye-ait-ivme-zaman-hiz-zaman-ve-m",
+            "ad": "Frenlemeye Ait İvme/Zaman, Hız/Zaman ve Mesafe/Zaman Grafikleri",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Şekil 6.1. Şekil açıklamasını sayfaya ortalı olarak buraya yazınız.",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "Frenlemeye Ait İvme/Zaman, Hız/Zaman ve Mesafe/Zaman Grafikleri"
+          },
+          {
+            "kod": "butce-tablosu",
+            "ad": "Bütçe Tablosu",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "Bütçe Tablosu"
+          },
+          {
+            "kod": "is-plan-takvimi",
+            "ad": "İş Plan Takvimi",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "İş Plan Takvimi"
+          },
+          {
+            "kod": "is-paketleri-basari-olcutleri",
+            "ad": "İş Paketleri Başarı Ölçütleri",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "İş Paketleri Başarı Ölçütleri"
+          },
+          {
+            "kod": "is-paketleri-risk-plani",
+            "ad": "İş Paketleri Risk Planı",
+            "puan": 3,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ],
+            "bolumAdi": "İş Paketleri Risk Planı"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 31 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_5_TR_V1_OQJqr.pdf",
+        "yuklendi": "2026-08-23T20:12:51.941Z",
+        "sayfaSayisi": 22,
+        "kelimeSayisi": 2727,
+        "kurallar": {
+          "tarihler": [],
+          "asamalar": [],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": []
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden tarih çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_5_TR_V1_OQJqr.pdf"
+      }
+    },
+    {
+      "id": "614df4b5-bbd4-4940-ab42-9c2abed99c3e",
+      "ad": "Teknoloji Gösterim",
+      "sablonDosyasi": "Teknoloji_Gösterim_Rapor_Sablonu_TR_v2_Ndj16.docx",
+      "olusturuldu": "2026-08-23T13:54:04.649Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-614df4b5",
+        "ad": "Teknoloji Gösterim",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "GİRİŞ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TEORİK ALTYAPI VE MÜHENDİSLİK HESAPLAMALARI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "SİSTEM TASARIMI VE BİLEŞENLER",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "SİMÜLASYON VE ANALİZLER",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ENERJİ VE GÜÇ YÖNETİMİ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "GÜVENLİK VE RİSK ANALİZİ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ALTYAPI VE ENTEGRASYON",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TEST VE DOĞRULAMA PLANI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "GİRİŞ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TEORİK ALTYAPI VE MÜHENDİSLİK HESAPLAMALARI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "SİSTEM TASARIMI VE BİLEŞENLER",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "SİMÜLASYON VE ANALİZLER",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ENERJİ VE GÜÇ YÖNETİMİ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "GÜVENLİK VE RİSK ANALİZİ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ALTYAPI VE ENTEGRASYON",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TEST VE DOĞRULAMA PLANI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "giris",
+            "ad": "GİRİŞ",
+            "puan": 10,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "GİRİŞ"
+          },
+          {
+            "kod": "teorik-altyapi-ve-muhendislik-hesaplamal",
+            "ad": "TEORİK ALTYAPI VE MÜHENDİSLİK HESAPLAMALARI",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEORİK ALTYAPI VE MÜHENDİSLİK HESAPLAMALARI"
+          },
+          {
+            "kod": "sistem-tasarimi-ve-bilesenler",
+            "ad": "SİSTEM TASARIMI VE BİLEŞENLER",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "SİSTEM TASARIMI VE BİLEŞENLER"
+          },
+          {
+            "kod": "simulasyon-ve-analizler",
+            "ad": "SİMÜLASYON VE ANALİZLER",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "SİMÜLASYON VE ANALİZLER"
+          },
+          {
+            "kod": "enerji-ve-guc-yonetimi",
+            "ad": "ENERJİ VE GÜÇ YÖNETİMİ",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ENERJİ VE GÜÇ YÖNETİMİ"
+          },
+          {
+            "kod": "guvenlik-ve-risk-analizi",
+            "ad": "GÜVENLİK VE RİSK ANALİZİ",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "GÜVENLİK VE RİSK ANALİZİ"
+          },
+          {
+            "kod": "altyapi-ve-entegrasyon",
+            "ad": "ALTYAPI VE ENTEGRASYON",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ALTYAPI VE ENTEGRASYON"
+          },
+          {
+            "kod": "test-ve-dogrulama-plani",
+            "ad": "TEST VE DOĞRULAMA PLANI",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEST VE DOĞRULAMA PLANI"
+          },
+          {
+            "kod": "giris",
+            "ad": "GİRİŞ",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "GİRİŞ"
+          },
+          {
+            "kod": "teorik-altyapi-ve-muhendislik-hesaplamal",
+            "ad": "TEORİK ALTYAPI VE MÜHENDİSLİK HESAPLAMALARI",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEORİK ALTYAPI VE MÜHENDİSLİK HESAPLAMALARI"
+          },
+          {
+            "kod": "sistem-tasarimi-ve-bilesenler",
+            "ad": "SİSTEM TASARIMI VE BİLEŞENLER",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "SİSTEM TASARIMI VE BİLEŞENLER"
+          },
+          {
+            "kod": "simulasyon-ve-analizler",
+            "ad": "SİMÜLASYON VE ANALİZLER",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "SİMÜLASYON VE ANALİZLER"
+          },
+          {
+            "kod": "enerji-ve-guc-yonetimi",
+            "ad": "ENERJİ VE GÜÇ YÖNETİMİ",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ENERJİ VE GÜÇ YÖNETİMİ"
+          },
+          {
+            "kod": "guvenlik-ve-risk-analizi",
+            "ad": "GÜVENLİK VE RİSK ANALİZİ",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "GÜVENLİK VE RİSK ANALİZİ"
+          },
+          {
+            "kod": "altyapi-ve-entegrasyon",
+            "ad": "ALTYAPI VE ENTEGRASYON",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ALTYAPI VE ENTEGRASYON"
+          },
+          {
+            "kod": "test-ve-dogrulama-plani",
+            "ad": "TEST VE DOĞRULAMA PLANI",
+            "puan": 6,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEST VE DOĞRULAMA PLANI"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 16 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_HYPERLOOP_GELİŞTİRME_YARIŞMASI_ŞARTNAMESİ_BÖLÜM_3_TR_V3_deWa5.pdf",
+        "yuklendi": "2026-08-23T20:12:55.218Z",
+        "sayfaSayisi": 22,
+        "kelimeSayisi": 2237,
+        "kurallar": {
+          "tarihler": [],
+          "asamalar": [],
+          "eleyiciHukumler": [],
+          "katilimciSeviyeleri": []
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden tarih çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_HYPERLOOP_GEL%C4%B0%C5%9ET%C4%B0RME_YARI%C5%9EMASI_%C5%9EARTNAMES%C4%B0_B%C3%96L%C3%9CM_3_TR_V3_deWa5.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "hyperloop-gelistirme-yarismasi"
+}

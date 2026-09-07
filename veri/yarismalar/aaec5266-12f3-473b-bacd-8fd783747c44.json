@@ -1,0 +1,328 @@
+{
+  "id": "aaec5266-12f3-473b-bacd-8fd783747c44",
+  "ad": "TEKNOFEST Yapay Zeka Film Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:58:51.922Z",
+  "kategoriler": [
+    {
+      "id": "706c28dc-6cc7-4138-8337-1c5f600971f0",
+      "ad": "TEKNOFEST Yapay Zeka Film Yarışması",
+      "sablonDosyasi": "TEKNOFEST_YAPAY_ZEKA_FILM_YARISMASI_SENARYO_SABLONU_yQHtC_ithGe.docx",
+      "asama": "ÖNR",
+      "olusturuldu": "2026-08-23T13:58:51.922Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-706c28dc",
+        "ad": "TEKNOFEST Yapay Zeka Film Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "basliklar": [
+          {
+            "ad": "PROJE ADI(KISA FİLM BAŞLIĞI)",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "En fazla 5 kelime, kısa ve çarpıcı bir başlıktan oluşmalıdır."
+            ]
+          },
+          {
+            "ad": "TAKIM BİLGİLERİ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "TEMEL FİKİR VE AMAÇ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "SENARYO ÖZETİ",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "HEDEF KİTLE",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "GÖRSEL ANLATIM TARZI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "KULLANILACAK ÜRETKEN YAPAY ZEKA ARAÇLARI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "YARATICILIK VE YENİLİKÇİLİK",
+            "zorunlu": false,
+            "yonergeMetni": [
+              "RAPOR ŞABLONLARI İLE İLGİLİ NOT:"
+            ],
+            "raporda": false
+          }
+        ],
+        "azamiSayfa": 4
+      },
+      "kurallar": {
+        "ham": [],
+        "eleyiciMi": false
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "proje-adi-kisa-film-basligi",
+            "ad": "PROJE ADI(KISA FİLM BAŞLIĞI)",
+            "puan": 16,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "En fazla 5 kelime, kısa ve çarpıcı bir başlıktan oluşmalıdır."
+            ],
+            "bolumAdi": "PROJE ADI(KISA FİLM BAŞLIĞI)"
+          },
+          {
+            "kod": "takim-bilgileri",
+            "ad": "TAKIM BİLGİLERİ",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TAKIM BİLGİLERİ"
+          },
+          {
+            "kod": "temel-fikir-ve-amac",
+            "ad": "TEMEL FİKİR VE AMAÇ",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "TEMEL FİKİR VE AMAÇ"
+          },
+          {
+            "kod": "senaryo-ozeti",
+            "ad": "SENARYO ÖZETİ",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "SENARYO ÖZETİ"
+          },
+          {
+            "kod": "hedef-kitle",
+            "ad": "HEDEF KİTLE",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "HEDEF KİTLE"
+          },
+          {
+            "kod": "gorsel-anlatim-tarzi",
+            "ad": "GÖRSEL ANLATIM TARZI",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "GÖRSEL ANLATIM TARZI"
+          },
+          {
+            "kod": "kullanilacak-uretken-yapay-zeka-araclari",
+            "ad": "KULLANILACAK ÜRETKEN YAPAY ZEKA ARAÇLARI",
+            "puan": 14,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "KULLANILACAK ÜRETKEN YAPAY ZEKA ARAÇLARI"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Sayfa sınırı kurallardan çıkarılamadı.",
+        "Şablonda puan ağırlığı yok; 7 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026_YAPAY_ZEKA_FİLM_YARIŞMASI_SARTNAMESİ_TR_ykE9M.pdf",
+        "yuklendi": "2026-08-23T20:16:56.996Z",
+        "sayfaSayisi": 13,
+        "kelimeSayisi": 2295,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "TEKNOFEST 2026 İlk Versiyon",
+              "tarih": "2026-07-07"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-07-25"
+            },
+            {
+              "etiket": "Proje Öneri Raporu ve Sinopsis Son Teslim Tarihi",
+              "tarih": "2026-07-25"
+            },
+            {
+              "etiket": "Proje Öneri Raporuna/ Sinopsises Göre Ön Elemeyi Geçen",
+              "tarih": "2026-08-04"
+            },
+            {
+              "etiket": "Yarışmacılara Gemini ve Veo 3 Kullanım Kredisi Sağlanması,",
+              "tarih": "2026-08-04 → 2026-08-25"
+            },
+            {
+              "etiket": "Final Projesi (Kısa Film) Son Teslim Tarihi",
+              "tarih": "2026-08-25"
+            },
+            {
+              "etiket": "Finale Kalan (Finalist) Takımların Açıklanması",
+              "tarih": "2026-09-01"
+            }
+          ],
+          "asamalar": [
+            "Yarışma Takvimi"
+          ],
+          "eleyiciHukumler": [
+            "Birden fazla danışman bulunan takımların başvuruları geçersiz sayılacaktır."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiSayfa": 4,
+          "azamiUye": 4
+        },
+        "catismalar": [],
+        "uyarilar": [],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026_YAPAY_ZEKA_F%C4%B0LM_YARI%C5%9EMASI_SARTNAMES%C4%B0_TR_ykE9M.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "teknofest-yapay-zeka-film-yarismasi"
+}

@@ -1,0 +1,338 @@
+{
+  "id": "2850cff9-9501-4846-b6ae-83d1715991ef",
+  "ad": "Finansal Teknolojiler Yarışması",
+  "yil": 2026,
+  "olusturuldu": "2026-08-23T13:53:45.974Z",
+  "kategoriler": [
+    {
+      "id": "3a3a8c5e-9210-461e-98e8-31669788eb24",
+      "ad": "Finansal Teknolojiler Yarışması",
+      "sablonDosyasi": "Finansal_Teknolojiler_Türkçe_ÖDR_Şablon_6Wfrb.docx",
+      "asama": "ÖDR",
+      "olusturuldu": "2026-08-23T13:53:45.974Z",
+      "duzenlendi": false,
+      "sablon": {
+        "kod": "kategori-3a3a8c5e",
+        "ad": "Finansal Teknolojiler Yarışması",
+        "yil": 2026,
+        "beklenenDil": "tr",
+        "azamiSayfa": 5,
+        "basliklar": [
+          {
+            "ad": "FİNANSAL TEKNOLOJİLER YARIŞMASI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ÖN DEĞERLENDİRME RAPORU ŞABLONU",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "FİNANSAL TEKNOLOJİLER YARIŞMASI",
+            "zorunlu": true,
+            "yonergeMetni": []
+          },
+          {
+            "ad": "ÖN DEĞERLENDİRME RAPORU ŞABLONU",
+            "zorunlu": true,
+            "yonergeMetni": [
+              "Projenin konusu açık ve öz bir şekilde belirtilmelidir.",
+              "Projenin amacı, kapsamı ve yöntemi anlaşılır bir biçimde tanımlanmalıdır.",
+              "Projenin çözüm üretmeyi planladığı sorun ya da ihtiyaç açık bir şekilde belirtilmelidir.",
+              "Projenin, çözmeyi hedeflediği sorunla alakalı mevcut durum ve eksiklikler net bir şekilde gösterilmelidir.",
+              "Önerilen çözüm, belirli kriterler çerçevesinde güçlü yönleri ile açıklanmalı ve çözümün mevcut alternatiflerden farkı ortaya konmalıdır.",
+              "Tasarlanan çözümde kullanılacak teknikler, metotlar, yapılacak analizler ve deneyler(varsa) detaylı bir biçimde açıklanmalıdır.",
+              "Proje ileri teknoloji içermeli ve/veya mevcut teknolojileri yenilikçi ve özgün yöntemler ile uygulamalıdır.",
+              "Kullanılacak yöntemlerin mevcut alternatiflere kıyasla neden tercih edildiği, hangi açılardan daha verimli ve/veya etkin olduğu açıklanmalıdır.",
+              "Teknik yaklaşımın bilimsel temelleri vurgulanmalıdır.",
+              "Projenin faaliyet göstereceği pazarın büyüklüğü, trendleri ve rekabet ortamı güvenilir kaynaklardan elde edilen bilgiler ile analiz edilmelidir.",
+              "Projenin hedef kitlesi geliştirilen projeye uygun ve gerçekçi olacak şekilde tanımlanmalı, gelir ve yaş gibi alt gruplar ile kullanıcı profilleri gösterilmelidir.",
+              "Projenin iş modeli ve ticarileşme potansiyeli açıklanmalıdır.",
+              "Pazardaki birincil ve/veya ikincil rakiplerin, takımın ürünü/hizmeti ile karşılaştırıldığı bir tablo ile görselleştirilmesi gerekmektedir.",
+              "Rakipler hakkında analiz yapılarak projenin yenilikçi yönü hakkında bilgi verilmeli, projeyi, piyasada bulunan benzer ürünlerden ayıran özelliklerin neler olduğu belirtilmelidir.",
+              "Projenin başarısını etkileyebilecek olası riskler objektif bir biçimde belirtilmelidir.",
+              "Bu risklere karşı alınabilecek gerçekçi önlemler ve çözümler açıklanmalıdır.",
+              "Proje kapsamında iş paketleri alt faaliyetleri ile birlikte detaylı ve açık bir biçimde görsel açıdan anlaşılır bir şema/tablo kullanılarak gösterilmelidir.",
+              "Proje takvimi, iş paketleri ve zamanları açısından gerçekçi olmalıdır.",
+              "Rapor şablonda yer alan tüm başlıkları içermekte ve bu başlıklarla ilgili tatmin edici bilgi vermektedir",
+              "Raporda kullanılan şekiller/tablolar/diyagramlar anlaşılır ve düzenlidir.",
+              "Şartnamede ve şablonda belirtilen kurallara uygun olarak hazırlanmıştır.",
+              "Rapor sayfa sayısı 5 üzerinde olan raporlar bu bölümden 0 Puan almalıdır."
+            ]
+          }
+        ]
+      },
+      "kurallar": {
+        "ham": [
+          "Tüm raporlar akademik rapor standartlarına uygun olarak yazılmalıdır.",
+          "Raporların içerikleri ile ilgili bilgiler yukarıda belirtilmiştir.",
+          "Tüm raporlar “İçindekiler” ve “Kaynakça” içermelidir.",
+          "Her rapor bir kapak sayfası içermelidir.",
+          "Her rapor bir “İçindekiler” sayfası içermelidir.",
+          "Raporlar sayfaları birbirini takip edecek şekilde numaralandırılmalıdır.",
+          "Yazı tipi: Aptos, Punto: 12, Başlık Yazı Tipi: Aptos, Başlık Punto: 14, Satır Aralıkları: 1.15, İki tarafa yaslı, Sayfa kenar boşlukları: üst 2.8 alt-sağ-sol 2.5 olmalıdır.",
+          "Rapor içindekiler “Kapak” , “Kaynakça” ve “İçindekiler” kısmı hariç rapor 5 sayfayı geçmemelidir.",
+          "Rapor şablonuna uymayan Ön Değerlendirme Raporları değerlendirilmeyecektir.",
+          "5 sayfayı geçen raporlar değerlendirmeye alınmayacaktır."
+        ],
+        "eleyiciMi": true,
+        "azamiSayfa": 5,
+        "yaziTipi": "Aptos",
+        "govdePunto": 12,
+        "baslikPunto": 14
+      },
+      "rubrik": {
+        "kriterler": [
+          {
+            "kod": "finansal-teknolojiler-yarismasi",
+            "ad": "FİNANSAL TEKNOLOJİLER YARIŞMASI",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "FİNANSAL TEKNOLOJİLER YARIŞMASI"
+          },
+          {
+            "kod": "on-degerlendirme-raporu-sablonu",
+            "ad": "ÖN DEĞERLENDİRME RAPORU ŞABLONU",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "ÖN DEĞERLENDİRME RAPORU ŞABLONU"
+          },
+          {
+            "kod": "finansal-teknolojiler-yarismasi",
+            "ad": "FİNANSAL TEKNOLOJİLER YARIŞMASI",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [],
+            "bolumAdi": "FİNANSAL TEKNOLOJİLER YARIŞMASI"
+          },
+          {
+            "kod": "on-degerlendirme-raporu-sablonu",
+            "ad": "ÖN DEĞERLENDİRME RAPORU ŞABLONU",
+            "puan": 25,
+            "bolumBekleniyor": true,
+            "olcut": [
+              "Projenin konusu açık ve öz bir şekilde belirtilmelidir.",
+              "Projenin amacı, kapsamı ve yöntemi anlaşılır bir biçimde tanımlanmalıdır.",
+              "Projenin çözüm üretmeyi planladığı sorun ya da ihtiyaç açık bir şekilde belirtilmelidir.",
+              "Projenin, çözmeyi hedeflediği sorunla alakalı mevcut durum ve eksiklikler net bir şekilde gösterilmelidir.",
+              "Önerilen çözüm, belirli kriterler çerçevesinde güçlü yönleri ile açıklanmalı ve çözümün mevcut alternatiflerden farkı ortaya konmalıdır.",
+              "Tasarlanan çözümde kullanılacak teknikler, metotlar, yapılacak analizler ve deneyler(varsa) detaylı bir biçimde açıklanmalıdır.",
+              "Proje ileri teknoloji içermeli ve/veya mevcut teknolojileri yenilikçi ve özgün yöntemler ile uygulamalıdır.",
+              "Kullanılacak yöntemlerin mevcut alternatiflere kıyasla neden tercih edildiği, hangi açılardan daha verimli ve/veya etkin olduğu açıklanmalıdır.",
+              "Teknik yaklaşımın bilimsel temelleri vurgulanmalıdır.",
+              "Projenin faaliyet göstereceği pazarın büyüklüğü, trendleri ve rekabet ortamı güvenilir kaynaklardan elde edilen bilgiler ile analiz edilmelidir.",
+              "Projenin hedef kitlesi geliştirilen projeye uygun ve gerçekçi olacak şekilde tanımlanmalı, gelir ve yaş gibi alt gruplar ile kullanıcı profilleri gösterilmelidir.",
+              "Projenin iş modeli ve ticarileşme potansiyeli açıklanmalıdır.",
+              "Pazardaki birincil ve/veya ikincil rakiplerin, takımın ürünü/hizmeti ile karşılaştırıldığı bir tablo ile görselleştirilmesi gerekmektedir.",
+              "Rakipler hakkında analiz yapılarak projenin yenilikçi yönü hakkında bilgi verilmeli, projeyi, piyasada bulunan benzer ürünlerden ayıran özelliklerin neler olduğu belirtilmelidir.",
+              "Projenin başarısını etkileyebilecek olası riskler objektif bir biçimde belirtilmelidir.",
+              "Bu risklere karşı alınabilecek gerçekçi önlemler ve çözümler açıklanmalıdır.",
+              "Proje kapsamında iş paketleri alt faaliyetleri ile birlikte detaylı ve açık bir biçimde görsel açıdan anlaşılır bir şema/tablo kullanılarak gösterilmelidir.",
+              "Proje takvimi, iş paketleri ve zamanları açısından gerçekçi olmalıdır.",
+              "Rapor şablonda yer alan tüm başlıkları içermekte ve bu başlıklarla ilgili tatmin edici bilgi vermektedir",
+              "Raporda kullanılan şekiller/tablolar/diyagramlar anlaşılır ve düzenlidir.",
+              "Şartnamede ve şablonda belirtilen kurallara uygun olarak hazırlanmıştır.",
+              "Rapor sayfa sayısı 5 üzerinde olan raporlar bu bölümden 0 Puan almalıdır."
+            ],
+            "bolumAdi": "ÖN DEĞERLENDİRME RAPORU ŞABLONU"
+          }
+        ],
+        "toplamPuan": 100
+      },
+      "ornekKaynaklar": [],
+      "uyarilar": [
+        "Şablonda Word başlık stili yok; başlıklar kalın biçimlendirmeden tahmin edildi. Bölüm listesini onaylamadan önce gözden geçirin.",
+        "Şablon başlıklarında puan bilgisi bulunamadı; rubrik elle tanımlanmalı.",
+        "Şablonda puan ağırlığı yok; 4 bölüm için EŞİT ağırlık atandı (toplam 100). Gerçek ağırlıklar şartnamede olabilir — onaylamadan önce düzeltin."
+      ],
+      "sartname": {
+        "dosyaAdi": "2026-Finansal_Teknolojiler_Şartname_M5Jbl_1_ptIng.pdf",
+        "yuklendi": "2026-08-23T20:12:36.535Z",
+        "sayfaSayisi": 12,
+        "kelimeSayisi": 2089,
+        "kurallar": {
+          "tarihler": [
+            {
+              "etiket": "İlk yayın",
+              "tarih": "2026-01-21"
+            },
+            {
+              "etiket": "Yarışma Takvimi",
+              "tarih": "2026-02-20"
+            },
+            {
+              "etiket": "Yarışma Son Başvuru Tarihi",
+              "tarih": "2026-02-28"
+            },
+            {
+              "etiket": "Proje Ön Değerlendirme Raporu Son Teslim Tarihi",
+              "tarih": "2026-03-30"
+            },
+            {
+              "etiket": "Proje Sunum Son Teslim Tarihi",
+              "tarih": "2026-07-03"
+            },
+            {
+              "etiket": "Proje SunumAşaması(Çevrim İçi)",
+              "tarih": "2026-07-01 → 2026-07-15"
+            },
+            {
+              "etiket": "FinalistlerinAçıklanması",
+              "tarih": "2026-07-20"
+            }
+          ],
+          "asamalar": [],
+          "eleyiciHukumler": [
+            "Birden fazladanışman bulunan takımlarınbaşvuruları geçersiz sayılacaktır."
+          ],
+          "katilimciSeviyeleri": [],
+          "azamiUye": 5
+        },
+        "catismalar": [],
+        "uyarilar": [
+          "Şartnameden sayfa sınırı çıkarılamadı.",
+          "Şartnameden değerlendirme aşamaları çıkarılamadı."
+        ],
+        "kaynakUrl": "https://cdn.teknofest.org/media/upload/userFormUpload/2026-Finansal_Teknolojiler_%C5%9Eartname_M5Jbl_1_ptIng.pdf"
+      }
+    }
+  ],
+  "icerikKategorileri": [
+    {
+      "kod": "tarim",
+      "ad": "Tarım Teknolojileri",
+      "terimler": [
+        "tarım",
+        "tarla",
+        "ekin",
+        "hasat",
+        "yabancı ot",
+        "herbisit",
+        "çapalama",
+        "sulama",
+        "toprak",
+        "gübre",
+        "pamuk",
+        "buğday",
+        "mısır",
+        "sera",
+        "bitki",
+        "verim",
+        "dekar",
+        "traktör",
+        "zirai",
+        "tohum",
+        "ürün deseni",
+        "bitki hastalığı",
+        "hasat sonrası",
+        "arıcılık",
+        "kovan"
+      ]
+    },
+    {
+      "kod": "su",
+      "ad": "Su Kaynakları",
+      "terimler": [
+        "su kaynağı",
+        "yeraltı suyu",
+        "baraj",
+        "arıtma",
+        "atık su",
+        "debi",
+        "akifer",
+        "su kalitesi",
+        "damla sulama",
+        "su tasarrufu",
+        "havza",
+        "kuraklık",
+        "nem",
+        "buharlaşma",
+        "su tüketimi",
+        "içme suyu"
+      ]
+    },
+    {
+      "kod": "yazilim",
+      "ad": "Yazılım",
+      "terimler": [
+        "web uygulaması",
+        "mobil uygulama",
+        "arayüz",
+        "veritabanı",
+        "api",
+        "bulut",
+        "mikroservis",
+        "kullanıcı deneyimi",
+        "backend",
+        "frontend",
+        "siber güvenlik",
+        "şifreleme",
+        "blokzincir",
+        "derin öğrenme",
+        "doğal dil işleme",
+        "öneri sistemi"
+      ]
+    },
+    {
+      "kod": "enerji",
+      "ad": "Çevre ve Enerji",
+      "terimler": [
+        "yenilenebilir enerji",
+        "güneş paneli",
+        "fotovoltaik",
+        "rüzgâr türbini",
+        "batarya",
+        "karbon ayak izi",
+        "emisyon",
+        "geri dönüşüm",
+        "atık yönetimi",
+        "enerji verimliliği",
+        "hidrojen",
+        "jeotermal",
+        "sera gazı"
+      ]
+    },
+    {
+      "kod": "ulasim",
+      "ad": "Akıllı Ulaşım",
+      "terimler": [
+        "trafik",
+        "kavşak",
+        "otonom araç",
+        "sürücüsüz",
+        "toplu taşıma",
+        "rota optimizasyonu",
+        "araç takip",
+        "plaka tanıma",
+        "kaza önleme",
+        "şerit takibi",
+        "lojistik",
+        "filo yönetimi"
+      ]
+    },
+    {
+      "kod": "saglik",
+      "ad": "Sağlık Teknolojileri",
+      "terimler": [
+        "hasta",
+        "teşhis",
+        "tanı",
+        "tıbbi görüntüleme",
+        "radyoloji",
+        "protez",
+        "biyomedikal",
+        "klinik",
+        "ilaç",
+        "hastane",
+        "ameliyat",
+        "rehabilitasyon",
+        "tele-tıp",
+        "giyilebilir sağlık"
+      ]
+    }
+  ],
+  "katalogSlug": "finansal-teknolojiler-yarismasi"
+}
