@@ -7,7 +7,7 @@ PRD'deki sırayla.
 Tablodaki sayılar iddia değil, çalışan koddan okunuyor:
 `npm run kanit` · `npm run db:kontrol` · `npm run duman` · `npm run hacim`
 
-Ölçüm: 2026-08-24 · SQLite · üç ayrı portal · 101 birim testi
+Ölçüm: 2026-09-07 · SQLite · üç ayrı portal · 223 birim testi · 2 AGENT
 
 ---
 
